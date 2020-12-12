@@ -1,7 +1,7 @@
 # Intro
 
 
-[Intro To Security - Hi Erica]()
+[Intro To Security]()
 
  - [Applocker](Tools/IntroClass/AppLocker/Applocker.md)
  - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
