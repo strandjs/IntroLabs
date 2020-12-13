@@ -27,6 +27,7 @@
   - [RITA](Tools/IntroClass/RITA/RITA.md)
   - [Nessus](Tools/IntroClass/nessus/Nessus.md)
   - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
+  - [Domain Log Review](Tools/IntroClass/DomainLogReview/DomainLogReview.md)
 
 
 
