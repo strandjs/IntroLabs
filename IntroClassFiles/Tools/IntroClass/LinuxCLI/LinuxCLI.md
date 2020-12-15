@@ -30,9 +30,6 @@ $`sudo su -`
 
 The password is adhd.
 
-We will next need to create a fifo backpipe:
-
-/#`mknod backpipe p`
 
 This will get us to a root prompt. We want to do this because we want to have a backdoor running as root and a connection from a different user account on the system.
 
@@ -79,7 +76,7 @@ Now, lets open yet another Ubuntu terminal and start our analysis. This means we
 
 On your Linux terminal, please run the following command:
 
-$`sudu su -`
+$`sudo su -`
 
 This will get us to a root prompt.   We want to be root becasue doing looking at network connections and process information systemwide requires root access.  Basicly, it is very had to do your job as a SOC pro without root or admin rights.
 
