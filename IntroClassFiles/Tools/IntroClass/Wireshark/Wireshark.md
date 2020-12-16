@@ -10,7 +10,7 @@ Tcpdump is fast and very lightweight.  It is also scriptable.
 
 But, it is CLI and to be honest, having some visulizations is very, very helpful when dealing with large datasets.
 
-But, Wireshark tends to give up and freeze on very large files.  Sometimes, we carve data out with tcpdump and open it in Wireshark.  Basicly, it is key to learn and know both.
+But, Wireshark tends to give up and freeze on very large files.  Sometimes, we carve data out with tcpdump and open it in Wireshark.  basically, it is key to learn and know both.
 
 Lets get started.
 
@@ -56,7 +56,7 @@ Click some hex in the bottom window:
 
 ![](attachments/Clipboard_2020-12-09-18-41-14.png)
 
-Notice that when you select any of the hex in the bottom window it opens and highlights the corasponding data in the second window.
+Notice that when you select any of the hex in the bottom window it opens and highlights the corresponding data in the second window.
 
 This is very, very cool.  This means wirreshark can decode the hex on the fly and automaticly highlight the relevent data instantly.
 
@@ -76,7 +76,7 @@ Now, lets look at Statisctics > Conversations:
 
 ![](attachments/Clipboard_2020-12-09-18-45-30.png)
 
-This will give us a breakdown of who was talking to whome:
+This will give us a breakdown of who was talking to whom:
 
 ![](attachments/Clipboard_2020-12-09-18-46-16.png)
 
