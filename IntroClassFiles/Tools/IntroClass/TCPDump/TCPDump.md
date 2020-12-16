@@ -22,7 +22,7 @@ The filter for this...  is host.
 
 $ `tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52`
 
-For this command we are telling tcpdump to not resolve hostnames (-r) and we are telling it to read in the data from a file (-r).
+For this command we are telling tcpdump to not resolve hostnames (-n) and we are telling it to read in the data from a file (-r).
 
 ![](attachments/Clipboard_2020-12-09-18-14-50.png)
 
