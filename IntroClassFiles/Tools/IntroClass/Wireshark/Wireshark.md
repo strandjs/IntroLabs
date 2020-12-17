@@ -10,7 +10,7 @@ Tcpdump is fast and very lightweight.  It is also scriptable.
 
 But, it is CLI and to be honest, having some visulizations is very, very helpful when dealing with large datasets.
 
-But, Wireshark tends to give up and freeze on very large files.  Sometimes, we carve data out with tcpdump and open it in Wireshark.  basically, it is key to learn and know both.
+But, Wireshark tends to give up and freeze on very large files.  Sometimes, we carve data out with tcpdump and open it in Wireshark.  Basically, it is key to learn and know both.
 
 Lets get started.
 
@@ -30,7 +30,7 @@ Then, select magnitude_1hr in the Open Capture File box.  You may need to scroll
 
 ![](attachments/Clipboard_2020-12-09-18-37-14.png)
 
-When Wireshak opens, you will see packets represented in three different windows:
+When Wireshark opens, you will see packets represented in three different windows:
 
 ![](attachments/Clipboard_2020-12-09-18-37-57.png)
 
@@ -58,7 +58,7 @@ Click some hex in the bottom window:
 
 Notice that when you select any of the hex in the bottom window it opens and highlights the corresponding data in the second window.
 
-This is very, very cool.  This means wirreshark can decode the hex on the fly and automaticly highlight the relevent data instantly.
+This is very, very cool.  This means Wireshark can decode the hex on the fly and automatically highlight the relevent data instantly.
 
 Ok, now, lets play with some statistics.
 
@@ -88,7 +88,7 @@ Then click on the top of the packets column twice:
 
 ![](attachments/Clipboard_2020-12-09-18-47-21.png)
 
-This gives us a breakdown of who was chatting with what systems the most.  Click it again and it will sort the opisite direction and show you the least:
+This gives us a breakdown of who was chatting with what systems the most.  Click it again and it will sort the opposite direction and show you the least:
 
 ![](attachments/Clipboard_2020-12-09-18-48-14.png)
 
@@ -126,7 +126,7 @@ Now, lets play with some basic filters in the filter bar.  We have already seen 
 
 To start, just type l.
 
-Notice how Wireshark tries to help you with possible compleation options as you type.
+Notice how Wireshark tries to help you with possible completion options as you type.
 
 Now finish typing llmnr.
 
@@ -134,15 +134,15 @@ Then hit enter.
 
 ![](attachments/Clipboard_2020-12-11-08-57-52.png)
 
-Notice that when you type llmnr and hit enter, wireshark shows you all packets that are that protocol
+Notice that when you type llmnr and hit enter, Wireshark shows you all packets that are that protocol
 
 Now try ipv6 and hit enter:
 
 ![](attachments/Clipboard_2020-12-11-08-58-47.png)
 
-This allows you to very quickly drill in on any spcific protocls you are reviewing in a packet capture.
+This allows you to very quickly drill in on any specific protocols you are reviewing in a packet capture.
 
-Remember the PowerShell from tcpdump?  It had the string New-Object? Well, we can search though all the http traffic looking for that spcific string:
+Remember the PowerShell from tcpdump?  It had the string New-Object? Well, we can search though all the http traffic looking for that specific string:
 
 Put the following into the filter bar:
 
