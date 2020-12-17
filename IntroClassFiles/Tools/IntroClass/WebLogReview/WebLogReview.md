@@ -31,7 +31,7 @@ Now, let's start ZAP.
 ![](attachments/Clipboard_2020-06-16-13-30-46.png)
 
 
-Now, lets instert your IP address from the ipconfig command above and start the scan.
+Now, let's insert your IP address from the ipconfig command above and start the scan.
 
 First, select the Automated Scan button: 
 
@@ -50,7 +50,7 @@ This will start the scan.  You should be able to see the scan activity in the lo
 
 ![](attachments/Clipboard_2020-12-11-06-47-23.png)
 
-Now, lets go back to the Powershell window and see the logs:
+Now, let's go back to the Powershell window and see the logs:
 
 ![](attachments/Clipboard_2020-12-11-06-51-27.png)
 
@@ -61,6 +61,9 @@ First, notice the high number of requests from an IP address in a very, very sho
 Also, look for odd things like below:
 
 ![](attachments/Clipboard_2020-12-11-06-52-26.png)
+
+
+
 
 
 
