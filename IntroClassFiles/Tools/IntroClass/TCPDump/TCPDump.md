@@ -2,7 +2,7 @@
 
 # TCPDump
 
-In this lab we will be looking at some basic tcpdump filters every SOC and security analyest should know.
+In this lab we will be looking at some basic tcpdump filters every SOC and security analyst should know.
 
 Let’s get started by opening a Terminal as Administrator
 
@@ -28,7 +28,7 @@ For this command we are telling tcpdump to not resolve hostnames (-n) and we are
 
 What exactly is this showing us?
 
-Well, it is showing each packets Timestamp:
+Well, it is showing each packet's timestamp:
 
 ![](attachments/Clipboard_2020-12-09-18-15-50.png)
 
@@ -50,9 +50,9 @@ And data size:
 ![](attachments/Clipboard_2020-12-09-18-18-51.png)
 
 
-But we can get the filter to be a bit more granular.  In fact, you can create filters for litteraly every part of a packet!
+But we can get the filter to be a bit more granular.  In fact, you can create filters for literally every part of a packet!
 
-Lets add port number.
+Let's add port number.
 
 $` tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80`
 
@@ -60,7 +60,7 @@ You can hit ctrl+c after a few seconds:
 
 ![](attachments/Clipboard_2020-12-09-18-21-25.png)
 
-In the screenshot above you can see we now have all the packets that are either sent or recived to port 80 on 192.168.99.52.
+In the screenshot above you can see we now have all the packets that are either sent or received by port 80 on 192.168.99.52.
 
 While getting the overal metadata from the packets is nice, we can get the full ASCII decode of the packet and the payload of the packet.
 
@@ -79,7 +79,7 @@ Ouch, it looks like PowerShell!!!  A favorite of attackers and pentesters alike.
 ![](attachments/Clipboard_2020-12-09-18-25-45.png)
 
 
-Still not enough?  We can also see the raw Hex, if that is your sort of thing with the -X flag:
+Still not enough?  We can also see the raw Hex, if that is your sort of thing, with the -X flag:
 
 $`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -AX`
 
@@ -96,13 +96,13 @@ $ `tcpdump -n -r magnitude_1hr.pcap ip6`
 
 This is showing all the ipv6 traffic.
 
-We can also specify network ranges.  This is very usefull when you are seeing traffic either to or from a range of IP addresses.  For example, this can help us answer questions like "are there any other systems talking to this IP address range?" 
+We can also specify network ranges.  This is very useful when you are seeing traffic either to or from a range of IP addresses.  For example, this can help us answer questions like "are there any other systems talking to this IP address range?" 
 
 Think of an attacker using multiple systems on a network range to disperse their C2 traffic.
 
 $`tcpdump -n -r magnitude_1hr.pcap net 192.168.99.0/24`
 
-Here is a great resoruce to try some more options:
+Here is a great resource to try some more options:
 
 https://danielmiessler.com/study/tcpdump/
 
