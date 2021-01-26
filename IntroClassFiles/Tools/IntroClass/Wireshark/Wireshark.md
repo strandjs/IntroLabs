@@ -2,7 +2,7 @@
 
 # Wireshark
 
-Now that we have spent a little time working with tcpdump, lets take a look at Wireshark.
+Now that we have spent a little time working with tcpdump, let's take a look at Wireshark.
 
 First, we need to make it clear, that Wireshark is not "better" than tcpdump.  They each have very strong pros and cons.  
 
@@ -12,7 +12,7 @@ But, it is CLI and to be honest, having some visulizations is very, very helpful
 
 But, Wireshark tends to give up and freeze on very large files.  Sometimes, we carve data out with tcpdump and open it in Wireshark.  Basically, it is key to learn and know both.
 
-Lets get started.
+Let's get started.
 
 First, select the Windows icon and type in wireshark:
 
@@ -38,7 +38,7 @@ The top window shows each individual packet in order:
 
 ![](attachments/Clipboard_2020-12-09-18-38-26.png)
 
-The second windows shows a "decode" of any packet that is selected:
+The second window shows a "decode" of any packet that is selected:
 
 ![](attachments/Clipboard_2020-12-09-18-38-57.png)
 
@@ -58,11 +58,11 @@ Click some hex in the bottom window:
 
 Notice that when you select any of the hex in the bottom window it opens and highlights the corresponding data in the second window.
 
-This is very, very cool.  This means Wireshark can decode the hex on the fly and automatically highlight the relevent data instantly.
+This is very, very cool.  This means Wireshark can decode the hex on the fly and automatically highlight the relevant data instantly.
 
 Ok, now, lets play with some statistics.
 
-Please select Staticstics > HTTP > Requests:
+Please select Statistics > HTTP > Requests:
 
 ![](attachments/Clipboard_2020-12-09-18-42-30.png)
 
@@ -70,9 +70,9 @@ This will show us the various HTTP requests for the capture:
 
 ![](attachments/Clipboard_2020-12-09-18-43-37.png)
 
-Anything look strange there?  If you looks closely, there is a lot of encoded PowerShell.
+Anything look strange there?  If you look closely, there is a lot of encoded PowerShell.
 
-Now, lets look at Statisctics > Conversations:
+Now, let's look at Statistics > Conversations:
 
 ![](attachments/Clipboard_2020-12-09-18-45-30.png)
 
@@ -88,7 +88,7 @@ Then click on the top of the packets column twice:
 
 ![](attachments/Clipboard_2020-12-09-18-47-21.png)
 
-This gives us a breakdown of who was chatting with what systems the most.  Click it again and it will sort the opposite direction and show you the least:
+This gives us a breakdown of who was chatting with what system the most.  Click it again and it will sort the opposite direction and show you the least:
 
 ![](attachments/Clipboard_2020-12-09-18-48-14.png)
 
@@ -122,7 +122,7 @@ This is showing the request (in red) and the response (in blue) between our two 
 
 ![](attachments/Clipboard_2020-12-09-18-55-09.png)
 
-Now, lets play with some basic filters in the filter bar.  We have already seen how Wireshark can filter on IP addresses.  But we can also filter on protocols.
+Now, let's play with some basic filters in the filter bar.  We have already seen how Wireshark can filter on IP addresses.  But we can also filter on protocols.
 
 To start, just type l.
 
