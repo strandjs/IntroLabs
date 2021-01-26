@@ -3,7 +3,7 @@
 
 In this lab we are going to look at some logs that are generated in a domain password spray attack.
 
-We will start by using DeepBlueCLI, then moving into looking directly at the event logs themselves.
+We will start by using DeepBlueCLI, then move into looking directly at the event logs themselves.
 
 First, we will need to extract the event logs for a domain attack.  To do this, simply navigate to 
 the C:\IntroLabs directory:
@@ -48,7 +48,7 @@ When this runs, there is an alert that catches our attention right away:
 
 ![](attachments/Clipboard_2020-12-13-10-07-30.png)
 
-We have 240 logon failures.  That...  Is a lot for this small org.
+We have 240 logon failures.  That...  is a lot for this small org.
 
 Lets dig into the actual logs and see if we can see a pattern.
 
@@ -68,7 +68,7 @@ Then click it.
 
 It will open the DC logs with the attack.
 
-Now, please click on the header column called Event ID.  This will sort the logs by ID number we are doing this because we want to quickly get to the event IDs of 4476:
+Now, please click on the header column called Event ID.  This will sort the logs by ID number we are doing this because we want to quickly get to the event IDs of 4776:
 
 ![](attachments/Clipboard_2020-12-13-10-12-41.png)
 
