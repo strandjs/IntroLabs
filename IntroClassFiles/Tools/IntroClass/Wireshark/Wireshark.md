@@ -8,7 +8,7 @@ First, we need to make it clear, that Wireshark is not "better" than tcpdump.  T
 
 Tcpdump is fast and very lightweight.  It is also scriptable.
 
-But, it is CLI and to be honest, having some visulizations is very, very helpful when dealing with large datasets.
+But, it is CLI and to be honest, having some visualizations is very, very helpful when dealing with large datasets.
 
 But, Wireshark tends to give up and freeze on very large files.  Sometimes, we carve data out with tcpdump and open it in Wireshark.  Basically, it is key to learn and know both.
 
