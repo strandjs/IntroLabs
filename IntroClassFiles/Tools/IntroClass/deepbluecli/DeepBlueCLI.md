@@ -1,7 +1,7 @@
 
 # DeepBlueCLI
 
-DeepBlueCLI is a free tool by Eric Conrand that demonstrates some amazing detection capabilities.  It also has some checks that are effective for showing how UEBA style techniques can be in your environment. 
+DeepBlueCLI is a free tool by Eric Conrad that demonstrates some amazing detection capabilities.  It also has some checks that are effective for showing how UEBA style techniques can be in your environment. 
 
 Let's get started by opening a Terminal as Administrator
 
