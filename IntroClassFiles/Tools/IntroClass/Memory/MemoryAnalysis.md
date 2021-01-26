@@ -52,7 +52,7 @@ C:\>`volatility_2.6_win64_standalone.exe -f memdump.vmem netscan --profile=Win10
 
 Unfortunately, any non-OS level connection gets a pid of -1 and we do not get the process name. 
 
-But! We can see there are some connections that are established and have SYS_Sent and closed:
+But! We can see there are some connections that are established and have SYN_Sent and closed:
 
 ![](attachments/Clipboard_2020-12-09-14-22-00.png)
 
@@ -60,7 +60,7 @@ In the above screenshot we are seeing the Close and SYN_Sent because of the beac
 
 ![](attachments/Clipboard_2020-12-09-14-23-17.png)
 
-The above screenshot is...  Concerning.  We would want to look further into this because it is a SMB (port 445) connection to another computer.  We know it is compromised (because it is a lab) but anytime a "suspect" computer has another open connection to an internal system is, without question, a cause for concern.
+The above screenshot is...  Concerning.  We would want to look further into this because it is a SMB (port 445) connection to another computer.  We know it is compromised (because it is a lab) but any time a "suspect" computer has another open connection to an internal system is, without question, a cause for concern.
 
 Now, let's look at the processes on this system:
 
@@ -91,9 +91,9 @@ C:\>`volatility_2.6_win64_standalone.exe -f memdump.vmem pslist --profile=Win10x
 
 ![](attachments/Clipboard_2020-12-09-14-32-34.png)
 
-In the above example we can see that the parent process for TrustMe was Explorer.exe.  This means it was invoked by the user on the system as Explorer.exe is the GUI process for Windows 10.
+In the above example we can see that the parent process for TrustMe was Explorer.exe.  This means it was invoked by the user on the system, as Explorer.exe is the GUI process for Windows 10.
 
-Lets now dive into the TrustMe.exe process a bit further with dlllist:
+Let's now dive into the TrustMe.exe process a bit further with dlllist:
 
 C:\>`volatility_2.6_win64_standalone.exe -f memdump.vmem --profile=Win10x64_10586 dlllist -p 5452`
 
