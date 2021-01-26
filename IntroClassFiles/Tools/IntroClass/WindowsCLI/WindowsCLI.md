@@ -4,9 +4,9 @@
 
 In this lab we will create some malware, run it and then use the tools we went through in the slides to look at what an attack looks like on a live system.  
 
-One of the best ways to learn, well...  Anything, is to actualy just dig in and do it.  So, this is a great process for getting started in looking at actual malware.
+One of the best ways to learn, well...  Anything, is to actually just dig in and do it.  So, this is a great process for getting started in looking at actual malware.
 
-Lets get started.
+Let's get started.
 
 Let’s get started by opening a Terminal as Administrator
 
@@ -26,7 +26,7 @@ $`ifconfig`
 
 Please note the IP address of your Ethernet adapter. 
 
-Please note that my adaptor is called eth0 and my IP address is 172.26.19.133.   
+Please note that my adapter is called eth0 and my IP address is 172.26.19.133.   
 
 Your IP Address and adapter name may be different.
 
@@ -67,7 +67,7 @@ It should look like this:
 
 Now, let’s surf to your Linux system, download the malware and run it!
 
-Simply open an edge browser to `http://<YOUR LINUX IP>:8000`
+Simply open an Edge browser to `http://<YOUR LINUX IP>:8000`
 
 ![](attachments/Clipboard_2020-07-09-15-54-29.png)
 
@@ -84,11 +84,11 @@ Back at your Ubuntu prompt, you should have a metasploit session.
 
 ![](attachments/Clipboard_2020-06-12-12-55-11.png)
 
-Now, lets look at the malware from the other side through the Windows commandline slides!
+Now, let's look at the malware from the other side through the Windows commandline slides!
 
-Please, remember, your IP addresses will be different!!! 
+Please, remember, your IP address will be different!!! 
 
-Now, lets open another Command Prompt from our Terminal:
+Now, let's open another Command Prompt from our Terminal:
 
 ![](attachments/Clipboard_2020-12-09-13-24-45.png)
 
@@ -118,7 +118,7 @@ Well, that is a lot of data. This is showing us what ports are open on this syst
 
 Specificly, we are interested in the connection on port 4444 as we know this is the port we used for our malware.
 
-Now, lets drill down on that connection with some more data:
+Now, let's drill down on that connection with some more data:
 
 C:\>`netstat -f`
 
@@ -138,7 +138,7 @@ C:\>`netstat -naob`
 
 We can see in the above screenshot that we have the PID.
 
-Now, lets dive in!
+Now, let's dive in!
 
 First we will start with tasklist  
 
@@ -150,7 +150,7 @@ Your PID WILL BE DIFFERENT!
 
 We can see the loaded DLL's above.  As we can see, there is not a whole lot to see here:
 
-Lets keep digging with wmic:
+Let's keep digging with wmic:
 
 C:\>`wmic process where processid=[PID] get commandline`
 
@@ -165,7 +165,7 @@ C:\> `wmic process get name,parentprocessid,processid`
 
 ![](attachments/Clipboard_2020-12-09-14-01-04.png)
 
-Above we can see that we hunted the malicious process, then found its parent process ID, then did a find on that process ID.  As you can see above, it was launced by the browser_broker.exe process.  This once again, shows us that this process was launched from the browser. 
+Above we can see that we hunted the malicious process, then found its parent process ID, then did a find on that process ID.  As you can see above, it was launched by the browser_broker.exe process.  This once again, shows us that this process was launched from the browser. 
 
 
 
