@@ -11,6 +11,7 @@
   - [Nessus](Tools/IntroClass/nessus/Nessus.md)
   - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
   - [Domain Log Review](Tools/IntroClass/DomainLogReview/DomainLogReview.md)
+  - [Velociraptor](Tools/IntroClass/Velociraptor/Velociraptor.md)
 
 
 [Intro To Security]()
