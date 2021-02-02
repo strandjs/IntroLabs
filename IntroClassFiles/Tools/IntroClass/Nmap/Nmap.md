@@ -1,9 +1,23 @@
 
 # Nmap
 
-In this lab we will be scanning your Windows system from your Linux terminal with the firewall both on and off. 
+MITRE Shield
+------------
 
-The goal is to show you how a system is very different to the network with a firewall enabled. 
+You can deploy defensive and deceptive capabilities to impact the results of a scan.
+
+Applicable MITRE Shield techniques:
+* [DTE0013](https://shield.mitre.org/techniques/DTE0013) - Decoy Diversity
+* [DTE0016](https://shield.mitre.org/techniques/DTE0016) - Decoy Process
+* [DTE0017](https://shield.mitre.org/techniques/DTE0017) - Decoy System
+* [DTE0036](https://shield.mitre.org/techniques/DTE0036) - Software Manipulation
+
+Instructions
+------------
+
+In this lab we will be scanning your Windows system from your Linux terminal with the firewall both on and off.
+
+The goal is to show you how a system is very different to the network with a firewall enabled.
 
 Remember, treat your internal network as hostile, because it is.
 
@@ -73,7 +87,7 @@ It should look like this:
 
 ![](attachments\Clipboard_2020-07-07-15-34-15.png)
 
-Please note the open ports. These are ports and services that an attacker could use to authenticate to your system.  Or, attack if an exploit is available. 
+Please note the open ports. These are ports and services that an attacker could use to authenticate to your system.  Or, attack if an exploit is available.
 
 
 

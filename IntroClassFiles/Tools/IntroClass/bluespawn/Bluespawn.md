@@ -2,7 +2,18 @@
 
 # Bluespawn
 
-In this lab we will be using Bluespawn as a stand-in for an EDR system.  Normally full EDRs like Cylance and Crowdstrike are very expensive and tend not to show up in classes like this.  However, the folks at University of Virginia have done an outstanding job with BlueSpawn. 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0034](https://shield.mitre.org/techniques/DTE0034) - System Activity Monitoring
+* [DTE0007](https://shield.mitre.org/techniques/DTE0007) - Behavioral Analytics
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
+In this lab we will be using Bluespawn as a stand-in for an EDR system.  Normally full EDRs like Cylance and Crowdstrike are very expensive and tend not to show up in classes like this.  However, the folks at University of Virginia have done an outstanding job with BlueSpawn.
 
 BlueSpawn will monitor the system for "weird" behavior and note it when it occurs. For the money, it is great.
 

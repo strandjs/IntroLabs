@@ -2,6 +2,16 @@
 
 # RITA
 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0027](https://shield.mitre.org/techniques/DTE0027) - Network Monitoring
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
 In this lab we are going to look at detecting command and control traffic on a network.
 
 We will be using Real Intelligence Threat Analytics (RITA) for this lab.

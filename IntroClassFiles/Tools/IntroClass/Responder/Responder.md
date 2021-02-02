@@ -2,9 +2,24 @@
 
 # Responder
 
+MITRE Shield
+------------
+
+You can deploy defensive and deceptive capabilities to impact what is being targeted and successful.
+
+Applicable MITRE Shield techniques:
+* [DTE0010](https://shield.mitre.org/techniques/DTE0010) - Decoy Account
+* [DTE0012](https://shield.mitre.org/techniques/DTE0012) - Decoy Credentials
+* [DTE0015](https://shield.mitre.org/techniques/DTE0015) - Decoy Persona
+* [DTE0036](https://shield.mitre.org/techniques/DTE0036) - Software Manipulation
+* [DTE0032](https://shield.mitre.org/techniques/DTE0032) - Security Controls
+
+Instructions
+------------
+
 In this lab we are going to walk through how quickly an attacker can take advantage of a common misconfiguration to gain access to a system via a weak password.
 
-Specifically, we are looking to take advantage of LLMNR.  
+Specifically, we are looking to take advantage of LLMNR.
 
 First, we will need to load our terminal and start responder.
 
@@ -41,7 +56,7 @@ Give it a few moments and you should see some capture data showing up.  Please n
 
 ![](attachments\Clipboard_2020-06-23-14-22-23.png)
 
-Next we need to kill Responder with Ctrl + c.  This will return the command prompt. 
+Next we need to kill Responder with Ctrl + c.  This will return the command prompt.
 
 Now, we need to change to the logs directory.
 
@@ -54,6 +69,6 @@ Remember!  Your IP will be different!!!!
 
 ![](attachments\Clipboard_2020-06-23-14-24-11.png)
 
-You should see the Windows password be cracked very quickly.  
+You should see the Windows password be cracked very quickly.
 
 

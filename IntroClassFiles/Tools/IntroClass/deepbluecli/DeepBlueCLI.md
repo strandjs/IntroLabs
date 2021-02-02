@@ -1,7 +1,18 @@
 
 # DeepBlueCLI
 
-DeepBlueCLI is a free tool by Eric Conrad that demonstrates some amazing detection capabilities.  It also has some checks that are effective for showing how UEBA style techniques can be in your environment. 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0034](https://shield.mitre.org/techniques/DTE0034) - System Activity Monitoring
+* [DTE0007](https://shield.mitre.org/techniques/DTE0007) - Behavioral Analytics
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
+DeepBlueCLI is a free tool by Eric Conrad that demonstrates some amazing detection capabilities.  It also has some checks that are effective for showing how UEBA style techniques can be in your environment.
 
 Let's get started by opening a Terminal as Administrator
 
@@ -22,7 +33,7 @@ It should look like this:
 
 ![](attachments\Clipboard_2020-06-15-14-06-33.png)
 
-It is very common for attackers to add additional users on to a system they have compromised.  This gives them a level of persistence that they otherwise would not gain with malware.  Why?  There are lots and lots of tools to detect malware.  By creating an extra user account it allows them to blend in.  
+It is very common for attackers to add additional users on to a system they have compromised.  This gives them a level of persistence that they otherwise would not gain with malware.  Why?  There are lots and lots of tools to detect malware.  By creating an extra user account it allows them to blend in.
 
 Now, let’s run a check in the .evtx files for adding a new user:
 
@@ -34,7 +45,7 @@ Choose R
 
 ![](attachments\Clipboard_2020-06-15-14-08-14.png)
 
-Another attack that very few SIEMs detect is password spraying.  This is where an attacker takes a user list from a domain, and sprays it with the same password, think Summer2020.  This is effective because it keeps the lockout threshold below the lockout policy and many times flies under the radar simply because accounts are not getting locked out. 
+Another attack that very few SIEMs detect is password spraying.  This is where an attacker takes a user list from a domain, and sprays it with the same password, think Summer2020.  This is effective because it keeps the lockout threshold below the lockout policy and many times flies under the radar simply because accounts are not getting locked out.
 
 But, this is the exact behavior that UEBA should be able to detect.
 

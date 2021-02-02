@@ -1,6 +1,24 @@
 
 # Password Spray
 
+MITRE Shield
+------------
+
+You can deploy defensive and deceptive capabilities to impact the results of a password spray and let it succeed against your planted assets.
+
+Applicable MITRE Shield techniques:
+* [DTE0010](https://shield.mitre.org/techniques/DTE0010) - Decoy Account
+* [DTE0012](https://shield.mitre.org/techniques/DTE0012) - Decoy Credentials
+* [DTE0015](https://shield.mitre.org/techniques/DTE0015) - Decoy Persona
+
+You can also identify this activity:
+* [DTE0034](https://shield.mitre.org/techniques/DTE0034) - System Activity Monitoring
+* [DTE0007](https://shield.mitre.org/techniques/DTE0007) - Behavioral Analytics
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
 Let's get started by opening a Terminal as Administrator
 
 ![](attachments\Clipboard_2020-06-12-10-36-44.png)

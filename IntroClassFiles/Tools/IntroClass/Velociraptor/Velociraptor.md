@@ -1,5 +1,15 @@
 
-# Velociraptor 
+# Velociraptor
+
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0034](https://shield.mitre.org/techniques/DTE0034) - System Activity Monitoring
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
 
 In this lab we will be installing and using Velociraptor to look at the various IR artifacts on your computer.
 
@@ -17,7 +27,7 @@ https://www.velocidex.com/training/
 
 Let's get started.
 
-First, we will need to extract the executable from the 7zip archive. 
+First, we will need to extract the executable from the 7zip archive.
 
 Within Windows File Explorer navigate to the C:\IntroLabs directory:
 
@@ -157,7 +167,7 @@ You should see one connected client.
 
 Now let’s look at what we can do with this.
 
-First things first, this is not necessarily a detection platform.  It is designed to allow you to dig when you get an alert on malware signatures or from suspicious traffic. 
+First things first, this is not necessarily a detection platform.  It is designed to allow you to dig when you get an alert on malware signatures or from suspicious traffic.
 
 So please, keep in mind, it is not a replacement for AV!
 
@@ -290,7 +300,7 @@ Then, open the csv file with WordPad:
 
 ![](attachment/Clipboard_2021-01-27-16-02-37.png)
 
-Granted, this is not optimal.  We did not load Excel on this system because of licensing restrictions.  However, you can copy this over to your host system and open it there. 
+Granted, this is not optimal.  We did not load Excel on this system because of licensing restrictions.  However, you can copy this over to your host system and open it there.
 
 We have not even begun to touch what we can do with this awesome tool.
 

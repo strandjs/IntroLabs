@@ -1,6 +1,24 @@
 
 # Web Log Review
 
+MITRE Shield
+------------
+
+You can deploy defensive and deceptive capabilities to impact the results of a scan.
+
+Applicable MITRE Shield techniques:
+* [DTE0013](https://shield.mitre.org/techniques/DTE0013) - Decoy Diversity
+* [DTE0016](https://shield.mitre.org/techniques/DTE0016) - Decoy Process
+* [DTE0017](https://shield.mitre.org/techniques/DTE0017) - Decoy System
+* [DTE0036](https://shield.mitre.org/techniques/DTE0036) - Software Manipulation
+
+Reviewing Web Logs involves:
+* [DTE0034](https://shield.mitre.org/techniques/DTE0034) - System Activity Monitoring
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
 In this lab we will be standing up a vulnerable web server called DVWA.  It is designed from the ground up to teach people about a number of web application attacks.
 
 While a full intro to web attacks is out of the scope of this class, it is great to show you how to use tools like ZAP to automatically look for some vulnerabilities, and to show you that automated tools do not always catch everything.
@@ -33,7 +51,7 @@ Now, let's start ZAP.
 
 Now, let's insert your IP address from the ipconfig command above and start the scan.
 
-First, select the Automated Scan button: 
+First, select the Automated Scan button:
 
 ![](attachments/Clipboard_2020-12-11-06-43-22.png)
 

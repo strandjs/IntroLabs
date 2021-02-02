@@ -2,6 +2,19 @@
 
 # Password Cracking
 
+MITRE Shield
+------------
+
+You can deploy defensive and deceptive capabilities to impact what is being analyzed.
+
+Applicable MITRE Shield techniques:
+* [DTE0010](https://shield.mitre.org/techniques/DTE0010) - Decoy Account
+* [DTE0012](https://shield.mitre.org/techniques/DTE0012) - Decoy Credentials
+* [DTE0015](https://shield.mitre.org/techniques/DTE0015) - Decoy Persona
+
+Instructions
+------------
+
 In this lab we will be getting started with the fundamentals of password cracking.  We will be using Hashcat to do this.
 
 To start, we will be working with the Command Prompt in Windows Terminal.   This is on your desktop and can be opened by right-clicking it and selecting Run as administrator:

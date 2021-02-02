@@ -1,11 +1,22 @@
 
 # Domain Log Review
 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0034](https://shield.mitre.org/techniques/DTE0034) - System Activity Monitoring
+* [DTE0007](https://shield.mitre.org/techniques/DTE0007) - Behavioral Analytics
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
 In this lab we are going to look at some logs that are generated in a domain password spray attack.
 
 We will start by using DeepBlueCLI, then move into looking directly at the event logs themselves.
 
-First, we will need to extract the event logs for a domain attack.  To do this, simply navigate to 
+First, we will need to extract the event logs for a domain attack.  To do this, simply navigate to
 the C:\IntroLabs directory:
 
 ![](attachments/Clipboard_2020-12-13-09-57-36.png)
@@ -64,7 +75,7 @@ This will open Windows Event Viewer.  Note, it will open in Sysmon Operational. 
 
 ![](attachments/Clipboard_2020-12-13-10-11-42.png)
 
-Then click it.  
+Then click it.
 
 It will open the DC logs with the attack.
 

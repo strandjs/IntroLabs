@@ -2,6 +2,20 @@
 
 # Nessus Lab
 
+MITRE Shield
+------------
+
+You can deploy defensive and deceptive capabilities to impact the results of a scan.
+
+Applicable MITRE Shield techniques:
+* [DTE0013](https://shield.mitre.org/techniques/DTE0013) - Decoy Diversity
+* [DTE0016](https://shield.mitre.org/techniques/DTE0016) - Decoy Process
+* [DTE0017](https://shield.mitre.org/techniques/DTE0017) - Decoy System
+* [DTE0036](https://shield.mitre.org/techniques/DTE0036) - Software Manipulation
+
+Instructions
+------------
+
 In this lab we will be looking at a vulnerability report.
 
 However, we will be looking at it in a different way.  We will not be looking at the Highs and Criticals.  Instead, we want to focus on the Lows and Mediums.  We are doing this because these are often the vulnerabilities we exploit and are often missed by the organizations we test.
@@ -65,7 +79,7 @@ Ok.
 
 Below is the Telnet server that has issues.
 
-Notice that it is a prompt.  This means there is no authentication to access this server. 
+Notice that it is a prompt.  This means there is no authentication to access this server.
 
 
 ![](attachments\Clipboard_2020-06-18-09-20-18.png)

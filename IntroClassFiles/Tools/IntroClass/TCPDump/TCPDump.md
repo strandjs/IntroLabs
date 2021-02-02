@@ -2,6 +2,16 @@
 
 # TCPDump
 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0027](https://shield.mitre.org/techniques/DTE0027) - Network Monitoring
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
 In this lab we will be looking at some basic tcpdump filters every SOC and security analyst should know.
 
 Let’s get started by opening a Terminal as Administrator
@@ -68,7 +78,7 @@ $`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -A`
 
 ![](attachments/Clipboard_2020-12-09-18-23-36.png)
 
-As you can see above, we now can see the actual http GET requests and the responses.  
+As you can see above, we now can see the actual http GET requests and the responses.
 
 Lets dig into the packet with the timestamp of 08:14:32.638976
 
@@ -96,7 +106,7 @@ $ `tcpdump -n -r magnitude_1hr.pcap ip6`
 
 This is showing all the ipv6 traffic.
 
-We can also specify network ranges.  This is very useful when you are seeing traffic either to or from a range of IP addresses.  For example, this can help us answer questions like "are there any other systems talking to this IP address range?" 
+We can also specify network ranges.  This is very useful when you are seeing traffic either to or from a range of IP addresses.  For example, this can help us answer questions like "are there any other systems talking to this IP address range?"
 
 Think of an attacker using multiple systems on a network range to disperse their C2 traffic.
 

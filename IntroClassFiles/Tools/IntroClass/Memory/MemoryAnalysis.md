@@ -1,6 +1,15 @@
 
 # Memory Analysis
 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
 In this lab we will be looking at a memory dump of a compromised system.  We will first need to decompress it and then use Volatility to look at the network connections and process information for the malware.
 
 Please keep in mind that we are using a free tool for this lab.  While Volatility is great, it does have some limitations.  Specifically in the area of network PIDs.  So, while we are using Volatility, the same concepts can also be applied to any commercial tools you may be using in your environment as well.
@@ -50,7 +59,7 @@ C:\>`volatility_2.6_win64_standalone.exe -f memdump.vmem netscan --profile=Win10
 
 ![](attachments/Clipboard_2020-12-09-14-17-12.png)
 
-Unfortunately, any non-OS level connection gets a pid of -1 and we do not get the process name. 
+Unfortunately, any non-OS level connection gets a pid of -1 and we do not get the process name.
 
 But! We can see there are some connections that are established and have SYN_Sent and closed:
 

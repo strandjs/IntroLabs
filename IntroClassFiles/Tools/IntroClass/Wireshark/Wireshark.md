@@ -2,9 +2,19 @@
 
 # Wireshark
 
+MITRE Shield
+------------
+
+Applicable MITRE Shield techniques:
+* [DTE0027](https://shield.mitre.org/techniques/DTE0027) - Network Monitoring
+* [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
+
+Instructions
+------------
+
 Now that we have spent a little time working with tcpdump, let's take a look at Wireshark.
 
-First, we need to make it clear, that Wireshark is not "better" than tcpdump.  They each have very strong pros and cons.  
+First, we need to make it clear, that Wireshark is not "better" than tcpdump.  They each have very strong pros and cons.
 
 Tcpdump is fast and very lightweight.  It is also scriptable.
 
@@ -46,7 +56,7 @@ Any of the lines with a > can be expanded:
 
 ![](attachments/Clipboard_2020-12-09-18-39-29.png)
 
-This means you do not have to memorize every possible packet and protocol value in hex...  Unless that is your thing.  If it is....  You must be Judy Novak, Mike Poor or Jonathan Ham. 
+This means you do not have to memorize every possible packet and protocol value in hex...  Unless that is your thing.  If it is....  You must be Judy Novak, Mike Poor or Jonathan Ham.
 
 The last window is the hex for the packet:
 
