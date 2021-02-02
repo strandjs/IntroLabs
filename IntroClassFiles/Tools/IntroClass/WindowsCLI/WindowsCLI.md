@@ -6,7 +6,6 @@ MITRE Shield
 ------------
 
 Applicable MITRE Shield techniques:
-* [DTE0034](https://shield.mitre.org/techniques/DTE0034) - System Activity Monitoring
 * [DTE0021](https://shield.mitre.org/techniques/DTE0021) - Hunting
 
 Instructions
