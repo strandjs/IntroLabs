@@ -36,7 +36,12 @@ Next, in the PowerShell Window we need to navigate to the Atomic Red Team direct
 
 PS C:\Users\adhd> `cd C:\AtomicRedTeam\invoke-atomicredteam\`
 
+Then, install the proper yaml modules
+
+PS C:\Users\adhd> `Install-Module -Name powershell-yaml`
+
 PS C:\AtomicRedTeam\invoke-atomicredteam> `Import-Module .\Invoke-AtomicRedTeam.psm1`
+
 
 Now, we need to invoke all the Atomic Tests.
 
