@@ -292,6 +292,8 @@ Then, open the csv file with WordPad:
 
 Granted, this is not optimal.  We did not load Excel on this system because of licensing restrictions.  However, you can copy this over to your host system and open it there. 
 
+However, of you want to see a simple HTML report you can click on the turn back time icon on the left side (Right above the binoculars) and then clock Download Results > Prepare Collection Report, then click on the HTML report that appears below it.
+
 We have not even begun to touch what we can do with this awesome tool.
 
 Want to try something cool?  Run a Metrepreter agent on you Windows system.  Then, go through Velociraptor to create a Hunt to find it.  There are many Windows artifacts you can pull.  You do not need to just run one at a time.  You can run multiple.
