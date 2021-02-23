@@ -138,6 +138,9 @@ Once the Application Identity Properties dialog is open, please press the Start 
 
 ![](attachments\Clipboard_2020-06-12-13-01-27.png)
 
+Next, open a command prompt and run gpupdate to force the policy change
+
+C:\ `gpupdate /force`
 
 Next, log out as ADHD and log back in as allowlist.  
 
