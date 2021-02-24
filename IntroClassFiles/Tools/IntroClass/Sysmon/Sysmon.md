@@ -100,6 +100,13 @@ You should simply click and run the program from the browser.
 
 If you get an alert, just select run the application.
 
+If you get a Windows Defender error when trying to launch this program, simply run the following from an Administrator PowerShell prompt:
+
+`Set-MpPreference -DisableRealtimeMonitoring $true`
+
+This will disable Defender for this session.
+
+
 Back at your Ubuntu prompt, you should have a metasploit session!
 
 ![](attachments\Clipboard_2020-06-12-12-55-11.png)
