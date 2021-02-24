@@ -4,6 +4,15 @@
 
 In this lab we will be getting started with the fundamentals of password cracking.  We will be using Hashcat to do this.
 
+First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+
+`Set-MpPreference -DisableRealtimeMonitoring $true`
+
+This will disable Defender for this session.
+
+If you get angry red errors, that is Ok, it means Defender is not running.
+
+
 To start, we will be working with the Command Prompt in Windows Terminal.   This is on your desktop and can be opened by right-clicking it and selecting Run as administrator:
 
 ![](attachments\Clipboard_2020-06-12-10-36-44.png)
