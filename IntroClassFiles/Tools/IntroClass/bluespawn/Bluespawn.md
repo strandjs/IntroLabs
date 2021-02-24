@@ -8,6 +8,15 @@ BlueSpawn will monitor the system for "weird" behavior and note it when it occur
 
 In this lab, we will be starting BlueSpawn and then running Atomic Red Team to trigger a lot of alerts.
 
+First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+
+`Set-MpPreference -DisableRealtimeMonitoring $true`
+
+This will disable Defender for this session.
+
+If you get angry red errors, that is Ok, it means Defender is not running.
+
+
 Let's get started by opening a Terminal as Administrator:
 
 
