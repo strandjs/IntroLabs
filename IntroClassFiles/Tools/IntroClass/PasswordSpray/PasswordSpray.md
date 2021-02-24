@@ -1,6 +1,14 @@
 
 # Password Spray
 
+First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+
+`Set-MpPreference -DisableRealtimeMonitoring $true`
+
+This will disable Defender for this session.
+
+If you get angry red errors, that is Ok, it means Defender is not running.
+
 Let's get started by opening a Terminal as Administrator
 
 ![](attachments\Clipboard_2020-06-12-10-36-44.png)
