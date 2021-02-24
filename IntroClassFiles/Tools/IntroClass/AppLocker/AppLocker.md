@@ -87,6 +87,12 @@ Back at your Ubuntu prompt, you should have a metasploit session!
 
 ![](attachments\Clipboard_2020-06-12-12-55-11.png)
 
+If you get a Windows Defender error when trying to launch this program, simply run the following from an Administrator PowerShell prompt:
+
+`Set-MpPreference -DisableRealtimeMonitoring $true`
+
+This will disable Defender for this session.
+
 
 Now, let’s stop this from happening!
 
