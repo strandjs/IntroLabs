@@ -1,7 +1,15 @@
 
 # Sysmon
 
-First, let’s start up the ADHD Linux system and set up our malware and C2 listener: 
+First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+
+`Set-MpPreference -DisableRealtimeMonitoring $true`
+
+This will disable Defender for this session.
+
+If you get angry red errors, that is Ok, it means Defender is not running.
+
+Next, let’s start up the ADHD Linux system and set up our malware and C2 listener: 
 
 Let's get started by opening a Terminal as Administrator
 
