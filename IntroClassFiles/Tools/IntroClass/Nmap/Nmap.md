@@ -23,7 +23,7 @@ C:\Users\adhd>`ipconfig`
 
 ![](attachments\Clipboard_2020-07-07-15-24-29.png)
 
-Please note your IP for your WSL address.  Mine is 172.26.176.1.  Yours will be different.
+Please note your IP for your Windows address.  Mine is 172.26.176.1.  Yours will be different.
 
 
 Now, let’s try and scan your Windows system from Ubuntu.  To do this open a Ubuntu command prompt:
