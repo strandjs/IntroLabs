@@ -33,10 +33,15 @@
 
   - [Spidertrap](Tools/IntroClass/Spidertrap.md)
   - [Cowrie](Tools/IntroClass/Cowrie.md)
-  - [Spidertrap](Tools/IntroClass/Spidertrap.md)
+  - [Canarytokens](Tools/IntroClass/canarytokens/Canarytokens.md)
   - [RITA](Tools/IntroClass/RITA/RITA.md)
   - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
   - [Portspoof](Tools/IntroClass/PortSpoof.md)
   - [HoneyBadger](Tools/IntroClass/HoneyBadger.md)
+  - [HoneyShare](Tools/IntroClass/honeyshare/HoneyShare.md)
+  - [HoneyUser](Tools/IntroClass/honeyuser/honeyuser.md)
+  - [AdvancedC2](Tools/IntroClass/pcap/AdvancedC2PCAPAnalysis.md)
+  - [WebHoneypot](Tools/IntroClass/webhoneypot/webhoneypot.md)
+
 
 
