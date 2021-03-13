@@ -46,7 +46,7 @@ browser. You should see a page containing randomly generated links. If
 you click on a link it will take you to a page with more randomly
 generated links.
 
-![](Spidertrap_files/image001.png) ![]](Spidertrap_files/image002.png)
+![](Spidertrap_files/image001.png) ![](Spidertrap_files/image002.png)
 
 Example 2: Providing a List of Links
 ------------------------------------
