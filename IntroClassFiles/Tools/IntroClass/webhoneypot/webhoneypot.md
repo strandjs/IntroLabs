@@ -1,97 +1,195 @@
+ 
 
-# Web Honeypot
+# Web Honeypot 
 
-In this lab we will be running a very simple web honeypot.  Basicly, it runs a fake Outlook Web Access page and logs the attacks. 
+  
 
-This is a good approach as attackers constantly go after anything that looks like an authentication portal.
+In this lab we will be running a very simple web honeypot.  Basically, it runs a fake Outlook Web Access page and logs the attacks.  
 
-Lets get started.
+  
 
-First, we will need to start a Terminal as administrator
+This is a good approach as attackers constantly go after anything that looks like an authentication portal. 
 
-Simply righ click on Windows Terminal on the Desktop and select Run as Administrator.
+  
 
-Then, select the down carrot and choose Ubuntu.
+Let's get started. 
 
-![](attachment\Clipboard_2021-03-12-11-39-25.png)
+  
 
-Next, change directories to the /opt/owa-honeyport directory:
+First, we will need to start a Terminal as administrator 
 
-`cd /opt/owa-honeypot/`
+  
 
-![](attachment\Clipboard_2021-03-12-11-40-15.png)
+Simply right click on Windows Terminal on the Desktop and select Run as Administrator. 
 
-Now, lets start the honeypot:
+  
 
-`sudo python3 owa_pot.py`
+Then, select the down carrot and choose Ubuntu. 
 
-It should look like this:
+  
 
-![](attachment\Clipboard_2021-03-12-11-41-30.png)
+![](attachment\Clipboard_2021-03-12-11-39-25.png) 
 
-Now, lets start another Ubuntu Terminal.
+  
 
-Select the down carrot and choose Ubuntu.
+Next, change directories to the /opt/owa-honeyport directory: 
 
-![](attachment\Clipboard_2021-03-12-11-39-25.png)
+  
 
-Lets get your Ubuntu IP address.
+`cd /opt/owa-honeypot/` 
 
-`ifconfig`
+  
 
-Then, navigate to the owa-honeypot directory.
+![](attachment\Clipboard_2021-03-12-11-40-15.png) 
 
-`cd /opt/owa-honeypot/`
+  
 
-![](attachment\Clipboard_2021-03-12-11-43-26.png)
+Now, lets start the honeypot: 
 
-Now, lets tail the dumppass log.
+  
 
-`tail -f dumpass.log`
+`sudo python3 owa_pot.py` 
 
-![](attachment\Clipboard_2021-03-12-11-44-21.png)
+  
 
-Now, lets open a browser window and surf to the honeypot:
+It should look like this: 
 
-`http://YOURLINUXIP`
+  
 
-Now, try a bunch of USer IDs and passwords.
+![](attachment\Clipboard_2021-03-12-11-41-30.png) 
 
-Now, go back to the Ubuntu Terminal with the log and you should see the IP address and USerID/Password of the attempts.
+  
 
-![](attachment\Clipboard_2021-03-12-11-47-09.png)
+Now, let's start another Ubuntu Terminal. 
 
-Now, lets attack it.
+  
 
-Select OWASP ZAP on your desktop.
+Select the down carrot and choose Ubuntu. 
 
-![](attachment\Clipboard_2021-03-12-11-47-43.png)
+  
 
-Once ZAP! opens, select Automated Scan:
+![](attachment\Clipboard_2021-03-12-11-39-25.png) 
 
-![](attachment\Clipboard_2021-03-12-11-48-15.png)
+  
 
-When Automated Scan opens, please put you Linux IP in the URL to attack box and select Attack.
+Let's get your Ubuntu IP address. 
 
-It should look like this:
+  
 
-![](attachment\Clipboard_2021-03-12-11-49-31.png)
+`ifconfig` 
 
-After a while, oyu should see some attack strings in your Logs.
+  
 
-![](attachment\Clipboard_2021-03-12-11-50-54.png)
+Then, navigate to the owa-honeypot directory. 
 
-Yes...  Some attack tools are as obvious as ZAP:ZAP.
+  
 
+`cd /opt/owa-honeypot/` 
 
+  
 
+![](attachment\Clipboard_2021-03-12-11-43-26.png) 
 
+  
 
+Now, lets tail the dumppass log. 
 
+  
 
+`tail -f dumpass.log` 
 
+  
 
+![](attachment\Clipboard_2021-03-12-11-44-21.png) 
 
+  
 
+Now, let's open a browser window and surf to the honeypot: 
 
+  
 
+`http://YOURLINUXIP` 
+
+  
+
+Now, try a bunch of User IDs and passwords. 
+
+  
+
+Now, go back to the Ubuntu Terminal with the log and you should see the IP address and USerID/Password of the attempts. 
+
+  
+
+![](attachment\Clipboard_2021-03-12-11-47-09.png) 
+
+  
+
+Now, let's attack it. 
+
+  
+
+Select OWASP ZAP on your desktop. 
+
+  
+
+![](attachment\Clipboard_2021-03-12-11-47-43.png) 
+
+  
+
+Once ZAP! opens, select Automated Scan: 
+
+  
+
+![](attachment\Clipboard_2021-03-12-11-48-15.png) 
+
+  
+
+When Automated Scan opens, please put you Linux IP in the URL to attack box and select Attack. 
+
+  
+
+It should look like this: 
+
+  
+
+![](attachment\Clipboard_2021-03-12-11-49-31.png) 
+
+  
+
+After a while, oyu should see some attack strings in your Logs. 
+
+  
+
+![](attachment\Clipboard_2021-03-12-11-50-54.png) 
+
+  
+
+Yes...  Some attack tools are as obvious as ZAP:ZAP. 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+
+ 
