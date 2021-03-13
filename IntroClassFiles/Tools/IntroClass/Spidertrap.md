@@ -46,7 +46,7 @@ browser. You should see a page containing randomly generated links. If
 you click on a link it will take you to a page with more randomly
 generated links.
 
-![Spidertrap Random Links 1](Spidertrap_files/image001.png) ![Spidertrap Random Links 2](Spidertrap_files/image002.png)
+![](Spidertrap_files/image001.png) ![]](Spidertrap_files/image002.png)
 
 Example 2: Providing a List of Links
 ------------------------------------
@@ -64,7 +64,7 @@ browser. You should see a page containing links taken from the file. If
 you click on a link it will take you to a page with more links from the
 file.
 
-![Spidertrap List Links 1](Spidertrap_files/image003.png) ![Spidertrap List Links 2](Spidertrap_files/image004.png)
+![](Spidertrap_files/image003.png) ![](Spidertrap_files/image004.png)
 
 Example 3: Trapping a Wget Spider
 ---------------------------------
