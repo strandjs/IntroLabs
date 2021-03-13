@@ -29,14 +29,14 @@
  - [Web Testing](Tools/IntroClass/WebTesting/WebTesting.md)
 
   
-
-
-
-
- 
-
 [Cyber Deception]()
 
-  - [Coming Soon!!!]()
+  - [Spidertrap](Tools/IntroClass/Spidertrap.md)
+  - [Cowrie](Tools/IntroClass/Cowrie.md)
+  - [Spidertrap](Tools/IntroClass/Spidertrap.md)
+  - [RITA](Tools/IntroClass/RITA/RITA.md)
+  - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
+  - [Portspoof](Tools/IntroClass/PortSpoof.md)
+  - [HoneyBadger](Tools/IntroClass/HoneyBadger.md)
 
 
