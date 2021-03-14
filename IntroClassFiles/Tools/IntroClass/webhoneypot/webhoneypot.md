@@ -92,7 +92,7 @@ Then, navigate to the owa-honeypot directory.
 
   
 
-Now, lets tail the dumppass log. 
+Now, lets tail the dumpass log. 
 
   
 
