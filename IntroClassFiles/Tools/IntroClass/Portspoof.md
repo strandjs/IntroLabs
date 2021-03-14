@@ -85,7 +85,7 @@ If you were to scan using Nmap from another machine now you would see something 
 
 Note: You *must* run Nmap from a different machine. Scanning from the same machine will not reach Portspoof.
 
-`~#` **`nmap -p 1-20 172.16.215.138`**
+`~C:\>` **`nmap -p 1-10 <YOUR LINUX IP>`**
 
         Starting Nmap 6.47 ( http://nmap.org )
         Nmap scan report for 172.16.215.138
@@ -116,7 +116,7 @@ All ports are reported as open! When run this way, Nmap reports the service that
 
 To get more accurate results, an attacker might run an Nmap service scan, which would actively try to detect the services running. But performing an Nmap service detection scan shows that something is amiss because all ports are reported as running the same type of service.
 
-`~#` **`nmap -p 1-20 -sV 172.16.215.138`**
+`~C:\>` **`nmap -p 1-10 -sV <YOUR LINUX IP>`**
 
         Starting Nmap 6.47 ( http://nmap.org )
         Nmap scan report for 172.16.215.138
@@ -154,7 +154,7 @@ This mode will generate and feed port scanners like Nmap bogus service signature
 
 Now running an Nmap service detection scan against the top 100 most common ports (a common hacker activity) will turn up some very interesting results.
 
-`~#` **`nmap -F -sV 172.16.215.138`**
+`~C:\>` **`nmap -p 1-10 -sV 172.16.215.138`**
 
         Starting Nmap 6.47 ( http://nmap.org )
         Stats: 0:00:49 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
