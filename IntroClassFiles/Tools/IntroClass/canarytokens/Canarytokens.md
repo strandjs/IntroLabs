@@ -55,7 +55,7 @@ Now, let's play with the site cloner: 
 
   
 
-Please select New Token in the upper right corner 
+Please select New Token in the upper right corner. 
 
   
 
@@ -83,7 +83,7 @@ Now, select Create my Canarytoken. 
 
   
 
-Now we will need to copy the JavaScript and put it somewhere so it triggers: 
+Now we will need to copy the JavaScript and put it somewhere so it triggers: 
 
   
 
@@ -91,7 +91,7 @@ Now we will need to copy the JavaScript and put it somewhere so it triggers: 
 
   
 
-Now, lest surf to https://scriptasylum.com/tutorials/encode-decode.html 
+Now, let's surf to https://scriptasylum.com/tutorials/encode-decode.html 
 
   
 
