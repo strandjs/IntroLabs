@@ -24,7 +24,7 @@ Next, open an Ubuntu Prompt by clicking the down carrot in the terminal and sele
 
   
 
-Next, let navigate to the directory where the pcap file is stored. 
+Next, let's navigate to the directory where the pcap file is stored. 
 
   
 
@@ -76,8 +76,7 @@ Press `q` to close the tcpdump session. 
 
   
 
-One of the interesting things about many malware specimens we review these days is how they “wait” for the attacker to communicate with them. For example, in the sample malware traffic we are reviewing, the backdoor “beacons” out every 30 seconds. This is for two reasons. One is because the attacker might not be at a system waiting for a command shell on a compromised target and two is because long-term established sessions tend to attract attention. This is because with protocols such as HTTP, the sessions are generally short burst sessions for multiple objects. When this backdoor was created, we wanted it to act like real HTTP. So, it had to have an asynchronous component to it.  
-
+One of the interesting things about many malware specimens we review these days is how they “wait” for the attacker to communicate with them. For example, in the sample malware traffic we are reviewing, the backdoor “beacons” out every 30 seconds. This is for two reasons. One is because the attacker might not be at a system waiting for a command shell on a compromised target and. Secondly, because long-term established sessions tend to attract attention. This is because with protocols such as HTTP, the sessions are generally short burst sessions for multiple objects. When this backdoor was created, we wanted it to act like real HTTP. So, it had to have an asynchronous component to it.  
   
 
 In the capture, the SYN packets are roughly 30 seconds apart for the beacon traffic.  
