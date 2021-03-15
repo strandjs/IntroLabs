@@ -117,16 +117,11 @@ When Create Custom View opens, please select XML: 
 Then, select Edit query Manually, Press Yes on the Alert Box and then replace the text in the query with the text below: 
 
 ~~~~~~ 
-
-<QueryList> 
-
-  <Query Id="0" Path="Security"> 
-
-    <Select Path="Security">* [EventData[Data[@Name='TargetUserName']='Frank']]</>Select> 
-
-</Query> 
-
-</QueryList> 
+<QueryList>
+  <Query Id="0" Path="Security">
+    <Select Path="Security">* [EventData[Data[@Name='TargetUserName']='Frank']]</Select>
+  </Query>
+</QueryList>
 
 ~~~~~~ 
 

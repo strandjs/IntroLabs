@@ -44,7 +44,7 @@ Next, change directories to the /opt/owa-honeyport directory:
 
   
 
-Now, lets start the honeypot: 
+Now, let's start the honeypot: 
 
   
 
@@ -156,7 +156,7 @@ It should look like this:
 
   
 
-After a while, oyu should see some attack strings in your Logs. 
+After a while, you should see some attack strings in your Logs. 
 
   
 
