@@ -44,7 +44,7 @@ Next, change directories to the /opt/owa-honeyport directory:
 
   
 
-Now, lets start the honeypot: 
+Now, let's start the honeypot: 
 
   
 
@@ -92,7 +92,7 @@ Then, navigate to the owa-honeypot directory.
 
   
 
-Now, lets tail the dumpass log. 
+Now, lets tail the dumppass log. 
 
   
 
@@ -156,7 +156,7 @@ It should look like this:
 
   
 
-After a while, oyu should see some attack strings in your Logs. 
+After a while, you should see some attack strings in your Logs. 
 
   
 
