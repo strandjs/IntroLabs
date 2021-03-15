@@ -23,7 +23,7 @@ Then select Create Token. 
 
   
 
-When you get the next screen, select Download your MS Word File 
+When you get the next screen, select Download your MS Word File.  
 
   
 
