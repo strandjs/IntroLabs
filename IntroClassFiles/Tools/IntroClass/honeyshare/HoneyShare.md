@@ -84,7 +84,7 @@ It should look like this: 
 
   
 
-Next, lets open a Windows Command Prompt: 
+Next, let's open a Windows Command Prompt: 
 
   
 
