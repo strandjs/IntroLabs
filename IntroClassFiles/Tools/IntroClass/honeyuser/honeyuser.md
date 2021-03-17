@@ -103,7 +103,7 @@ Then, select Edit query Manually, Press Yes on the Alert Box and then replace th
   </Query>
 </QueryList>
 
-~~~~~~~
+~~~~~~
 
 It should look like this: 
 
