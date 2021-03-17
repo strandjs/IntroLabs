@@ -53,7 +53,7 @@ Example 2: Providing a List of Links
 
 Start Spidertrap. This time give it a file to use to generate its links.
 
-`/opt/spidertrap$` **`python3 spidertrap.py big.txt`**
+`/opt/spidertrap$` **`python3 spidertrap.py directory-list-2.3-big.txt`**
 
         Starting server on port 8000...
 
