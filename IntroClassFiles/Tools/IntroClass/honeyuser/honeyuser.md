@@ -86,26 +86,6 @@ It should look like this: 
 
 ![](attachment\Clipboard_2021-03-12-11-18-15.png) 
 
-  
-
-When we click on our new View we will see the Events associated with the Frank Account Being Created: 
-
-  
-
-![](attachment\Clipboard_2021-03-12-11-24-20.png) 
-
-  
-
-Now, let's trip a few more. 
-
-  
-
-Back at your Windows Command Prompt 
-
-  
-
-  
-
 When Create Custom View opens, please select XML: 
 
   
@@ -138,6 +118,26 @@ Now, press OK. 
   
 
 When the Save Filter to Custom View box opens, name the filter Frank then press OK. 
+
+
+When we click on our new View we will see the Events associated with the Frank Account Being Created: 
+
+  
+
+![](attachment\Clipboard_2021-03-12-11-24-20.png) 
+
+  
+
+Now, let's trip a few more. 
+
+  
+
+Back at your Windows Command Prompt 
+
+  
+
+  
+
 
   
 
