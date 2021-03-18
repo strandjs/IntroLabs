@@ -32,7 +32,7 @@ It basically has two parts you need to be aware of:
 
 The config file is located at
 
-`/opt/cowrie/cowrie.cfg`
+`/opt/cowrie/etc/cowrie.cfg`
 
 
 Example 1: Running Cowrie
