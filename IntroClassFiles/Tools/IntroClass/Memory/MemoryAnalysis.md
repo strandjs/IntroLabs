@@ -21,11 +21,13 @@ Now, select the volatility_2.6_win64_standalone directory:
 
 ![](attachments/Clipboard_2020-12-09-14-11-23.png)
 
-Next, right click on the memdump file and then select 7-Zip and then Extract Here:
+Next, right click on the memdump file and then select 7-Zip and then Extract Here.  Please note that the file name does not end with 7z on the left display column.  However, on the far right column you can see it is a 7Z file.:
 
 ![](attachments/Clipboard_2020-12-09-14-12-09.png)
 
 Now we have it extracted!  Let's open a command prompt and look at it with Volatility!
+
+Please note this memory dump was created from VMWare snapshot feature. There are multiple tools like winpmem and FTK Imager that can also create memory dumps.
 
 To start, we will be working with the Command Prompt in Windows Terminal.   This is on your desktop and can be opened by right-clicking it and selecting Run as administrator:
 
