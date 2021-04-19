@@ -21,6 +21,8 @@ First, we will need to extract the executable from the 7zip archive.
 
 Within Windows File Explorer navigate to the C:\IntroLabs directory:
 
+`cd \IntroLabs`
+
 ![](attachment/Clipboard_2021-01-27-10-51-21.png)
 
 Next, right click on the Velociraptor .7z file and select 7-Zip > Extract Here
@@ -96,6 +98,10 @@ When finished, it should look similar to this:
 
 
 ![](attachment/Clipboard_2021-01-27-11-12-21.png)
+
+Now, lets run the msi to load the proper files to the proper directories:
+
+`velociraptor-v0.5.5-1-windows-amd64.msi`
 
 
 Now, let's start the server.
