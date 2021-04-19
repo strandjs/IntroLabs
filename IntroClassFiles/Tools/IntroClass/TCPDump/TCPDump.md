@@ -102,7 +102,27 @@ Think of an attacker using multiple systems on a network range to disperse their
 
 $`tcpdump -n -r magnitude_1hr.pcap net 192.168.99.0/24`
 
-Here is a great resource to try some more options:
+#Going further
+
+Want to play with some more pcaps?  Cool.
+
+Please check out Malware of the Day from Active Countermeasures!
+
+https://www.activecountermeasures.com/category/malware-of-the-day/
+
+Below are some commands to download some of the capture files.  Try and run through the basic level analysis we just did with them.
+
+` wget https://www.dropbox.com/s/zyqn3nn5ygfki59/teamviewer_1hr.pcap?dl=0`
+
+
+`wget https://www.activecountermeasures.com/pcap/apt1virtuallythere_1hr.pcap`
+
+`wget https://www.dropbox.com/s/51uzphl1f3ca691/lateral_backup_c2_1hr.pcap?dl=0`
+
+`wget https://www.dropbox.com/s/bhgvpablx11u8yb/taidoor_1hr.pcap?dl=0`
+
+
+Here is a great resource to try some more options in TCPDump:
 
 https://danielmiessler.com/study/tcpdump/
 
