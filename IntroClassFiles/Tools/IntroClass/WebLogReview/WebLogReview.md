@@ -62,6 +62,24 @@ Also, look for odd things like below:
 
 ![](attachments/Clipboard_2020-12-11-06-52-26.png)
 
+But what would qualify as odd? Let's think this through. First, look at timing. Notice how fast the connections are comming in from a single IP. Also, notice how many of the same connections are going after the exact same thing again and again. Now, lets look for odd encodings. Looking for characters like %. Finally. spend some time getting to know what attacks look like at OWASP.
+
+The key for any SOC analysts is to first learn what is normal log traffic from the apps we monitor. Then, slowly we start attacking and seeing what the different attack patterns look like. There is no simple signature-based detection approach that works for all applications. The security industry has been trying this for years with various levels of success. 
+
+Start by baselining normal. 
+
+Then attack. 
+
+It is all about knowing our networks ad apps.
+
+# Going further
+
+https://owasp.org/
+
+https://www.zaproxy.org/
+
+https://cirt.net/Nikto2
+
 
 
 
