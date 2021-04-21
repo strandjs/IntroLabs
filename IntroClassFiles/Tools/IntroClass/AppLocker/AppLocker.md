@@ -133,6 +133,8 @@ This should generate a subset of rules for each group.  It should look similar t
 
 ![](attachments\Clipboard_2020-06-12-13-00-24.png)
 
+Only change the default rule so that the local administrators are <u>not allowed</u> to run all files anywhere.
+
 Next, we need to enforce the rules:
 
 
@@ -180,13 +182,9 @@ Now, let's surf to your Linux system, download the malware and try to run it aga
 
 
 
+You should also get an error.
 
-
-
-
-You should get an error.
-
-To finish this lab, simply restart your class VM and log in as ADHD.
+To finish this lab, simply disable AppLocker and restart your class VM to log in as ADHD.
 
 
 
