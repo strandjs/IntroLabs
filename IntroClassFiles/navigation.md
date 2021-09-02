@@ -12,6 +12,9 @@
   - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
   - [Domain Log Review](Tools/IntroClass/DomainLogReview/DomainLogReview.md)
   - [Velociraptor](Tools/IntroClass/Velociraptor/Velociraptor.md)
+  - [Elk In The Cloud](/Tools/IntroClass/md/elk_in_the_cloud.md)
+  - [Elastic Agent](/Tools/IntroClass/md/elastic_agent.md)
+  - [Sysmon in ELK](/Tools/IntroClass/md/sysmon_logs.md)
 
 
 [Intro To Security]()
