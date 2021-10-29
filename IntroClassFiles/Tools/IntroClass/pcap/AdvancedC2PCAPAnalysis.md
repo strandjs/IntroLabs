@@ -12,7 +12,7 @@ Simply right-click on the Windows Terminal Icon and select Run as Administrator�
 
   
 
-![](attachment\Clipboard_2021-03-12-08-31-27.png) 
+![](attachment/Clipboard_2021-03-12-08-31-27.png) 
 
   
 
@@ -20,7 +20,7 @@ Next, open an Ubuntu Prompt by clicking the down carrot in the terminal and sele
 
   
 
-![](attachment\Clipboard_2021-03-12-08-32-16.png) 
+![](attachment/Clipboard_2021-03-12-08-32-16.png) 
 
   
 
@@ -36,7 +36,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-08-34-02.png) 
+![](attachment/Clipboard_2021-03-12-08-34-02.png) 
 
   
 
@@ -56,7 +56,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-08-36-57.png) 
+![](attachment/Clipboard_2021-03-12-08-36-57.png) 
 
   
 
@@ -68,7 +68,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-08-38-24.png) 
+![](attachment/Clipboard_2021-03-12-08-38-24.png) 
 
   
 
@@ -95,7 +95,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-08-41-41.png) 
+![](attachment/Clipboard_2021-03-12-08-41-41.png) 
 
   
 
@@ -121,7 +121,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-08-43-28.png) 
+![](attachment/Clipboard_2021-03-12-08-43-28.png) 
 
   
 
@@ -157,7 +157,7 @@ Here is one solution, 
 
   
 
-![](attachment\Clipboard_2021-03-12-08-46-15.png) 
+![](attachment/Clipboard_2021-03-12-08-46-15.png) 
 
   
 
