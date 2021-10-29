@@ -18,7 +18,7 @@ Thankfully, we have a couple of scripts that greatly simplify this process.  Ple
 
 Let’s get started by opening a Terminal as Administrator
 
-![](attachments\Clipboard_2020-06-12-10-36-44.png)
+![](attachments/Clipboard_2020-06-12-10-36-44.png)
 
 When you get the User Account Control Prompt, select Yes.
 
