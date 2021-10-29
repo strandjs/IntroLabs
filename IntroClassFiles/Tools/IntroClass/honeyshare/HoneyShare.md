@@ -24,7 +24,7 @@ First, we will need to open a terminal as Administrator: 
 
   
 
-![](attachment\Clipboard_2021-03-12-09-39-30.png) 
+![](attachment/Clipboard_2021-03-12-09-39-30.png) 
 
   
 
@@ -32,7 +32,7 @@ Next, we will need to open an Ubuntu Prompt: 
 
   
 
-![](attachment\Clipboard_2021-03-12-09-40-02.png) 
+![](attachment/Clipboard_2021-03-12-09-40-02.png) 
 
   
 
@@ -44,7 +44,7 @@ Let's get our IP address. 
 
   
 
-![](attachment\Clipboard_2021-03-12-09-46-03.png) 
+![](attachment/Clipboard_2021-03-12-09-46-03.png) 
 
   
 
@@ -64,7 +64,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-09-43-19.png) 
+![](attachment/Clipboard_2021-03-12-09-43-19.png) 
 
   
 
@@ -80,7 +80,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-09-46-42.png) 
+![](attachment/Clipboard_2021-03-12-09-46-42.png) 
 
   
 
@@ -88,7 +88,7 @@ Next, let's open a Windows Command Prompt: 
 
   
 
-![](attachment\Clipboard_2021-03-12-09-46-27.png) 
+![](attachment/Clipboard_2021-03-12-09-46-27.png) 
 
   
 
@@ -116,7 +116,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-09-49-11.png) 
+![](attachment/Clipboard_2021-03-12-09-49-11.png) 
 
   
 
