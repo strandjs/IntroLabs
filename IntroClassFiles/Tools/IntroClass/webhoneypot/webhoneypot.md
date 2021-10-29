@@ -28,7 +28,7 @@ Then, select the down carrot and choose Ubuntu.
 
   
 
-![](attachment\Clipboard_2021-03-12-11-39-25.png) 
+![](attachment/Clipboard_2021-03-12-11-39-25.png) 
 
   
 
@@ -40,7 +40,7 @@ Next, change directories to the /opt/owa-honeyport directory:
 
   
 
-![](attachment\Clipboard_2021-03-12-11-40-15.png) 
+![](attachment/Clipboard_2021-03-12-11-40-15.png) 
 
   
 
@@ -56,7 +56,7 @@ It should look like this:
 
   
 
-![](attachment\Clipboard_2021-03-12-11-41-30.png) 
+![](attachment/Clipboard_2021-03-12-11-41-30.png) 
 
   
 
@@ -68,7 +68,7 @@ Select the down carrot and choose Ubuntu.
 
   
 
-![](attachment\Clipboard_2021-03-12-11-39-25.png) 
+![](attachment/Clipboard_2021-03-12-11-39-25.png) 
 
   
 
@@ -88,7 +88,7 @@ Then, navigate to the owa-honeypot directory.
 
   
 
-![](attachment\Clipboard_2021-03-12-11-43-26.png) 
+![](attachment/Clipboard_2021-03-12-11-43-26.png) 
 
   
 
@@ -100,7 +100,7 @@ Now, lets tail the dumppass log.
 
   
 
-![](attachment\Clipboard_2021-03-12-11-44-21.png) 
+![](attachment/Clipboard_2021-03-12-11-44-21.png) 
 
   
 
@@ -120,7 +120,7 @@ Now, go back to the Ubuntu Terminal with the log and you should see the IP addre
 
   
 
-![](attachment\Clipboard_2021-03-12-11-47-09.png) 
+![](attachment/Clipboard_2021-03-12-11-47-09.png) 
 
   
 
@@ -132,7 +132,7 @@ Select OWASP ZAP on your desktop.
 
   
 
-![](attachment\Clipboard_2021-03-12-11-47-43.png) 
+![](attachment/Clipboard_2021-03-12-11-47-43.png) 
 
   
 
@@ -140,7 +140,7 @@ Once ZAP! opens, select Automated Scan:
 
   
 
-![](attachment\Clipboard_2021-03-12-11-48-15.png) 
+![](attachment/Clipboard_2021-03-12-11-48-15.png) 
 
   
 
@@ -152,7 +152,7 @@ It should look like this:
 
   
 
-![](attachment\Clipboard_2021-03-12-11-49-31.png) 
+![](attachment/Clipboard_2021-03-12-11-49-31.png) 
 
   
 
@@ -160,7 +160,7 @@ After a while, you should see some attack strings in your Logs.
 
   
 
-![](attachment\Clipboard_2021-03-12-11-50-54.png) 
+![](attachment/Clipboard_2021-03-12-11-50-54.png) 
 
   
 
