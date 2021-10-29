@@ -28,7 +28,7 @@ We will need to start a terminal as Administrator.  To do this, simply right cl
 
   
 
-![](attachment\Clipboard_2021-03-12-11-06-15.png) 
+![](attachment/Clipboard_2021-03-12-11-06-15.png) 
 
   
 
@@ -36,7 +36,7 @@ Then, select Command Prompt from the Down Carrot options: 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-13-35.png) 
+![](attachment/Clipboard_2021-03-12-11-13-35.png) 
 
   
 
@@ -56,7 +56,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-15-23.png) 
+![](attachment/Clipboard_2021-03-12-11-15-23.png) 
 
   
 
@@ -72,7 +72,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-16-35.png) 
+![](attachment/Clipboard_2021-03-12-11-16-35.png) 
 
   
 
@@ -84,13 +84,13 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-18-15.png) 
+![](attachment/Clipboard_2021-03-12-11-18-15.png) 
 
 When Create Custom View opens, please select XML: 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-19-02.png) 
+![](attachment/Clipboard_2021-03-12-11-19-02.png) 
 
   
 
@@ -109,7 +109,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-21-57.png) 
+![](attachment/Clipboard_2021-03-12-11-21-57.png) 
 
   
 
@@ -124,7 +124,7 @@ When we click on our new View we will see the Events associated with the Frank A
 
   
 
-![](attachment\Clipboard_2021-03-12-11-24-20.png) 
+![](attachment/Clipboard_2021-03-12-11-24-20.png) 
 
   
 
@@ -157,7 +157,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-29-00.png) 
+![](attachment/Clipboard_2021-03-12-11-29-00.png) 
 
   
 
@@ -175,7 +175,7 @@ It should look like this: 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-29-49.png) 
+![](attachment/Clipboard_2021-03-12-11-29-49.png) 
 
   
 
@@ -191,7 +191,7 @@ C:\Tools> `user-remove.bat` 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-30-08.png) 
+![](attachment/Clipboard_2021-03-12-11-30-08.png) 
 
   
 
@@ -207,7 +207,7 @@ You should see the "Alerts"! 
 
   
 
-![](attachment\Clipboard_2021-03-12-11-32-18.png) 
+![](attachment/Clipboard_2021-03-12-11-32-18.png) 
 
   
 
