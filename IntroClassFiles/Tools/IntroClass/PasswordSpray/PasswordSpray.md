@@ -15,7 +15,7 @@ Let's get started by opening a Terminal as Administrator
 
 Now, let's open a command Prompt:
 
-![](attachments\Clipboard_2020-06-16-09-53-18.png)
+![](attachments/Clipboard_2020-06-16-09-53-18.png)
 
 C:\Windows\system32> `cd \tools`
 
