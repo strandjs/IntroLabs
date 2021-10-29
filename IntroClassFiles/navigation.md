@@ -19,7 +19,7 @@
 
 [Intro To Security]()
 
- - [Applocker](Tools/IntroClass/AppLocker/Applocker.md)
+ - [Applocker](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/AppLocker/AppLocker.md)
  - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
  - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
  - [Nessus](Tools/IntroClass/nessus/Nessus.md)
