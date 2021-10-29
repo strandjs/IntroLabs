@@ -7,7 +7,7 @@ First, we will need to navigate to the canarytokens server from a system with Mi
 
 https://www.canarytokens.org/generate# 
 
-![](attachment\Clipboard_2021-03-12-09-59-43.png) 
+![](attachment/Clipboard_2021-03-12-09-59-43.png) 
 
 
 Now, let's create a token Word Document: 
@@ -15,7 +15,7 @@ Now, let's create a token Word Document: 
 
   
 
-![](attachment\Clipboard_2021-03-12-10-01-33.png) 
+![](attachment/Clipboard_2021-03-12-10-01-33.png) 
 
   
 
@@ -31,7 +31,7 @@ Then, download it and open it. 
 
   
 
-![](attachment\Clipboard_2021-03-12-10-03-10.png) 
+![](attachment/Clipboard_2021-03-12-10-03-10.png) 
 
   
 
@@ -47,7 +47,7 @@ You should have gotten an alert: 
 
   
 
-![](attachment\Clipboard_2021-03-12-10-04-16.png) 
+![](attachment/Clipboard_2021-03-12-10-04-16.png) 
 
   
 
@@ -59,7 +59,7 @@ Please select New Token in the upper right corner.
 
   
 
-![](attachment\Clipboard_2021-03-12-10-07-48.png) 
+![](attachment/Clipboard_2021-03-12-10-07-48.png) 
 
   
 
@@ -67,7 +67,7 @@ Then, select Coned Website from the dropdown: 
 
   
 
-![](attachment\Clipboard_2021-03-12-10-08-21.png) 
+![](attachment/Clipboard_2021-03-12-10-08-21.png) 
 
   
 
@@ -75,7 +75,7 @@ Next, fill in the appropriate fields: 
 
   
 
-![](attachment\Clipboard_2021-03-12-10-09-19.png) 
+![](attachment/Clipboard_2021-03-12-10-09-19.png) 
 
   
 
@@ -87,7 +87,7 @@ Now we will need to copy the JavaScript and put it somewhere so it triggers:
 
   
 
-![](attachment\Clipboard_2021-03-12-10-11-06.png) 
+![](attachment/Clipboard_2021-03-12-10-11-06.png) 
 
   
 
@@ -99,7 +99,7 @@ Then, simply paste your JavaScript into the first two boxes as you scroll down t
 
   
 
-![](attachment\Clipboard_2021-03-12-10-18-39.png) 
+![](attachment/Clipboard_2021-03-12-10-18-39.png) 
 
   
 
@@ -107,7 +107,7 @@ In a few moments you should get an email alert: 
 
   
 
-![](attachment\Clipboard_2021-03-12-10-19-36.png) 
+![](attachment/Clipboard_2021-03-12-10-19-36.png) 
 
   
 
