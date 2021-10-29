@@ -10,19 +10,19 @@ To start we first need to open Windows File Explorer and navigate to the tools d
 
 First, open File Explorer:
 
-![](attachments\Clipboard_2020-07-07-16-58-09.png)
+![](attachments/Clipboard_2020-07-07-16-58-09.png)
 
 Then, select the tools directory:
 
-![](attachments\Clipboard_2020-07-07-16-59-17.png)
+![](attachments/Clipboard_2020-07-07-16-59-17.png)
 
 Then, select rita-html-report:
 
-![](attachments\Clipboard_2020-07-07-17-00-10.png)
+![](attachments/Clipboard_2020-07-07-17-00-10.png)
 
 Then, select index.html:
 
-![](attachments\Clipboard_2020-07-07-17-01-18.png)
+![](attachments/Clipboard_2020-07-07-17-01-18.png)
 
 
 
@@ -35,7 +35,7 @@ For VSAgent we will be focusing on Beacons, Blacklisted and User Agents.
 
 Please select Beacons now.
 
-![](attachments\Clipboard_2020-07-07-17-08-00.png)
+![](attachments/Clipboard_2020-07-07-17-08-00.png)
 
 Beacons
 
@@ -48,17 +48,17 @@ DNSCat2
 
 Now, select RITA and then select DNSCat-2017-03-21. We are going to review a backdoor which does not quite fit the same mold as VSAgent.
 
-![](attachments\Clipboard_2020-07-07-17-08-41.png)
+![](attachments/Clipboard_2020-07-07-17-08-41.png)
 
-![](attachments\Clipboard_2020-07-07-17-09-00.png)
+![](attachments/Clipboard_2020-07-07-17-09-00.png)
 
 This does not beacon back to a specific IP address, but rather it beacons through a DNS server. It is very crafty and will highlight how we can review the RAR compressed Bro logs used to generate the RITA data.
 
 For this one, we are going to jump right to the DNS tab. It gives us the clearest look at this backdoor.
 
-![](attachments\Clipboard_2020-07-07-17-09-33.png)
+![](attachments/Clipboard_2020-07-07-17-09-33.png)
 
-![](attachments\Clipboard_2020-07-07-17-09-56.png)
+![](attachments/Clipboard_2020-07-07-17-09-56.png)
 
 A couple of things should jump out at an investigator straight away. First, there were over 40K requests for cat.nanobotninjas.com. This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expected.
 
