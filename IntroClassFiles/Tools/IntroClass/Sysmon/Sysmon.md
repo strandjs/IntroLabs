@@ -135,7 +135,7 @@ You will select Event Viewer > Applications and Services Logs > Windows > Sysmon
 ![](attachments/Clipboard_2020-06-15-10-47-01.png)
 
 
-Start at the top and work down through the logs, you should see your malware executing.
+Start at the top and work down through the logs, you should see your malware executing.  Please note your paths may be different.
 
 ![](attachments/Clipboard_2020-07-09-16-04-23.png)
 
