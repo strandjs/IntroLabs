@@ -63,7 +63,12 @@ generated links.
 Example 2: Providing a List of Links
 ------------------------------------
 
+
 Start Spidertrap. This time give it a file to use to generate its links.
+
+You may need to press ctrl+c to kill your existing spidertrap session.
+
+Now, restart it with the following options:
 
 `/opt/spidertrap$` **`python3 spidertrap.py directory-list-2.3-big.txt`**
 
