@@ -35,7 +35,8 @@ Usage
 In order to use the latest version of HoneyBadger, Python 3 must be installed, as well as python3-pip. These should both be installed on the ADHD image.
 
 Install HoneyBadger's required packages with the following commands:
-`cd /opt/honeybadger/`
+
+`cd /opt/honeybadger/server`
 
 `pip3 install -r requirements.txt`
 
