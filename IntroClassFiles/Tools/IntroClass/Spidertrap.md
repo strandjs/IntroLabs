@@ -35,13 +35,25 @@ Example 1: Basic Usage
 Start Spidertrap by opening a terminal, changing into the Spidertrap
 directory, and typing the following:
 
+First, let's get your Linux systems IP address
+
+`ifconfig`
+
+Next, let's cd to the propper directory:
+
+`cd /opt/spidertrap`
+
+Now, lets start it:
+
 `/opt/spidertrap$` **`python3 spidertrap.py`**
 
         Starting server on port 8000...
 
         Server started. Use <Ctrl-C> to stop.
+        
+    
 
-Then visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in a web
+Then visit http://<YOUR_LINUX_IP>:8000 in a web
 browser. You should see a page containing randomly generated links. If
 you click on a link it will take you to a page with more randomly
 generated links.
@@ -59,7 +71,7 @@ Start Spidertrap. This time give it a file to use to generate its links.
 
         Server started. Use <Ctrl-C> to stop.
 
-Then visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in a web
+Then visit http://<YOUR_LINUX_IP>:8000 in a web
 browser. You should see a page containing links taken from the file. If
 you click on a link it will take you to a page with more links from the
 file.
