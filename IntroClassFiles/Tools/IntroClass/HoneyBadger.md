@@ -47,6 +47,10 @@ Example 1: Overview
 -------------------
 The HoneyBadger UI has many features. This section will give a brief overview of HoneyBadger's pages.
 
+Please surf to http://<YOUR_LINUX_IP>:5000
+
+The user and password are adhd.
+
 Navigate to the HoneyBadger server, and you will be presented with the following screen:
 
 ![](HoneyBadger_files/hb_login.png)
