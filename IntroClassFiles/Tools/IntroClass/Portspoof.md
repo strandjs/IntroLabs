@@ -75,13 +75,17 @@ Example 1: Starting Portspoof
 
 Portspoof, when run, listens on a single port. By default this is port 4444. In order to fool a port scan, we have to allow Portspoof to listen on *every* port. To accomplish this we will use an `iptables` command that redirects every packet sent to any port to port 4444 where the Portspoof port will be listening. This allows Portspoof to respond on any port.
 
+First, let's become root:
+
+`sudo su -`
+
 `~#` **`iptables -t nat -A PREROUTING -p tcp -m tcp --dport 1:65535 -j REDIRECT --to-ports 4444`**
 
 Then run Portspoof with no options, which defaults it to "open port" mode. This mode will just return OPEN state for every connection attempt.
 
 `~#` **`portspoof`**
 
-If you were to scan using Nmap from another machine now you would see something like this:
+If you were to scan using Nmap from another Windows command prompt. Now you would see something like this:
 
 Note: You *must* run Nmap from a different machine. Scanning from the same machine will not reach Portspoof.
 
