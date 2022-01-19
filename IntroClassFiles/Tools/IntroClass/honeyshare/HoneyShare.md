@@ -98,6 +98,7 @@ Then, attempt to mount the share from your Windows system: 
 
 `net use * \\172.17.78.175\secret` 
 
+Remember!  Your IP address may be different!!! 
   
 
 We did the most basic level of attempted authentication to the share, and it generated an error.  
