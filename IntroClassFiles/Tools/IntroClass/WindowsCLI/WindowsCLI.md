@@ -130,6 +130,10 @@ And...
 
 C:\> `net use`
 
+It should all look like this:
+
+![](attachments/netcommands.PNG)
+
 
 While there is not much here for this lab, it is key to remember that these two commands would help us detect an attacker that is mounting shares on other computers (net view) and would tell us an attacker had mounted a share on this system (net session). 
 
