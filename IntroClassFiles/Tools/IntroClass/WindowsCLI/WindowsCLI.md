@@ -109,19 +109,27 @@ Now, let's open another Command Prompt from our Terminal:
 
 Once we are in, lets start with looking at the network connections:
 
-We will start with C:\>`net view`
+First, let's create a share
 
-In this example, our malware will not have any sessions at all:
+C:\>`net share class=C:\Tools`
 
-![](attachments/Clipboard_2020-12-09-13-27-00.png)
+Now, let's look at that share
 
-We will get the same lack of connections from C:\>`net session`
+C:\>`net view \\127.0.0.1`
 
-![](attachments/Clipboard_2020-12-09-13-27-35.png)
+Next, let's create some sessions
+
+C:\>`net use * \\127.0.0.1\c$`
+
+
+We can see those sessions with... 
+
+C:\>`net session`
+
 
 While there is not much here for this lab, it is key to remember that these two commands would help us detect an attacker that is mounting shares on other computers (net view) and would tell us an attacker had mounted a share on this system (net session). 
 
-However, we are not done with network connections yet.  Lets try 
+However, we are not done with network connections yet.  Lets try looking at our malware!
 
 C:\>`netstat -naob`
 
