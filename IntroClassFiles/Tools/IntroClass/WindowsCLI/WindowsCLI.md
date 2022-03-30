@@ -185,18 +185,20 @@ Let's keep digging with wmic:
 
 `wmic process where processid=<PID> get commandline`
 
-![](attachments/Clipboard_2020-12-09-13-58-16.png)
+![](attachments/wmiccommandline.PNG)
 
-Ahh!!  Now we can see that the file was launched from the Edge temp downloads directory!  So, now we know it was downloaded from the Internet.
+Ahh!!  Now we can see that the file was launched from the commandline!  We know this because there are no options.
 
 
 Let's see if we can see what spawned the process with wmic.
 
 `wmic process get name,parentprocessid,processid`
 
-![](attachments/Clipboard_2020-12-09-14-01-04.png)
+You can also use a find command to help search for your process ID!
 
-Above we can see that we hunted the malicious process, then found its parent process ID, then did a find on that process ID.  As you can see above, it was launched by the browser_broker.exe process.  This once again, shows us that this process was launched from the browser. 
+![](attachments/wmicprocess.PNG)
+
+Above we can see that we hunted the malicious process, then found its parent process ID, then did a find on that process ID.  As you can see above, it was launched by the cmd.exe process.  Also note that the search we just did may turn up some other things launched by the command line as well.
 
 
 
