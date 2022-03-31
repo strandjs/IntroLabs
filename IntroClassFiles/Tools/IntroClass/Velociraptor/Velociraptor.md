@@ -50,7 +50,7 @@ For this installation, we are going to set up Velociraptor as a standalone deplo
 
 Let’s get started:
 
-`C:\> velociraptor-v0.5.5-1-windows-amd64.exe config generate -i`
+`velociraptor-v0.5.5-1-windows-amd64.exe config generate -i`
 
 When it asks about the OS, please choose windows.  It should be the default.
 
