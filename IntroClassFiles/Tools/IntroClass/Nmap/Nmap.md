@@ -56,6 +56,10 @@ It should look like this:
 
 ![](attachments/Clipboard_2020-07-07-15-32-12.png)
 
+Now turn it back on and rerun.
+
+C:\Users\adhd>`netsh advfirewall set allprofiles state on`
+
 Now, let’s rescan from Linux.  Please select the Ubuntu tab:
 
 ![](attachments/Clipboard_2020-07-07-15-32-44.png)
