@@ -67,7 +67,7 @@ It should look like this:
 Please note, there will be some errors when this runs.  This is normal.
 
 
-Only let this run for 15-30 seconds!!!  Kill it with Ctrl + c!!
+Only let this run for 30-45 seconds!!!  Kill it with Ctrl + c!!
 
 You should be getting a lot of alerts with Bluespawn Switch tabs in your Terminal to see them:
 
