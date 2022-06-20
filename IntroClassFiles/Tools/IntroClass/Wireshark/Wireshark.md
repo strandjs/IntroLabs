@@ -70,7 +70,6 @@ This will show us the various HTTP requests for the capture:
 
 ![](attachments/Clipboard_2020-12-09-18-43-37.png)
 
-Anything look strange there?  If you look closely, there is a lot of encoded PowerShell.
 
 Now, let's look at Statistics > Conversations:
 
@@ -121,6 +120,8 @@ Now, right-click on any of the packets and select Follow > TCP Stream:
 This is showing the request (in red) and the response (in blue) between our two systems:
 
 ![](attachments/Clipboard_2020-12-09-18-55-09.png)
+
+Anything look strange there?  If you look closely, there is a lot of encoded PowerShell.
 
 Now, let's play with some basic filters in the filter bar.  We have already seen how Wireshark can filter on IP addresses.  But we can also filter on protocols.
 
