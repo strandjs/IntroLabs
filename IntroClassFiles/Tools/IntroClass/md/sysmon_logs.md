@@ -4,7 +4,7 @@
 
 *This is part three of a three-part series.*
 	[Part One](./elk_in_the_cloud.md "Elk in the Cloud")
-	[Part Three](./elastic_agent.md "Elastic Agents")
+	[Part Two](./elastic_agent.md "Elastic Agents")
 
 ---
 
