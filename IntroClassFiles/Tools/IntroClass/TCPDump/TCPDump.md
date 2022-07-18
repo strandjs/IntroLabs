@@ -18,6 +18,10 @@ And then, open a Ubuntu command prompt:
 
 We are going to start with a very basic filter that simply shows us the data associated with a specific host.
 
+But first, let's get to the correct directory
+
+$ `cd /mnt/c/Users/adhd`
+
 The filter for this...  is host.
 
 $ `tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52`
