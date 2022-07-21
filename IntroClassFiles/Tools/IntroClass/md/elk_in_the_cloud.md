@@ -19,7 +19,7 @@ To learn ELK, we don't need several servers or to spend large sums of money.  We
 
 **1. Set up an account.**
 
-[Start your free Elastic Cloud Trial](https://cloud.elastic.co/registration?downloads=true&baymax=rtp&storm=nav-btn "https://cloud.elastic.co/registration?downloads=true&baymax=rtp&storm=nav-btn")
+[Start your free Elastic Cloud Trial](https://cloud.elastic.co/registration?settings=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZW5ndGgiOjE1MCwic2l6ZSI6NDA5NiwiZGVmYXVsdF9zaXplIjoxMDI0fQ.dS6xqdrcNBVkANlcS19AnsZmHVSqoPROLHprdeN-Qbc&source=education "https://cloud.elastic.co/registration?settings=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZW5ndGgiOjE1MCwic2l6ZSI6NDA5NiwiZGVmYXVsdF9zaXplIjoxMDI0fQ.dS6xqdrcNBVkANlcS19AnsZmHVSqoPROLHprdeN-Qbc&source=education")
 
 
 This link is for the trial sign up page. Start a trial by signing up.
