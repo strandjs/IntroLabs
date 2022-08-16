@@ -60,6 +60,36 @@ For this one, we are going to jump right to the DNS tab. It gives us the cleares
 
 ![](attachments/Clipboard_2020-07-07-17-09-56.png)
 
-A couple of things should jump out at an investigator straight away. First, there were over 40K requests for cat.nanobotninjas.com. This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expected.
+A couple of things should jump out at an investigator straight away. First, there were over 40K requests for cat.nanobotninjas.com. This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expect
 
+When logged in, please select the house in the lower left corner and then the gear in the upper right.
+
+
+![](attachments/AC_Hunter_Main_1.JPG)
+
+This will open the dataset selection screen
+
+Please select vsagent then Confirm.
+
+This will open the overall scoring screen.  This is the screen that allows you to see the systems that have the top scores across all areas from beacons to cyber deception.
+
+Please select 10.55.100.111, then click on Beason Score on the right.
+
+This will open the beacon score for this system.
+
+Notice the histogram on the bottom and the scoring criteria in the middle. 
+
+Notice how on the bottom you can see multiple aspects of this systems connections.  For example, you can see if there are any connections that had a threat intel hit, or if there are any connections that have beacons to a fully qualified domain.
+
+Now, using AC Hunter, answer the following questions:
+
+In the winlab-agent dataset, what is the connection interval for 10.10.98.30?
+
+In the gcat dataset, what is the historic fqdn for the beacon on 10.55.100.111?
+
+For the dnscat2-ja3-strobe-gaten dataset, what domain has the highest lookup count?
+
+And!!!!!!
+
+Who is doing the lookups?
 
