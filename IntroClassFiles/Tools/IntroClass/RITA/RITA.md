@@ -69,6 +69,8 @@ When logged in, please select the house in the lower left corner and then the ge
 
 This will open the dataset selection screen
 
+![](attachments/DataSetSelection_2.JPG)
+
 Please select vsagent then Confirm.
 
 This will open the overall scoring screen.  This is the screen that allows you to see the systems that have the top scores across all areas from beacons to cyber deception.
@@ -76,6 +78,8 @@ This will open the overall scoring screen.  This is the screen that allows you t
 Please select 10.55.100.111, then click on Beason Score on the right.
 
 This will open the beacon score for this system.
+
+![](attachments/BeaconScore_3.JPG)
 
 Notice the histogram on the bottom and the scoring criteria in the middle. 
 
