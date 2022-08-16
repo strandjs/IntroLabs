@@ -62,6 +62,16 @@ For this one, we are going to jump right to the DNS tab. It gives us the cleares
 
 A couple of things should jump out at an investigator straight away. First, there were over 40K requests for cat.nanobotninjas.com. This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expect
 
+Now, let's play with AC Hunter!
+
+Please go to https://training.aihhosted.com/
+
+The creds are:
+
+ID= training@blackhillsinfosec.com
+PW = gotbeacons?
+
+
 When logged in, please select the house in the lower left corner and then the gear in the upper right.
 
 
