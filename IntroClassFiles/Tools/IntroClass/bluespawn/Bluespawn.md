@@ -30,7 +30,7 @@ Now, let's open a command Prompt:
 Next, let’s change directories to tools and start Bluespawn:
 C:\Users\adhd>`cd \tools`
 
-C:\tools>`BLUESPAWN-client-x64.exe --monitor --level Cursory`
+C:\tools>`./BLUESPAWN-client-x64.exe --monitor --level Cursory`
 
 
 ![](attachments/Clipboard_2020-06-16-09-46-00.png)
