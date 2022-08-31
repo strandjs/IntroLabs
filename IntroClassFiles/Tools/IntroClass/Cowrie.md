@@ -119,3 +119,7 @@ example file.
 What happens when you log in with one of the valid userID and password combos?
 
 What happens when you exit the session?
+
+What are some solid IOCs that this is a honeypot?
+
+Can you change them?  Please share on Discord.
