@@ -101,7 +101,7 @@ In the winlab-agent dataset, what is the connection interval for 10.10.98.30?
 
 In the gcat dataset, what is the historic fqdn for the beacon on 10.55.100.111?
 
-For the dnscat2-ja3-strobe-gaten dataset, what domain has the highest lookup count?
+For the dnscat2-ja3-strobe-agent dataset, what domain has the highest lookup count?
 
 And!!!!!!
 
