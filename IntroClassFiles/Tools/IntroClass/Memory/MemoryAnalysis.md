@@ -35,11 +35,15 @@ Now we need to extract Volatility:
 
 <pre>
 adhd@DESKTOP-I1T2G01:~$ cd /mnt/c/IntroLabs/
-adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$
 adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$ tar xvfz ./volatility3-1.0.0.tar.gz
+adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$ cd volatility3-1.0.0/
 </pre>
 
+Let's start by looking at the network connections:
 
+<pre>
+$ python3 vol.py -f /mnt/c/tools/volatility_2.6_win64_standalone/memdump.vmem windows.netscan
+</pre>
 
 
 
