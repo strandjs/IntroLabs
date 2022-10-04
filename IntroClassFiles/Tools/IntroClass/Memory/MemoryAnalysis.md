@@ -59,6 +59,7 @@ Now, let's look at the processes on this system:
 <pre>
 python3 vol.py -f /mnt/c/tools/volatility_2.6_win64_standalone/memdump.vmem windows.pslist
 </pre>
+<pre>
 PID     PPID    ImageFileName   Offset(V)       Threads Handles SessionId       Wow64   CreateTime      ExitTime        File output
 
 4       0       System  0xa98dc80576c0  85      -       N/A     False   2020-11-30 17:40:26.000000      N/A     Disabled
@@ -136,7 +137,7 @@ Finally, let’s look at the easy button with malfind.  This module will look at
 <pre>
 python3 vol.py -f /mnt/c/tools/volatility_2.6_win64_standalone/memdump.vmem windows.malfind.Malfind
 </pre>
-
+<pre>
 Volatility 3 Framework 1.0.0
 Progress:  100.00               PDB scanning finished
 PID     Process Start VPN       End VPN Tag     Protection      CommitCharge    PrivateMemory   File output     Hexdump Disasm
