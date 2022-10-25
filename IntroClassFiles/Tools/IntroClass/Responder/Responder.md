@@ -74,7 +74,7 @@ Next, let’s open a new Ubuntu Command Prompt.
 Now we are going to start up and launch Metasploit against the Windows system to get a Meterpreter session.
 
 <pre>
-adhd@DESKTOP-I1T2G01:<b>/mnt/c/Users/adhd$ sudo su -<b>
+adhd@DESKTOP-I1T2G01:<b>/mnt/c/Users/adhd$ sudo su -</b>
 [sudo] password for adhd:
 root@DESKTOP-I1T2G01:~#
 root@DESKTOP-I1T2G01:~# msfconsole -q
