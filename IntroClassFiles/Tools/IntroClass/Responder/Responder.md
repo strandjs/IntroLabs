@@ -65,7 +65,7 @@ Use file explorer to navigate to C:\IntroLabs
 
 Then, Right-click on the smb.bat file and run it as Administrator:
 
-![](attachments/SMB_bat.jpg)
+![](attachments/SMB_bat.png)
 
 Next, let’s open a new Ubuntu Command Prompt.
 
@@ -74,7 +74,7 @@ Next, let’s open a new Ubuntu Command Prompt.
 Now we are going to start up and launch Metasploit against the Windows system to get a Meterpreter session.
 
 <pre>
-adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ sudo su -
+adhd@DESKTOP-I1T2G01:<b>/mnt/c/Users/adhd$ sudo su -<b>
 [sudo] password for adhd:
 root@DESKTOP-I1T2G01:~#
 root@DESKTOP-I1T2G01:~# msfconsole -q
