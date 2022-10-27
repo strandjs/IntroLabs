@@ -1,7 +1,7 @@
 
 # Web Testing
 
-In this lab we will be standing up a vulnerable web server called DVWA.  It is designed from the ground up to teach people about a number of web application attacks.
+In this lab we will be standing up a simple Python Web Server and a vulnerable web server called DVWA.  These are designed from the ground up to teach people about a number of web application attacks.
 
 While a full intro to web attacks is out of the scope of this class, it is great to show you how to use tools like ZAP to automatically look for some vulnerabilities, and to show you that automated tools do not always catch everything.
 
@@ -21,13 +21,72 @@ C:\Users\adhd>`ipconfig`
 
 ![](attachments/Clipboard_2020-06-16-13-29-46.png)
 
+We now have DVWA up and running.
+
+First, you will need to start an Ubuntu prompt.  Please select that from the Windows Terminal drop-down.
+
+Now, let's start the Python Web Server:
+
+<pre>
+
+adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ <b>ifconfig</b>
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.18.121.248  netmask 255.255.240.0  broadcast 172.18.127.255
+        inet6 fe80::215:5dff:fe3c:c444  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:3c:c4:44  txqueuelen 1000  (Ethernet)
+        RX packets 373  bytes 48769 (48.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 23  bytes 1746 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ <b>cd /mnt/c/IntroLabs/</b>
+adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$
+adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$<b> python3 ./dsvw.py</b>
+[!] please install 'python-lxml' to (also) get access to XML vulnerabilities (e.g. 'apt-get install python-lxml')
+
+Damn Small Vulnerable Web (DSVW) < 100 LoC (Lines of Code) #v0.2b
+ by: Miroslav Stampar (@stamparm)
+
+[i] running HTTP server at 'http://0.0.0.0:65412'...
+
+</pre>
+
 Now, let's start ZAP!
 
 ![](attachments/Clipboard_2020-06-16-13-30-15.png)
 
 ![](attachments/Clipboard_2020-06-16-13-30-46.png)
 
-Now, let's start Chrome.
+Let's do a quick test of the Python Web Server:
+
+First, select Automated Scan
+
+![](attachments/AutomatedScan.PNG)
+
+Now, put in your Linux IP and port 65412 in as the URL to attack.
+
+<pre>http://<YOUR LINUX IP>:65412</pre>
+
+
+![](attachments/AutomatedScanIP.PNG)
+
+Then, select "Use traditional spider" and then select "Attack":
+
+When it gets done crawling and scanning select Alerts:
+
+![](attachments/ZAPResults.PNG)
+
+
+Now, let's start Chrome and play with DVWA.
 
 ![](attachments/Clipboard_2020-06-16-13-31-13.png)
 
