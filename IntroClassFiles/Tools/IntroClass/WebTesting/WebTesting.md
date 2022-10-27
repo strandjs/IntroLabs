@@ -85,6 +85,8 @@ When it gets done crawling and scanning select Alerts:
 
 ![](attachments/ZAPResults.PNG)
 
+This shows that ZAP does a pretty good job of finding the easy to identify vulnerabilites.
+
 
 Now, let's start Chrome and play with DVWA.
 
