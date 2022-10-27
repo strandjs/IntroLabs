@@ -74,7 +74,7 @@ First, select Automated Scan
 
 Now, put in your Linux IP and port 65412 in as the URL to attack.
 
-<pre>http://<YOUR LINUX IP>:65412</pre>
+<pre>http://YOUR LINUX IP:65412</pre>
 
 
 ![](attachments/AutomatedScanIP.PNG)
