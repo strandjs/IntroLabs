@@ -31,10 +31,11 @@ Please note this memory dump was created from VMWare snapshot feature. There are
 
 To start, we will be working with the Ubuntu-18.04 Prompt in Windows Terminal.   This is on your desktop and can be opened by right-clicking it and selecting Run as administrator then selecting Ubuntu-18.04 from the down carrot menu:
 
-Now we need to extract Volatility:
+Now we need download and extract Volatility:
 
 <pre>
 adhd@DESKTOP-I1T2G01:~$ cd /mnt/c/IntroLabs/
+adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$ wget -O volatility3-1.0.0 https://github.com/volatilityfoundation/volatility3/archive/refs/tags/v1.0.0.tar.gz
 adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$ tar xvfz ./volatility3-1.0.0.tar.gz
 adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$ cd volatility3-1.0.0/
 </pre>
