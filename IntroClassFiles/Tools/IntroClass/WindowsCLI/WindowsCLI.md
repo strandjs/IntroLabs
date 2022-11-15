@@ -83,8 +83,6 @@ Once the prompt is open, let's run the following commands to copy over and run t
 
 `cd \tools`
 
-Take a deep breath.  Count to 5.  Then hit Ctrl+c to kill the connection.
-
 Then, run it.
 
 `TrustMe.exe`
