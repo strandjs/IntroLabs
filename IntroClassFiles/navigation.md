@@ -45,6 +45,7 @@
   - [HoneyUser](Tools/IntroClass/honeyuser/honeyuser.md)
   - [AdvancedC2](Tools/IntroClass/pcap/AdvancedC2PCAPAnalysis.md)
   - [WebHoneypot](Tools/IntroClass/webhoneypot/webhoneypot.md)
+  - [File Audit](Tools/IntroClass/FileAudit/FileAudit.mdd)
 
 
 
