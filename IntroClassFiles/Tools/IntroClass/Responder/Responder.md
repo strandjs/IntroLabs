@@ -55,7 +55,7 @@ Remember!  Your IP will be different!!!!
 
 If you captured a NTLMv1 hash you can crack it with the following command:
 
-root@DESKTOP-I1T2G01:/opt/Responder/logs# `/opt/JohnTheRipper/run/john --format=netntlm ./HTTP-NTLMv2-172.26.16.1.txt`
+root@DESKTOP-I1T2G01:/opt/Responder/logs# `/opt/JohnTheRipper/run/john --format=netntlm ./HTTP-NTLMv1-172.26.16.1.txt`
 Remember!  Your IP will be different!!!!
 
 Notice the v2 is dropped from the --format.
