@@ -44,7 +44,7 @@ Now, let's focus on the closed connections (FIN) and pull just specific fields o
 There are a lot of connections from 13.107.237.38.  Let's drill down and see just data from that IP address.
 
 
-<pre>grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 13.107.237.38 | cut -d ' ' -f 1,3,4,5,7,8,9,10,11,12,13,14>/pre>
+<pre>grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 13.107.237.38 | cut -d ' ' -f 1,3,4,5,7,8,9,10,11,12,13,14></pre>
 
 Wow! There are also connections from 18.160.185.174.  Here, let's also zoom in on that IP as well:
 
