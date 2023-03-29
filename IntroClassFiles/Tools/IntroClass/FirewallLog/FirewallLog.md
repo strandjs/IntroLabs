@@ -52,7 +52,7 @@ Now, let's focus on the closed connections (FIN) and pull just specific fields o
 There are a lot of connections from 13.107.237.38.  Let's drill down and see just data from that IP address.
 
 
-<pre>grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 13.107.237.38 | cut -d ' ' -f 1,3,4,5,7,8,9,10,11,12,13,14></pre>
+<pre>grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 13.107.237.38 | cut -d ' ' -f 1,3,4,5,7,8,9,10,11,12,13,14</pre>
 
 Wow! There are also connections from 18.160.185.174.  Here, let's also zoom in on that IP as well:
 
@@ -68,24 +68,3 @@ Next, let's some math at that field!
 
 <pre>grep 192.168.1.6 ASA-syslogs.txt | grep -v 24.230.56.6 | grep FIN | grep 18.160.185.174 | cut -d ' ' -f 8,14 | tr : ' ' | tr / ' '  | cut -d ' ' -f 4 | Rscript -e 'y <-scan("stdin", quiet=TRUE)' -e 'cat(min(y), max(y), mean(y), sd(y), var(y), sep="\n")'</pre>
  
- <pre>cat ASA-syslogs.txt | sed -e 's/^.*%ASA-[0-9-]*: //' | less</pre>
-
-Here is yet more fun!!!!
- 
-Discard the conns limit messages:
- <pre>grep -v 'Resource .conns. limit of 20000 reached for system'</pre>
-
-Discard NAT messages:
-
-<pre>egrep -v '(Built dynamic [TU][CD]P translation from|Teardown dynamic [TU][CD]P translation from)'</pre>
- 
- All together now!
-
-<pre>cat ASA-syslogs.txt | sed -e 's/^.*%ASA-[0-9-]*: //' | grep -v 'Resource .conns. limit of 20000 reached for system' | egrep -v '(Built dynamic [TU][CD]P translation from|Teardown dynamic [TU][CD]P translation from)' | sort | less </pre>
-
-  
-
-
-
-
-
