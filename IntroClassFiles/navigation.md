@@ -12,7 +12,7 @@
   - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
   - [Domain Log Review](Tools/IntroClass/DomainLogReview/DomainLogReview.md)
   - [Velociraptor](Tools/IntroClass/Velociraptor/Velociraptor.md)
-  - [Velociraptor](Tools/IntroClass/FirewallLog/FirewallLog.md)
+  - [Firewall Log Review](Tools/IntroClass/FirewallLog/FirewallLog.md)
   - [Elk In The Cloud](/IntroClassFiles/Tools/IntroClass/md/elk_in_the_cloud.md)
   - [Elastic Agent](/IntroClassFiles/Tools/IntroClass/md/elastic_agent.md)
   - [Sysmon in ELK](/IntroClassFiles/Tools/IntroClass/md/sysmon_logs.md)
