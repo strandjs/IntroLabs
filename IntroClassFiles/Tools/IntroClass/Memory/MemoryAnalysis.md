@@ -34,15 +34,15 @@ To start, we will be working with the Ubuntu-18.04 Prompt in Windows Terminal.  
 Now we need to extract Volatility:
 
 <pre>
-adhd@DESKTOP-I1T2G01:~$ cd /mnt/c/IntroLabs/
-adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$ tar xvfz ./volatility3-1.0.0.tar.gz
-adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$ cd volatility3-1.0.0/
+cd /mnt/c/IntroLabs/
+tar xvfz ./volatility3-1.0.0.tar.gz
+cd volatility3-1.0.0/
 </pre>
 
 Let's start by looking at the network connections:
 
 <pre>
-$ python3 vol.py -f /mnt/c/tools/volatility_2.6_win64_standalone/memdump.vmem windows.netscan
+python3 vol.py -f /mnt/c/tools/volatility_2.6_win64_standalone/memdump.vmem windows.netscan
 </pre>
 
 
@@ -86,7 +86,7 @@ The cmd.exe should catch your attention. Generally, users and day to day usage o
 Let's look at pstree to see a bit more detail on what spawned what.
 
 <pre>
-$ python3 vol.py -f /mnt/c/tools/volatility_2.6_win64_standalone/memdump.vmem windows.pstree
+python3 vol.py -f /mnt/c/tools/volatility_2.6_win64_standalone/memdump.vmem windows.pstree
 </pre>
 
 <pre>
@@ -113,7 +113,7 @@ In the above example we can also see that the parent process for TrustMe was Exp
 Let's now dive into the TrustMe.exe process a bit further with dlllist:
 
 <pre>
-$  python3 vol.py -f /mnt/c/tools/volatility_2.6_win64_standalone/memdump.vmem dlllist --pid 5452
+python3 vol.py -f /mnt/c/tools/volatility_2.6_win64_standalone/memdump.vmem dlllist --pid 5452
 </pre>
 
 <pre>
