@@ -23,7 +23,15 @@ When we first get the logs to the right directory.
 
 On your Linux system, please run the following command:
 
-<pre>cd /mnt/c/IntroLabs</pre>
+<pre>cd /mnt/c/IntroLabs</pre>sudo apt install r-base-core
+
+Next, let's get your Linux system to do some math!
+
+<pre>sudo apt-get update</pre>
+
+<pre>sudo apt install r-base-core --fix-missing</pre>
+
+The password is adhd and when it finds the correct package, press Y for yes.  This is a big package. It will take a while.
 
 Now, let's look into the logs.  We are just going to start by using less to view the logs.  No magic.  Just look at the logs.  
 
