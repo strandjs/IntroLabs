@@ -181,32 +181,6 @@ If you select that client, you can get additional information about that system.
 
 ![](attachment/Clipboard_2021-01-27-15-33-35.png)
 
-Let’s start by looking at the Virtual File System or VFS.
-
-![](attachment/Clipboard_2021-01-27-15-34-26.png)
-
-
-When we first get in, we can see Files, NTFS, Registry and Artifacts.
-
-Please select NTFS.
-
-![](attachment/Clipboard_2021-01-27-15-36-39.png)
-
-Once in, we will need to refresh the data.
-
-Please select the folder with the R and not the arrow!
-
-![](attachment/Clipboard_2021-01-27-15-41-07.png)
-
-This may take a few moments.
-
-Now, you can click on the directory structure on the left side.
-
-
-![](attachment/Clipboard_2021-01-27-15-41-35.png)
-
-Notice there are a lot more folders than you can generally see.  Folders like the Recycle Bin show up here.  This is useful for digging in on files of interest.  You can also download whole folders that are interesting with the R and the Down Arrow.
-
 Next, let’s "Show All" Clients again.
 
 ![](attachment/Clipboard_2021-01-27-15-32-10.png)
