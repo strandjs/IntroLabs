@@ -157,7 +157,7 @@ C:\ `gpupdate /force`
 
 Next, log out as ADHD and log back in as allowlist.  
 
-You can do this easily by selecting the Windows icon and then the little wite user icon:
+You can do this easily by selecting the Windows icon and then the little white user icon:
 
 ![](attachments/Clipboard_2020-06-15-09-00-39.png)
 
