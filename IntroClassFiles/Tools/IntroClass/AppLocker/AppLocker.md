@@ -137,7 +137,7 @@ This should generate a subset of rules for each group.  It should look similar t
 Next, we need to enforce the rules:
 
 
-To do this you will need to select ApLocker on the far left pane.  Then, you will need to select Configure rule enforcement.  This will open a pop-up, you will need to check Configured for each set of rules
+To do this you will need to select AppLocker on the far left pane.  Then, you will need to select Configure rule enforcement.  This will open a pop-up, you will need to check Configured for each set of rules
 
 ![](attachments/Clipboard_2020-06-23-10-45-07.png)
 
