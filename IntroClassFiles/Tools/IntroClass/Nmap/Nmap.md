@@ -53,12 +53,6 @@ Now, let’s go back to the Windows command prompt, by selecting the Administrat
 
 Now, let’s enable the Windows firewall:
 
-C:\Users\adhd>`netsh advfirewall set allprofiles state on`
-
-It should look like this:
-
-![](attachments/Clipboard_2020-07-07-15-32-12.png)
-
 Now turn it back on and rerun.
 
 C:\Users\adhd>`netsh advfirewall set allprofiles state on`
@@ -80,14 +74,13 @@ It should look like this:
 ![](attachments/Clipboard_2020-07-07-15-30-16.png)
 
 
-Now, let’s disable the Windows firewall:
+Now, let’s disable the Windows firewall to go back to the base state:
 
 C:\Users\adhd>`netsh advfirewall set allprofiles state off`
 
-![](attachments/Clipboard_2020-07-07-15-30-16.png)
+![](attachments/Clipboard_2020-07-07-15-34-15.png)
 
 
-Please note the open ports. These are ports and services that an attacker could use to authenticate to your system.  Or, attack if an exploit is available. 
 
 
 
