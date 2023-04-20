@@ -51,9 +51,9 @@ Now, let’s go back to the Windows command prompt, by selecting the Administrat
 
 ![](attachments/Clipboard_2020-07-07-15-31-07.png)
 
-Now, let’s disable the Windows firewall:
+Now, let’s enable the Windows firewall:
 
-C:\Users\adhd>`netsh advfirewall set allprofiles state off`
+C:\Users\adhd>`netsh advfirewall set allprofiles state on`
 
 It should look like this:
 
@@ -76,6 +76,9 @@ Please note, you can just hit the up arrow key.
 Once again, you can hit the spacebar to see status.
 
 It should look like this:
+
+![](attachments/Clipboard_2020-07-07-15-30-16.png)
+
 
 Now, let’s disable the Windows firewall:
 
