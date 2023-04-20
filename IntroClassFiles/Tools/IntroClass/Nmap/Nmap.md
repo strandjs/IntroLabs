@@ -42,6 +42,9 @@ You can hit the spacebar to get status.
 
 It should look like this:
 
+
+![](attachments/Clipboard_2020-07-07-15-34-15.png)
+
 ![](attachments/Clipboard_2020-07-07-15-30-16.png)
 
 Now, let’s go back to the Windows command prompt, by selecting the Administrator: Command Prompt tab.
