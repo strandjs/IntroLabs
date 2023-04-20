@@ -41,11 +41,9 @@ root@DESKTOP-I1T2G01:~# `nmap 172.26.176.1`
 You can hit the spacebar to get status.
 
 It should look like this:
-
-
 ![](attachments/Clipboard_2020-07-07-15-34-15.png)
+Please note the open ports. These are ports and services that an attacker could use to authenticate to your system.  Or, attack if an exploit is available. 
 
-![](attachments/Clipboard_2020-07-07-15-30-16.png)
 
 Now, let’s go back to the Windows command prompt, by selecting the Administrator: Command Prompt tab.
 
@@ -78,7 +76,8 @@ Once again, you can hit the spacebar to see status.
 It should look like this:
 
 
-![](attachments/Clipboard_2020-07-07-15-34-15.png)
+![](attachments/Clipboard_2020-07-07-15-30-16.png)
+
 
 Please note the open ports. These are ports and services that an attacker could use to authenticate to your system.  Or, attack if an exploit is available. 
 
