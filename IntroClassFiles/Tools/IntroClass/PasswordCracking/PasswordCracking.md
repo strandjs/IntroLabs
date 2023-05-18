@@ -27,6 +27,10 @@ Next, we need to navigate to the hashcat directory.
 
 C:\Users\adhd>`cd \tools\hashcat-4.1.0\`
 
+Now remove old passwords that ar cracked
+
+C:\Users\adhd>`del hashcat.potfile`
+
 ![](attachments/Clipboard_2020-06-12-10-41-51.png)
 
 Now, lets crack some NT hashes.  These are the hashes that almost all modern Windows systems store these days.  Older systems may store LANMAN, but that is very rare.
