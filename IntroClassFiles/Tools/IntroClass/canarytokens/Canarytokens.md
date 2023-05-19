@@ -63,7 +63,7 @@ Please select New Token in the upper right corner.
 
   
 
-Then, select Coned Website from the dropdown: 
+Then, select Cloned Website from the dropdown: 
 
   
 
