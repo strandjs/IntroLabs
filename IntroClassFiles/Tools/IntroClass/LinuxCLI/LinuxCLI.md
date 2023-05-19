@@ -1,7 +1,7 @@
 
 # Linux CLI
 
-In this lab we will be looking at a backdoor through the lense of the the Linux CLI.
+In this lab we will be looking at a backdoor through the lens of the the Linux CLI.
 
 We will be using a large number of different basic commands to get a better understanding of what the backdoor is and what it does.
 
@@ -43,7 +43,7 @@ Next, let's start the backdoor:
 
 In the above command we are creating a netcat listener that forwards all input through a backpipe and then into a bash session.  It then takes the output of the bash session and puts it back into the netcat listener. 
 
-Basicly, this will create a backdoor listening on port 2222 of our linux system.
+Basically, this will create a backdoor listening on port 2222 of our linux system.
 
 Now, let's open another Ubuntu terminal.  This will be the terminal we connect to the above created backdoor with.
 
@@ -68,7 +68,7 @@ Now, let's type some commands and make sure it is working
 
 ![](attachments/Clipboard_2020-12-11-07-19-48.png)
 
-As you can see, we are connected to the simple Linux backdoor as root.  Also notice there was not message saying we succesfully connected to the backdoor.  It just drops our curser back to the left side of the screen.
+As you can see, we are connected to the simple Linux backdoor as root.  Also notice there was not message saying we successfully connected to the backdoor.  It just drops our cursor back to the left side of the screen.
 
 Now, let's open yet another Ubuntu terminal and start our analysis. This means we have one where we created the backdoor, another that connected to it and this third one will be for the analysis.
 
@@ -78,7 +78,7 @@ On your Linux terminal, please run the following command:
 
 <pre>sudo su -</pre>
 
-This will get us to a root prompt.   We want to be root because looking at network connections and process information systemwide requires root access.  Basicly, it is very hard to do your job as a SOC pro without root or admin rights.
+This will get us to a root prompt.   We want to be root because looking at network connections and process information systemwide requires root access.  Basically, it is very hard to do your job as a SOC pro without root or admin rights.
 
 Let's start by looking at the network connections with lsof.  When we use lsof, we are looking at open files.  When we use the -i flag we are looking at the open Internet connections.  When we use the -P flag we are telling lsof to not try and guess what the service is on the ports that are being used. Just give us the port number.
 
@@ -99,7 +99,7 @@ Let's look at the full processes.  We can do this with the ps command. We are al
 
 ![](attachments/Clipboard_2020-12-11-07-24-39.png)
 
-Let's change directories into the proc directory for that pid.  Remember, proc is a directory that does not exist on the drive.  It allows us to see data associated with the various processes directly.   This can be very usesfull as it allows us to dig into the memory of a process that is currently running on a suspect system.
+Let's change directories into the proc directory for that pid.  Remember, proc is a directory that does not exist on the drive.  It allows us to see data associated with the various processes directly.   This can be very useful as it allows us to dig into the memory of a process that is currently running on a suspect system.
 
 <pre>cd /proc/[pid]</pre>
 
@@ -119,7 +119,7 @@ We can run strings on the exe in this directory.  This is very, very useful as w
 
 ![](attachments/Clipboard_2020-12-11-07-25-54.png)
 
-If we scroll down, we can see the actual usage information for netcat.  We pulled it direcly out of memory!
+If we scroll down, we can see the actual usage information for netcat.  We pulled it directly out of memory!
 
 ![](attachments/Clipboard_2020-12-11-07-27-29.png)
 
