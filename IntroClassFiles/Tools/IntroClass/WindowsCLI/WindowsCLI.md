@@ -18,7 +18,7 @@ In the default powershell Window that opens, lets ensure that Defender is off;
 
 PS C:\Users\adhd> `Set-MpPreference -DisableRealtimeMonitoring $true`
 
-Please note, if you get red errors that say ` A general error occurred that is not covered by a more specific error code.` that is OK!  It means Defender was disabled.  We run above command to ensure that it is off for this lab.  It has a sneaky way of truning back on again..
+Please note, if you get red errors that say ` A general error occurred that is not covered by a more specific error code.` that is OK!  It means Defender was disabled.  We run above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
 
 And now, open a Ubuntu command prompt:
 
