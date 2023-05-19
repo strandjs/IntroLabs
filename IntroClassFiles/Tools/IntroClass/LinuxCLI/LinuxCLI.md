@@ -1,7 +1,7 @@
 
 # Linux CLI
 
-In this lab we will be looking at a backdoor through the lense of the the Linux CLI.
+In this lab we will be looking at a backdoor through the lens of the Linux CLI.
 
 We will be using a large number of different basic commands to get a better understanding of what the backdoor is and what it does.
 
