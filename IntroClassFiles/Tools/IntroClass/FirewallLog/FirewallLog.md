@@ -1,7 +1,7 @@
 
 # Firewall Log Review
 
-In this lab we will be looing at a log from an ASA firewall from Cisco.
+In this lab we will be looking at a log from an ASA firewall from Cisco.
 
 And wow....  They are bad to work with. 
 
