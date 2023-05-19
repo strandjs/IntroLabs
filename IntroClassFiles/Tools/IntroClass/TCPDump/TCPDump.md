@@ -66,7 +66,7 @@ You can hit ctrl+c after a few seconds:
 
 In the screenshot above you can see we now have all the packets that are either sent or received by port 80 on 192.168.99.52.
 
-While getting the overal metadata from the packets is nice, we can get the full ASCII decode of the packet and the payload of the packet.
+While getting the overall metadata from the packets is nice, we can get the full ASCII decode of the packet and the payload of the packet.
 
 $`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -A`
 
