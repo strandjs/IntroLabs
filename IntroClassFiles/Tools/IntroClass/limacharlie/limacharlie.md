@@ -14,17 +14,17 @@ When the browser opens, enter this URL into the search bar and hit enter.
 
 Once the browser load, you will see a link at the bottom that says "Create an account"
 
-<img src="attachments/register_an_account.PNG" alt="Description of the image" width="300" />
+<img src="attachments/register_an_account.PNG" alt="register an account" width="300" />
 
 Click that link
 
 Once that loads you will see a field to setup an account
 
-![](attachments/account_registration_page.PNG)
+<img src="attachments/account_registration_page.PNG" alt="register an account" width="300" />
 
 Once you fill out the fields click the "Sign Up" button to continue
 
-![](attachments/SIGN_UP_BUTTON.PNG)
+<img src="attachments/SIGN_UP_BUTTON.PNG" alt="register an account" width="300" />
 
 Then go to your email and you should recieve a link to verify the account click the link and then go back to your browser and refresh the page.
 
@@ -37,7 +37,7 @@ Enter the following answers into there respective fields ->
 * <span style="color:blue">What use cases are you exploring?</span> -> Endpoint detection & Response
 * <span style="color:yellow">How did you hear about us?</span> -> Black Hills Info Sec
 
-![](attachments/company_setup_menu.PNG)
+<img src="attachments/company_setup_menu.PNG" alt="register an account" width="300" />
 
 Once those fields are filled, check the box that says "By checking this box, I hereby agree and consent to the Terms of Service and Privacy Policy."
 
@@ -45,11 +45,11 @@ Now click "Get Started"
 
 Then click "Create Organization" 
 
-![](attachments/create_an_organization.PNG)
+<img src="attachments/create_an_organization.PNG" alt="register an account" width="300" />
 
 Then you can enter the following information into there respective fields to create your fiction organization
 
-![](attachments/organization_setup_menu.PNG)
+<img src="attachments/organization_setup_menu.PNG" alt="register an account" width="300" />
 
 Then Click Create Organization.
 
@@ -59,7 +59,7 @@ As you may notice it is possible to use this tool to manage more than one compan
 
 Once the page finishes loading you will see a menu appear and your fake company. Please select your ficticious company.
 
-![](attachments/ficticious_company_selection.PNG)
+<img src="attachments/ficticious_company_selection.PNG" alt="register an account" width="300" />
 
 Once you have selected your ficticious company, you can look around and see all the options that this tool has too offer!
 
@@ -67,41 +67,41 @@ For this demonstration we will be creating a sensor for our windows machine and 
 
 On the left side under sensors, please select "Installation Keys"
 
-![](attachments/one.PNG)
+<img src="attachments/one.PNG" alt="register an account" width="300" />
 
 You should then see an option in the center "Create Installation key", Select it
 
-![](attachments/two.PNG)
+<img src="attachments/two.PNG" alt="register an account" width="300" />
 
 Then you will see a few empty fields, You can add any description you like and any relevant tags.
 
 Once you have done that you can select "Create"
 
-![](attachments/three.PNG)
+<img src="attachments/three.PNG" alt="register an account" width="300" />
 
 Once you have created your new installation key you can navigate too "Sensors List" and click "Add Sensor"
 
-![](attachments/four.PNG)
+<img src="attachments/four.PNG" alt="register an account" width="300" />
 
 Then selected the "Windows" sensor
 
-![](attachments/five.PNG)
+<img src="attachments/five.PNG" alt="register an account" width="300" />
 
 Once you select windows you will be greeted with an installation key menu, once here select from the drop down menu the description you created earlier for your installation key. And then click "Select"
 
-![](attachments/six.PNG)
+<img src="attachments/six.PNG" alt="register an account" width="300" />
 
 You will then be prompted with what architecture to download, every windows machine may be different but in our case, "86-64 exe"should be right.
 
-![](attachments/seven.PNG)
+<img src="attachments/seven.PNG" alt="register an account" width="300" />
 
 Once you do that you will be greeted with a few more steps to creating your endpoint. First Click "Download the selected installer", once thats finished downloading copy the string in step 4 to your clipboard.
 
-![](attachments/eight.PNG)
+<img src="attachments/eight.PNG" alt="register an account" width="300" />
 
 Then you need to go to your desktop, right click "Windows Terminal" and select run as "administrator"
 
-![](attachments/nine.PNG)
+<img src="attachments/nine.PNG" alt="register an account" width="300" />
 
 Type `cd Downloads` and hit enter
 
@@ -111,6 +111,6 @@ Once you have the command changed, then hit enter to run the command.
 
 Once you run the command if you return to the browser you should see this message.
 
-![](attachments/success.PNG)
+<img src="attachments/success.PNG" alt="register an account" width="300" />
 
 Please note that the name of your computer will be different!
