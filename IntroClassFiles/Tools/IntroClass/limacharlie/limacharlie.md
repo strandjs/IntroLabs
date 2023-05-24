@@ -45,11 +45,11 @@ Now click "Get Started"
 
 Then click "Create Organization" 
 
-<img src="attachments/create_an_organization.PNG" alt="register an account" width="300" />
+<img src="attachments/create_an_organization.PNG" alt="register an account" width="500" />
 
 Then you can enter the following information into there respective fields to create your fiction organization
 
-<img src="attachments/organization_setup_menu.PNG" alt="register an account" width="300" />
+<img src="attachments/organization_setup_menu.PNG" alt="register an account" width="500" />
 
 Then Click Create Organization.
 
