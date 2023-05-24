@@ -55,6 +55,8 @@ Then Click Create Organization.
 
 There may be be a small delay here while Lima Charlie creates the new company.
 
+As you may notice it is possible to use this tool to manage more than one company or organization with this tool.
+
 Once the page finishes loading you will see a menu appear and your fake company. Please select your ficticious company.
 
 ![](attachments/ficticious_company_selection.PNG)
@@ -101,10 +103,14 @@ Then you need to go to your desktop, right click "Windows Terminal" and select r
 
 ![](attachments/nine.PNG)
 
-Type `cd Downloads`
+Type `cd Downloads` and hit enter
 
-Then paste the string you downloaded in step 4 into your command prompt. Make sure once youve pasted your command you go back to the start of the command and replace "lc_sensor" with the name of the downloaded file. It will be something to the effect of "hcp_win_x64_release_x.x.x.exe" then hit enter to run the command.
+Then paste the string you downloaded in step 4 into your command prompt. Make sure once youve pasted your command into the command prompt you will need go back to the start of the command and replace "lc_sensor.exe" with the name of the newly downloaded file. It will be something to the effect of "hcp_win_x64_release_x.x.x.exe".
+
+Once you have the command changed, then hit enter to run the command.
 
 Once you run the command if you return to the browser you should see this message.
 
 ![](attachments/success.PNG)
+
+Please note that the name of your computer will be different!
