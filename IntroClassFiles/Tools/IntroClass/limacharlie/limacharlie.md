@@ -6,7 +6,7 @@ What is Lima Charlie? It is a lightweight browser based tool, that is great for 
 
 To start, we will be working in the chrome browser. This is on your desktop and can be opened by double clicking.
 
-![](attachments/google chrome icon.png)
+![](attachments/google_chrome_icon.PNG)
 
 When the browser opens, enter this URL into the search bar and hit enter.
 
