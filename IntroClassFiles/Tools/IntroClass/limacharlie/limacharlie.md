@@ -32,18 +32,10 @@ Once you return to your page you should see Lima Charlie asking you some questio
 
 Enter the following answers into there respective fields ->
 
-### <span style="color:green">What best describes your team/company?</span>
-Security Operations Center
-
-### <span style="color:red">What best describes your role?</span>
-Security Engineer
-
-### <span style="color:blue">What use cases are you exploring?</span>
-Endpoint detection & Response
-
-### <span style="color:yellow">How did you hear about us?</span>
-Black Hills Info Sec
-
+* <span style="color:green">What best describes your team/company?</span> -> Security Operations Center
+* <span style="color:red">What best describes your role?</span> -> Security Engineer
+* <span style="color:blue">What use cases are you exploring?</span> -> Endpoint detection & Response
+* <span style="color:yellow">How did you hear about us?</span> -> Black Hills Info Sec
 
 ![](attachments/company_setup_menu.PNG)
 
