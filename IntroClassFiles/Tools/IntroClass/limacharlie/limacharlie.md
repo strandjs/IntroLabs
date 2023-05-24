@@ -58,3 +58,47 @@ There may be be a small delay here while Lima Charlie creates the new company.
 Once the page finishes loading you will see a menu appear and your fake company. Please select your ficticious company.
 
 ![](attachments/ficticious_company_selection.PNG)
+
+Once you have selected your ficticious company, you can look around and see all the options that this tool has too offer!
+
+For this demonstration we will be creating a sensor for our windows machine and then setting off a suspicious file to test if our filter catches it.
+
+On the left side under sensors, please select "Installation Keys"
+
+![](attachments/one.PNG)
+
+You should then see an option in the center "Create Installation key", Select it
+
+![](attachments/two.PNG)
+
+Then you will see a few empty fields, You can add any description you like and any relevant tags.
+
+Once you have done that you can select "Create"
+
+![](attachments/three.PNG)
+
+Once you have created your new installation key you can navigate too "Sensors List" and click "Add Sensor"
+
+![](attachments/four.PNG)
+
+Then selected the "Windows" sensor
+
+![](attachments/five.PNG)
+
+Once you select windows you will be greeted with an installation key menu, once here select from the drop down menu the description you created earlier for your installation key. And then click "Select"
+
+![](attachments/six.PNG)
+
+You will then be prompted with what architecture to download, every windows machine may be different but in our case, "86-64 exe"should be right.
+
+![](attachments/seven.PNG)
+
+Once you do that you will be greeted with a few more steps to creating your endpoint. First Click "Download the selected installer", once thats finished downloading copy the string in step 4 to your clipboard.
+
+![](attachments/eight.PNG)
+
+Then you need to go to your desktop, right click "Windows Terminal" and select run as "administrator"
+
+![](attachments/nine.PNG)
+
+Type `cd Downloads`
