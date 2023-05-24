@@ -37,7 +37,7 @@ Enter the following answers into there respective fields ->
 * <span style="color:blue">What use cases are you exploring?</span> -> Endpoint detection & Response
 * <span style="color:yellow">How did you hear about us?</span> -> Black Hills Info Sec
 
-<img src="attachments/company_setup_menu.PNG" alt="register an account" width="300" />
+<img src="attachments/company_setup_menu.PNG" alt="register an account" width="500" />
 
 Once those fields are filled, check the box that says "By checking this box, I hereby agree and consent to the Terms of Service and Privacy Policy."
 
@@ -85,7 +85,7 @@ Once you have created your new installation key you can navigate too "Sensors Li
 
 Then selected the "Windows" sensor
 
-<img src="attachments/five.PNG" alt="register an account" width="300" />
+<img src="attachments/five.PNG" alt="register an account" width="500" />
 
 Once you select windows you will be greeted with an installation key menu, once here select from the drop down menu the description you created earlier for your installation key. And then click "Select"
 
@@ -97,7 +97,7 @@ You will then be prompted with what architecture to download, every windows mach
 
 Once you do that you will be greeted with a few more steps to creating your endpoint. First Click "Download the selected installer", once thats finished downloading copy the string in step 4 to your clipboard.
 
-<img src="attachments/eight.PNG" alt="register an account" width="300" />
+<img src="attachments/eight.PNG" alt="register an account" width="500" />
 
 Then you need to go to your desktop, right click "Windows Terminal" and select run as "administrator"
 
