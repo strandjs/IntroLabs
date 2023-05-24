@@ -14,7 +14,7 @@ When the browser opens, enter this URL into the search bar and hit enter.
 
 Once the browser load, you will see a link at the bottom that says "Create an account"
 
-<img src="attachments/register_an_account.PNG" alt="Description of the image" width="100" />
+<img src="attachments/register_an_account.PNG" alt="Description of the image" width="300" />
 
 Click that link
 
