@@ -32,10 +32,10 @@ Once you return to your page you should see Lima Charlie asking you some questio
 
 Enter the following answers into there respective fields ->
 
-*What best describes your team/company? -> Security Operations Center
-*What best describes your role? -> Security Engineer
-*What use cases are you exploring? -> Endpoint detection & Response
-*How did you hear about us? -> Black Hills Info Sec
+* What best describes your team/company? -> Security Operations Center
+* What best describes your role? -> Security Engineer
+* What use cases are you exploring? -> Endpoint detection & Response
+* How did you hear about us? -> Black Hills Info Sec
 
 ![](attachments/company_setup_menu.PNG)
 
