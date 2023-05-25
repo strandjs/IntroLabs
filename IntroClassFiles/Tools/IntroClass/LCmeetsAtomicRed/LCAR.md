@@ -30,7 +30,7 @@ Scroll down a bit and you will see a few options, yara and atomic red. Click "Ru
 
 <img src="attachments/RUNAR.PNG" alt="register an account" width="300" />
 
-Go to the command and control and click "Select Category" then click "Run Tests"
+Go to the command and control and click "(1)Select Category" then click "(2)Run Tests"
 
 <img src="attachments/C2ALL.PNG" alt="register an account" width="300" />
 
