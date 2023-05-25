@@ -1,5 +1,7 @@
 # Lima Charlie meets Atomic Red
 
+WAITTTTT! Make sure you do Part 1 of this lab first <a href="https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/limacharlie/limacharlie.md">Part 1</a>
+
 part 2/2
 
 In this lab we will be creating a controlled and fake cyber attack with Atomic Red, we will then use Lima Charlie to see what is logged and to see how a real world attack may set off bells and whistles for us to look at.
