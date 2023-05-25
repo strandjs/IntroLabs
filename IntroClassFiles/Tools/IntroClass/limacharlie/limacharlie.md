@@ -61,7 +61,7 @@ As you may notice it is possible to use this tool to manage more than one compan
 
 Once the page finishes loading you will see a menu appear and your fake company. Please select your ficticious company.
 
-<img src="attachments/ficticious_company_selection.PNG" alt="register an account" width="300" />
+<img src="attachments/ficticious_company_selection.PNG" alt="register an account" width="700" />
 
 Once you have selected your ficticious company, you can look around and see all the options that this tool has too offer!
 
