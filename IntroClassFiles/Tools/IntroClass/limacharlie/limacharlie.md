@@ -49,7 +49,7 @@ Then click "Create Organization"
 
 <img src="attachments/create_an_organization.PNG" alt="register an account" width="500" />
 
-Then you can enter the following information into there respective fields to create your fiction organization
+Then you can enter the following information into the fields, you create your fictional organization, maybe Stark Industries? Hint Hint
 
 <img src="attachments/organization_setup_menu.PNG" alt="register an account" width="500" />
 
@@ -57,7 +57,7 @@ Then Click Create Organization.
 
 There may be be a small delay here while Lima Charlie creates the new company.
 
-As you may notice it is possible to use this tool to manage more than one company or organization with this tool.
+You may notice from the picture below that it is possible to use this tool to manage more than one company or organization at a time.
 
 Once the page finishes loading you will see a menu appear and your fake company. Please select your ficticious company.
 
@@ -116,3 +116,5 @@ Once you run the command if you return to the browser you should see this messag
 <img src="attachments/success.PNG" alt="register an account" width="300" />
 
 Please note that the name of your computer will be different!
+
+<a href="https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md">Part 2</a>
