@@ -1,5 +1,7 @@
 # LimaCharlie Lab
 
+part 1/2
+
 In this lab we will be looking into endpoint monitoring and threat detection. We will be using LimaCharlie to do this.
 
 What is Lima Charlie? It is a lightweight browser based tool, that is great for big and small organizations, It helps keep an eye on systems, detect threats, and responds quickly to any suspicious activity.
