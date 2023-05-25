@@ -36,7 +36,7 @@ Go to the command and control and click "(1)Select Category" then click "(2)Run 
 
 Once that begins move over to the "Detections" tab on the left and start going through event logs
 
-<img src="attachments/DETECTED.PNG" alt="register an account" width="300" />
+<img src="attachments/DETECTED.PNG" alt="register an account" width="700" />
 
 You will notice that you have lots of events, everytime you refresh your page more will appear as the attacks continue.
 
