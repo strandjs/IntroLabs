@@ -16,6 +16,8 @@
   - [Elk In The Cloud](/IntroClassFiles/Tools/IntroClass/md/elk_in_the_cloud.md)
   - [Elastic Agent](/IntroClassFiles/Tools/IntroClass/md/elastic_agent.md)
   - [Sysmon in ELK](/IntroClassFiles/Tools/IntroClass/md/sysmon_logs.md)
+  - [Lima Charlie](/IntroClassFiles/Tools/IntroClass/limacharlie/limacharlie.md)
+  - [Lima Charlie & Atomic Red](/IntroClassFiles/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md)
 
 
 [Intro To Security]()
