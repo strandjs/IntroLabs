@@ -34,6 +34,7 @@
  - [Sysmon](Tools/IntroClass/Sysmon/Sysmon.md)
  - [Web Testing](Tools/IntroClass/WebTesting/WebTesting.md)
  - [Falcon](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/falcon.md)
+ - [ConnectSecure](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/Connectsecure.md)
 
   
 [Cyber Deception/Active Defense]()
