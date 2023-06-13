@@ -42,94 +42,49 @@ Click "Verify and Accept."  You should be redirected to the cloud login page.  I
 
 After logging in, the page will look like this.
 
+Fill out the proper filed with the correct information pictured below and select the check boxes with red dots.
 
-![First Landing Page](./images/first_landing.png)
+Once those fields are filled out click "Next"
 
+![Welcome To Elastic](./images/Capture1.PNG)
 
 **2. Start an ELK instance.**
 
-Start by clicking "Start your free trial."
+Upon clicking next you will see the following page. For my instance I will be calling it "security-development. Make sure to enter the name of your deployment and click "Create Deployment".
 
-For our purposes, we want to start an Elastic Security instance.
+![Creating Delployment](/images/deployment2.PNG)
 
+Next we will see this page.
 
-![Selecting Elastic Secuirty](./images/select_security.png)
+Elastic will present the credentials for this ELK stack. There is the option to download a CSV of the credentials. However you decide to hold onto these credentials, don't lose them.
 
+![Creating Creds](/images/creds3.PNG)
 
-After selecting Security, scroll down. There are options to select custom settings and to name the deployment.  For this example, I will use the defaults. Click "Create deployment."
+Then we will need to wait for the continue button to turn blue, once that's done click continue
 
+![Waiting For Deploy](./images/waiting_for_deploy4.PNG)
 
-![Creating Delployment](./images/create_deployment.png)
+We will be greeted with menu of options, we want to skip that menu.
 
+![Skip Prompt](./images/skip_prompt5.PNG)
 
-Elastic will present the credentials for this ELK stack.  There is the option to download a CSV of the credentials. However you decide to hold onto these credentials, don't lose them.
+Then at the top of the page we want to click search and type "kibana" and hit enter.
 
-<img src="./images/elastic_creds.png" alt="Elastic Credentials"/>
+![Search Kibana](./images/kibana_search6.PNG)
 
-Now we have a complete and working instance of an ELK stack in which we can learn and experiment.
+Once the next page load we want to add kibana. Select "Add Kibana"
 
-**3. Set up Fleet**
+![Add Kibana](./images/add_kibana7.PNG)
 
-Kibana has a convenient feature called "Fleet." This feature enables users to easily add data to the ELK stack.
+We will next be prompted to "Install Elastic Agent" This is what we are going to put on our machine that monitors what's happening. Click "Install Elastic Agent"
 
-At the time of setting up the ELK instance, the "Open Kibana" option can be found here.
+![Add Elastic Agent](./images/kibana_loading8.PNG)
 
+The next page we meet will have a wall of text. Select windows.
 
-![Open Kibana](./images/open_kibana.png)
+We will need to click the "Copy to Clipboard" Button and save it for part two.
 
-
-For future logins, access Kibana by using either of these links.
-
-
-![Open Kibana](./images/open_kibana_2.png)
-
-In the Kibana landing page, find the navigation menu.
-
-
-![Kibana Landing](./images/kibana_landing.png)
-
-
-Scroll to the bottom of the navigation menu and find "Fleet."
-
-
-![Fleet Menu](./images/menu_fleet.png)
-
-
-In the Fleet menu, find the "Agents" tab.
-
-
-![Agents Tab](./images/agents_tab.png)
-
-
-To activate Fleet, a central user needs to be enabled. Click "Create user and enable central management."
-
-
-![Enable Central User](./images/enable_central_user.png)
-
-
-Once a central user is enabled, the agents menu will look like this.
-
-
-![Agents Menu](./images/agents_menu.png)
-
-
-Select "Add agent."
-
-
-![Add Agent](./images/add_agent.png)
-
-
-A panel window will open.
-
-
-![Panel Window](./images/panel_window.png)
-
-
-Scroll to the bottom of the panel. At the bottom of the panel, there is a command that can be copied to the clipboard by clicking the button presented.
-
-
-![Copy Command](./images/copy_command.png)
-
+![Add Elastic Agent](./images/windows_kibana.PNG)
 
 Hold onto this command.  It is recommended to paste this command into some file where you won't lose it. In this example, I saved it to a file I called "agent.txt."  We will use this command later.
 
