@@ -120,12 +120,6 @@ After you have created some log activity, navigate to "Kibana Discover."
 ![Navigate to Discover](./images/kibana_discover.png)
 
 
-Set your data source to "logs-\*." Set a time constraint to focus your results.
-
-
-![Data source set to logs](./images/datasource_logs.png)
-
-
 Set a filter on your data to limit your results to sysmon data.  This can be done by searching the "data_stream.dataset" field for "windows.sysmon_operational" data.
 
 
