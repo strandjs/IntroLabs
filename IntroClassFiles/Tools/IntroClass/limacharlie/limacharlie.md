@@ -65,7 +65,7 @@ Once the page finishes loading you will see a menu appear and your fake company.
 
 Once you have selected your ficticious company, you can look around and see all the options that this tool has too offer!
 
-For this demonstration we will be creating a sensor for our windows machine and then setting off a suspicious file to test if our filter catches it.
+For this demonstration we will be creating a sensor for our windows machine and then setting off atomic red to test if our filter catches it.
 
 On the left side under sensors, please select "Installation Keys"
 
