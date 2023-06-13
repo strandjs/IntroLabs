@@ -71,19 +71,19 @@ Navigate to Kibana.
 Navigate to "Integrations" through the navigation menu.
 
 
-![Integrations Tab](./images/integrations.png)
+![Integrations Tab](./images/integrations.PNG)
 
 
 At the top of the page enter "windows" into the search bar.  Select the Windows option with the red square pictured below.
 
 
-![Select Windows](./images/which_windows.png)
+![Select Windows](./images/which_windows.PNG)
 
 
 Add this integration.
 
 
-![Add Windows](./images/installation.png)
+![Add Windows](./images/installation.PNG)
 
 
 By default, the Sysmon logs channel should be active.  This can be checked under the "Collect events from the following Windows event log channels:" section of the "Add integration" page.
@@ -95,13 +95,13 @@ By default, the Sysmon logs channel should be active.  This can be checked under
 Save the Integration.
 
 
-![Save the Integration](./images/saveandnext.png)
+![Save the Integration](./images/saveandnext.PNG)
 
 
 When prompted click "Add elastic agent to your hosts".
 
 
-![Save and Deploy Changes](./images/addelastichost.png)
+![Save and Deploy Changes](./images/addelastichost.PNG)
 
 
 In the Integrations menu, find the "Installed integrations" tab.
