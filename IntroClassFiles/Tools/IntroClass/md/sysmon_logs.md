@@ -68,28 +68,22 @@ Navigate to Kibana.
 ![Kibana Quick Link](./images/kibana_quicklink.png)
 
 
-Navigate to fleet through the navigation menu.
+Navigate to "Integrations" through the navigation menu.
 
 
-![Fleet Option](./images/menu_fleet.png)
+![Integrations Tab](./images/integrations.png)
 
 
-Select the "Integrations" tab.
+At the top of the page enter "windows" into the search bar.  Select the Windows option with the red square pictured below.
 
 
-![Integrations Tab](./images/integrations_tab.png)
-
-
-Scroll to the bottom of the Integrations page.  Select the Windows option.
-
-
-![Select Windows](./images/select_windows.png)
+![Select Windows](./images/which_windows.png)
 
 
 Add this integration.
 
 
-![Add Windows](./images/add_windows.png)
+![Add Windows](./images/installation.png)
 
 
 By default, the Sysmon logs channel should be active.  This can be checked under the "Collect events from the following Windows event log channels:" section of the "Add integration" page.
@@ -101,13 +95,13 @@ By default, the Sysmon logs channel should be active.  This can be checked under
 Save the Integration.
 
 
-![Save the Integration](./images/save_integration.png)
+![Save the Integration](./images/saveandnext.png)
 
 
-If prompted, save and deploy changes.
+When prompted click "Add elastic agent to your hosts".
 
 
-![Save and Deploy Changes](./images/save_and_deploy.png)
+![Save and Deploy Changes](./images/addelastichost.png)
 
 
 In the Integrations menu, find the "Installed integrations" tab.
@@ -115,7 +109,7 @@ In the Integrations menu, find the "Installed integrations" tab.
 In [part one](./elk_in_the_cloud.md "Elk in the Cloud"), we selected an Elastic Security configuration. In doing so, "Endpoint Security" and "System" are automatically installed in our Integrations.
 
 
-![Installed Integrations](./images/installed_integrations.png)
+![Installed Integrations](./images/integrations_extras.png)
 
 
 At this point, play around on the computer that has Elastic Agent installed.  Move files around, create files, start programs, make a few Google searches.  This will generate some logs to ensure that we have Sysmon logs reaching our cloud.
