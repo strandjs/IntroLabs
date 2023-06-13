@@ -86,7 +86,7 @@ We will next be prompted to "Install Elastic Agent" This is what we are going to
 
 The next page we meet will have a wall of text. Select windows.
 
-We will need to click the "Copy to Clipboard" Button and save it for part two.
+We will need to click the "Copy to Clipboard".
 
 ![Add Elastic Agent](./images/windows_kibana.PNG)
 
