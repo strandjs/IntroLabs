@@ -117,15 +117,15 @@ At this point, play around on the computer that has Elastic Agent installed.  Mo
 After you have created some log activity, navigate to "Kibana Discover."
 
 
-![Navigate to Discover](./images/kibana_discover.png)
+![Navigate to Discover](./images/filter.PNG)
 
 
 Set a filter on your data to limit your results to sysmon data.  This can be done by searching the "data_stream.dataset" field for "windows.sysmon_operational" data.
 
 
-![Filter Data](./images/filter_results.png)
+![Filter Data](./images/applied_filter.PNG)
 
 If you have a result, and not an error, your Sysmon data is being collected and sent to Elastic.
 
 
-![Sysmon Results](./images/sysmon_result.png)
+![Sysmon Results](./images/final.PNG)
