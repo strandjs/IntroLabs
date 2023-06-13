@@ -52,13 +52,13 @@ Once those fields are filled out click "Next"
 
 Upon clicking next you will see the following page. For my instance I will be calling it "security-development. Make sure to enter the name of your deployment and click "Create Deployment".
 
-![Creating Delployment](/images/deployment2.PNG)
+![Creating Delployment](./images/deployment2.PNG)
 
 Next we will see this page.
 
 Elastic will present the credentials for this ELK stack. There is the option to download a CSV of the credentials. However you decide to hold onto these credentials, don't lose them.
 
-![Creating Creds](/images/creds3.PNG)
+![Creating Creds](./images/creds3.PNG)
 
 Then we will need to wait for the continue button to turn blue, once that's done click continue
 
