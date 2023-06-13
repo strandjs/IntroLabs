@@ -46,7 +46,7 @@ cd C:\Users\[USER]\Downloads\Sysmon\
 The following command will install and start Sysmon as a service.
 
 ```powershell
-sysmon -i -n -accepteula
+.\Sysmon.exe -i -n -accepteula
 ```
 
 
