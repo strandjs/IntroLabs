@@ -101,7 +101,7 @@ Once you do that you will be greeted with a few more steps to creating your endp
 
 <img src="attachments/eight.PNG" alt="register an account" width="500" />
 
-Then you need to go to your desktop, right click "Windows Terminal" and select run as "administrator"
+Then you need to go to your desktop, right click "Windows Terminal" and select "run as administrator"
 
 <img src="attachments/nine.PNG" alt="register an account" width="300" />
 
