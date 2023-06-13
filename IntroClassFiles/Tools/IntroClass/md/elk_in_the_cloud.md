@@ -27,6 +27,7 @@ This link is for the trial sign up page. Start a trial by signing up.
 
 ![Signup page for Elastic Cloud](./images/cloud_signup.png)
 
+---
 
 Watch your email for a confirmation. The email will look something similar to this.
 
@@ -39,6 +40,7 @@ Click "Verify and Accept."  You should be redirected to the cloud login page.  I
 
 [Elastic Cloud Log In](https://cloud.elastic.co/login "https://cloud.elastic.co/login")
 
+---
 
 After logging in, the page will look like this.
 
@@ -47,6 +49,8 @@ Fill out the proper filed with the correct information pictured below and select
 Once those fields are filled out click "Next"
 
 ![Welcome To Elastic](./images/Capture1.PNG)
+
+---
 
 **2. Start an ELK instance.**
 
