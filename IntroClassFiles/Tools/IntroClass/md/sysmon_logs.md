@@ -109,7 +109,7 @@ In the Integrations menu, find the "Installed integrations" tab.
 In [part one](./elk_in_the_cloud.md "Elk in the Cloud"), we selected an Elastic Security configuration. In doing so, "Endpoint Security" and "System" are automatically installed in our Integrations.
 
 
-![Installed Integrations](./images/integrations_extras.png)
+![Installed Integrations](./images/integrations_extras.PNG)
 
 
 At this point, play around on the computer that has Elastic Agent installed.  Move files around, create files, start programs, make a few Google searches.  This will generate some logs to ensure that we have Sysmon logs reaching our cloud.
