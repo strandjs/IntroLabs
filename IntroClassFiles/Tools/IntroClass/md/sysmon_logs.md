@@ -62,12 +62,6 @@ Now that Sysmon is running on our system, we need to configure our Elastic agent
 [Elastic Cloud Login](https://cloud.elastic.co/login "https://cloud.elastic.co/login")
 
 
-Navigate to Kibana.
-
-
-![Kibana Quick Link](./images/kibana_quicklink.png)
-
-
 Navigate to "Integrations" through the navigation menu.
 
 
