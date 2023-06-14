@@ -120,7 +120,7 @@ After you have created some log activity, navigate to "Discover" by accessing th
 ![Navigate to Discover](./images/filter.PNG)
 
 
-Set a filter on your data to limit your results to sysmon data.  This can be done by searching the "data_stream.dataset" field for "windows.sysmon_operational" data.
+Set a filter on your data to limit your results to sysmon data.  This can be done by searching the "data_stream.dataset" field for "windows.sysmon_operational" data. Then click "add filter". Your filter should now be set.
 
 
 ![Filter Data](./images/applied_filter.PNG)
