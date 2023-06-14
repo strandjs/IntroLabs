@@ -114,7 +114,7 @@ In [part one](./elk_in_the_cloud.md "Elk in the Cloud"), we selected an Elastic 
 
 At this point, play around on the computer that has Elastic Agent installed.  Move files around, create files, start programs, make a few Google searches.  This will generate some logs to ensure that we have Sysmon logs reaching our cloud.
 
-After you have created some log activity, navigate to "Kibana Discover."
+After you have created some log activity, navigate to "Discover" by accessing the hamburger menu on the top left.
 
 
 ![Navigate to Discover](./images/filter.PNG)
