@@ -18,7 +18,7 @@
   - [Sysmon in ELK](/IntroClassFiles/Tools/IntroClass/md/sysmon_logs.md)
   - [Lima Charlie](/IntroClassFiles/Tools/IntroClass/limacharlie/limacharlie.md)
   - [Lima Charlie & Atomic Red](/IntroClassFiles/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md)
-
+  
 
 [Intro To Security]()
 
@@ -35,7 +35,7 @@
  - [Web Testing](Tools/IntroClass/WebTesting/WebTesting.md)
  - [Falcon](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/falcon.md)
  - [ConnectSecure](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/Connectsecure.md)
-
+ - [Azure IR](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/README.md)
   
 [Cyber Deception/Active Defense]()
 
