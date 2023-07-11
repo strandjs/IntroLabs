@@ -28,7 +28,7 @@ After Atomic Red finishes installing return back to your organization and click 
 
 <img src="attachments/HOST.PNG" alt="register an account" width="300" />
 
-Scroll down a bit and you will see a few options, yara and atomic red. Click "Run atomic tests"
+Scroll down and you will see a few options, yara and atomic red. Click "Run atomic tests"
 
 <img src="attachments/RUNAR.PNG" alt="register an account" width="300" />
 
@@ -36,12 +36,12 @@ Go to the command and control and click "(1)Select Category" then click "(2)Run 
 
 <img src="attachments/C2ALL.PNG" alt="register an account" width="300" />
 
-Once that begins move over to the "Detections" tab on the left and start going through event logs
+Then move over to the "Detections" tab on the left and start going through event logs
 
 <img src="attachments/DETECTED.PNG" alt="register an account" width="700" />
 
-You will have lots of events, everytime you refresh your page more will appear as the attacks continue.
+There will be a lot of events, everytime the page is refreshed more attacks will appear.
 
-Go through all of the logs and note the cmd.exe or powershell invokes are taking place. These are usually indications of some malicious occuring and need to be examined further.
+Looking through all of the logs and note the cmd.exe or powershell invokes are taking place. These are (usually) indications of something malicious occuring and needs to be examined further.
 
 Lima Charlie is an amazing tool because of its versatillity. With an easy to look at interface that if need be, allows a user to dig deeper to see whats happening before, during, and after an attack. Its abillity to be used on small and large scale is a great feature. Many plugins allow for different uses large and small, and automating the difficult tasks.
