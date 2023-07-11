@@ -6,9 +6,9 @@ part 2/2
 
 In this lab we will be creating a controlled and fake cyber attack with Atomic Red, we will then use Lima Charlie to see what is logged and to see how a real world attack may set off bells and whistles for us to look at.
 
-We will be picking up where we left off in part 1, in the browser logged into our Lima Charlie web interface.
+We will pick up where we left off in part 1, in the browser logged into our Lima Charlie web interface.
 
-We will need to install the plugin for Atomic Red that Lima Charlie offers.
+We need to install the plugin for Atomic Red that Lima Charlie offers.
 
 Start by navigating to the "Add-ons" tab in the top right of the web page.
 
@@ -44,4 +44,6 @@ There will be a lot of events, everytime the page is refreshed more attacks will
 
 Looking through all of the logs and note the cmd.exe or powershell invokes are taking place. These are (usually) indications of something malicious occuring and needs to be examined further.
 
-Lima Charlie is an amazing tool because of its versatillity. With an easy to look at interface that if need be, allows a user to dig deeper to see whats happening before, during, and after an attack. Its abillity to be used on small and large scale is a great feature. Many plugins allow for different uses large and small, and automating the difficult tasks.
+Lima Charlie is an amazing tool because of its versatillity. With an easy to look at interface that if need be, allows a user to dig deeper to see whats happening before, during, and after an attack. Its abillity to be used on small and large scale is a great feature. 
+
+Many plugins allow for different uses large and small, and automating the difficult tasks.
