@@ -4,27 +4,27 @@ part 1/2
 
 In this lab we will be looking into endpoint monitoring and threat detection. We will be using LimaCharlie to do this.
 
-What is Lima Charlie? It is a lightweight browser based tool, that is great for big and small organizations, It helps keep an eye on systems, detect threats, and responds quickly to any suspicious activity.
+What is Lima Charlie? Lima Charlie is a lightweight browser based tool, that is great for big and small organizations, It helps keep an eye on systems, detect threats, and responds quickly to any suspicious activity.
 
 To start, we will be working in the chrome browser. This is on your desktop and can be opened by double clicking.
 
 ![](attachments/google_chrome_icon.PNG)
 
-When the browser opens, enter this URL into the search bar and hit enter.
+Once the browser opens, enter this URL into the search bar and hit enter.
 
 `https://app.limacharlie.io/login`
 
-Once the browser load, you will see a link at the bottom that says "Create an account"
+Once the webpage loads, you will see a link at the bottom that says "Create an account"
 
 <img src="attachments/register_an_account.PNG" alt="register an account" width="300" />
 
-Click that link
+Click the link
 
-Once that loads you will see a field to setup an account
+You will see a field to setup an account
 
 <img src="attachments/account_registration_page.PNG" alt="register an account" width="300" />
 
-Once you fill out the fields click the "Sign Up" button to continue
+Fill out the fields click the "Sign Up" button to continue
 
 <img src="attachments/SIGN_UP_BUTTON.PNG" alt="register an account" width="300" />
 
@@ -43,27 +43,27 @@ Enter the following answers into there respective fields ->
 
 Once those fields are filled, check the box that says "By checking this box, I hereby agree and consent to the Terms of Service and Privacy Policy."
 
-Now click "Get Started"
+Click "Get Started"
 
 Then click "Create Organization" 
 
 <img src="attachments/create_an_organization.PNG" alt="register an account" width="500" />
 
-Then you can enter the following information into the fields, you create your fictional organization, maybe Stark Industries? Hint Hint
+Then you can enter the following information into the fields, you create your fictional organization.
 
 <img src="attachments/organization_setup_menu.PNG" alt="register an account" width="500" />
 
-Then Click Create Organization.
+Click Create Organization.
 
-There may be be a small delay here while Lima Charlie creates the new company.
+There may be be a small delay while Lima Charlie creates the new company.
 
-You may notice from the picture below that it is possible to use this tool to manage more than one company or organization at a time.
+It is possible to use this tool to manage more than one company or organization at a time.
 
 Once the page finishes loading you will see a menu appear and your fake company. Please select your ficticious company.
 
 <img src="attachments/ficticious_company_selection.PNG" alt="register an account" width="700" />
 
-Once you have selected your ficticious company, you can look around and see all the options that this tool has too offer!
+Once you have selected your ficticious company, you can look around and see all the options that this tool has too offer.
 
 For this demonstration we will be creating a sensor for our windows machine and then setting off atomic red to test if our filter catches it.
 
