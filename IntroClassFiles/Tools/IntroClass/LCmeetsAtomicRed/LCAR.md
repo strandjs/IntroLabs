@@ -1,6 +1,6 @@
 # Lima Charlie meets Atomic Red
 
-WAITTTTT! Make sure you do Part 1 of this lab first <a href="https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/limacharlie/limacharlie.md">Part 1</a>
+Make sure you do <a href="https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/limacharlie/limacharlie.md">Part 1</a> of this lab first
 
 part 2/2
 
@@ -8,7 +8,7 @@ In this lab we will be creating a controlled and fake cyber attack with Atomic R
 
 We will be picking up where we left off in part 1, in the browser logged into our Lima Charlie web interface.
 
-To start off we will need to install the plugin for Atomic Red that Lima Charlie offers.
+We will need to install the plugin for Atomic Red that Lima Charlie offers.
 
 Start by navigating to the "Add-ons" tab in the top right of the web page.
 
@@ -40,8 +40,8 @@ Once that begins move over to the "Detections" tab on the left and start going t
 
 <img src="attachments/DETECTED.PNG" alt="register an account" width="700" />
 
-You will notice that you have lots of events, everytime you refresh your page more will appear as the attacks continue.
+You will have lots of events, everytime you refresh your page more will appear as the attacks continue.
 
-Go through all of the logs and notice that cmd.exe or powershell invokes are taking place. These are often times indications of some malicious occuring and need to be examined further.
+Go through all of the logs and note the cmd.exe or powershell invokes are taking place. These are usually indications of some malicious occuring and need to be examined further.
 
 Lima Charlie is an amazing tool because of its versatillity. With an easy to look at interface that if need be, allows a user to dig deeper to see whats happening before, during, and after an attack. Its abillity to be used on small and large scale is a great feature. Many plugins allow for different uses large and small, and automating the difficult tasks.
