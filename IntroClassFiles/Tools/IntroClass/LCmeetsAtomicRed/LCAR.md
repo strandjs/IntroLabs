@@ -6,7 +6,7 @@ part 2/2
 
 In this lab we will be creating a controlled and fake cyber attack with Atomic Red, we will then use Lima Charlie to see what is logged and to see how a real world attack may set off bells and whistles for us to look at.
 
-We will pick up where we left off in part 1, in the browser logged into our Lima Charlie web interface.
+Let's pick up where we left off in part 1, in the browser logged into our Lima Charlie web interface.
 
 We need to install the plugin for Atomic Red that Lima Charlie offers.
 
