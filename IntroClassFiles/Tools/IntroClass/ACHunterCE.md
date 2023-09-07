@@ -28,7 +28,9 @@ Terminal 2:
 6. As dataimport, pull down and install zeek
 
 `sudo wget -O /usr/local/bin/zeek https://raw.githubusercontent.com/activecm/docker-zeek/master/zeek`
+
 `sudo chmod +x /usr/local/bin/zeek`
+
 `zeek pull`
 
 7. Choose your ens adaptor!!
@@ -70,10 +72,13 @@ dataimport@achce:~$
 9. Get the proper scripts to connect the Zeek Sensor
 
 `curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/connect_sensor.sh -O`
+
 `curl -fsSL https://raw.githubusercontent.com/activecm/shell-lib/master/acmlib.sh -O`
+
 `curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/zeek_log_transport.sh -O`
 
 10. Get your hostname
+
 `hostname`
 
 11. run the script with your ac-hunter system hostname:
@@ -113,6 +118,7 @@ dataimport@achce's password:
 12. Install bettercap as root!!! Please switch to the other Terminal where you are running as root.
 
 `docker pull bettercap/bettercap`
+
 `docker run -it --privileged --net=host bettercap/bettercap -eval "caplets.update; ui.update; q"`
 
 13. Install mlocate
@@ -120,9 +126,11 @@ dataimport@achce's password:
 `apt install mlocate`
 
 14. Updated the database
+
 `updatedb`
 
 15. Search for the config files
+
 `locate https-ui.cap`
 
 16. Edit the https-ui.cap file:
@@ -161,7 +169,9 @@ log out of vi with esc :wq!
 
 17. Start bettercap
 
+
 `docker run -it --privileged --net=host bettercap/bettercap -caplet https-ui`
+
 
 18. Show the network
 
