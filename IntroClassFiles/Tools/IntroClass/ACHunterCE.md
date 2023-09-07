@@ -34,11 +34,14 @@ Terminal 2:
 `zeek pull`
 
 7. Choose your ens adaptor!!
+
+It should look like it does below:
+
 ```
 ? Choose your capture interface(s):  [Use arrows to move, space to select, type to filter, ? for more help]
   [ ]  br-d933eaf5d433      UP      172.18.0.1  fe80::42:4cff:fea7:3586
   [ ]  docker0              UP      172.17.0.1
-`**> [ ]  ens33                UP   192.168.3.122  fe80::20c:29ff:fec7:4f8`**
+> [ ]  ens33                UP   192.168.3.122  fe80::20c:29ff:fec7:4f8
   [ ]  lo                   UP       127.0.0.1  ::1
   [ ]  veth07f3680          UP               -  fe80::6c66:1dff:fe22:2de5
   [ ]  veth6f1a6c9          UP               -  fe80::5428:54ff:fe62:b8a0
@@ -53,6 +56,8 @@ Terminal 2:
 8. Add a password for the web user for AC Hunter
 
 `manage_web_user.sh reset -u 'welcome@activecountermeasures.com'`
+
+It should look like it does below:
 
 ```dataimport@achce:~$ manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
 Please enter a password
@@ -141,6 +146,8 @@ Please note your path will be different!!!!!
 
 Change the line set https.server.port to 4443
 
+It should look like it does below:
+
 ```# api listening on https://0.0.0.0:8083/ and ui on https://0.0.0.0
 set api.rest.address 0.0.0.0
 set api.rest.port 8083
@@ -166,6 +173,8 @@ https.server on
 
 
 log out of vi with esc :wq!
+
+###Please note, there seems to be a weird bug in Bettercap where it updates the port to 4444443.  If you get a bind error, just re-edit the above file to set the port to 443.
 
 17. Start bettercap
 
@@ -200,6 +209,7 @@ log out of vi with esc :wq!
 
 `help`
 
+It should look like it does below:
 
 ```
 
