@@ -2,7 +2,7 @@
 
 In this lab we are going to set up the Community Edition of AC Hunter so it can intercept and inspect traffic on a home network without the need for expensive managed switches with SPAN or TAP ports.  This is done through the amazing power of ARP cache poisoning.
 
-First, Download AC Hunter Community Edition Here:
+Step 0, Download AC Hunter Community Edition Here:
 
 https://www.activecountermeasures.com/ac-hunter-community-edition/download/
 
@@ -10,10 +10,17 @@ https://www.activecountermeasures.com/ac-hunter-community-edition/download/
 
 1. The first thing we will need to do is to change VM to Bridged networking from NAT.  This can be done in the settings for the VM which can be accessed via VM > Settings > Network Adaptor 
 
+![](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHCE/VMWare_Bridge.png)
 
-2. When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used. User ID is dataimport	
-3. Change the default password after initial login	
-4. Get your IP Address 
+2. When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
+
+
+User ID is dataimport	
+
+![](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHCE/Password2.png)
+
+5. Change the default password after initial login	
+6. Get your IP Address 
 
 `ip addr show dev ens33 | grep 'inet '`
 
@@ -280,4 +287,6 @@ Modules
 `https.proxy on`
 
 Now, surf to your AC-Hunter system!!!
+
+https://<YOUR_ACHCE_IP_ADDR>
 
