@@ -17,11 +17,11 @@ From Windows Terminal.
 
 Terminal 1:
 
-`ssh dataimport@<YourACHCEIPADDRESS>`
+`ssh dataimport@YourACHCE_IPADDRESS`
 
 Terminal 2:
 
-`ssh dataimport@<YOURACHCEIPADDRESS>
+`ssh dataimport@YOURACHCE_IPADDRESS`
 
 `sudo su -`
 
@@ -30,6 +30,7 @@ Terminal 2:
 `sudo wget -O /usr/local/bin/zeek https://raw.githubusercontent.com/activecm/docker-zeek/master/zeek`
 `sudo chmod +x /usr/local/bin/zeek`
 `zeek pull`
+
 7. Choose your ens adaptor!!
 ```
 ? Choose your capture interface(s):  [Use arrows to move, space to select, type to filter, ? for more help]
@@ -51,7 +52,7 @@ Terminal 2:
 
 `manage_web_user.sh reset -u 'welcome@activecountermeasures.com'`
 
-``dataimport@achce:~$ manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
+```dataimport@achce:~$ manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
 Please enter a password
 Please re-enter to confirm:
 achunter_db is up-to-date
@@ -64,7 +65,7 @@ Creating achunter_auth_run ... done
 User created successfully.
 {'email': 'welcome@activecountermeasures.com', 'password': '****', 'active': True}
 dataimport@achce:~$
-``
+```
 
 9. Get the proper scripts to connect the Zeek Sensor
 
@@ -81,7 +82,7 @@ dataimport@achce:~$
 
 It should look like it does below:
 
-``================ Creating a new RSA key with no passphrase ================
+```================ Creating a new RSA key with no passphrase ================
 Generating public/private rsa key pair.
 Your identification has been saved in /home/dataimport/.ssh/id_rsa_dataimport
 Your public key has been saved in /home/dataimport/.ssh/id_rsa_dataimport.pub
@@ -107,7 +108,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added 'achce' (ECDSA) to the list of known hosts.
 dataimport@achce's password:
 
-``
+```
 
 12. Install bettercap as root!!! Please switch to the other Terminal where you are running as root.
 
@@ -132,7 +133,7 @@ Please note your path will be different!!!!!
 
 Change the line set https.server.port to 4443
 
-``# api listening on https://0.0.0.0:8083/ and ui on https://0.0.0.0
+```# api listening on https://0.0.0.0:8083/ and ui on https://0.0.0.0
 set api.rest.address 0.0.0.0
 set api.rest.port 8083
 set https.server.address 0.0.0.0
@@ -153,7 +154,7 @@ set api.rest.password pass
 # go!
 api.rest on
 https.server on
-``
+```
 
 
 log out of vi with esc :wq!
@@ -167,7 +168,7 @@ log out of vi with esc :wq!
 `net.show`
 
 
-``
+```
 
 192.168.3.0/24 > 192.168.3.116  » net.show
 
@@ -183,14 +184,14 @@ log out of vi with esc :wq!
 ↑ 6.7 kB / ↓ 962 kB / 3748 pkts
 
 
-``
+```
 
 19. Show help for options!
 
 `help`
 
 
-``
+```
 
 192.168.3.0/24 > 192.168.3.116  » help
 
@@ -242,7 +243,7 @@ Modules
 			
 			
 			
-``
+```
 
 20.  Start the poison
 
