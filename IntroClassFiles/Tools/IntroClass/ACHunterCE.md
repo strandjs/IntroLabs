@@ -38,7 +38,7 @@ Terminal 2:
 ? Choose your capture interface(s):  [Use arrows to move, space to select, type to filter, ? for more help]
   [ ]  br-d933eaf5d433      UP      172.18.0.1  fe80::42:4cff:fea7:3586
   [ ]  docker0              UP      172.17.0.1
-> [ ]  ens33                UP   192.168.3.122  fe80::20c:29ff:fec7:4f8
+**> [ ]  ens33                UP   192.168.3.122  fe80::20c:29ff:fec7:4f8**
   [ ]  lo                   UP       127.0.0.1  ::1
   [ ]  veth07f3680          UP               -  fe80::6c66:1dff:fe22:2de5
   [ ]  veth6f1a6c9          UP               -  fe80::5428:54ff:fe62:b8a0
