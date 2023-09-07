@@ -31,7 +31,7 @@ Terminal 2:
 `sudo chmod +x /usr/local/bin/zeek`
 `zeek pull`
 7. Choose your ens adaptor!!
-``
+```
 ? Choose your capture interface(s):  [Use arrows to move, space to select, type to filter, ? for more help]
   [ ]  br-d933eaf5d433      UP      172.18.0.1  fe80::42:4cff:fea7:3586
   [ ]  docker0              UP      172.17.0.1
@@ -43,7 +43,7 @@ Terminal 2:
   [ ]  vethb857d1b          UP               -  fe80::60d4:3ff:fe88:9500
   [ ]  vethed90b7f          UP               -  fe80::44ef:6fff:fe64:1c26
  
- ``
+ ```
 
 `zeek start`
 
