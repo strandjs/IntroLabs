@@ -176,15 +176,6 @@ You will see that most of the .exe files will generate an error.
 
 
 
-Now, let's surf to your Linux system, download the malware and try to run it again.
-
-
-
-
-
-
-
-
 You should get an error.
 
 To finish this lab, simply restart your class VM and log in as ADHD.
