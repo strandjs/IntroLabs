@@ -88,7 +88,10 @@ When it gets done crawling and scanning select Alerts:
 This shows that ZAP does a pretty good job of finding the easy to identify vulnerabilites.
 
 
-Now, let's start Chrome and play with DVWA.
+#OPTIONAL DVWA LAB!
+
+
+Now, let's start Chrome and play with DVWA. Please note that our class has a track record of DoSSing the Docker download for this section.  I recomend doing this after class when less than 100 people are hitting it at the same time.
 
 ![](attachments/Clipboard_2020-06-16-13-31-13.png)
 
