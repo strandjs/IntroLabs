@@ -18,7 +18,8 @@
   - [Sysmon in ELK](/IntroClassFiles/Tools/IntroClass/md/sysmon_logs.md)
   - [Lima Charlie](/IntroClassFiles/Tools/IntroClass/limacharlie/limacharlie.md)
   - [Lima Charlie & Atomic Red](/IntroClassFiles/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md)
-  - [AC Hunter CE](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHunterCE.md)  
+  - [AC Hunter CE](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHunterCE.md)
+  - [Hunting DCSync, Sharepoint and Kerberoasting](https://github.com/her3ticAVI/PoisoningtheWellIR/blob/main/navigate.md)
 
 [Intro To Security]()
 
