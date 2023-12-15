@@ -48,11 +48,11 @@ Next select the Auditing tab in the window that opens:
 
 When this tab opens, please select Continue
 
-Next, we will ne to add a Principal.  This is the user or group the policy applies to.
+Next, we will need to add a Principal.  This is the user or group the policy applies to.
 
 ![](attachment/AddPrincipal.png)
 
-Next we will nee to click on Select a principal in the Auditing Entry for Secret window.
+Next we will need to click on Select a principal in the Auditing Entry for Secret window.
 
 ![](attachment/SelectPrincipal.png)
 
