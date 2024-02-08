@@ -5,21 +5,7 @@ In this lab we will be standing up a simple Python Web Server and a vulnerable w
 
 While a full intro to web attacks is out of the scope of this class, it is great to show you how to use tools like ZAP to automatically look for some vulnerabilities, and to show you that automated tools do not always catch everything.
 
-Let’s get started by opening a Terminal as Administrator
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
-
-When you get the User Account Control Prompt, select Yes.
-
-PS C:\Users\adhd> `docker run --rm -it -p 80:80 vulnerables/web-dvwa`
-
-![](attachments/Clipboard_2020-06-16-13-29-31.png)
-
-In another Command Prompt window run ipconfig and record your IP address.  Remember, your IP address may be different from mine.
-
-C:\Users\adhd>`ipconfig`
-
-![](attachments/Clipboard_2020-06-16-13-29-46.png)
 
 We now have DVWA up and running.
 
@@ -90,7 +76,21 @@ This shows that ZAP does a pretty good job of finding the easy to identify vulne
 
 #OPTIONAL DVWA LAB!
 
+Let’s get started by opening a Terminal as Administrator
 
+![](attachments/Clipboard_2020-06-12-10-36-44.png)
+
+When you get the User Account Control Prompt, select Yes.
+
+PS C:\Users\adhd> `docker run --rm -it -p 80:80 vulnerables/web-dvwa`
+
+![](attachments/Clipboard_2020-06-16-13-29-31.png)
+
+In another Command Prompt window run ipconfig and record your IP address.  Remember, your IP address may be different from mine.
+
+C:\Users\adhd>`ipconfig`
+
+![](attachments/Clipboard_2020-06-16-13-29-46.png)
 Now, let's start Chrome and play with DVWA. Please note that our class has a track record of DoSSing the Docker download for this section.  I recomend doing this after class when less than 100 people are hitting it at the same time.
 
 ![](attachments/Clipboard_2020-06-16-13-31-13.png)
