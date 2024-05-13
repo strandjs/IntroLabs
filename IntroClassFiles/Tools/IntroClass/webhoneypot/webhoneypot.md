@@ -30,7 +30,31 @@ Then, select the down carrot and choose Ubuntu.
 
 ![](attachment/Clipboard_2021-03-12-11-39-25.png) 
 
-  
+ ####NOTE##### 
+
+If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+
+ 
+
+Simply click the Windows Start button in the lower left of your screen and type: 
+
+ 
+
+`Powershell` 
+
+or 
+
+`Ubuntu`
+
+or 
+
+`Command Prompt` 
+
+ 
+
+For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
+
+###END NOTE###
 
 Next, change directories to the /opt/owa-honeyport directory: 
 
