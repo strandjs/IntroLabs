@@ -15,9 +15,12 @@ Now, let's open a command Prompt:
 
 ![](attachments/Clipboard_2020-06-16-09-53-18.png)
 
-From the command prompt we need to get the IP address of your Windows system:
+Before we get started, let's disable the Windows firewall from the command prompt.
+
+C:\Users\adhd>`netsh advfirewall set allprofiles state off`
 
 
+From the command prompt again, we need to get the IP address of your Windows system:
 
 C:\Users\adhd>`ipconfig`
 
