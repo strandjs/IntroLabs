@@ -27,7 +27,7 @@
  - [Atomic RedTeam and Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
  - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
  - [Nessus](Tools/IntroClass/nessus/Nessus.md)
- - [Nmap](Tools/IntroClass/Nmap/Nmap.md)
+ - [Host Firewalls and Nmap](Tools/IntroClass/Nmap/Nmap.md)
  - [Password Cracking](Tools/IntroClass/PasswordCracking/PasswordCracking.md)
  - [Password Spraying](Tools/IntroClass/PasswordSpray/PasswordSpray.md)
  - [Responder](Tools/IntroClass/Responder/Responder.md)
