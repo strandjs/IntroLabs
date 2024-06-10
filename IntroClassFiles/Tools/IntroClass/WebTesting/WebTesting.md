@@ -11,6 +11,32 @@ We now have DVWA up and running.
 
 First, you will need to start an Ubuntu prompt.  Please select that from the Windows Terminal drop-down.
 
+####NOTE##### 
+
+If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+
+ 
+
+Simply click the Windows Start button in the lower left of your screen and type: 
+
+ 
+
+`Powershell` 
+
+or 
+
+`Ubuntu`
+
+or 
+
+`Command Prompt` 
+
+ 
+
+For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
+
+###END NOTE###
+
 Now, let's start the Python Web Server:
 
 <pre>
