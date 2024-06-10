@@ -1,5 +1,5 @@
 
-# Nmap
+# Host Firewalls and Nmap
 
 In this lab we will be scanning your Windows system from your Linux terminal with the firewall both on and off. 
 
