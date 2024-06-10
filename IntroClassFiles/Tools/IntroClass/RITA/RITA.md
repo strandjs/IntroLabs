@@ -1,6 +1,6 @@
 
 
-# RITA
+# RITA and AC Hunter
 
 In this lab we are going to look at detecting command and control traffic on a network.
 
