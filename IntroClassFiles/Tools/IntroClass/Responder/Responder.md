@@ -18,6 +18,32 @@ And, open a Ubuntu command prompt:
 
 ![](attachments/Clipboard_2020-06-17-08-32-51.png)
 
+####NOTE##### 
+
+If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+
+ 
+
+Simply click the Windows Start button in the lower left of your screen and type: 
+
+ 
+
+`Powershell` 
+
+or 
+
+`Ubuntu`
+
+or 
+
+`Command Prompt` 
+
+ 
+
+For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
+
+###END NOTE###
+
 Next, let’s become root:
 
 adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ `sudo su -`
