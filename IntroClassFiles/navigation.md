@@ -31,7 +31,7 @@
  - [Password Cracking](Tools/IntroClass/PasswordCracking/PasswordCracking.md)
  - [Password Spraying](Tools/IntroClass/PasswordSpray/PasswordSpray.md)
  - [Responder](Tools/IntroClass/Responder/Responder.md)
- - [RITA](Tools/IntroClass/RITA/RITA.md)
+ - [RITA and AC Hunter](Tools/IntroClass/RITA/RITA.md)
  - [Sysmon](Tools/IntroClass/Sysmon/Sysmon.md)
  - [Web Testing](Tools/IntroClass/WebTesting/WebTesting.md)
  - [Falcon](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/falcon.md)
