@@ -23,6 +23,32 @@ Next, to open a Command Prompt Window, select the Down Carrot and then select Co
 
 ![](attachments/Clipboard_2020-06-12-10-38-52.png)
 
+####NOTE##### 
+
+If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+
+ 
+
+Simply click the Windows Start button in the lower left of your screen and type: 
+
+ 
+
+`Powershell` 
+
+or 
+
+`Ubuntu`
+
+or 
+
+`Command Prompt` 
+
+ 
+
+For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
+
+###END NOTE###
+
 Next, we need to navigate to the hashcat directory.
 
 C:\Users\adhd>`cd \tools\hashcat-4.1.0\`
