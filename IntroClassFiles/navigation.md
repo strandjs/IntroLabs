@@ -55,5 +55,4 @@
   - [File Audit](Tools/IntroClass/FileAudit/FileAudit.md)
 
 
-<img width="444" alt="image" src="https://github.com/strandjs/IntroLabs/assets/22796374/a7ada2c5-630d-4536-b36a-eecac16163bc">
 
