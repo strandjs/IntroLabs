@@ -161,8 +161,6 @@ If we scroll down, we can see the actual usage information for netcat.  We pulle
 ![](attachments/netcatusageKaliInstance.png)
 
 
-Screenshots
-
 
 
 
