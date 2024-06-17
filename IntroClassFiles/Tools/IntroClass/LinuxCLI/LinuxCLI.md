@@ -15,7 +15,7 @@ The third is where we will be running our analysis.
 
 Let’s get started by opening a Terminal as Administrator
 
-![alt text](image-1.png)
+![alt text](image-2.png)
 ![](attachments/Clipboard_2020-06-12-10-36-44.png)
 
 When you get the User Account Control Prompt, select Yes.
