@@ -15,14 +15,11 @@ The third is where we will be running our analysis.
 
 Let’s get started by opening a Terminal as Administrator
 
-![alt text](image-2.png)
 ![](attachments/Clipboard_2020-06-12-10-36-44.png)
 
 When you get the User Account Control Prompt, select Yes.
 
 And, open a Ubuntu command prompt:
-
-![alt text](image-3.png)
 
 ![](attachments/Clipboard_2020-06-17-08-32-51.png)
 
