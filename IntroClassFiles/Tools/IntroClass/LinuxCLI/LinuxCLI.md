@@ -90,7 +90,7 @@ Now we will need to know the IP address of our linux system:
 
 Now, let's connect:
 
-<pre> nc 10.10.1.117 2222</pre>
+<pre> nc 127.0.0.1 2222</pre>
 
 Remember!!!  Your IP address will be different!!!!
 
@@ -152,9 +152,9 @@ Remember!!!  Your PID will be different!!!
 
 We can run strings on the exe in this directory.  This is very, very useful as when programs are created there may be usage information, mentions of system libraries and possible code comments.  We use this all the time to attempt to identify what exactly a program is doing.
 
-<pre>strings ./exe</pre>
+<pre>strings ./exe | less</pre>
 
-![](attachments/strings_exeKaliInstance.png)
+![](attachments/strings_exelessKaliInstance.png)
 
 If we scroll down, we can see the actual usage information for netcat.  We pulled it directly out of memory!
 
