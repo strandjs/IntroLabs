@@ -15,13 +15,16 @@ The third is where we will be running our analysis.
 
 Let’s get started by opening a Terminal as Administrator
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+![](attachments/OpeningKaliInstance.png)
+
+Alternatively, you can click on the Kali logo in the taskbar.
+
+![](attachments/TaskbarKaliIcon.png)
 
 When you get the User Account Control Prompt, select Yes.
 
 And, open a Ubuntu command prompt:
 
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
 
 ####NOTE##### 
 
@@ -73,17 +76,21 @@ Basically, this will create a backdoor listening on port 2222 of our linux syste
 
 Now, let's open another Ubuntu terminal.  This will be the terminal we connect to the above created backdoor with.
 
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
+![](attachments/OpeningKaliInstance.png)
+
+Alternatively, you can click on the Kali logo in the taskbar.
+
+![](attachments/TaskbarKaliIcon.png)
 
 Now we will need to know the IP address of our linux system:
 
 <pre>ifconfig</pre>
 
-![](attachments/Clipboard_2020-12-11-07-18-27.png)
+![](attachments/ifconfigKaliInstance.png)
 
 Now, let's connect:
 
-<pre> nc 172.30.249.49 2222</pre>
+<pre> nc 10.10.1.117 2222</pre>
 
 Remember!!!  Your IP address will be different!!!!
 
@@ -92,13 +99,17 @@ Now, let's type some commands and make sure it is working
 <pre>ls</pre>
 <pre>whoami</pre>
 
-![](attachments/Clipboard_2020-12-11-07-19-48.png)
+![](attachments/lswhoamiKaliInstance.png)
 
 As you can see, we are connected to the simple Linux backdoor as root.  Also notice there was not message saying we successfully connected to the backdoor.  It just drops our cursor back to the left side of the screen.
 
 Now, let's open yet another Ubuntu terminal and start our analysis. This means we have one where we created the backdoor, another that connected to it and this third one will be for the analysis.
 
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
+![](attachments/OpeningKaliInstance.png)
+
+Alternatively, you can click on the Kali logo in the taskbar.
+
+![](attachments/TaskbarKaliIcon.png)
 
 On your Linux terminal, please run the following command:
 
@@ -111,31 +122,31 @@ Let's start by looking at the network connections with lsof.  When we use lsof, 
 <pre>lsof -i -P</pre>
 
 
-![](attachments/Clipboard_2020-12-11-07-23-35.png)
+![](attachments/lsof-i-pKaliInstance.png)
 
 Now let's dig into the netcat process ID.  We can do this with the lowercase p switch.  This will give us all the open files associated with the listed process ID.
 
 <pre>lsof -p 131</pre>
 
-![](attachments/Clipboard_2020-12-11-07-24-11.png)
+![](attachments/lsof-pKaliInstance.png)
 
 Let's look at the full processes.  We can do this with the ps command. We are also adding the aux switches.  This is a for all processes,  u for sorted by user and x to include the processes using a teletype terminal.
 
 <pre>ps aux</pre>
 
-![](attachments/Clipboard_2020-12-11-07-24-39.png)
+![](attachments/psauxKaliInstance.png)
 
 Let's change directories into the proc directory for that pid.  Remember, proc is a directory that does not exist on the drive.  It allows us to see data associated with the various processes directly.   This can be very useful as it allows us to dig into the memory of a process that is currently running on a suspect system.
 
 <pre>cd /proc/[pid]</pre>
 
-![](attachments/Clipboard_2020-12-11-07-25-14.png)
+![](attachments/procPIDKaliInstance.png)
 
 We can see a number of interesting directories here:
 
 <pre>ls</pre>
 
-![](attachments/Clipboard_2020-12-11-07-28-21.png)
+![](attachments/lsKaliInstance.png)
 
 Remember!!!  Your PID will be different!!!
 
@@ -143,11 +154,11 @@ We can run strings on the exe in this directory.  This is very, very useful as w
 
 <pre>strings ./exe</pre>
 
-![](attachments/Clipboard_2020-12-11-07-25-54.png)
+![](attachments/strings_exeKaliInstance.png)
 
 If we scroll down, we can see the actual usage information for netcat.  We pulled it directly out of memory!
 
-![](attachments/Clipboard_2020-12-11-07-27-29.png)
+![](attachments/netcatusageKaliInstance.png)
 
 
 
