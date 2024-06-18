@@ -81,7 +81,7 @@ Now, let's connect:
 
 `nc 127.0.0.1 2222`
 
-<p style="color: red; font-size: 24px; background-color: yellow; font-weight: bold;">Remember!!!  Your IP address will be different!!!!</p>
+# Remember!!!  Your IP address will be different!!!!
 
 ***
 
@@ -155,7 +155,7 @@ We can see a number of interesting directories here:
 
 ![](attachments/lsKaliInstance.png)
 
-<p style="color: red; font-size: 24px; background-color: yellow; font-weight: bold;">Remember!!!  Your PID will be different!!!</p>
+# Remember!!!  Your PID will be different!!!
 
 ***
 
