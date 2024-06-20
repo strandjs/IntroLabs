@@ -8,23 +8,19 @@ First, we need to make it clear, that Wireshark is not "better" than tcpdump.  T
 
 Tcpdump is fast and very lightweight.  It is also scriptable.
 
-But, it is CLI and to be honest, having some visualizations is very, very helpful when dealing with large datasets.
+But, it is CLI and to be honest, having some visualizations can be very, very helpful when dealing with large datasets.
 
 But, Wireshark tends to give up and freeze on very large files.  Sometimes, we carve data out with tcpdump and open it in Wireshark.  Basically, it is key to learn and know both.
 
 Let's get started.
 
-First, select the Windows icon and type in wireshark:
+First, either double click or right click + open the wireshark icon on the desktop:
 
-![](attachments/Clipboard_2020-12-09-18-34-50.png)
+![](attachments/wireshark_open.png)
 
-Now select the Wireshark icon:
+Once Wireshark opens, go to File > Open
 
-![](attachments/Clipboard_2020-12-09-18-35-25.png)
-
-Now, select File > Open
-
-![](attachments/Clipboard_2020-12-09-18-36-11.png)
+![](attachments/wireshark_fileopen.png)
 
 Then, select magnitude_1hr in the Open Capture File box.  You may need to scroll down, it is at the bottom:
 
