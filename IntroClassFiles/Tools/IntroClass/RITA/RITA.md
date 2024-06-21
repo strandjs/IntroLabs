@@ -8,6 +8,10 @@ We will be using Real Intelligence Threat Analytics (RITA) for this lab.
 
 To start we first need to open Windows File Explorer and navigate to the tools directory.
 
+
+test 
+
+
 First, open File Explorer:
 
 ![](attachments/Clipboard_2020-07-07-16-58-09.png)
