@@ -14,34 +14,30 @@ test
 
 First, open File Explorer:
 
-![](attachments/Clipboard_2020-07-07-16-58-09.png)
+![](attachments/OpeningFileExplorer.png)
 
 Then, select the tools directory:
 
-![](attachments/Clipboard_2020-07-07-16-59-17.png)
+![](attachments/rita_navintrolabs.png)
 
 Then, select rita-html-report:
 
-![](attachments/Clipboard_2020-07-07-17-00-10.png)
+![](attachments/rita_navhtmlreport.png)
 
 Then, select index.html:
 
-![](attachments/Clipboard_2020-07-07-17-01-18.png)
-
-
+![](attachments/rita_navindex.png)
 
 Let’s select VSAGENT-2017-3-15.
 
-Review Options
+![](attachments/rita_vsagent.png)
 
 The tabs across the top allow you to review the output for all the different analysis modules of RITA.
 For VSAgent we will be focusing on Beacons, Blacklisted and User Agents.
 
-Please select Beacons now.
+Please select the Beacons tab.
 
-![](attachments/Clipboard_2020-07-07-17-08-00.png)
-
-Beacons
+![](attachments/rita_beaconview.png)
 
 Some backdoors have a very strong “heartbeat”. This is where a backdoor will constantly reconnect to get commands from an attacker at a specific interval. The interval consistency of the “heartbeat” is the TS score where a value of 1 is perfect. The top value in this set is the VSAgent communication. We will talk about the other connections in a few moments.
 
@@ -50,21 +46,23 @@ We also have the number of connections. While some beacons have a “strong” h
 The other fields are statistical analysis fields showing things like mode range and skew.
 DNSCat2
 
-Now, select RITA and then select DNSCat-2017-03-21. We are going to review a backdoor which does not quite fit the same mold as VSAgent.
+Now, lets navigate back to the first menu by clicking the RITA tab. 
 
-![](attachments/Clipboard_2020-07-07-17-08-41.png)
+![](attachments/rita_rita.png)
 
-![](attachments/Clipboard_2020-07-07-17-09-00.png)
+Then, select DNSCat-2017-03-21. We are going to review a backdoor which does not quite fit the same mold as VSAgent.
+
+![](attachments/rita_dnscat.png)
 
 This does not beacon back to a specific IP address, but rather it beacons through a DNS server. It is very crafty and will highlight how we can review the RAR compressed Bro logs used to generate the RITA data.
 
 For this one, we are going to jump right to the DNS tab. It gives us the clearest look at this backdoor.
 
-![](attachments/Clipboard_2020-07-07-17-09-33.png)
+![](attachments/rita_dns.png)
 
-![](attachments/Clipboard_2020-07-07-17-09-56.png)
+![](attachments/rita_dnsview.png)
 
-A couple of things should jump out at an investigator straight away. First, there were over 40K requests for cat.nanobotninjas.com. This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expect
+A couple of things should jump out at an investigator straight away. First, there were over 40K requests for cat.nanobotninjas.com. This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expected.
 
 Now, let's play with AC Hunter!
 
@@ -72,28 +70,30 @@ Please go to https://training.aihhosted.com/
 
 The creds are:
 
-ID= training@blackhillsinfosec.com
-PW = gotbeacons?
+<pre> email = training@blackhillsinfosec.com/ </pre>
 
+<pre> PW = gotbeacons? </pre>
 
-When logged in, please select the house in the lower left corner and then the gear in the upper right.
+![](attachments/rita_achunterlogin.png)
 
+When logged in, you will be prompted to select a dataset. 
+Select vsagent and hit confirm.
 
-![](attachments/AC_Hunter_Main_1.JPG)
+![](attachments/rita_datasetselection.png)
 
-This will open the dataset selection screen
+Note: if this is not what you see, select the house icon in the bottom left of your screen, followed by the gear in the upper right.
 
-![](attachments/DataSetSelection_2.JPG)
+![](attachments/rita_wrongplace.png)
 
-Please select vsagent then Confirm.
+This will open the overall scoring screen, as seen below. This screen allows you to see the systems that have the top scores across all areas from beacons to cyber deception.
 
-This will open the overall scoring screen.  This is the screen that allows you to see the systems that have the top scores across all areas from beacons to cyber deception.
+Please select 10.55.100.111, then click on Beacon Score on the right.
 
-Please select 10.55.100.111, then click on Beason Score on the right.
+![](attachments/rita_selectingbeacon.png)
 
 This will open the beacon score for this system.
 
-![](attachments/BeaconScore_3.JPG)
+![](attachments/rita_beaconscore.png)
 
 Notice the histogram on the bottom and the scoring criteria in the middle. 
 
