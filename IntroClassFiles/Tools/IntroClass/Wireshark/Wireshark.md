@@ -22,37 +22,37 @@ Once Wireshark opens, go to File > Open
 
 ![](attachments/wireshark_fileopen.png)
 
-Then, select magnitude_1hr in the Open Capture File box.  You may need to scroll down, it is at the bottom:
+Then, select magnitude_1hr in the Open Capture File box. The file is in the C:/IntroLabs folder if you cannot find it.
 
-![](attachments/Clipboard_2020-12-09-18-37-14.png)
+![](attachments/wireshark_opencapturefile.png)
 
 When Wireshark opens, you will see packets represented in three different windows:
 
-![](attachments/Clipboard_2020-12-09-18-37-57.png)
+![](attachments/wireshark_windowcomplete.png)
 
 The top window shows each individual packet in order:
 
-![](attachments/Clipboard_2020-12-09-18-38-26.png)
+![](attachments/wireshark_packetorder.png)
 
 The second window shows a "decode" of any packet that is selected:
 
-![](attachments/Clipboard_2020-12-09-18-38-57.png)
+![](attachments/wireshark_decode.png)
 
 Any of the lines with a > can be expanded:
 
-![](attachments/Clipboard_2020-12-09-18-39-29.png)
+![](attachments/wireshark_expandeddecode.png)
 
 This means you do not have to memorize every possible packet and protocol value in hex...  Unless that is your thing.  If it is....  You must be Judy Novak, Mike Poor or Jonathan Ham. 
 
 The last window is the hex for the packet:
 
-![](attachments/Clipboard_2020-12-09-18-40-47.png)
+![](attachments/wireshark_hex.png)
 
-Click some hex in the bottom window:
+Hover over some hex in this window:
 
-![](attachments/Clipboard_2020-12-09-18-41-14.png)
+![](attachments/wireshark_hexselect.png)
 
-Notice that when you select any of the hex in the bottom window it opens and highlights the corresponding data in the second window.
+Notice that when you do this, the corresponding data is also highlighted on the right side of the window.
 
 This is very, very cool.  This means Wireshark can decode the hex on the fly and automatically highlight the relevant data instantly.
 
@@ -60,36 +60,36 @@ Ok, now, lets play with some statistics.
 
 Please select Statistics > HTTP > Requests:
 
-![](attachments/Clipboard_2020-12-09-18-42-30.png)
+![](attachments/wireshark_statshttprequests.png)
 
 This will show us the various HTTP requests for the capture:
 
-![](attachments/Clipboard_2020-12-09-18-43-37.png)
-
+![](attachments/wireshark_httprequests.png)
 
 Now, let's look at Statistics > Conversations:
 
-![](attachments/Clipboard_2020-12-09-18-45-30.png)
+![](attachments/wireshark_conversations.png)
 
 This will give us a breakdown of who was talking to whom:
 
-![](attachments/Clipboard_2020-12-09-18-46-16.png)
+![](attachments/wireshark_inconversations.png)
 
 Please select IPv4:
 
-![](attachments/Clipboard_2020-12-09-18-46-38.png)
+![](attachments/wireshark_ipv4.png)
 
 Then click on the top of the packets column twice:
 
-![](attachments/Clipboard_2020-12-09-18-47-21.png)
+![](attachments/wireshark_packetssort.png)
 
 This gives us a breakdown of who was chatting with what system the most.  Click it again and it will sort the opposite direction and show you the least:
 
-![](attachments/Clipboard_2020-12-09-18-48-14.png)
+![](attachments/wireshark_packetsortlow.png)
 
-Really want to know what those systems were saying to each other?  Right click on a conversation and select Apply as Filter > Selected > A<->B
+Lets click the top of the packets column one more time to sort it by highest frequency.
+Now, do we want to know what those systems were saying to each other? This can be done by right clicking on a conversation and selecting Apply as Filter > Selected > A<->B
 
-![](attachments/Clipboard_2020-12-09-18-49-33.png)
+![](attachments/wireshark_filter.png)
 
 You should see the main Wireshark screen change
 
@@ -97,25 +97,23 @@ Then, close the Conversations window:
 
 Notice the following in the filter bar
 
-`ip.addr==68.183.138.51 && ip.addr==192.168.99.52`
+![](attachments/wireshark_appliedfilter.png)
 
-![](attachments/Clipboard_2020-12-09-18-51-35.png)
+In this instance, this is saying:
 
-This is saying:
-
-"IP address equals 68.183.138.51 And IP address equals 192.168.99.52"
+"IP address equals 192.168.99.52 AND IP address equals 68.183.138.51"
 
 If a packet meets both of those critiera it is displayed:
 
-![](attachments/Clipboard_2020-12-09-18-53-19.png)
+![](attachments/wireshark_meetscriteria.png)
 
 Now, right-click on any of the packets and select Follow > TCP Stream:
 
-![](attachments/Clipboard_2020-12-09-18-54-10.png)
+![](attachments/wireshark_followtcp.png)
 
 This is showing the request (in red) and the response (in blue) between our two systems:
 
-![](attachments/Clipboard_2020-12-09-18-55-09.png)
+![](attachments/wireshark_tcpdata.png)
 
 Anything look strange there?  If you look closely, there is a lot of encoded PowerShell.
 
@@ -125,17 +123,19 @@ To start, just type l.
 
 Notice how Wireshark tries to help you with possible completion options as you type.
 
-Now finish typing llmnr.
+![](attachments/wireshark_autocomplete.png)
+
+Now either finish typing llmnr, or scroll down to find it within the suggestions list as pictured above.
 
 Then hit enter.
 
-![](attachments/Clipboard_2020-12-11-08-57-52.png)
+Notice that when you do this, Wireshark shows you all packets that are that protocol.
 
-Notice that when you type llmnr and hit enter, Wireshark shows you all packets that are that protocol
+![](attachments/wireshark_llmnr.png)
 
-Now try ipv6 and hit enter:
+Now try putting in ipv6 and hit enter:
 
-![](attachments/Clipboard_2020-12-11-08-58-47.png)
+![](attachments/wireshark_ipv6.png)
 
 This allows you to very quickly drill in on any specific protocols you are reviewing in a packet capture.
 
@@ -143,9 +143,9 @@ Remember the PowerShell from tcpdump?  It had the string New-Object? Well, we ca
 
 Put the following into the filter bar:
 
-http contains "New-Object"
+<pre>http contains "New-Object"</pre>
 
-![](attachments/Clipboard_2020-12-11-09-02-28.png)
+![](attachments/wireshark_httpcontains.png)
 
 With Wireshark, we can search through all our packets looking for specific strings and data.
 
