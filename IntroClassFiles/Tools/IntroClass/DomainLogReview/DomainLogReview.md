@@ -5,64 +5,49 @@ In this lab we are going to look at some logs that are generated in a domain pas
 
 We will start by using DeepBlueCLI, then move into looking directly at the event logs themselves.
 
-First, we will need to extract the event logs for a domain attack.  To do this, simply navigate to 
-the C:\IntroLabs directory:
-
-![](attachments/Clipboard_2020-12-13-09-57-36.png)
-
-Right Click on The EntLogs directory and select 7-Zip > Extract Files
-
-![](attachments/Clipboard_2020-12-13-10-00-35.png)
-
-Then put `C:\tools\DeepBlueCLI-master` in the Extract To: field
-
-It should look like this:
-
-![](attachments/Clipboard_2020-12-13-10-01-58.png)
-
-Now, click OK
-
-![](attachments/Clipboard_2020-12-13-10-02-14.png)
 
 Now, we are going to use DeepBlueCLI to see if there are any odd logon patterns in the domain logs.
 
-Let's start by opening a Terminal as Administrator:
+Let's start by opening Windows Powershell:
 
-![](attachments/Clipboard_2020-12-13-10-04-28.png)
+![](attachments/OpeningPowershell.png)
 
-Then, navigate to the \tools\DeepBlueCLI-master directory
+Then, navigate to the \IntroLabs\DeepBlueCLI-master directory
 
-C:\> `cd C:\tools\DeepBlueCLI-master\`
+<pre>cd \IntroLabs\DeepBlueCLI-master\</pre>
 
-![](attachments/Clipboard_2020-12-13-10-05-30.png)
+![](attachments/dlr_directory.png)
 
 Now, let's start looking at the DC2 Password spray file:
 
-PS C:\> `.\DeepBlue.ps1 .\EntLogs\DC2-secLogs-3-26-DomainPasswordSpray.evtx`
+<pre>.\DeepBlue.ps1 .\EntLogs\DC2-secLogs-3-26-DomainPasswordSpray.evtx</pre>
 
-When the warning pops up, press R.  This will start the script by running it:
-
-![](attachments/Clipboard_2020-12-13-10-06-47.png)
-
+If a warning pops up, press R.  This will start the script by running it:
 When this runs, there is an alert that catches our attention right away:
 
-![](attachments/Clipboard_2020-12-13-10-07-30.png)
+![](attachments/dlr_domainpasswordspray.png)
 
 We have 240 logon failures.  That...  is a lot for this small org.
 
 Lets dig into the actual logs and see if we can see a pattern.
 
-To do this, open File Explorer and navigate to the C:\tools\DeepBlueCLI-master\EntLogs directory:
+To do this, open File Explorer and navigate to the C:\IntroLabs\DeepBlueCLI-master\EntLogs directory:
 
-![](attachments/Clipboard_2020-12-13-10-08-59.png)
+![](attachments/OpeningFileExplorer.png)
+
+![](attachments/Navintolabs.png)
+
+![](attachments/NavtoDBMaster.png)
+
+![](attachments/navtoent.png)
 
 Once in this directory, double click on DC2-secLogs-3-26-DomainPasswordSpray.evtx:
 
-![](attachments/Clipboard_2020-12-13-10-09-43.png)
+![](attachments/dc2seclogs.png)
 
 This will open Windows Event Viewer.  Note, it will open in Sysmon Operational.  This is not what we want.  Please scroll down to the DC2-secLogs-3-26-DomainPasswordSpray.evtx file under Saved Logs:
 
-![](attachments/Clipboard_2020-12-13-10-11-42.png)
+![](attachments/dlr_winevent.png)
 
 Then click it.  
 
