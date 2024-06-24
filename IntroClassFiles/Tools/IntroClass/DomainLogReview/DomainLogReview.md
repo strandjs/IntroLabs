@@ -55,30 +55,26 @@ It will open the DC logs with the attack.
 
 Now, please click on the header column called Event ID.  This will sort the logs by ID number we are doing this because we want to quickly get to the event IDs of 4776:
 
-![](attachments/Clipboard_2020-12-13-10-12-41.png)
-
-Now, scroll all the way to the bottom:
-
-![](attachments/Clipboard_2020-12-13-10-13-48.png)
+![](attachments/dlr_microsoftsecauditing.png)
 
 Specifically, we are looking for Event ID 4776.  This is the Credential Validation Event log.
 
 Select one, then press the up arrow key a bunch of times.  Watch the Logon Account Name in the General tab:
 
-![](attachments/Clipboard_2020-12-13-10-15-07.png)
+![](attachments/dlr_eventproperties1.png)
 
 Notice the large number of login attempts from a single system:
 
-![](attachments/Clipboard_2020-12-13-10-15-52.png)
+![](attachments/dlr_eventproperties2.png)
 
-![](attachments/Clipboard_2020-12-13-10-16-07.png)
+![](attachments/dlr_eventproperties3.png)
 
 
-![](attachments/Clipboard_2020-12-13-10-16-31.png)
+![](attachments/dlr_eventproperties4.png)
 
 Also, notice at the bottom of the General tab, these are predominantly Audit Failures:
 
-![](attachments/Clipboard_2020-12-13-10-17-02.png)
+![](attachments/dlr_auditfailure.png)
 
 We now know that the workstation WINLABV2WKSRL-9 was attempting to authenticate to a large number of Logon Accounts in a very short period of time.
 
