@@ -6,35 +6,13 @@ In this lab, we will create **malware**, run it, and use the tools we went throu
 
 One of the best ways to learn is to actually just dig in and do it.  
 
-Let’s get started by opening a Terminal as Administrator
+Let’s get started by opening a Terminal.  
 
 ![](attachments/OpeningKaliInstance.png)
 
 Alternatively, you can open a Kali instance by clicking the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
-
-==####NOTE#####==
-If you are having trouble with **Windows Terminal**, start each terminal directly from the** Windows Start button**. 
-
-Click the Windows Start button in the lower left of your screen and type the following. 
-
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For **PowerShell** and **Command Prompt**, please right click on them and select **Run As Administrator**
-
-==###END NOTE###==
 
 Before going any further, we need to ensure that **Windows Defender** is disabled. To do this, open a Windows **Powershell** by clicking the icon in the taskbar.
 
