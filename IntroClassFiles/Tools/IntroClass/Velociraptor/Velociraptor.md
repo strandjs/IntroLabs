@@ -17,98 +17,97 @@ https://www.velocidex.com/training/
 
 Let's get started.
 
-First, we will need to extract the executable from the 7zip archive. 
+First, within Windows File Explorer navigate to the C:\IntroLabs directory:
 
-Within Windows File Explorer navigate to the C:\IntroLabs directory:
-
-`cd \IntroLabs`
-
-![](attachment/Clipboard_2021-01-27-10-51-21.png)
-
-Next, right click on the Velociraptor .7z file and select 7-Zip > Extract Here
-
-![](attachment/Clipboard_2021-01-27-10-53-44.png)
+![](attachment/Navintolabs.png)
 
 Now we will need to open a command prompt and change directories to the IntroLabs directory.
 
-First, open a Windows Terminal as Administrator:
+First, lets open a Windows command prompt.
 
-![](attachment/Clipboard_2021-01-27-10-57-03.png)
+![](attachment/openingcommandprompt%20-%20Copy.png)
 
-When you get the pop up, select Yes.
+When the terminal opens, navigate to the appropriate directory by using the following command:
 
-Next, let's open a Command Prompt:
-
-
-![](attachment/Clipboard_2021-01-27-10-57-53.png)
-
-Now, let's navigate to the IntroLabs directory:
-
-![](attachment/Clipboard_2021-01-27-10-58-31.png)
+<pre>cd /IntroLabs</pre>
 
 For this installation, we are going to set up Velociraptor as a standalone deployment.  This means the server and the client will be run on the same system.
 
-Let’s get started:
+Let’s get started. Within the command prompt, run the following command:
 
-`velociraptor-v0.5.5-1-windows-amd64.exe config generate -i`
+<pre>velociraptor-v0.5.5-1-windows-amd64.exe config generate -i</pre>
 
-When it asks about the OS, please choose windows.  It should be the default.
+When it asks about the OS, please choose Windows.  It should be the default.
 
-![](attachment/Clipboard_2021-01-27-11-03-34.png)
-
+![](attachment/velociraptor_chooseos.png)
 
 When it asks about the Path to the datastore, just hit enter.  This will keep the default.
 
-![](attachment/Clipboard_2021-01-27-11-04-21.png)
+![](attachment/velociraptor_datastorepath.png)
 
 When it asks about the SSL certs, just hit enter.  It will choose the default of Self Signed SSL.
 
-![](attachment/Clipboard_2021-01-27-11-05-19.png)
+![](attachment/velociraptor_sslcert.png)
 
 
 When it asks about the DNS name, just hit enter.  It will set the default to localhost.  This will work fine as we are just running this locally.
 
-![](attachment/Clipboard_2021-01-27-11-06-16.png)
+![](attachment/velociraptor_publicdns.png)
 
 For the default ports, once again, just hit enter to accept 8000 and 8889 as the defaults.
 
-![](attachment/Clipboard_2021-01-27-11-07-13.png)
+![](attachment/velociraptor_frontendport.png)
 
-When asked about Google Domains DynDNS, please enter `N`
+If prompted about using Websocket, enter `No`
+
+![](attachment/velociraptor_websocket.png)
+
+If prompted about using the registry to store writeback files, please enter `N`
+
+![](attachment/velociraptor_registrywriteback.png)
+
+When asked about which DynDNS provider is used, select `None` and press enter.
+
+![](attachment/velociraptor_dyndns.png)
 
 For the GUI username, please just hit enter to end.
 
-![](attachment/Clipboard_2021-01-27-11-08-14.png)
+![](attachment/velociraptor_guiusername.png)
 
-When it asks about the logs directory, just hit enter to accept the default.
+When it asks about the path to the logs directory, just hit enter to accept the default.
 
-![](attachment/Clipboard_2021-01-27-11-08-58.png)
+![](attachment/velociraptor_pathtologs.png)
 
-When it asks where to write the server and client configs, just hit enter to accept the defaults.
+If it asks if you would to restrict VQL functionality on the server, please enter `N`
 
-![](attachment/Clipboard_2021-01-27-11-10-10.png)
+![](attachment/velociraptor_vqlfunct.png)
+
+When it asks where to write the server and client configs, just hit enter on both prompts to accept the defaults.
+
+![](attachment/velociraptor_configs.png)
 
 Now, let’s add a GUI user.
 
-`velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml user add root --role administrator`
+<pre>velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml user add root --role administrator</pre>
 
 When it asks for the password, please choose a password you will remember.
 
-When finished, it should look similar to this:
+When finished, it should look similar to 
 
 
-![](attachment/Clipboard_2021-01-27-11-12-21.png)
+![](attachment/velociraptor_entergui.png)
 
 Now, lets run the msi to load the proper files to the proper directories:
 
-`velociraptor-v0.5.5-1-windows-amd64.msi`
+<pre>velociraptor-v0.5.5-1-windows-amd64.msi</pre>
 
 
 Now, let's start the server.
 
-`velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml frontend -v`
+<pre>velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml frontend -v</pre>
 
-There will be some red.  Don’t panic.
+This will take some time, be patient.
+There will be some red text.  Don’t panic.
 
 Next, let’s surf to the GUI and see if it worked!
 
@@ -116,50 +115,53 @@ Next, let’s surf to the GUI and see if it worked!
 
 When you load the page, there will be an SSL error about the self-signed cert.  That is fine.
 
-select Advanced then proceed to 127.0.0.1
+![](attachment/velociraptor_warning.png)
 
+Select Advanced then proceed to 127.0.0.1
 
-![](attachment/Clipboard_2021-01-27-11-19-02.png)
+![](attachment/velociraptor_continue.png)
 
 When it asks for the Username and Password, please enter root and the password you chose earlier.
 
-
 Please select Inspect the server's state.
 
-![](attachment/Clipboard_2021-01-27-11-20-26.png)
+![](attachment/velociraptor_login.png)
 
+Once logged in, you will see the following:
+
+![](attachment/velociraptor_velociraptorhome.png)
 
 Next, we need to start the client. Lucky for us, it is the same executable.
 
-We will need to open another Windows Command Prompt.
+We will need to open another Windows Command Prompt. Right click on the terminal icon in the task bar, and select "command prompt"
 
-![](attachment/Clipboard_2021-01-27-11-26-51.png)
+![](attachment/velociraptor_openanotherprompt.png)
 
 Then Navigate to the IntroLabs directory.
 
-`cd \IntroLabs`
-
-![](attachment/Clipboard_2021-01-27-11-27-34.png)
+<pre>cd \IntroLabs</pre>
 
 Next, we will need to start the client.  To do this will need to run the MSI first.
 
-`velociraptor-v0.5.5-1-windows-amd64.msi`
+<pre>velociraptor-v0.5.5-1-windows-amd64.msi</pre>
 
 When you get the pop up, select Run.  This will install the proper libraries and files.
 
 Next, we will start the client.
 
-`velociraptor-v0.5.5-1-windows-amd64.exe --config client.config.yaml client -v`
+<pre>velociraptor-v0.5.5-1-windows-amd64.exe --config client.config.yaml client -v</pre>
 
-![](attachment/Clipboard_2021-01-27-11-32-21.png)
+It will look something like this:
 
-Now, let’s go back to the GUI and select the Home button.
+![](attachment/velociraptor_clientstart.png)
 
-![](attachment/Clipboard_2021-01-27-11-33-13.png)
+Now, let’s go back to the Velociraptor GUI and select the Home button in the upper left.
+
+![](attachment/velociraptor_velociraptorGUIhome.png)
 
 You should see one connected client.
 
-![](attachment/Clipboard_2021-01-27-11-33-36.png)
+![](attachment/velociraptor_connectedclients.png)
 
 Now let’s look at what we can do with this.
 
@@ -169,64 +171,64 @@ So please, keep in mind, it is not a replacement for AV!
 
 So that said, let’s look around.
 
-First, let’s "Show All" Clients.
+First, let’s "Show All" Clients. Go to the search bar at the top of the screen, hit the dropdown 
 
-![](attachment/Clipboard_2021-01-27-15-32-10.png)
+![](attachment/velociraptor_showall.png)
 
 As you can see below there will only be one client.
 
-![](attachment/Clipboard_2021-01-27-15-32-56.png)
+![](attachment/velociraptor_onlyclient.png)
 
 If you select that client, you can get additional information about that system.
 
-![](attachment/Clipboard_2021-01-27-15-33-35.png)
+![](attachment/velociraptor_additionalinfo.png)
 
 Next, let’s "Show All" Clients again.
 
-![](attachment/Clipboard_2021-01-27-15-32-10.png)
+![](attachment/velociraptor_showall.png)
 
 Then select our only client.
 
-![](attachment/Clipboard_2021-01-27-15-32-56.png)
+![](attachment/velociraptor_onlyclient.png)
 
 
-Now, select Shell.
+Now, on the top right of the window, select Shell.
 
-![](attachment/Clipboard_2021-01-27-15-46-22.png)
+![](attachment/velociraptor_selectshell.png)
 
 This allows us to run commands on the target system.  Think of the commands that we ran from the Windows CLI, we can run those here too.
 
-Please select the PowerShell box and select Cmd.
+Please click on the PowerShell box and select Cmd.
 
-![](attachment/Clipboard_2021-01-27-15-47-27.png)
+![](attachment/velociraptor_powershelldropdown.png)
 
 
 Now, enter netstat -naob in the Cmd box and select Launch.
 
-![](attachment/Clipboard_2021-01-27-15-48-29.png)
+![](attachment/velociraptor_naob.png)
 
 This will not display the results right away. To see the results, select the Eye icon with your netstat command below:
 
 Now, let’s do a Hunt.   Please select the Hunt icon.
 
 
-![](attachment/Clipboard_2021-01-27-15-50-40.png)
+![](attachment/velociraptor_selecthunt.png)
 
 To start a Hunt, please select the + icon.
 
-![](attachment/Clipboard_2021-01-27-15-51-19.png)
+![](attachment/velociraptor_newhunt.png)
 
 Please name your Hunt, then select "Select Artifacts" on the bottom.
 
-![](attachment/Clipboard_2021-01-27-15-52-04.png)
+![](attachment/velociraptor_selectartifacts.png)
 
-We are going to keep this simple for this lab. Please select Generic.System.Pstree.
+We are going to keep this simple for this lab. Within the window, scroll down to find Generic.System.Pstree and select it.
 
-![](attachment/Clipboard_2021-01-27-15-53-03.png)
+![](attachment/velociraptor_genericpstree.png)
 
 Then, Review on the bottom.
 
-![](attachment/Clipboard_2021-01-27-15-53-36.png)
+![](attachment/velociraptor_reviewtab.png)
 
 We now have an overview of what is going to be run on all systems...  Which is only one.
 
@@ -234,11 +236,11 @@ Now select Launch.
 
 Once you select Launch, it will start the Hunt and load it in the que.
 
-![](attachment/Clipboard_2021-01-27-15-54-33.png)
+![](attachment/velociraptor_startedhunt.png)
 
 Please select our Hunt.  Now, we can run it.  Please press the Play button above.
 
-![](attachment/Clipboard_2021-01-27-15-55-44.png)
+![](attachment/velociraptor_play.png)
 
 When you get the pop-up, select Run it!
 
@@ -250,25 +252,25 @@ You can also download the results.
 
 Please select Download Results.
 
-![](attachment/Clipboard_2021-01-27-15-57-14.png)
+![](attachment/velociraptor_download.png)
 
 Then, CSV Only.
 
-![](attachment/Clipboard_2021-01-27-16-01-24.png)
+![](attachment/velociraptor_csvonly.png)
 
 This will create a zip with the output.
 
 Please download that by clicking on the zip file.
 
-![](attachment/Clipboard_2021-01-27-15-58-22.png)
+![](attachment/velociraptor_downloadzip.png)
 
-Go ahead and open the zip file.
+Go ahead and open the zip file, navigate into the results folder.
 
-![](attachment/Clipboard_2021-01-27-16-02-47.png)
+![](attachment/velociraptor_opencsv.png)
 
 Then, open the csv file with WordPad:
 
-![](attachment/Clipboard_2021-01-27-16-02-37.png)
+![](attachment/velociraptor_wordpad.png)
 
 Granted, this is not optimal.  We did not load Excel on this system because of licensing restrictions.  However, you can copy this over to your host system and open it there. 
 
