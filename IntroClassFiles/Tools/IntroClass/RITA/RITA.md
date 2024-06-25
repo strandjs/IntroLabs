@@ -12,7 +12,7 @@ First, open File Explorer:
 
 ![](attachments/OpeningFileExplorer.png)
 
-Then, select the tools directory:
+Then, select the IntroLabs directory:
 
 ![](attachments/rita_navintrolabs.png)
 
