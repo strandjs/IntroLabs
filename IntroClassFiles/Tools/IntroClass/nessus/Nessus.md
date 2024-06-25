@@ -12,14 +12,11 @@ To open this lab, start file explorer:
 
 ![](attachments/OpeningFileExplorer.png)
 
-Then, navigate to the tools folder and open the NessusLab file:
+Then, navigate to the tools folder and open the **NessusLab** file:
 
 ![](attachments/Navintolabs.png)
 
-Then, navigate to the Nessus lab file:
-
 ![](attachments/nessus_navtonessus.png)
-
 
 When the file opens, please focus on service banners and files.
 
@@ -83,14 +80,8 @@ Notice that it is a prompt.  This means there is no authentication to access thi
 
 ![](attachments/nessus_telnetserver.png)
 
-Also note that two of the servers require authentication and one does not.
+Note that two of the servers require authentication and one does not.
 
-Also, check out the office files shown with the web server sitemap:
+Check out the office files shown with the web server sitemap:
 
 ![](attachments/nessus_officefiles.png)
-
-
-
-
-
-

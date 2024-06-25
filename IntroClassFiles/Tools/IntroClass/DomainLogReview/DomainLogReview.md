@@ -6,7 +6,7 @@ In this lab we are going to look at some logs that are generated in a domain pas
 We will start by using DeepBlueCLI, then move into looking directly at the event logs themselves.
 
 
-Now, we are going to use DeepBlueCLI to see if there are any odd logon patterns in the domain logs.
+We are going to use DeepBlueCLI to see if there are any odd logon patterns in the domain logs.
 
 Let's start by opening Windows Powershell:
 
@@ -14,20 +14,20 @@ Let's start by opening Windows Powershell:
 
 Then, navigate to the \IntroLabs\DeepBlueCLI-master directory
 
-<pre>cd \IntroLabs\DeepBlueCLI-master\</pre>
+`cd \IntroLabs\DeepBlueCLI-master\`
 
 ![](attachments/dlr_directory.png)
 
 Now, let's start looking at the DC2 Password spray file:
 
-<pre>.\DeepBlue.ps1 .\EntLogs\DC2-secLogs-3-26-DomainPasswordSpray.evtx</pre>
+`.\DeepBlue.ps1 .\EntLogs\DC2-secLogs-3-26-DomainPasswordSpray.evtx`
 
-If a warning pops up, press R.  This will start the script by running it:
+If a warning pops up, press **"R"**.  This will start the script by running it:
 When this runs, there is an alert that catches our attention right away:
 
 ![](attachments/dlr_domainpasswordspray.png)
 
-We have 240 logon failures.  That...  is a lot for this small org.
+We have 240 logon failures.  That is a lot for this small org.
 
 Lets dig into the actual logs and see if we can see a pattern.
 
@@ -41,11 +41,11 @@ To do this, open File Explorer and navigate to the C:\IntroLabs\DeepBlueCLI-mast
 
 ![](attachments/navtoent.png)
 
-Once in this directory, double click on DC2-secLogs-3-26-DomainPasswordSpray.evtx:
+Once in this directory, double click on **DC2-secLogs-3-26-DomainPasswordSpray.evtx**:
 
 ![](attachments/dc2seclogs.png)
 
-This will open Windows Event Viewer.  Note, it will open in Sysmon Operational.  This is not what we want.  Please scroll down to the DC2-secLogs-3-26-DomainPasswordSpray.evtx file under Saved Logs:
+This will open Windows Event Viewer.  Note, it will open in **Sysmon Operational**.  This is not what we want.  Please scroll down to the **DC2-secLogs-3-26-DomainPasswordSpray.evtx** file under Saved Logs:
 
 ![](attachments/dlr_winevent.png)
 
@@ -53,7 +53,7 @@ Then click it.
 
 It will open the DC logs with the attack.
 
-Now, please click on the header column called Event ID.  This will sort the logs by ID number we are doing this because we want to quickly get to the event IDs of 4776:
+Click on the header column called Event ID.  This will sort the logs by ID number. We are doing this because we want to quickly get to the event IDs of 4776:
 
 ![](attachments/dlr_microsoftsecauditing.png)
 
@@ -69,12 +69,10 @@ Notice the large number of login attempts from a single system:
 
 ![](attachments/dlr_eventproperties3.png)
 
-
 ![](attachments/dlr_eventproperties4.png)
 
 Also, notice at the bottom of the General tab, these are predominantly Audit Failures:
 
 ![](attachments/dlr_auditfailure.png)
 
-We now know that the workstation WINLABV2WKSRL-9 was attempting to authenticate to a large number of Logon Accounts in a very short period of time.
-
+We now know that the workstation **WINLABV2WKSRL-9** was attempting to authenticate to a large number of Logon Accounts in a very short period of time.
