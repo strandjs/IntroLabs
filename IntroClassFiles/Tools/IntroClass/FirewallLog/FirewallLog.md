@@ -85,3 +85,5 @@ Now let's do some math in that field!
 Your output should look something like this:
 
 ![](attachments/fwlr_math.png)
+
+There are a lot of commands you can use to alter your view of the logs.  
