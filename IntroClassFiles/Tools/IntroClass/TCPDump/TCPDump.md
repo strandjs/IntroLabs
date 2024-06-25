@@ -13,29 +13,6 @@ Alternatively, you can click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-==####NOTE#####==
-
-If you are having trouble with **Windows Terminal**, start each terminal directly from the** Windows Start button**. 
-
-Click the Windows Start button in the lower left of your screen and type the following. 
-
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select **Run As Administrator **
-
-==###END NOTE###==
-
 First, we need to get into the root shell. 
 
 ` sudo su - `
@@ -103,7 +80,7 @@ Lets dig into the packet with the timestamp of 08:14:32.638976
 
 ![](attachments/tcpdump_powershell.png)
 
-Ouch, it looks like **PowerShell**!!!  A favorite of attackers and pentesters alike.  Furthermore, it looks like there is **Base64** data.
+Ouch, it looks like **PowerShell!!!**  A favorite of attackers and pentesters alike.  Furthermore, it looks like there is **Base64** data.
 
 ![](attachments/tcpdump_base64.png)
 
