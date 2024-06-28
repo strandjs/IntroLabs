@@ -1,7 +1,7 @@
 
 # Host Firewalls and Nmap
 
-In this lab we will be scanning your Windows system from your Linux terminal with the firewall both on and off. 
+In this lab we will be scanning your **Windows** system from your **Linux** terminal with the firewall both on and off. 
 
 The goal is to show you how a system is very different to the network with a firewall enabled. 
 
@@ -11,7 +11,7 @@ Let's get started by opening a command prompt terminal. You can do this by click
 
 ![](attachments/openingcommandprompt%20-%20Copy.png)
 
-####NOTE##### 
+From the command prompt we need to get the IP address of your **Windows** system:
 
 If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
 
@@ -53,7 +53,7 @@ Alternatively, you can click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-Next, let’s become root:
+Let’s become root:
 
 <pre>sudo su -</pre>
 
@@ -69,12 +69,11 @@ It should look like this:
 
 Please note the open ports. These are ports and services that an attacker could use to authenticate to your system.  Or, attack if an exploit is available. 
 
-
-Now, let’s go back to the Windows command prompt, by clicking the icon in the taskbar.
+Let’s go back to the Windows command prompt, by selecting the Administrator: Command Prompt tab.
 
 ![](attachments/openingcommandprompt%20-%20Copy.png)
 
-Now, let’s enable the Windows firewall:
+Let’s enable the Windows firewall:
 
 <pre>netsh advfirewall set allprofiles state on</pre>
 
@@ -84,7 +83,7 @@ Now, let’s rescan from the Kali terminal. You can navigate back to it by press
 
 ![](attachments/TaskbarKaliIcon.png)
 
-Then, rerun the scan
+Rerun the scan
 
 <pre>nmap 10.10.1.209</pre>
 
@@ -96,16 +95,8 @@ It should look like this:
 
 ![](attachments/nmap_nmapscanwfirewall.png)
 
-
 Now, using the same process as before, let’s disable the Windows firewall to go back to the base state:
 
 <pre>netsh advfirewall set allprofiles state off</pre>
 
 ![](attachments/nmap_turnbackon.png)
-
-
-
-
-
-
-
