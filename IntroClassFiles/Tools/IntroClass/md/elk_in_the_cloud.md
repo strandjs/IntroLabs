@@ -19,7 +19,7 @@ To learn ELK, we don't need several servers or to spend large sums of money.  We
 
 **1. Set up an account.**
 
-[Start your free Elastic Cloud Trial](https://cloud.elastic.co/registration?settings=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZW5ndGgiOjE1MCwic2l6ZSI6NDA5NiwiZGVmYXVsdF9zaXplIjoxMDI0fQ.dS6xqdrcNBVkANlcS19AnsZmHVSqoPROLHprdeN-Qbc&source=education "https://cloud.elastic.co/registration?settings=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZW5ndGgiOjE1MCwic2l6ZSI6NDA5NiwiZGVmYXVsdF9zaXplIjoxMDI0fQ.dS6xqdrcNBVkANlcS19AnsZmHVSqoPROLHprdeN-Qbc&source=education")
+[Start your free Elastic Cloud Trial](https://cloud.elastic.co/registration?fromURI=%2Fhome "https://cloud.elastic.co/registration?fromURI=%2Fhome")
 
 
 This link is for the trial sign up page. Start a trial by signing up.
@@ -48,13 +48,15 @@ Fill out the proper filed with the correct information pictured below and select
 
 Once those fields are filled out click "Next"
 
-![Welcome To Elastic](./images/Capture1.PNG)
+![Welcome To Elastic](./images/elastic_welcome.png)
 
 ---
 
 **2. Start an ELK instance.**
 
-Upon clicking next you will see the following page. For my instance I will be calling it "security-development. Make sure to enter the name of your deployment and click "Create Deployment".
+Upon clicking `Next` you will see the following page.
+
+ For my instance I will be calling it "security-development". Make sure to enter the name of your deployment and click "Create Deployment".
 
 ![Creating Delployment](./images/deployment2.PNG)
 
@@ -92,7 +94,7 @@ We will need to click the "Copy to Clipboard".
 
 Hold onto this command.  It is recommended to paste this command into some file where you won't lose it. In this example, I saved it to a file I called "agent.txt."  We will use this command later.
 
-<img src="./images/agent_txt.png" alt="Pasting information into agent_txt" style="zoom:67%;" />
+![](./images/agent_txt.png)
 
 
 The ELK stack is now configured and we have our connection information saved.
