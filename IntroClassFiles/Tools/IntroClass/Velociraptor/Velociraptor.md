@@ -21,9 +21,7 @@ First, within Windows File Explorer navigate to the C:\IntroLabs directory:
 
 ![](attachment/Navintolabs.png)
 
-Now we will need to open a command prompt and change directories to the IntroLabs directory.
-
-First, lets open a Windows command prompt.
+Now, lets open a Windows command prompt.
 
 ![](attachment/openingcommandprompt%20-%20Copy.png)
 
@@ -35,7 +33,7 @@ For this installation, we are going to set up Velociraptor as a standalone deplo
 
 Let’s get started. Within the command prompt, run the following command:
 
-<pre>velociraptor-v0.5.5-1-windows-amd64.exe config generate -i</pre>
+<pre>velociraptor-v0.72.3-windows-amd64.exe config generate -i</pre>
 
 When it asks about the OS, please choose Windows.  It should be the default.
 
@@ -88,7 +86,7 @@ When it asks where to write the server and client configs, just hit enter on bot
 
 Now, let’s add a GUI user.
 
-<pre>velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml user add root --role administrator</pre>
+<pre>velociraptor-v0.72.3-windows-amd64.exe --config server.config.yaml user add root --role administrator</pre>
 
 When it asks for the password, please choose a password you will remember.
 
@@ -99,12 +97,12 @@ When finished, it should look similar to
 
 Now, lets run the msi to load the proper files to the proper directories:
 
-<pre>velociraptor-v0.5.5-1-windows-amd64.msi</pre>
+<pre>velociraptor-v0.72.3-windows-amd64.msi</pre>
 
 
 Now, let's start the server.
 
-<pre>velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml frontend -v</pre>
+<pre>velociraptor-v0.72.3-windows-amd64.exe --config server.config.yaml frontend -v</pre>
 
 This will take some time, be patient.
 There will be some red text.  Don’t panic.
@@ -123,7 +121,6 @@ Select Advanced then proceed to 127.0.0.1
 
 When it asks for the Username and Password, please enter root and the password you chose earlier.
 
-Please select Inspect the server's state.
 
 ![](attachment/velociraptor_login.png)
 
@@ -143,13 +140,13 @@ Then Navigate to the IntroLabs directory.
 
 Next, we will need to start the client.  To do this will need to run the MSI first.
 
-<pre>velociraptor-v0.5.5-1-windows-amd64.msi</pre>
+<pre>velociraptor-v0.72.3-windows-amd64.msi</pre>
 
 When you get the pop up, select Run.  This will install the proper libraries and files.
 
 Next, we will start the client.
 
-<pre>velociraptor-v0.5.5-1-windows-amd64.exe --config client.config.yaml client -v</pre>
+<pre>velociraptor-v0.72.3-windows-amd64.exe --config client.config.yaml client -v</pre>
 
 It will look something like this:
 
@@ -208,6 +205,16 @@ Now, enter netstat -naob in the Cmd box and select Launch.
 ![](attachment/velociraptor_naob.png)
 
 This will not display the results right away. To see the results, select the Eye icon with your netstat command below:
+
+![](attachment/velociraptor_eye.png)
+
+Then click on `Logs`
+
+![](attachment/velociraptor_clicklogs.png)
+
+After doing so, you should see something like this:
+
+![](attachment/velociraptor_viewlogs.png)
 
 Now, let’s do a Hunt.   Please select the Hunt icon.
 
@@ -328,7 +335,7 @@ Want to try something cool?  Run a Metrepreter agent on you Windows system.  The
 
 
 
-`
+
 
 
 
