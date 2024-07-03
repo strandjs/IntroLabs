@@ -20,9 +20,11 @@ Press the Powershell icon in the taskbar to launch Windows Powershell.
 
 ![Powershell](./images/OpeningPowershell.png)
 
-Once the powershell instance opens, copy what you kept in the file in my case it was "Agent.txt" and paste it into the powershell and hit enter.
+Once the powershell instance opens, copy what you kept in the file in my case it was "Agent.txt" and paste it into the powershell and hit enter. 
 
-![Powershell](./images/powershell.PNG)
+NOTE: you may have to copy/paste each part of the command separately.
+
+![Powershell](./images/powershell.png)
 
 Make sure you type `y` and hit enter when prompted by powershell.
 
