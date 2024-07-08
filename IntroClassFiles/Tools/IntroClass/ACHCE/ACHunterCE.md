@@ -6,31 +6,75 @@ Step 0, Download AC Hunter Community Edition Here:
 
 https://www.activecountermeasures.com/ac-hunter-community-edition/download/
 
-![](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHCE/ACHCE_Download.png)
+![](attachments/ACHCE_Download.png)
 
-1. The first thing we will need to do is to change VM to Bridged networking from NAT.  This can be done in the settings for the VM which can be accessed via VM > Settings > Network Adaptor 
+![](attachments/ClickDownload.png)
+
+-----------------------------------------
+This next section will walk through how to launch the AC Hunter VM using VMware.
+
+Start by opening file explorer and navigating to your downloads directory.
+
+![](attachments/OpeningFileExplorer.png)
+
+![](attachments/navigatetodownloads.png)
+
+You should see the AC Hunter .zip archive that we just downloaded. We need to extract this. Click on the .zip archive and hit `Extract all` at the top of the screen.
+
+![](attachments/extractall.png)
+
+When the pop-up appears, click extract. This will extract the .zip archive to the downloads folder. 
+
+![](attachments/extract.png)
+
+Next, open your VMware application. In this instance, we use VMware Workstation. Once opened, first make sure you have the home tab selected. Then, click `Open a Virtual Machine`.
+
+![](attachments/openvmware.png)
+
+Once again, navigate to your downloads folder, and then into the extracted `AC-Hunter-v...` folder. If done correctly, you should only see one file that can be selected. Go ahead and double click on it.
+
+![](attachments/openfolder.png)
+
+![](attachments/doubleclick.png)
+
+After doing this, you should see a new tab appear shown in the screenshot below.
+
+![](attachments/newtab.png)
+
+--------------------------------------------
+
+Now that we have successfully loaded the AC Hunter VM into our VMware application, we need to do two things.
+
+1. The first thing we will need to do is to change VM to Bridged networking from NAT.  This can be done in the settings for the VM which can be accessed via VM > Settings > Network Adapter 
+
+![](attachments/editsettings.png)
+
+![](attachments/networkadapter.png)
 
 ![](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHCE/VMWare_Bridge.png)
 
-2. When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
+2. Go ahead and hit `Power on this virtual machine`.
+ When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
 
 
 User ID is dataimport	
 
-![](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHCE/Password2.png)
+5. Change the default password after initial login by running the following:
+<pre>passwd</pre>
 
-5. Change the default password after initial login	
-6. Get your IP Address 
+6. Next, get your IP Address by running the following command:
 
-`ip addr show dev ens33 | grep 'inet '`
+<pre>ip addr show dev ens33 | grep 'inet </pre>
 
-5. Switch to Terminal on Windows and open two SSH sessions.  I like to have one as root and another as dataimport for the install.
+![](attachments/IP.png)
+
+5. Now lets open Terminal on Windows and open two SSH sessions.  I like to have one as root and another as dataimport for the install.
 
 From Windows Terminal.
 
 Terminal 1:
 
-`ssh dataimport@YourACHCE_IPADDRESS`
+<pre>ssh dataimport@YourACHCE_IPADDRESS</pre>
 
 Terminal 2:
 
