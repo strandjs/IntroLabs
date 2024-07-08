@@ -5,28 +5,29 @@ part 1/2
 In this lab we will be using LimaCharlie to investigate endpoint monitoring and threat detection.
 
 What is Lima Charlie? Lima Charlie is a lightweight browser based tool, that is great for big and small organizations, It helps keep an eye on systems, detect threats, and responds quickly to any suspicious activity.
+This walktrhough will be using the chrome browser, however any browser can be used.
 
-To start, we will be working in the chrome browser. This is on your desktop and can be opened by double clicking.
+To start, lets open a browser window. 
 
-![](attachments/google_chrome_icon.PNG)
-
-Once the browser opens, enter this URL into the search bar and hit enter.
+Once the window is up, navigate to the following URL:
 
 `https://app.limacharlie.io/login`
 
-Once the webpage loads, Click "Create an account"
+When the webpage loads, Click "Create an account"
 
-<img src="attachments/register_an_account.PNG" alt="register an account" width="300" />
+![](attachments/register_an_account.PNG)
 
-You will see a field to setup an account
+The screen will change slightly as it asks you which method you would like to use to sign-up with. 
 
-<img src="attachments/account_registration_page.PNG" alt="register an account" width="300" />
+We selected "Sign up with email"
+
+![](attachments/LimaCharlie_signupmethod.png)
 
 Fill out the fields click the "Sign Up" button to continue
 
-<img src="attachments/SIGN_UP_BUTTON.PNG" alt="register an account" width="300" />
+![](attachments/SIGN_UP_BUTTON.PNG)
 
-Then go to your email and you should recieve a link to verify the account click the link and then go back to your browser and refresh the page.
+Then go to your email and you should recieve a link to verify your account. Click the link and then go back to your browser and refresh the page.
 
 Once you return to your page you should see Lima Charlie asking you some questions about your company, you can create any fake company you wish.
 
@@ -37,7 +38,7 @@ Enter the following answers into there respective fields ->
 * <span style="color:blue">What use cases are you exploring?</span> -> Endpoint detection & Response
 * <span style="color:yellow">How did you hear about us?</span> -> Black Hills Info Sec
 
-<img src="attachments/company_setup_menu.PNG" alt="register an account" width="500" />
+![](attachments/company_setup_menu.PNG)
 
 Once those fields are filled, check the box that says "By checking this box, I hereby agree and consent to the Terms of Service and Privacy Policy."
 
@@ -45,11 +46,11 @@ Click "Get Started"
 
 Then click "Create Organization" 
 
-<img src="attachments/create_an_organization.PNG" alt="register an account" width="500" />
+![](attachments/create_an_organization.PNG)
 
 Then you can enter the following information into the fields, you create your fictional organization.
 
-<img src="attachments/organization_setup_menu.PNG" alt="register an account" width="500" />
+![](attachments/ficticious_company_selection.PNG)
 
 Click Create Organization.
 
@@ -57,9 +58,13 @@ There may be be a small delay while Lima Charlie creates the new company.
 
 It is possible to use this tool to manage more than one company or organization at a time.
 
-Once the page finishes loading you will see a menu appear and your fake company. Please select your ficticious company.
+Once the page finishes loading you will see a menu like the one below. 
 
-<img src="attachments/ficticious_company_selection.PNG" alt="register an account" width="700" />
+Please select your company. 
+
+Note: if you dont see this, move on to the next step.
+
+![](attachments/selectorganization.png)
 
 Once you have selected your ficticious company, you can look around and see all the options that this tool has too offer.
 
@@ -67,51 +72,64 @@ For this demonstration we will be creating a sensor for our windows machine and 
 
 On the left side under sensors, please select "Installation Keys"
 
-<img src="attachments/one.PNG" alt="register an account" width="300" />
+![](attachments/one.PNG)
 
 You should then see an option in the center "Create Installation key", Select it
 
-<img src="attachments/two.PNG" alt="register an account" width="300" />
+![](attachments/two.PNG)
 
 Then you will see a few empty fields, You can add any description you like and any relevant tags.
 
 Once you have done that you can select "Create"
 
-<img src="attachments/three.PNG" alt="register an account" width="300" />
+![](attachments/three.PNG)
 
 Once you have created your new installation key you can navigate too "Sensors List" and click "Add Sensor"
 
-<img src="attachments/four.PNG" alt="register an account" width="300" />
+![](attachments/four.PNG)
 
-Then selected the "Windows" sensor
+![](attachments/addsensor.png)
 
-<img src="attachments/five.PNG" alt="register an account" width="500" />
+Scroll down and select the "Windows" sensor.
 
-Once you select windows you will be greeted with an installation key menu, once here select from the drop down menu the description you created earlier for your installation key. And then click "Select"
+![](attachments/five.PNG)
 
-<img src="attachments/six.PNG" alt="register an account" width="300" />
+Once you select windows you will be greeted with an installation key menu. Once here select from the drop down menu the description you created earlier for your installation key. And then click "Select"
+
+![](attachments/six.PNG)
 
 You will then be prompted with what architecture to download, every windows machine may be different but in our case, "86-64 exe"should be right.
 
-<img src="attachments/seven.PNG" alt="register an account" width="300" />
+![](attachments/seven.PNG)
 
-Once you do that you will be greeted with a few more steps to creating your endpoint. First Click "Download the selected installer", once thats finished downloading copy the string in step 4 to your clipboard.
+Once you do that you will be greeted with a few more steps to creating your endpoint. First, click "Download the selected installer", once thats finished downloading copy the string in step 4 to your clipboard.
 
-<img src="attachments/eight.PNG" alt="register an account" width="500" />
+![](attachments/eight.PNG)
 
 Then you need to go to your desktop, right click "Windows Terminal" and select "run as administrator"
 
-<img src="attachments/nine.PNG" alt="register an account" width="300" />
+![](attachments/nine.PNG)
 
-Type `cd Downloads` and hit enter
+Next, run the following command to get into the downloads directory
 
-Then paste the string you downloaded in step 4 into your command prompt. Make sure once youve pasted your command into the command prompt you will need go back to the start of the command and replace "lc_sensor.exe" with the name of the newly downloaded file. It will be something to the effect of "hcp_win_x64_release_x.x.x.exe".
+<pre>cd .\Downloads</pre>
 
-Once you have the command changed, then hit enter to run the command.
+Now we are going to enter the beginning of our next command.
+Tab completion is your friend!
 
-Once you run the command if you return to the browser you should see this message.
+<pre>.\hcp_win_x64_release_4.29.2.exe [RIGHT CLICK OR CTL+V TO PASTE]</pre>
 
-<img src="attachments/success.PNG" alt="register an account" width="300" />
+After starting the command, we will paste the string we copied to our clipboard. 
+
+Once the string has been pasted into the command, go ahead and hit enter to run it. 
+
+If done correctly, your output should look like this:
+
+![](attachments/correctoutput.png)
+
+Now, return to the browser window. You should see this message:
+
+![](attachments/success.PNG)
 
 Please note that the name of your computer will be different!
 

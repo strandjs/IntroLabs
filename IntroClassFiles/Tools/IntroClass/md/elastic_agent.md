@@ -16,13 +16,15 @@ The Elastic Agent software enables users to easily send logs to our ELK instance
 
 **1. Download the Elastic Agent.**
 
-Press the windows button and type powershell, make sure to click "Run as Admin"
+Press the Powershell icon in the taskbar to launch Windows Powershell.
 
-![Powershell](./images/powershell_kibana9.PNG)
+![Powershell](./images/OpeningPowershell.png)
 
-Once the powershell instance opens, copy what you kept in the file in my case it was "Agent.txt" and paste it into the powershell and hit enter.
+Once the powershell instance opens, copy what you kept in the file in my case it was "Agent.txt" and paste it into the powershell and hit enter. 
 
-![Powershell](./images/powershell.PNG)
+NOTE: you may have to copy/paste each part of the command separately.
+
+![Powershell](./images/powershell.png)
 
 Make sure you type `y` and hit enter when prompted by powershell.
 
@@ -50,9 +52,11 @@ The browser will take a few seconds to confirm the machine is connected, once th
 
 Once thats done we should be connected and ready for part 3, But first lets make sure the device has successfully connected.
 
+Click the hamburger at the top left of the window and scroll down almost all the way to the bottom. You should see the option "Fleet", select fleet.
+
 ![Fleet](./images/fleet_loc.PNG)
 
-click the hamburger at the top left of the window and scroll down almost all the way to the bottom. You should see the option "Fleet", select fleet.
+This allows us to view our agent policies.
 
 ![Powershell](./images/pic_of_box.PNG)
 

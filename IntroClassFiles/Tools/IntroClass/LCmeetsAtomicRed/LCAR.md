@@ -12,37 +12,48 @@ We need to install the plugin for Atomic Red that Lima Charlie offers.
 
 Start by navigating to the "Add-ons" tab in the top right of the web page.
 
-<img src="attachments/ADDONS.PNG" alt="register an account" width="300" />
+![](attachments/ADDONS.PNG)
 
 Scroll down until you see the Atomic Red plugin. Click the Atomic Red plugin.
 
-<img src="attachments/AR.PNG" alt="register an account" width="300" />
-
+![](attachments/AR.PNG)
 Take a minute to look at the different plugins and see the full capabillities and features Lima Charlie has to offer.
 
 Then locate the subscribe button on the right side of the page, and click "Subscribe"
 
-<img src="attachments/SUBSCRIBE.PNG" alt="register an account" width="300" />
+![](attachments/SUBSCRIBE.PNG)
 
 After Atomic Red finishes installing return back to your organization and click on your machine.
 
-<img src="attachments/HOST.PNG" alt="register an account" width="300" />
+![](attachments/navtoorganizations.png)
 
-Scroll down and you will see a few options, yara and atomic red. Click "Run atomic tests"
+![](attachments/selectorganization.png)
 
-<img src="attachments/RUNAR.PNG" alt="register an account" width="300" />
+On the left side of your screen, click on "Extensions" to expand the dropdown menu. Select Atomic Red Team.
 
-Go to the command and control and click "(1)Select Category" then click "(2)Run Tests"
+![](attachments/extensions.png)
 
-<img src="attachments/C2ALL.PNG" alt="register an account" width="300" />
+On the next screen, we need to first click on the dropdown next to the Sid bar at the top. Then, select your device.
+
+![](attachments/selectdevice.png)
+
+Next, scroll down until you find the `command-and-control` category. Select the box next to the category header and make sure that it selects all of the boxes below.
+
+Now, hit `Run Tests`
+
+![](attachments/C2ALL.PNG)
 
 Then move over to the "Detections" tab on the left and start going through event logs
 
-<img src="attachments/DETECTED.PNG" alt="register an account" width="700" />
+![](attachments/detections.png)
+
+![](attachments/logsscreen.png)
 
 There will be a lot of events, everytime the page is refreshed more attacks will appear.
 
 Looking through all of the logs and note the cmd.exe or powershell invokes are taking place. These are (usually) indications of something malicious occuring and needs to be examined further.
+
+![](attachments/DETECTED.PNG)
 
 Lima Charlie is an amazing tool because of its versatillity. With an easy to look at interface that if need be, allows a user to dig deeper to see whats happening before, during, and after an attack. Its abillity to be used on small and large scale is a great feature. 
 
