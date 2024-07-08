@@ -64,7 +64,7 @@ User ID is dataimport
 
 6. Next, get your IP Address by running the following command:
 
-<pre>ip addr show dev ens33 | grep 'inet </pre>
+<pre>ip addr show dev ens33 | grep inet </pre>
 
 ![](attachments/IP.png)
 
