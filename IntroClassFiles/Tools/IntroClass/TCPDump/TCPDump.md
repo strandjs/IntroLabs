@@ -2,146 +2,121 @@
 
 # TCPDump
 
-In this lab we will be looking at some basic tcpdump filters every SOC and security analyst should know.
+In this lab, we will be looking at some basic **tcpdump** filters that every SOC and security analyst should know.
 
-Let’s get started by opening a Terminal as Administrator
-
-
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+Let’s get started by opening a Terminal.
 
 
-When you get the User Account Control Prompt, select Yes.
+![](attachments/OpeningKaliInstance.png)
 
-And then, open a Ubuntu command prompt:
+Alternatively, you can click on the Kali logo in the taskbar.
 
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
+![](attachments/TaskbarKaliIcon.png)
 
-####NOTE##### 
+First, we need to get into the root shell. 
 
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+` sudo su - `
 
- 
+Next, we need to navigate to the appropriate directory. 
 
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
-
+`cd /opt/tcpdump `
 
 We are going to start with a very basic filter that simply shows us the data associated with a specific host.
 
-But first, let's get to the correct directory
+The filter in this case, is host.
 
-$ `cd /mnt/c/Users/adhd`
+`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 `
 
-The filter for this...  is host.
+For this command, we are telling **tcpdump** to do two things, not resolve hostnames **(-n)** and read in the data from a file **(-r)**.
 
-$ `tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52`
-
-For this command we are telling tcpdump to not resolve hostnames (-n) and we are telling it to read in the data from a file (-r).
-
-![](attachments/Clipboard_2020-12-09-18-14-50.png)
+![](attachments/tcpdump_pcaphost.png)
 
 What exactly is this showing us?
 
 Well, it is showing each packet's timestamp:
 
-![](attachments/Clipboard_2020-12-09-18-15-50.png)
+![](attachments/tcpdump_timestamp.png)
 
 Its protocol:
 
-![](attachments/Clipboard_2020-12-09-18-16-09.png)
+![](attachments/tcpdump_protocol.png)
 
-Its source IP address/port direction and destination IP address/port :
+Its **source** IP address + port direction and **destination** IP address + port :
 
-![](attachments/Clipboard_2020-12-09-18-17-05.png)
+![](attachments/tcpdump_addressport.png)
 
 Its control bit flags and sequence numbers:
 
-![](attachments/Clipboard_2020-12-09-18-18-25.png)
+![](attachments/tcpdump_flagssequence.png)
 
 And data size:
-
 
 ![](attachments/Clipboard_2020-12-09-18-18-51.png)
 
 
-But we can get the filter to be a bit more granular.  In fact, you can create filters for literally every part of a packet!
+We can get the filter to be a bit more granular.  In fact, you can create filters for literally every part of a packet!
 
 Let's add port number.
 
-$` tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80`
+`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80`
 
-You can hit ctrl+c after a few seconds:
+You can hit **ctrl + c** after a few seconds:
 
-![](attachments/Clipboard_2020-12-09-18-21-25.png)
+![](attachments/tcpdump_port80.png)
 
-In the screenshot above you can see we now have all the packets that are either sent or received by port 80 on 192.168.99.52.
+In the screenshot above, you can see we now have all the packets that are either sent or received by port 80 on 192.168.99.52.
 
 While getting the overall metadata from the packets is nice, we can get the full ASCII decode of the packet and the payload of the packet.
 
-$`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -A`
+On one hand, getting the metadata from the packets is nice.  On the other hand, why not get the full ASCII decode and payload of the packet?
 
-![](attachments/Clipboard_2020-12-09-18-23-36.png)
+`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -A`
+
+![](attachments/tcpdump_-a.png)
 
 As you can see above, we now can see the actual http GET requests and the responses.  
 
 Lets dig into the packet with the timestamp of 08:14:32.638976
 
-![](attachments/Clipboard_2020-12-09-18-24-48.png)
+![](attachments/tcpdump_powershell.png)
 
-Ouch, it looks like PowerShell!!!  A favorite of attackers and pentesters alike.  Further, it looks like there is Base64 data.
+Ouch, it looks like **PowerShell!!!**  A favorite of attackers and pentesters alike.  Furthermore, it looks like there is **Base64** data.
 
-![](attachments/Clipboard_2020-12-09-18-25-45.png)
+![](attachments/tcpdump_base64.png)
 
+Still not enough?  We can also see the raw **Hex** values with the -X flag:
 
-Still not enough?  We can also see the raw Hex, if that is your sort of thing, with the -X flag:
+`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -AX`
 
-$`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -AX`
+![](attachments/tcpdump_hex.png)
 
+We can also show specific protocols of interest.
 
-![](attachments/Clipboard_2020-12-09-18-30-36.png)
+For example:
 
-We can also specify specific protocols of interest.
+`tcpdump -n -r magnitude_1hr.pcap ip6`
 
-For example.
+![](attachments/tcpdump_ip6.png)
 
-$ `tcpdump -n -r magnitude_1hr.pcap ip6`
+This is showing all the **ipv6** traffic.
 
-![](attachments/Clipboard_2020-12-11-08-43-24.png)
+We can show network ranges.  This is very useful when you are seeing traffic either to or from a range of IP addresses.  For example, this can help us answer questions like, "Are there any other systems talking to this IP address range?" 
 
-This is showing all the ipv6 traffic.
+Think of an attacker using multiple systems on a network range to disperse their **C2** traffic.
 
-We can also specify network ranges.  This is very useful when you are seeing traffic either to or from a range of IP addresses.  For example, this can help us answer questions like "are there any other systems talking to this IP address range?" 
+`tcpdump -n -r magnitude_1hr.pcap net 192.168.99.0/24`
 
-Think of an attacker using multiple systems on a network range to disperse their C2 traffic.
+![](attachments/tcpdump_netrange.png)
 
-$`tcpdump -n -r magnitude_1hr.pcap net 192.168.99.0/24`
-
-#Going further
+==#Going further==
 
 Want to play with some more pcaps?  Cool.
 
-Please check out Malware of the Day from Active Countermeasures!
+Please check out, "Malware of the Day" from **Active Countermeasures**!
 
-https://www.activecountermeasures.com/category/malware-of-the-day/
+`https://www.activecountermeasures.com/category/malware-of-the-day/`
 
-Below are some commands to download some of the capture files.  Try and run through the basic level analysis we just did with them.
+Below are the commands to download some of the capture files.  Try and run through the basic level analysis we just did with them.
 
 `https://www.dropbox.com/s/zyqn3nn5ygfki59/teamviewer_1hr.pcap`
 
@@ -152,10 +127,9 @@ Below are some commands to download some of the capture files.  Try and run thro
 
 `https://www.dropbox.com/s/bhgvpablx11u8yb/taidoor_1hr.pcap`
 
+Here is a great resource to try some more options in **TCPDump**:
 
-Here is a great resource to try some more options in TCPDump:
-
-https://danielmiessler.com/study/tcpdump/
+`https://danielmiessler.com/study/tcpdump/`
 
 
 

