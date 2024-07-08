@@ -5,19 +5,19 @@ In this lab we will be installing and using Velociraptor to look at the various 
 
 Check out their website here:
 
-https://www.velocidex.com/
+>https://www.velocidex.com/
 
-Velociraptor is a fantastic and free EDR that can help us better understand the inner workings of a computer.
+Velociraptor is a free EDR that can help us better understand of the inner workings of a computer.
 
-Further, it is an excellent example of commercial tools you will encounter in your security career.
+Furthermore, it is an excellent example of commercial tools you will encounter in your security career.
 
-Finally, they also have excellent training if you want to dig deeper.
+They also have offer training on their tool if you want to dig deeper.
 
 https://www.velocidex.com/training/
 
 Let's get started.
 
-First, within Windows File Explorer navigate to the C:\IntroLabs directory:
+Within Windows File Explorer navigate to the C:\IntroLabs directory:
 
 ![](attachment/Navintolabs.png)
 
@@ -27,11 +27,11 @@ Now, lets open a Windows command prompt.
 
 When the terminal opens, navigate to the appropriate directory by using the following command:
 
-<pre>cd /IntroLabs</pre>
+`cd /IntroLabs`
 
 For this installation, we are going to set up Velociraptor as a standalone deployment.  This means the server and the client will be run on the same system.
 
-Let’s get started. Within the command prompt, run the following command:
+Within the command prompt, run the following command:
 
 <pre>velociraptor-v0.72.3-windows-amd64.exe config generate -i</pre>
 
@@ -39,88 +39,87 @@ When it asks about the OS, please choose Windows.  It should be the default.
 
 ![](attachment/velociraptor_chooseos.png)
 
-When it asks about the Path to the datastore, just hit enter.  This will keep the default.
+When it asks about the Path to the datastore, **just hit enter**.  This will keep the default.
 
 ![](attachment/velociraptor_datastorepath.png)
 
-When it asks about the SSL certs, just hit enter.  It will choose the default of Self Signed SSL.
+When it asks about the SSL certs, **just hit enter**.  It will choose the default of Self Signed SSL.
 
 ![](attachment/velociraptor_sslcert.png)
 
 
-When it asks about the DNS name, just hit enter.  It will set the default to localhost.  This will work fine as we are just running this locally.
+When it asks about the DNS name, **just hit enter**.  It will set the default to localhost.  This will work fine as we are just running this locally.
 
 ![](attachment/velociraptor_publicdns.png)
 
-For the default ports, once again, just hit enter to accept 8000 and 8889 as the defaults.
+For the default ports, once again, **just hit enter** to accept 8000 and 8889 as the defaults.
 
 ![](attachment/velociraptor_frontendport.png)
 
-If prompted about using Websocket, enter `No`
+If prompted about using Websocket, enter **"No"**
 
 ![](attachment/velociraptor_websocket.png)
 
-If prompted about using the registry to store writeback files, please enter `N`
+If prompted about using the registry to store writeback files, please enter **"N"**
 
 ![](attachment/velociraptor_registrywriteback.png)
 
-When asked about which DynDNS provider is used, select `None` and press enter.
+When asked about which **DynDNS** provider is used, select **None** and press enter.
 
 ![](attachment/velociraptor_dyndns.png)
 
-For the GUI username, please just hit enter to end.
+For the GUI username, please **just hit enter** to end.
 
 ![](attachment/velociraptor_guiusername.png)
 
-When it asks about the path to the logs directory, just hit enter to accept the default.
+When it asks about the path to the logs directory, **just hit enter** to accept the default.
 
 ![](attachment/velociraptor_pathtologs.png)
 
-If it asks if you would to restrict VQL functionality on the server, please enter `N`
+If it asks if you would to **"restrict VQL"** functionality on the server, please enter **"N"**
 
 ![](attachment/velociraptor_vqlfunct.png)
 
-When it asks where to write the server and client configs, just hit enter on both prompts to accept the defaults.
+When it asks where to write the server and client configs, **just hit enter** on both prompts to accept the defaults.
 
 ![](attachment/velociraptor_configs.png)
 
 Now, let’s add a GUI user.
 
-<pre>velociraptor-v0.72.3-windows-amd64.exe --config server.config.yaml user add root --role administrator</pre>
+`velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml user add root --role administrator`
 
 When it asks for the password, please choose a password you will remember.
 
 When finished, it should look similar to 
 
-
 ![](attachment/velociraptor_entergui.png)
 
-Now, lets run the msi to load the proper files to the proper directories:
+Lets run the **msi** to load the proper files to the proper directories:
 
-<pre>velociraptor-v0.72.3-windows-amd64.msi</pre>
+`velociraptor-v0.5.5-1-windows-amd64.msi`
 
+Let's start the server.
 
-Now, let's start the server.
-
-<pre>velociraptor-v0.72.3-windows-amd64.exe --config server.config.yaml frontend -v</pre>
+`velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml frontend -v`
 
 This will take some time, be patient.
 There will be some red text.  Don’t panic.
 
-Next, let’s surf to the GUI and see if it worked!
+Surf to the **GUI** and see if it worked!
 
 `https://127.0.0.1:8889`
 
-When you load the page, there will be an SSL error about the self-signed cert.  That is fine.
+When you load the page, there will be an **SSL error** about the self-signed cert.  That is fine.
 
 ![](attachment/velociraptor_warning.png)
 
-Select Advanced then proceed to 127.0.0.1
+Select Advanced then proceed to **127.0.0.1**
 
 ![](attachment/velociraptor_continue.png)
 
 When it asks for the Username and Password, please enter root and the password you chose earlier.
 
+Please select **Inspect** the server's state.
 
 ![](attachment/velociraptor_login.png)
 
@@ -130,23 +129,23 @@ Once logged in, you will see the following:
 
 Next, we need to start the client. Lucky for us, it is the same executable.
 
-We will need to open another Windows Command Prompt. Right click on the terminal icon in the task bar, and select "command prompt"
+We will need to open another **Windows Command Prompt**. Right click on the terminal icon in the task bar, and select **"command prompt"**
 
 ![](attachment/velociraptor_openanotherprompt.png)
 
-Then Navigate to the IntroLabs directory.
+Then Navigate to the **IntroLabs** directory.
 
-<pre>cd \IntroLabs</pre>
+`cd \IntroLabs`
 
-Next, we will need to start the client.  To do this will need to run the MSI first.
+Next, we will need to start the client.  To do this will need to run the **MSI** first.
 
-<pre>velociraptor-v0.72.3-windows-amd64.msi</pre>
+`velociraptor-v0.5.5-1-windows-amd64.msi`
 
 When you get the pop up, select Run.  This will install the proper libraries and files.
 
 Next, we will start the client.
 
-<pre>velociraptor-v0.72.3-windows-amd64.exe --config client.config.yaml client -v</pre>
+`velociraptor-v0.5.5-1-windows-amd64.exe --config client.config.yaml client -v`
 
 It will look something like this:
 
@@ -162,13 +161,11 @@ You should see one connected client.
 
 Now let’s look at what we can do with this.
 
-First things first, this is not necessarily a detection platform.  It is designed to allow you to dig when you get an alert on malware signatures or from suspicious traffic. 
+This is **not** necessarily a detection platform.  It is designed to allow you to dig when you get an **alert** on malware signatures or from suspicious traffic. 
 
-So please, keep in mind, it is not a replacement for AV!
+Understand, it is not a replacement for **AV!**
 
-So that said, let’s look around.
-
-First, let’s "Show All" Clients. Go to the search bar at the top of the screen, hit the dropdown 
+Let’s **"Show All"** Clients. Go to the search bar at the top of the screen, hit the dropdown 
 
 ![](attachment/velociraptor_showall.png)
 
@@ -180,22 +177,22 @@ If you select that client, you can get additional information about that system.
 
 ![](attachment/velociraptor_additionalinfo.png)
 
-Next, let’s "Show All" Clients again.
+Next, let’s **"Show All"** Clients again.
 
 ![](attachment/velociraptor_showall.png)
 
-Then select our only client.
+Then select our **only** client.
 
 ![](attachment/velociraptor_onlyclient.png)
 
 
-Now, on the top right of the window, select Shell.
+Now, on the top right of the window, select **Shell**.
 
 ![](attachment/velociraptor_selectshell.png)
 
-This allows us to run commands on the target system.  Think of the commands that we ran from the Windows CLI, we can run those here too.
+This allows us to run commands on the target system.  Think of the commands that we ran from the **Windows CLI**, we can run those here too.
 
-Please click on the PowerShell box and select Cmd.
+Please click on the **PowerShell** box and select **Cmd**.
 
 ![](attachment/velociraptor_powershelldropdown.png)
 
@@ -218,18 +215,19 @@ After doing so, you should see something like this:
 
 Now, let’s do a Hunt.   Please select the Hunt icon.
 
+Let’s do a Hunt.   Please select the Hunt icon.
 
 ![](attachment/velociraptor_selecthunt.png)
 
-To start a Hunt, please select the + icon.
+To start a Hunt, please select the **"+"** icon.
 
 ![](attachment/velociraptor_newhunt.png)
 
-Please name your Hunt, then select "Select Artifacts" on the bottom.
+Please name your Hunt, then select **"Select Artifacts"** on the bottom.
 
 ![](attachment/velociraptor_selectartifacts.png)
 
-We are going to keep this simple for this lab. Within the window, scroll down to find Generic.System.Pstree and select it.
+Within the window, scroll down to find **"Generic.System.Pstree"** and select it.
 
 ![](attachment/velociraptor_genericpstree.png)
 
@@ -237,19 +235,19 @@ Then, Review on the bottom.
 
 ![](attachment/velociraptor_reviewtab.png)
 
-We now have an overview of what is going to be run on all systems...  Which is only one.
+We now have an overview of what is going to be run on all systems.  Which in our case, is only one system.
 
 Now select Launch.
 
-Once you select Launch, it will start the Hunt and load it in the que.
+It will start the Hunt and load it in the **que**.
 
 ![](attachment/velociraptor_startedhunt.png)
 
-Please select our Hunt.  Now, we can run it.  Please press the Play button above.
+Please select our Hunt.  Now, we can run it.  Press the **Play** button above.
 
 ![](attachment/velociraptor_play.png)
 
-When you get the pop-up, select Run it!
+When you get the pop-up, select **Run it!**
 
 This will take a few moments.
 
@@ -257,25 +255,25 @@ When done, you will see Total scheduled is 1 and Finished Clients is 1.
 
 You can also download the results.
 
-Please select Download Results.
+Please select **Download Results.**
 
 ![](attachment/velociraptor_download.png)
 
-Then, CSV Only.
+Then, **Summary (CSV Only)**.
 
 ![](attachment/velociraptor_csvonly.png)
 
 This will create a zip with the output.
 
-Please download that by clicking on the zip file.
+Please download that by clicking on the **zip file**.
 
 ![](attachment/velociraptor_downloadzip.png)
 
-Go ahead and open the zip file, navigate into the results folder.
+Go ahead and open the **zip file**, navigate into the results folder.
 
 ![](attachment/velociraptor_opencsv.png)
 
-Then, open the csv file with WordPad:
+Then, open the csv file with **WordPad**.
 
 ![](attachment/velociraptor_wordpad.png)
 
@@ -350,5 +348,8 @@ Want to try something cool?  Run a Metrepreter agent on you Windows system.  The
 
 
 
+If you want to see a simple HTML report you can click on the turn back time icon on the left side, (Right above the binoculars), and then clock Download Results > Prepare Collection Report > and click on the HTML report that appears below it.
 
+We have not even begun to touch what we can do with this tool.
 
+Want to try something cool?  Run a **Metrepreter agent** on you Windows system.  Then, go through Velociraptor to create a Hunt to find it.  There are many Windows artifacts you can pull.  You do not need to just run one at a time.  You can run multiple.

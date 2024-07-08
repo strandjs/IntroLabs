@@ -7,17 +7,6 @@ Let's get started by opening Windows Powershell.
 
 ![](attachments/OpeningPowershell.png)
 
-
-==####NOTE#####== 
-
-If you are havin trouble launching any of Windows many terminals.  All you have to do is click on the Windows Start button and type.  
-
-`Powershell`, `Ubuntu`, or `Command Prompt` 
-
-If you use **PowerShell** or **Command Prompt**, you will have to right click on them and select Run As Administrator 
-
-==###END NOTE###==
-
 Next, we need to navigate to the IntroLabs directory:
 
 `cd .\IntroLabs`
