@@ -22,32 +22,41 @@ Find the "Download Sysmon" link.
 ![Download Sysmon](./images/sysmon_download.png)
 
 
-In [part one](./elk_in_the_cloud.md "Elk in the Cloud"), we reviewed several ways to find our download.  Repeat these steps to find find the Sysmon download in the Downloads folder.
+Next, we need to extract the .zip archive that we just downloaded. To do so, start by opening your file explorer.
 
+![](./images/OpeningFileExplorer.png)
 
-Perform "Extract All" on the Sysmon Folder. Ensure the Sysmon folder is selected -- It will be highlighted blue.
+Then navigate to `Downloads` in the side panel, and click on the Sysmon `.zip` archive.
+
+![](./images/navigatetodownloads.png)
+
+Now we can perform "Extract All" on the Sysmon Folder. 
+
+Ensure the Sysmon .zip archive is selected -- It will be highlighted blue.
 
 ![Sysmon Extract All](./images/sysmon_extract_all.png)
 
 "Extract" to the Downloads folder.  Windows should auto-populate the Downloads path.
 
-In your search bar, type "PowerShell."
-The following options will be presented.  Click "Run as Administrator."
+Once you are finished, you should see something like this:
 
-<img src="./images/powershell.png" alt="Run as Administrator" style="zoom:67%;" />
+![](./images/sysmonfolder.png)
+
+For the next step, we need to open Windows PowerShell. This can be done by clicking on the PowerShell icon in the taskbar.
+
+![](./images/OpeningPowershell.png)
 
 In your PowerShell window, enter the following command. You will need to substitute [USER] for the user you are using on your local system.
 
-```powershell
+<pre>
 cd C:\Users\[USER]\Downloads\Sysmon\
-```
+</pre>
 
+Then, run the following command to install and start Sysmon as a service.
 
-The following command will install and start Sysmon as a service.
-
-```powershell
+<pre>
 .\Sysmon.exe -i -n -accepteula
-```
+</pre>
 
 
 Your following output should look similar to this.
@@ -56,49 +65,65 @@ Your following output should look similar to this.
 ![Sysmon is Running](./images/sysmon_running.png)
 
 
-Now that Sysmon is running on our system, we need to configure our Elastic agent to gather these logs.  Sign into your cloud account.
+Now that Sysmon is running on our system, we need to configure our Elastic agent to gather these logs.
 
+Sign into your Elastic Cloud account using the following link:
 
 [Elastic Cloud Login](https://cloud.elastic.co/login "https://cloud.elastic.co/login")
 
 
-Navigate to "Integrations" through the navigation menu.
+Once logged in, navigate to "Integrations" through the navigation menu.
 
+Note:
 
-![Integrations Tab](./images/integrations.PNG)
+When you log in to Elastic, you might see the following screen first. If so, go ahead and click on our deployment that we created in [Part One](./elk_in_the_cloud.md "Elk in the Cloud") (ELK in the Cloud)
 
+![](./images/incaseyourelost.png)
 
-At the top of the page enter "windows" into the search bar.  Select the Windows option with the red square pictured below.
+Once you do this, you can access the navigation bar by clicking the three lines in the upper left and then navigate to Integrations. 
 
+You may have to scroll to the bottom to find the Management section. 
+
+![](./images/navigationmenu.png)
+
+At the top of the page enter "windows" into the search bar.  Select the Windows option outlined with the red square below.
 
 ![Select Windows](./images/which_windows.PNG)
 
-
 Add this integration.
-
 
 ![Add Windows](./images/installation.PNG)
 
 
-By default, the Sysmon logs channel should be active.  This can be checked under the "Collect events from the following Windows event log channels:" section of the "Add integration" page.
+The next screen you see will have a lot of options on it. Luckily, we only care that one is selected: Sysmon Operational
+
+By default, this option should be active, but please double check to be sure. 
+
+Note:
+
+You will have to scroll down the page for a bit in order to find it. 
 
 
 ![Ensure Sysmon is Selected](./images/sysmon_selected.png)
 
 
-Save the Integration.
+Now save the Integration by clicking `Save and Continue` in the bottom right.
 
 
 ![Save the Integration](./images/saveandnext.PNG)
 
 
-When prompted click "Add elastic agent to your hosts".
+You will then see the following pop-up prompt. Please click "Add elastic agent to your hosts".
 
 
-![Save and Deploy Changes](./images/addelastichost.PNG)
+![Add Elastic Host](./images/addelastichost.PNG)
 
 
-In the Integrations menu, find the "Installed integrations" tab.
+Now, navigate back to the Integrations menu, find the "Installed integrations" tab.
+
+![](./images/backtointegrations.png)
+
+![](./images/clickinstalledintegrations.png)
 
 In [part one](./elk_in_the_cloud.md "Elk in the Cloud"), we selected an Elastic Security configuration. In doing so, "Endpoint Security" and "System" are automatically installed in our Integrations.
 
@@ -111,10 +136,15 @@ At this point, play around on the computer that has Elastic Agent installed.  Mo
 After you have created some log activity, navigate to "Discover" by accessing the hamburger menu on the top left.
 
 
-![Navigate to Discover](./images/filter.PNG)
+![Navigate to Discover](./images/navigatetodiscover.png)
 
+We will then create a filter:
 
-Set a filter on your data to limit your results to sysmon data.  This can be done by searching the "data_stream.dataset" field for "windows.sysmon_operational" data. Then click "add filter". Your filter should now be set.
+![](./images/createfilter.png)
+
+Set a filter on your data to limit your results to sysmon data.  This can be done by searching the "data_stream.dataset" field for "windows.sysmon_operational" data. We add a custom label of "All Done!" 
+
+Now click "add filter". Your filter should now be set.
 
 
 ![Filter Data](./images/applied_filter.PNG)

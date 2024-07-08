@@ -21,9 +21,7 @@ Within Windows File Explorer navigate to the C:\IntroLabs directory:
 
 ![](attachment/Navintolabs.png)
 
-We will need to open a command prompt and change directories to the IntroLabs directory.
-
-First, lets open a Windows command prompt.
+Now, lets open a Windows command prompt.
 
 ![](attachment/openingcommandprompt%20-%20Copy.png)
 
@@ -35,7 +33,7 @@ For this installation, we are going to set up Velociraptor as a standalone deplo
 
 Within the command prompt, run the following command:
 
-`velociraptor-v0.5.5-1-windows-amd64.exe config generate -i`
+<pre>velociraptor-v0.72.3-windows-amd64.exe config generate -i</pre>
 
 When it asks about the OS, please choose Windows.  It should be the default.
 
@@ -99,7 +97,6 @@ When finished, it should look similar to
 Lets run the **msi** to load the proper files to the proper directories:
 
 `velociraptor-v0.5.5-1-windows-amd64.msi`
-
 
 Let's start the server.
 
@@ -204,7 +201,19 @@ Now, enter netstat -naob in the Cmd box and select Launch.
 
 ![](attachment/velociraptor_naob.png)
 
-This will not display the results right away. To see the results, select the **Eye icon** with your netstat command below:
+This will not display the results right away. To see the results, select the Eye icon with your netstat command below:
+
+![](attachment/velociraptor_eye.png)
+
+Then click on `Logs`
+
+![](attachment/velociraptor_clicklogs.png)
+
+After doing so, you should see something like this:
+
+![](attachment/velociraptor_viewlogs.png)
+
+Now, let’s do a Hunt.   Please select the Hunt icon.
 
 Let’s do a Hunt.   Please select the Hunt icon.
 
@@ -268,7 +277,76 @@ Then, open the csv file with **WordPad**.
 
 ![](attachment/velociraptor_wordpad.png)
 
-This is not optimal.  We did not load Excel on this system because of licensing restrictions.  However, you can copy this over to your host system and open it there. 
+Granted, this is not optimal.  We did not load Excel on this system because of licensing restrictions.  However, you can copy this over to your host system and open it there. 
+
+However, of you want to see a simple HTML report you can click on the turn back time icon on the left side (Right above the binoculars) and then clock Download Results > Prepare Collection Report, then click on the HTML report that appears below it.
+
+We have not even begun to touch what we can do with this awesome tool.
+
+Want to try something cool?  Run a Metrepreter agent on you Windows system.  Then, go through Velociraptor to create a Hunt to find it.  There are many Windows artifacts you can pull.  You do not need to just run one at a time.  You can run multiple.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 If you want to see a simple HTML report you can click on the turn back time icon on the left side, (Right above the binoculars), and then clock Download Results > Prepare Collection Report > and click on the HTML report that appears below it.
 
