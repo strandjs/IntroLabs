@@ -4,76 +4,57 @@
 
 In this lab we will be getting started with the fundamentals of password cracking.  We will be using Hashcat to do this.
 
-First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt. Open PowerShell and run the following command:
 
-`Set-MpPreference -DisableRealtimeMonitoring $true`
+![](attachments/OpeningPowershell.png)
+
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
 This will disable Defender for this session.
 
 If you get angry red errors, that is Ok, it means Defender is not running.
 
+To start, we need to launch a Kali terminal. Click the Kali icon in the taskbar.
 
-To start, we will be working with the Command Prompt in Windows Terminal.   This is on your desktop and can be opened by right-clicking it and selecting Run as administrator:
+![](attachments/TaskbarKaliIcon.png)
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+When the terminal opens, we need to gain root access by running the following:
 
-When you get the pop up select Yes.
+<pre>sudo su -</pre>
 
-Next, to open a Command Prompt Window, select the Down Carrot and then select Command Prompt.
+Next, we need to navigate to the appropriate directory. Run the following:
 
-![](attachments/Clipboard_2020-06-12-10-38-52.png)
+<pre>cd /opt/Password_Cracking</pre>
 
-####NOTE##### 
+Lets begin by attempting to crack some MD5 hashes. 
 
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+Run the following command:
 
- 
+<pre>hashcat -a 0 -m 0 -r /usr/share/hashcat/rules/Incisive-leetspeak.rule MD5.txt password.lst</pre>
 
-Simply click the Windows Start button in the lower left of your screen and type: 
+The result will look like this:
 
- 
+![](attachments/md5run.png)
 
-`Powershell` 
+Running this command will not show us the cracked hashes. As seen above, in order to see cracked hashes, we need to run our command again and add the `--show` option onto the end.
 
-or 
+After running the command again with the `--show` option, you should see something like this:
 
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
-
-Next, we need to navigate to the hashcat directory.
-
-C:\Users\adhd>`cd \tools\hashcat-4.1.0\`
-
-Now remove old passwords that ar cracked
-
-C:\Users\adhd>`del hashcat.potfile`
-
-![](attachments/Clipboard_2020-06-12-10-41-51.png)
+![](attachments/md5hashes.png)
 
 Now, lets crack some NT hashes.  These are the hashes that almost all modern Windows systems store these days.  Older systems may store LANMAN, but that is very rare.
 
-C:\Tools\hascat-4.1.0>`hashcat64.exe -a 0 -m 1000 -r rules\Incisive-leetspeak.rule sam.txt password.lst`
+Lets run the following command:
+
+<pre>hashcat -a 0 -m 1000 -r/usr/share/hashcat/rules/Incisive-leetspeak.rule sam.txt password.lst</pre>
 
 When done it should look like this:
 
-![](attachments/Clipboard_2020-07-09-14-57-40.png)
+![](attachments/nthashrun.png)
 
-Finally, let’s try and crack some MD5 hashes
+Once again, we will not see the cracked hashes unless we append `--show` onto the end of the command. Lets do that, then run it again to see the cracked hashes:
+![](attachments/ntcracked.png)
 
-C:\Tools\hascat-4.1.0>`hashcat64.exe -a 0 -m 0 -r rules\Incisive-leetspeak.rule md5.txt password.lst`
-
-When done, it should look like this:
-
-![](attachments/Clipboard_2020-07-09-14-58-51.png)
 
 
 
