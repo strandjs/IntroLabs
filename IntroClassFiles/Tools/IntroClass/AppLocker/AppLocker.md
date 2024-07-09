@@ -169,30 +169,19 @@ Next, open a command prompt and run gpupdate to force the policy change.
 
 <pre>gpupdate /force</pre>
 
-Next, log out as ADHD and log back in as allowlist.  
+We are now going to try to run TrustMe.exe as another user on the system. 
 
-You can do this easily by selecting the Windows icon and then the little white user icon:
+Run the following commands:
 
-![](attachments/Clipboard_2020-06-15-09-00-39.png)
+<pre>cd /IntroLabs</pre>
 
-The password is ADHD.
+<pre>runas /user:whitelist "nc"</pre>
 
-![](attachments/Clipboard_2020-06-15-08-46-49.png)
+The password is `adhd`
 
+![](attachments/runas.png)
 
-
-Now, navigate to the C:>\Tools directory with Windows Explorer and try to run some of the .exe files.
-
-![](attachments/Clipboard_2020-06-15-08-48-09.png)
-
-You will see that most of the .exe files will generate an error.
-
-
-
-
-You should get an error.
-
-To finish this lab, simply restart your class VM and log in as ADHD.
+As you can see, an error was generated, meaning that we were successful!
 
 
 
