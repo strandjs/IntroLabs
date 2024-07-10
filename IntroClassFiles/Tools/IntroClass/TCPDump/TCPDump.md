@@ -14,17 +14,17 @@ Alternatively, you can click on the Kali logo in the taskbar.
 
 First, we need to get into the root shell. 
 
-<pre> sudo su - </pre>
+<pre>sudo su -</pre>
 
 Next, we need to navigate to the appropriate directory. 
 
-<pre>cd /opt/tcpdump </pre>
+<pre>cd /opt/tcpdump</pre>
 
 We are going to start with a very basic filter that simply shows us the data associated with a specific host.
 
 The filter in this case, is host.
 
-<pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 </pre>
+<pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52</pre>
 
 For this command, we are telling **tcpdump** to do two things, not resolve hostnames **(-n)** and read in the data from a file **(-r)**.
 
