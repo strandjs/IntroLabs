@@ -20,3 +20,6 @@ It looks like the attacker has pushed a script to execute malware on every machi
 It is safe to assume that every single machine on the network is compromised, which is not good.
 
 This **small** breach has just become a **huge** disaster and will need Escalation and Incident Response.
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
