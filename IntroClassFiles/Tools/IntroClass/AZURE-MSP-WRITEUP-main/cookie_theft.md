@@ -6,7 +6,11 @@ At this point we know that the attacker is trying to pivot in the network.
 
 If the attacker got another user to run a malicious file, what will they do next? Well, this user was a slightly more privileged user and may have access to information an attacker may want.
 
-Let's take the security logs from the workstation that Paul Bowman pivoted to and see if we can see what the malicious executable is doing. If the attacker is running commands and scripts to access sensitive information our audit logs should contain evidence of what happened.
+Let's take the security logs from the workstation that Paul Bowman pivoted to and see if we can see what the malicious executable is doing. 
+
+NOTE: Once again, the logs file is unique. Please download with the link above and open with notepad or another text editor.
+
+If the attacker is running commands and scripts to access sensitive information our audit logs should contain evidence of what happened.
 
 The Audit number that indicates something has attempted to access an object is `4663`. Use `ctrl + f` and type "4663" and tab through the logs. If the attacker did access a sensitive file, it will have the process name of `SuperSpecializedHighlyAdvancedMalwareBypasser2.exe`.
 
