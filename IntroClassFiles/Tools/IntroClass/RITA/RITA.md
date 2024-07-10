@@ -20,7 +20,7 @@ Then, select rita-html-report:
 
 ![](attachments/rita_navhtmlreport.png)
 
-Then, select index.html:
+Then, select **index.html**:
 
 ![](attachments/rita_navindex.png)
 
@@ -40,7 +40,7 @@ Some backdoors have a very strong “heartbeat”. This is where a backdoor will
 We also have the number of connections. While some beacons have a “strong” heartbeat, they are very short in nature. Our VSAgent connection had a very large number of connections which had very strong intervals, while some of the others (e.g. the 64.4.54.253 addresses) had a strong heartbeat, but not as many connections. We will also talk about TS Duration. This is detecting how consistent each connection duration is. For example, if every connection is 2 seconds and there are 8000+ it would have a very strong TS Duration score.
 
 The other fields are statistical analysis fields showing things like mode range and skew.
-DNSCat2
+
 
 Now, lets navigate back to the first menu by clicking the **RITA** tab. 
 
@@ -64,11 +64,17 @@ Now, let's play with AC Hunter!
 
 Please go to https://training.aihhosted.com/
 
+You might be prompted by a warning stating that your connection isn't private. This is **Okay**. 
+
+Simply click `Advanced` and then click `Continue to trainin.aihhosted.com`
+
+![](attachments/advanced.png)
+
 The creds are:
 
-` email = training@blackhillsinfosec.com/ `
+email = `training@blackhillsinfosec.com`
 
-` PW = gotbeacons? `
+PW = `gotbeacons?`
 
 ![](attachments/rita_achunterlogin.png)
 
@@ -103,3 +109,6 @@ Now, using AC Hunter, answer the following questions:
 
 3. For the dnscat2-ja3-strobe-agent dataset, what domain has the highest lookup count?
 4. Who is doing the lookups?
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
