@@ -3,8 +3,8 @@
 ---
 
 *This is part three of a three-part series.*
-	[Part One](./elk_in_the_cloud.md "Elk in the Cloud")
-	[Part Two](./elastic_agent.md "Elastic Agents")
+	| [Part One](./elk_in_the_cloud.md "Elk in the Cloud") |
+	[Part Two](./elastic_agent.md "Elastic Agents") |
 
 ---
 
@@ -48,16 +48,12 @@ For the next step, we need to open **Windows PowerShell**. This can be done by c
 
 Enter the following command. You will need to substitute [USER] for the user you are using on your local system.
 
-```
-cd C:\Users\[USER]\Downloads\Sysmon\
-```
+<pre>cd C:\Users\[USER]\Downloads\Sysmon\</pre>
 
 Run the following command to install and start Sysmon as a service.
 
-```
-.\Sysmon.exe -i -n -accepteula
-```
 
+<pre>.\Sysmon.exe -i -n -accepteula</pre>
 
 The output should look similar to this.
 
@@ -74,7 +70,7 @@ Sign into your Elastic Cloud account using the following link:
 
 Once logged in, navigate to "Integrations" through the navigation menu.
 
-!!! Note:
+Note:
 	When you log in to Elastic, you might see the following screen first. If so, go ahead and click on our deployment that we created in [Part One](./elk_in_the_cloud.md "Elk in the Cloud") (ELK in the Cloud)
 	![](./images/incaseyourelost.png)
 	
@@ -97,7 +93,7 @@ The next screen you see will have a lot of options on it. Luckily, we only care 
 
 By default, this option should be active, but please double check to be sure. 
 
-!!!Note:
+Note:
 	You will have to scroll down the page for a bit in order to find it. 
 	
 	![Ensure Sysmon is Selected](./images/sysmon_selected.png)
@@ -146,3 +142,6 @@ Now click **"add filter"**. Your filter should now be set.
 ![Sysmon Results](./images/final.PNG)
 
 If you have a result, and not an error, your Sysmon data is being collected and sent to Elastic.
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
