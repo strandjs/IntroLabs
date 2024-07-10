@@ -16,17 +16,17 @@ Alternatively, you can click on the **Kali** icon in the taskbar.
 
 Before going further, gain root access by running the following:
 
-```sudo su -```
+<pre>sudo su -</pre>
 
 Navigate into the proper directory:
 
-```cd /opt/Web_Testing```
+<pre>cd /opt/Web_Testing</pre>
 
 ![](attachments/navtodirectory.png)
 
 We need to get our **Linux** IP address for later, so let's run the following command:
 
-```ifconfig```
+<pre>ifconfig</pre>
 
 ![](attachments/ifconfig.png)
 
@@ -36,7 +36,7 @@ Please note your **Linux** IP address. As shown above, ours is **10.10.1.117**
 
 Let's launch the python script.
 
-```python3 ./dsvw.py```
+<pre>python3 ./dsvw.py</pre>
 
 ![](attachments/pythonscriptran.png)
 
@@ -56,7 +56,7 @@ Select **"Automated Scan"**
 
 Put in **your** Linux IP and port **"65412"** in as the URL to attack.
 
-```http://<YOUR LINUX IP>:65412```
+<pre>http://[YOUR LINUX IP]:65412</pre>
 
 Then, select **"Use traditional spider"** and then select **"Attack"**:
 
@@ -68,6 +68,10 @@ When it gets done crawling and scanning, select **"Alerts"**:
 ![](attachments/Alerts.png)
 
 This shows that **ZAP** does a pretty good job of finding the easy to identify vulnerabilites.
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+
 
 <!--
 
