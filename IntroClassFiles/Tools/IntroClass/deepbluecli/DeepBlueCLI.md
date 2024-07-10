@@ -9,15 +9,15 @@ Let's get started by opening Windows Powershell.
 
 Next, we need to navigate to the IntroLabs directory:
 
-`cd .\IntroLabs`
+<pre>cd .\IntroLabs</pre>
 
 Then, continue into the DeepBlueCLI-master directory:
 
-`cd .\DeepBlueCLI-master`
+<pre>cd .\DeepBlueCLI-master</pre>
 
 Next, run the following command:
 
-`Set-ExecutionPolicy unrestricted`
+<pre>Set-ExecutionPolicy Unrestricted</pre>
 
 Most likely, you will be prompted to confirm the change.
 
@@ -29,7 +29,7 @@ It is very common for attackers to add additional users on to a system they have
 
 Now, let’s run a check in the **.evtx** files for adding a new user:
 
-`.\DeepBlue.ps1 .\evtx\new-user-security.evtx`
+<pre>.\DeepBlue.ps1 .\evtx\new-user-security.evtx</pre>
 
 You should see the following:
 
@@ -41,18 +41,21 @@ But, this is the exact behavior that UEBA should be able to detect.
 
 Now, let's look at an event log with a password spray attack.  This is very much part of what a full UEBA solution does:
 
-`.\DeepBlue.ps1 .\evtx\smb-password-guessing-security.evtx`
+<pre>.\DeepBlue.ps1 .\evtx\smb-password-guessing-security.evtx</pre>
 
 ![](attachments/deepblue_passwordguessing.png)
 
 Same thing with detecting a password spraying attack:
 
-`.\DeepBlue.ps1 .\evtx\password-spray.evtx`
+<pre>.\DeepBlue.ps1 .\evtx\password-spray.evtx</pre>
 
 ![](attachments/deepblue_passwordspray.png)
 
 For fun, let’s look at how DeepBlueCLI detects various encoding tactics that attackers use to obfuscate their attacks.  It is very common for attackers to use a number of encoding techniques to bypass signature detection.  However, it is not something that normally happens with standard scripts.
 
-`.\DeepBlue.ps1 .\evtx\Powershell-Invoke-Obfuscation-encoding-menu.evtx`
+<pre>.\DeepBlue.ps1 .\evtx\Powershell-Invoke-Obfuscation-encoding-menu.evtx</pre>
 
 ![](attachments/deepblue_powershell-invokeobfuscation.png)
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
