@@ -100,3 +100,6 @@ Keep this command saved.  It is recommended to paste this command into a text fi
 The ELK stack is now configured and we have our connection information saved.  Part two will cover how to install and configure an Elastic Agent.
 
 [Part Two](./elastic_agent.md "Elastic Agents")
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
