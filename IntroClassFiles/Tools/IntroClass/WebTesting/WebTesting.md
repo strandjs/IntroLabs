@@ -1,76 +1,73 @@
-
 # Web Testing
 
-In this lab we will be standing up a simple Python Web Server and a vulnerable web server called DVWA.  These are designed from the ground up to teach people about a number of web application attacks.
+In this lab we will be standing up a simple **Python Web Server** and a vulnerable web server called **DVWA**.  These are designed from the ground up to teach people about a number of web application attacks.
 
-While a full intro to web attacks is out of the scope of this class, it is great to show you how to use tools like ZAP to automatically look for some vulnerabilities, and to show you that automated tools do not always catch everything.
+While a full intro to web attacks is out of the scope of this class, it is great to show you how to use tools like **ZAP** to automatically look for some vulnerabilities, and to show you that automated tools do not always catch everything.
 
+We now have **DVWA** up and running.
 
-
-We now have DVWA up and running.
-
-First, you will need to start an Kali terminal.
+You will need to start an **Kali** terminal.
 
 ![](attachments/OpeningKaliInstance.png)
 
-Alternatively, you can click on the Kali icon in the taskbar.
+Alternatively, you can click on the **Kali** icon in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
 Before going further, gain root access by running the following:
 
-<pre>sudo su -</pre>
+```sudo su -```
 
-Now navigate into the proper directory:
+Navigate into the proper directory:
 
-<pre>cd /opt/Web_Testing</pre>
+```cd /opt/Web_Testing```
 
 ![](attachments/navtodirectory.png)
 
-We need to get our Linux IP address for later, so let's run the following command:
+We need to get our **Linux** IP address for later, so let's run the following command:
 
-<pre>ifconfig</pre>
+```ifconfig```
 
 ![](attachments/ifconfig.png)
 
-Please note your Linux IP address. As shown above, ours is `10.10.1.117`
+Please note your **Linux** IP address. As shown above, ours is **10.10.1.117**
 
-YOUR IP WILL BE DIFFERENT!
+**YOUR IP WILL BE DIFFERENT!**
 
-Next, let's launch the python script.
+Let's launch the python script.
 
-<pre>python3 ./dsvw.py</pre>
+```python3 ./dsvw.py```
 
 ![](attachments/pythonscriptran.png)
 
-It's time to start ZAP! Go ahead and launch it from the desktop icon.
+It's time to start **ZAP**! Go ahead and launch it from the desktop icon.
 
 ![](attachments/OpeningZAP.png)
 
-Once ZAP loads, you will see this pop-up on your screen. Ensure that `No, I do not want to persist this session at this moment in time` option is selected, and hit `Start`
+Once **ZAP** loads, you will see this pop-up on your screen. Ensure that **No, I do not want to persist this session at this moment in time** option is selected, and hit **"Start"**
 
 ![](attachments/nopersist.png)
 
-Let's do a quick test of the Python Web Server:
+Let's do a quick test of the **Python Web Server**:
 
-First, select Automated Scan
+Select **"Automated Scan"**
 
 ![](attachments//automatedscanselect.png)
 
-Now, put in your Linux IP and port 65412 in as the URL to attack.
+Put in **your** Linux IP and port **"65412"** in as the URL to attack.
 
-<pre>http://YOUR LINUX IP:65412</pre>
+```http://<YOUR LINUX IP>:65412```
 
-Then, select "Use traditional spider" and then select "Attack":
+Then, select **"Use traditional spider"** and then select **"Attack"**:
 
 ![](attachments/AutomatedScanSetup.png)
 
 Scan progress will be shown by the progress bar in the center of your screen.
-When it gets done crawling and scanning, select Alerts:
+When it gets done crawling and scanning, select **"Alerts"**:
 
 ![](attachments/Alerts.png)
 
-This shows that ZAP does a pretty good job of finding the easy to identify vulnerabilites.
+This shows that **ZAP** does a pretty good job of finding the easy to identify vulnerabilites.
 
 <!--
 
@@ -171,11 +168,3 @@ Here is just one example.
 
 ![](attachments/Clipboard_2020-06-16-13-44-15.png)
 -->
-
-
-
-
-
-
-
-
