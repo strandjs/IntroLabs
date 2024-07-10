@@ -5,7 +5,7 @@ In this lab we will be installing and using Velociraptor to look at the various 
 
 Check out their website here:
 
->https://www.velocidex.com/
+https://www.velocidex.com/
 
 Velociraptor is a free EDR that can help us better understand of the inner workings of a computer.
 
@@ -27,7 +27,7 @@ Now, lets open a Windows command prompt.
 
 When the terminal opens, navigate to the appropriate directory by using the following command:
 
-`cd /IntroLabs`
+<pre>cd /IntroLabs</pre>
 
 For this installation, we are going to set up Velociraptor as a standalone deployment.  This means the server and the client will be run on the same system.
 
@@ -86,7 +86,7 @@ When it asks where to write the server and client configs, **just hit enter** on
 
 Now, let’s add a GUI user.
 
-`velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml user add root --role administrator`
+<pre>velociraptor-v0.72.3-windows-amd64.exe --config server.config.yaml user add root --role administrator</pre>
 
 When it asks for the password, please choose a password you will remember.
 
@@ -96,18 +96,18 @@ When finished, it should look similar to
 
 Lets run the **msi** to load the proper files to the proper directories:
 
-`velociraptor-v0.5.5-1-windows-amd64.msi`
+<pre>velociraptor-v0.72.3-windows-amd64.msi</pre>
 
 Let's start the server.
 
-`velociraptor-v0.5.5-1-windows-amd64.exe --config server.config.yaml frontend -v`
+<pre>velociraptor-v0.72.3-windows-amd64.exe --config server.config.yaml frontend -v</pre>
 
 This will take some time, be patient.
 There will be some red text.  Don’t panic.
 
 Surf to the **GUI** and see if it worked!
 
-`https://127.0.0.1:8889`
+https://127.0.0.1:8889
 
 When you load the page, there will be an **SSL error** about the self-signed cert.  That is fine.
 
@@ -135,17 +135,17 @@ We will need to open another **Windows Command Prompt**. Right click on the term
 
 Then Navigate to the **IntroLabs** directory.
 
-`cd \IntroLabs`
+<pre>cd \IntroLabs</pre>
 
 Next, we will need to start the client.  To do this will need to run the **MSI** first.
 
-`velociraptor-v0.5.5-1-windows-amd64.msi`
+<pre>velociraptor-v0.72.3-windows-amd64.msi</pre>
 
 When you get the pop up, select Run.  This will install the proper libraries and files.
 
 Next, we will start the client.
 
-`velociraptor-v0.5.5-1-windows-amd64.exe --config client.config.yaml client -v`
+<pre>velociraptor-v0.72.3-windows-amd64.exe --config client.config.yaml client -v</pre>
 
 It will look something like this:
 
@@ -197,7 +197,7 @@ Please click on the **PowerShell** box and select **Cmd**.
 ![](attachment/velociraptor_powershelldropdown.png)
 
 
-Now, enter netstat -naob in the Cmd box and select Launch.
+Now, enter `-naob` in the Cmd box and select Launch.
 
 ![](attachment/velociraptor_naob.png)
 
@@ -353,3 +353,6 @@ If you want to see a simple HTML report you can click on the turn back time icon
 We have not even begun to touch what we can do with this tool.
 
 Want to try something cool?  Run a **Metrepreter agent** on you Windows system.  Then, go through Velociraptor to create a Hunt to find it.  There are many Windows artifacts you can pull.  You do not need to just run one at a time.  You can run multiple.
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
