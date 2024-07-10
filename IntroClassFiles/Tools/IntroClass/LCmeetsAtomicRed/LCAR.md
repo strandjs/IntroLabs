@@ -4,7 +4,7 @@ This is part 2 of a 2 part series. Please complete <a href="https://github.com/s
 
 ---
 
-part 2 of 2
+Part 2 of 2
 
 ---
 
@@ -63,3 +63,6 @@ Looking through all of the logs and note the **cmd.exe** or **powershell** invok
 Lima Charlie is an amazing tool because of its versatillity. It has an easy to use interface. It allows a user to dig deeper to see whats happening before, during, and after an attack. Its abillity to be used on small and large scale is a great feature. 
 
 Many plugins allow for different uses large and small, and automating the difficult tasks.
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
