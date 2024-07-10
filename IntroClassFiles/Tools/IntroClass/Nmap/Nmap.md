@@ -12,7 +12,7 @@ Let's get started by opening a command prompt terminal. You can do this by click
 
 From the command prompt we need to get the IP address of your **Windows** system:
 
-```ipconfig```
+<pre>ipconfig</pre>
 
 ![](attachments/nmap_ipconfig.png)
 
@@ -28,11 +28,11 @@ Alternatively, you can click on the Kali logo in the taskbar.
 
 In the Kali terminal, let’s become root:
 
-```sudo su -```
+<pre>sudo su -</pre>
 
 We will scan your Windows system:
 
-```nmap 10.10.1.209```
+<pre>nmap 10.10.1.209</pre>
 
 You can hit the spacebar to get status.
 
@@ -48,7 +48,7 @@ Go back to the Windows command prompt.
 
 Let’s enable the Windows firewall:
 
-```netsh advfirewall set allprofiles state on```
+<pre>netsh advfirewall set allprofiles state on</pre>
 
 ![](attachments/nmap_advfirewallon.png)
 
@@ -58,7 +58,7 @@ Now, let’s rescan from the Kali terminal. You can navigate back to it by press
 
 Rerun the scan: 
 
-```nmap 10.10.1.209```
+<pre>nmap 10.10.1.209</pre>
 
 Please note, you can just hit the up arrow key to view previously run commands.  
 
@@ -70,6 +70,10 @@ It should look like this:
 
 Now, using the same process as before, let’s disable the Windows firewall to go back to the base state:
 
-```netsh advfirewall set allprofiles state off```
+<pre>netsh advfirewall set allprofiles state off</pre>
 
 ![](attachments/nmap_turnbackon.png)
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+
