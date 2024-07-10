@@ -52,7 +52,32 @@ No cheating...
 \
 \
 \
+\
+\
+\
+\
+\
+\
+\
 Seriously...
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
 \
 \
 \
@@ -85,3 +110,6 @@ Note that two of the servers require authentication and one does not.
 Check out the office files shown with the web server sitemap:
 
 ![](attachments/nessus_officefiles.png)
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
