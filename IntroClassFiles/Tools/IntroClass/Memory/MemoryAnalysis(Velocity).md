@@ -25,7 +25,7 @@ Once the terminal is up, gain root access by using the following command.
 
 Next, we need to navigate to the appropriate directory. 
 
-<pre>cd /opt/Volatility3-1.0.0</pre>
+<pre>cd /opt/volatility3-1.0.0</pre>
 
 Lets begin by finding pages in the memory that have read, write, and execute priveleges.
 
