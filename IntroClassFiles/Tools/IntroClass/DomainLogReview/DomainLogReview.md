@@ -14,13 +14,13 @@ Let's start by opening Windows Powershell:
 
 Then, navigate to the \IntroLabs\DeepBlueCLI-master directory
 
-`cd \IntroLabs\DeepBlueCLI-master\`
+<pre>cd \IntroLabs\DeepBlueCLI-master\</pre>
 
 ![](attachments/dlr_directory.png)
 
 Now, let's start looking at the DC2 Password spray file:
 
-`.\DeepBlue.ps1 .\EntLogs\DC2-secLogs-3-26-DomainPasswordSpray.evtx`
+<pre>.\DeepBlue.ps1 .\EntLogs\DC2-secLogs-3-26-DomainPasswordSpray.evtx</pre>
 
 If a warning pops up, press **"R"**.  This will start the script by running it:
 When this runs, there is an alert that catches our attention right away:
@@ -71,8 +71,13 @@ Notice the large number of login attempts from a single system:
 
 ![](attachments/dlr_eventproperties4.png)
 
+We now know that the workstation **WINLABV2WKSRL-9** was attempting to authenticate to a large number of Logon Accounts in a very short period of time.
+
 Also, notice at the bottom of the General tab, these are predominantly Audit Failures:
 
 ![](attachments/dlr_auditfailure.png)
 
-We now know that the workstation **WINLABV2WKSRL-9** was attempting to authenticate to a large number of Logon Accounts in a very short period of time.
+
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
