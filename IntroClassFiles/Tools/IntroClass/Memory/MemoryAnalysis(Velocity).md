@@ -21,15 +21,15 @@ Alternatively, you can click on the **Kali** logo in the taskbar.
 
 Once the terminal is up, gain root access by using the following command.
 
-`sudo su - `
+<pre>sudo su - </pre>
 
 Next, we need to navigate to the appropriate directory. 
 
-`cd /oct/Volatility3-1.0.0`
+<pre>cd /oct/Volatility3-1.0.0</pre>
 
 Lets begin by finding pages in the memory that have read, write, and execute priveleges.
 
-`python3 vol.py -f ./memdump.vmem windows.malfind.Malfind`
+<pre>python3 vol.py -f ./memdump.vmem windows.malfind.Malfind</pre>
 
 ![](attachments/MemAnalysis_Malfind.png)
 
@@ -37,9 +37,7 @@ Right away, we notice that the file **"TrustMe.exe"** looks very suspicious.
 
 Let's continue by looking at the network connections.
 
-`
-python3 vol.py -f ./memdump.vmem windows.netscan
-`
+<pre>python3 vol.py -f ./memdump.vmem windows.netscan</pre>
 
 Patience, Padawan! This can take up to several minutes to complete.
 
@@ -49,9 +47,7 @@ The above screenshot is... concerning. Because there is a SMB (port 445) connect
 
 Now, let's look at the processes on this system.
 
-`
-python3 vol.py -f ./memdump.vmem windows.pslist
-`
+<pre>python3 vol.py -f ./memdump.vmem windows.pslist</pre>
 
 ![](attachments/MemAnalysis_plist.png)
 
@@ -59,9 +55,7 @@ The **cmd.exe** should catch your attention. Generally, users and day to day usa
 
 Let's look at **pstree** to see a bit more detail on what spawned what.
 
-`
-python3 vol.py -f ./memdump.vmem windows.pstree
-`
+<pre>python3 vol.py -f ./memdump.vmem windows.pstree</pre>
 
 ![](attachments/MemAnalysis_pstree.png)
 
@@ -71,9 +65,7 @@ In the above example, we can also see that the parent process for **TrustMe.exe*
 
 Let's now dive into the **TrustMe.exe** process a bit further with **dlllist**. For this command, we will use the PID of **TrustMe.exe**, which is 5452.
 
-`
-python3 vol.py -f ./memdump.vmem dlllist --pid 5452
-`
+<pre>python3 vol.py -f ./memdump.vmem dlllist --pid 5452</pre>
 
 ![](attachments/MemAnalysis_dlllist.png)
 
@@ -81,3 +73,6 @@ You can see the **dll's** associated with the **TrustMe.exe** process.
 
 We can also see the command line invocation of this process. These lines tell us any flags used to start the process as well as where on the system it was executed from.  
 
+***
+
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
