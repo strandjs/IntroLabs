@@ -1,4 +1,3 @@
-
 # Host Firewalls and Nmap
 
 In this lab we will be scanning your **Windows** system from your **Linux** terminal with the firewall both on and off. 
@@ -13,39 +12,13 @@ Let's get started by opening a command prompt terminal. You can do this by click
 
 From the command prompt we need to get the IP address of your **Windows** system:
 
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
-
- 
-
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
-
-From the command prompt we need to get the IP address of your Windows system:
-
-<pre>ipconfig</pre>
+```ipconfig```
 
 ![](attachments/nmap_ipconfig.png)
 
-Please note your IP for your system. Mine is 10.10.1.209. Yours will be different.
+Please note your IP for **your** system. Mine is 10.10.1.209. **Yours will be different.**
 
-Now, let’s try and scan your Windows system from with a Kali terminal. Go ahead an open one up.
+Let’s try and scan your Windows system from within a Kali terminal. Go ahead and open a Kali terminal up.
 
 ![](attachments/OpeningKaliInstance.png)
 
@@ -53,13 +26,13 @@ Alternatively, you can click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-Let’s become root:
+In the Kali terminal, let’s become root:
 
-<pre>sudo su -</pre>
+```sudo su -```
 
-Then, we will scan your Windows system:
+We will scan your Windows system:
 
-<pre>nmap 10.10.1.209</pre>
+```nmap 10.10.1.209```
 
 You can hit the spacebar to get status.
 
@@ -67,15 +40,15 @@ It should look like this:
 
 ![](attachments/nmap_nmap.png)
 
-Please note the open ports. These are ports and services that an attacker could use to authenticate to your system.  Or, attack if an exploit is available. 
+Please note the open ports. These are ports and services that an attacker could use to authenticate to your system or attack if an exploit is available. 
 
-Let’s go back to the Windows command prompt, by selecting the Administrator: Command Prompt tab.
+Go back to the Windows command prompt.  
 
 ![](attachments/openingcommandprompt%20-%20Copy.png)
 
 Let’s enable the Windows firewall:
 
-<pre>netsh advfirewall set allprofiles state on</pre>
+```netsh advfirewall set allprofiles state on```
 
 ![](attachments/nmap_advfirewallon.png)
 
@@ -83,13 +56,13 @@ Now, let’s rescan from the Kali terminal. You can navigate back to it by press
 
 ![](attachments/TaskbarKaliIcon.png)
 
-Rerun the scan
+Rerun the scan: 
 
-<pre>nmap 10.10.1.209</pre>
+```nmap 10.10.1.209```
 
-Please note, you can just hit the up arrow key.
+Please note, you can just hit the up arrow key to view previously run commands.  
 
-Once again, you can hit the spacebar to see status.
+You can hit the spacebar to see status.
 
 It should look like this:
 
@@ -97,6 +70,6 @@ It should look like this:
 
 Now, using the same process as before, let’s disable the Windows firewall to go back to the base state:
 
-<pre>netsh advfirewall set allprofiles state off</pre>
+```netsh advfirewall set allprofiles state off```
 
 ![](attachments/nmap_turnbackon.png)

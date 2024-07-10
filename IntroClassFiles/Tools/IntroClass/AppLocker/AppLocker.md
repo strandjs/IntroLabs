@@ -3,7 +3,7 @@
 
 Applocker Instructions:
 
-Let’s see what happens when we do not have **AppLocker** running.  We will set up a simple backdoor and have it connect back to the **Ubuntu** system.  Remember, the goal is not to show how we can bypass **EDR** and **Endpoint** products.  It is to create a simple backdoor and have it connect back.
+Let’s see what happens when we do not have **AppLocker** running.  We will set up a simple backdoor and have it connect back to the **Kali** system.  Remember, the goal is not to show how we can bypass **EDR** and **Endpoint** products.  It is to create a simple backdoor and have it connect back.
 
 Before we begin, we need to disable **Defender**. Start by opening an instance of Windows **Powershell**. Do this by clicking on the **Powershell** icon in the taskbar.
 
@@ -94,7 +94,7 @@ Now, let’s download the malware and run it!
 
 First, let's open a Windows command prompt. Do this by clicking on the icon in the taskbar.
 
-![](attachments/OpeningWindowsCommandPrompt.png)
+![](attachments/OpeningWindowsCommandPrompt.png) 
 
 Once the prompt is open, let's run the following commands to run the TrustMe.exe file.
 
