@@ -31,3 +31,6 @@ It looks like **Paul Bowman’s** password was discovered by an attacker during 
 ![successful login](./images/successful_login.PNG)
 
 It looks like the attacker found his way into the domain through **Paul Bowman's** login information. We can see the success message from a login attempt to the domain.
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
