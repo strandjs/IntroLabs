@@ -14,9 +14,9 @@ Lets open a browser window.
 
 Once the window is up, navigate to the following URL:
 
-```
+
 https://app.limacharlie.io/login
-```
+
 
 When the webpage loads, Click **"Create an account"**
 
@@ -49,7 +49,7 @@ Check the box that says **"By checking this box, I hereby agree and consent to t
 
 Click **"Get Started"**
 
-Then click** "Create Organization"** 
+Then click **"Create Organization"** 
 
 ![](attachments/create_an_organization.PNG)
 
@@ -119,17 +119,17 @@ Go to your desktop, right click **"Windows Terminal"** and select **"run as admi
 
 Run the following command to get into the downloads directory:
 
-```
-cd .\Downloads
-```
+
+<pre>cd .\Downloads</pre>
+
 
 We are going to enter the beginning of our next command.
 
 Tab completion is your friend!
 
-```
-.\hcp_win_x64_release_4.29.2.exe
-```
+
+<pre>.\hcp_win_x64_release_4.29.2.exe</pre>
+
 
 **[RIGHT CLICK OR CTL+V TO PASTE]**
 
@@ -148,3 +148,6 @@ Return to the browser window. You should see this message:
 Please note that the name of your computer will be different!
 
 <a href="https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md">Part 2</a>
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
