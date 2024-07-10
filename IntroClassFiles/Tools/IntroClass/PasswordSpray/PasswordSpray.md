@@ -1,68 +1,63 @@
-
 # Password Spray
 
-First, let’s disable Defender. Open an instance of Windows PowerShell by clicking on the icon in the taskbar. Then run the following:
+First things first, disable **Defender**. Open an instance of **Windows PowerShell** by clicking on the icon in the taskbar. Then run the following:
 
 ![](attachments/OpeningPowershell.png)
 
-<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
+```Set-MpPreference -DisableRealtimeMonitoring $true```
 
-This will disable Defender for this session.
+This will disable **Defender** for this session.
 
-If you get angry red errors, that is Ok, it means Defender is not running.
+If you get angry red errors, that is Ok, it means **Defender** is not running.
 
-Let's get started by opening a Command Prompt terminal by clicking on the icon in the taskbar.
+Let's get started by opening a **Command Prompt** terminal by clicking on the icon in the taskbar.
 
 ![](attachments/OpeningWindowsCommandPrompt.png)
 
 Once the terminal opens, navigate into the appropriate directory by running the following command:
 
-<pre>cd \IntroLabs</pre>
+```cd \IntroLabs```
 
-Next, we need to run the batch file named `200-user-gen` 
+We need to run the batch file named **200-user-gen** 
 
 Do so by typing the name of the batch file and hitting enter:
 
-<pre>200-user-gen.bat</pre>
+```200-user-gen.bat```
 
 It should look like this:
 
 ![](attachments/200bat.png)
 
-Now, we will need to start PowerShell to run LocalPasswordSpray
+We will need to start **PowerShell** to run **"LocalPasswordSpray"**
 
 Launch it by typing the following and hitting enter:
 
-<pre>powershell</pre>
+```powershell```
 
-Next, run the following two commands:
+Run the following two commands:
 
-<pre>Set-ExecutionPolicy Unrestricted</pre>
+```Set-ExecutionPolicy Unrestricted```
 
-<pre>Import-Module .\LocalPasswordSpray.ps1</pre>
+```Import-Module .\LocalPasswordSpray.ps1```
 
 It should look like this:
 
 ![](attachments/powershellcommands.png)
 
-Now, let’s try some password spraying against the local system!
+Let’s try some password spraying against the local system!
 
-<pre>Invoke-LocalPasswordSpray -Password Winter2020</pre>
+```Invoke-LocalPasswordSpray -Password Winter2020```
 
 It should look like this:
 
 ![](attachments/localpasswordspray.png)
 
-Now we need to clean up and make sure the system is ready for the rest of the labs.
+We need to clean up and make sure the system is ready for the rest of the labs.
 
 Run the following two commands:
 
-<pre>exit</pre>
+```exit```
 
-<pre>user-remove.bat</pre>
+```user-remove.bat```
 
 ![](attachments/exit.png)
-
-
-
-
