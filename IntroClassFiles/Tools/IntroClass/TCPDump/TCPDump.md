@@ -1,5 +1,4 @@
 
-
 # TCPDump
 
 In this lab, we will be looking at some basic **tcpdump** filters that every SOC and security analyst should know.
@@ -15,17 +14,17 @@ Alternatively, you can click on the Kali logo in the taskbar.
 
 First, we need to get into the root shell. 
 
-` sudo su - `
+<pre> sudo su - </pre>
 
 Next, we need to navigate to the appropriate directory. 
 
-`cd /opt/tcpdump `
+<pre>cd /opt/tcpdump </pre>
 
 We are going to start with a very basic filter that simply shows us the data associated with a specific host.
 
 The filter in this case, is host.
 
-`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 `
+<pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 </pre>
 
 For this command, we are telling **tcpdump** to do two things, not resolve hostnames **(-n)** and read in the data from a file **(-r)**.
 
@@ -58,9 +57,9 @@ We can get the filter to be a bit more granular.  In fact, you can create filter
 
 Let's add port number.
 
-`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80`
+<pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80</pre>
 
-You can hit **ctrl + c** after a few seconds:
+
 
 ![](attachments/tcpdump_port80.png)
 
@@ -70,23 +69,29 @@ While getting the overall metadata from the packets is nice, we can get the full
 
 On one hand, getting the metadata from the packets is nice.  On the other hand, why not get the full ASCII decode and payload of the packet?
 
-`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -A`
+<pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -A</pre>
+
+You can hit **ctrl + c** after a few seconds.
 
 ![](attachments/tcpdump_-a.png)
 
 As you can see above, we now can see the actual http GET requests and the responses.  
 
-Lets dig into the packet with the timestamp of 08:14:32.638976
+Lets dig into the packet with the timestamp of 15:14:32.638976
+
+Ouch, it looks like **PowerShell!!!**  A favorite of attackers and pentesters alike.  
 
 ![](attachments/tcpdump_powershell.png)
 
-Ouch, it looks like **PowerShell!!!**  A favorite of attackers and pentesters alike.  Furthermore, it looks like there is **Base64** data.
+Furthermore, it looks like there is **Base64** data.
 
 ![](attachments/tcpdump_base64.png)
 
 Still not enough?  We can also see the raw **Hex** values with the -X flag:
 
-`tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -AX`
+<pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -AX</pre>
+
+You can hit **ctrl + c** after a few seconds.
 
 ![](attachments/tcpdump_hex.png)
 
@@ -94,7 +99,7 @@ We can also show specific protocols of interest.
 
 For example:
 
-`tcpdump -n -r magnitude_1hr.pcap ip6`
+<pre>tcpdump -n -r magnitude_1hr.pcap ip6</pre>
 
 ![](attachments/tcpdump_ip6.png)
 
@@ -104,7 +109,7 @@ We can show network ranges.  This is very useful when you are seeing traffic eit
 
 Think of an attacker using multiple systems on a network range to disperse their **C2** traffic.
 
-`tcpdump -n -r magnitude_1hr.pcap net 192.168.99.0/24`
+<pre>tcpdump -n -r magnitude_1hr.pcap net 192.168.99.0/24</pre>
 
 ![](attachments/tcpdump_netrange.png)
 
@@ -115,7 +120,6 @@ Want to play with some more pcaps?  Cool.
 Please check out, "Malware of the Day" from **Active Countermeasures**!
 
 `https://www.activecountermeasures.com/category/malware-of-the-day/`
-
 Below are the commands to download some of the capture files.  Try and run through the basic level analysis we just did with them.
 
 `https://www.dropbox.com/s/zyqn3nn5ygfki59/teamviewer_1hr.pcap`
@@ -131,7 +135,8 @@ Here is a great resource to try some more options in **TCPDump**:
 
 `https://danielmiessler.com/study/tcpdump/`
 
-
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
 
 
 
