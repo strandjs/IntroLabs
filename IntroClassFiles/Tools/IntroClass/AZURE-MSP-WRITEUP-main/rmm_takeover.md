@@ -8,6 +8,8 @@ An RMM is a tool that is used to remote manage and monitor workstations. Most RM
 
 Let's crack open the log and confirm our worst fears and suspicions.
 
+NOTE: Once again, the logs file is unique to this part of the lab. Please redownload with the link above and open in notepad or another text editor.
+
 ![rmm execution](./images/fullpwn.PNG)
 
 It is worth noting the lack of logs here, since these RMM logs are mainly recording its own activity. It is not logging the data from the computer it's connected to, and we see that a script has recently been run.
