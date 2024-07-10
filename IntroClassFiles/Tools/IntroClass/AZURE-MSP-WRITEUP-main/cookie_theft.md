@@ -19,7 +19,7 @@ We have found a very important **Audit** event.
 
 **RED**: Contains Process 4663 and the text **"An attempt was made to access an object"**.  This indicates that someone has tried to access something, but we need more information to go off of to get the full story.
 
-**GEEN**: Contains the username **henry.butler**.  We know already that **henry.butler** was the next user to get compromised.
+**GREEN**: Contains the username **henry.butler**.  We know already that **henry.butler** was the next user to get compromised.
 
 **YELLOW**: This shows the directory accessed. It looks like something has accessed the cookies of Google Chrome, but the only program that should do that is Chrome itself. If another program has accessed it, then we know that the **users'** cookies have been stolen.
 
@@ -34,3 +34,6 @@ Not to worry though, right? Most **RMM** uses **MFA** and there's nothing to wor
 Right?
 
 Unfortunately, the cookie theft and reuse occur attackers are hijacking a session that already went through **MFA**, so the attacker can effectively bypass **MFA**. But before we panic let's check our **RMM** logs and see if the attacker has done anything.
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
