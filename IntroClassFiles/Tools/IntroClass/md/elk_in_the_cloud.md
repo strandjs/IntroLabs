@@ -44,7 +44,7 @@ Click "Verify and Accept."  You should be redirected to the cloud login page.  I
 
 After logging in, the page will look like this.
 
-Fill out the proper filed with the correct information pictured below and select the check boxes with red dots.
+Fill out the proper field with the correct information pictured below and select the check boxes with red dots.
 
 Once those fields are filled out click "Next"
 
@@ -54,19 +54,19 @@ Once those fields are filled out click "Next"
 
 **2. Start an ELK instance.**
 
-Upon clicking `Next` you will see the following page.
+Upon clicking **Next** you will see the following page.
 
- For my instance I will be calling it "security-development". Make sure to enter the name of your deployment and click "Create Deployment".
+ For my instance, I will be calling it "security-development". Make sure to enter the name of your deployment and click "Create Deployment".
 
 ![Creating Delployment](./images/deployment2.PNG)
 
 Next we will see this page.
 
-Elastic will present the credentials for this ELK stack. There is the option to download a CSV of the credentials. However you decide to hold onto these credentials, don't lose them.
-
 ![Creating Creds](./images/creds3.PNG)
 
-Then we will need to wait for the continue button to turn blue, once that's done click continue
+Elastic will present the credentials for this ELK stack. There is the option to download a CSV of the credentials. However you decide to hold onto these credentials, don't lose them.
+
+Then we will need to wait for the continue button to turn blue, once that's done click continue.  
 
 ![Waiting For Deploy](./images/waiting_for_deploy4.PNG)
 
@@ -74,30 +74,29 @@ We will be greeted with menu of options, we want to skip that menu.
 
 ![Skip Prompt](./images/skip_prompt5.PNG)
 
-Then at the top of the page we want to click search and type "kibana" and hit enter.
+Then at the top of the page we want to click search and type **"kibana"** and hit enter.
 
 ![Search Kibana](./images/kibana_search6.PNG)
 
-Once the next page load we want to add kibana. Select "Add Kibana"
+Once the next page load we want to add **kibana**. Select **"Add Kibana"**
 
 ![Add Kibana](./images/add_kibana7.PNG)
 
-We will next be prompted to "Install Elastic Agent" This is what we are going to put on our machine that monitors what's happening. Click "Install Elastic Agent"
+We will next be prompted to "Install Elastic Agent" This is what we are going to put on our machine to monitors what's happening. Click "Install Elastic Agent".  
 
 ![Add Elastic Agent](./images/kibana_loading8.PNG)
 
-The next page we meet will have a wall of text. Select windows.
+The next page we meet will have a wall of text. Select **"windows"**.
 
-We will need to click the "Copy to Clipboard".
+We will need to click the **"Copy to Clipboard"**.
 
 ![Add Elastic Agent](./images/windows_kibana.PNG)
 
-Hold onto this command.  It is recommended to paste this command into some file where you won't lose it. In this example, I saved it to a file I called "agent.txt."  We will use this command later.
+Keep this command saved.  It is recommended to paste this command into a text file where you won't lose it. In this example, I saved it to a file I called "agent.txt."  We will use this command later.
 
 ![](./images/agent_txt.png)
 
 
-The ELK stack is now configured and we have our connection information saved.
-Part two will cover how to install and configure an Elastic Agent.
+The ELK stack is now configured and we have our connection information saved.  Part two will cover how to install and configure an Elastic Agent.
 
 [Part Two](./elastic_agent.md "Elastic Agents")
