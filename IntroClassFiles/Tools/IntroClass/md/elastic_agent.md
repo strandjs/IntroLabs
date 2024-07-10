@@ -3,8 +3,8 @@
 ---
 
 *This is part two of a three-part series.*
-	[Part One](./elk_in_the_cloud.md "Elk in the Cloud")
-	[Part Three](./sysmon_logs.md "Configuring Sysmon")
+	| [Part One](./elk_in_the_cloud.md "Elk in the Cloud") |
+	[Part Three](./sysmon_logs.md "Configuring Sysmon") |
 
 ---
 
@@ -20,9 +20,9 @@ Press the Powershell icon in the taskbar to launch Windows Powershell.
 
 ![Powershell](./images/OpeningPowershell.png)
 
-Copy the command you saved in the file.  In my case, it was **"agent.txt"** and paste it into the powershell and hit enter. 
+Copy the command you saved in the file.  In my case, it was **"agent.txt"** and paste it into the powershell. 
 
-NOTE: you may have to copy/paste each part of the command separately.
+No need to hit enter - it will run each line of code separately when you paste it in!
 
 ![Powershell](./images/powershell.png)
 
@@ -63,3 +63,6 @@ This allows us to view our agent policies.
 Our Elastic Agent is installed and configured to be connected to our ELK instance in the cloud.  Part three will cover how to configure Sysmon to submit logs to this Elastic Agent.  This will ingest the logs to appear in **Kibana**.
 
 [Part Three](./sysmon_logs.md "Configuring Sysmon")
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
