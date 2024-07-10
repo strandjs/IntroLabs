@@ -6,7 +6,7 @@ To start, disable **Defender**. Open PowerShell and run the following command:
 
 ![](attachments/OpeningPowershell.png)
 
-```Set-MpPreference -DisableRealtimeMonitoring $true```
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
 This will disable **Defender** for this session.
 
@@ -18,17 +18,17 @@ We need to launch a **Kali** terminal. Click the **Kali** icon in the taskbar.
 
 When the terminal opens, we need to gain root access by running the following:
 
-```sudo su -```
+<pre>sudo su -</pre>
 
 We need to navigate to the appropriate directory. Run the following:
 
-```cd /opt/Password_Cracking```
+<pre>cd /opt/Password_Cracking</pre>
 
 Lets begin by attempting to crack some **MD5 hashes**. 
 
 Run the following command:
 
-```hashcat -a 0 -m 0 -r /usr/share/hashcat/rules/Incisive-leetspeak.rule MD5.txt password.lst```
+<pre>hashcat -a 0 -m 0 -r /usr/share/hashcat/rules/Incisive-leetspeak.rule MD5.txt password.lst</pre>
 
 The result will look like this:
 
@@ -44,7 +44,7 @@ Lets crack some NT hashes.  These are the hashes that almost all modern **Window
 
 Lets run the following command:
 
-```hashcat -a 0 -m 1000 -r/usr/share/hashcat/rules/Incisive-leetspeak.rule sam.txt password.lst```
+<pre>hashcat -a 0 -m 1000 -r/usr/share/hashcat/rules/Incisive-leetspeak.rule sam.txt password.lst</pre>
 
 When this command is complete, it should look like this:
 
@@ -53,3 +53,6 @@ When this command is complete, it should look like this:
 We will not see the cracked hashes unless we append **--show** onto the end of the command. Lets do that.  Run it again to see the cracked hashes:
 
 ![](attachments/ntcracked.png)
+
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
