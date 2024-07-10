@@ -9,95 +9,73 @@ While a full intro to web attacks is out of the scope of this class, it is great
 
 We now have DVWA up and running.
 
-First, you will need to start an Ubuntu prompt.  Please select that from the Windows Terminal drop-down.
+First, you will need to start an Kali terminal.
 
-####NOTE##### 
+![](attachments/OpeningKaliInstance.png)
 
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+Alternatively, you can click on the Kali icon in the taskbar.
 
- 
+![](attachments/TaskbarKaliIcon.png)
 
-Simply click the Windows Start button in the lower left of your screen and type: 
+Before going further, gain root access by running the following:
 
- 
+<pre>sudo su -</pre>
 
-`Powershell` 
+Now navigate into the proper directory:
 
-or 
+<pre>cd /opt/Web_Testing</pre>
 
-`Ubuntu`
+![](attachments/navtodirectory.png)
 
-or 
+We need to get our Linux IP address for later, so let's run the following command:
 
-`Command Prompt` 
+<pre>ifconfig</pre>
 
- 
+![](attachments/ifconfig.png)
 
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
+Please note your Linux IP address. As shown above, ours is `10.10.1.117`
 
-###END NOTE###
+YOUR IP WILL BE DIFFERENT!
 
-Now, let's start the Python Web Server:
+Next, let's launch the python script.
 
-<pre>
+<pre>python3 ./dsvw.py</pre>
 
-adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ <b>ifconfig</b>
-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 172.18.121.248  netmask 255.255.240.0  broadcast 172.18.127.255
-        inet6 fe80::215:5dff:fe3c:c444  prefixlen 64  scopeid 0x20<link>
-        ether 00:15:5d:3c:c4:44  txqueuelen 1000  (Ethernet)
-        RX packets 373  bytes 48769 (48.7 KB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 23  bytes 1746 (1.7 KB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+![](attachments/pythonscriptran.png)
 
-lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
-        inet 127.0.0.1  netmask 255.0.0.0
-        inet6 ::1  prefixlen 128  scopeid 0x10<host>
-        loop  txqueuelen 1000  (Local Loopback)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+It's time to start ZAP! Go ahead and launch it from the desktop icon.
 
-adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ <b>cd /mnt/c/IntroLabs/</b>
-adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$
-adhd@DESKTOP-I1T2G01:/mnt/c/IntroLabs$<b> python3 ./dsvw.py</b>
-[!] please install 'python-lxml' to (also) get access to XML vulnerabilities (e.g. 'apt-get install python-lxml')
+![](attachments/OpeningZAP.png)
 
-Damn Small Vulnerable Web (DSVW) < 100 LoC (Lines of Code) #v0.2b
- by: Miroslav Stampar (@stamparm)
+Once ZAP loads, you will see this pop-up on your screen. Ensure that `No, I do not want to persist this session at this moment in time` option is selected, and hit `Start`
 
-[i] running HTTP server at 'http://0.0.0.0:65412'...
-
-</pre>
-
-Now, let's start ZAP!
-
-![](attachments/Clipboard_2020-06-16-13-30-15.png)
-
-![](attachments/Clipboard_2020-06-16-13-30-46.png)
+![](attachments/nopersist.png)
 
 Let's do a quick test of the Python Web Server:
 
 First, select Automated Scan
 
-![](attachments/AutomatedScan.PNG)
+![](attachments//automatedscanselect.png)
 
 Now, put in your Linux IP and port 65412 in as the URL to attack.
 
 <pre>http://YOUR LINUX IP:65412</pre>
 
-
-![](attachments/AutomatedScanIP.PNG)
-
 Then, select "Use traditional spider" and then select "Attack":
 
-When it gets done crawling and scanning select Alerts:
+![](attachments/AutomatedScanSetup.png)
 
-![](attachments/ZAPResults.PNG)
+Scan progress will be shown by the progress bar in the center of your screen.
+When it gets done crawling and scanning, select Alerts:
+
+![](attachments/Alerts.png)
 
 This shows that ZAP does a pretty good job of finding the easy to identify vulnerabilites.
+
+<!--
+
+
+REMOVED PER JOHNS REQUEST
 
 
 #OPTIONAL DVWA LAB!
@@ -116,6 +94,7 @@ In another Command Prompt window run ipconfig and record your IP address.  Remem
 
 C:\Users\adhd>`ipconfig`
 
+
 ![](attachments/Clipboard_2020-06-16-13-29-46.png)
 Now, let's start Chrome and play with DVWA. Please note that our class has a track record of DoSSing the Docker download for this section.  I recomend doing this after class when less than 100 people are hitting it at the same time.
 
@@ -128,7 +107,8 @@ Now, lets configure the proxy:
 ![](attachments/Clipboard_2020-06-16-13-32-34.png)
 
 
-Now, we will need to surf to your IP address.  You recorded it above with the ipconfig command. Simply put http://<YOUR_IP> into the browser.
+
+ Now, we will need to surf to your IP address.  You recorded it above with the ipconfig command. Simply put http://<YOUR_IP> into the browser.
 
 You will get an error.  This is normal.  This is because the traffic is being intercepted by a proxy.  Normally, this would be very, very bad.   However, in this lab, we are proxying the traffic to test the app.  Go ahead and select Advanced:
 
@@ -190,7 +170,7 @@ Here is just one example.
 `%' or '0'='0' union select user, password from dvwa.users #`
 
 ![](attachments/Clipboard_2020-06-16-13-44-15.png)
-
+-->
 
 
 
