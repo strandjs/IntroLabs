@@ -142,7 +142,7 @@ Return to the browser window. You should see this message:
 
 Please note that the name of your computer will be different!
 
-[Part 2](/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md)
+[Part 2](/IntroClassFiles/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md)
 
 ***
 
