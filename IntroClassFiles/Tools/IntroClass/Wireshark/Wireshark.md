@@ -2,9 +2,9 @@
 
 # Wireshark
 
-Now that we have spent a little time working with **tcpdump**, let's take a look at ==Wireshark==.
+Now that we have spent a little time working with **tcpdump**, let's take a look at Wireshark.
 
-First, we need to make it clear, that **Wireshark** is not "better" than **tcpdump**.  They each have very strong pros and cons.  
+We want to make it clear that **Wireshark** is not "better" than **tcpdump**.  They each have very strong pros and cons.  
 
 Pros of **tcpdump**
 >**tcpdump** is fast and very lightweight.  
@@ -13,7 +13,13 @@ Pros of **tcpdump**
 Cons of **tcpdump**
 >it is contained within the terminal and to be honest, having some visualizations can be very, very helpful when dealing with **large** datasets.
 
-Unfortunately, Wireshark tends to give up and freeze on very large files.  Sometimes, we carve data out with **tcpdump** and open it in **Wireshark**.  Basically, it is key to learn and know both.
+Pros of **Wireshark** 
+>Great visual representation of networking packets and more.  
+
+Cons of **Wireshark**
+>Gives up and freezes on large files often.  
+
+Basically, it is key to learn and know both.
 
 Let's get started.
 
@@ -45,7 +51,7 @@ Any of the lines with a "**>**" can be expanded:
 
 ![](attachments/wireshark_expandeddecode.png)
 
-This means you do not have to memorize every possible packet and protocol value in hex...  Unless that is your thing.  If it is....  You must be Judy Novak, Mike Poor or Jonathan Ham. 
+This means you do not have to memorize every possible packet and protocol value in hex...  Unless that is your thing.  If it is....  You must be Judy Novak, Mike Poor, or Jonathan Ham. 
 
 The last window is the **hex** for the packet:
 
@@ -104,7 +110,7 @@ Notice the following in the filter bar.
 
 In this instance, this is saying:
 
-"IP address equals 192.168.99.52 AND IP address equals 68.183.138.51"
+**"IP address equals 192.168.99.52 AND IP address equals 68.183.138.51"**
 
 If a packet meets both of those critiera it is displayed:
 
@@ -132,7 +138,7 @@ Now either finish typing **llmnr**, or scroll down to find it within the suggest
 
 Then hit enter.
 
-Notice that when you do this, Wireshark shows you all packets that match the criteria of the protocol selected.  
+When you do this, Wireshark shows you all packets that match the criteria of the protocol selected.  
 
 ![](attachments/wireshark_llmnr.png)
 
@@ -146,13 +152,14 @@ Remember the **PowerShell** from **tcpdump**?  It had the string New-Object? Wel
 
 Put the following into the filter bar:
 
-`http contains "New-Object"`
+<pre>http contains "New-Object"</pre>
 
 ![](attachments/wireshark_httpcontains.png)
 
 With **Wireshark**, we can search through all our packets looking for specific strings and data.
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
 
 
