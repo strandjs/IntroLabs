@@ -28,7 +28,9 @@ It should look like this:
 
 ![](attachments/200bat.png)
 
-Let this run all the way through. Even though it looks endless, it's not!
+Let this run all the way through. 
+
+**Even though it looks endless, it's not!**
 
 We will need to start **PowerShell** to run **"LocalPasswordSpray"**
 
@@ -64,8 +66,9 @@ Run the following two commands:
 
 ![](attachments/exit.png)
 
-Let this run all the way through. Even though it looks endless, it's not!
+Let this run all the way through. 
 
+**Even though it looks endless, it's not!**
 ***
 
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
