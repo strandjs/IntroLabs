@@ -1,27 +1,26 @@
-
 # Velociraptor 
 
-In this lab we will be installing and using Velociraptor to look at the various IR artifacts on your computer.
+In this lab we will be installing and using **Velociraptor** to look at the various IR artifacts on your computer.
 
 Check out their website here:
 
-https://www.velocidex.com/
+<pre>https://www.velocidex.com/</pre>
 
-Velociraptor is a free EDR that can help us better understand of the inner workings of a computer.
+Velociraptor is a free **EDR** that can help us better understand of the inner workings of a computer.
 
 Furthermore, it is an excellent example of commercial tools you will encounter in your security career.
 
 They also have offer training on their tool if you want to dig deeper.
 
-https://www.velocidex.com/training/
+<pre>https://www.velocidex.com/training/</pre>
 
 Let's get started.
 
-Within Windows File Explorer navigate to the C:\IntroLabs directory:
+Within **Windows File Explorer** navigate to the C:\IntroLabs directory:
 
 ![](attachment/Navintolabs.png)
 
-Now, lets open a Windows command prompt.
+Now, lets open a **Windows command prompt**.
 
 ![](attachment/openingcommandprompt%20-%20Copy.png)
 
@@ -29,13 +28,13 @@ When the terminal opens, navigate to the appropriate directory by using the foll
 
 <pre>cd /IntroLabs</pre>
 
-For this installation, we are going to set up Velociraptor as a standalone deployment.  This means the server and the client will be run on the same system.
+For this installation, we are going to set up **Velociraptor** as a standalone deployment.  This means the server and the client will be run on the same system.
 
 Within the command prompt, run the following command:
 
 <pre>velociraptor-v0.72.3-windows-amd64.exe config generate -i</pre>
 
-When it asks about the OS, please choose Windows.  It should be the default.
+When it asks about the OS, please choose **Windows**.  It should be the default.
 
 ![](attachment/velociraptor_chooseos.png)
 
@@ -84,7 +83,7 @@ When it asks where to write the server and client configs, **just hit enter** on
 
 ![](attachment/velociraptor_configs.png)
 
-Now, let’s add a GUI user.
+Let’s add a **GUI** user.
 
 <pre>velociraptor-v0.72.3-windows-amd64.exe --config server.config.yaml user add root --role administrator</pre>
 
@@ -98,12 +97,13 @@ Lets run the **msi** to load the proper files to the proper directories:
 
 <pre>velociraptor-v0.72.3-windows-amd64.msi</pre>
 
-Let's start the server.
+Time to start the server.
 
 <pre>velociraptor-v0.72.3-windows-amd64.exe --config server.config.yaml frontend -v</pre>
 
 This will take some time, be patient.
-There will be some red text.  Don’t panic.
+
+There will be some red text.  **Don’t panic.**
 
 Surf to the **GUI** and see if it worked!
 
@@ -129,7 +129,7 @@ Once logged in, you will see the following:
 
 Next, we need to start the client. Lucky for us, it is the same executable.
 
-We will need to open another **Windows Command Prompt**. Right click on the terminal icon in the task bar, and select **"command prompt"**
+We will need to open another **Windows Command Prompt**. Right click on the terminal icon in the task bar, and select **"command prompt"**:
 
 ![](attachment/velociraptor_openanotherprompt.png)
 
@@ -137,7 +137,7 @@ Then Navigate to the **IntroLabs** directory.
 
 <pre>cd \IntroLabs</pre>
 
-Next, we will need to start the client.  To do this will need to run the **MSI** first.
+We will need to start the client.  To do this will need to run the **MSI** first.
 
 <pre>velociraptor-v0.72.3-windows-amd64.msi</pre>
 
@@ -155,7 +155,7 @@ Now, let’s go back to the Velociraptor GUI and select the Home button in the u
 
 ![](attachment/velociraptor_velociraptorGUIhome.png)
 
-You should see one connected client.
+You should see **one** connected client.
 
 ![](attachment/velociraptor_connectedclients.png)
 
@@ -165,7 +165,7 @@ This is **not** necessarily a detection platform.  It is designed to allow you t
 
 Understand, it is not a replacement for **AV!**
 
-Let’s **"Show All"** Clients. Go to the search bar at the top of the screen, hit the dropdown 
+Let’s **"Show All"** Clients. Go to the search bar at the top of the screen, hit the dropdown.  
 
 ![](attachment/velociraptor_showall.png)
 
@@ -185,7 +185,6 @@ Then select our **only** client.
 
 ![](attachment/velociraptor_onlyclient.png)
 
-
 Now, on the top right of the window, select **Shell**.
 
 ![](attachment/velociraptor_selectshell.png)
@@ -196,24 +195,21 @@ Please click on the **PowerShell** box and select **Cmd**.
 
 ![](attachment/velociraptor_powershelldropdown.png)
 
-
-Now, enter `-naob` in the Cmd box and select Launch.
+Now, enter **-naob** in the cmd box and select **"Launch"**.
 
 ![](attachment/velociraptor_naob.png)
 
-This will not display the results right away. To see the results, select the Eye icon with your netstat command below:
+This will not display the results right away. To see the results, select the **"Eye"** icon with your netstat command below:
 
 ![](attachment/velociraptor_eye.png)
 
-Then click on `Logs`
+Then click on **Logs**
 
 ![](attachment/velociraptor_clicklogs.png)
 
 After doing so, you should see something like this:
 
 ![](attachment/velociraptor_viewlogs.png)
-
-Now, let’s do a Hunt.   Please select the Hunt icon.
 
 Let’s do a Hunt.   Please select the Hunt icon.
 
@@ -223,7 +219,7 @@ To start a Hunt, please select the **"+"** icon.
 
 ![](attachment/velociraptor_newhunt.png)
 
-Please name your Hunt, then select **"Select Artifacts"** on the bottom.
+Name your Hunt, then select **"Select Artifacts"** on the bottom.
 
 ![](attachment/velociraptor_selectartifacts.png)
 
@@ -231,7 +227,7 @@ Within the window, scroll down to find **"Generic.System.Pstree"** and select it
 
 ![](attachment/velociraptor_genericpstree.png)
 
-Then, Review on the bottom.
+Review on the bottom.
 
 ![](attachment/velociraptor_reviewtab.png)
 
@@ -251,7 +247,7 @@ When you get the pop-up, select **Run it!**
 
 This will take a few moments.
 
-When done, you will see Total scheduled is 1 and Finished Clients is 1.
+When done, you will see **"Total scheduled is 1"** and **"Finished Clients is 1"**.
 
 You can also download the results.
 
@@ -277,82 +273,14 @@ Then, open the csv file with **WordPad**.
 
 ![](attachment/velociraptor_wordpad.png)
 
-Granted, this is not optimal.  We did not load Excel on this system because of licensing restrictions.  However, you can copy this over to your host system and open it there. 
+Granted, this is not optimal.  We did not load **Excel** on this system because of licensing restrictions.  However, you can copy this over to your host system and open it there. 
 
 However, of you want to see a simple HTML report you can click on the turn back time icon on the left side (Right above the binoculars) and then clock Download Results > Prepare Collection Report, then click on the HTML report that appears below it.
 
 We have not even begun to touch what we can do with this awesome tool.
 
-Want to try something cool?  Run a Metrepreter agent on you Windows system.  Then, go through Velociraptor to create a Hunt to find it.  There are many Windows artifacts you can pull.  You do not need to just run one at a time.  You can run multiple.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-If you want to see a simple HTML report you can click on the turn back time icon on the left side, (Right above the binoculars), and then clock Download Results > Prepare Collection Report > and click on the HTML report that appears below it.
-
-We have not even begun to touch what we can do with this tool.
-
-Want to try something cool?  Run a **Metrepreter agent** on you Windows system.  Then, go through Velociraptor to create a Hunt to find it.  There are many Windows artifacts you can pull.  You do not need to just run one at a time.  You can run multiple.
+Want to try something cool?  Run a **Metrepreter agent** on you Windows system.  Then, go through **Velociraptor** to create a Hunt to find it.  There are many Windows artifacts you can pull.  You do not need to just run one at a time.  You can run multiple.
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
