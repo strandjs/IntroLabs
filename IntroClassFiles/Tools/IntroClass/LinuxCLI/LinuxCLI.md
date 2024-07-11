@@ -15,7 +15,7 @@ For this lab we will be running **three** different Kali terminals.
 
 ***
 
-Let’s get started by opening a Terminal as Administrator, there are a few methods to do this.  
+Let’s get started by opening a terminal as **Administrator**, there are a few methods to do this.  
 
 Method 1 is to right click on the desktop and select open. 
 
@@ -24,9 +24,6 @@ Method 1 is to right click on the desktop and select open.
 Method 2 is to simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
-
-
-***
 
 On your **Kali** terminal, please run the following command:
 
@@ -68,8 +65,6 @@ Now, let's connect:
 
 # Remember!!!  Your IP address will be different!!!!
 
-***
-
 It can be confusing to tell whether or not you are connected to the backdoor.  A few ways to confirm are as follows.  
 
 1. Typing some commands to ensure it is working
@@ -81,8 +76,6 @@ It can be confusing to tell whether or not you are connected to the backdoor.  A
 ![](attachments/lswhoamiKaliInstance.png)
 
 2. If your cursor drops down to the bottom left side of your screen.
-
-***
 
 At this point, we have created a backdoor with one terminal, and we have connected to this backdoor with another terminal.  Now, let's open yet another **Kali** terminal and use this use for the purpose of analysis.  
 
@@ -142,10 +135,6 @@ We can see a number of interesting directories here:
 
 ![](attachments/lsKaliInstance.png)
 
-
-
-***
-
 We can run strings on the exe in this directory.  When programs are created there may be usage information, mentions of system libraries, and possible code comments.  We use this all the time to attempt to identify what exactly a program is doing.
 
 <pre>strings ./exe | less</pre>
@@ -154,22 +143,10 @@ We can run strings on the exe in this directory.  When programs are created ther
 
 If we scroll down, we can see the actual usage information for netcat.  We pulled it directly out of memory!
 
-To reveal more information in the output, press `enter`.
+To reveal more information in the output, press **"enter"**.
 
 ![](attachments/netcatusageKaliInstance.png)
 
-***
+---
 
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
-
-
-
-
-
-
-
-
-
-
-
-
