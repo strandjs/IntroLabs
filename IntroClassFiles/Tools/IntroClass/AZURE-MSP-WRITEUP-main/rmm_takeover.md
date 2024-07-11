@@ -22,4 +22,5 @@ It is safe to assume that every single machine on the network is compromised, wh
 This **small** breach has just become a **huge** disaster and will need Escalation and Incident Response.
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)

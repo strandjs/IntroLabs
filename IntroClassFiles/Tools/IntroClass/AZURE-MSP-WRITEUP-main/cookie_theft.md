@@ -17,13 +17,15 @@ The Audit number that indicates something has attempted to access an object is *
 
 We have found a very important **Audit** event.
 
-**RED**: Contains Process 4663 and the text **"An attempt was made to access an object"**.  This indicates that someone has tried to access something, but we need more information to go off of to get the full story.
+* <span style="color:red">RED: </span> Contains Process 4663 and the text **"An attempt was made to access an object"**.  This indicates that someone has tried to access something, but we need more information to go off of to get the full story.
 
-**GREEN**: Contains the username **henry.butler**.  We know already that **henry.butler** was the next user to get compromised.
+* <span style="color:green">GREEN: </span> Contains the username **henry.butler**.  We know already that **henry.butler** was the next user to get compromised.
 
-**YELLOW**: This shows the directory accessed. It looks like something has accessed the cookies of Google Chrome, but the only program that should do that is Chrome itself. If another program has accessed it, then we know that the **users'** cookies have been stolen.
+* <span style="color:#B8860B">YELLOW: </span>This shows the directory accessed. It looks like something has accessed the cookies of Google Chrome, but the only program that should do that is Chrome itself. If another program has accessed it, then we know that the **users'** cookies have been stolen.
 
-**PURPLE**: Shows which program accessed the folder and files. It looks like "**SuperSpecializedHighlyAdvancedMalwareBypasser2.exe**" is the culprit. This is not good.  The attacker has just stolen the cookies for **henry.butler** who we know has access to our **RMM**.
+* <span style="color:purple">PURPLE: </span>Shows which program accessed the folder and files. It looks like "**SuperSpecializedHighlyAdvancedMalwareBypasser2.exe**" is the culprit. This is not good.  The attacker has just stolen the cookies for **henry.butler** who we know has access to our **RMM**.
+
+<br>
 
 ![cookie being stolen](./images/pivot.PNG)
 
@@ -36,4 +38,5 @@ Right?
 Unfortunately, the cookie theft and reuse occur attackers are hijacking a session that already went through **MFA**, so the attacker can effectively bypass **MFA**. But before we panic let's check our **RMM** logs and see if the attacker has done anything.
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)

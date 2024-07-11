@@ -2,7 +2,7 @@
 
 In this lab we will be getting started with the fundamentals of password cracking.  We will be using **Hashcat** to do this.
 
-To start, disable **Defender**. Open PowerShell and run the following command:
+To start, disable **Defender** and open **PowerShell** to run the following command:
 
 ![](attachments/OpeningPowershell.png)
 
@@ -55,4 +55,5 @@ We will not see the cracked hashes unless we append **--show** onto the end of t
 ![](attachments/ntcracked.png)
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)

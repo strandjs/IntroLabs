@@ -14,7 +14,7 @@ Alternatively, you can click on the **Kali** icon in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-Next, let’s become root:
+Let’s become root:
 
 <pre>sudo su -</pre>
 
@@ -30,7 +30,7 @@ You should see this:
 
 ![](attachments/responderrunning.png)
 
-Let's open Windows File Explorer and put in the string `\\Noooo` into the address bar at the top.
+Let's open **Windows File Explorer** and put in the string **"\\Noooo"** into the address bar at the top.
 
 ![](attachments/OpeningFileExplorer.png)
 
@@ -38,11 +38,14 @@ Let's open Windows File Explorer and put in the string `\\Noooo` into the addres
 
 Switch back to your **Kali** terminal window.
 
-After a few moments, you should see some captured data showing up.  Please note there may be an error.  That is OK.
+After a few moments, you should see some captured data showing up.  
+
+**Please note there may be an error.  That is OK.**
 
 ![](attachments/captureddata.png)
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
 
 <!--
