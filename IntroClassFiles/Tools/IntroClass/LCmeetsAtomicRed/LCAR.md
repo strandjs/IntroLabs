@@ -4,11 +4,10 @@ This is part 2 of a 2 part series. Please complete <a href="https://github.com/s
 
 ---
 
-Part 2 of 2
-
+**Part 2 of 2**
 ---
 
-In this lab we will be creating a controlled and fake cyber attack with Atomic Red.  We will then use Lima Charlie to see what is logged and to see how a real world attack may set off bells and whistles for us to look at.
+In this lab we will be creating a controlled and **fake** cyber attack with Atomic Red.  We will then use Lima Charlie to see what is logged and to see how a real world attack may set off bells and whistles for us to look at.
 
 Let's pick up where we left off in part 1, in the browser logged into our Lima Charlie web interface.
 
@@ -38,7 +37,7 @@ On the left side of your screen, click on **"Extensions"** to expand the dropdow
 
 ![](attachments/extensions.png)
 
-On the next screen, we need to first click on the dropdown next to the side bar at the top. Then, select your device.
+On the next screen, we need to first click on the dropdown next to the side bar at the top. Then, select **your** device.
 
 ![](attachments/selectdevice.png)
 
@@ -54,7 +53,7 @@ Then move over to the **"Detections"** tab on the left and start going through e
 
 ![](attachments/logsscreen.png)
 
-There will be a lot of events, everytime the page is refreshed more attacks will appear.
+There will be a lot of events.  Every single time the page is refreshed more attacks will appear.
 
 Looking through all of the logs and note the **cmd.exe** or **powershell** invokes are taking place. These are **(usually)** indications of something malicious occuring and needs to be examined further.
 
@@ -62,7 +61,8 @@ Looking through all of the logs and note the **cmd.exe** or **powershell** invok
 
 Lima Charlie is an amazing tool because of its versatillity. It has an easy to use interface. It allows a user to dig deeper to see whats happening before, during, and after an attack. Its abillity to be used on small and large scale is a great feature. 
 
-Many plugins allow for different uses large and small, and automating the difficult tasks.
+Many plugins allow for different uses both small and large, and automating the difficult tasks.
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
