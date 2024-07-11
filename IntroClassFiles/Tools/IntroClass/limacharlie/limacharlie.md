@@ -2,21 +2,19 @@
 
 ---
 
-Part 1 of 2
+**Part 1 of 2**
 
 ---
 
 In this lab we will be using **LimaCharlie** to investigate endpoint monitoring and threat detection.
 
-What is Lima Charlie? Lima Charlie is a lightweight browser based tool, it helps keep an eye on systems, detect threats, and responds quickly to any suspicious activity.  This walktrhough will be using the chrome browser, however any browser can be used.
+What is Lima Charlie? Lima Charlie is a lightweight browser based tool, it helps keep an eye on systems, detect threats, and responds quickly to any suspicious activity.  This walkthrough will be using the chrome browser, however any browser can be used.
 
 Lets open a browser window. 
 
 Once the window is up, navigate to the following URL:
 
-
-https://app.limacharlie.io/login
-
+<pre>https://app.limacharlie.io/</pre>
 
 When the webpage loads, Click **"Create an account"**
 
@@ -26,15 +24,15 @@ The screen will change slightly as it asks you which method you would like to us
 
 ![](attachments/LimaCharlie_signupmethod.png)
 
-We selected "Sign up with email"
+We selected **"Sign up with email"**:
 
 ![](attachments/SIGN_UP_BUTTON.PNG)
 
-Fill out the fields click the "Sign Up" button to continue
+Fill out the fields click the **"Sign Up"** button to continue.  
 
 Go to your email and you should receive a link to verify your account. Click the link and then go back to your browser and refresh the page.
 
-Once you return to your page you should see Lima Charlie asking you some questions about your company, you can create any fake company you wish.
+Once you return to your page, you should see Lima Charlie asking you some questions about your company, you can create any fake company you wish.
 
 Enter the following answers into there respective fields ->
 
@@ -99,7 +97,7 @@ Scroll down and select the **"Windows"** sensor.
 
 ![](attachments/five.PNG)
 
-You will be greeted with an installation key menu. Select from the drop down menu the description you created earlier for your installation key. Click **"Select"**
+You will be greeted with an installation key menu. Select from the drop down menu the description you created earlier for your installation key. Click **"Select"**.
 
 ![](attachments/six.PNG)
 
@@ -109,6 +107,7 @@ You will be prompted with the question of what architecture to download.  Every 
 
 You will be greeted with a few more steps to creating your endpoint. 
 Click **"Download the selected installer"**.
+
 Once thats finished downloading **copy the string in step 4**.  
 
 ![](attachments/eight.PNG)
@@ -119,17 +118,13 @@ Go to your desktop, right click **"Windows Terminal"** and select **"run as admi
 
 Run the following command to get into the downloads directory:
 
-
 <pre>cd .\Downloads</pre>
-
 
 We are going to enter the beginning of our next command.
 
 Tab completion is your friend!
 
-
 <pre>.\hcp_win_x64_release_4.29.2.exe</pre>
-
 
 **[RIGHT CLICK OR CTL+V TO PASTE]**
 
@@ -150,4 +145,5 @@ Please note that the name of your computer will be different!
 <a href="https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md">Part 2</a>
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
