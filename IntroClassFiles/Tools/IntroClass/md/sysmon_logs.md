@@ -65,7 +65,7 @@ Sign into your **Elastic Cloud account** using the following link:
 
 Once logged in, navigate to **"Integrations"** through the navigation menu.
 
-!!! Note:
+Note:
 	When you log in to Elastic, you might see the following screen first. If so, go ahead and click on our deployment that we created in [Part One](./elk_in_the_cloud.md "Elk in the Cloud") (ELK in the Cloud)
 	![](./images/incaseyourelost.png)
 	
@@ -88,7 +88,7 @@ The next screen you see will have a lot of options on it. Luckily, we only care 
 
 By default, this option should be active, but please double check to be sure. 
 
-!!! Note:
+Note:
 	You will have to scroll down the page for a bit in order to find it. 
 	
 	![Ensure Sysmon is Selected](./images/sysmon_selected.png)
