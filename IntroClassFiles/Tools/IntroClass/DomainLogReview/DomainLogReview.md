@@ -1,14 +1,12 @@
-
 # Domain Log Review
 
 In this lab we are going to look at some logs that are generated in a domain password spray attack.
 
-We will start by using DeepBlueCLI, then move into looking directly at the event logs themselves.
+We will start by using **DeepBlueCLI**, then move into looking directly at the event logs themselves.
 
+We are going to use **DeepBlueCLI** to see if there are any odd logon patterns in the domain logs.
 
-We are going to use DeepBlueCLI to see if there are any odd logon patterns in the domain logs.
-
-Let's start by opening Windows Powershell:
+Let's start by opening **Windows Powershell**:
 
 ![](attachments/OpeningPowershell.png)
 
@@ -18,7 +16,7 @@ Then, navigate to the \IntroLabs\DeepBlueCLI-master directory
 
 ![](attachments/dlr_directory.png)
 
-Now, let's start looking at the DC2 Password spray file:
+Now, let's start looking at the **DC2 Password spray** file:
 
 <pre>.\DeepBlue.ps1 .\EntLogs\DC2-secLogs-3-26-DomainPasswordSpray.evtx</pre>
 
@@ -27,7 +25,7 @@ When this runs, there is an alert that catches our attention right away:
 
 ![](attachments/dlr_domainpasswordspray.png)
 
-We have 240 logon failures.  That is a lot for this small org.
+We have **240** logon failures.  That is a lot for this small org.
 
 Lets dig into the actual logs and see if we can see a pattern.
 
@@ -51,13 +49,13 @@ This will open Windows Event Viewer.  Note, it will open in **Sysmon Operational
 
 Then click it.  
 
-It will open the DC logs with the attack.
+It will open the **DC logs** with the attack.
 
-Click on the header column called Event ID.  This will sort the logs by ID number. We are doing this because we want to quickly get to the event IDs of 4776:
+Click on the header column called **"Event ID"**.  This will sort the logs by **"ID number"**. 
 
 ![](attachments/dlr_microsoftsecauditing.png)
 
-Specifically, we are looking for Event ID 4776.  This is the Credential Validation Event log.
+Specifically, we are looking for **Event ID 4776**.  This is the Credential Validation Event log.
 
 Select one, then press the up arrow key a bunch of times.  Watch the Logon Account Name in the General tab:
 
@@ -71,13 +69,12 @@ Notice the large number of login attempts from a single system:
 
 ![](attachments/dlr_eventproperties4.png)
 
-We now know that the workstation **WINLABV2WKSRL-9** was attempting to authenticate to a large number of Logon Accounts in a very short period of time.
+We now know that the workstation **WINLABV2WKSRL-9** was attempting to authenticate to a large number of **Logon Accounts** in a very short period of time.
 
-Also, notice at the bottom of the General tab, these are predominantly Audit Failures:
+Also, notice at the bottom of the General tab, these are predominantly **Audit Failures**:
 
 ![](attachments/dlr_auditfailure.png)
 
-
-
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
