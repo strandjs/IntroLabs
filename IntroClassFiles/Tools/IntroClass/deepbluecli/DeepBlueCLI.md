@@ -9,7 +9,7 @@ Let's get started by opening **Windows Powershell**.
 
 Next, we need to navigate to the **IntroLabs** directory:
 
-<pre>cd .\IntroLabs</pre>
+<pre>cd \IntroLabs</pre>
 
 Then, continue into the **DeepBlueCLI-master** directory:
 
