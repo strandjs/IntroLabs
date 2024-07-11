@@ -4,8 +4,6 @@ In this lab we will be standing up a simple **Python Web Server** and a vulnerab
 
 While a full intro to web attacks is out of the scope of this class, it is great to show you how to use tools like **ZAP** to automatically look for some vulnerabilities, and to show you that automated tools do not always catch everything.
 
-We now have **DVWA** up and running.
-
 You will need to start an **Kali** terminal.
 
 ![](attachments/OpeningKaliInstance.png)
@@ -30,11 +28,11 @@ We need to get our **Linux** IP address for later, so let's run the following co
 
 ![](attachments/ifconfig.png)
 
-Please note your **Linux** IP address. As shown above, ours is **10.10.1.117**
+Please note your **Linux** IP address. As shown above, ours is **"10.10.1.117"**
 
 **YOUR IP WILL BE DIFFERENT!**
 
-Let's launch the python script.
+Launch the python script.
 
 <pre>python3 ./dsvw.py</pre>
 
@@ -70,11 +68,10 @@ When it gets done crawling and scanning, select **"Alerts"**:
 This shows that **ZAP** does a pretty good job of finding the easy to identify vulnerabilites.
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
 
-
 <!--
-
 
 REMOVED PER JOHNS REQUEST
 
