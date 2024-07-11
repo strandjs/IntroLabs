@@ -12,7 +12,7 @@ Let's start by opening **Windows Powershell**:
 
 Then, navigate to the \IntroLabs\DeepBlueCLI-master directory
 
-<pre>cd .\IntroLabs\DeepBlueCLI-master\</pre>
+<pre>cd \IntroLabs\DeepBlueCLI-master\</pre>
 
 ![](attachments/dlr_directory.png)
 
