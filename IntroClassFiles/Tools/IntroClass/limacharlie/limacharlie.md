@@ -142,7 +142,7 @@ Return to the browser window. You should see this message:
 
 Please note that the name of your computer will be different!
 
-<a href="https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md">Part 2</a>
+[Part 2](/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md)
 
 ***
 
