@@ -7,11 +7,11 @@ To do this, we need to decompress it and use **Volatility** to examine the netwo
 
 Please keep in mind that we are using a free tool for this lab.  While **Volatility** is great, it has some limitations.  Specifically, in the area of network PIDs.  While we use **Volatility**, the same concepts can also be applied to any commercial tools you may be using in your environment.
 
- Let's open a command prompt and look at it with **Volatility**!
+Let's open a command prompt and look at it with **Volatility**!
 
 Please note this memory dump was created from **VMWare** snapshot feature. There are multiple tools like **winpmem** and **FTK Imager** that can also create memory dumps.
 
-To start, we will open a Kali terminal. 
+To start, we will open a **Kali** terminal. 
 
 ![](attachments/OpeningKaliInstance.png)
 
@@ -43,7 +43,7 @@ Patience, Padawan! This can take up to several minutes to complete.
 
 ![](attachments/MemAnalysis_Netscan.png)
 
-The above screenshot is... concerning. Because there is a SMB (port 445) connection to another computer, we need to investigate farther.  We know it is compromised, (because it is a lab), but any time a "suspect" computer has another open connection to an internal system is, without question, a cause for concern.
+The above screenshot is... concerning. Because there is a SMB (port 445) connection to another computer, we need to investigate farther.  We know it is compromised, (because it is a lab), but any time a **"suspect"** computer has another open connection to an internal system it is, without question, a cause for concern.
 
 Now, let's look at the processes on this system.
 
@@ -51,7 +51,7 @@ Now, let's look at the processes on this system.
 
 ![](attachments/MemAnalysis_plist.png)
 
-The **cmd.exe** should catch your attention. Generally, users and day to day usage of a system does not spawn a **cmd.exe** session. There is a chance that it can appear briefly as part of a sysadmin script, but it is not a normal sight and very oftain not seen in day-to-day life.  
+The **cmd.exe** should catch your attention. Generally, usage of a system does not spawn a **cmd.exe** session. There is a chance that it can appear briefly as part of a sysadmin script, but it is not a normal sight and very often not seen in day-to-day life.  
 
 Let's look at **pstree** to see a bit more detail on what spawned what.
 
