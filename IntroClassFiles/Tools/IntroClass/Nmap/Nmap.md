@@ -10,23 +10,25 @@ Let's get started by opening a command prompt terminal. You can do this by click
 
 ![](attachments/openingcommandprompt%20-%20Copy.png)
 
-From the command prompt we need to get the IP address of your **Windows** system:
+From the command prompt we need to get the IP address of **your** Windows system:
 
 <pre>ipconfig</pre>
 
 ![](attachments/nmap_ipconfig.png)
 
-Please note your IP for **your** system. Mine is 10.10.1.209. **Yours will be different.**
+Please note your IP for **your** system. Mine is **"10.10.1.209"**. 
 
-Let’s try and scan your Windows system from within a Kali terminal. Go ahead and open a Kali terminal up.
+**Yours will be different.**
+
+Let’s try and scan your Windows system from within a **Kali** terminal. Go ahead and open a **Kali** terminal up.
 
 ![](attachments/OpeningKaliInstance.png)
 
-Alternatively, you can click on the Kali logo in the taskbar.
+Alternatively, you can click on the **Kali** logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-In the Kali terminal, let’s become root:
+In the **Kali** terminal, let’s become root:
 
 <pre>sudo su -</pre>
 
@@ -42,7 +44,7 @@ It should look like this:
 
 Please note the open ports. These are ports and services that an attacker could use to authenticate to your system or attack if an exploit is available. 
 
-Go back to the Windows command prompt.  
+Go back to the **Windows** command prompt.  
 
 ![](attachments/openingcommandprompt%20-%20Copy.png)
 
@@ -52,7 +54,7 @@ Let’s enable the Windows firewall:
 
 ![](attachments/nmap_advfirewallon.png)
 
-Now, let’s rescan from the Kali terminal. You can navigate back to it by pressing the Kali logo in the taskbar:
+Now, let’s rescan from the **Kali** terminal. You can navigate back to it by pressing the **Kali** logo in the taskbar:
 
 ![](attachments/TaskbarKaliIcon.png)
 
@@ -68,12 +70,13 @@ It should look like this:
 
 ![](attachments/nmap_nmapscanwfirewall.png)
 
-Now, using the same process as before, let’s disable the Windows firewall to go back to the base state:
+Now, using the same process as before, let’s disable the **Windows** firewall to go back to the base state:
 
 <pre>netsh advfirewall set allprofiles state off</pre>
 
 ![](attachments/nmap_turnbackon.png)
 
 ***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
 
