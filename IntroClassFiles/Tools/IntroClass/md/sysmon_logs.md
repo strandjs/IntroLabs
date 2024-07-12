@@ -79,7 +79,9 @@ At the top of the page enter **"windows"** into the search bar.  Select the **Wi
 
 ![Select Windows](./images/which_windows.PNG)
 
+***
 Add this integration.
+
 
 ![Add Windows](./images/installation.PNG)
 
@@ -93,15 +95,17 @@ You will have to scroll down the page for a bit in order to find it.
 	
 ![Ensure Sysmon is Selected](./images/sysmon_selected.png)
 
-
+***
 Now save the Integration by clicking **Save and Continue** in the bottom right.
 
 ![Save the Integration](./images/saveandnext.PNG)
 
+***
 You will then see the following pop-up prompt. Please click **"Add elastic agent to your hosts".**
 
 ![Add Elastic Host](./images/addelastichost.PNG)
 
+***
 Navigate back to the Integrations menu, find the **"Installed integrations"** tab.
 
 ![](./images/backtointegrations.png)
@@ -118,6 +122,7 @@ After you have created some log activity, navigate to **"Discover"** by accessin
 
 ![Navigate to Discover](./images/navigatetodiscover.png)
 
+***
 We will then create a filter:
 
 ![](./images/createfilter.png)
@@ -126,6 +131,7 @@ Set a filter on your data to limit your results to sysmon data.  This can be don
 
 ![Filter Data](./images/applied_filter.PNG)
 
+***
 Now click **"add filter"**. Your filter should now be set.
 
 ![Sysmon Results](./images/final.PNG)
