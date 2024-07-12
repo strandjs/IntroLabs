@@ -65,33 +65,33 @@ Sign into your **Elastic Cloud account** using the following link:
 
 Once logged in, navigate to **"Integrations"** through the navigation menu.
 
-Note:
-	When you log in to Elastic, you might see the following screen first. If so, go ahead and click on our deployment that we created in [Part One](./elk_in_the_cloud.md "Elk in the Cloud") (ELK in the Cloud)
-	![](./images/incaseyourelost.png)
+When you log in to Elastic, you might see the following screen first. If so, go ahead and click on our deployment that we created in [Part One](./elk_in_the_cloud.md "Elk in the Cloud") (ELK in the Cloud)
+
+![](./images/incaseyourelost.png)
 	
-	Once you do this, you can access the navigation bar by clicking the three lines in the upper left and then navigate to Integrations. 
+Once you do this, you can access the navigation bar by clicking the three lines in the upper left and then navigate to Integrations. 
 
-	You may have to scroll to the bottom to find the **"Management"** section. 
+You may have to scroll to the bottom to find the **"Management"** section. 
 
-	![](./images/navigationmenu.png)
+![](./images/navigationmenu.png)
 
-	At the top of the page enter **"windows"** into the search bar.  Select the **Windows** option outlined with the red square below.
+At the top of the page enter **"windows"** into the search bar.  Select the **Windows** option outlined with the red square below.
 
-	![Select Windows](./images/which_windows.PNG)
+![Select Windows](./images/which_windows.PNG)
 
-	Add this integration.
+Add this integration.
 
-	![Add Windows](./images/installation.PNG)
+![Add Windows](./images/installation.PNG)
 
 
 The next screen you see will have a lot of options on it. Luckily, we only care that one is selected: **Sysmon Operational**
 
 By default, this option should be active, but please double check to be sure. 
 
-Note:
-	You will have to scroll down the page for a bit in order to find it. 
+**Note:**
+You will have to scroll down the page for a bit in order to find it. 
 	
-	![Ensure Sysmon is Selected](./images/sysmon_selected.png)
+![Ensure Sysmon is Selected](./images/sysmon_selected.png)
 
 
 Now save the Integration by clicking **Save and Continue** in the bottom right.
