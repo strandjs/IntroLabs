@@ -4,7 +4,7 @@ Portspoof
 Website
 -------
 
-<http://portspoof.org/>
+<https://drk1wi.github.io/portspoof>
 
 Description
 -----------
