@@ -37,7 +37,7 @@ Now that we disabled **Windows Defender**, we can head back to our **Kali** term
 
 Within the terminal, please run the following command:
 
-<pre>ipconfig</pre>>
+<pre>ipconfig</pre>
 
 Please note your Windows IP address.
 
