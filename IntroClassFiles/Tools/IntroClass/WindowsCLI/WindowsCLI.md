@@ -31,6 +31,8 @@ Next, set a password for the Administrator account that you can remember
 
 <pre>net user Administrator password1234</pre>
 
+Please note, that is a very bad password.  Come up with something better. But, please remember it.
+
 Now that we disabled **Windows Defender**, we can head back to our **Kali** terminal.
 
 Within the terminal, please run the following command:
@@ -84,6 +86,8 @@ Next, we need to set the **SMB** username and password.
 <pre>set SMBUSER Administrator</pre>
 
 <pre>set SMBPASS T@GEq5%r2XJh</pre>
+
+Remember, your password will be different!  I hope!!!
 
 It should look like this:
 
