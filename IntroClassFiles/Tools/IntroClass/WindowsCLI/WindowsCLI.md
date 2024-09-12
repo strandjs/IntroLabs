@@ -24,7 +24,12 @@ Please note, if you get red errors that say
 
 <pre>A general error occurred that is not covered by a more specific error code.</pre> 
 
+
 That is OK!  It means **Defender** was disabled.  We run the above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
+
+Next, set a password for the Administrator account that you can remember
+
+<pre>net user Administrator password1234</pre>
 
 Now that we disabled **Windows Defender**, we can head back to our **Kali** terminal.
 
@@ -158,6 +163,10 @@ Lets go through the steps we took to hunt for a malicious process
 3. As you can see above, it was launched by the cmd.exe process.  
 
 4. Note that the search we just did may turn up some other things launched by the command line as well.
+
+Now, go back to the MetaCTF Cloud Lab dashboard and destroy this lab with the Destroy Lab button.
+
+Then, reset it with the Start Lab button.
 
 ***
 
