@@ -37,15 +37,9 @@ Now that we disabled **Windows Defender**, we can head back to our **Kali** term
 
 Within the terminal, please run the following command:
 
-<pre>ifconfig</pre>>
+<pre>ipconfig</pre>>
 
-![](attachments/windowscli_ifconfig.png)
-
-Please note the IP address of **your** Ethernet adapter. 
-
-Please note that my adapter is called **eth0** and my IP address is **172.26.19.133.**   
-
-**Your IP Address and adapter name may be different.**
+Please note your Windows IP address.
 
 Please note your IP address for the **ADHD Linux system** on a piece of paper:
 
