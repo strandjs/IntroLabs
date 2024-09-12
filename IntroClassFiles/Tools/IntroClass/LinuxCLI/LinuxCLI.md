@@ -63,7 +63,6 @@ Now, let's connect:
 
 <pre>nc 127.0.0.1 2222</pre>
 
-# Remember!!!  Your IP address will be different!!!!
 
 It can be confusing to tell whether or not you are connected to the backdoor.  A few ways to confirm are as follows.  
 
