@@ -27,6 +27,10 @@ Please note, if you get red errors that say
 
 That is OK!  It means **Defender** was disabled.  We run the above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
 
+Next, lets ensure the firewall is disabled.
+
+<pre> netsh advfirewall set allprofiles state off</pre>
+
 Next, set a password for the Administrator account that you can remember
 
 <pre>net user Administrator password1234</pre>
