@@ -195,21 +195,13 @@ Please click on the **PowerShell** box and select **Cmd**.
 
 ![](attachment/velociraptor_powershelldropdown.png)
 
-Now, enter **-naob** in the cmd box and select **"Launch"**.
+Now, enter **netstat -naob** in the cmd box and select **"Launch"**.
 
-![](attachment/velociraptor_naob.png)
 
 This will not display the results right away. To see the results, select the **"Eye"** icon with your netstat command below:
 
 ![](attachment/velociraptor_eye.png)
 
-Then click on **Logs**
-
-![](attachment/velociraptor_clicklogs.png)
-
-After doing so, you should see something like this:
-
-![](attachment/velociraptor_viewlogs.png)
 
 Let’s do a Hunt.   Please select the Hunt icon.
 
