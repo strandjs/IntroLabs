@@ -65,17 +65,15 @@ Now, let's connect:
 
 # Remember!!!  Your IP address will be different!!!!
 
-It can be confusing to tell whether or not you are connected to the backdoor.  A few ways to confirm are as follows.  
+It can be confusing to tell whether or not you are connected to the backdoor. 
 
-1. Typing some commands to ensure it is working
+Type a few commands to see if its working:
 
 <pre>ls</pre>
 
 <pre>whoami</pre>
 
 ![](attachments/lswhoamiKaliInstance.png)
-
-2. If your cursor drops down to the bottom left side of your screen.
 
 At this point, we have created a backdoor with one terminal, and we have connected to this backdoor with another terminal.  Now, let's open yet another **Kali** terminal and use this use for the purpose of analysis.  
 
