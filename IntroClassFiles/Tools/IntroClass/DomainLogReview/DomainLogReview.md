@@ -41,7 +41,6 @@ To do this, open File Explorer and navigate to the C:\IntroLabs\DeepBlueCLI-mast
 
 Once in this directory, double click on **DC2-secLogs-3-26-DomainPasswordSpray.evtx**:
 
-![](attachments/dc2seclogs.png)
 
 This will open Windows Event Viewer.  Note, it will open in **Sysmon Operational**.  This is not what we want.  Please scroll down to the **DC2-secLogs-3-26-DomainPasswordSpray.evtx** file under Saved Logs:
 
