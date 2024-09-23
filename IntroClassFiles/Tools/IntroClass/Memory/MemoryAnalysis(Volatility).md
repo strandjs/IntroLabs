@@ -7,8 +7,6 @@ To do this, we need to decompress it and use **Volatility** to examine the netwo
 
 Please keep in mind that we are using a free tool for this lab.  While **Volatility** is great, it has some limitations.  Specifically, in the area of network PIDs.  While we use **Volatility**, the same concepts can also be applied to any commercial tools you may be using in your environment.
 
-Let's open a command prompt and look at it with **Volatility**!
-
 Please note this memory dump was created from **VMWare** snapshot feature. There are multiple tools like **winpmem** and **FTK Imager** that can also create memory dumps.
 
 To start, we will open a **Kali** terminal. 
@@ -31,6 +29,8 @@ Lets begin by finding pages in the memory that have read, write, and execute pri
 
 <pre>python3 vol.py -f ./memdump.vmem windows.malfind.Malfind</pre>
 
+Patience, Padawan! This can take up to several minutes to complete.
+
 ![](attachments/MemAnalysis_Malfind.png)
 
 Right away, we notice that the file **"TrustMe.exe"** looks very suspicious.
@@ -38,8 +38,6 @@ Right away, we notice that the file **"TrustMe.exe"** looks very suspicious.
 Let's continue by looking at the network connections.
 
 <pre>python3 vol.py -f ./memdump.vmem windows.netscan</pre>
-
-Patience, Padawan! This can take up to several minutes to complete.
 
 ![](attachments/MemAnalysis_Netscan.png)
 
