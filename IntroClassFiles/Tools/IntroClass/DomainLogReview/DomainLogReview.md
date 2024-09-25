@@ -57,7 +57,7 @@ Click on the header column called **"Event ID"**.  This will sort the logs by **
 
 Specifically, we are looking for **Event ID 4776**.  This is the Credential Validation Event log.
 
-Select one, then press the up arrow key a bunch of times.  Watch the Logon Account Name in the General tab:
+Select one, then use the arrow keys to cycle through the entries.  Watch the Logon Account Name in the General tab:
 
 ![](attachments/dlr_eventproperties1.png)
 
