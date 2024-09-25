@@ -16,11 +16,7 @@ They also have offer training on their tool if you want to dig deeper.
 
 Let's get started.
 
-Within **Windows File Explorer** navigate to the C:\IntroLabs directory:
-
-![](attachment/Navintolabs.png)
-
-Now, lets open a **Windows command prompt**.
+Open a **Windows command prompt**.
 
 ![](attachment/openingcommandprompt%20-%20Copy.png)
 
@@ -177,14 +173,6 @@ If you select that client, you can get additional information about that system.
 
 ![](attachment/velociraptor_additionalinfo.png)
 
-Next, let’s **"Show All"** Clients again.
-
-![](attachment/velociraptor_showall.png)
-
-Then select our **only** client.
-
-![](attachment/velociraptor_onlyclient.png)
-
 Now, on the top right of the window, select **Shell**.
 
 ![](attachment/velociraptor_selectshell.png)
@@ -198,10 +186,13 @@ Please click on the **PowerShell** box and select **Cmd**.
 Now, enter **netstat -naob** in the cmd box and select **"Launch"**.
 
 
-This will not display the results right away. To see the results, select the **"Eye"** icon with your netstat command below:
+This will not display the results right away. To see the results, select the **"Eye"** icon:
 
 ![](attachment/velociraptor_eye.png)
 
+Now you can see the results:
+
+![](attachment/velociraptor_seeresults.png)
 
 Let’s do a Hunt.   Please select the Hunt icon.
 
@@ -227,7 +218,7 @@ We now have an overview of what is going to be run on all systems.  Which in our
 
 Now select Launch.
 
-It will start the Hunt and load it in the **que**.
+It will start the Hunt and load it in the **queue**.
 
 ![](attachment/velociraptor_startedhunt.png)
 
