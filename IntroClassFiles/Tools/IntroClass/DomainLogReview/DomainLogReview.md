@@ -43,7 +43,7 @@ Once in this directory, double click on **DC2-secLogs-3-26-DomainPasswordSpray.e
 
 ![](attachments/DC2-double-click.png)
 
-This will open Windows Event Viewer.  Note, it will open in **Sysmon Operational**.  This is not what we want.  Please scroll down to the **DC2-secLogs-3-26-DomainPasswordSpray.evtx** file under Saved Logs:
+This will open Windows Event Viewer.  Note, it will open in **Sysmon Operational**.  This is not what we want.  Please scroll down to the **DC2-secLogs-3-26-DomainPasswordSpray.evtx** file under Saved Logs (all the way at the bottom):
 
 ![](attachments/dlr_winevent.png)
 
