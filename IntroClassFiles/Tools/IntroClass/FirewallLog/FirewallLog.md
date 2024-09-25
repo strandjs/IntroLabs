@@ -22,6 +22,8 @@ Next, we can run the following:
 
 <pre>sudo apt install r-base-core</pre>
 
+If prompted with "Do you want to continue? Y/n", go ahead and press **Y** and hit **enter**.
+
 Next, let's get your **Linux** system to do some math!
 
 We need to navigate to the correct directory with the following command:
