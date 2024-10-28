@@ -11,7 +11,7 @@ Pros of **tcpdump**
 >It is scriptable.
 
 Cons of **tcpdump**
->it is contained within the terminal and to be honest, having some visualizations can be very, very helpful when dealing with **large** datasets.
+>It is contained within the terminal and to be honest, having some visualizations can be very, very helpful when dealing with **large** datasets.
 
 Pros of **Wireshark** 
 >Great visual representation of networking packets and more.  
