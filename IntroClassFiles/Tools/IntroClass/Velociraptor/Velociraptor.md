@@ -22,7 +22,7 @@ Open a **Windows command prompt**.
 
 When the terminal opens, navigate to the appropriate directory by using the following command:
 
-<pre>cd /IntroLabs</pre>
+<pre>cd \IntroLabs</pre>
 
 For this installation, we are going to set up **Velociraptor** as a standalone deployment.  This means the server and the client will be run on the same system.
 
