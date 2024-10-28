@@ -40,7 +40,7 @@ Next, lets run the following command to get our IP address:
 
 Please note that my adapter is called **"eth0"** and my IP address is **"10.10.1.117"**
 
-**Your IP Address and adapter name may be different.**
+**REMEMBER - YOUR IP ADDRESS WILL LIKELY BE DIFFERENT.**
 
 We need to run the following command in order to mount our remote system to the correct directory:
 
