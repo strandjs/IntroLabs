@@ -82,9 +82,9 @@ Now run all of the following commands to set the correct parameters:
 
 <pre>set LHOST 10.10.1.117</pre>
 
-Remember, 
+**REMEMBER - YOUR IP WILL LIKELY BE DIFFERENT!**
 
-**your IP will be different!**
+Go ahead and run the exploit:
 
 <pre>exploit</pre>
 
