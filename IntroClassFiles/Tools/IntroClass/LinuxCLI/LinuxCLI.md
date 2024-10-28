@@ -59,9 +59,13 @@ Now we will need to know the IP address of our **linux** system:
 
 ![](attachments/ifconfigKaliInstance.png)
 
+**REMEMBER - YOUR IP WILL BE DIFFERENT**
+
 Now, let's connect:
 
-<pre>nc 127.0.0.1 2222</pre>
+<pre>nc 10.10.104.64 2222</pre>
+
+**REMEMBER - YOUR IP WILL BE DIFFERENT**
 
 
 It can be confusing to tell whether or not you are connected to the backdoor. 
