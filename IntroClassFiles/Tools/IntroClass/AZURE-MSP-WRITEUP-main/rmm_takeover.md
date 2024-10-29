@@ -8,8 +8,8 @@ An **RMM** is a tool that is used to remote manage and monitor workstations. Mos
 
 Let's crack open the log and confirm our worst fears and suspicions.
 
-!!! NOTE: 
-    Once again, the logs file is unique to this part of the lab. Please redownload with the link above and open in notepad or another text editor.
+**!!! NOTE: 
+    Once again, the logs file is unique to this part of the lab. Please redownload with the link above and open in notepad or another text editor.**
 
 ![rmm execution](./images/fullpwn.PNG)
 
