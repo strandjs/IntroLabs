@@ -54,9 +54,7 @@ Let’s enable the Windows firewall:
 
 ![](attachments/nmap_advfirewallon.png)
 
-Now, let’s rescan from the **Kali** terminal. You can navigate back to it by pressing the **Kali** logo in the taskbar:
-
-![](attachments/TaskbarKaliIcon.png)
+Now, let’s rescan from the **Kali** terminal.
 
 Rerun the scan: 
 
