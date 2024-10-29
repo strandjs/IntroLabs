@@ -6,8 +6,8 @@ After the discovery of the compromised user, **(Paul Bowman)**, we decided to go
 
 The compromised user may try to **pivot** to other computers and try to gain access to other systems. [Pivoting](https://www.geeksforgeeks.org/pivoting-moving-inside-a-network/) is a technique used by an attacker to try to compromise additional systems and try to escalate there privileges from a regular user to an **administrator**. So, where do we start? **Workstation 3** has suspicious activity in its security log files we should take a look at.
 
-!!! NOTE
-    The log file for this portion is a different file. Please download it above.
+**!!! NOTE
+    The log file for this portion is a different file. Please download it above.**
 
 Open the log file in notepad and press **"ctrl + f"** and type **"Process Name:"** and hit Enter then tab to every executable that has run on the workstation.
 
