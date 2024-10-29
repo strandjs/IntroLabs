@@ -46,7 +46,9 @@ Within the Command Prompt, please run the following command:
 
 Please note your Windows IP address.
 
-We need to run the following command in order to mount our remote system to the correct directory:
+We need to run the following commands in order to mount our remote system to the correct directory:
+
+<pre>sudo su -</pre>
 
 <pre>mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
 
