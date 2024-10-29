@@ -8,8 +8,8 @@ If the attacker got another user to run a malicious file, what will they do next
 
 Let's take the security logs from the workstation that **Paul Bowman** pivoted to and see if we can see what the malicious executable is doing. 
 
-!!! NOTE: 
-    Once again, the logs file is unique. Please download with the link above and open with notepad or another text editor.
+**!!! NOTE: 
+    Once again, the logs file is unique. Please download with the link above and open with notepad or another text editor.**
 
 If the attacker is running commands and scripts to access sensitive information our audit logs should contain evidence of what happened.
 
