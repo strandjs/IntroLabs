@@ -53,9 +53,9 @@ Let's start by getting root access in our terminal.
 
 We need to run the following command in order to mount our remote system to the correct directory:
 
-<pre>mount -t cifs //[Your IP Address]/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
+<pre>mount -t cifs //[Your IP Address]/c$ /mnt/windows-share -o username=Administrator,password=password1234</pre>
 
-**REMEMBER - YOUR IP ADDRESS WILL LIKELY BE DIFFERENT.**
+**REMEMBER - YOUR IP ADDRESS AND PASSWORD WILL BE DIFFERENT.**
 
 If you see the following error, it means that the device is already mounted.
 
