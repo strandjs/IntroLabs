@@ -8,4 +8,14 @@ To destroy the Labs, follow the following steps!
 
 First, close the VM window:
 
-Second, to the MetaCTF Cloud Lab page:
+![](attachments/closewindow.png)
+
+Second,  navigate to the MetaCTF Cloud Lab page:
+
+![](attachments/navigatetocloudlabs.png)
+
+Finally, click the red "Destroy Lab" button!
+
+![](attachments/clickdestroylabs.png)
+
+Congratulations! You have successfully destroyed the lab environment!
