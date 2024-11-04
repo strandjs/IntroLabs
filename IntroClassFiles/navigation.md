@@ -54,5 +54,7 @@
   - [WebHoneypot](Tools/IntroClass/webhoneypot/webhoneypot.md)
   - [File Audit](Tools/IntroClass/FileAudit/FileAudit.md)
 
+*** 
+[How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
 
