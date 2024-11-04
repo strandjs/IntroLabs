@@ -194,4 +194,8 @@ As you can see, an error was generated, meaning that we were successful!
 
 ***
 
+When finished with the Lab Environment, please be sure to [Destroy the Lab Environment](/IntroClassFiles/labdestruction.md)
+
+***
+
 [Back to Navigation Menu](/IntroClassFiles/navigation.md)
