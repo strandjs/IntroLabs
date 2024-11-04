@@ -19,3 +19,6 @@ Finally, click the red "Destroy Lab" button!
 ![](attachments/clickdestroylabs.png)
 
 Congratulations! You have successfully destroyed the lab environment!
+
+***
+[Back to Lab Navigation Page](/IntroClassFiles/navigation.md)
