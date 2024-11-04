@@ -1,6 +1,6 @@
 # Sysmon
 
-Let’s disable **Defender**. Simply run the following from an **Administrator PowerShell** prompt:
+Let’s begin by disabling **Defender**. Simply run the following from an **Administrator PowerShell** prompt:
 
 ![](attachments/OpeningPowershell.png)
 
@@ -65,6 +65,7 @@ Before we run the next commands, we need to get the IP of our Kali System (AKA o
 
 <pre>ifconfig</pre>
 
+![](attachments/ifconfig.png)
 
 **REMEMBER: YOUR IP WILL BE DIFFERENT**
 
