@@ -29,6 +29,7 @@ Before we move on from our Powershell window, lets get our IP by running the fol
 <pre>ipconfig</pre>
 
 ![](attachments/powershellipconfig.png)
+
 **REMEMBER - YOUR IP WILL BE DIFFERENT**
 
 Write this IP down so we can use it again later.
@@ -46,9 +47,9 @@ We need to run the following commands in order to mount our remote system to the
 
 <pre>sudo su -</pre>
 
-<pre>mount -t cifs //[Your IP Address]/c$ /mnt/windows-share -o username=Administrator,password=T@GEq5%r2XJh</pre>
+<pre>mount -t cifs //[Your IP Address]/c$ /mnt/windows-share -o username=Administrator,password=password1234</pre>
 
-**REMEMBER - YOUR IP ADDRESS WILL LIKELY BE DIFFERENT.**
+**REMEMBER - YOUR IP ADDRESS AND PASSWORD WILL BE DIFFERENT.**
 
 Run the following commands to start a simple backdoor and backdoor listener: 
  
