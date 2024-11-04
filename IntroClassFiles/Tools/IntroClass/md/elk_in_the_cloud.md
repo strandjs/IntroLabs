@@ -90,5 +90,15 @@ The ELK stack is now configured and we have our connection information saved.  *
 [Part Two](./elastic_agent.md "Elastic Agents")
 
 ***
+***Continuing on to the next Lab?***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---

@@ -166,14 +166,20 @@ Lets go through the steps we took to hunt for a malicious process
 
 4. Note that the search we just did may turn up some other things launched by the command line as well.
 
-Now, go back to the MetaCTF Cloud Lab dashboard and destroy this lab with the Destroy Lab button.
-
-Then, reset it with the Start Lab button.
 
 ***
+***Continuing on to the next Lab?***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
 
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
 
 
 

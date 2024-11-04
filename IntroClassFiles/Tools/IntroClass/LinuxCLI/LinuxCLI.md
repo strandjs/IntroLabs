@@ -148,6 +148,18 @@ To reveal more information in the output, press **"enter"**.
 
 ![](attachments/netcatusageKaliInstance.png)
 
+***
+***Continuing on to the next Lab?***
+
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 ---
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+

@@ -6,3 +6,6 @@ This creates a fresh instance of the lab environment for the next use!
 
 To destroy the Labs, follow the following steps!
 
+First, close the VM window:
+
+Second, to the MetaCTF Cloud Lab page:

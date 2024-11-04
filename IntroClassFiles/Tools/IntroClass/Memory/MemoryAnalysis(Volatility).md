@@ -72,5 +72,15 @@ You can see the **dll's** associated with the **TrustMe.exe** process.
 We can also see the command line invocation of this process. These lines tell us any flags used to start the process as well as where on the system it was executed from.  
 
 ***
+***Continuing on to the next Lab?***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
