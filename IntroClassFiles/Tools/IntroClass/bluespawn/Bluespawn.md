@@ -92,9 +92,13 @@ Now, we need to invoke all the Atomic Tests.
 Special note...  Don't do this in production...  Ever.  Always run tools like Atomic Red Team on test systems.  We recommend that you run in on a system with your EDR/Endpoint protection in non-blocking/alerting mode.  This is so you can see what the protection would have done, but it will allow the tests to finish so we are just going to run individual tests for now.
 
 PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1547.004`
+
 PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1543.003`
+
 PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1547.001`
+
 PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1546.008`
+
 
 If you get any “file exists” questions or errors, just select Yes.
 
