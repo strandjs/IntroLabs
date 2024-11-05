@@ -67,6 +67,13 @@ First, we need to open a PowerShell Prompt:
 
 ![](attachments/Clipboard_2020-06-16-09-55-12.png)
 
+Lets install and update Atomic Red Team
+
+PS C:\Users\adhd> `cd \`
+
+PS C:\Users\adhd>`IEX (IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
+Install-AtomicRedTeam -getAtomics -Force`
+
 Next, in the PowerShell Window we need to navigate to the Atomic Red Team directory and import the powershell modules:
 
 PS C:\Users\adhd> `cd C:\AtomicRedTeam\invoke-atomicredteam\`
