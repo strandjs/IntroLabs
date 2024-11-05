@@ -33,5 +33,16 @@ It looks like **Paul Bowman’s** password was discovered by an attacker during 
 It looks like the attacker found his way into the domain through **Paul Bowman's** login information. We can see the success message from a login attempt to the domain.
 
 ***
+***Continuing on to the next Lab?***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
+

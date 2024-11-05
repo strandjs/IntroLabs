@@ -117,7 +117,6 @@ Now, using **AC Hunter**, answer the following questions:
 
 ***Finished with the Labs?***
 
-
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)

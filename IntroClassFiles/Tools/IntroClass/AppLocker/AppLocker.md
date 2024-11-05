@@ -193,11 +193,16 @@ The password is **adhd**
 As you can see, an error was generated, meaning that we were successful!
 
 ***
+***Continuing on to the next Lab?***
 
-**When finished using the Lab Environment, please be sure to destroy it!**
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
 
-[How to Destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+***Finished with the Labs?***
 
-***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
+

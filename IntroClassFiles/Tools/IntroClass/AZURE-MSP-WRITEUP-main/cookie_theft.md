@@ -38,5 +38,16 @@ Right?
 Unfortunately, the cookie theft and reuse occur attackers are hijacking a session that already went through **MFA**, so the attacker can effectively bypass **MFA**. But before we panic let's check our **RMM** logs and see if the attacker has done anything.
 
 ***
+***Continuing on to the next Lab?***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
+

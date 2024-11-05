@@ -69,6 +69,18 @@ Run the following two commands:
 Let this run all the way through. 
 
 **Even though it looks endless, it's not!**
-***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+***
+***Continuing on to the next Lab?***
+
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
+

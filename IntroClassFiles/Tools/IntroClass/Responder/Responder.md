@@ -44,9 +44,7 @@ After a few moments, you should see some captured data showing up.
 
 ![](attachments/captureddata.png)
 
-***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
 
 <!--
 

@@ -22,5 +22,16 @@ After tabbing through the log file and carefully looking over executables we sho
 At first it may not be totally obvious, but the name seems *slightly* suspicious and is not a normal system file like **mmc** or **event viewer**. It looks like the file was served through a file share on **Workstation 1**, which was the machine that **Paul Bowman** was using. It is also important to take notice of the username, the attacker has moved from Paul into a **new** user. This means the attacker was **pivoting** in this environment.
 
 ***
+***Continuing on to the next Lab?***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
+

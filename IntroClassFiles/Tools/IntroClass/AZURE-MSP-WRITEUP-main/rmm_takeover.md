@@ -22,5 +22,16 @@ It is safe to assume that every single machine on the network is compromised, wh
 This **small** breach has just become a **huge** disaster and will need Escalation and Incident Response.
 
 ***
+***Continuing on to the next Lab?***
 
-[Back to Navigation Menu](/IntroClassFiles/navigation.md)
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
+
