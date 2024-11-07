@@ -8,8 +8,6 @@ Before we begin, we need to disable **Defender**. Start by opening an instance o
 
 ![](attachments/OpeningPowershell.png)
 
-<img width="680" alt="image" src="https://github.com/user-attachments/assets/0eec9c8a-82f5-44eb-b709-ca26f7b14940">
-
 
 Next, run the following command in the **Powershell** terminal:
 
