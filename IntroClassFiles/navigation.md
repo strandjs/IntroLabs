@@ -9,6 +9,7 @@
   - [Wireshark](Tools/IntroClass/Wireshark/Wireshark.md)
   - [RITA](Tools/IntroClass/RITA/RITA.md)
   - [Nessus](Tools/IntroClass/nessus/Nessus.md)
+  - [Web Testing](Tools/IntroClass/WebTesting/WebTesting.md)
   - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
   - [Domain Log Review](Tools/IntroClass/DomainLogReview/DomainLogReview.md)
   - [Velociraptor](Tools/IntroClass/Velociraptor/Velociraptor.md)
