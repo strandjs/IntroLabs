@@ -20,6 +20,10 @@ When the terminal opens, we need to gain root access by running the following:
 
 <pre>sudo su -</pre>
 
+Now, let's delete any old leftover pot files
+
+<pre> rm /root/.local/share/hashcat/hashcat.potfile</pre>
+
 We need to navigate to the appropriate directory. Run the following:
 
 <pre>cd /opt/Password_Cracking</pre>
