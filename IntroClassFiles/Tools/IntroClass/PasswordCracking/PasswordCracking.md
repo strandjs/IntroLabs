@@ -24,6 +24,8 @@ Now, let's delete any old leftover pot files
 
 <pre> rm /root/.local/share/hashcat/hashcat.potfile</pre>
 
+If you get an error that the file does not exist, that is fine.  It just means the file does not exist.  Carry on.
+
 We need to navigate to the appropriate directory. Run the following:
 
 <pre>cd /opt/Password_Cracking</pre>
