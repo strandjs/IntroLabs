@@ -54,9 +54,9 @@ For PowerShell and Command Prompt, please right click on them and select Run As 
 ###END NOTE###
 
 Next, let’s change directories to tools and start Bluespawn:
-C:\Users\adhd>`cd \tools`
+C:\Users\Administrator>`cd \IntroLabs`
 
-C:\tools>`BLUESPAWN-client-x64.exe --monitor --level Cursory`
+C:\IntroLabs>`BLUESPAWN-client-x64.exe --monitor --level Cursory`
 
 
 ![](attachments/Clipboard_2020-06-16-09-46-00.png)
