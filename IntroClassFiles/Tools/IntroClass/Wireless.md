@@ -4,12 +4,18 @@ It is using the current Kali Cloud Lab in Meta CTF.
 
 # Current Install Instructions
 
-git clone https://github.com/her3ticAVI/Wifi-Forge
-cd Wifi-Forge/Framework/materials
-sudo python3 -m pip config set global.break-system-packages true
-sudo ./setup.sh
-cd ..
-sudo python3 WifiForge.py
+<pre>git clone https://github.com/her3ticAVI/Wifi-Forge</pre>
+
+<pre>cd Wifi-Forge/Framework/materials</pre>
+
+<pre>sudo python3 -m pip config set global.break-system-packages true</pre>
+
+<pre>sudo ./setup.sh</pre>
+
+<pre>cd ..</pre>
+
+<pre>sudo python3 WifiForge.py</pre>
+
 
 # Lab Walkthroughs:
 
