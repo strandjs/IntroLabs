@@ -75,7 +75,7 @@ This is also bad. However, we see it all the time for things like service accoun
 
 
 
-3. What does Everyone and Anyone mean in Active Directory?
+# 3. What does Everyone and Anyone mean in Active Directory?
 
 Anyone.  Everyone.  Yes.  EVERY ONE. Even users without a password. 
 
@@ -84,7 +84,7 @@ You read that right.  Not a typo.
 A better approach is Authenticated Users, which is restricting access to people who have actually...  You know...  Authenticated.
 
 
-5. Any Everyone privs?
+# 5. Any Everyone privs?
 
 To see this we need to go to Priviliged Accounts > Privileged Accounts rule details
 
@@ -93,7 +93,7 @@ To see this we need to go to Priviliged Accounts > Privileged Accounts rule deta
 
 
 
-6. Any Old Passwords?
+# 6. Any Old Passwords?
 
 At BHIS we see "old" passwords all of the time.  There are a ton of accounts for services, doctors, CEOs and developers who just cannot be bothered to change their passwords every 90 days.
 
