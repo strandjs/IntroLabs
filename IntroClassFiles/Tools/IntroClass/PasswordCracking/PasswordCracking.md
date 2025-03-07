@@ -1,87 +1,76 @@
-
-
 # Password Cracking
 
-In this lab we will be getting started with the fundamentals of password cracking.  We will be using Hashcat to do this.
+In this lab we will be getting started with the fundamentals of password cracking.  We will be using **Hashcat** to do this.
 
-First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+To start, disable **Defender** and open **PowerShell** to run the following command:
 
-`Set-MpPreference -DisableRealtimeMonitoring $true`
+![](attachments/OpeningPowershell.png)
 
-This will disable Defender for this session.
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
-If you get angry red errors, that is Ok, it means Defender is not running.
+This will disable **Defender** for this session.
 
+If you get angry red errors, that is Ok, it means **Defender** is not running.
 
-To start, we will be working with the Command Prompt in Windows Terminal.   This is on your desktop and can be opened by right-clicking it and selecting Run as administrator:
+We need to launch a **Kali** terminal. Click the **Kali** icon in the taskbar.
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+![](attachments/TaskbarKaliIcon.png)
 
-When you get the pop up select Yes.
+When the terminal opens, we need to gain root access by running the following:
 
-Next, to open a Command Prompt Window, select the Down Carrot and then select Command Prompt.
+<pre>sudo su -</pre>
 
-![](attachments/Clipboard_2020-06-12-10-38-52.png)
+Now, let's delete any old leftover pot files
 
-####NOTE##### 
+<pre> rm /root/.local/share/hashcat/hashcat.potfile</pre>
 
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+If you get an error that the file does not exist, that is fine.  It just means the file does not exist.  Carry on.
 
- 
+We need to navigate to the appropriate directory. Run the following:
 
-Simply click the Windows Start button in the lower left of your screen and type: 
+<pre>cd /opt/Password_Cracking</pre>
 
- 
+Lets begin by attempting to crack some **MD5 hashes**. 
 
-`Powershell` 
+Run the following command:
 
-or 
+<pre>hashcat -a 0 -m 0 -r /usr/share/hashcat/rules/Incisive-leetspeak.rule MD5.txt password.lst</pre>
 
-`Ubuntu`
+The result will look like this:
 
-or 
+![](attachments/md5run.png)
 
-`Command Prompt` 
+Running this command will not show us the cracked hashes. As seen above, in order to see cracked hashes, we need to run our command again and add the **--show** option onto the end.
 
- 
+After running the command again with the **--show** option, you should see something like this:
 
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
+![](attachments/md5hashes.png)
 
-###END NOTE###
+Lets crack some NT hashes.  These are the hashes that almost all modern **Windows** systems store these days.  Older systems may store **LANMAN**, but that is very rare.
 
-Next, we need to navigate to the hashcat directory.
+Lets run the following command:
 
-C:\Users\adhd>`cd \tools\hashcat-4.1.0\`
+<pre>hashcat -a 0 -m 1000 -r/usr/share/hashcat/rules/Incisive-leetspeak.rule sam.txt password.lst</pre>
 
-Now remove old passwords that ar cracked
+When this command is complete, it should look like this:
 
-C:\Users\adhd>`del hashcat.potfile`
+![](attachments/nthashrun.png)
 
-![](attachments/Clipboard_2020-06-12-10-41-51.png)
+We will not see the cracked hashes unless we append **--show** onto the end of the command. Lets do that.  Run it again to see the cracked hashes:
 
-Now, lets crack some NT hashes.  These are the hashes that almost all modern Windows systems store these days.  Older systems may store LANMAN, but that is very rare.
+![](attachments/ntcracked.png)
 
-C:\Tools\hascat-4.1.0>`hashcat64.exe -a 0 -m 1000 -r rules\Incisive-leetspeak.rule sam.txt password.lst`
+***
+***Continuing on to the next Lab?***
 
-When done it should look like this:
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
 
-![](attachments/Clipboard_2020-07-09-14-57-40.png)
-
-Finally, let’s try and crack some MD5 hashes
-
-C:\Tools\hascat-4.1.0>`hashcat64.exe -a 0 -m 0 -r rules\Incisive-leetspeak.rule md5.txt password.lst`
-
-When done, it should look like this:
-
-![](attachments/Clipboard_2020-07-09-14-58-51.png)
+***Finished with the Labs?***
 
 
+Please be sure to destroy the lab environment!
 
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-
-
-
-
-
-
+---
 

@@ -1,99 +1,90 @@
-
 # Domain Log Review
 
 In this lab we are going to look at some logs that are generated in a domain password spray attack.
 
-We will start by using DeepBlueCLI, then move into looking directly at the event logs themselves.
+We will start by using **DeepBlueCLI**, then move into looking directly at the event logs themselves.
 
-First, we will need to extract the event logs for a domain attack.  To do this, simply navigate to 
-the C:\IntroLabs directory:
+We are going to use **DeepBlueCLI** to see if there are any odd logon patterns in the domain logs.
 
-![](attachments/Clipboard_2020-12-13-09-57-36.png)
+Let's start by opening **Windows Powershell**:
 
-Right Click on The EntLogs directory and select 7-Zip > Extract Files
+![](attachments/OpeningPowershell.png)
 
-![](attachments/Clipboard_2020-12-13-10-00-35.png)
+Then, navigate to the \IntroLabs\DeepBlueCLI-master directory
 
-Then put `C:\tools\DeepBlueCLI-master` in the Extract To: field
+<pre>cd \IntroLabs\DeepBlueCLI-master\</pre>
 
-It should look like this:
+![](attachments/dlr_directory.png)
 
-![](attachments/Clipboard_2020-12-13-10-01-58.png)
+Now, let's start looking at the **DC2 Password spray** file:
 
-Now, click OK
+<pre>.\DeepBlue.ps1 .\EntLogs\DC2-secLogs-3-26-DomainPasswordSpray.evtx</pre>
 
-![](attachments/Clipboard_2020-12-13-10-02-14.png)
-
-Now, we are going to use DeepBlueCLI to see if there are any odd logon patterns in the domain logs.
-
-Let's start by opening a Terminal as Administrator:
-
-![](attachments/Clipboard_2020-12-13-10-04-28.png)
-
-Then, navigate to the \tools\DeepBlueCLI-master directory
-
-C:\> `cd C:\tools\DeepBlueCLI-master\`
-
-![](attachments/Clipboard_2020-12-13-10-05-30.png)
-
-Now, let's start looking at the DC2 Password spray file:
-
-PS C:\> `.\DeepBlue.ps1 .\EntLogs\DC2-secLogs-3-26-DomainPasswordSpray.evtx`
-
-When the warning pops up, press R.  This will start the script by running it:
-
-![](attachments/Clipboard_2020-12-13-10-06-47.png)
-
+If a warning pops up, press **"R"**.  This will start the script by running it:
 When this runs, there is an alert that catches our attention right away:
 
-![](attachments/Clipboard_2020-12-13-10-07-30.png)
+![](attachments/dlr_domainpasswordspray.png)
 
-We have 240 logon failures.  That...  is a lot for this small org.
+We have **240** logon failures.  That is a lot for this small org.
 
 Lets dig into the actual logs and see if we can see a pattern.
 
-To do this, open File Explorer and navigate to the C:\tools\DeepBlueCLI-master\EntLogs directory:
+To do this, open File Explorer and navigate to the C:\IntroLabs\DeepBlueCLI-master\EntLogs directory:
 
-![](attachments/Clipboard_2020-12-13-10-08-59.png)
+![](attachments/OpeningFileExplorer.png)
 
-Once in this directory, double click on DC2-secLogs-3-26-DomainPasswordSpray.evtx:
+![](attachments/Navintolabs.png)
 
-![](attachments/Clipboard_2020-12-13-10-09-43.png)
+![](attachments/NavtoDBMaster.png)
 
-This will open Windows Event Viewer.  Note, it will open in Sysmon Operational.  This is not what we want.  Please scroll down to the DC2-secLogs-3-26-DomainPasswordSpray.evtx file under Saved Logs:
+![](attachments/navtoent.png)
 
-![](attachments/Clipboard_2020-12-13-10-11-42.png)
+Once in this directory, double click on **DC2-secLogs-3-26-DomainPasswordSpray.evtx**:
+
+![](attachments/DC2-double-click.png)
+
+This will open Windows Event Viewer.  Note, it will open in **Sysmon Operational**.  This is not what we want.  Please scroll down to the **DC2-secLogs-3-26-DomainPasswordSpray.evtx** file under Saved Logs (all the way at the bottom):
+
+![](attachments/dlr_winevent.png)
 
 Then click it.  
 
-It will open the DC logs with the attack.
+It will open the **DC logs** with the attack.
 
-Now, please click on the header column called Event ID.  This will sort the logs by ID number we are doing this because we want to quickly get to the event IDs of 4776:
+Click on the header column called **"Event ID"**.  This will sort the logs by **"ID number"**. 
 
-![](attachments/Clipboard_2020-12-13-10-12-41.png)
+![](attachments/dlr_microsoftsecauditing.png)
 
-Now, scroll all the way to the bottom:
+Specifically, we are looking for **Event ID 4776**.  This is the Credential Validation Event log.
 
-![](attachments/Clipboard_2020-12-13-10-13-48.png)
+Select one, then use the arrow keys to cycle through the entries.  Watch the Logon Account Name in the General tab:
 
-Specifically, we are looking for Event ID 4776.  This is the Credential Validation Event log.
-
-Select one, then press the up arrow key a bunch of times.  Watch the Logon Account Name in the General tab:
-
-![](attachments/Clipboard_2020-12-13-10-15-07.png)
+![](attachments/dlr_eventproperties1.png)
 
 Notice the large number of login attempts from a single system:
 
-![](attachments/Clipboard_2020-12-13-10-15-52.png)
+![](attachments/dlr_eventproperties2.png)
 
-![](attachments/Clipboard_2020-12-13-10-16-07.png)
+![](attachments/dlr_eventproperties3.png)
+
+![](attachments/dlr_eventproperties4.png)
+
+We now know that the workstation **WINLABV2WKSRL-9** was attempting to authenticate to a large number of **Logon Accounts** in a very short period of time.
+
+Also, notice at the bottom of the General tab, these are predominantly **Audit Failures**:
+
+![](attachments/dlr_auditfailure.png)
+
+***
+***Continuing on to the next Lab?***
+
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
 
 
-![](attachments/Clipboard_2020-12-13-10-16-31.png)
+Please be sure to destroy the lab environment!
 
-Also, notice at the bottom of the General tab, these are predominantly Audit Failures:
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-![](attachments/Clipboard_2020-12-13-10-17-02.png)
-
-We now know that the workstation WINLABV2WKSRL-9 was attempting to authenticate to a large number of Logon Accounts in a very short period of time.
-
+---

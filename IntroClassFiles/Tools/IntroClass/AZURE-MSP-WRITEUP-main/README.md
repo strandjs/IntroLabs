@@ -6,3 +6,8 @@ In this lab we will navigate through log files of an attack simulation on an MSP
 * [Lab 2 - Machine Pivoting](./ws_3_security_logs.md)
 * [Lab 3 - Cookie Theft](./cookie_theft.md)
 * [Lab 4 - Full Domain PWN](./rmm_takeover.md)
+***
+[Back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+
+

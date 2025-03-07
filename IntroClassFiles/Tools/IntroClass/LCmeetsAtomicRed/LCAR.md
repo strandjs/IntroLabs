@@ -2,48 +2,77 @@
 
 This is part 2 of a 2 part series. Please complete <a href="https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/limacharlie/limacharlie.md">Part 1</a> of this lab first
 
-part 2/2
+---
 
-In this lab we will be creating a controlled and fake cyber attack with Atomic Red, we will then use Lima Charlie to see what is logged and to see how a real world attack may set off bells and whistles for us to look at.
+**Part 2 of 2**
+---
+
+In this lab we will be creating a controlled and **fake** cyber attack with Atomic Red.  We will then use Lima Charlie to see what is logged and to see how a real world attack may set off bells and whistles for us to look at.
 
 Let's pick up where we left off in part 1, in the browser logged into our Lima Charlie web interface.
 
 We need to install the plugin for Atomic Red that Lima Charlie offers.
 
-Start by navigating to the "Add-ons" tab in the top right of the web page.
+Start by navigating to the **"Add-ons"** tab in the top right of the web page.
 
-<img src="attachments/ADDONS.PNG" alt="register an account" width="300" />
+![](attachments/ADDONS.PNG)
 
-Scroll down until you see the Atomic Red plugin. Click the Atomic Red plugin.
+Scroll down until you see the Atomic Red plugin. Click the **"ext-atomic-red-team"** plugin.
 
-<img src="attachments/AR.PNG" alt="register an account" width="300" />
+![](attachments/AR.PNG)
 
 Take a minute to look at the different plugins and see the full capabillities and features Lima Charlie has to offer.
 
-Then locate the subscribe button on the right side of the page, and click "Subscribe"
+Locate the subscribe button on the right side of the page, and click **"Subscribe"**.
 
-<img src="attachments/SUBSCRIBE.PNG" alt="register an account" width="300" />
+![](attachments/SUBSCRIBE.PNG)
 
 After Atomic Red finishes installing return back to your organization and click on your machine.
 
-<img src="attachments/HOST.PNG" alt="register an account" width="300" />
+![](attachments/navtoorganizations.png)
 
-Scroll down and you will see a few options, yara and atomic red. Click "Run atomic tests"
+![](attachments/selectorganization.png)
 
-<img src="attachments/RUNAR.PNG" alt="register an account" width="300" />
+On the left side of your screen, click on **"Extensions"** to expand the dropdown menu. Select **"Atomic Red Team"**.
 
-Go to the command and control and click "(1)Select Category" then click "(2)Run Tests"
+![](attachments/extensions.png)
 
-<img src="attachments/C2ALL.PNG" alt="register an account" width="300" />
+On the next screen, we need to first click on the dropdown next to the side bar at the top. Then, select **your** device.
 
-Then move over to the "Detections" tab on the left and start going through event logs
+![](attachments/selectdevice.png)
 
-<img src="attachments/DETECTED.PNG" alt="register an account" width="700" />
+Scroll down until you find the **command-and-control** category. Select the box next to the category header and make sure that it selects all of the boxes below.
 
-There will be a lot of events, everytime the page is refreshed more attacks will appear.
+Now, hit **Run Tests**.
 
-Looking through all of the logs and note the cmd.exe or powershell invokes are taking place. These are (usually) indications of something malicious occuring and needs to be examined further.
+![](attachments/C2ALL.PNG)
 
-Lima Charlie is an amazing tool because of its versatillity. With an easy to look at interface that if need be, allows a user to dig deeper to see whats happening before, during, and after an attack. Its abillity to be used on small and large scale is a great feature. 
+Then move over to the **"Detections"** tab on the left and start going through event logs
 
-Many plugins allow for different uses large and small, and automating the difficult tasks.
+![](attachments/detections.png)
+
+![](attachments/logsscreen.png)
+
+There will be a lot of events.  Every single time the page is refreshed more attacks will appear.
+
+Looking through all of the logs and note the **cmd.exe** or **powershell** invokes are taking place. These are **(usually)** indications of something malicious occuring and needs to be examined further.
+
+![](attachments/DETECTED.PNG)
+
+Lima Charlie is an amazing tool because of its versatillity. It has an easy to use interface. It allows a user to dig deeper to see whats happening before, during, and after an attack. Its abillity to be used on small and large scale is a great feature. 
+
+Many plugins allow for different uses both small and large, and automating the difficult tasks.
+
+***
+***Continuing on to the next Lab?***
+
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---

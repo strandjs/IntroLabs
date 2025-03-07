@@ -2,13 +2,13 @@
 
 ---
 
-*This is part three of a three-part series.*
+!!! - This is part three of a three-part series.
 	[Part One](./elk_in_the_cloud.md "Elk in the Cloud")
 	[Part Two](./elastic_agent.md "Elastic Agents")
 
 ---
 
-By default, Windows logs are not ideal.  To get logs that are more readable and useful, we can use Sysmon. 
+By default, **Windows logs** are not ideal.  To get logs that are more readable and useful, we can use **Sysmon**. 
 
 **1. Download Sysmon**
 
@@ -16,110 +16,143 @@ Follow this link to download Sysmon.
 
 [Download Sysmon](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon "https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon")
 
-Find the "Download Sysmon" link.
-
+Find the **"Download Sysmon"** link.
 
 ![Download Sysmon](./images/sysmon_download.png)
 
+We need to extract the **.zip** archive that we just downloaded. To do so, start by opening your **file explorer**.
 
-In [part one](./elk_in_the_cloud.md "Elk in the Cloud"), we reviewed several ways to find our download.  Repeat these steps to find find the Sysmon download in the Downloads folder.
+![](./images/OpeningFileExplorer.png)
 
+Then navigate to **Downloads** in the side panel, and click on the Sysmon **".zip"** archive.
 
-Perform "Extract All" on the Sysmon Folder. Ensure the Sysmon folder is selected -- It will be highlighted blue.
+![](./images/navigatetodownloads.png)
+
+Now we can perform **"Extract All"** on the Sysmon Folder. 
+
+Ensure the Sysmon **".zip"** archive is selected.  It will be highlighted in **blue**.
 
 ![Sysmon Extract All](./images/sysmon_extract_all.png)
 
-"Extract" to the Downloads folder.  Windows should auto-populate the Downloads path.
+**"Extract"** to the Downloads folder.  Windows should auto-populate the Downloads path.
 
-In your search bar, type "PowerShell."
-The following options will be presented.  Click "Run as Administrator."
+Once you are finished, you should see something like this:
 
-<img src="./images/powershell.png" alt="Run as Administrator" style="zoom:67%;" />
+![](./images/sysmonfolder.png)
 
-In your PowerShell window, enter the following command. You will need to substitute [USER] for the user you are using on your local system.
+For the next step, we need to open **Windows PowerShell**. This can be done by clicking on the **PowerShell** icon in the taskbar.
 
-```powershell
-cd C:\Users\[USER]\Downloads\Sysmon\
-```
+![](./images/OpeningPowershell.png)
 
+Enter the following command. You will need to substitute **[USER]** for the user you are using on your local system.
 
-The following command will install and start Sysmon as a service.
+<pre>cd C:\Users\[USER]\Downloads\Sysmon\</pre>
 
-```powershell
-.\Sysmon.exe -i -n -accepteula
-```
+Run the following command to install and start **Sysmon** as a service.
 
+<pre>.\Sysmon.exe -i -n -accepteula</pre>
 
-Your following output should look similar to this.
-
+The output should look similar to this.
 
 ![Sysmon is Running](./images/sysmon_running.png)
 
+Now that Sysmon is running on our system, we need to configure our **Elastic agent** to gather these logs.
 
-Now that Sysmon is running on our system, we need to configure our Elastic agent to gather these logs.  Sign into your cloud account.
-
+Sign into your **Elastic Cloud account** using the following link:
 
 [Elastic Cloud Login](https://cloud.elastic.co/login "https://cloud.elastic.co/login")
 
 
-Navigate to "Integrations" through the navigation menu.
+Once logged in, navigate to **"Integrations"** through the navigation menu.
 
+When you log in to Elastic, you might see the following screen first. If so, go ahead and click on our deployment that we created in [Part One](./elk_in_the_cloud.md "Elk in the Cloud") (ELK in the Cloud)
 
-![Integrations Tab](./images/integrations.PNG)
+![](./images/incaseyourelost.png)
+	
+Once you do this, you can access the navigation bar by clicking the three lines in the upper left and then navigate to Integrations. 
 
+You may have to scroll to the bottom to find the **"Management"** section. 
 
-At the top of the page enter "windows" into the search bar.  Select the Windows option with the red square pictured below.
+![](./images/navigationmenu.png)
 
+At the top of the page enter **"windows"** into the search bar.  Select the **Windows** option outlined with the red square below.
 
 ![Select Windows](./images/which_windows.PNG)
 
-
+***
 Add this integration.
-
+***
 
 ![Add Windows](./images/installation.PNG)
 
 
-By default, the Sysmon logs channel should be active.  This can be checked under the "Collect events from the following Windows event log channels:" section of the "Add integration" page.
+The next screen you see will have a lot of options on it. Luckily, we only care that one is selected: **Sysmon Operational**
 
+By default, this option should be active, but please double check to be sure. 
 
+**Note:**
+You will have to scroll down the page for a bit in order to find it. 
+	
 ![Ensure Sysmon is Selected](./images/sysmon_selected.png)
 
-
-Save the Integration.
-
+***
+Now save the Integration by clicking **Save and Continue** in the bottom right.
+***
 
 ![Save the Integration](./images/saveandnext.PNG)
 
+***
+You will then see the following pop-up prompt. Please click **"Add elastic agent to your hosts".**
+***
 
-When prompted click "Add elastic agent to your hosts".
+![Add Elastic Host](./images/addelastichost.PNG)
 
+***
+Navigate back to the Integrations menu, find the **"Installed integrations"** tab.
+***
 
-![Save and Deploy Changes](./images/addelastichost.PNG)
+![](./images/backtointegrations.png)
 
+![](./images/clickinstalledintegrations.png)
 
-In the Integrations menu, find the "Installed integrations" tab.
-
-In [part one](./elk_in_the_cloud.md "Elk in the Cloud"), we selected an Elastic Security configuration. In doing so, "Endpoint Security" and "System" are automatically installed in our Integrations.
-
+In [part one](./elk_in_the_cloud.md "Elk in the Cloud"), we selected an Elastic Security configuration. In doing so, **"Endpoint Security"** and **"System"** are automatically installed in our **Integrations**.
 
 ![Installed Integrations](./images/integrations_extras.PNG)
 
+At this point, play around on the computer that has **Elastic Agent **installed.  Move files around, create files, start programs, make a few Google searches.  This will generate some logs to ensure that we have Sysmon logs reaching our cloud.
 
-At this point, play around on the computer that has Elastic Agent installed.  Move files around, create files, start programs, make a few Google searches.  This will generate some logs to ensure that we have Sysmon logs reaching our cloud.
+After you have created some log activity, navigate to **"Discover"** by accessing the hamburger menu on the top left.
 
-After you have created some log activity, navigate to "Discover" by accessing the hamburger menu on the top left.
+![Navigate to Discover](./images/navigatetodiscover.png)
 
+***
+We will then create a filter:
+***
 
-![Navigate to Discover](./images/filter.PNG)
+![](./images/createfilter.png)
 
-
-Set a filter on your data to limit your results to sysmon data.  This can be done by searching the "data_stream.dataset" field for "windows.sysmon_operational" data. Then click "add filter". Your filter should now be set.
-
+Set a filter on your data to limit your results to sysmon data.  This can be done by searching the **"data_stream.dataset"** field for **"windows.sysmon_operational"** data. We add a custom label of **"All Done!"**. 
 
 ![Filter Data](./images/applied_filter.PNG)
 
-If you have a result, and not an error, your Sysmon data is being collected and sent to Elastic.
-
+***
+Now click **"add filter"**. Your filter should now be set.
+***
 
 ![Sysmon Results](./images/final.PNG)
+
+If you have a result, and not an error, your Sysmon data is being collected and sent to **Elastic**.
+
+***
+***Continuing on to the next Lab?***
+
+[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***Finished with the Labs?***
+
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---

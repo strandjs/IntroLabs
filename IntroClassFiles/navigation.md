@@ -2,13 +2,14 @@
 [Intro To SOC]()
 
   - [Linux CLI](Tools/IntroClass/LinuxCLI/LinuxCLI.md)
-  - [Memory Analysis](Tools/IntroClass/Memory/MemoryAnalysis.md)
+  - [Memory Analysis (Volatility)](Tools/IntroClass/Memory/MemoryAnalysis(Volatility).md)
   - [TCPDump](Tools/IntroClass/TCPDump/TCPDump.md)
   - [Web Log Review](Tools/IntroClass/WebLogReview/WebLogReview.md)
   - [WindowsCLI](Tools/IntroClass/WindowsCLI/WindowsCLI.md)
   - [Wireshark](Tools/IntroClass/Wireshark/Wireshark.md)
   - [RITA](Tools/IntroClass/RITA/RITA.md)
   - [Nessus](Tools/IntroClass/nessus/Nessus.md)
+  - [Web Testing](Tools/IntroClass/WebTesting/WebTesting.md)
   - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
   - [Domain Log Review](Tools/IntroClass/DomainLogReview/DomainLogReview.md)
   - [Velociraptor](Tools/IntroClass/Velociraptor/Velociraptor.md)
@@ -18,12 +19,12 @@
   - [Sysmon in ELK](/IntroClassFiles/Tools/IntroClass/md/sysmon_logs.md)
   - [Lima Charlie](/IntroClassFiles/Tools/IntroClass/limacharlie/limacharlie.md)
   - [Lima Charlie & Atomic Red](/IntroClassFiles/Tools/IntroClass/LCmeetsAtomicRed/LCAR.md)
-  - [AC Hunter CE](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHunterCE.md)
+  - [AC Hunter CE](Tools/IntroClass/ACHCE/ACHunterCE.md)
   - [Hunting DCSync, Sharepoint and Kerberoasting](https://github.com/strandjs/IntroLabs/tree/master/IntroClassFiles/Tools/IntroClass/PoisoningtheWellIR-main)
 
 [Intro To Security]()
 
- - [Applocker](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/AppLocker/AppLocker.md)
+ - [Applocker](Tools/IntroClass/AppLocker/AppLocker.md)
  - [Atomic RedTeam and Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
  - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
  - [Nessus](Tools/IntroClass/nessus/Nessus.md)
@@ -37,7 +38,7 @@
  - [Falcon](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/falcon.md)
  - [ConnectSecure](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/Connectsecure.md)
  - [Azure IR](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/README.md)
- - [AC Hunter CE](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHunterCE.md)
+ - [AC Hunter CE](Tools/IntroClass/ACHCE/ACHunterCE.md)
   
 [Cyber Deception/Active Defense]()
 
@@ -54,5 +55,7 @@
   - [WebHoneypot](Tools/IntroClass/webhoneypot/webhoneypot.md)
   - [File Audit](Tools/IntroClass/FileAudit/FileAudit.md)
 
+*** 
+[How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
 

@@ -54,9 +54,9 @@ For PowerShell and Command Prompt, please right click on them and select Run As 
 ###END NOTE###
 
 Next, let’s change directories to tools and start Bluespawn:
-C:\Users\adhd>`cd \tools`
+C:\Users\adhd>`cd \IntroLabs`
 
-C:\tools>`BLUESPAWN-client-x64.exe --monitor --level Cursory`
+C:\IntroLabs>`BLUESPAWN-client-x64.exe --monitor --level Cursory`
 
 
 ![](attachments/Clipboard_2020-06-16-09-46-00.png)
@@ -66,6 +66,15 @@ Now, let’s use Atomic Red Team to test the monitoring with BlueSpawn:
 First, we need to open a PowerShell Prompt:
 
 ![](attachments/Clipboard_2020-06-16-09-55-12.png)
+
+Lets install and update Atomic Red Team
+
+PS C:\Users\adhd> `cd \`
+
+PS C:\Users\adhd>`IEX (IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
+Install-AtomicRedTeam -getAtomics -Force`
+
+Please note this can take a bit.
 
 Next, in the PowerShell Window we need to navigate to the Atomic Red Team directory and import the powershell modules:
 
@@ -80,9 +89,16 @@ PS C:\AtomicRedTeam\invoke-atomicredteam> `Import-Module .\Invoke-AtomicRedTeam.
 
 Now, we need to invoke all the Atomic Tests.
 
-Special note...  Don't do this in production...  Ever.  Always run tools like Atomic Red Team on test systems.  We recommend that you run in on a system with your EDR/Endpoint protection in non-blocking/alerting mode.  This is so you can see what the protection would have done, but it will allow the tests to finish.
+Special note...  Don't do this in production...  Ever.  Always run tools like Atomic Red Team on test systems.  We recommend that you run in on a system with your EDR/Endpoint protection in non-blocking/alerting mode.  This is so you can see what the protection would have done, but it will allow the tests to finish so we are just going to run individual tests for now.
 
-PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest All`
+PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1547.004`
+
+PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1543.003`
+
+PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1547.001`
+
+PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1546.008`
+
 
 If you get any “file exists” questions or errors, just select Yes.
 
@@ -92,8 +108,12 @@ It should look like this:
 
 Please note, there will be some errors when this runs.  This is normal.
 
+Please note we had to cross reference the old numbering witgh the new.
 
-Only let this run for about 120 seconds!!!  Kill it with Ctrl + c!!
+You can find that mapping here:
+
+https://attack.mitre.org/docs/subtechniques/subtechniques-crosswalk.json
+
 
 You should be getting a lot of alerts with Bluespawn Switch tabs in your Terminal to see them:
 
