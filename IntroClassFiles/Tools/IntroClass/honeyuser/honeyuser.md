@@ -22,7 +22,6 @@ Let's get started. 
 
 First, we will need to create the users and the Frank account. 
 
-  
 Let's open a command prompt:
 
 ![image](https://github.com/user-attachments/assets/1abaf0d9-e8ed-4bfb-afab-1de17ad0f081)
