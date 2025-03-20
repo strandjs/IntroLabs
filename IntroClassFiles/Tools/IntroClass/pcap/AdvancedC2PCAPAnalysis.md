@@ -4,53 +4,12 @@
 
   
 
-First, we will need to open the Ubuntu Terminal. 
+First, we will need to open the Kali Terminal. 
 
-  
+![image](https://github.com/user-attachments/assets/5e926625-9b95-4c77-9398-819b30f84051)
 
-Simply right-click on the Windows Terminal Icon and select Run as Administrator 
 
-  
-
-![](attachment/Clipboard_2021-03-12-08-31-27.png) 
-
-  
-
-Next, open an Ubuntu Prompt by clicking the down carrot in the terminal and selection Ubuntu. 
-
-  
-
-![](attachment/Clipboard_2021-03-12-08-32-16.png) 
-
-####NOTE##### 
-
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
-
- 
-
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
-  
-
-Next, let's navigate to the directory where the pcap file is stored. 
-
+Now, we should move to the proper directory.
   
 
 `cd /opt/covert` 
@@ -61,7 +20,8 @@ It should look like this: 
 
   
 
-![](attachment/Clipboard_2021-03-12-08-34-02.png) 
+![image](https://github.com/user-attachments/assets/bb84eda1-86bf-411a-8d38-45be7ac587eb)
+
 
   
 
@@ -70,6 +30,9 @@ Next, we will run some tcpdump commands to analyze the pcap file. 
   
 
 `sudo tcpdump -nA -r covertC2.pcap | less` 
+
+![image](https://github.com/user-attachments/assets/4e6077f3-1c27-4b57-8aad-3f199737b303)
+
 
   
 
@@ -81,7 +44,8 @@ It should look like this: 
 
   
 
-![](attachment/Clipboard_2021-03-12-08-36-57.png) 
+![image](https://github.com/user-attachments/assets/523443ca-8f56-47df-81d7-b9d112c49157)
+
 
   
 
@@ -93,7 +57,8 @@ It should look like this: 
 
   
 
-![](attachment/Clipboard_2021-03-12-08-38-24.png) 
+![image](https://github.com/user-attachments/assets/ae1ae54e-2f90-4c58-89c1-3c920f719a1e)
+
 
   
 
@@ -112,7 +77,7 @@ To see the SYN packets, simply run the following command:  
 
   
 
-`sudo tcpdump -r covertC2.pcap 'tcp[13] = 0x02'` 
+`sudo tcpdump -r covertC2.pcap 'tcp[13] = 0x02' | less` 
 
   
 
@@ -120,7 +85,8 @@ It should look like this: 
 
   
 
-![](attachment/Clipboard_2021-03-12-08-41-41.png) 
+![image](https://github.com/user-attachments/assets/13a5ca2e-49de-473d-b322-8a930115781c)
+
 
   
 
@@ -145,8 +111,8 @@ Run the following command to grep any other instances of “hidden”:  
 It should look like this: 
 
   
+![image](https://github.com/user-attachments/assets/d0c3b58f-94b6-4bf8-93a8-8564257be69b)
 
-![](attachment/Clipboard_2021-03-12-08-43-28.png) 
 
   
 
