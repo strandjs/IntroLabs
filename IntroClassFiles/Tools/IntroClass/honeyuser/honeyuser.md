@@ -23,46 +23,11 @@ Let's get started. 
 First, we will need to create the users and the Frank account. 
 
   
+Let's open a command prompt:
 
-We will need to start a terminal as Administrator.  To do this, simply right click on the Windows Terminal Icon on your desktop and select Run as Administrator: 
+![image](https://github.com/user-attachments/assets/1abaf0d9-e8ed-4bfb-afab-1de17ad0f081)
 
-  
 
-![](attachment/Clipboard_2021-03-12-11-06-15.png) 
-
-  
-
-Then, select Command Prompt from the Down Carrot options: 
-
-  
-
-![](attachment/Clipboard_2021-03-12-11-13-35.png) 
-
-####NOTE##### 
-
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
-
- 
-
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
 
 Now, we will need to navigate to the C:\Tool directory and add the example users and Frank. 
 
