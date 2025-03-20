@@ -20,45 +20,13 @@ Let's get started. 
 
   
 
-First, we will need to open a terminal as Administrator: 
 
-  
 
-![](attachment/Clipboard_2021-03-12-09-39-30.png) 
+First, we will need to open an Kali Linux Prompt: 
 
-  
+![image](https://github.com/user-attachments/assets/4890f6f1-bea0-4419-a588-3e6594c9118f)
 
-Next, we will need to open an Ubuntu Prompt: 
 
-  
-
-![](attachment/Clipboard_2021-03-12-09-40-02.png) 
-
-####NOTE##### 
-
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
-
- 
-
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
 
 Let's get our IP address. 
 
@@ -67,10 +35,7 @@ Let's get our IP address. 
 `ifconfig` 
 
   
-
-![](attachment/Clipboard_2021-03-12-09-46-03.png) 
-
-  
+![image](https://github.com/user-attachments/assets/aed53ef8-6796-4897-ba51-c1a4a09f1b24)
 
 Next, we will become root and navigate to the Impacket directory: 
 
@@ -88,9 +53,8 @@ It should look like this: 
 
   
 
-![](attachment/Clipboard_2021-03-12-09-43-19.png) 
+![image](https://github.com/user-attachments/assets/e5cbc8eb-b3a8-4fe6-84c2-569e6fed013c)
 
-  
 
 Now, let's start the SMB server: 
 
@@ -102,23 +66,18 @@ Now, let's start the SMB server: 
 
 It should look like this: 
 
-  
+ ![image](https://github.com/user-attachments/assets/d1268c27-a141-4a95-96ce-a9482d4b3e56)
+ 
 
-![](attachment/Clipboard_2021-03-12-09-46-42.png) 
-
-  
 
 Next, let's open a Windows Command Prompt: 
 
+![image](https://github.com/user-attachments/assets/0ccc949d-32c3-4d7b-bb18-1bb39ee36dfc)
   
 
-![](attachment/Clipboard_2021-03-12-09-46-27.png) 
-
-  
 
 Then, attempt to mount the share from your Windows system: 
 
-  
 
 `net use * \\172.17.78.175\secret` 
 
@@ -127,21 +86,20 @@ Remember!  Your IP address may be different!!!
 
 We did the most basic level of attempted authentication to the share, and it generated an error.  
 
-  
+![image](https://github.com/user-attachments/assets/8d861109-cd62-4231-946a-98f2284466a6)
+
 
 However, the trap was triggered! 
 
   
 
-Go back to your Ubuntu tab and see the log data. 
+Go back to your Kali Linux terminal and see the log data. 
 
-  
 
 It should look like this: 
 
-  
+![image](https://github.com/user-attachments/assets/4b3291a4-fbd1-49a6-968f-f72caefc403a)
 
-![](attachment/Clipboard_2021-03-12-09-49-11.png) 
 
   
 
