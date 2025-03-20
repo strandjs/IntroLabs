@@ -35,7 +35,7 @@ Example 1: Basic Usage
 Start Spidertrap by opening a terminal, changing into the Spidertrap
 directory, and typing the following:
 
-First, let's get your Linux systems IP address
+First, let's get your Kali Linux systems IP address
 
 `ifconfig`
 
@@ -88,7 +88,7 @@ Example 3: Trapping a Wget Spider
 
 Follow the instructions in [Example 1: Basic Usage] or
 [Example 2: Providing a List of Links] to start Spidertrap. Then
-open a new terminal and tell wget to mirror the website. Wget will run
+open a new Kali Linux terminal and tell wget to mirror the website. Wget will run
 until either it or Spidertrap is killed. Type Ctrl-c to kill wget.
 
 `$` **`sudo wget -m http://127.0.0.1:8000`**
