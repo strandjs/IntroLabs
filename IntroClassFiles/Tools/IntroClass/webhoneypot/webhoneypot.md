@@ -16,45 +16,10 @@ Let's get started.
 
   
 
-First, we will need to start a Terminal as administrator 
+First we will need to open a Kali Terminal:
 
-  
+![image](https://github.com/user-attachments/assets/ef855265-729c-4054-ad3e-759c9ad3a3ec)
 
-Simply right click on Windows Terminal on the Desktop and select Run as Administrator. 
-
-  
-
-Then, select the down carrot and choose Ubuntu. 
-
-  
-
-![](attachment/Clipboard_2021-03-12-11-39-25.png) 
-
- ####NOTE##### 
-
-If you are having trouble with Windows Terminal, you can simply start each of the three shells, we use by starting them directly from the Windows Start button. 
-
- 
-
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-or 
-
-`Ubuntu`
-
-or 
-
-`Command Prompt` 
-
- 
-
-For PowerShell and Command Prompt, please right click on them and select Run As Administrator 
-
-###END NOTE###
 
 Next, change directories to the /opt/owa-honeyport directory: 
 
@@ -64,7 +29,8 @@ Next, change directories to the /opt/owa-honeyport directory:
 
   
 
-![](attachment/Clipboard_2021-03-12-11-40-15.png) 
+![image](https://github.com/user-attachments/assets/85d0b4c0-b933-459f-8ca6-45ec5687acc6)
+
 
   
 
@@ -78,31 +44,24 @@ Now, let's start the honeypot:
 
 It should look like this: 
 
-  
-
-![](attachment/Clipboard_2021-03-12-11-41-30.png) 
+  ![image](https://github.com/user-attachments/assets/c7e33623-5050-4772-8767-e22fe0da9259)
 
   
 
-Now, let's start another Ubuntu Terminal. 
+Now, let's start another Kali Terminal. 
 
-  
+![image](https://github.com/user-attachments/assets/ef855265-729c-4054-ad3e-759c9ad3a3ec)
 
-Select the down carrot and choose Ubuntu. 
 
-  
 
-![](attachment/Clipboard_2021-03-12-11-39-25.png) 
-
-  
-
-Let's get your Ubuntu IP address. 
+Let's get your Kali IP address. 
 
   
 
 `ifconfig` 
 
-  
+![image](https://github.com/user-attachments/assets/0f927bdf-a032-41a1-bd40-68fb41fd9959)
+
 
 Then, navigate to the owa-honeypot directory. 
 
@@ -111,8 +70,8 @@ Then, navigate to the owa-honeypot directory.
 `cd /opt/owa-honeypot/` 
 
   
+![image](https://github.com/user-attachments/assets/ec61ff20-6aae-44fa-b920-fcb723f3c3aa)
 
-![](attachment/Clipboard_2021-03-12-11-43-26.png) 
 
   
 
@@ -124,7 +83,8 @@ Now, lets tail the dumppass log.
 
   
 
-![](attachment/Clipboard_2021-03-12-11-44-21.png) 
+![image](https://github.com/user-attachments/assets/1877a55c-9717-4428-a08b-38c6ea40af2f)
+
 
   
 
@@ -140,11 +100,10 @@ Now, try a bunch of User IDs and passwords.
 
   
 
-Now, go back to the Ubuntu Terminal with the log and you should see the IP address and USerID/Password of the attempts. 
+Now, go back to the Kali Terminal with the log and you should see the IP address and USerID/Password of the attempts. 
 
   
-
-![](attachment/Clipboard_2021-03-12-11-47-09.png) 
+![image](https://github.com/user-attachments/assets/71dbd425-29d1-46b1-9ed1-dc32d05fd595)
 
   
 
@@ -156,7 +115,7 @@ Select OWASP ZAP on your desktop.
 
   
 
-![](attachment/Clipboard_2021-03-12-11-47-43.png) 
+![image](https://github.com/user-attachments/assets/6493b57a-bb9d-4886-8e15-735ce63a93c7)
 
   
 
@@ -168,23 +127,19 @@ Once ZAP! opens, select Automated Scan:
 
   
 
-When Automated Scan opens, please put you Linux IP in the URL to attack box and select Attack. 
+When Automated Scan opens, please put you Kali Linux IP in the URL to attack box and select Attack. 
 
   
 
 It should look like this: 
 
-  
+![image](https://github.com/user-attachments/assets/c291f9f9-3730-49a6-a874-7d7df5dc5d8e)
 
-![](attachment/Clipboard_2021-03-12-11-49-31.png) 
-
-  
 
 After a while, you should see some attack strings in your Logs. 
 
   
-
-![](attachment/Clipboard_2021-03-12-11-50-54.png) 
+![image](https://github.com/user-attachments/assets/00bb3500-361f-4d28-9bb5-c5769d50cc53)
 
   
 
