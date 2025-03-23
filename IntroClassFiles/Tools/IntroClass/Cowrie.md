@@ -156,11 +156,6 @@ Then type `yes` on the key fingerprint verification.
 
 Your hostname should now be changed.
 
-There is far more than we can change in this short lab.
-
-For a great resource on changing the way Cowrie looks and feels, check out the following site:
-
-https://cryptax.medium.com/customizing-your-cowrie-honeypot-8542c888ca49
 
 Now, let’s edit the Message of the Day (MOTD).  Because the default one is not fun at all.
 
@@ -205,6 +200,12 @@ Then type `yes` on the key fingerprint verification.
 There!
 
 That is much better!
+
+There is far more than we can change in this short lab.
+
+For a great resource on changing the way Cowrie looks and feels, check out the following site:
+
+https://cryptax.medium.com/customizing-your-cowrie-honeypot-8542c888ca49
 
 
 
