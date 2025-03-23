@@ -128,25 +128,26 @@ Back at your Windows Command Prompt 
   
 
 
-  
+`cd \IntroLabs`
 
-C:\Tools> `powershell` 
 
-  
-
-PS C:\Tools> `Set-ExecutionPolicy Unrestricted` 
+ `powershell` 
 
   
 
-PS C:\Tools> `Import-Module .\LocalPasswordSpray.ps1` 
+ `Set-ExecutionPolicy Unrestricted` 
+
+  
+
+ `Import-Module .\LocalPasswordSpray.ps1` 
 
   
 
 It should look like this: 
 
   
+![image](https://github.com/user-attachments/assets/04441fb8-95ba-441c-8ccd-a18027b064da)
 
-![](attachment/Clipboard_2021-03-12-11-29-00.png) 
 
   
 
@@ -155,16 +156,15 @@ Now, let’s try some password spraying against the local system! 
   
 
   
-
-PS C:\Tools> `Invoke-LocalPasswordSpray -Password Winter2020` 
+`Invoke-LocalPasswordSpray -Password Winter2020` 
 
   
 
 It should look like this: 
 
-  
+  ![image](https://github.com/user-attachments/assets/42e83694-5305-411e-bae8-b28f4cbb7598)
 
-![](attachment/Clipboard_2021-03-12-11-29-49.png) 
+
 
   
 
