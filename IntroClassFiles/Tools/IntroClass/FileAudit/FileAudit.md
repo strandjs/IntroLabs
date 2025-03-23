@@ -81,3 +81,5 @@ Next, select Windows Logs, then Security.
 Once it opens the security log scroll down for the File System logs, then select the one that has Secret.txt in it.  You may have to scroll down a bit.
 
 ![](attachment/SecretLog4656.png)
+
+[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
