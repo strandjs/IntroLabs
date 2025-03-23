@@ -160,6 +160,8 @@ Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
+[Return To Lab List](https://github.com/strandjs/IntroLabs/edit/master/IntroClassFiles/navigation.md)
+
 ---
 
 
