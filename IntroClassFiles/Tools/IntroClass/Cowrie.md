@@ -130,9 +130,13 @@ To do this in vim, press `a` then make the change.
 When done, hit the following keys in the following order
 
 `esc`
+
 `:`
+
 `wq!`
+
 `return`
+
 
 Now, let's restart and connect:
 
@@ -157,6 +161,50 @@ There is far more than we can change in this short lab.
 For a great resource on changing the way Cowrie looks and feels, check out the following site:
 
 https://cryptax.medium.com/customizing-your-cowrie-honeypot-8542c888ca49
+
+Now, let’s edit the Message of the Day (MOTD).  Because the default one is not fun at all.
+
+
+`vim /var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/honeyfs/etc/motd`
+
+![image](https://github.com/user-attachments/assets/e60c8de7-1026-4507-9e03-fb0718799a4f)
+
+Change it to something better!
+
+![image](https://github.com/user-attachments/assets/a99a4447-c2a7-4eb5-bb6c-0bf2861abf8e)
+
+When done, hit the following keys in the following order
+
+`esc`
+
+`:`
+
+`wq!`
+
+`return`
+
+Now, let's restart and connect:
+
+`docker run -p 2222:2222 cowrie/cowrie`
+
+![image](https://github.com/user-attachments/assets/9390fd7a-7468-44ef-aa70-d52160c6d005)
+
+Then, in another Kali terminal connect with a password of 12345:
+
+`rm .ssh/known_hosts`
+
+`ssh -p 2222 root@localhost`
+
+Then type `yes` on the key fingerprint verification.
+
+![image](https://github.com/user-attachments/assets/485efdb7-7cf9-4ee5-a59a-fc0375db817c)
+
+![image](https://github.com/user-attachments/assets/1a8b732b-2a04-413e-8039-dd7d04ac6360)
+
+
+There!
+
+That is much better!
 
 
 
