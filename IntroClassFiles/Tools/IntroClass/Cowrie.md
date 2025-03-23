@@ -323,5 +323,3 @@ What happens when you exit the session?
 What are some solid IOCs that this is a honeypot?
 --!>
  
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
-
