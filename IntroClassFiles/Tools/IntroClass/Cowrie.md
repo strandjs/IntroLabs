@@ -104,7 +104,7 @@ Because the key fingerprint changes every time you restart Cowrie, we need to ne
 
 /var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/etc/cowrie.cfg.dist
 
-Ok, that command is just horrid.  The long number is a unique idea for our Cowrie system.  Apparently, Docker Reaaaaalllly did not collisions.  The overlay2 denotes this a a writeable layer for our container.  
+Ok, that path is just horrid.  The long number is a unique idea for our Cowrie system.  Apparently, Docker Reaaaaalllly did not collisions.  The overlay2 denotes this a a writeable layer for our container.  
 
 Basically, this means we can edit our system in this directory.
 
