@@ -1,3 +1,6 @@
+
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
 # RITA and AC Hunter
 
 In this lab, we are going to look at detecting command and control traffic on a network.
