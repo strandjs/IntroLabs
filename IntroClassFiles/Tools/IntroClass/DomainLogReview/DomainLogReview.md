@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
+
 # Domain Log Review
 
 In this lab we are going to look at some logs that are generated in a domain password spray attack.
