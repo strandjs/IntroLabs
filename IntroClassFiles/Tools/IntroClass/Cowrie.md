@@ -15,6 +15,98 @@ most importantly, the entire shell interaction performed by the attacker.
 
 Cowrie is developed by Michel Oosterhof and is based on Kippo by Upi Tamminen (desaster).
 
+The first thing we need to do is install/start cowrie.
+
+Open a Kali prompt:
+
+![image](https://github.com/user-attachments/assets/1174968b-9c56-485e-8563-054aca72cf60)
+
+Then become root:
+
+`sudo su -`
+
+![image](https://github.com/user-attachments/assets/e0d1da47-9291-40e5-aded-7d0e1deabb75)
+
+Getting cowrie running is really easy if you have docker installed on your system.
+
+All you need to do is run the following:
+
+`docker run -p 2222:2222 cowrie/cowrie`
+
+This will take a few moments.
+
+When it is running you should be able to see the logs like this:
+
+![image](https://github.com/user-attachments/assets/ba63568c-d813-4a84-be63-8462f7683aea)
+
+Now, open another Kali terminal while keeping the first terminal open with the logs open as well:
+
+![image](https://github.com/user-attachments/assets/1174968b-9c56-485e-8563-054aca72cf60)
+
+Let’s delete any other previous ssh known_hosts connections to the honeypot.
+
+This helps reduce any errors from starting and restarting the honeypot.
+
+You should run this command in the /home/kali directory.
+
+`rm .ssh/know_host
+￼![image](https://github.com/user-attachments/assets/a103057f-0f1c-47b5-8e7d-ec8eabadbe53)
+
+
+Then, try to connect to the honeypot with the following command:
+
+`ssh -p 2222 root@localhost`
+
+When you get prompted to accept the key fingerprint, type `yes`:
+
+![image](https://github.com/user-attachments/assets/f1a218b7-55ba-475a-9ff2-bf8ea99f372d)
+
+For the password, try `12345`:
+
+![image](https://github.com/user-attachments/assets/2044c147-0a09-46bb-b159-9110cd4fa3fa)
+
+Now, run the following commands:
+
+`id`
+
+`whoami`
+
+`pwd`
+
+`AAAAAAAAAAAAAAAAAAAAAAAAAA`
+
+Notice, the commands and authentication are being tracked in the other terminal with the log info:
+
+![image](https://github.com/user-attachments/assets/33e3cd1c-28a1-4a4c-874e-b9b600e41be8)
+
+Take a few moments and note the results are always the same.  As in, they are the same for all Cowrie instances.
+
+Let's change some things about our Cowrie honeypot to make it unique.
+
+
+
+
+
+
+
+
+
+
+￼
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Install Location
 ----------------
 
