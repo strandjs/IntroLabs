@@ -109,6 +109,8 @@ In a few moments you should get an email alert: 
 
 ![](attachment/Clipboard_2021-03-12-10-19-36.png) 
 
+[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
   
 
   
