@@ -93,6 +93,8 @@ until either it or Spidertrap is killed. Type Ctrl-c to kill wget.
 
 `$` **`sudo wget -m http://127.0.0.1:8000`**
 
+[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
         --2013-01-14 12:54:15-- http://127.0.0.1:8000/
 
         Connecting to 127.0.0.1:8000... connected.
