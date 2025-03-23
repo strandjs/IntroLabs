@@ -207,27 +207,11 @@ For a great resource on changing the way Cowrie looks and feels, check out the f
 
 https://cryptax.medium.com/customizing-your-cowrie-honeypot-8542c888ca49
 
+[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
+<!--
 
-
-
-
-
-
-
-
-￼
-
-
-
-
-
-
-
-
-
-
-
+THIS SECTION IS BEING REMOVED FOR THE TIME BEING PER JOHN
 
 
 
@@ -337,7 +321,7 @@ What happens when you log in with one of the valid userID and password combos?
 What happens when you exit the session?
 
 What are some solid IOCs that this is a honeypot?
-
+--!>
+ 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
-Can you change them?  Please share on Discord.
