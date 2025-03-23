@@ -86,10 +86,71 @@ Take a few moments and note the results are always the same.  As in, they are th
 
 Let's change a few things about our Cowrie honeypot to make it unique.
 
+Did you notice the system name in the prompt?
+
+![image](https://github.com/user-attachments/assets/b3e7d546-1328-42e1-a7a7-db0f094e64aa)
+
+It is the same for all default instalations. Let's change that.
+
+Let’s kill our Cowrie session.  
+
+To do this, click into the Terminal with our log output and press ctrl+c at the same time.
+
+![image](https://github.com/user-attachments/assets/deea16c1-cc94-459e-a2ac-d94d7663f88f)
+
+As we said above, one of the ways that people have been detecting honeypots like Cowrie for years is looking at the key fingerprint and the hostname. 
+
+Because the key fingerprint changes every time you restart Cowrie, we need to next focus on changing the hostname.  To do this we need to change the following file as root on our Kali system:
+
+/var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/etc/cowrie.cfg.dist
+
+Ok, that command is just horrid.  The long number is a unique idea for our Cowrie system.  Apparently, Docker Reaaaaalllly did not collisions.  The overlay2 denotes this a a writeable layer for our container.  
+
+Basically, this means we can edit our system in this directory.
+
+Let's edit this file.
+
+As root, run the following:
+
+`vim /var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/etc/cowrie.cfg.dist`
 
 
+![image](https://github.com/user-attachments/assets/a87a5e25-a731-4567-ae46-38a340aad32a)
 
+Copy and paste are your friends.
 
+Once in the file, use the down arrow and go to roughly line 30 and change the hostname
+
+![image](https://github.com/user-attachments/assets/36c901de-1a3e-45b1-b24c-3c07666884c5)
+
+To do this in vim, press `a` then make the change.
+
+![image](https://github.com/user-attachments/assets/d3d7a3d4-99e6-48cd-ad07-c20489974802)
+
+When done, hit the following keys in the following order
+
+`esc`
+`:`
+`wq!`
+`return`
+
+Now, let's restart and connect:
+
+`docker run -p 2222:2222 cowrie/cowrie`
+
+![image](https://github.com/user-attachments/assets/9390fd7a-7468-44ef-aa70-d52160c6d005)
+
+Then, in another Kali terminal connect with a password of 12345:
+
+`rm .ssh/known_hosts`
+
+`ssh -p 2222 root@localhost`
+
+Then type `yes` on the key fingerprint verification.
+
+![image](https://github.com/user-attachments/assets/485efdb7-7cf9-4ee5-a59a-fc0375db817c)
+
+Your hostname should now be changed.
 
 There is far more than we can change in this short lab.
 
