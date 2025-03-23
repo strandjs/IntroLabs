@@ -51,6 +51,9 @@ Now, lets start it:
         Starting server on port 8000...
 
         Server started. Use <Ctrl-C> to stop.
+
+![image](https://github.com/user-attachments/assets/e978648f-f43d-4cff-acdb-f524a5e1a571)
+
         
     
 
@@ -76,6 +79,9 @@ Now, restart it with the following options:
         Starting server on port 8000...
 
         Server started. Use <Ctrl-C> to stop.
+
+![image](https://github.com/user-attachments/assets/3cdc8570-9639-4dbd-9348-ed67f4c836a1)
+
 
 Then visit http://<YOUR_LINUX_IP>:8000 in a web
 browser. You should see a page containing links taken from the file. If
@@ -103,6 +109,10 @@ until either it or Spidertrap is killed. Type Ctrl-c to kill wget.
         <<<snip>>>
 
         HTTP request sent, awaiting response... ^C
+
+
+![image](https://github.com/user-attachments/assets/8369ef4c-1298-4321-a4b2-40a94cd2de16)
+
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
