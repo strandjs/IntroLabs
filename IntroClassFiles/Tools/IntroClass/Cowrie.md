@@ -49,9 +49,12 @@ This helps reduce any errors from starting and restarting the honeypot.
 
 You should run this command in the /home/kali directory.
 
-`rm .ssh/know_host
+`rm .ssh/known_hosts`
+
 ￼![image](https://github.com/user-attachments/assets/a103057f-0f1c-47b5-8e7d-ec8eabadbe53)
 
+
+*The above command is critical because the key fingerprint for Cowrie changes every time you restart it!*
 
 Then, try to connect to the honeypot with the following command:
 
@@ -81,7 +84,18 @@ Notice, the commands and authentication are being tracked in the other terminal 
 
 Take a few moments and note the results are always the same.  As in, they are the same for all Cowrie instances.
 
-Let's change some things about our Cowrie honeypot to make it unique.
+Let's change a few things about our Cowrie honeypot to make it unique.
+
+
+
+
+
+
+There is far more than we can change in this short lab.
+
+For a great resource on changing the way Cowrie looks and feels, check out the following site:
+
+https://cryptax.medium.com/customizing-your-cowrie-honeypot-8542c888ca49
 
 
 
