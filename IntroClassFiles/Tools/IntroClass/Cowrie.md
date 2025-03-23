@@ -106,7 +106,7 @@ Because the key fingerprint changes every time you restart Cowrie, we need to ne
 
 Ok, that path is just horrid.  The long number is a unique idea for our Cowrie system.  Apparently, Docker Reaaaaalllly did not collisions.  The overlay2 denotes this a a writeable layer for our container.  
 
-Basically, this means we can edit our system in this directory.
+Basically, this means we can edit our Docker container system in this directory.
 
 Let's edit this file.
 
