@@ -100,6 +100,8 @@ It should look like this: 
 
 ![image](https://github.com/user-attachments/assets/4b3291a4-fbd1-49a6-968f-f72caefc403a)
 
+[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
   
 
