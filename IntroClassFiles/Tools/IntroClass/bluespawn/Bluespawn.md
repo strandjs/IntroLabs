@@ -160,6 +160,8 @@ meterpreter >`getsystem`
 
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
+[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
