@@ -334,3 +334,5 @@ Now, surf to your AC-Hunter system!!!
 
 https://<YOUR_ACHCE_IP_ADDR>
 
+[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
