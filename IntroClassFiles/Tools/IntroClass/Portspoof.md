@@ -82,54 +82,50 @@ First, let's become root:
 
 `sudo su -`
 
-`~#` **`iptables -t nat -A PREROUTING -p tcp -m tcp --dport 1:65535 -j REDIRECT --to-ports 4444`**
+Now, let's install portspoof
+
+`apt-get update`
+
+`apt-get install portspoof`
+
+*Note, this may take a moment
+
+![image](https://github.com/user-attachments/assets/db0eeae1-d282-448d-b2e6-7b819a091971)
+
+Now, let's add the firewall rules.
+
+`iptables -t nat -A PREROUTING -p tcp -m tcp --dport 1:20 -j REDIRECT --to-ports 4444`
 
 Then run Portspoof with no options, which defaults it to "open port" mode. This mode will just return OPEN state for every connection attempt.
 
-`~#` **`portspoof`**
+`portspoof`
+
+![image](https://github.com/user-attachments/assets/1e2425d2-796a-4d20-8c05-393a551d1990)
+
 
 If you were to scan using Nmap from another Windows command prompt. Now you would see something like this:
 
 Note: You *must* run Nmap from a different machine. Scanning from the same machine will not reach Portspoof.
 
-`~C:\>` **`nmap -p 1-10 <YOUR LINUX IP>`**
+Open a Windows command prompt:
 
-        Starting Nmap 6.47 ( http://nmap.org )
-        Nmap scan report for 172.16.215.138
-        Host is up (0.0018s latency).
-        PORT   STATE SERVICE
-        1/tcp  open  tcpmux
-        2/tcp  open  compressnet
-        3/tcp  open  compressnet
-        4/tcp  open  unknown
-        5/tcp  open  unknown
-        6/tcp  open  unknown
-        7/tcp  open  echo
-        8/tcp  open  unknown
-        9/tcp  open  discard
-        10/tcp open  unknown
-   
+![image](https://github.com/user-attachments/assets/6f8f69a2-ff07-4deb-9f67-52f1fa5842a6)
+
+Then, run nmap:
+
+`nmap -p 1-10 <YOUR LINUX IP>`
+
+
+![image](https://github.com/user-attachments/assets/d51c7589-8fbf-4b0a-8c69-6c21629e588d)
+
 
 All ports are reported as open! When run this way, Nmap reports the service that typically runs on each port.
 
 To get more accurate results, an attacker might run an Nmap service scan, which would actively try to detect the services running. But performing an Nmap service detection scan shows that something is amiss because all ports are reported as running the same type of service.
 
-`~C:\>` **`nmap -p 1-10 -sV <YOUR LINUX IP>`**
+`nmap -p 1-10 -sV <YOUR LINUX IP>`
 
-        Starting Nmap 6.47 ( http://nmap.org )
-        Nmap scan report for 172.16.215.138
-        Host is up (0.00047s latency).
-        PORT   STATE SERVICE    VERSION
-        1/tcp  open  tcpwrapped
-        2/tcp  open  tcpwrapped
-        3/tcp  open  tcpwrapped
-        4/tcp  open  tcpwrapped
-        5/tcp  open  tcpwrapped
-        6/tcp  open  tcpwrapped
-        7/tcp  open  tcpwrapped
-        8/tcp  open  tcpwrapped
-        9/tcp  open  tcpwrapped
-        10/tcp open  tcpwrapped
+![image](https://github.com/user-attachments/assets/148e82e4-f8fb-4df5-8fef-6b758d1e05e1)
 
 
 Example 2: Spoofing Service Signatures
@@ -137,34 +133,22 @@ Example 2: Spoofing Service Signatures
 
 Showing all ports as open is all well and good. But the same thing could be accomplished with a simple netcat listener (`nc -l -k 4444`). To make things more interesting, how about we have Portspoof fool Nmap into actually detecting real services running?
 
-`~#` **`portspoof -s /usr/local/etc/portspoof_signatures`**
+Let's kill the running version of portspoof with ctrl+c then restart it with signatures:
+
+`portspoof -s /etc/portspoof/portspoof_signatures`
+
+![image](https://github.com/user-attachments/assets/e1a2857a-7628-46d0-8808-b0af2add49f1)
+
+
 
 This mode will generate and feed port scanners like Nmap bogus service signatures.
 
 Now running an Nmap service detection scan against the top 100 most common ports (a common hacker activity) will turn up some very interesting results.
 
-`~C:\>` **`nmap -p 1-10 -sV 172.16.215.138`**
+`nmap -p 1-10 -sV 172.16.215.138`
 
-        Starting Nmap 6.47 ( http://nmap.org )
-        Stats: 0:00:49 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
-        Service scan Timing: About 90.00% done; ETC: 01:11 (0:00:05 remaining)
-        Nmap scan report for 172.16.215.138
-        Host is up (0.21s latency).
-     PORT   STATE SERVICE       VERSION
-        1/tcp  open  tcpmux?
-        2/tcp  open  compressnet?
-        3/tcp  open  compressnet?
-        4/tcp  open  pioneers-meta Pioneers game meta server 9
-        5/tcp  open  rje?
-        6/tcp  open  g15daemon     g15daemon (Logitech G15 keyboard control)
-        7/tcp  open  echo?
-        8/tcp  open  unknown
-        9/tcp  open  nagios-nsca   Nagios NSCA
-                10/tcp open  unknown
-        7 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-b                     in/submit.cgi?new-service :
-        ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-        SF-Port1-TCP:V=7.91%I=7%D=3/14%Time=604E7AC1%P=i686-pc-windows-windows%r(N
-        SF:ULL,6D,"HTTP/1\.0\x20400\x20Invalid\x20Request\r\nContent-Type:\x20text
+![image](https://github.com/user-attachments/assets/c4281e6f-4937-4477-b6a9-d2344d2a2699)
+
 
 Notice how all of the ports are still reported as open, but now Nmap reports a unique service on each port. This will either 1) lead an attacker down a rabbit hole investigating each port while wasting their time, or 2) the attacker may discard the results as false positives and ignore this machine altogether, leaving any legitimate service running untouched.
 
