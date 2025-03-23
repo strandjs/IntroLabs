@@ -33,7 +33,7 @@ Now, we will need to navigate to the C:\Tool directory and add the example users
 
   
 
-`cd \tools` 
+`cd \IntroLabs` 
 
   
 
@@ -44,8 +44,8 @@ Now, we will need to navigate to the C:\Tool directory and add the example users
 It should look like this: 
 
   
+![image](https://github.com/user-attachments/assets/d659078e-4504-4e8e-9800-b15db7aebb64)
 
-![](attachment/Clipboard_2021-03-12-11-15-23.png) 
 
   
 
