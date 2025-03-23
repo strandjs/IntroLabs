@@ -158,6 +158,8 @@ When you do this, you can quickly see that the Base64 encoded data is a PowerShe
 
 Attackers can also pseudo-randomly include extra characters designed to break automated decoding. This is a remarkably simple, yet effective, technique that then requires a responder to manually find and remove the ever-changing characters in order to decode the communications. 
 
+[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
   
 
   
