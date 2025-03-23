@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
+
 # Password Cracking
 
 In this lab we will be getting started with the fundamentals of password cracking.  We will be using **Hashcat** to do this.
