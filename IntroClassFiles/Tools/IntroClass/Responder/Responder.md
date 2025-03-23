@@ -44,6 +44,8 @@ After a few moments, you should see some captured data showing up.
 
 ![](attachments/captureddata.png)
 
+[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 <!--
