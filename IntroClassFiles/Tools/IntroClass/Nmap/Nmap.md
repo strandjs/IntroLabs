@@ -84,7 +84,7 @@ First lets configure the Windows system
 
 Let's disable AV.
 
-PS C:\Users\Administrator> `Set-MpPreference -DisableRealtimeMonitoring $true`
+PS C:\Users\Administrator> `Set -MpPreference -DisableRealtimeMonitoring $true`
 
 Next, let's make sure that firewall is off.
 
