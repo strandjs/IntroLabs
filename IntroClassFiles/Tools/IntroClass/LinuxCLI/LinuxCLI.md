@@ -63,13 +63,15 @@ Now we will need to know the IP address of our **Linux** system:
 
 >[!NOTE]
 >
->**REMEMBER - YOUR IP WILL BE DIFFERENT**
+>**YOUR IP WILL BE DIFFERENT**
 
 Now, let's connect:
 
 <pre>nc 10.10.104.64 2222</pre>
 
-**REMEMBER - YOUR IP WILL BE DIFFERENT**
+>[!NOTE]
+>
+>**YOUR IP WILL BE DIFFERENT**
 
 
 It can be confusing to tell whether or not you are connected to the backdoor. 
@@ -86,11 +88,11 @@ At this point, we have created a backdoor with one terminal, and we have connect
 
 Let's begin by using one of the two methods used earlier to open a new **Kali** Terminal.  
 
-Method 1 is to right click on the desktop and select open. 
+You can do this by right clicking the icon on the desktop and selecting open...
 
 ![](attachments/OpeningKaliInstance.png)
 
-Method 2 is to simply click on the Kali logo in the taskbar.
+<b>Or...</b> you can simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
@@ -111,13 +113,14 @@ Now let's dig into the **netcat process ID**.  We can do this with the lowercase
 
 <pre>lsof -p [PID]</pre>
 
-# Remember!!!  Your PID will be different!!!
+>[!NOTE]
+>
+>**Your PID will be different!!!**
 
 ![](attachments/lsof-pKaliInstance.png)
 
-Let's look at the full processes.  We can do this with the **ps** command. We are also adding the **aux switches**.  
+Let's look at the full processes.  We can do this with the **ps** command. We are also adding the **a**, **u**, and **x switches**.  
 
-aux
 * a is for all processes
 * u is for sorted users
 * x is for all processes using a teletype terminal
@@ -132,6 +135,10 @@ Let's change directories into the **proc** directory for that **pid**.  Remember
 
 <pre>cd /proc/[pid]</pre>
 
+>[!NOTE]
+>
+>**Your PID will be different!!!**
+
 ![](attachments/procPIDKaliInstance.png)
 
 We can see a number of interesting directories here:
@@ -140,7 +147,7 @@ We can see a number of interesting directories here:
 
 ![](attachments/lsKaliInstance.png)
 
-We can run strings on the exe in this directory.  When programs are created there may be usage information, mentions of system libraries, and possible code comments.  We use this all the time to attempt to identify what exactly a program is doing.
+We can run the **strings** command on the executable in this directory.  When programs are created there may be usage information, mentions of system libraries, and possible code comments. We use this all the time to attempt to identify what exactly a program is doing.
 
 <pre>strings ./exe | less</pre>
 
