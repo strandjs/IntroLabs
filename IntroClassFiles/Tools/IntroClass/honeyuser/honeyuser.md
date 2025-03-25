@@ -172,11 +172,11 @@ Now we need to clean up and make sure the system is ready for the rest of the la
 
   
 
-PS C:\Tools> `exit` 
+PS C:\IntroLabs> `exit` 
 
   
 
-C:\Tools> `user-remove.bat` 
+C:\IntroLabs> `user-remove.bat` 
 
   
 
