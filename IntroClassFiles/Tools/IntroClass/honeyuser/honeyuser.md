@@ -171,12 +171,11 @@ It should look like this: 
 Now we need to clean up and make sure the system is ready for the rest of the labs: 
 
   
-
-PS C:\Tools> `exit` 
+`exit` 
 
   
 
-C:\Tools> `user-remove.bat` 
+`user-remove.bat` 
 
   
 
