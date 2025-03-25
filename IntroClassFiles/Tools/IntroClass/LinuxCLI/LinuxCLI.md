@@ -17,21 +17,21 @@ For this lab we will be running **three** different Kali terminals.
 
 ***
 
-Let’s get started by opening a terminal as **Administrator**, there are a few methods to do this.  
+Let’s get started by opening a terminal as **Administrator**
 
-Method 1 is to right click on the desktop and select open. 
+You can do this by right clicking the icon on the desktop and selecting open...
 
 ![](attachments/OpeningKaliInstance.png)
 
-Method 2 is to simply click on the Kali logo in the taskbar.
+<b>Or...</b> you can simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-On your **Kali** terminal, please run the following command:
+Once your **Kali** terminal opens, please run the following command:
 
-<pre>sudo su - </pre>
+<pre>sudo su -</pre>
 
-This will get us to a root prompt. We want to do this because we want to have a backdoor running as root and a connection from a different user account on the system.
+This will get us to a root prompt. We want to do this in order to have a backdoor running as root and a connection from a different user account on the system.
 
 Next, we will need to create a **FIFO** backpipe:
 
@@ -47,21 +47,23 @@ On a more basic level, this will create a backdoor listening on port 2222 of our
 
 Now, let's open another **Kali** terminal.  This terminal will connect to the backdoor we just created.  
 
-Method 1 is to right click on the desktop and select open. 
+You can do this by right clicking the icon on the desktop and selecting open...
 
 ![](attachments/OpeningKaliInstance.png)
 
-Method 2 is to simply click on the Kali logo in the taskbar.
+<b>Or...</b> you can simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-Now we will need to know the IP address of our **linux** system:
+Now we will need to know the IP address of our **Linux** system:
 
 <pre>ifconfig</pre>
 
 ![](attachments/ifconfigKaliInstance.png)
 
-**REMEMBER - YOUR IP WILL BE DIFFERENT**
+>[!NOTE]
+>
+>**REMEMBER - YOUR IP WILL BE DIFFERENT**
 
 Now, let's connect:
 
