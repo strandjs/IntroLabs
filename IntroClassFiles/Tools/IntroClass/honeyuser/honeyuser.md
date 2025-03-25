@@ -165,23 +165,6 @@ It should look like this: 
   ![image](https://github.com/user-attachments/assets/42e83694-5305-411e-bae8-b28f4cbb7598)
 
 
-
-  
-
-Now we need to clean up and make sure the system is ready for the rest of the labs: 
-
-  
-
-PS C:\Tools> `exit` 
-
-  
-
-C:\Tools> `user-remove.bat` 
-
-  
-
-![](attachment/Clipboard_2021-03-12-11-30-08.png) 
-
   
 
 Now, let's see if any alerts were generated. 
