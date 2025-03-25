@@ -17,7 +17,7 @@ For this lab we will be running **three** different Kali terminals.
 
 ***
 
-Let’s get started by opening a terminal as **Administrator**
+Let's get started by opening a terminal as **Administrator**
 
 You can do this by right clicking the icon on the desktop and selecting open...
 
@@ -100,7 +100,7 @@ On your Linux terminal, please run the following command:
 
 <pre>sudo su -</pre>
 
-This will get us to a root prompt.  When we say root prompt we mean a terminal with the highest level of permission possible.  We want to be in a root prompt because looking at network connections and process information system wide requires root priviledges (or the highest level of priviledges).  
+This will get us to a root prompt.  When we say root prompt we mean a terminal with the highest level of permission possible.  We want to be in a root prompt because looking at network connections and process information system wide requires root privileges (or the highest level of privileges).  
 
 Let's start by looking at the network connections with **lsof**.  When we use **lsof**, we are looking at open files.  When we use the **-i** flag we are looking at the open Internet connections.  When we use the **-P** flag we are telling **lsof** to not try and guess what the service is on the ports that are being used. Just give us the port number.
 
