@@ -6,9 +6,11 @@ In this lab we will be looking at a memory dump of a compromised system.
 
 To do this, we need to decompress it and use **Volatility** to examine the network connections and process information for the malware.  
 
-Please keep in mind that we are using a free tool for this lab.  While **Volatility** is great, it has some limitations.  Specifically, in the area of network PIDs.  While we use **Volatility**, the same concepts can also be applied to any commercial tools you may be using in your environment.
+>[!NOTE]
+>Please keep in mind that we are using a free tool for this lab.  While **Volatility** is great, it has some limitations.  Specifically, in the area of network PIDs.  While we use **Volatility**, the same concepts can also be applied to any commercial tools you may be using in your environment.
 
-Please note this memory dump was created from **VMWare** snapshot feature. There are multiple tools like **winpmem** and **FTK Imager** that can also create memory dumps.
+>[!TIP]
+>This memory dump was created from **VMWare** snapshot feature. There are multiple tools like **winpmem** and **FTK Imager** that can also create memory dumps.
 
 To start, we will open a **Kali** terminal. 
 
