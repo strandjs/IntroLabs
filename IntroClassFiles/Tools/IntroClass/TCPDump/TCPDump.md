@@ -68,7 +68,8 @@ On one hand, getting the metadata from the packets is nice.  On the other hand, 
 
 <pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -A</pre>
 
-You can hit **ctrl + c** after a few seconds.
+>[!TIP]
+>You can hit **ctrl + c** after a few seconds.
 
 ![](attachments/tcpdump_-a.png)
 
@@ -88,7 +89,8 @@ Still not enough?  We can also see the raw **Hex** values with the -X flag:
 
 <pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -AX</pre>
 
-You can hit **ctrl + c** after a few seconds.
+>[!TIP]
+>You can hit **ctrl + c** after a few seconds.
 
 ![](attachments/tcpdump_hex.png)
 
@@ -133,6 +135,8 @@ Here is a great resource to try some more options in **TCPDump**:
 ***                                                                 
 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/WebLogReview/WebLogReview.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Memory/MemoryAnalysis(Volatility).md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
