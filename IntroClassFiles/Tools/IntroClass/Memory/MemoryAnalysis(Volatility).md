@@ -78,6 +78,8 @@ We can also see the command line invocation of this process. These lines tell us
 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/TCPDump/TCPDump.md)</i></b>
 
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/LinuxCLI/LinuxCLI.md)</i></b>
+
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
