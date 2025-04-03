@@ -79,8 +79,9 @@ Also, notice at the bottom of the General tab, these are predominantly **Audit F
 ![](attachments/dlr_auditfailure.png)
 
 ***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/Velociraptor/Velociraptor.md)</i></b>
 
-<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/Velociraptor/Velociraptor.md</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/deepbluecli/DeepBlueCLI.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
