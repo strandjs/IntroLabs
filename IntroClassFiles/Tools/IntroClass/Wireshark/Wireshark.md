@@ -8,17 +8,17 @@ Now that we have spent a little time working with **tcpdump**, let's take a look
 We want to make it clear that **Wireshark** is not "better" than **tcpdump**.  They each have very strong pros and cons.  
 
 Pros of **tcpdump**
->**tcpdump** is fast and very lightweight.  
->It is scriptable.
+>- **tcpdump** is fast and very lightweight.  
+>- It is scriptable.
 
 Cons of **tcpdump**
->It is contained within the terminal and to be honest, having some visualizations can be very, very helpful when dealing with **large** datasets.
+>- It is contained within the terminal and to be honest, having some visualizations can be very, very helpful when dealing with **large** datasets.
 
 Pros of **Wireshark** 
->Great visual representation of networking packets and more.  
+>- Great visual representation of networking packets and more.  
 
 Cons of **Wireshark**
->Gives up and freezes on large files often.  
+>- Gives up and freezes on large files often.  
 
 Basically, it is key to learn and know both.
 
@@ -84,15 +84,15 @@ This will give us a breakdown of who was talking to whom:
 
 ![](attachments/wireshark_inconversations.png)
 
-Please select IPv4:
+Please select IPv4 at the top of the window:
 
 ![](attachments/wireshark_ipv4.png)
 
-Then click on the top of the packets column twice:
+Then click on the top of the packets column <b>twice</b>:
 
 ![](attachments/wireshark_packetssort.png)
 
-This gives us a breakdown of who was chatting with what system the most.  Click it again and it will sort the opposite direction and show you who was chatting with what system the least:
+This gives us a breakdown of who was chatting with what system the <i><b>most</b></i>.  Click it again and it will sort the opposite direction and show you who was chatting with what system the <i><b>least</i></b>:
 
 ![](attachments/wireshark_packetsortlow.png)
 
@@ -129,7 +129,7 @@ Anything look strange there?  If you look closely, there is a lot of encoded **P
 
 Let's play with some basic filters in the filter bar.  We have already seen how Wireshark can filter on IP addresses.  But we can also filter on protocols.
 
-To start, just type l.
+To start, just type a lowercase L.
 
 Notice how Wireshark tries to help you with possible completion options as you type.
 
@@ -162,6 +162,8 @@ With **Wireshark**, we can search through all our packets looking for specific s
 ***                                                                 
 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/RITA/RITA.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/WindowsCLI/WindowsCLI.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
