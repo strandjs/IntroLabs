@@ -106,7 +106,7 @@ There will be some red text.  **Don’t panic.**
 
 Surf to the **GUI** and see if it worked!
 
-https://127.0.0.1:8889
+<pre>https://127.0.0.1:8889</pre>
 
 When you load the page, there will be an **SSL error** about the self-signed cert.  That is fine.
 
@@ -231,7 +231,9 @@ Please select our Hunt.  Now, we can run it.  Press the **Play** button above.
 
 When you get the pop-up, select **Run it!**
 
-This will take a few moments.
+>[!NOTE]
+>
+>This will take a few moments.
 
 When done, you will see **"Total scheduled is 1"** and **"Finished Clients is 1"**.
 
@@ -265,20 +267,20 @@ However, of you want to see a simple HTML report you can click on the turn back 
 
 We have not even begun to touch what we can do with this awesome tool.
 
-Want to try something cool?  Run a **Metrepreter agent** on you Windows system.  Then, go through **Velociraptor** to create a Hunt to find it.  There are many Windows artifacts you can pull.  You do not need to just run one at a time.  You can run multiple.
+Want to try something cool?  Run a **Meterpreter agent** on you Windows system.  Then, go through **Velociraptor** to create a Hunt to find it.  There are many Windows artifacts you can pull.  You do not need to just run one at a time.  You can run multiple.
 
-***
-***Continuing on to the next Lab?***
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/FirewallLog/FirewallLog.md)</i></b>
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/DomainLogReview/DomainLogReview.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
-
 ---
+
