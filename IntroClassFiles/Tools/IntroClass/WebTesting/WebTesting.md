@@ -34,7 +34,9 @@ We need to get our **Linux** IP address for later, so let's run the following co
 
 Please note your **Linux** IP address. As shown above, ours is **"10.10.1.117"**
 
-**YOUR IP WILL BE DIFFERENT!**
+>[!NOTE]
+>
+>**YOUR IP WILL BE DIFFERENT!**
 
 Launch the python script.
 
@@ -69,11 +71,12 @@ When it gets done crawling and scanning, select **"Alerts"**:
 
 ![](attachments/Alerts.png)
 
-This shows that **ZAP** does a pretty good job of finding the easy to identify vulnerabilites.
+This shows that **ZAP** does a pretty good job of finding the easy to identify vulnerabilities.
 
 ***                                                                 
-
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/deepbluecli/DeepBlueCLI.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/nessus/Nessus.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
@@ -87,6 +90,7 @@ Please be sure to destroy the lab environment!
 
 
 
+
 <!--
 
 REMOVED PER JOHNS REQUEST
@@ -94,7 +98,7 @@ REMOVED PER JOHNS REQUEST
 
 #OPTIONAL DVWA LAB!
 
-Let’s get started by opening a Terminal as Administrator
+Let's get started by opening a Terminal as Administrator
 
 ![](attachments/Clipboard_2020-06-12-10-36-44.png)
 
@@ -166,7 +170,7 @@ When done, select Alerts
 
 ![](attachments/Clipboard_2020-06-16-13-39-33.png)
 
-Did it find anything interesting?  Here is a problem with simply trusting automated tools. They tend to miss things.  Sure, it is great for finding the “easy” stuff.  But, they don't catch everything.  Not even close. 
+Did it find anything interesting?  Here is a problem with simply trusting automated tools. They tend to miss things.  Sure, it is great for finding the "easy" stuff.  But, they don't catch everything.  Not even close. 
 
 What vulnerabilities did your scan find? Share them with others on Discord.  Did they find anything different?
 
@@ -175,7 +179,7 @@ If so, why do you think that is?
 
 I wanted to take a few moments and show you some things the scanner may have missed.
 
-Let’s see if it missed anything..
+Let's see if it missed anything..
 
 Here is just one example.
 
