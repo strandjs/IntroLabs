@@ -58,7 +58,7 @@ We are going to jump right to the DNS tab. It gives us the clearest look at this
 
 ![](attachments/rita_dnsview.png)
 
-A couple of things should jump out at an investigator straight away. First, there were over 40K requests for cat.**nanobotninjas.com.** This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expected.
+A couple of things should jump out at an investigator straight away. First, there were over 40K requests for **cat.nanobotninjas.com.** This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expected.
 
 Now, let's play with AC Hunter!
 
@@ -114,8 +114,9 @@ Now, using **AC Hunter**, answer the following questions:
 4. Who is doing the lookups?
 
 ***                                                                 
-
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/nessus/Nessus.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Wireshark/Wireshark.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
