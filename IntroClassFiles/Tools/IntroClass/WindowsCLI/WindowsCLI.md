@@ -143,7 +143,11 @@ I like to run **"-f"** with netstat to see if there are any systems with fully q
 
 Now we see our last connection with the **port 4444**.
 
-Let's get the Process ID **(PID)** from the above screenshot so we can dig a little deeper.
+Let's get the Process ID **(PID)** from the output of our **"netstat -naob"** command that we ran earlier so we can dig a little deeper.
+
+>[!TIP]
+>
+>Look for port **4444** and **[powershell.exe]**
 
 ![](attachments/windowscli_pid.png)
 
