@@ -42,19 +42,21 @@ Next, set a password for the Administrator account that you can remember
 >
 >That is a very bad password. </br> Come up with something better. But, please remember it.
 
-Now that we disabled **Windows Defender**, we can head back to our **Kali** terminal.
+Now that we disabled **Windows Defender**, we need to get our windows IP address for later.
 
-Within the terminal, please run the following command:
+Within the Powershell window, please run the following command:
 
 <pre>ipconfig</pre>
 
 >[!IMPORTANT]
 >
->Please remember your Windows IP address <i><b>AND</b></i> your ADHD Linux System IP address. 
+>Please remember that your Windows IP address is not the same as your ADHD Linux System IP address. 
 >
->Write them on a piece of paper if you have to!
+>In this instance, we need our **Windows IP**, so write it down for later!
 
-We need to gain root access within our **Kali** terminal. To do that, run the following command:
+Now head back to your **Kali** terminal.
+
+We need to gain root access. To do that, run the following command:
 
 <pre>sudo su -</pre>
 
@@ -82,11 +84,12 @@ We also need to set the **RHOST IP** for the Windows system by using the followi
 
 <pre>set RHOST 10.10.1.209</pre>
 
-![](attachments/windowscli_sets.png)
-
 >[!NOTE]
 >
 >**Remember, your IP will be different!**
+
+
+![](attachments/windowscli_sets.png)
 
 Next, we need to set the **SMB** username and password. 
 
@@ -96,7 +99,8 @@ Next, we need to set the **SMB** username and password.
 
 >[!NOTE]
 >
->Remember, your password will be different!  I hope!!!
+>This will be the password you set earlier. </br>
+>Hopefully your password is different than mine!
 
 It should look like this:
 
