@@ -86,7 +86,9 @@ Select **vsagent** and hit confirm.
 
 ![](attachments/rita_datasetselection.png)
 
-Note: if this is not what you see, select the house icon in the bottom left of your screen, followed by the gear in the upper right.
+>[!NOTE]
+>
+>If this is not what you see, select the house icon in the bottom left of your screen, followed by the gear in the upper right.
 
 ![](attachments/rita_wrongplace.png)
 
