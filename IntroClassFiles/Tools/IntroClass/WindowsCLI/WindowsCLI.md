@@ -22,34 +22,41 @@ Before going any further, we need to ensure that **Windows Defender** is disable
 
 ![](attachments/windowscli_disabledefender.png)
 
-Please note, if you get red errors that say 
-
-<pre>A general error occurred that is not covered by a more specific error code.</pre> 
-
-
-That is OK!  It means **Defender** was disabled.  We run the above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
+>[!NOTE]
+>
+>If you get red errors that say 
+><pre>A general error occurred that is not covered by a more specific error code.</pre> 
+>
+>That is OK!  It means **Defender** was already disabled. </br>
+>We run the above command to ensure that it is off for this lab.  It has a sneaky way of turning back on again...
 
 Next, lets ensure the firewall is disabled.
 
-<pre> netsh advfirewall set allprofiles state off</pre>
+<pre>netsh advfirewall set allprofiles state off</pre>
 
 Next, set a password for the Administrator account that you can remember
 
 <pre>net user Administrator password1234</pre>
 
-Please note, that is a very bad password.  Come up with something better. But, please remember it.
+>[!NOTE]
+>
+>That is a very bad password. </br> Come up with something better. But, please remember it.
 
-Now that we disabled **Windows Defender**, we can head back to our **Kali** terminal.
+Now that we disabled **Windows Defender**, we need to get our windows IP address for later.
 
-Within the terminal, please run the following command:
+Within the Powershell window, please run the following command:
 
 <pre>ipconfig</pre>
 
-Please note your Windows IP address.
+>[!IMPORTANT]
+>
+>Please remember that your Windows IP address is not the same as your ADHD Linux System IP address. 
+>
+>In this instance, we need our **Windows IP**, so write it down for later!
 
-Please note your IP address for the **ADHD Linux system** on a piece of paper:
+Now head back to your **Kali** terminal.
 
-We need to gain root access within our **Kali** terminal. To do that, run the following command:
+We need to gain root access. To do that, run the following command:
 
 <pre>sudo su -</pre>
 
@@ -77,9 +84,12 @@ We also need to set the **RHOST IP** for the Windows system by using the followi
 
 <pre>set RHOST 10.10.1.209</pre>
 
-![](attachments/windowscli_sets.png)
+>[!NOTE]
+>
+>**Remember, your IP will be different!**
 
-**Remember, your IP will be different!**
+
+![](attachments/windowscli_sets.png)
 
 Next, we need to set the **SMB** username and password. 
 
@@ -87,7 +97,10 @@ Next, we need to set the **SMB** username and password.
 
 <pre>set SMBPASS T@GEq5%r2XJh</pre>
 
-Remember, your password will be different!  I hope!!!
+>[!NOTE]
+>
+>This will be the password you set earlier. </br>
+>Hopefully your password is different than mine!
 
 It should look like this:
 
@@ -130,7 +143,11 @@ I like to run **"-f"** with netstat to see if there are any systems with fully q
 
 Now we see our last connection with the **port 4444**.
 
-Let's get the Process ID **(PID)** from the above screenshot so we can dig a little deeper.
+Let's get the Process ID **(PID)** from the output of our **"netstat -naob"** command that we ran earlier so we can dig a little deeper.
+
+>[!TIP]
+>
+>Look for port **4444** and **[powershell.exe]**
 
 ![](attachments/windowscli_pid.png)
 
@@ -138,7 +155,9 @@ We will start with tasklist
 
 <pre>tasklist /m /fi "pid eq [PID]"</pre>
 
-**YOUR PID WILL BE DIFFERENT!**
+>[!NOTE]
+>
+>**YOUR PID WILL BE DIFFERENT!**
 
 ![](attachments/windowscli_tasklist.png)
 
@@ -168,20 +187,19 @@ Lets go through the steps we took to hunt for a malicious process
 
 4. Note that the search we just did may turn up some other things launched by the command line as well.
 
+***                                                                 
 
-***
-***Continuing on to the next Lab?***
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/Wireshark/Wireshark.md)</i></b>
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/TCPDump/TCPDump.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
-
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
 ---
 

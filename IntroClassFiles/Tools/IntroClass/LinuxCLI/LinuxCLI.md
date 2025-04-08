@@ -17,21 +17,21 @@ For this lab we will be running **three** different Kali terminals.
 
 ***
 
-Let’s get started by opening a terminal as **Administrator**, there are a few methods to do this.  
+Let's get started by opening a terminal as **Administrator**
 
-Method 1 is to right click on the desktop and select open. 
+You can do this by right clicking the icon on the desktop and selecting open...
 
 ![](attachments/OpeningKaliInstance.png)
 
-Method 2 is to simply click on the Kali logo in the taskbar.
+<b>Or...</b> you can simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-On your **Kali** terminal, please run the following command:
+Once your **Kali** terminal opens, please run the following command:
 
-<pre>sudo su - </pre>
+<pre>sudo su -</pre>
 
-This will get us to a root prompt. We want to do this because we want to have a backdoor running as root and a connection from a different user account on the system.
+This will get us to a root prompt. We want to do this in order to have a backdoor running as root and a connection from a different user account on the system.
 
 Next, we will need to create a **FIFO** backpipe:
 
@@ -47,27 +47,31 @@ On a more basic level, this will create a backdoor listening on port 2222 of our
 
 Now, let's open another **Kali** terminal.  This terminal will connect to the backdoor we just created.  
 
-Method 1 is to right click on the desktop and select open. 
+You can do this by right clicking the icon on the desktop and selecting open...
 
 ![](attachments/OpeningKaliInstance.png)
 
-Method 2 is to simply click on the Kali logo in the taskbar.
+<b>Or...</b> you can simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
-Now we will need to know the IP address of our **linux** system:
+Now we will need to know the IP address of our **Linux** system:
 
 <pre>ifconfig</pre>
 
 ![](attachments/ifconfigKaliInstance.png)
 
-**REMEMBER - YOUR IP WILL BE DIFFERENT**
+>[!NOTE]
+>
+>**YOUR IP WILL BE DIFFERENT**
 
 Now, let's connect:
 
 <pre>nc 10.10.104.64 2222</pre>
 
-**REMEMBER - YOUR IP WILL BE DIFFERENT**
+>[!NOTE]
+>
+>**YOUR IP WILL BE DIFFERENT**
 
 
 It can be confusing to tell whether or not you are connected to the backdoor. 
@@ -84,11 +88,11 @@ At this point, we have created a backdoor with one terminal, and we have connect
 
 Let's begin by using one of the two methods used earlier to open a new **Kali** Terminal.  
 
-Method 1 is to right click on the desktop and select open. 
+You can do this by right clicking the icon on the desktop and selecting open...
 
 ![](attachments/OpeningKaliInstance.png)
 
-Method 2 is to simply click on the Kali logo in the taskbar.
+<b>Or...</b> you can simply click on the Kali logo in the taskbar.
 
 ![](attachments/TaskbarKaliIcon.png)
 
@@ -96,7 +100,7 @@ On your Linux terminal, please run the following command:
 
 <pre>sudo su -</pre>
 
-This will get us to a root prompt.  When we say root prompt we mean a terminal with the highest level of permission possible.  We want to be in a root prompt because looking at network connections and process information system wide requires root priviledges (or the highest level of priviledges).  
+This will get us to a root prompt.  When we say root prompt we mean a terminal with the highest level of permission possible.  We want to be in a root prompt because looking at network connections and process information system wide requires root privileges (or the highest level of privileges).  
 
 Let's start by looking at the network connections with **lsof**.  When we use **lsof**, we are looking at open files.  When we use the **-i** flag we are looking at the open Internet connections.  When we use the **-P** flag we are telling **lsof** to not try and guess what the service is on the ports that are being used. Just give us the port number.
 
@@ -109,13 +113,14 @@ Now let's dig into the **netcat process ID**.  We can do this with the lowercase
 
 <pre>lsof -p [PID]</pre>
 
-# Remember!!!  Your PID will be different!!!
+>[!NOTE]
+>
+>**Your PID will be different!!!**
 
 ![](attachments/lsof-pKaliInstance.png)
 
-Let's look at the full processes.  We can do this with the **ps** command. We are also adding the **aux switches**.  
+Let's look at the full processes.  We can do this with the **ps** command. We are also adding the **a**, **u**, and **x switches**.  
 
-aux
 * a is for all processes
 * u is for sorted users
 * x is for all processes using a teletype terminal
@@ -130,6 +135,10 @@ Let's change directories into the **proc** directory for that **pid**.  Remember
 
 <pre>cd /proc/[pid]</pre>
 
+>[!NOTE]
+>
+>**Your PID will be different!!!**
+
 ![](attachments/procPIDKaliInstance.png)
 
 We can see a number of interesting directories here:
@@ -138,7 +147,7 @@ We can see a number of interesting directories here:
 
 ![](attachments/lsKaliInstance.png)
 
-We can run strings on the exe in this directory.  When programs are created there may be usage information, mentions of system libraries, and possible code comments.  We use this all the time to attempt to identify what exactly a program is doing.
+We can run the **strings** command on the executable in this directory.  When programs are created there may be usage information, mentions of system libraries, and possible code comments. We use this all the time to attempt to identify what exactly a program is doing.
 
 <pre>strings ./exe | less</pre>
 
@@ -150,19 +159,17 @@ To reveal more information in the output, press **"enter"**.
 
 ![](attachments/netcatusageKaliInstance.png)
 
-***
-***Continuing on to the next Lab?***
+***                                                                 
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/Memory/MemoryAnalysis(Volatility).md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
-
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
 ---
 

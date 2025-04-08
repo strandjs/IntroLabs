@@ -58,7 +58,7 @@ We are going to jump right to the DNS tab. It gives us the clearest look at this
 
 ![](attachments/rita_dnsview.png)
 
-A couple of things should jump out at an investigator straight away. First, there were over 40K requests for cat.**nanobotninjas.com.** This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expected.
+A couple of things should jump out at an investigator straight away. First, there were over 40K requests for **cat.nanobotninjas.com.** This is an absurd number for a specific domain. Sure, there are lots of requests for com and org and net and uk, but that is to be expected.
 
 Now, let's play with AC Hunter!
 
@@ -86,7 +86,9 @@ Select **vsagent** and hit confirm.
 
 ![](attachments/rita_datasetselection.png)
 
-Note: if this is not what you see, select the house icon in the bottom left of your screen, followed by the gear in the upper right.
+>[!NOTE]
+>
+>If this is not what you see, select the house icon in the bottom left of your screen, followed by the gear in the upper right.
 
 ![](attachments/rita_wrongplace.png)
 
@@ -113,10 +115,12 @@ Now, using **AC Hunter**, answer the following questions:
 3. For the dnscat2-ja3-strobe-agent dataset, what domain has the highest lookup count?
 4. Who is doing the lookups?
 
-***
-***Continuing on to the next Lab?***
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/nessus/Nessus.md)</i></b>
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Wireshark/Wireshark.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
 
@@ -124,6 +128,5 @@ Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
-
 ---
+

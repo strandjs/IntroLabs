@@ -16,7 +16,7 @@ We need to get into the root shell.
 
 <pre>sudo su -</pre>
 
-Navigate to the appropriate directory. 
+Then, navigate to the appropriate directory. 
 
 <pre>cd /opt/tcpdump</pre>
 
@@ -26,7 +26,7 @@ The filter in this case, is host.
 
 <pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52</pre>
 
-For this command, we are telling **tcpdump** to do two things, not resolve hostnames **(-n)** and read in the data from a file **(-r)**.
+For this command, we are telling **tcpdump** to do two things: do not resolve hostnames **(-n)** and read in the data from a file **(-r)**.
 
 ![](attachments/tcpdump_pcaphost.png)
 
@@ -68,7 +68,8 @@ On one hand, getting the metadata from the packets is nice.  On the other hand, 
 
 <pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -A</pre>
 
-You can hit **ctrl + c** after a few seconds.
+>[!TIP]
+>You can hit **ctrl + c** after a few seconds.
 
 ![](attachments/tcpdump_-a.png)
 
@@ -88,7 +89,8 @@ Still not enough?  We can also see the raw **Hex** values with the -X flag:
 
 <pre>tcpdump -n -r magnitude_1hr.pcap host 192.168.99.52 and port 80 -AX</pre>
 
-You can hit **ctrl + c** after a few seconds.
+>[!TIP]
+>You can hit **ctrl + c** after a few seconds.
 
 ![](attachments/tcpdump_hex.png)
 
@@ -130,21 +132,22 @@ Here is a great resource to try some more options in **TCPDump**:
 
 `https://danielmiessler.com/study/tcpdump/`
 
-***
-***Continuing on to the next Lab?***
+***                                                                 
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/WindowsCLI/WindowsCLI.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Memory/MemoryAnalysis(Volatility).md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
-
 ---
+
 
 
 

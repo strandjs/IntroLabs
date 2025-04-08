@@ -2,7 +2,7 @@
 
 # DeepBlueCLI
 
-DeepBlueCLI is a free tool by **Eric Conrad** that demonstrates some amazing detection capabilities.  It also has some checks that are effective for showing how **UEBA**style techniques can be in your environment. 
+DeepBlueCLI is a free tool by **Eric Conrad** that demonstrates some amazing detection capabilities.  It also has some checks that are effective for showing how **UEBA** style techniques can be in your environment. 
 
 Let's get started by opening **Windows Powershell**.
 
@@ -58,18 +58,18 @@ For fun, let’s look at how **DeepBlueCLI** detects various encoding tactics th
 
 ![](attachments/deepblue_powershell-invokeobfuscation.png)
 
-***
-***Continuing on to the next Lab?***
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/DomainLogReview/DomainLogReview.md)</i></b>
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/WebTesting/WebTesting.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
-
 ---
+

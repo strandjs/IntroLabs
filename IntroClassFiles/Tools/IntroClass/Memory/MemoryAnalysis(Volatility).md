@@ -6,9 +6,11 @@ In this lab we will be looking at a memory dump of a compromised system.
 
 To do this, we need to decompress it and use **Volatility** to examine the network connections and process information for the malware.  
 
-Please keep in mind that we are using a free tool for this lab.  While **Volatility** is great, it has some limitations.  Specifically, in the area of network PIDs.  While we use **Volatility**, the same concepts can also be applied to any commercial tools you may be using in your environment.
+>[!NOTE]
+>Please keep in mind that we are using a free tool for this lab.  While **Volatility** is great, it has some limitations.  Specifically, in the area of network PIDs.  While we use **Volatility**, the same concepts can also be applied to any commercial tools you may be using in your environment.
 
-Please note this memory dump was created from **VMWare** snapshot feature. There are multiple tools like **winpmem** and **FTK Imager** that can also create memory dumps.
+>[!TIP]
+>This memory dump was created from **VMWare** snapshot feature. There are multiple tools like **winpmem** and **FTK Imager** that can also create memory dumps.
 
 To start, we will open a **Kali** terminal. 
 
@@ -20,13 +22,13 @@ Alternatively, you can click on the **Kali** logo in the taskbar.
 
 Once the terminal is up, gain root access by using the following command.
 
-<pre>sudo su - </pre>
+<pre>sudo su -</pre>
 
 Next, we need to navigate to the appropriate directory. 
 
 <pre>cd /opt/volatility3-1.0.0</pre>
 
-Lets begin by finding pages in the memory that have read, write, and execute priveleges.
+Lets begin by finding pages in the memory that have read, write, and execute privileges.
 
 <pre>python3 vol.py -f ./memdump.vmem windows.malfind.Malfind</pre>
 
@@ -42,7 +44,9 @@ Let's continue by looking at the network connections.
 
 ![](attachments/MemAnalysis_Netscan.png)
 
-The above screenshot is... concerning. Because there is a SMB (port 445) connection to another computer, we need to investigate farther.  We know it is compromised, (because it is a lab), but any time a **"suspect"** computer has another open connection to an internal system it is, without question, a cause for concern.
+The above screenshot is... concerning.
+
+ Because there is a SMB (port 445) connection to another computer, we need to investigate further. We know it is compromised, (because it is a lab), but any time a **"suspect"** computer has another open connection to an internal system it is, without question, a cause for concern.
 
 Now, let's look at the processes on this system.
 
@@ -72,18 +76,19 @@ You can see the **dll's** associated with the **TrustMe.exe** process.
 
 We can also see the command line invocation of this process. These lines tell us any flags used to start the process as well as where on the system it was executed from.  
 
-***
-***Continuing on to the next Lab?***
+***                                                                 
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/TCPDump/TCPDump.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/LinuxCLI/LinuxCLI.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
-
 ---
+
