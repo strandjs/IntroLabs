@@ -95,7 +95,7 @@ Next, we need to set the **SMB** username and password.
 
 <pre>set SMBUSER Administrator</pre>
 
-<pre>set SMBPASS T@GEq5%r2XJh</pre>
+<pre>set SMBPASS password1234</pre>
 
 >[!NOTE]
 >
