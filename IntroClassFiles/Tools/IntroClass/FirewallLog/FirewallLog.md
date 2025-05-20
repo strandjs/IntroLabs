@@ -3,7 +3,7 @@
 
 # Firewall Log Review
 
-In this lab we will be looking at a log from an **ASA firewall** from Cisco.
+In this lab we will be looking at a log with r-base-core from an **ASA firewall** from Cisco. 
 
 **And wow....  They are bad to work with.**
 
@@ -20,12 +20,6 @@ Alternatively, you can click on the **Kali Logo** in the taskbar.
 Let's start by gaining root access by running the following:
 
 <pre>sudo su -</pre>
-
-Next, we can run the following:
-
-<pre>sudo apt install r-base-core</pre>
-
-If prompted with "Do you want to continue? Y/n", go ahead and press **Y** and hit **enter**.
 
 Next, let's get your **Linux** system to do some math!
 
