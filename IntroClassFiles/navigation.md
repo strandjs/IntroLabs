@@ -7,7 +7,7 @@
   - [Web Log Review](Tools/IntroClass/WebLogReview/WebLogReview.md)
   - [WindowsCLI](Tools/IntroClass/WindowsCLI/WindowsCLI.md)
   - [Wireshark](Tools/IntroClass/Wireshark/Wireshark.md)
-  - [RITA](Tools/IntroClass/RITA/RITA.md)
+  - [RITA And AC Hunter](Tools/IntroClass/RITA/RITA.md)
   - [Nessus](Tools/IntroClass/nessus/Nessus.md)
   - [Web Testing](Tools/IntroClass/WebTesting/WebTesting.md)
   - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
