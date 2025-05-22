@@ -33,41 +33,41 @@ Usage
 Example 1: Basic Usage
 ----------------------
 
-Start Spidertrap by opening a terminal, changing into the Spidertrap
-directory, and typing the following:
-
 Let's get started by opening a Kali terminal. 
 You can do this by right clicking the icon on the desktop by selecting open...
 
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/OpeningKaliInstance.png)
 
+Or... you can simply click on the Kali logo in the taskbar.
+
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/TaskbarKaliIcon.png)
 
 First, let's get your Kali Linux systems IP address by running the following command:
 
 <pre>ifconfig</pre>
 
-Next, let's cd intto the proper directory:
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/ifconfig.png)
 
-`cd /opt/spidertrap`
+Next, let's cd into the proper directory:
 
-Now, lets start it:
+<pre>cd /opt/spidertrap</pre>
 
-`/opt/spidertrap$` **`python3 spidertrap.py`**
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/cdoptspidertrap.png)
 
-        Starting server on port 8000...
+Now, lets start Spidertrap by running the following command:
 
-        Server started. Use <Ctrl-C> to stop.
+<pre>python3 spidertrap.py</pre>
 
-![image](https://github.com/user-attachments/assets/e978648f-f43d-4cff-acdb-f524a5e1a571)
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/startspidertrap.png)
 
-        
-    
+Then visit the following site in a web browser:
+<pre>http://[YOUR_LINUX_IP]:8000</pre> 
 
-Then visit http://<YOUR_LINUX_IP>:8000 in a web
-browser. You should see a page containing randomly generated links. If
-you click on a link it will take you to a page with more randomly
-generated links.
+You should see a page containing randomly generated links. If you click on a link it will take you to a page with more randomly generated links.
 
-![](Spidertrap_files/image001.png) ![](Spidertrap_files/image002.png)
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/links.png)
+
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/morelinks.png)
 
 Example 2: Providing a List of Links
 ------------------------------------
