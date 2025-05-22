@@ -37,7 +37,7 @@
   
 [Cyber Deception/Active Defense]()
 
-  - [Spidertrap](Tools/IntroClass/Spidertrap.md)
+  - [Spidertrap](Tools/IntroClass/Spidertrap/Spidertrap.md)
   - [Cowrie](Tools/IntroClass/Cowrie.md)
   - [Canarytokens](Tools/IntroClass/canarytokens/Canarytokens.md)
   - [RITA](Tools/IntroClass/RITA/RITA.md)
