@@ -73,20 +73,17 @@ Example 2: Providing a List of Links
 ------------------------------------
 
 
-Start Spidertrap. This time give it a file to use to generate its links.
+For this example, we are going to start Spidertrap again, but this time, we are going to give it a file to generate its links.
 
-You may need to press ctrl+c to kill your existing spidertrap session.
+>[!TIP]
+>
+>You may need to press ctrl+c to kill your existing Spidertrap session.
 
-Now, restart it with the following options:
+Now, let's start Spidertrap again but with the following options:
 
-`/opt/spidertrap$` **`python3 spidertrap.py directory-list-2.3-big.txt`**
+<pre>python3 spidertrap.py directory-list-2.3-big.txt</pre>
 
-        Starting server on port 8000...
-
-        Server started. Use <Ctrl-C> to stop.
-
-![image](https://github.com/user-attachments/assets/3cdc8570-9639-4dbd-9348-ed67f4c836a1)
-
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/startwithoptions.png)
 
 Then visit http://<YOUR_LINUX_IP>:8000 in a web
 browser. You should see a page containing links taken from the file. If
