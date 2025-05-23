@@ -75,22 +75,23 @@ Example 2: Providing a List of Links
 
 For this example, we are going to start Spidertrap again, but this time, we are going to give it a file to generate its links.
 
+Let's start Spidertrap again but with the following options:
+
+<pre>python3 spidertrap.py directory-list-2.3-big.txt</pre>
+
 >[!TIP]
 >
 >You may need to press ctrl+c to kill your existing Spidertrap session.
 
-Now, let's start Spidertrap again but with the following options:
-
-<pre>python3 spidertrap.py directory-list-2.3-big.txt</pre>
-
 ![](/IntroClassFiles/Tools/IntroClass/Spidertrap/startwithoptions.png)
 
-Then visit http://<YOUR_LINUX_IP>:8000 in a web
-browser. You should see a page containing links taken from the file. If
-you click on a link it will take you to a page with more links from the
-file.
+Then visit the following site in a web browser:
 
-![](Spidertrap_files/image003.png) ![](Spidertrap_files/image004.png)
+<pre>http://[YOUR_LINUX_IP]:8000</pre>
+ 
+You should see a page containing links taken from the file. If you click on a link it will take you to a page with more links from the file.
+
+
 
 Example 3: Trapping a Wget Spider
 ---------------------------------
