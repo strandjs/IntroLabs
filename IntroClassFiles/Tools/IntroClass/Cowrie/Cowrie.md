@@ -1,7 +1,6 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
-Cowrie
-============
+# Cowrie
 
 Website
 -------
@@ -11,63 +10,86 @@ Website
 Description
 -----------
 
-Cowrie is a medium interaction SSH honeypot designed to log brute force attacks and,
-most importantly, the entire shell interaction performed by the attacker.
+Cowrie is a medium interaction SSH honeypot designed to log brute force attacks and, most importantly, the entire shell interaction performed by the attacker.
 
-Cowrie is developed by Michel Oosterhof and is based on Kippo by Upi Tamminen (desaster).
+>[!TIP]
+>
+>Cowrie is developed by <b>Michel Oosterhof</b> and is based on <i>Kippo</i> by <b>Upi Tamminen</b> (desaster).
 
-The first thing we need to do is install/start cowrie.
+The first thing we need to do is instal and start Cowrie.
 
-Open a Kali prompt:
+To begin, let's open a Kali terminal. 
 
-![image](https://github.com/user-attachments/assets/1174968b-9c56-485e-8563-054aca72cf60)
+You can do this by right clicking the icon on the desktop by selecting open...
 
-Then become root:
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/OpeningKaliInstance.png)
 
-`sudo su -`
+Or by clicking the icon in the taskbar...
 
-![image](https://github.com/user-attachments/assets/e0d1da47-9291-40e5-aded-7d0e1deabb75)
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/TaskbarKaliIcon.png)
 
-Getting cowrie running is really easy if you have docker installed on your system.
+Then become root by running the following command:
+
+<pre>sudo su -</pre>
+
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/gettingroot.png)
+
+Getting Cowrie running is really easy if you have docker installed on your system.
+
+>[!NOTE]
+>
+>If you don't have docker installed run the following command to get it set up:
+><pre>snap install docker</pre>
+>
+>Once you run this, you can continue!
 
 All you need to do is run the following:
 
-`docker run -p 2222:2222 cowrie/cowrie`
+<pre>docker run -p 2222:2222 cowrie/cowrie</pre>
 
 This will take a few moments.
 
-When it is running you should be able to see the logs like this:
+When running for the first time, you will see an output like this:
 
-![image](https://github.com/user-attachments/assets/ba63568c-d813-4a84-be63-8462f7683aea)
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/runningprocessdocker.png)
 
-Now, open another Kali terminal while keeping the first terminal open with the logs open as well:
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/dockercowriecommand.png)
 
-![image](https://github.com/user-attachments/assets/1174968b-9c56-485e-8563-054aca72cf60)
+Once you see **"Ready to accept SSH connections"** in the command output, you are ready to continue.
 
-Let’s delete any other previous ssh known_hosts connections to the honeypot.
+Open another Kali terminal while keeping the first terminal open with the logs open as well. 
+
+You can do this by clicking the icon in the taskbar:
+
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/TaskbarKaliIcon.png)
+
+We need to delete any other previous `ssh known_hosts` connections to the honeypot.
 
 This helps reduce any errors from starting and restarting the honeypot.
 
-You should run this command in the /home/kali directory.
+>[!TIP]
+>
+>You should run the following command in the `/home/kali` directory.
 
-`rm .ssh/known_hosts`
+<pre>rm .ssh/known_hosts</pre>
 
-￼![image](https://github.com/user-attachments/assets/a103057f-0f1c-47b5-8e7d-ec8eabadbe53)
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/rmsshhosts.png)
 
-
-*The above command is critical because the key fingerprint for Cowrie changes every time you restart it!*
+>[!IMPORTANT]
+>
+>The above command is critical because the key fingerprint for Cowrie changes every time you restart it!
 
 Then, try to connect to the honeypot with the following command:
 
-`ssh -p 2222 root@localhost`
+<pre>ssh -p 2222 root@localhost</pre>
 
 When you get prompted to accept the key fingerprint, type `yes`:
 
-![image](https://github.com/user-attachments/assets/f1a218b7-55ba-475a-9ff2-bf8ea99f372d)
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/rootlocalhost.png)
 
 For the password, try `12345`:
 
-![image](https://github.com/user-attachments/assets/2044c147-0a09-46bb-b159-9110cd4fa3fa)
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/enterpassword.png)
 
 Now, run the following commands:
 
@@ -79,46 +101,55 @@ Now, run the following commands:
 
 `AAAAAAAAAAAAAAAAAAAAAAAAAA`
 
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/terminalcommands.png)
+
 Notice, the commands and authentication are being tracked in the other terminal with the log info:
 
-![image](https://github.com/user-attachments/assets/33e3cd1c-28a1-4a4c-874e-b9b600e41be8)
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/reflection.png)
 
-Take a few moments and note the results are always the same.  As in, they are the same for all Cowrie instances.
+Take a few moments and notice that the results are always the same... for all Cowrie instances.
 
 Let's change a few things about our Cowrie honeypot to make it unique.
 
 Did you notice the system name in the prompt?
 
-![image](https://github.com/user-attachments/assets/b3e7d546-1328-42e1-a7a7-db0f094e64aa)
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/systemname.png)
 
-It is the same for all default instalations. Let's change that.
+It is the same for all default installations. Let's change that.
 
-Let’s kill our Cowrie session.  
+First, we need to kill our Cowrie session.  
 
-To do this, click into the Terminal with our log output and press ctrl+c at the same time.
+To do this, click into the first terminal with our log output and press `ctrl + c` at the same time.
 
-![image](https://github.com/user-attachments/assets/deea16c1-cc94-459e-a2ac-d94d7663f88f)
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/servershutdown.png)
+>[!TIP] 
+>
+>If done correctly, you should see **"Server Shut Down"**
 
 As we said above, one of the ways that people have been detecting honeypots like Cowrie for years is looking at the key fingerprint and the hostname. 
 
-Because the key fingerprint changes every time you restart Cowrie, we need to next focus on changing the hostname.  To do this we need to change the following file as root on our Kali system:
+Because the key fingerprint changes every time you restart Cowrie, we need to next focus on changing the hostname. 
 
-/var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/etc/cowrie.cfg.dist
+To do this we need to change the following file as root on our Kali system:
 
-Ok, that path is just horrid.  The long number is a unique idea for our Cowrie system.  Apparently, Docker Reaaaaalllly did not collisions.  The overlay2 denotes this a a writeable layer for our container.  
+<pre>/var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/etc/cowrie.cfg.dist</pre>
 
-Basically, this means we can edit our Docker container system in this directory.
+Ok, that path is just horrid.  The long number is a unique ID for our Cowrie system. Apparently, Docker <i>reaaaaalllly</i> does not like collisions.  
 
-Let's edit this file.
+However, `overlay2` denotes this a a writeable layer for our container. Basically, this means we can edit our Docker container system within this directory.
+
+So let's edit this file using `vim`.
 
 As root, run the following:
 
-`vim /var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/etc/cowrie.cfg.dist`
+<pre>vim /var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/etc/cowrie.cfg.dist</pre>
 
 
 ![image](https://github.com/user-attachments/assets/a87a5e25-a731-4567-ae46-38a340aad32a)
 
-Copy and paste are your friends.
+>[!TIP]
+>
+>Copy and paste are your friends!
 
 Once in the file, use the down arrow and go to roughly line 30 and change the hostname
 
