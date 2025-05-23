@@ -30,8 +30,7 @@ Usage
         If no file is provided, random links will be generated.
 
 
-Example 1: Basic Usage
-----------------------
+## Example 1: Basic Usage
 
 Let's get started by opening a Kali terminal. 
 You can do this by right clicking the icon on the desktop by selecting open...
@@ -69,9 +68,7 @@ You should see a page containing randomly generated links. If you click on a lin
 
 ![](/IntroClassFiles/Tools/IntroClass/Spidertrap/morelinks.png)
 
-Example 2: Providing a List of Links
-------------------------------------
-
+## Example 2: Providing a List of Links
 
 For this example, we are going to start Spidertrap again, but this time, we are going to give it a file to generate its links.
 
@@ -81,7 +78,7 @@ Let's start Spidertrap again but with the following options:
 
 >[!TIP]
 >
->You may need to press ctrl+c to kill your existing Spidertrap session.
+>You may need to press `ctrl + c` to kill your existing Spidertrap session.
 
 ![](/IntroClassFiles/Tools/IntroClass/Spidertrap/startwithoptions.png)
 
@@ -91,32 +88,43 @@ Then visit the following site in a web browser:
  
 You should see a page containing links taken from the file. If you click on a link it will take you to a page with more links from the file.
 
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/links2.png)
 
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/morelinks2.png)
 
-Example 3: Trapping a Wget Spider
----------------------------------
+## Example 3: Trapping a Wget Spider
 
-Follow the instructions in [Example 1: Basic Usage] or
-[Example 2: Providing a List of Links] to start Spidertrap. Then
-open a new Kali Linux terminal and tell wget to mirror the website. Wget will run
-until either it or Spidertrap is killed. Type Ctrl-c to kill wget.
+For this example, follow the instructions in [Example 1: Basic Usage](#example-1-basic-usage) or
+[Example 2: Providing a List of Links](#example-2-providing-a-list-of-links) to start Spidertrap. 
 
-`$` **`sudo wget -m http://127.0.0.1:8000`**
+Once Spidertrap starts, open a new Kali Linux terminal. Do this by clicking the icon in the taskbar:
 
-        --2013-01-14 12:54:15-- http://127.0.0.1:8000/
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/TaskbarKaliIcon.png)
 
-        Connecting to 127.0.0.1:8000... connected.
+We are going to use `wget` to mirror the website. 
 
-        HTTP request sent, awaiting response... 200 OK
+>[!IMPORTANT]
+>
+>`wget` will run until either it or Spidertrap is killed.
+>To stop the command output, type `ctrl + c`
 
-        <<<snip>>>
+Let's run the following command:
 
-        HTTP request sent, awaiting response... ^C
+<pre>sudo wget -m http://127.0.0.1:8000</pre>
 
+![](/IntroClassFiles/Tools/IntroClass/Spidertrap/wgetcommand.png)
 
-![image](https://github.com/user-attachments/assets/8369ef4c-1298-4321-a4b2-40a94cd2de16)
+When finished, type `ctrl + c` to kill wget.
 
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/Cowrie/Cowrie.md)</i></b>
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
+***Finished with the Labs?***
 
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
