@@ -134,6 +134,10 @@ To do this we need to change the following file as root on our Kali system:
 
 <pre>/var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/etc/cowrie.cfg.dist</pre>
 
+>[!NOTE]
+>
+>This is not a command, just the directory of the file we will be changing.
+
 Ok, that path is just horrid.  The long number is a unique ID for our Cowrie system. Apparently, Docker <i>reaaaaalllly</i> does not like collisions.  
 
 However, `overlay2` denotes this a a writeable layer for our container. Basically, this means we can edit our Docker container system within this directory.
@@ -144,8 +148,7 @@ As root, run the following:
 
 <pre>vim /var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/etc/cowrie.cfg.dist</pre>
 
-
-![image](https://github.com/user-attachments/assets/a87a5e25-a731-4567-ae46-38a340aad32a)
+![](/IntroClassFiles/Tools/IntroClass/Cowrie/attachments/vimfileedit.png)
 
 >[!TIP]
 >
@@ -172,15 +175,15 @@ When done, hit the following keys in the following order
 
 Now, let's restart and connect:
 
-`docker run -p 2222:2222 cowrie/cowrie`
+<pre>docker run -p 2222:2222 cowrie/cowrie</pre>
 
 ![image](https://github.com/user-attachments/assets/9390fd7a-7468-44ef-aa70-d52160c6d005)
 
 Then, in another Kali terminal connect with a password of 12345:
 
-`rm .ssh/known_hosts`
+<pre>rm .ssh/known_hosts</pre>
 
-`ssh -p 2222 root@localhost`
+<pre>ssh -p 2222 root@localhost</pre>
 
 Then type `yes` on the key fingerprint verification.
 
@@ -192,7 +195,7 @@ Your hostname should now be changed.
 Now, let’s edit the Message of the Day (MOTD).  Because the default one is not fun at all.
 
 
-`vim /var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/honeyfs/etc/motd`
+<pre>vim /var/lib/docker/overlay2/49cb1d1569dac74ee9793c9efb526ae1ba35b8e4a31b14a1a1c8c30bc70dc953/diff/cowrie/cowrie-git/honeyfs/etc/motd</pre>
 
 ![image](https://github.com/user-attachments/assets/e60c8de7-1026-4507-9e03-fb0718799a4f)
 
@@ -212,15 +215,15 @@ When done, hit the following keys in the following order
 
 Now, let's restart and connect:
 
-`docker run -p 2222:2222 cowrie/cowrie`
+<pre>docker run -p 2222:2222 cowrie/cowrie</pre>
 
 ![image](https://github.com/user-attachments/assets/9390fd7a-7468-44ef-aa70-d52160c6d005)
 
 Then, in another Kali terminal connect with a password of 12345:
 
-`rm .ssh/known_hosts`
+<pre>rm .ssh/known_hosts</pre>
 
-`ssh -p 2222 root@localhost`
+<pre>ssh -p 2222 root@localhost</pre>
 
 Then type `yes` on the key fingerprint verification.
 
@@ -239,7 +242,20 @@ For a great resource on changing the way Cowrie looks and feels, check out the f
 
 https://cryptax.medium.com/customizing-your-cowrie-honeypot-8542c888ca49
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/canarytokens/Canarytokens.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Spidertrap/Spidertrap.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
+
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
 
 <!--
 
