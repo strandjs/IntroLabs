@@ -12,25 +12,25 @@ Website
 Description
 -----------
 
-Portspoof is meant to be a lightweight, fast, portable and secure addition to any firewall system or security system. The general goal of the program is to make the reconnaissance phase slow and bothersome for your attackers as much it is possible. This is quite a change to the standard aggressive Nmap scan, which will give a full view of your system's running services.
+Portspoof is meant to be a lightweight, fast, portable and secure addition to any firewall system or security system. The general goal of the program is to make the reconnaissance phase as slow and bothersome as possible for your attackers. This is quite a change to the standard aggressive Nmap scan, which will give a full view of your system's running services.
 
 By using all of the techniques mentioned below:
 
 * your attackers will have a tough time while trying to identify all of your listening services.
 * the only way to determine if a service is emulated is through a protocol probe (imagine probing protocols for 65k open ports!).
-* it takes more than 8 hours and 200MB of sent data in order to get all of the service banners for your system ( nmap -sV -p - equivalent).
+* it takes more than 8 hours and 200MB of sent data in order to get all of the service banners for your system (nmap -sV -p - equivalent).
 
 ---
 
 The Portspoof program's primary goal is to enhance OS security through a set of new techniques:
 
-* All TCP ports are always open
+#### All TCP ports are always open
 
 Instead of informing an attacker that a particular port is CLOSED or FILTERED a system with Portspoof will return SYN+ACK for every port connection attempt.
 
 As a result it is impractical to use stealth (SYN, ACK, etc.) port scanning against your system, since all ports are always reported as OPEN. With this approach it is really difficult to determine if a valid software is listening on a particular port (check out the screenshots).
 
-* Every open TCP port emulates a service
+#### Every open TCP port emulates a service
 
 Portspoof has a huge dynamic service signature database, which will be used to generate responses to your offenders scanning software service probes.
 
