@@ -160,5 +160,17 @@ To reset ADHD, you may reboot (recommended) or:
 1. Kill Portspoof by pressing Ctrl-C.
 2. Flush all iptables rules by running the command (as root): `sudo iptables -t nat -F`
 
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/HoneyBadger_files/HoneyBadger.md)</i></b>
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/bluespawn/Bluespawn.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
+
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
