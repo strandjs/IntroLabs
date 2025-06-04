@@ -42,7 +42,7 @@
   - [Canarytokens](Tools/IntroClass/canarytokens/Canarytokens.md)
   - [RITA](Tools/IntroClass/RITA/RITA.md)
   - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
-  - [Portspoof](Tools/IntroClass/Portspoof.md)
+  - [Portspoof](Tools/IntroClass/Portspoof/Portspoof.md)
   - [HoneyBadger](Tools/IntroClass/HoneyBadger.md)
   - [HoneyShare](Tools/IntroClass/honeyshare/HoneyShare.md)
   - [HoneyUser](Tools/IntroClass/honeyuser/honeyuser.md)
