@@ -24,15 +24,15 @@ By using all of the techniques mentioned below:
 
 The Portspoof program's primary goal is to enhance OS security through a set of new techniques:
 
-#### All TCP ports are always open
+#### Technique 1: All TCP ports are always open
 
-Instead of informing an attacker that a particular port is CLOSED or FILTERED a system with Portspoof will return SYN+ACK for every port connection attempt.
+Instead of informing an attacker that a particular port is CLOSED or FILTERED, a system with Portspoof will return SYN+ACK for every port connection attempt.
 
 As a result it is impractical to use stealth (SYN, ACK, etc.) port scanning against your system, since all ports are always reported as OPEN. With this approach it is really difficult to determine if a valid software is listening on a particular port (check out the screenshots).
 
-#### Every open TCP port emulates a service
+#### Technique 2: Every open TCP port emulates a service
 
-Portspoof has a huge dynamic service signature database, which will be used to generate responses to your offenders scanning software service probes.
+Portspoof has a huge dynamic service signature database, which will be used to generate responses to your attackers scanning software service probes.
 
 Scanning software usually tries to determine a service that is running on an open port. This step is mandatory if one would want to identify port numbers on which you are running your services on a system behind the Portspoof. For this reason Portspoof will respond to every service probe with a valid service signature, which is dynamically generated based on a service signature regular expression database.
 
