@@ -52,7 +52,7 @@ Config File Location
 Usage
 -----
 
-`~#` **`portspoof -h`**
+<pre>portspoof -h</pre>
 
         Usage: portspoof [OPTION]...
         Portspoof - service emulator / frontend exploitation framework.
@@ -76,25 +76,27 @@ Usage
 Example 1: Starting Portspoof
 -----------------------------
 
-Portspoof, when run, listens on a single port. By default this is port 4444. In order to fool a port scan, we have to allow Portspoof to listen on *every* port. To accomplish this we will use an `iptables` command that redirects every packet sent to any port to port 4444 where the Portspoof port will be listening. This allows Portspoof to respond on any port.
+When ran, Portspoof listens on a single port. By default this is port 4444. In order to fool a port scan, we have to allow Portspoof to listen on *every* port. To accomplish this we will use an `iptables` command that redirects every packet sent to any port to port 4444 where the Portspoof port will be listening. This allows Portspoof to respond on any port.
 
 First, let's become root:
 
-`sudo su -`
+<pre>sudo su -</pre>
 
-Now, let's install portspoof
+Now, let's install Portspoof:
 
-`apt-get update`
+<pre>apt-get update</pre>
 
-`apt-get install portspoof`
+<pre>apt-get install portspoof</pre>
 
-*Note, this may take a moment
+>[!NOTE]
+>
+>This may take a moment
 
 ![image](https://github.com/user-attachments/assets/db0eeae1-d282-448d-b2e6-7b819a091971)
 
 Now, let's add the firewall rules.
 
-`iptables -t nat -A PREROUTING -p tcp -m tcp --dport 1:20 -j REDIRECT --to-ports 4444`
+<pre>iptables -t nat -A PREROUTING -p tcp -m tcp --dport 1:20 -j REDIRECT --to-ports 4444</pre>
 
 Then run Portspoof with no options, which defaults it to "open port" mode. This mode will just return OPEN state for every connection attempt.
 
