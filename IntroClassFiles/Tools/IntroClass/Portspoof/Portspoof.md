@@ -100,14 +100,16 @@ Now, let's add the firewall rules.
 
 Then run Portspoof with no options, which defaults it to "open port" mode. This mode will just return OPEN state for every connection attempt.
 
-`portspoof`
+<pre>portspoof</pre>
 
 ![image](https://github.com/user-attachments/assets/1e2425d2-796a-4d20-8c05-393a551d1990)
 
 
 If you were to scan using Nmap from another Windows command prompt. Now you would see something like this:
 
-Note: You *must* run Nmap from a different machine. Scanning from the same machine will not reach Portspoof.
+>[!IMPORTANT]
+>
+>You *must* run Nmap from a different machine. Scanning from the same machine will not reach Portspoof.
 
 Open a Windows command prompt:
 
@@ -115,7 +117,7 @@ Open a Windows command prompt:
 
 Then, run nmap:
 
-`nmap -p 1-10 <YOUR LINUX IP>`
+<pre>nmap -p 1-10 [Your Linux IP]</pre>
 
 
 ![image](https://github.com/user-attachments/assets/d51c7589-8fbf-4b0a-8c69-6c21629e588d)
@@ -125,7 +127,7 @@ All ports are reported as open! When run this way, Nmap reports the service that
 
 To get more accurate results, an attacker might run an Nmap service scan, which would actively try to detect the services running. But performing an Nmap service detection scan shows that something is amiss because all ports are reported as running the same type of service.
 
-`nmap -p 1-10 -sV <YOUR LINUX IP>`
+<pre>nmap -p 1-10 -sV [Your Linux IP]</pre>
 
 ![image](https://github.com/user-attachments/assets/148e82e4-f8fb-4df5-8fef-6b758d1e05e1)
 
@@ -133,34 +135,40 @@ To get more accurate results, an attacker might run an Nmap service scan, which 
 Example 2: Spoofing Service Signatures
 --------------------------------------
 
-Showing all ports as open is all well and good. But the same thing could be accomplished with a simple netcat listener (`nc -l -k 4444`). To make things more interesting, how about we have Portspoof fool Nmap into actually detecting real services running?
+Showing all ports as open is all well and good, but the same thing could be accomplished with a simple netcat listener:
 
-Let's kill the running version of portspoof with ctrl+c then restart it with signatures:
+<pre>nc -l -k 4444</pre>
 
-`portspoof -s /etc/portspoof/portspoof_signatures`
+To make things more interesting, how about we have Portspoof fool Nmap into actually detecting real services running?
+
+Let's kill the running version of Portspoof with `Ctrl + C` then restart it with signatures:
+
+<pre>portspoof -s /etc/portspoof/portspoof_signatures</pre>
 
 ![image](https://github.com/user-attachments/assets/e1a2857a-7628-46d0-8808-b0af2add49f1)
-
-
 
 This mode will generate and feed port scanners like Nmap bogus service signatures.
 
 Now running an Nmap service detection scan against the top 100 most common ports (a common hacker activity) will turn up some very interesting results.
 
-`nmap -p 1-10 -sV 172.16.215.138`
+<pre>nmap -p 1-10 -sV 172.16.215.138</pre>
 
 ![image](https://github.com/user-attachments/assets/c4281e6f-4937-4477-b6a9-d2344d2a2699)
 
+Notice how all of the ports are still reported as open, but now Nmap reports a unique service on each port. 
 
-Notice how all of the ports are still reported as open, but now Nmap reports a unique service on each port. This will either 1) lead an attacker down a rabbit hole investigating each port while wasting their time, or 2) the attacker may discard the results as false positives and ignore this machine altogether, leaving any legitimate service running untouched.
+This will either: 
+1) Lead an attacker down a rabbit hole investigating each port while wasting their time...
+2) or the attacker may discard the results as false positives and ignore this machine altogether, leaving any legitimate service running untouched.
 
 Example 3: Cleaning Up
 ----------------------
 
-To reset ADHD, you may reboot (recommended) or:
+To reset our VM, you can reboot (recommended) or:
 
-1. Kill Portspoof by pressing Ctrl-C.
-2. Flush all iptables rules by running the command (as root): `sudo iptables -t nat -F`
+1. Kill Portspoof by pressing `Ctrl + C`.
+2. Flush all iptables rules by running the command (as root): 
+<pre>sudo iptables -t nat -F</pre>
 
 ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/HoneyBadger_files/HoneyBadger.md)</i></b>
