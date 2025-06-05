@@ -46,11 +46,13 @@ Example 1: Overview
 -------------------
 The HoneyBadger UI has many features. This section will give a brief overview of HoneyBadger's pages.
 
-Please surf to http://<YOUR_LINUX_IP>:5000 
+Please surf to `http://<YOUR_LINUX_IP>:5000` 
 
-PLEASE USE FIREFOX!!!!
+>[!IMPORTANT]
+>
+>PLEASE USE FIREFOX!!!!
 
-The user and password are adhd.
+The user and password are `adhd`.
 
 Navigate to the HoneyBadger server, and you will be presented with the following screen:
 
@@ -170,7 +172,9 @@ Clicking on on the VB.NET button will show the VB.NET code in a popup:
 
 ![](HoneyBadger_files/hb_targets_targetVBNET.png)
 
-NOTE: Though HoneyBadger attempts to copy the code to the clipboard, it's safest to simply copy the macro by hand.
+>[!NOTE]
+>
+>Though HoneyBadger attempts to copy the code to the clipboard, it's safest to simply copy the macro by hand.
 
 To delete a target, click the target's delete button. A prompt will appear:
 
