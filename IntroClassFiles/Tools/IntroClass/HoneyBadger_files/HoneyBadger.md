@@ -7,13 +7,9 @@ Website
 -------
 <https://github.com/adhdproject/honeybadger>
 
-
 Description
 -----------
-Used to identify the physical location of a web user with a combination
-of geolocation techniques using a browser's share location feature, the
-visible WiFi networks, and the IP address.
-
+Used to identify the physical location of a web user with a combination of geolocation techniques using a browser's share location feature, the visible WiFi networks, and the IP address.
 
 Updates
 -------
@@ -35,13 +31,15 @@ Usage
 -----
 In order to use the latest version of HoneyBadger, Python 3 must be installed, as well as python3-pip. These should both be installed on the ADHD image.
 
-`cd /opt/honeybadger/server`
+<pre>cd /opt/honeybadger/server</pre>
 
 Finally, from the same directory, run the HoneyBadger server:
-`python3 honeybadger.py -ik <IPSTACK_KEY> -gk <GOOGLE_KEY>`
+<pre>python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]</pre>
 
 
-NOTE: Though HoneyBadger will still run without API keys, functionality is severely limited without them.
+>[!NOTE]
+>
+>Though HoneyBadger will still run without API keys, functionality is severely limited without them.
 
 
 Example 1: Overview
@@ -409,4 +407,17 @@ Navigate to this page in a browser. The server will return a 404
 ### 5. CMD ###
 The CMD agent is a type of HTML agent, as the beacon is created via web requests on the command line. There are two utilities in the util directory of HoneyBadger, one for windows and one for linux. They utilize Google's geolocation API. Usage information is available in those scripts. 
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+ ***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/honeyshare/HoneyShare.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Portspoof/Portspoof.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
+
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
