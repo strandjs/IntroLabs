@@ -8,36 +8,38 @@ BlueSpawn will monitor the system for "weird" behavior and note it when it occur
 
 In this lab, we will be starting BlueSpawn and then running Atomic Red Team to trigger a lot of alerts.
 
-First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
+First, we need to disable Defender. 
+Start by opening up <b>Windows Powershell</b>.
 
-`Set-MpPreference -DisableRealtimeMonitoring $true`
+![](attachments/OpeningPowershell.png)
+
+Next, run the following command:
+
+<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
+
+![](attachments/disableDefender.png)
 
 This will disable Defender for this session.
 
-If you get angry red errors, that is Ok, it means Defender is not running.
+>[!NOTE]
+>
+>If you get angry red errors, that is Ok, it means Defender is not running.
 
 
-Now, let's open a command Prompt:
+Now, let's open a command prompt by clicking on the icon in the taskbar:
 
- 
-
-Simply click the Windows Start button in the lower left of your screen and type: 
-
- 
-
-`Powershell` 
-
-
-or 
-
-`Command Prompt` 
+![](attachments/openingcommandprompt.png)
 
  
 Next, let’s change directories to tools and start Bluespawn:
-C:\Users\adhd>`cd \IntroLabs`
 
-C:\IntroLabs>`BLUESPAWN-client-x64.exe --monitor --level Cursory`
+<pre>cd \IntroLabs</pre>
 
+<pre>BLUESPAWN-client-x64.exe --monitor --level Cursory</pre>
+ 
+![](attachments/cdandstartbluespawn.png)
+
+You should see something like this:
 
 ![](attachments/Clipboard_2020-06-16-09-46-00.png)
 
