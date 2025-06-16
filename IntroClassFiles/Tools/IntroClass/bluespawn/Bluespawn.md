@@ -41,54 +41,80 @@ Next, let’s change directories to tools and start Bluespawn:
 
 You should see something like this:
 
-![](attachments/Clipboard_2020-06-16-09-46-00.png)
+![](attachments/bluspawnlaunched.png)
+
+If you made it this far, perfect! That means Bluespawn is up and running.
 
 Now, let’s use Atomic Red Team to test the monitoring with BlueSpawn:
 
-First, we need to open a PowerShell Prompt:
+First, we need to open a PowerShell terminal. 
 
-![](attachments/Clipboard_2020-06-16-09-55-12.png)
+You can do this by selecting the icon in the taskbar:
 
-Lets install and update Atomic Red Team
+![](attachments/OpeningPowershell.png)
 
-PS C:\Users\adhd> `cd \`
+Now we need to install and update Atomic Red Team. Run the following:
 
-PS C:\Users\adhd>`IEX (IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
-Install-AtomicRedTeam -getAtomics -Force`
+<pre>cd \</pre>
 
-Please note this can take a bit.
+<pre>IEX (IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
+Install-AtomicRedTeam -getAtomics -Force</pre>
+
+>[!NOTE]
+>
+> This can take a bit. Be patient!
+
+Once you see the following, you are set to move forward:
+
+![](attachments/installationconfirmation.png)
 
 Next, in the PowerShell Window we need to navigate to the Atomic Red Team directory and import the powershell modules:
 
-PS C:\Users\adhd> `cd C:\AtomicRedTeam\invoke-atomicredteam\`
+<pre>cd C:\AtomicRedTeam\invoke-atomicredteam\</pre>
 
-Then, install the proper yaml modules
+Then, install the proper `yaml` modules by running the following:
 
-PS C:\Users\adhd> `Install-Module -Name powershell-yaml`
+<pre>Install-Module -Name powershell-yaml</pre>
 
-PS C:\AtomicRedTeam\invoke-atomicredteam> `Import-Module .\Invoke-AtomicRedTeam.psm1`
+>[!NOTE]
+>
+>When prompted, press Y to install the modules.
 
-
-Now, we need to invoke all the Atomic Tests.
-
-Special note...  Don't do this in production...  Ever.  Always run tools like Atomic Red Team on test systems.  We recommend that you run in on a system with your EDR/Endpoint protection in non-blocking/alerting mode.  This is so you can see what the protection would have done, but it will allow the tests to finish so we are just going to run individual tests for now.
-
-PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1547.004`
-
-PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1543.003`
-
-PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1547.001`
-
-PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1546.008`
+<pre>Import-Module .\Invoke-AtomicRedTeam.psm1</pre>
 
 
-If you get any “file exists” questions or errors, just select Yes.
+Once we do this, we need to invoke all the Atomic Tests.
+
+>[!IMPORTANT]  
+>
+>Don't do this in production...  Ever.
+>  
+>Always run tools like Atomic Red Team on test systems.
+>
+>We recommend that you run in on a system with your EDR/Endpoint protection in non-blocking/alerting mode. This is so you can see what the protection would have done, but it will allow the tests to finish so we are just going to run individual tests for now.
+
+Run the following individually:
+
+<pre>Invoke-AtomicTest T1547.004</pre>
+
+<pre>Invoke-AtomicTest T1543.003</pre>
+
+<pre>Invoke-AtomicTest T1547.001</pre>
+
+<pre>Invoke-AtomicTest T1546.008</pre>
+
+
+>[!TIP]
+>
+>If you get any “file exists” questions or errors, just select `Yes`.
 
 It should look like this:
 
-![](attachments/Clipboard_2020-06-16-09-48-18.png)
+![](attachments/invokeatomicv1.png)
 
-Please note, there will be some errors when this runs.  This is normal.
+>[!NOTE]
+>
+>There might be some errors when this runs. This is normal.
 
 Please note we had to cross reference the old numbering witgh the new.
 
