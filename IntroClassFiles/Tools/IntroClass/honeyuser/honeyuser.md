@@ -29,7 +29,7 @@ Let's open a command prompt:
 
 
 
-Now, we will need to navigate to the C:\Tool directory and add the example users and Frank. 
+Now, we will need to navigate to the C:\IntroLabs directory and add the example users and Frank. 
 
   
 
