@@ -40,7 +40,7 @@ $ `sudo su -`
 
 `git clone https://github.com/mariocandela/beelzebub.git`
 
-`beelzebub`
+`cd beelzebub`
 
 11. Edit the docker-compose.yml file
     
