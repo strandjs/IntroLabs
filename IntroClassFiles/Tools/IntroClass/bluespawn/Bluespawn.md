@@ -23,12 +23,6 @@ Now, let's open a command Prompt:
 
 Simply click the Windows Start button in the lower left of your screen and type: 
 
- 
-
-`Powershell` 
-
-
-or 
 
 `Command Prompt` 
 
