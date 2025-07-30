@@ -1,0 +1,3 @@
+wget https://raw.githubusercontent.com/stamparm/ipsum/master/ipsum.txt
+netcat whois.cymru.com 43 < ipsum.txt | grep -v "AS Name" > asn_merge.txt
+awk -F"|" '{ print $1, $4 }' asn_merge.txt | sort | uniq -c | sort -nr | less
