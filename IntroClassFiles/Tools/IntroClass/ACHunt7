@@ -1,1 +1,74 @@
+https://demo.activecountermeasures.com/
 
+training@blackhillsinfosec.com
+
+Gotbeacons@1234
+
+Name
+Description Internal Host External Host Link
+gcat Gcat, tcp 587 (smtp), tcp
+993
+10.55.100.111 108.177.112.108 https://demo.activecountermeasures.com/gcat/details/E4561E6178
+BF1B54CB328614183C6A43
+
+dnscat2 Dnscat2, DNS. 192.168.88.2 r-1x.com
+dnsc.r-1x.com
+https://demo.activecountermeasures.com/dnscat2/details/F1079CB
+7734E69F054BFB3C74CFC6CD6
+
+slow_steady_
+beacon
+Cobalt Strike, HTTP, Delay
+30s, Jitter 0.
+192.168.2.77 143.198.3.13 https://demo.activecountermeasures.com/slow_steady_beacon/det
+ails/565E07951F7BD615508C6D067933188A
+
+beacon_jitter Cobalt Strike, HTTP, Delay
+30s, Jitter 25%.
+192.168.2.77 timeserversync.com https://demo.activecountermeasures.com/beacon_jitter/details/AA7
+5D743FC98F95B2B619B2C64EE8659
+
+icedid Cobalt Strike, Delay 300 s,
+Jitter 99%, http 8080
+192.168.2.77 143.198.3.13 https://demo.activecountermeasures.com/icedid/details/4FF4F900
+A49BF562CB03B3B88E162374
+ScreenConnect, Long
+connection, tcp 443
+192.168.2.77 147.75.62.184 https://demo.activecountermeasures.com/icedid/details/2BABEA12
+1B6AA75C993F0DF3DE7AFAB8
+CSharp-Streamer
+Long connection, http 80
+192.168.2.77 172.208.51.75 https://demo.activecountermeasures.com/icedid/details/D43BA680
+434DDE9238CF50F9FEA41476
+
+
+
+two_randomiz
+ed_redirectors
+Cobalt Strike HTTP, egress
+via 2 redirectors.
+Delay 5s, Jitter 50%
+192.168.2.77 timeserversync.com https://demo.activecountermeasures.com/two_randomized_redirect
+ors/details/AA75D743FC98F95B2B619B2C64EE8659
+192.168.2.77 weathersync.cloud https://demo.activecountermeasures.com/two_randomized_redirect
+ors/details/63965EF46F7A799D51909FD9150DC1D5
+
+teamviewer Egress via TCP 443 192.168.99.52 client.teamviewer.co
+m
+https://demo.activecountermeasures.com/teamviewer/details/BF35
+550DAF7FAA2B850C172694984CC3
+
+specula Hijacks Outlook, egress via
+HTTPS tcp 443
+10.0.0.4 24.199.110.233 https://demo.activecountermeasures.com/specula/details/9106675
+ED2FC62C2D76F8A6FBE524F58
+
+rdp_ms_dev_t
+unnels
+Inbound RDP connection
+tunnelled via outbound MS
+Dev Tunnels, tcp 443.
+10.0.0.4 use-data.rel.tunnels.
+api.visualstudio.com
+https://demo.activecountermeasures.com/rdp_ms_dev_tunnels/det
+ails/63DCE2739F2BB21B649AB96E83CCF893
