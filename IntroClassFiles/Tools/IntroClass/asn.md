@@ -34,3 +34,8 @@ Now, let's do a quick count and sort on those ASNs and the number of "bad" IP ad
 
 <img width="765" height="307" alt="image" src="https://github.com/user-attachments/assets/9e3ce640-3ff3-4d5f-b42a-30e373844c79" />
 
+
+The first column is the count of “bad” IP addresses in the ASN and the second column is the ASN number.
+
+See how quickly the number of “bad” IP addresses drop off?  
+
