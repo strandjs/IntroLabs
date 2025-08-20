@@ -61,6 +61,24 @@ It has autocomplete!!
 
 <img width="467" height="272" alt="image" src="https://github.com/user-attachments/assets/4f12160a-8ba3-448a-8287-48f2bfc7eb91" />
 
+Let's create a DNS query packet.
+
+`dns_query = IP(dst="8.8.8.8") / UDP(dport=53) / DNS(rd=1, qd=DNSQR(qname="www.example.com", qtype="A"))`
+
+What makes up a DNS Packet?
+
+`dns_query.show()`
+
+<img width="412" height="694" alt="image" src="https://github.com/user-attachments/assets/d809b797-a7bb-4746-a674-b66f6a5234ce" />
+
+Let's Send it!
+
+`sr1(dns_query, timeout=2, verbose=0)`
+
+<img width="663" height="225" alt="image" src="https://github.com/user-attachments/assets/b5cebae9-67a0-487a-a3de-78fe0fd8b5fd" />
+
+
+
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
