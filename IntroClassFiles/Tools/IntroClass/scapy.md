@@ -62,7 +62,7 @@ Yes!  We can sniff!
 
 Whant to look at some default packet templates?
 
-`ls()'
+`ls()`
 
 <img width="411" height="190" alt="image" src="https://github.com/user-attachments/assets/0bbcbf3c-e901-4e68-b78d-3d794b97d3f8" />
 
