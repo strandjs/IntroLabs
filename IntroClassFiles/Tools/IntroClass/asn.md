@@ -1,3 +1,7 @@
+
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
+
 Let’s take a few moments and get familiar with what Autonomous System Numbers (ASN’s) are and how they work.
 
 Think of an ASN as a ZIP (or postal code) on the Internet.  When you send packets out on the Internet they get routed to the router that is advertised to have responsibility for that part of the Internet. 
