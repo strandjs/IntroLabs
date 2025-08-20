@@ -39,3 +39,12 @@ The first column is the count of “bad” IP addresses in the ASN and the secon
 
 See how quickly the number of “bad” IP addresses drop off?  
 
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
+
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+
