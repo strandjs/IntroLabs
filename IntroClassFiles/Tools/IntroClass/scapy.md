@@ -25,11 +25,34 @@ Let's create a raw packet!
 
 <img width="262" height="325" alt="image" src="https://github.com/user-attachments/assets/b7b85f42-8686-4d3c-879e-6d346b376249" />
 
+Let's ping BHIS.
+
+`sr(IP(dst="www.blackhillsinfosec.com")/ICMP())`
+
+<img width="470" height="118" alt="image" src="https://github.com/user-attachments/assets/485fd17a-c341-4c9a-b9f2-743db22e959b" />
+
+
 Now, let's do a port scan on port 80
 
 `sr(IP(dst="45.33.32.156")/TCP(dport=80,flags="S"))`
 
 <img width="440" height="125" alt="image" src="https://github.com/user-attachments/assets/a58d8d7e-e747-46ad-ab3d-e9e325337b68" />
+
+We can scan a range of ports as well.
+
+`unans, ans = sr(IP(dst="45.33.32.156")/TCP(dport=(1,100), flags="S"), timeout=1)`
+
+<img width="878" height="161" alt="image" src="https://github.com/user-attachments/assets/1d81bdfc-c930-49e9-8217-9ec5b168086b" />
+
+Let's look at the results.
+
+
+`ans.summary()`
+<img width="448" height="54" alt="image" src="https://github.com/user-attachments/assets/536a006b-35f0-4dd2-a849-510ee66882f0" />
+
+`unans.summary()`
+<img width="890" height="368" alt="image" src="https://github.com/user-attachments/assets/224141be-8287-4c7c-8ba4-12eaf242559c" />
+
 
 Yes!  We can sniff!
 
