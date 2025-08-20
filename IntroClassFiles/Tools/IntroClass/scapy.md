@@ -7,21 +7,14 @@ First, let's become root:
 
 `sudo su -`
 
-Now, let's install scapy
-
-`sudo wget https://archive.kali.org/archive-keyring.gpg -O /usr/share/keyrings/kali-archive-keyring.gpg`
-
-`apt-get update`
-
-`apt-get install python3-scapy`
-
-*Note, this may take a moment
-
 Now, start scapy
 
 `scapy`
 
-*Note, this can take a moment!! Again.....
+*Note, this can take a moment!!
+
+<img width="663" height="366" alt="image" src="https://github.com/user-attachments/assets/bc0090ef-0663-4551-91ea-5d913946cad6" />
+
 
 
 Let's create a raw packet!
