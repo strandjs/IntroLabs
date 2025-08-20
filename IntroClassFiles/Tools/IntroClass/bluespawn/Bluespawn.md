@@ -94,13 +94,6 @@ You should be getting a lot of alerts with Bluespawn Switch tabs in your Termina
 ![](attachments/Clipboard_2020-06-16-09-47-26.png)
 
 
-Now, let’s go back to the PowerShell prompt and clean up:
-
-PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest All -Cleanup`
-
-It should look like this:
-
-![](attachments/Clipboard_2020-06-23-13-36-10.png)
 
 # If you have more time
 
@@ -135,6 +128,7 @@ meterpreter >`getsystem`
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
