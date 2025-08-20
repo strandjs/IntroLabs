@@ -4,7 +4,13 @@ Think of an ASN as a ZIP (or postal code) on the Internet.  When you send packet
 
 We can take a list on known bad IP addresses and do a count on which ASNs have the most “bad” IP address on them with the following commands.
 
-First, let's pull down an open source list of "bad" IP addresses:
+First, let's open a Kali Terminal
+
+<img width="48" height="41" alt="image" src="https://github.com/user-attachments/assets/56b5f591-451a-4477-a28b-9a34efb12d68" />
+
+
+
+Now, let's pull down an open source list of "bad" IP addresses:
 
 `wget https://raw.githubusercontent.com/stamparm/ipsum/master/ipsum.txt`
 
