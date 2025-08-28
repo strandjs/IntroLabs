@@ -18,6 +18,8 @@
   - [AC Hunter CE](Tools/IntroClass/ACHCE/ACHunterCE.md)
   - [Hunting DCSync, Sharepoint and Kerberoasting](https://github.com/strandjs/IntroLabs/tree/master/IntroClassFiles/Tools/IntroClass/PoisoningtheWellIR-main)
 
+  - [Scapy](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/scapy.md)
+
 [Intro To Security]()
 
  - [Applocker](Tools/IntroClass/AppLocker/AppLocker.md)
@@ -53,6 +55,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
