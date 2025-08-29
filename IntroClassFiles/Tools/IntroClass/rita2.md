@@ -1,3 +1,10 @@
+Please use the Network Ubuntu VM for this lab.
+
+Do these labs first:
+
+https://github.com/doergestim/SOC_Analyst_Labs/blob/main/courseFiles/Section_05-networkingAndTelemetry/rita_lab/ritaLab1.md
+
+
 Below are some commands to download and process other Zeek datasets.
 
 `mkdir icmplogs`
