@@ -31,8 +31,9 @@ docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa log-metrics --
 <img width="1475" height="579" alt="image" src="https://github.com/user-attachments/assets/832e0c7e-fb52-4495-85db-965e02a077a5" />
 
 - Next let's see the Event **ID Distribution** to dentify common or suspicious Sysmon events, we are looking for **1**, **3**, **10**, **11** or even **8**
-
-`docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa eid-metrics --file /data/sysmon.evtx`
+```bash
+docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa eid-metrics --file /data/sysmon.evtx
+```
 
 <img width="1270" height="848" alt="image" src="https://github.com/user-attachments/assets/9744c36b-dc22-4cc5-bd28-4a9239758cd4" />
 
@@ -45,9 +46,9 @@ Important observations:
 
 
 - Now let's proceed with a **Full Timeline Analysis**
-
-`docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa csv-timeline  --file /data/sysmon.evtx -o timeline.c
-sv`
+```bash
+docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa csv-timeline  --file /data/sysmon.evtx -o timeline.csv
+```
 
 >[!TIP]
 >
@@ -62,9 +63,11 @@ Immediately we can see some really telling information, we got hits on 50 events
 Let's dig deeper
 
 - We can also do some **Hunting Scenarios**, searching for special keywords
-
-`docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa search --file /data/sysmon.evtx --regex '(?i)(cmd\.e
-xe|powershell|whoami|mimikatz)'`
+- 
+```bash
+docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa search --file /data/sysmon.evtx --regex '(?i)(cmd\.e
+xe|powershell|whoami|mimikatz)'
+```
 
 <img width="1405" height="66" alt="image" src="https://github.com/user-attachments/assets/b8485f59-a4d7-4982-804d-e56aa051eede" />
 
