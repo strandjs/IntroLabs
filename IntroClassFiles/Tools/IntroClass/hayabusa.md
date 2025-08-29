@@ -32,7 +32,7 @@ docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa log-metrics --
 
 - Next let's see the Event **ID Distribution** to dentify common or suspicious Sysmon events, we are looking for **1**, **3**, **10**, **11** or even **8**
 
-
+`docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa eid-metrics --file /data/sysmon.evtx`
 
 <img width="1270" height="848" alt="image" src="https://github.com/user-attachments/assets/9744c36b-dc22-4cc5-bd28-4a9239758cd4" />
 
