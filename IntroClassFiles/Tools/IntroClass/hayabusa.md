@@ -25,14 +25,14 @@ curl -L -o sysmon.evtx https://raw.githubusercontent.com/sbousseaden/EVTX-ATTACK
 - First thing we will do to start disecting the logs is to get some basic **metrics** to understand what system the logs came from, number of events, time range.
 
 ```bash
-docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa log-metrics --file /data/sysmon.evtx
+docker run -it --rm -v /root/logs/:/data clausing/hayabusa log-metrics --file /data/sysmon.evtx
 ```
 
 <img width="1475" height="579" alt="image" src="https://github.com/user-attachments/assets/832e0c7e-fb52-4495-85db-965e02a077a5" />
 
 - Next let's see the Event **ID Distribution** to dentify common or suspicious Sysmon events, we are looking for **1**, **3**, **10**, **11** or even **8**
 ```bash
-docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa eid-metrics --file /data/sysmon.evtx
+docker run -it --rm -v /root/logs/:/data clausing/hayabusa eid-metrics --file /data/sysmon.evtx
 ```
 
 <img width="1270" height="848" alt="image" src="https://github.com/user-attachments/assets/9744c36b-dc22-4cc5-bd28-4a9239758cd4" />
@@ -47,7 +47,7 @@ Important observations:
 
 - Now let's proceed with a **Full Timeline Analysis**
 ```bash
-docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa csv-timeline  --file /data/sysmon.evtx -o timeline.csv
+docker run -it --rm -v /root/logs/:/data clausing/hayabusa csv-timeline  --file /data/sysmon.evtx -o timeline.csv
 ```
 
 >[!TIP]
@@ -65,7 +65,7 @@ Let's dig deeper
 - We can also do some **Hunting Scenarios**, searching for special keywords
 - 
 ```bash
-docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa search --file /data/sysmon.evtx --regex '(?i)(cmd\.e
+docker run -it --rm -v /root/logs/:/data clausing/hayabusa search --file /data/sysmon.evtx --regex '(?i)(cmd\.e
 xe|powershell|whoami|mimikatz)'
 ```
 
