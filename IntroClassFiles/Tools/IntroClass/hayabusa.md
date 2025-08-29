@@ -42,11 +42,19 @@ Important observations:
 2. **WMI Activity (IDs 19, 20, 21)**, rare in normal activities, could be remote execution
 3. **Network Connections (ID 3)**, check what process made the connection, destination IP/port, and timing.<br><br>
 
+
+
+- Now let's proceed with a **Full Timeline Analysis**
+
+`docker run -it --rm -v /home/ubuntu/logs/:/data clausing/hayabusa csv-timeline  --file /data/sysmon.evtx -o timeline.c
+sv`
+
 >[!TIP]
 >
 >(include all rules)
 
-- Now let's proceed with a **Full Timeline Analysis**
+Option choices displayed below:
+
 <img width="1402" height="669" alt="image" src="https://github.com/user-attachments/assets/8bdc77a0-2391-4543-9ced-9d31b6bd11ed" />
 
 Immediately we can see some really telling information, we got hits on 50 events(8.85%), 11 of them being critical alerts of a known backdoor and ransomware
