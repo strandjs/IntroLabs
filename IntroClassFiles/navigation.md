@@ -20,7 +20,7 @@
   - [Scapy](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/scapy.md)
   - [Temp](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/temp.md)
   - [Hayabusa](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/hayabusa.md)
-  - [RITA2](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/rita2.md)
+  - [RITA2](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/rita_Part2.md)
   - [Email Analysis](https://github.com/doergestim/SOC_Analyst_Labs/blob/main/courseFiles/Section_10-emailFundamentals/phishing_email_lab.md)
 
 [Intro To Security]()
@@ -58,6 +58,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
