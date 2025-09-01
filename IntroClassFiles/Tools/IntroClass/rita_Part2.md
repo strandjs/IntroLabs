@@ -15,6 +15,8 @@ Below are some commands to download and process other Zeek datasets.
 
 `unzip zeek_icmp_gosh_24hr.zip`
 
+Specail note!!!  You can use 7zip if you like it!!!!!!!
+
 `rita import --logs=./ --database=icmpgosh`
 
 `rita list`
