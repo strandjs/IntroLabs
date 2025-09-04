@@ -55,9 +55,12 @@
   - [AdvancedC2](Tools/IntroClass/pcap/AdvancedC2PCAPAnalysis.md)
   - [WebHoneypot](Tools/IntroClass/webhoneypot/webhoneypot.md)
   - [File Audit](Tools/IntroClass/FileAudit/FileAudit.md)
+  - [Beelzebub](https://github.com/strandjs/SOC_Analyst_Labs/blob/main/courseFiles/Section_08-deceptionSystems/beelzebubLab.md)
+  - [Canary Token Cloner](https://github.com/strandjs/SOC_Analyst_Labs/blob/main/courseFiles/Section_08-deceptionSystems/CanaryToken_lab/CanaryToken_lab.md)
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
