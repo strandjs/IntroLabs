@@ -82,7 +82,7 @@ It should look like this:
 
 Please note, there will be some errors when this runs.  This is normal.
 
-Please note we had to cross reference the old numbering witgh the new.
+Please note we had to cross reference the old numbering with the new.
 
 You can find that mapping here:
 
@@ -128,6 +128,7 @@ meterpreter >`getsystem`
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
