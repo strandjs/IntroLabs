@@ -99,13 +99,15 @@ You should be getting a lot of alerts with Bluespawn Switch tabs in your Termina
 
 Let’s begin by disabling **Defender**. Simply run the following from an **Administrator PowerShell** prompt:
 
-![](attachments/OpeningPowershell.png)
+<img width="54" height="39" alt="image" src="https://github.com/user-attachments/assets/a0e67fe8-d42a-4795-b566-98dc7a82daa8" />
+
 
 Next, run the following command in the **Powershell** terminal:
 
 <pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
-![](attachments/applocker_disabledefender.png)
+<img width="786" height="223" alt="image" src="https://github.com/user-attachments/assets/def5f9b6-22c7-4278-9b37-fbfb5af3a02e" />
+
 This will disable **Defender** for this session.
 
 If you get angry red errors, that is **Ok**, it means **Defender** is not running.
@@ -125,7 +127,6 @@ Before we move on from our Powershell window, lets get our IP by running the fol
 
 <pre>ipconfig</pre>
 
-![](attachments/powershellipconfig.png)
 
 **REMEMBER - YOUR IP WILL BE DIFFERENT**
 
@@ -133,11 +134,9 @@ Write this IP down so we can use it again later.
 
 Let's continue by opening a **Kali** terminal
 
-![](attachments/OpeningKaliInstance.png)
+<img width="71" height="68" alt="image" src="https://github.com/user-attachments/assets/5f116093-6854-4e55-a231-0c42359dc163" />
 
 Alternatively, you can click on the **Kali** icon in the taskbar.
-
-![](attachments/TaskbarKaliIcon.png)
 
 
 We need to run the following commands in order to mount our remote system to the correct directory:
@@ -148,11 +147,6 @@ We need to run the following commands in order to mount our remote system to the
 
 **REMEMBER - YOUR IP ADDRESS AND PASSWORD WILL BE DIFFERENT.**
 
-If you see the following error, it means that the device is already mounted.
-
-![](attachments/mounterror.png)
-
-If this is the case, ignore it.
 
 Run the following command to navigate into the mounted directory:
 
@@ -162,7 +156,8 @@ Before we run the next commands, we need to get the IP of our Kali System (AKA o
 
 <pre>ifconfig</pre>
 
-![](attachments/ifconfig.png)
+<img width="660" height="419" alt="image" src="https://github.com/user-attachments/assets/d88c93b2-c80f-4a88-ba71-3e82cbcf20a2" />
+
 
 **REMEMBER: YOUR IP WILL BE DIFFERENT**
 
@@ -172,7 +167,8 @@ Run the following commands to start a simple backdoor and backdoor listener:
 
 Let's start the **Metasploit** Handler.  Open a new **Kali** terminal by clicking the **Kali** icon in the taskbar.
 
-![](attachments/TaskbarKaliIcon.png)
+<img width="71" height="68" alt="image" src="https://github.com/user-attachments/assets/5f116093-6854-4e55-a231-0c42359dc163" />
+
 
 Let's become root.
 
@@ -196,19 +192,13 @@ Remember, **Your IP will be different!**
 
 It should look like this:
 
-![](attachments/msfconsole.png)
+<img width="636" height="405" alt="image" src="https://github.com/user-attachments/assets/ca5787cd-967d-45b0-ac90-327b4eabfe69" />
+
 
 We will need to open a **"cmd.exe"** terminal as **Administrator**.
 
 ![](attachments/OpeningWindowsCommandPrompt.png)
 
-<pre>cd \IntroLabs</pre>
-
-<pre>Sysmon64.exe -accepteula -i sysmonconfig-export.xml</pre>
-
-It should look like this:
-
-![](attachments/sysmonexe.png)
 
 let's run the following commands to run the **"TrustMe.exe"** file.
 
@@ -251,6 +241,7 @@ meterpreter >`getsystem`
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
