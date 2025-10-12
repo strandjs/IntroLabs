@@ -37,7 +37,6 @@ It should look like this:
 
 <img width="980" height="410" alt="image" src="https://github.com/user-attachments/assets/a77f162f-2521-4de8-8f97-b091d9caca30" />
 
-![](attachments/200bat.png)
 
 Let this run all the way through. 
 
@@ -61,11 +60,12 @@ It should look like this:
 
 Let’s try some password spraying against the local system!
 
-<pre>Invoke-LocalPasswordSpray -Password Winter2020</pre>
+<pre>Invoke-LocalPasswordSpray -Password Winter2025</pre>
 
 It should look like this:
 
-![](attachments/localpasswordspray.png)
+<img width="773" height="479" alt="image" src="https://github.com/user-attachments/assets/da81e7e5-c713-4a02-ac87-326f9aa5f8f5" />
+
 
 We need to clean up and make sure the system is ready for the rest of the labs.
 
@@ -96,5 +96,6 @@ Please be sure to destroy the lab environment!
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
 ---
+
 
 
