@@ -23,11 +23,19 @@ Once the terminal opens, navigate into the appropriate directory by running the 
 
 We need to run the batch file named **200-user-gen** 
 
+First, let's get an updated version:
+
+<pre>curl -o 200-user-gen.bat https://raw.githubusercontent.com/strandjs/IntroLabs/refs/heads/master/200-user-gen.bat</pre>
+
+Now, we need to run it!
+
 Do so by typing the name of the batch file and hitting enter:
 
 <pre>200-user-gen.bat</pre>
 
 It should look like this:
+
+<img width="980" height="410" alt="image" src="https://github.com/user-attachments/assets/a77f162f-2521-4de8-8f97-b091d9caca30" />
 
 ![](attachments/200bat.png)
 
@@ -88,4 +96,5 @@ Please be sure to destroy the lab environment!
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
 ---
+
 
