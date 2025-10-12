@@ -181,6 +181,7 @@ net user Christopher Winter2025 /add
 net user Gregory Winter2025 /add
 net user Jack Winter2025 /add
 net user Dennis Winter2025 /add
+net localgroup administrators Dennis /add
 net user Jerry Winter2025 /add
 net user Joyce wJWs4UIK5j /add
 net user Shirley WldefkxV9Z /add
@@ -204,3 +205,4 @@ net user Mildred zGhFcwfCiw /add
 net user Lisa zmn8aV5Abs /add
 
 net user Kevin ZYYCm9ju8v /add
+
