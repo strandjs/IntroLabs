@@ -197,7 +197,8 @@ It should look like this:
 
 We will need to open a **"cmd.exe"** terminal as **Administrator**.
 
-![](attachments/OpeningWindowsCommandPrompt.png)
+<img width="53" height="40" alt="image" src="https://github.com/user-attachments/assets/47d5e363-0b2a-4009-a117-6103db26870d" />
+
 
 
 let's run the following commands to run the **"TrustMe.exe"** file.
@@ -270,6 +271,7 @@ meterpreter >`getsystem`
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
