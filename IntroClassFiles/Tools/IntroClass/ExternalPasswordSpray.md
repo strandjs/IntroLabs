@@ -111,7 +111,25 @@ Now, let's go back to the Kali system and run our attack.
 
 It should look like this:
 
-<img width="660" height="416" alt="image" src="https://github.com/user-attachments/assets/0fc467f2-adae-4214-af29-a4997f4df949" />
+<img width="665" height="357" alt="image" src="https://github.com/user-attachments/assets/addee394-b49d-4163-b12b-f9108bddc5da" />
 
+Please look closer at the green successful login accounts.
 
+<img width="646" height="51" alt="image" src="https://github.com/user-attachments/assets/bc575759-db09-42bb-ab1d-7ddcdaf65c93" />
+
+Are there any Administrator logins?
+
+Yes! There is!!
+
+<img width="655" height="36" alt="image" src="https://github.com/user-attachments/assets/0574f486-ad24-442e-bd7b-b2836cc10c39" />
+
+Now, let's look at the logs back in the event viewer:
+
+Int he action panel on the right you will need to click the refresh button.
+
+<img width="200" height="383" alt="image" src="https://github.com/user-attachments/assets/9bb4440d-d344-4258-b2a0-e401f1dea6e5" />
+
+Now, we should be able to see the logs.
+
+<img width="1168" height="687" alt="image" src="https://github.com/user-attachments/assets/d78f04d6-b2f6-4c71-90b8-092a3467badd" />
 
