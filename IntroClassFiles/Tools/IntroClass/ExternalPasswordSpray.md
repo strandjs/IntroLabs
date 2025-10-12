@@ -3,6 +3,19 @@
 
 # Password Spray
 
+In this lab we will be conducting a password spray against a Windows system.
+
+This is part of the T1110 family of attacks with MITRE.
+
+Find out more here:
+
+https://attack.mitre.org/techniques/T1110/ 
+
+Here are just some of the groups that have used it.
+
+<img width="1073" height="764" alt="image" src="https://github.com/user-attachments/assets/a24a4a9c-305d-476d-a808-417d0c3b5a3c" />
+
+
 First things first, disable **Defender**. Open an instance of **Windows PowerShell** by clicking on the icon in the taskbar. Then run the following:
 
 ![](attachments/OpeningPowershell.png)
