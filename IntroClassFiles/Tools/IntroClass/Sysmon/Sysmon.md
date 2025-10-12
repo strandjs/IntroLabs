@@ -3,6 +3,17 @@
 
 # Sysmon
 
+In this lab we will be looking at what an attacker can do with valid accounts.  
+
+To learn more about this attack check out the following:
+
+https://attack.mitre.org/techniques/T1078/
+
+Here are just some groups that have used this attack:
+
+<img width="1082" height="691" alt="image" src="https://github.com/user-attachments/assets/634d0a14-def0-42da-9f23-0b26bb3faa07" />
+
+
 Let’s begin by disabling **Defender**. Simply run the following from an **Administrator PowerShell** prompt:
 
 ![](attachments/OpeningPowershell.png)
@@ -163,4 +174,5 @@ Please be sure to destroy the lab environment!
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
 ---
+
 
