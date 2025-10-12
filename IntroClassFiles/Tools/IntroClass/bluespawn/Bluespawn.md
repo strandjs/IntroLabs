@@ -213,6 +213,17 @@ Back at your Kali terminal, you should have a metasploit session!
 ![](attachments/meterpretersession.png)
 
 
+Now, let’s look at keystroke logging.
+
+To learn more about this check out MITRE:
+
+https://attack.mitre.org/techniques/T1056/
+
+Also, below is a list of just some of the threat groups that use this technique:
+
+<img width="1072" height="723" alt="image" src="https://github.com/user-attachments/assets/c005128b-124b-4bcc-9bf7-8516ca4be2d6" />
+
+
 Run commands
 
 meterpreter > `keyscan_start`
@@ -221,6 +232,15 @@ meterpreter > `keyscan_dump`
 
 ![](attachments/Clipboard_2020-06-15-13-52-00.png)
 
+Now, let’s play with registry persistence.
+
+To learn more about this check out MITRE:
+
+https://attack.mitre.org/techniques/T1547/
+
+Here are just some of the groups that use this technique:
+
+<img width="1072" height="533" alt="image" src="https://github.com/user-attachments/assets/86040c18-29cd-4d16-95dd-84e45dcb1f63" />
 
 
 meterpreter > `shell`
@@ -231,6 +251,15 @@ C:\>  `reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Exe
 
 ![](attachments/Clipboard_2020-06-15-14-00-53.png)
 
+Next, let’s play with privilege escalation.
+
+Here is al link to more info about this from MITRE:
+
+https://attack.mitre.org/techniques/T1543/
+
+Here are just some of the groups that use this technique:
+
+<img width="1087" height="489" alt="image" src="https://github.com/user-attachments/assets/41b91eb5-8505-48a3-bee0-09cbb87f9dca" />
 
 
 meterpreter >`getsystem`
@@ -241,6 +270,7 @@ meterpreter >`getsystem`
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
