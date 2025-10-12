@@ -28,7 +28,8 @@ If you get angry red errors, that is Ok, it means **Defender** is not running.
 
 Let's get started by opening a **Command Prompt** terminal by clicking on the icon in the taskbar.
 
-![](attachments/OpeningWindowsCommandPrompt.png)
+<img width="52" height="48" alt="image" src="https://github.com/user-attachments/assets/5b7379a9-ed44-4c6f-a7b0-5cdd203610ef" />
+
 
 Let's first get our IP address for your Windows system.  We will be using this later.
 
