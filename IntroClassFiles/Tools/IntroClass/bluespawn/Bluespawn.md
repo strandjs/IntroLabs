@@ -10,6 +10,11 @@ In this lab, we will be starting BlueSpawn and then running Atomic Red Team to t
 
 First, let’s disable Defender. Simply run the following from an Administrator PowerShell prompt:
 
+
+<img width="55" height="44" alt="image" src="https://github.com/user-attachments/assets/c6451afe-6928-4fec-8f65-967aa8274dfb" />
+
+
+
 `Set-MpPreference -DisableRealtimeMonitoring $true`
 
 This will disable Defender for this session.
@@ -19,12 +24,9 @@ If you get angry red errors, that is Ok, it means Defender is not running.
 
 Now, let's open a command Prompt:
 
- 
 
-Simply click the Windows Start button in the lower left of your screen and type: 
+<img width="48" height="41" alt="image" src="https://github.com/user-attachments/assets/159f5d32-8de1-4b56-8413-34ee7b4e285e" />
 
-
-`Command Prompt` 
 
  
 Next, let’s change directories to tools and start Bluespawn:
@@ -271,6 +273,7 @@ meterpreter >`getsystem`
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
