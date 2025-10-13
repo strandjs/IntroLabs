@@ -63,6 +63,8 @@ We need to run the following commands in order to mount our remote system to the
 
 <pre>mount -t cifs //[Your IP Address]/c$ /mnt/windows-share -o username=Administrator,password=password1234</pre>
 
+**If you are at CyberBay, you can use the password we found for Dennis.  What was it?**
+
 **REMEMBER - YOUR IP ADDRESS AND PASSWORD WILL BE DIFFERENT.**
 
 If you see the following error, it means that the device is already mounted.
@@ -174,5 +176,6 @@ Please be sure to destroy the lab environment!
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
 ---
+
 
 
