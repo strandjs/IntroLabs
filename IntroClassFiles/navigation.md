@@ -32,6 +32,7 @@
  - [Host Firewalls and Nmap](Tools/IntroClass/Nmap/Nmap.md)
  - [Password Cracking](Tools/IntroClass/PasswordCracking/PasswordCracking.md)
  - [Password Spraying](Tools/IntroClass/PasswordSpray/PasswordSpray.md)
+ - [External Password Spraying](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ExternalPasswordSpray.md)
  - [Responder](Tools/IntroClass/Responder/Responder.md)
  - [RITA and AC Hunter](Tools/IntroClass/RITA/RITA.md)
  - [Sysmon](Tools/IntroClass/Sysmon/Sysmon.md)
@@ -60,6 +61,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
