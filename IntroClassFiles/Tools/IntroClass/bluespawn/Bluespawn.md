@@ -25,7 +25,10 @@ If you get angry red errors, that is Ok, it means Defender is not running.
 Now, let's open a command Prompt:
 
 
+
 <img width="48" height="41" alt="image" src="https://github.com/user-attachments/assets/159f5d32-8de1-4b56-8413-34ee7b4e285e" />
+
+
 
 
  
@@ -305,6 +308,7 @@ meterpreter >`getsystem`
 Go and check Bluespawn.  Did it detect it?
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
