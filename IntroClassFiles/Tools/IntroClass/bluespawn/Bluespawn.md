@@ -155,6 +155,9 @@ Run the following command to navigate into the mounted directory:
 
 <pre>cd /mnt/windows-share</pre>
 
+<img width="645" height="251" alt="image" src="https://github.com/user-attachments/assets/b3a98a1f-559f-46b3-8967-88457212d1ee" />
+
+
 Before we run the next commands, we need to get the IP of our Kali System (AKA our Linux IP Adress). Lets do so by running the following:
 
 <pre>ifconfig</pre>
@@ -278,6 +281,7 @@ meterpreter >`getsystem`
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
