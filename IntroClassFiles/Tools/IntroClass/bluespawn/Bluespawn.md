@@ -69,12 +69,27 @@ Special note...  Don't do this in production...  Ever.  Always run tools like At
 
 PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1547.004`
 
+More information here:
+
+https://attack.mitre.org/techniques/T1547/004/
+
 PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1543.003`
+
+More information here:
+
+https://attack.mitre.org/techniques/T1543/003/
 
 PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1547.001`
 
+More information here:
+
+https://attack.mitre.org/techniques/T1547/001/
+
 PS C:\AtomicRedTeam\invoke-atomicredteam> `Invoke-AtomicTest T1546.008`
 
+More information here:
+
+https://attack.mitre.org/techniques/T1546/008/
 
 If you get any “file exists” questions or errors, just select Yes.
 
@@ -290,6 +305,7 @@ meterpreter >`getsystem`
 Go and check Bluespawn.  Did it detect it?
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
