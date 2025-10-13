@@ -18,7 +18,8 @@ Here are just some of the groups that have used it.
 
 First things first, disable **Defender**. Open an instance of **Windows PowerShell** by clicking on the icon in the taskbar. Then run the following:
 
-![](attachments/OpeningPowershell.png)
+<img width="42" height="36" alt="image" src="https://github.com/user-attachments/assets/65c951dd-aafc-402f-9fb3-4fed153fe74d" />
+
 
 <pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
 
