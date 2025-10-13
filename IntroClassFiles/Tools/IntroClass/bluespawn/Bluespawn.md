@@ -50,7 +50,7 @@ PS C:\Users\adhd> `cd \`
 PS C:\Users\adhd>`IEX (IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
 Install-AtomicRedTeam -getAtomics -Force`
 
-Please note this can take a bit.
+Please note this can take a bit. After about 120 seconds, try hitting enter to get your prompt back.
 
 Next, in the PowerShell Window we need to navigate to the Atomic Red Team directory and import the powershell modules:
 
@@ -278,6 +278,7 @@ meterpreter >`getsystem`
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
