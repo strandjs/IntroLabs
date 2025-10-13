@@ -239,9 +239,14 @@ Run commands
 
 meterpreter > `keyscan_start`
 
+Go and type something on your Windows system.
+
 meterpreter > `keyscan_dump`
 
 ![](attachments/Clipboard_2020-06-15-13-52-00.png)
+
+
+Go and check Bluespawn.  Did it detect it?
 
 Now, let’s play with registry persistence.
 
@@ -262,6 +267,8 @@ C:\>  `reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Exe
 
 ![](attachments/Clipboard_2020-06-15-14-00-53.png)
 
+Go and check Bluespawn.  Did it detect it?
+
 Next, let’s play with privilege escalation.
 
 Here is al link to more info about this from MITRE:
@@ -280,7 +287,10 @@ meterpreter >`getsystem`
 
 ![](attachments/Clipboard_2020-06-15-13-56-34.png)
 
+Go and check Bluespawn.  Did it detect it?
+
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
