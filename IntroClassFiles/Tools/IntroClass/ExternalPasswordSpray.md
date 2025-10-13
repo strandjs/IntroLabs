@@ -148,3 +148,14 @@ Now, we should be able to see the logs.
 
 <img width="1168" height="687" alt="image" src="https://github.com/user-attachments/assets/d78f04d6-b2f6-4c71-90b8-092a3467badd" />
 
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
+
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
+
