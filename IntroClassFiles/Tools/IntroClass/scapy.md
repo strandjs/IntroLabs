@@ -68,7 +68,15 @@ Now, start scapy
 
 <img width="663" height="366" alt="image" src="https://github.com/user-attachments/assets/bc0090ef-0663-4551-91ea-5d913946cad6" />
 
+In this lab, we are building the most basic structure of a packet: the raw wireframe that must exist for traffic to move across a network. The goal is to start from the ground up using Scapy, beginning with an Ethernet frame and an IP header, then later attaching additional layers like ICMP. This exercise isn’t just about sending a packet—it’s about understanding how a packet is constructed and what each layer contributes to communication.
 
+When you send data across a local network, the Ethernet frame is the first component that hits the wire. It includes source and destination MAC addresses and is used for communication across a local switch. In most environments, when a packet leaves your system headed for a remote IP address somewhere on the internet, the destination MAC address in the Ethernet frame is replaced with the MAC address of your default gateway. Essentially your router. Even though we don’t have much control over the Ethernet frame using Scapy, especially once it leaves our system, it still must be present for the packet to go anywhere at Layer 2.
+
+Once the Ethernet frame is in place, we move to the IP header, which is where things start to get interesting. The IP header contains the essential routing and delivery information used by routers across the internet: source and destination IP addresses, Time to Live (TTL), version, flags, identification, and more. With Scapy, nearly all of these fields can be directly modified by simply assigning new values. This makes Scapy an ideal tool not only for packet crafting but also for truly learning how packets function by modifying real data structures.
+
+Later in this lab, we will be changing the destination IP address to a fully qualified domain name: blackhillsinfosec.com. While that is not an IP address, Scapy is intelligent enough to automatically resolve domain names into IP addresses when constructing packets. This is a good example of how Scapy bridges low-level packet manipulation with the convenience of Python. Once the IP header is complete, we will attach an ICMP layer to the packet, which will allow us to send an echo request similar to a standard ping. From there, we can view the packet breakdown and see each individual layer stacked together exactly as it appears on the wire.
+
+As we go forward, remember that the purpose of this exercise isn’t simply to send packets—it’s to understand them. By crafting raw packets piece by piece, we get to see how data actually travels and gain insight into the structure of network communication from the inside out. Let’s get started.
 
 Let's create a raw packet!
 
@@ -84,6 +92,8 @@ Let's ping BHIS.
 
 <img width="470" height="118" alt="image" src="https://github.com/user-attachments/assets/485fd17a-c341-4c9a-b9f2-743db22e959b" />
 
+
+We’ll send a simple SYN scan to port 80 on a remote host. While Nmap is faster and easier for port discovery, Scapey lets you embed scanning logic directly into Python scripts—useful when you want to find hosts with port 80 and programmatically probe them for specific content (for example, default web pages or identifying strings).
 
 Now, let's do a port scan on port 80
 
