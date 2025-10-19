@@ -4,6 +4,9 @@
 
 # For the Ubuntu VM
 
+In this lab segment you will use Hayabusa to perform rapid intrusion-detection analysis against collected log files. Hayabusa is a fast, no-frills tool ideal for tactical investigations where logs are available on a host but not ingested into a central SIEM. You’ll work with several sample attack event logs—many containing Sysmon telemetry—and run Hayabusa to see what alerts and detections it produces. The exercise will demonstrate the value of Sysmon data for detecting attacker behavior and how a lightweight tool can quickly surface indicators of compromise. Treat Hayabusa as a complementary capability: it’s useful for on-disk log analysis when you can pull logs from a system and want fast, local analysis, and it pairs well with broader tooling such as DeepWhite or DeepBlue CLI for deeper triage and enrichment.
+
+
 ## The objective of this lab is to use Hayabusa to analyze Sysmon logs and detect suspicious activity related to process creation, network connections, and authentication events.
 
 Let's become root:
