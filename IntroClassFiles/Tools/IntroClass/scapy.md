@@ -3,17 +3,25 @@
 
 In this lab we’ll use Scapy to demystify how network packets are assembled. The point isn’t to turn you into a Scapy wizard — it’s to give you a concrete, visual way to understand how packets are built, layer by layer, so you stop thinking about them as a single string of ones and zeros and start seeing them as stacked components.
 
-What you’ll learn
+What you’ll learn:
+
 	•	How an IP packet contains a transport header (TCP/UDP) which in turn contains the application data.
+	
 	•	How Scapy represents those layers like Lego blocks you can stack, inspect, and manipulate.
+	
 	•	Basic packet creation, sending, and receiving with Scapy so you can see how the pieces fit together.
+	
 
 The core concept — packets as stacked components
 
 Packets are not one monolithic blob. Think of them as a stack:
+
 	•	The IP header is one layer.
+	
 	•	The payload of the IP header is the TCP or UDP header.
+	
 	•	The payload of the TCP/UDP header is the application data (HTTP, DNS, a custom payload, etc.).
+	
 
 Scapy makes those layers explicit. You can construct each layer independently and then combine them, inspect the fields of each layer, and watch how they nest — just like snapping Lego bricks together.
 
@@ -21,11 +29,16 @@ Why Scapy?
 
 Scapy is a Python library for packet crafting and analysis. Its strength is the ability to treat packet layers as discrete objects you can manipulate programmatically. For learning, that’s gold: you can build a packet, change one field, and immediately see how the whole packet changes when you send it or display it.
 
-What we’ll do in this lab
+What we’ll do in this lab:
+
 	•	Build packets from the ground up using Scapy’s layer objects.
+	
 	•	Create TCP and UDP packets with simple application payloads.
+	
 	•	Send and receive those packets and observe how Scapy displays each layer.
+	
 	•	Experiment with changing header fields (for example TTL, ports, flags) to see the real effect on the assembled packet.
+	
 
 Expectations
 
