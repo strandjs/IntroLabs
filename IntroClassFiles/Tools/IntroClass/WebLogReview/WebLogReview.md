@@ -73,7 +73,7 @@ Then attack.
 
 It is all about knowing our networks ad apps.
 
-# Going further
+### Going further
 
 https://owasp.org/
 
@@ -96,6 +96,7 @@ Please be sure to destroy the lab environment!
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
 ---
+
 
 
 
