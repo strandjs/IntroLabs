@@ -113,7 +113,7 @@ In a few moments you should get an email alert: 
 ![](attachment/Clipboard_2021-03-12-10-19-36.png) 
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/RITA/RITA.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/RITA_ADHD/RITA.md)</i></b>
 
 <b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Cowrie/Cowrie.md)</i></b>
 
@@ -136,3 +136,4 @@ Please be sure to destroy the lab environment!
  
 
  
+
