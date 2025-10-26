@@ -337,7 +337,7 @@ https://<YOUR_ACHCE_IP_ADDR>
 
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/README.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/PingCastle.md)</i></b>
 
 <b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/WebTestingIntroClass/WebTesting.md)</i></b>
 
