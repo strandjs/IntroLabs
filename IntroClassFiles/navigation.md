@@ -31,8 +31,8 @@
  - [Sysmon](Tools/IntroClass/Sysmon/Sysmon.md)
  - [Web Testing](Tools/IntroClass/WebTestingIntroClass/WebTesting.md)
  - [AC Hunter CE](Tools/IntroClass/ACHCEIntroClass/ACHunterCE.md)
- - [Azure IR](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/README.md)
  - [PingCastle](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/PingCastle.md)
+ - [Azure IR](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/README.md)
  - [Wireless](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/Wireless.md)
   
 [Cyber Deception/Active Defense]()
@@ -52,6 +52,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
