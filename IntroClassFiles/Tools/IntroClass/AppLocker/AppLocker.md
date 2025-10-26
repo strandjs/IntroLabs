@@ -196,19 +196,19 @@ The password is **adhd**
 
 As you can see, an error was generated, meaning that we were successful!
 
-***
-***Continuing on to the next Lab?***
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+***                                                                 
+
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/Portspoof/Portspoof.md)</i></b>
+
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
 
----
 
