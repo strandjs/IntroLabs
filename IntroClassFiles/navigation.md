@@ -21,8 +21,8 @@
 
  - [Applocker](Tools/IntroClass/AppLocker/AppLocker.md)
  - [Atomic RedTeam and Bluespawn](Tools/IntroClass/bluespawnIntroClass/Bluespawn.md)
- - [DeepBlueCLI](Tools/IntroClass/deepbluecli/DeepBlueCLI.md)
- - [Nessus](Tools/IntroClass/nessus/Nessus.md)
+ - [DeepBlueCLI](Tools/IntroClass/deepbluecliIntroClass/DeepBlueCLI.md)
+ - [Nessus](Tools/IntroClass/nessusIntroClass/Nessus.md)
  - [Host Firewalls and Nmap](Tools/IntroClass/Nmap/Nmap.md)
  - [Password Cracking](Tools/IntroClass/PasswordCracking/PasswordCracking.md)
  - [Password Spraying](Tools/IntroClass/PasswordSpray/PasswordSpray.md)
@@ -31,7 +31,7 @@
  - [Sysmon](Tools/IntroClass/Sysmon/Sysmon.md)
  - [Web Testing](Tools/IntroClass/WebTesting/WebTesting.md)
  - [Azure IR](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/README.md)
- - [AC Hunter CE](Tools/IntroClass/ACHCE/ACHunterCE.md)
+ - [AC Hunter CE](Tools/IntroClass/ACHCEIntroClass/ACHunterCE.md)
  - [PingCastle](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/PingCastle.md)
  - [Wireless](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/Wireless.md)
   
@@ -40,7 +40,7 @@
   - [Spidertrap](Tools/IntroClass/Spidertrap/Spidertrap.md)
   - [Cowrie](Tools/IntroClass/Cowrie/Cowrie.md)
   - [Canarytokens](Tools/IntroClass/canarytokens/Canarytokens.md)
-  - [RITA](Tools/IntroClass/RITA/RITA.md)
+  - [RITA](Tools/IntroClass/RITA_ADHD/RITA.md)
   - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
   - [Portspoof](Tools/IntroClass/Portspoof/Portspoof.md)
   - [HoneyBadger](Tools/IntroClass/HoneyBadger_files/HoneyBadger.md)
@@ -52,6 +52,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
