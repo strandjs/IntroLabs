@@ -17,6 +17,7 @@
   - [AC Hunter CE](Tools/IntroClass/ACHCE/ACHunterCE.md)
   - [Hunting DCSync, Sharepoint and Kerberoasting](https://github.com/strandjs/IntroLabs/tree/master/IntroClassFiles/Tools/IntroClass/PoisoningtheWellIR-main)
 
+<br><br>
 ## [Intro To Security]()
 
  - [Applocker](Tools/IntroClass/AppLocker/AppLocker.md)
@@ -34,7 +35,8 @@
  - [PingCastle](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/PingCastle.md)
  - [Azure IR](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/README.md)
  - [Wireless](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/Wireless.md)
-  
+
+<br><br>
 ## [Cyber Deception/Active Defense]()
 
 ### Network Honeypots
@@ -85,6 +87,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
