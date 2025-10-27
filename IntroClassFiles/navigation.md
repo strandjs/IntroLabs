@@ -37,21 +37,44 @@
   
 ## [Cyber Deception/Active Defense]()
 
+### Network Honeypots
   - [Spidertrap](Tools/IntroClass/Spidertrap/Spidertrap.md)
   - [Cowrie](Tools/IntroClass/Cowrie/Cowrie.md)
-  - [Canarytokens](Tools/IntroClass/canarytokens/Canarytokens.md)
-  - [RITA](Tools/IntroClass/RITA_ADHD/RITA.md)
-  - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
   - [Portspoof](Tools/IntroClass/Portspoof/Portspoof.md)
+  - 
+ 
+### Web / Application / Mail  
+  - [WebHoneypot](Tools/IntroClass/webhoneypot/webhoneypot.md)
+
+### Endpoint / Identity / AD deception  
   - [HoneyBadger](Tools/IntroClass/HoneyBadger_files/HoneyBadger.md)
   - [HoneyShare](Tools/IntroClass/honeyshare/HoneyShare.md)
   - [HoneyUser](Tools/IntroClass/honeyuser/honeyuser.md)
   - [AdvancedC2](Tools/IntroClass/pcap/AdvancedC2PCAPAnalysis.md)
-  - [WebHoneypot](Tools/IntroClass/webhoneypot/webhoneypot.md)
+
+### Malware capture & analysis
+
+  
+### DNS / Network tooling
+  - [RITA](Tools/IntroClass/RITA_ADHD/RITA.md)
+  
+  
+### Cloud & Container deception
+
+### Phishing / Social-engineering  
+  - [Canarytokens](Tools/IntroClass/canarytokens/Canarytokens.md)
+  
+  
+### Red/Purple team detection testing
+  - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
+
+
+### File / Data deception & auditing
   - [File Audit](Tools/IntroClass/FileAudit/FileAudit.md)
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
