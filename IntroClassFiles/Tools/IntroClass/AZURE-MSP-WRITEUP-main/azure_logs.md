@@ -34,7 +34,7 @@ It looks like the attacker found his way into the domain through **Paul Bowman's
 
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](https://github.com/strandjs/IntroLabs/blob/master/IntroClass/AZURE-MSP-WRITEUP-main/ws_3_security_logs.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/ws_3_security_logs.md)</i></b>
 
 <b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/README.md)</i></b>
 
