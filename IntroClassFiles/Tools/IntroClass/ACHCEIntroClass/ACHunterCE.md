@@ -46,9 +46,9 @@ This next section will walk through how to launch the **AC Hunter VM** using **V
 
 --------------------------------------------
 
-Now that we have successfully loaded the AC Hunter VM into our VMware application, we need to do two things.
+Now that we have successfully loaded the **AC Hunter VM** into our VMware application, we need to change the network settings.
 
-1. The first thing we will need to do is to change VM to Bridged networking from NAT.  This can be done in the settings for the VM which can be accessed via VM > Settings > Network Adapter 
+- What we will need to do is to change **VM** to `Bridged networking` from **NAT**.  This can be done in the settings for the VM which can be accessed via `VM` > `Settings` > `Network Adapter` 
 
 ![](attachments/editsettings.png)
 
@@ -56,7 +56,7 @@ Now that we have successfully loaded the AC Hunter VM into our VMware applicatio
 
 ![](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHCE/VMWare_Bridge.png)
 
-2. Go ahead and hit `Power on this virtual machine`.
+- Go ahead and hit `Power on this virtual machine`.
  When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
 
 
