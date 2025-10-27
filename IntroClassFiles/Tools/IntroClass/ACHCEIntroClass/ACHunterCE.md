@@ -92,7 +92,9 @@ ssh dataimport@YourACHCE_IPADDRESS
 
 ```bash
 ssh dataimport@YOURACHCE_IPADDRESS
+```
 
+```bash
 sudo su -
 ```
 
@@ -102,9 +104,13 @@ sudo su -
 
 ```bash
 sudo wget -O /usr/local/bin/zeek https://raw.githubusercontent.com/activecm/docker-zeek/master/zeek
+```
 
+```bash
 sudo chmod +x /usr/local/bin/zeek
+```
 
+```bash
 zeek pull
 ```
 
@@ -127,11 +133,16 @@ It should look like it does below:
  
  ```
 
-`zeek start`
+- Start **zeek**
+```bash
+zeek start
+```
 
-8. Add a password for the web user for AC Hunter
+- Add a password for the web user for AC Hunter
 
-`manage_web_user.sh reset -u 'welcome@activecountermeasures.com'`
+```bash
+manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
+```
 
 It should look like it does below:
 
