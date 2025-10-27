@@ -17,21 +17,21 @@
 
 - We have found a very important **Audit** event.
 
-![RED](https://img.shields.io/badge/RED-critical-red)
+![RED]
 
 Contains Process 4663 and the text **"An attempt was made to access an object"**.  
 This indicates that someone has tried to access something, but we need more information to get the full story.
 
 ---
 
-![GREEN](https://img.shields.io/badge/GREEN-safe-green)
+![GREEN]
 
 Contains the username **henry.butler**.  
 We know already that **henry.butler** was the next user to get compromised.
 
 ---
 
-![YELLOW](https://img.shields.io/badge/YELLOW-warning-%23B8860B)
+![YELLOW]
 
 This shows the directory accessed. It looks like something has accessed the cookies of Google Chrome,  
 but the only program that should do that is Chrome itself.  
@@ -39,7 +39,7 @@ If another program has accessed it, then we know that the **users'** cookies hav
 
 ---
 
-![PURPLE](https://img.shields.io/badge/PURPLE-alert-purple)
+![PURPLE]
 
 Shows which program accessed the folder and files.  
 It looks like **SuperSpecializedHighlyAdvancedMalwareBypasser2.exe** is the culprit.  
