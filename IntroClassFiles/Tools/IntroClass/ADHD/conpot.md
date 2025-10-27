@@ -5,104 +5,30 @@
 
 **Goal:** Conpot (an ICS/SCADA honeypot), interact with it, collect evidence, and learn analysis/detection techniques
 
----
+## Let's start
 
-## 1) Prerequisites
-- Ubuntu 20.04 or 22.04 (or other recent Linux). Commands use `sudo`.
-- 4 GB RAM free, 2+ CPUs.
-- Internet connection to download packages.
-- Optional: a second VM or laptop to act as attacker/client.
-- Tools you'll need (installation covered below): `docker`, `docker-compose` (or `python3`, `pip3`, `git`), `nmap`, `curl`, `tcpdump`, `wireshark` (optional GUI), `python3` for client scripts.
+- Open a **terminal** unless you are connected with **SSH**
 
-**Short checklist:** terminal, sudo, network between attacker and honeypot, and copy of this lab.
+- Go to **compot's** directory
 
----
-
-## 2) Two installation methods
-
-### A — Docker (easy — recommended)
-This isolates Conpot and is easiest to reset.
-
-#### Install Docker & Docker Compose
 ```bash
-# update
-sudo apt update && sudo apt upgrade -y
-
-# install Docker
-sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] \
-  https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-
-# docker-compose (v2 - plugin) or fallback to python pip version
-sudo apt install -y docker-compose-plugin  # or:
-# sudo apt install -y docker-compose
+cd ~/Desktop/conpot
 ```
 
-#### Pull and run official conpot image
-We'll create a simple `docker-compose.yml` so logs are easy.
-Create a directory:
+- Start it up
 ```bash
-mkdir -p ~/conpot-lab && cd ~/conpot-lab
-```
-Save this `docker-compose.yml`:
-```yaml
-version: "3.7"
-services:
-  conpot:
-    image: conpot/conpot:latest
-    container_name: conpot
-    ports:
-      - "80:80"       # HTTP
-      - "502:502"     # Modbus TCP (common ICS protocol)
-      - "47808:47808" # BACnet (example)
-    volumes:
-      - ./conpot-data:/data
-    restart: unless-stopped
-    network_mode: bridge
+sudo docker compose up -d
 ```
 
-Run:
+- Check container logs
 ```bash
-docker compose up -d
+sudo docker logs -f conpot
 ```
 
-Check container logs:
-```bash
-docker logs -f conpot
-```
+<img width="1820" height="903" alt="image" src="https://github.com/user-attachments/assets/f6faab44-7cf4-41ff-8df1-91d596953c3a" />
+
 
 If you want to run multiple templates later, we'll cover adding config files into `./conpot-data`.
-
----
-
-### B — Local Python install (manual)
-Use this if Docker is not allowed.
-
-```bash
-sudo apt update
-sudo apt install -y python3 python3-venv python3-pip git build-essential libxml2-dev libxslt1-dev
-git clone https://github.com/conpot/conpot.git
-cd conpot
-python3 -m venv venv
-source venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-# optional: install as package
-pip install .
-```
-
-Run conpot:
-```bash
-# default run (may need sudo for privileged ports if binding <1024)
-sudo conpot -f --template default
-```
-
-**Note:** Running directly with Python may require extra dependency fixes. Use Docker unless you want to debug dependencies.
 
 ---
 
