@@ -2,9 +2,9 @@
 
 [*Download the log file to follow along*](./logs/InteractiveSignIns_Domain_spray_logs.csv)
 
-In this walkthrough we will be taking a look at a log file that was pulled from **Azure**.
+- In this **walkthrough** we will be taking a look at a log file that was pulled from **Azure**.
 
-[Azure](https://azure.microsoft.com/en-us) is a service provided by Microsoft to move a **Domain** into the cloud. While we know the **Domain Controller** records logins if the user used Azure, we need to pull logs to see the failed, attempted, and successful logins.
+### [Azure](https://azure.microsoft.com/en-us) is a service provided by Microsoft to move a **Domain** into the cloud. While we know the **Domain Controller** records logins if the user used Azure, we need to pull logs to see the failed, attempted, and successful logins.
 
 Our goal is to find how attackers may have initially accessed our **domain network**.
 
