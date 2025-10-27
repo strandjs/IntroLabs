@@ -58,7 +58,7 @@ Now that we have successfully loaded the **AC Hunter VM** into our VMware applic
 
 - Go ahead and hit `Power on this virtual machine`.
 
->[!Important] When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
+>[!IMPORTANT] When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
 >
 > User ID is dataimport	
 
