@@ -41,10 +41,16 @@
   - [Spidertrap](Tools/IntroClass/Spidertrap/Spidertrap.md)
   - [Cowrie](Tools/IntroClass/Cowrie/Cowrie.md)
   - [Portspoof](Tools/IntroClass/Portspoof/Portspoof.md)
-  - 
+  - [OpenCanary]()
+  - [Conpot]()
+  - [IoTPOT]()
  
 ### Web / Application / Mail  
   - [WebHoneypot](Tools/IntroClass/webhoneypot/webhoneypot.md)
+  - [Glastopf]()
+  - [ModSecurity]()
+  - [Haraka]()
+  - [Mailoney]()
 
 ### Endpoint / Identity / AD deception  
   - [HoneyBadger](Tools/IntroClass/HoneyBadger_files/HoneyBadger.md)
@@ -53,20 +59,25 @@
   - [AdvancedC2](Tools/IntroClass/pcap/AdvancedC2PCAPAnalysis.md)
 
 ### Malware capture & analysis
-
+  - [Dioanea]()
+  - [Cuckoo Sandbox]()
   
 ### DNS / Network tooling
   - [RITA](Tools/IntroClass/RITA_ADHD/RITA.md)
+  - [DNSChef]()
+  - [FakeNet-NG]()
   
-  
-### Cloud & Container deception
 
 ### Phishing / Social-engineering  
   - [Canarytokens](Tools/IntroClass/canarytokens/Canarytokens.md)
+  - [GoPhish]()
+  - [Mailoney]()
   
   
 ### Red/Purple team detection testing
   - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
+  - [Metta]()
+  - [Caldera]()
 
 
 ### File / Data deception & auditing
@@ -74,6 +85,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
