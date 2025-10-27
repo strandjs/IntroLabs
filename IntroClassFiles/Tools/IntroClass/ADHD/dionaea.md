@@ -7,7 +7,7 @@
 
 # Let's start
 
-- Open up a terminal if you are not using **SSH**, else
+- Open up a terminal if you are not using **SSH**
 
 - Go the Dionaea's directory
 
