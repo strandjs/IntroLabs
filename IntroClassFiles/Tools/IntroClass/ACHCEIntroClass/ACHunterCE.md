@@ -10,7 +10,7 @@ In this lab we are going to set up the Community Edition of AC Hunter so it can 
 
 ![](attachments/ClickDownload.png)
 
------------------------------------------
+----------------------------------------- <br><br>
 This next section will walk through how to launch the **AC Hunter VM** using **VMware**.
 
 - Start by opening **file explorer** and navigating to your downloads directory.
