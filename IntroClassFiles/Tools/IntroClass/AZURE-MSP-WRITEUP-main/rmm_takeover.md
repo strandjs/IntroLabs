@@ -21,13 +21,14 @@ It is safe to assume that every single machine on the network is compromised, wh
 
 This **small** breach has just become a **huge** disaster and will need Escalation and Incident Response.
 
-***
-***Continuing on to the next Lab?***
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+***                                                              
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/cookie_theft.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
