@@ -11,15 +11,15 @@ In this lab we are going to set up the Community Edition of AC Hunter so it can 
 ![](attachments/ClickDownload.png)
 
 -----------------------------------------
-This next section will walk through how to launch the AC Hunter VM using VMware.
+This next section will walk through how to launch the **AC Hunter VM** using **VMware**.
 
-Start by opening file explorer and navigating to your downloads directory.
+- Start by opening **file explorer** and navigating to your downloads directory.
 
 ![](attachments/OpeningFileExplorer.png)
 
 ![](attachments/navigatetodownloads.png)
 
-You should see the AC Hunter .zip archive that we just downloaded. We need to extract this. Click on the .zip archive and hit `Extract all` at the top of the screen.
+- You should see the AC Hunter .zip archive that we just downloaded. We need to extract this. Click on the .zip archive and hit `Extract all` at the top of the screen.
 
 ![](attachments/extractall.png)
 
