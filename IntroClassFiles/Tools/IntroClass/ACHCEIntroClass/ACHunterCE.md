@@ -1,12 +1,10 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
-# Overview
+# Overview + Setup
 
 In this lab we are going to set up the Community Edition of AC Hunter so it can intercept and inspect traffic on a home network without the need for expensive managed switches with SPAN or TAP ports.  This is done through the amazing power of ARP cache poisoning.
 
-- Download AC Hunter Community Edition Here:
-
-https://www.activecountermeasures.com/ac-hunter-community-edition/download/
+- Download AC Hunter Community Edition [Here](https://www.activecountermeasures.com/ac-hunter-community-edition/download/)
 
 ![](attachments/ACHCE_Download.png)
 
