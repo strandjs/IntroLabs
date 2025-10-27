@@ -22,7 +22,7 @@ This next section will walk through how to launch the **AC Hunter VM** using **V
 
 ![](attachments/navigatetodownloads.png)
 
-- You should see the AC Hunter .zip archive that we just downloaded. We need to extract this. Click on the .zip archive and hit `Extract all` at the top of the screen.
+- You should see the `AC Hunter.zip` archive that we just downloaded. We need to extract this. Click on the `.zip` archive and hit `Extract all` at the top of the screen.
 
 ![](attachments/extractall.png)
 
