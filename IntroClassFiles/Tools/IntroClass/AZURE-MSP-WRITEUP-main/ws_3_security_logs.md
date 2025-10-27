@@ -21,13 +21,16 @@ After tabbing through the log file and carefully looking over executables we sho
 
 At first it may not be totally obvious, but the name seems *slightly* suspicious and is not a normal system file like **mmc** or **event viewer**. It looks like the file was served through a file share on **Workstation 1**, which was the machine that **Paul Bowman** was using. It is also important to take notice of the username, the attacker has moved from Paul into a **new** user. This means the attacker was **pivoting** in this environment.
 
-***
-***Continuing on to the next Lab?***
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/cookie_theft.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/azure_logs.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
