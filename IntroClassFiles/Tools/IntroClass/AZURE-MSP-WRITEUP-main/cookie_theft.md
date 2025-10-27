@@ -37,13 +37,16 @@ Right?
 
 Unfortunately, the cookie theft and reuse occur attackers are hijacking a session that already went through **MFA**, so the attacker can effectively bypass **MFA**. But before we panic let's check our **RMM** logs and see if the attacker has done anything.
 
-***
-***Continuing on to the next Lab?***
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClass/AZURE-MSP-WRITEUP-main/rmm_takeover.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClass/AZURE-MSP-WRITEUP-main/ws_3_security_logs.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
