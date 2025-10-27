@@ -1,52 +1,54 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
+# Overview + Setup
 
 In this lab we are going to set up the Community Edition of AC Hunter so it can intercept and inspect traffic on a home network without the need for expensive managed switches with SPAN or TAP ports.  This is done through the amazing power of ARP cache poisoning.
 
-Step 0, Download AC Hunter Community Edition Here:
-
-https://www.activecountermeasures.com/ac-hunter-community-edition/download/
+- Download AC Hunter Community Edition [Here](https://www.activecountermeasures.com/ac-hunter-community-edition/download/)
 
 ![](attachments/ACHCE_Download.png)
 
 ![](attachments/ClickDownload.png)
 
------------------------------------------
-This next section will walk through how to launch the AC Hunter VM using VMware.
+----------------------------------------- 
 
-Start by opening file explorer and navigating to your downloads directory.
+<br><br>
+
+This next section will walk through how to launch the **AC Hunter VM** using **VMware**.
+
+- Start by opening **file explorer** and navigating to your downloads directory.
 
 ![](attachments/OpeningFileExplorer.png)
 
 ![](attachments/navigatetodownloads.png)
 
-You should see the AC Hunter .zip archive that we just downloaded. We need to extract this. Click on the .zip archive and hit `Extract all` at the top of the screen.
+- You should see the `AC-Hunter.zip` archive that we just downloaded. We need to extract this. Click on the `.zip` archive and hit `Extract all` at the top of the screen.
 
 ![](attachments/extractall.png)
 
-When the pop-up appears, click extract. This will extract the .zip archive to the downloads folder. 
+- When the pop-up appears, click **extract**. This will extract the `.zip` archive to the downloads folder. 
 
 ![](attachments/extract.png)
 
-Next, open your VMware application. In this instance, we use VMware Workstation. Once opened, first make sure you have the home tab selected. Then, click `Open a Virtual Machine`.
+- Next, open your VMware application. In this instance, we use **VMware Workstation**. Once opened, first make sure you have the home tab selected. Then, click `Open a Virtual Machine`.
 
 ![](attachments/openvmware.png)
 
-Once again, navigate to your downloads folder, and then into the extracted `AC-Hunter-v...` folder. If done correctly, you should only see one file that can be selected. Go ahead and double click on it.
+- Once again, navigate to your downloads folder, and then into the extracted `AC-Hunter-v...` folder. If done correctly, you should only see one file that can be selected. Go ahead and double click on it.
 
 ![](attachments/openfolder.png)
 
 ![](attachments/doubleclick.png)
 
-After doing this, you should see a new tab appear shown in the screenshot below.
+- After doing this, you should see a new tab appear shown in the screenshot below.
 
 ![](attachments/newtab.png)
 
 --------------------------------------------
 
-Now that we have successfully loaded the AC Hunter VM into our VMware application, we need to do two things.
+Now that we have successfully loaded the **AC Hunter VM** into our VMware application, we need to change the network settings.
 
-1. The first thing we will need to do is to change VM to Bridged networking from NAT.  This can be done in the settings for the VM which can be accessed via VM > Settings > Network Adapter 
+- What we will need to do is to change **VM** to `Bridged networking` from **NAT**.  This can be done in the settings for the VM which can be accessed via `VM` > `Settings` > `Network Adapter` 
 
 ![](attachments/editsettings.png)
 
@@ -54,44 +56,66 @@ Now that we have successfully loaded the AC Hunter VM into our VMware applicatio
 
 ![](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHCE/VMWare_Bridge.png)
 
-2. Go ahead and hit `Power on this virtual machine`.
- When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
+- Go ahead and hit `Power on this virtual machine`.
 
+>[!IMPORTANT]
+> When the VM is done booting it is essential you **copy password** before login!!!! It is displayed in the logon banner at **first boot** and will go away once it is used.
+>
+> **User ID** is `dataimport`	
 
-User ID is dataimport	
+- Change the **default password** after initial login by running the following:
+```bash
+passwd
+```
 
-5. Change the default password after initial login by running the following:
-<pre>passwd</pre>
+- Next, get your **IP Address** by running the following command:
 
-6. Next, get your IP Address by running the following command:
-
-<pre>ip addr show dev ens33 | grep inet </pre>
+```bash
+ip addr show dev ens33 | grep inet
+```
 
 ![](attachments/IP.png)
 
-5. Now lets open Terminal on Windows and open two SSH sessions.  I like to have one as root and another as dataimport for the install.
+- Now lets open Terminal on Windows and open two **SSH sessions**. I like to have one as **root** and another as **dataimport** for the install.
+
+<br>
 
 From Windows Terminal.
 
-Terminal 1:
+- **Terminal 1:**
 
-<pre>ssh dataimport@YourACHCE_IPADDRESS</pre>
+```bash
+ssh dataimport@YourACHCE_IPADDRESS
+```
 
-Terminal 2:
+- **Terminal 2:**
 
-`ssh dataimport@YOURACHCE_IPADDRESS`
+```bash
+ssh dataimport@YOURACHCE_IPADDRESS
+```
 
-`sudo su -`
+```bash
+sudo su -
+```
 
-6. As dataimport, pull down and install zeek
+<br>
 
-`sudo wget -O /usr/local/bin/zeek https://raw.githubusercontent.com/activecm/docker-zeek/master/zeek`
+- As **dataimport**, pull down and install **zeek**
 
-`sudo chmod +x /usr/local/bin/zeek`
+```bash
+sudo wget -O /usr/local/bin/zeek https://raw.githubusercontent.com/activecm/docker-zeek/master/zeek
+```
 
-`zeek pull`
+```bash
+sudo chmod +x /usr/local/bin/zeek
+```
 
-7. Choose your ens adaptor!!
+```bash
+zeek pull
+```
+
+>[!IMPORTANT]
+> Choose your **ens adaptor**!!
 
 It should look like it does below:
 
@@ -109,15 +133,22 @@ It should look like it does below:
  
  ```
 
-`zeek start`
+- Start **zeek**
+```bash
+zeek start
+```
 
-8. Add a password for the web user for AC Hunter
+- Add a password for the web user for AC Hunter
 
-`manage_web_user.sh reset -u 'welcome@activecountermeasures.com'`
+```bash
+manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
+```
 
 It should look like it does below:
 
-```dataimport@achce:~$ manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
+```
+dataimport@achce:~$ manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
+
 Please enter a password
 Please re-enter to confirm:
 achunter_db is up-to-date
@@ -134,23 +165,34 @@ dataimport@achce:~$
 
 9. Get the proper scripts to connect the Zeek Sensor
 
-`curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/connect_sensor.sh -O`
+```bash
+curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/connect_sensor.sh -O
+```
 
-`curl -fsSL https://raw.githubusercontent.com/activecm/shell-lib/master/acmlib.sh -O`
+```bash
+curl -fsSL https://raw.githubusercontent.com/activecm/shell-lib/master/acmlib.sh -O
+```
 
-`curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/zeek_log_transport.sh -O`
+```bash
+curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/zeek_log_transport.sh -O
+```
 
-10. Get your hostname
+- Get your **hostname**
 
-`hostname`
+```bash
+hostname
+```
 
-11. run the script with your ac-hunter system hostname:
+- Run the script with your **ac-hunter** system **hostname**:
 
-`bash connect_sensor.sh achce`
+```bash
+bash connect_sensor.sh achce
+```
 
 It should look like it does below:
 
-```================ Creating a new RSA key with no passphrase ================
+```
+================ Creating a new RSA key with no passphrase ================
 Generating public/private rsa key pair.
 Your identification has been saved in /home/dataimport/.ssh/id_rsa_dataimport
 Your public key has been saved in /home/dataimport/.ssh/id_rsa_dataimport.pub
@@ -178,35 +220,54 @@ dataimport@achce's password:
 
 ```
 
-12. Install bettercap as root!!! Please switch to the other Terminal where you are running as root.
+- Install **bettercap** as **root**!!! Please switch to the other Terminal where you are running as root.
 
-`docker pull bettercap/bettercap`
+>[!IMPORTANT]
+> Make sure you are in the right **terminal**
 
-`docker run -it --privileged --net=host bettercap/bettercap -eval "caplets.update; ui.update; q"`
+```bash
+docker pull bettercap/bettercap
+```
 
-13. Install mlocate
+```bash
+docker run -it --privileged --net=host bettercap/bettercap -eval "caplets.update; ui.update; q"
+```
 
-`apt install mlocate`
+- Install **mlocate**
 
-14. Updated the database
+>[!NOTE]
+> From the **kali** terminal
 
-`updatedb`
+```bash
+apt install mlocate
+```
 
-15. Search for the config files
+- Updated the **database**
 
-`locate https-ui.cap`
+```bash
+updatedb
+```
 
-16. Edit the https-ui.cap file:
+- Search for the **config files**
+
+```bash
+locate https-ui.cap
+```
+
+- Edit the `https-ui.cap` file:
 
 Please note your path will be different!!!!!
 
-`vi /var/lib/docker/overlay2/5146307503ac713827d090d51b88a622af068579060d8e1f1d97cda56415e018/diff/app/https-ui.cap`
+```bash
+vi /var/lib/docker/overlay2/5146307503ac713827d090d51b88a622af068579060d8e1f1d97cda56415e018/diff/app/https-ui.cap
+```
 
-Change the line set https.server.port to 4443
+- Change the line set `https.server.port` to **4443**
 
 It should look like it does below:
 
-```# api listening on https://0.0.0.0:8083/ and ui on https://0.0.0.0
+```
+# api listening on https://0.0.0.0:8083/ and ui on https://0.0.0.0
 set api.rest.address 0.0.0.0
 set api.rest.port 8083
 set https.server.address 0.0.0.0
@@ -230,19 +291,21 @@ https.server on
 ```
 
 
-log out of vi with esc :wq!
+- Log out of vi with by pressing `esc` and **typing** `:wq!` and pressing `Enter`
 
-###Please note, there seems to be a weird bug in Bettercap where it updates the port to 4444443.  If you get a bind error, just re-edit the above file to set the port to 443.
+### Please note, there seems to be a weird bug in Bettercap where it updates the port to 4444443.  If you get a bind error, just re-edit the above file to set the port to 443.
 
-17. Start bettercap
+- Start **bettercap**
 
+```bash
+docker run -it --privileged --net=host bettercap/bettercap -caplet https-ui
+```
 
-`docker run -it --privileged --net=host bettercap/bettercap -caplet https-ui`
+- Show the **network**
 
-
-18. Show the network
-
-`net.show`
+```bash
+net.show
+```
 
 
 ```
@@ -263,9 +326,11 @@ log out of vi with esc :wq!
 
 ```
 
-19. Show help for options!
+- Show **help** for **options**!
 
-`help`
+```bash
+help
+```
 
 It should look like it does below:
 
@@ -323,17 +388,35 @@ Modules
 			
 ```
 
-20.  Start the poison
+-  Start the **poison**
 
-`arp.spoof on`
+```bash
+arp.spoof on
+```
 
-21. Start the https proxy
+- Start the https proxy
 
-`https.proxy on`
+```bash
+https.proxy on
+```
 
-Now, surf to your AC-Hunter system!!!
+Now, surf to your **AC-Hunter system**!!!
 
-https://<YOUR_ACHCE_IP_ADDR>
+`https://<YOUR_ACHCE_IP_ADDR>`
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](https://github.com/strandjs/IntroLabs/tree/master/IntroClassFiles/Tools/IntroClass/PoisoningtheWellIR-main)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/FirewallLog/FirewallLog.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
+
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+---
 
