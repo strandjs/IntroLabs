@@ -57,10 +57,10 @@ Now that we have successfully loaded the **AC Hunter VM** into our VMware applic
 ![](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/ACHCE/VMWare_Bridge.png)
 
 - Go ahead and hit `Power on this virtual machine`.
- When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
 
-
-User ID is dataimport	
+>[!Important] When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
+>
+> User ID is dataimport	
 
 5. Change the default password after initial login by running the following:
 <pre>passwd</pre>
