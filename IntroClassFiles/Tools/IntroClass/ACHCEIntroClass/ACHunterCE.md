@@ -22,25 +22,25 @@ This next section will walk through how to launch the **AC Hunter VM** using **V
 
 ![](attachments/navigatetodownloads.png)
 
-- You should see the `AC Hunter.zip` archive that we just downloaded. We need to extract this. Click on the `.zip` archive and hit `Extract all` at the top of the screen.
+- You should see the `AC-Hunter.zip` archive that we just downloaded. We need to extract this. Click on the `.zip` archive and hit `Extract all` at the top of the screen.
 
 ![](attachments/extractall.png)
 
-When the pop-up appears, click extract. This will extract the .zip archive to the downloads folder. 
+- When the pop-up appears, click **extract**. This will extract the `.zip` archive to the downloads folder. 
 
 ![](attachments/extract.png)
 
-Next, open your VMware application. In this instance, we use VMware Workstation. Once opened, first make sure you have the home tab selected. Then, click `Open a Virtual Machine`.
+- Next, open your VMware application. In this instance, we use **VMware Workstation**. Once opened, first make sure you have the home tab selected. Then, click `Open a Virtual Machine`.
 
 ![](attachments/openvmware.png)
 
-Once again, navigate to your downloads folder, and then into the extracted `AC-Hunter-v...` folder. If done correctly, you should only see one file that can be selected. Go ahead and double click on it.
+- Once again, navigate to your downloads folder, and then into the extracted `AC-Hunter-v...` folder. If done correctly, you should only see one file that can be selected. Go ahead and double click on it.
 
 ![](attachments/openfolder.png)
 
 ![](attachments/doubleclick.png)
 
-After doing this, you should see a new tab appear shown in the screenshot below.
+- After doing this, you should see a new tab appear shown in the screenshot below.
 
 ![](attachments/newtab.png)
 
