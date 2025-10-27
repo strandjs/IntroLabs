@@ -59,42 +59,57 @@ Now that we have successfully loaded the **AC Hunter VM** into our VMware applic
 - Go ahead and hit `Power on this virtual machine`.
 
 >[!IMPORTANT]
-> When the VM is done booting it is essential you copy password before login!!!! It is displayed in the logon banner at first boot and will go away once it is used.
+> When the VM is done booting it is essential you **copy password** before login!!!! It is displayed in the logon banner at **first boot** and will go away once it is used.
 >
-> User ID is dataimport	
+> **User ID** is `dataimport`	
 
-5. Change the default password after initial login by running the following:
-<pre>passwd</pre>
+- Change the **default password** after initial login by running the following:
+```bash
+passwd
+```
 
-6. Next, get your IP Address by running the following command:
+- Next, get your **IP Address** by running the following command:
 
-<pre>ip addr show dev ens33 | grep inet </pre>
+```bash
+ip addr show dev ens33 | grep inet
+```
 
 ![](attachments/IP.png)
 
-5. Now lets open Terminal on Windows and open two SSH sessions.  I like to have one as root and another as dataimport for the install.
+- Now lets open Terminal on Windows and open two **SSH sessions**. I like to have one as **root** and another as **dataimport** for the install.
+
+<br>
 
 From Windows Terminal.
 
-Terminal 1:
+- **Terminal 1:**
 
-<pre>ssh dataimport@YourACHCE_IPADDRESS</pre>
+```bash
+ssh dataimport@YourACHCE_IPADDRESS
+```
 
-Terminal 2:
+- **Terminal 2:**
 
-`ssh dataimport@YOURACHCE_IPADDRESS`
+```bash
+ssh dataimport@YOURACHCE_IPADDRESS
 
-`sudo su -`
+sudo su -
+```
 
-6. As dataimport, pull down and install zeek
+<br>
 
-`sudo wget -O /usr/local/bin/zeek https://raw.githubusercontent.com/activecm/docker-zeek/master/zeek`
+- As **dataimport**, pull down and install **zeek**
 
-`sudo chmod +x /usr/local/bin/zeek`
+```bash
+sudo wget -O /usr/local/bin/zeek https://raw.githubusercontent.com/activecm/docker-zeek/master/zeek
 
-`zeek pull`
+sudo chmod +x /usr/local/bin/zeek
 
-7. Choose your ens adaptor!!
+zeek pull
+```
+
+>[!IMPORTANT]
+> Choose your **ens adaptor**!!
 
 It should look like it does below:
 
