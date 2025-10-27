@@ -40,9 +40,9 @@ Right?
 
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/IntroClass/AZURE-MSP-WRITEUP-main/rmm_takeover.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/rmm_takeover.md)</i></b>
 
-<b><i>Want to go back? </br>[Previous Lab](/IntroClass/AZURE-MSP-WRITEUP-main/ws_3_security_logs.md)</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/ws_3_security_logs.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
