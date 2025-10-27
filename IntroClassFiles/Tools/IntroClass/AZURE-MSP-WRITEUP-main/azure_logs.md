@@ -32,13 +32,15 @@ It looks like **Paul Bowman’s** password was discovered by an attacker during 
 
 It looks like the attacker found his way into the domain through **Paul Bowman's** login information. We can see the success message from a login attempt to the domain.
 
-***
-***Continuing on to the next Lab?***
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](https://github.com/strandjs/IntroLabs/blob/master/IntroClass/AZURE-MSP-WRITEUP-main/ws_3_security_logs.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/AZURE-MSP-WRITEUP-main/README.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
