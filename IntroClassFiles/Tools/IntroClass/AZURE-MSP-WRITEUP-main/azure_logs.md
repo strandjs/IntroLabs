@@ -32,7 +32,7 @@
 
 - It looks like the attacker found his way into the domain through **Paul Bowman's** login information. We can see the success message from a login attempt to the domain.
 
->[!NOTE]
+>[!IMPORTANT]
 >Always when an attack has occured, look for **persistance** and **lateral movement**, ALWAYS!
 
 ***                                                                 
