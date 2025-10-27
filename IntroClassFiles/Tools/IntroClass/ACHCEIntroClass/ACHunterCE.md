@@ -146,7 +146,9 @@ manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
 
 It should look like it does below:
 
-```dataimport@achce:~$ manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
+```
+dataimport@achce:~$ manage_web_user.sh reset -u 'welcome@activecountermeasures.com'
+
 Please enter a password
 Please re-enter to confirm:
 achunter_db is up-to-date
@@ -163,23 +165,34 @@ dataimport@achce:~$
 
 9. Get the proper scripts to connect the Zeek Sensor
 
-`curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/connect_sensor.sh -O`
+```bash
+curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/connect_sensor.sh -O
+```
 
-`curl -fsSL https://raw.githubusercontent.com/activecm/shell-lib/master/acmlib.sh -O`
+```bash
+curl -fsSL https://raw.githubusercontent.com/activecm/shell-lib/master/acmlib.sh -O
+```
 
-`curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/zeek_log_transport.sh -O`
+```bash
+curl -fsSL https://raw.githubusercontent.com/activecm/zeek-log-transport/master/zeek_log_transport.sh -O
+```
 
-10. Get your hostname
+- Get your **hostname**
 
-`hostname`
+```bash
+hostname
+```
 
-11. run the script with your ac-hunter system hostname:
+- Run the script with your **ac-hunter** system **hostname**:
 
-`bash connect_sensor.sh achce`
+```bash
+bash connect_sensor.sh achce
+```
 
 It should look like it does below:
 
-```================ Creating a new RSA key with no passphrase ================
+```
+================ Creating a new RSA key with no passphrase ================
 Generating public/private rsa key pair.
 Your identification has been saved in /home/dataimport/.ssh/id_rsa_dataimport
 Your public key has been saved in /home/dataimport/.ssh/id_rsa_dataimport.pub
@@ -207,35 +220,54 @@ dataimport@achce's password:
 
 ```
 
-12. Install bettercap as root!!! Please switch to the other Terminal where you are running as root.
+- Install **bettercap** as **root**!!! Please switch to the other Terminal where you are running as root.
 
-`docker pull bettercap/bettercap`
+>[!IMPORTANT]
+> Make sure you are in the right **terminal**
 
-`docker run -it --privileged --net=host bettercap/bettercap -eval "caplets.update; ui.update; q"`
+```bash
+docker pull bettercap/bettercap
+```
 
-13. Install mlocate
+```bash
+docker run -it --privileged --net=host bettercap/bettercap -eval "caplets.update; ui.update; q"
+```
 
-`apt install mlocate`
+- Install **mlocate**
 
-14. Updated the database
+>[!NOTE]
+> From the **kali** terminal
 
-`updatedb`
+```bash
+apt install mlocate
+```
 
-15. Search for the config files
+- Updated the **database**
 
-`locate https-ui.cap`
+```bash
+updatedb
+```
 
-16. Edit the https-ui.cap file:
+- Search for the **config files**
+
+```bash
+locate https-ui.cap
+```
+
+- Edit the `https-ui.cap` file:
 
 Please note your path will be different!!!!!
 
-`vi /var/lib/docker/overlay2/5146307503ac713827d090d51b88a622af068579060d8e1f1d97cda56415e018/diff/app/https-ui.cap`
+```bash
+vi /var/lib/docker/overlay2/5146307503ac713827d090d51b88a622af068579060d8e1f1d97cda56415e018/diff/app/https-ui.cap
+```
 
-Change the line set https.server.port to 4443
+- Change the line set `https.server.port` to **4443**
 
 It should look like it does below:
 
-```# api listening on https://0.0.0.0:8083/ and ui on https://0.0.0.0
+```
+# api listening on https://0.0.0.0:8083/ and ui on https://0.0.0.0
 set api.rest.address 0.0.0.0
 set api.rest.port 8083
 set https.server.address 0.0.0.0
@@ -259,19 +291,21 @@ https.server on
 ```
 
 
-log out of vi with esc :wq!
+- Log out of vi with by pressing `esc` and **typing** `:wq!` and pressing `Enter`
 
-###Please note, there seems to be a weird bug in Bettercap where it updates the port to 4444443.  If you get a bind error, just re-edit the above file to set the port to 443.
+### Please note, there seems to be a weird bug in Bettercap where it updates the port to 4444443.  If you get a bind error, just re-edit the above file to set the port to 443.
 
-17. Start bettercap
+- Start **bettercap**
 
+```bash
+docker run -it --privileged --net=host bettercap/bettercap -caplet https-ui
+```
 
-`docker run -it --privileged --net=host bettercap/bettercap -caplet https-ui`
+- Show the **network**
 
-
-18. Show the network
-
-`net.show`
+```bash
+net.show
+```
 
 
 ```
@@ -292,9 +326,11 @@ log out of vi with esc :wq!
 
 ```
 
-19. Show help for options!
+- Show **help** for **options**!
 
-`help`
+```bash
+help
+```
 
 It should look like it does below:
 
@@ -352,17 +388,21 @@ Modules
 			
 ```
 
-20.  Start the poison
+-  Start the **poison**
 
-`arp.spoof on`
+```bash
+arp.spoof on
+```
 
-21. Start the https proxy
+- Start the https proxy
 
-`https.proxy on`
+```bash
+https.proxy on
+```
 
-Now, surf to your AC-Hunter system!!!
+Now, surf to your **AC-Hunter system**!!!
 
-https://<YOUR_ACHCE_IP_ADDR>
+`https://<YOUR_ACHCE_IP_ADDR>`
 
 
 ***                                                                 
