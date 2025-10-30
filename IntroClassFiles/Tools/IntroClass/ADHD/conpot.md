@@ -309,9 +309,22 @@ done
 - Keep interactions read-only whenever possible. If you demonstrate writes, label them and run in a controlled environment.
 - This lab focuses on learning detection, not exploitation.
 
+
+
+
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/ADHD/)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
+
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 ---
 
-If you want, I can also:
-- provide a ready-to-run `docker-compose.yml` and `conpot.cfg` (already included above),
-- generate the modbus client scripts as files for you,
-- or produce a printable PDF from this sheet.
+
