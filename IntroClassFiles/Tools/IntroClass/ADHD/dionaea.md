@@ -55,7 +55,7 @@ We can see all perspectives, the one of the attacker, it is saying that it found
 
 <br><br>
 
-And the one of the SOC Analyst, where we see the logs and the credentials used
+And the one of the Analyst, where we see the logs and the credentials used
 <img width="1849" height="952" alt="image" src="https://github.com/user-attachments/assets/6dfa629a-207e-4927-a948-3dd2cab8621b" />
 <br><br>
 
