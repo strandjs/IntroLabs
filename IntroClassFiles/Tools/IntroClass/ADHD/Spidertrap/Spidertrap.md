@@ -35,38 +35,38 @@ Usage
 Let's get started by opening a Kali terminal. 
 You can do this by right clicking the icon on the desktop by selecting open...
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/OpeningKaliInstance.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/OpeningKaliInstance.png)
 
 Or... you can simply click on the Kali logo in the taskbar.
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/TaskbarKaliIcon.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/TaskbarKaliIcon.png)
 
 First, let's get your Kali Linux systems IP address by running the following command:
 
 <pre>ifconfig</pre>
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/ifconfig.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/ifconfig.png)
 
 Next, let's cd into the proper directory:
 
 <pre>cd /opt/spidertrap</pre>
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/cdoptspidertrap.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/cdoptspidertrap.png)
 
 Now, lets start Spidertrap by running the following command:
 
 <pre>python3 spidertrap.py</pre>
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/startspidertrap.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/startspidertrap.png)
 
 Then visit the following site in a web browser:
 <pre>http://[YOUR_LINUX_IP]:8000</pre> 
 
 You should see a page containing randomly generated links. If you click on a link it will take you to a page with more randomly generated links.
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/links.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/links.png)
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/morelinks.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/morelinks.png)
 
 ## Example 2: Providing a List of Links
 
@@ -80,7 +80,7 @@ Let's start Spidertrap again but with the following options:
 >
 >You may need to press `ctrl + c` to kill your existing Spidertrap session.
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/startwithoptions.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/startwithoptions.png)
 
 Then visit the following site in a web browser:
 
@@ -88,9 +88,9 @@ Then visit the following site in a web browser:
  
 You should see a page containing links taken from the file. If you click on a link it will take you to a page with more links from the file.
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/links2.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/links2.png)
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/morelinks2.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/morelinks2.png)
 
 ## Example 3: Trapping a Wget Spider
 
@@ -99,7 +99,7 @@ For this example, follow the instructions in [Example 1: Basic Usage](#example-1
 
 Once Spidertrap starts, open a new Kali Linux terminal. Do this by clicking the icon in the taskbar:
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/TaskbarKaliIcon.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/TaskbarKaliIcon.png)
 
 We are going to use `wget` to mirror the website. 
 
@@ -112,7 +112,7 @@ Let's run the following command:
 
 <pre>sudo wget -m http://127.0.0.1:8000</pre>
 
-![](/IntroClassFiles/Tools/IntroClass/Spidertrap/wgetcommand.png)
+![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/wgetcommand.png)
 
 When finished, type `ctrl + c` to kill wget.
 
