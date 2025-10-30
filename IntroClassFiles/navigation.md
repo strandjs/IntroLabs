@@ -40,9 +40,10 @@
 ## [Cyber Deception/Active Defense]()
 
 ### Network Honeypots
-  - [Spidertrap](Tools/IntroClass/Spidertrap/Spidertrap.md)
-  - [Cowrie](Tools/IntroClass/Cowrie/Cowrie.md)
-  - [Portspoof](Tools/IntroClass/Portspoof/Portspoof.md)
+  - [Spidertrap](Tools/IntroClass/ADHD/Spidertrap/Spidertrap.md)
+  - [Cowrie](Tools/IntroClass/ADHD/Cowrie/Cowrie.md)
+  - [Portspoof](Tools/IntroClass/ADHD/Portspoof/Portspoof.md)
+  - [HoneyPorts](Tools/IntroClass/ADHD/)
   - [OpenCanary](Tools/IntroClass/ADHD/openCanary.md)
   - [Conpot](Tools/IntroClass/ADHD/conpot.md)
   - [IoTPOT](Tools/IntroClass/ADHD/IoTPOT.md)
@@ -55,38 +56,39 @@
   - [Mailoney]()
 
 ### Endpoint / Identity / AD deception  
-  - [HoneyBadger](Tools/IntroClass/HoneyBadger_files/HoneyBadger.md)
-  - [HoneyShare](Tools/IntroClass/honeyshare/HoneyShare.md)
-  - [HoneyUser](Tools/IntroClass/honeyuser/honeyuser.md)
-  - [AdvancedC2](Tools/IntroClass/pcap/AdvancedC2PCAPAnalysis.md)
+  - [HoneyBadger](Tools/IntroClass/ADHD/HoneyBadger_files/HoneyBadger.md)
+  - [HoneyShare](Tools/IntroClass/ADHD/honeyshare/HoneyShare.md)
+  - [HoneyUser](Tools/IntroClass/ADHD/honeyuser/honeyuser.md)
+  - [AdvancedC2](Tools/IntroClass/ADHD/pcap/AdvancedC2PCAPAnalysis.md)
 
 ### Malware capture & analysis
   - [Dioanea](Tools/IntroClass/ADHD/dionaea.md)
   - [Cuckoo Sandbox]()
   
 ### DNS / Network tooling
-  - [RITA](Tools/IntroClass/RITA_ADHD/RITA.md)
+  - [RITA](Tools/IntroClass/ADHD/RITA_ADHD/RITA.md)
   - [DNSChef]()
   - [FakeNet-NG]()
   
 
 ### Phishing / Social-engineering  
-  - [Canarytokens](Tools/IntroClass/canarytokens/Canarytokens.md)
+  - [Canarytokens](Tools/IntroClass/ADHD/canarytokens/Canarytokens.md)
   - [GoPhish]()
   - [Mailoney]()
   
   
 ### Red/Purple team detection testing
-  - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
+  - [Bluespawn](Tools/IntroClass/ADHD/bluespawn/Bluespawn.md)
   - [Metta]()
   - [Caldera]()
 
 
 ### File / Data deception & auditing
-  - [File Audit](Tools/IntroClass/FileAudit/FileAudit.md)
+  - [File Audit](Tools/IntroClass/ADHD/FileAudit/FileAudit.md)
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
