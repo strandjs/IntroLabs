@@ -171,9 +171,9 @@ To reset our VM, you can reboot (recommended) or:
 <pre>sudo iptables -t nat -F</pre>
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/HoneyBadger_files/HoneyBadger.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/HoneyPorts.md)</i></b>
 
-<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/bluespawn/Bluespawn.md)</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/ADHD/Cowrie/Cowrie.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
