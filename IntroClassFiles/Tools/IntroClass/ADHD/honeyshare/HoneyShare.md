@@ -102,9 +102,9 @@ It should look like this: 
 ![image](https://github.com/user-attachments/assets/4b3291a4-fbd1-49a6-968f-f72caefc403a)
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/honeyuser/honeyuser.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/honeyuser/honeyuser.md)</i></b>
 
-<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/HoneyBadger_files/HoneyBadger.md)</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/ADHD/HoneyBadger_files/HoneyBadger.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
@@ -126,5 +126,6 @@ Please be sure to destroy the lab environment!
  
 
  
+
 
 
