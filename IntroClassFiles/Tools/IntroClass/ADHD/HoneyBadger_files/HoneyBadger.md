@@ -412,9 +412,9 @@ Navigate to this page in a browser. The server will return a 404
 The CMD agent is a type of HTML agent, as the beacon is created via web requests on the command line. There are two utilities in the util directory of HoneyBadger, one for windows and one for linux. They utilize Google's geolocation API. Usage information is available in those scripts. 
 
  ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/honeyshare/HoneyShare.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/honeyshare/HoneyShare.md)</i></b>
 
-<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Portspoof/Portspoof.md)</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/ADHD/IoTPOT.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
