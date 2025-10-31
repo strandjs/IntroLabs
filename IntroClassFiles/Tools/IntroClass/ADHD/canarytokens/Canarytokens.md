@@ -113,9 +113,9 @@ In a few moments you should get an email alert: 
 ![](attachment/Clipboard_2021-03-12-10-19-36.png) 
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/RITA_ADHD/RITA_ADHD.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/GoPhish.mdd)</i></b>
 
-<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Cowrie/Cowrie.md)</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/ADHD/FakeNet-NG.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
@@ -136,5 +136,6 @@ Please be sure to destroy the lab environment!
  
 
  
+
 
 
