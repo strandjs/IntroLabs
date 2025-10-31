@@ -1,44 +1,48 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
 
-Honey Ports
-============
+# Honey Ports
 
-Website
--------
+
+### Website
 
 <https://github.com/adhdproject/honeyports>
 
-Description
------------
+## Description
 
 A Python based cross-platform HoneyPort solution, created by Paul Asadoorian.
 
-Install Location
-----------------
+## Install Location
 
-`/opt/honeyports/`
+```bash
+/opt/honeyports/
+```
 
-Usage
------
+## Usage
+
 
 Change to the Honeyports directory and execute the latest version of the script:
 
-`~$` **`cd /opt/honeyports`**
+```bash
+cd /opt/honeyports
+```
 
-`/opt/honeyports$` **`python3 ./honeyports.py`**
-
+```bash
+python3 ./honeyports.py
+```
         
 
-Example 1: Monitoring A Port With HoneyPorts
---------------------------------------------
+### Example 1: Monitoring A Port With HoneyPorts
 
-From the honeyports directory, run:
+- From the honeyports directory, run:
 
-`/opt/honeyports$` **`sudo python3 ./honeyports.py -p 3389 -h localhost`**
-
-        Listening on  0.0.0.0 IP:  0.0.0.0  :  3389
-
+```bash
+sudo python3 ./honeyports.py -p 3389 -h localhost
+```
+<pre>
+Listening on  0.0.0.0 IP:  0.0.0.0  :  3389
+</pre>
+        
 We can confirm that the listening is taking place with lsof:
 
 `/opt/honeyports$` **`sudo lsof -i -P | grep python`**
@@ -207,4 +211,5 @@ Please be sure to destroy the lab environment!
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
 ---
+
 
