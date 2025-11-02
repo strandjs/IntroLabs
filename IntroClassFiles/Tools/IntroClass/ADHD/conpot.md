@@ -8,310 +8,208 @@
 
 **Goal:** Conpot (an ICS/SCADA honeypot), interact with it, collect evidence, and learn analysis/detection techniques
 
-## Let's start
+---
+## Quick overview (one-liner)
+1. SSH into VM -> `cd ~/Desktop/conpot` -> `sudo docker compose up -d` -> run discovery & Modbus exercises from the VM (host) -> collect logs & pcaps into `~/conpot_artifacts` -> `scp` artifacts to your laptop.
 
-- Open a **terminal** unless you are connected with **SSH**
+---
+## 0) Before students connect (Instructor checklist)
+Run or verify these once (on the VM):
+```bash
+# make artifact folder (safe, outside conpot dir)
+mkdir -p ~/conpot_artifacts
+sudo chown $USER:$USER ~/conpot_artifacts
+# ensure docker is installed and working
+sudo docker --version && sudo docker compose version
+# ensure firewall/security groups block external access to ports if VM is in cloud
+# (Instructor: ensure only SSH is reachable from students; Conpot ports should NOT be public)
+ss -tunlp | egrep ':(80|502|102|47808)|:161' || true
+```
+If Conpot is already running and binding to 0.0.0.0 on those ports, *do not* expose the VM to the internet. Use student SSH sessions to run the lab locally on the VM only.
 
-- Go to **compot's** directory
+---
+## 1) How students start the honeypot (exact commands they will run)
+Tell students to SSH into the VM and run these commands exactly (they do **not** edit any files under `~/Desktop/conpot`):
 
 ```bash
+ssh ubuntu@<VM_IP>
+# on VM now
 cd ~/Desktop/conpot
-```
-
-- Start it up
-```bash
+# bring up Conpot (this is how you said it's run)
+sudo docker compose pull    # optional: ensure latest images
 sudo docker compose up -d
-```
-
-- Check container logs
-```bash
+# confirm containers are up
+sudo docker ps --filter "name=conpot"
+# show logs (instructor/demo can follow in separate terminal)
 sudo docker logs -f conpot
+# press Ctrl+C to stop following logs
 ```
-
-<img width="1820" height="903" alt="image" src="https://github.com/user-attachments/assets/f6faab44-7cf4-41ff-8df1-91d596953c3a" />
-
-- Press `Ctrl + C` to exit the **logs**
-
-- If you want to run multiple templates later, we'll cover adding config files into `./conpot-data`.
+If `sudo docker compose up -d` fails, students should paste the `docker compose up` stdout/stderr into a file in `~/conpot_artifacts/compose_error.txt` and notify the instructor:
+```bash
+sudo docker compose up 2>&1 | tee ~/conpot_artifacts/compose_error.txt
+```
 
 ---
+## 2) Inspect what ports Conpot is listening on (no file edits)
+After Conpot is up, students must check which ports are exposed/listening on the VM so we know how to target it safely:
 
-## 3) Lab network topology (simple & safe)
-- Single Linux host with Docker (honeypot) and attacker machine (could be same host using `localhost`, or separate VM).
-- Recommended: two VMs on the same host network (Host-only or NAT with port forwarding disabled) so honeypot traffic doesn’t leak to the wider internet.
+```bash
+# quick: docker compose ps shows mapped ports
+sudo docker compose ps
 
-Topology:
+# also check host-level listeners
+ss -tunlp | egrep ':(80|502|102|47808)|:161' || true
+
+# if ports appear bound to 127.0.0.1, safe for host-only access
+# if bound to 0.0.0.0 AND VM is on an unsafe network, STOP and ask instructor.
 ```
-[Attacker VM] ---- [Lab network switch/virtual network] ---- [Conpot VM]
-```
 
-IP examples:
-- Conpot VM: `192.168.56.101`
-- Attacker VM: `192.168.56.102`
-
-Ensure firewall rules on your host do not accidentally expose the honeypot to the public internet.
+**Instructor note:** If ports are bound to `0.0.0.0` and this VM is internet-facing, instruct students to stop the lab until you reconfigure networking. We are assuming proper isolation.
 
 ---
+## 3) Where logs and data are (we won't change Conpot files)
+Conpot may log into container-internal paths. To avoid editing Conpot files, we will copy runtime logs/artifacts out to `~/conpot_artifacts` for analysis.
 
-## 4) Conpot configuration — idiot‑proof `conpot.cfg`
+Useful commands (students run these after exercises to collect evidence):
 
-By default Conpot uses built-in templates. We'll create a small `conpot.cfg` and template directory in `~/conpot-lab/conpot-data`. This lets you control services and logging.
+```bash
+# create artifacts directory (if not already)
+mkdir -p ~/conpot_artifacts
 
-Create `~/conpot-lab/conpot-data/conpot.cfg`:
-```ini
-[conpot]
-logfile = /data/conpot.log
-pidfile = /data/conpot.pid
-interface = 0.0.0.0
-autostart = true
+# grab last 500 lines of Docker logs
+sudo docker logs conpot --tail 500 > ~/conpot_artifacts/conpot_docker_logs.txt
 
-[server]
-http_port = 80
-modbus_port = 502
-bacnet_port = 47808
-
-[logging]
-level = INFO
+# copy conpot-data if it exists as a host volume (some compose setups already mount it)
+# but DO NOT modify existing files inside the repo; we only copy
+if [ -d ~/Desktop/conpot/conpot-data ]; then
+  cp -r ~/Desktop/conpot/conpot-data ~/conpot_artifacts/conpot-data-copy
+fi
 ```
-
-Create `~/conpot-lab/conpot-data/templates/default.cfg` with minimal identity:
-```ini
-[conpot]
-name = "Conpot-Lab-Simple"
-description = "Lab template for hands-on exercises"
-vendor = "LabInc"
-model = "Simulated PLC v1"
-```
-
-If using Docker with the `docker-compose.yml` above, the `/data` folder maps to `./conpot-data` so Conpot will read these files automatically.
 
 ---
+## 4) Lab exercises (students run these — all from VM host SSH session)
 
-## 5) Start the honeypot and verify
+**Important:** These commands run from the VM (not a separate attacker VM/container). They target Conpot running on the same machine. Use `127.0.0.1` or container name / internal IP depending on `docker compose ps` output.
 
-### Docker
+### 4.1 Basic discovery — find open ports
 ```bash
-cd ~/conpot-lab
-docker compose up -d
-docker ps --filter "name=conpot"
-docker logs -f conpot
+# prefer localhost if ports are published to 127.0.0.1
+nmap -sS -sV -p1-2000 127.0.0.1 -oN ~/conpot_artifacts/nmap_localhost.txt
+
+# OR if ports mapped to host IP (example: docker compose ps shows 0.0.0.0:502->502/tcp),
+# target localhost too. If docker bind is different, use that IP.
 ```
 
-### Verify services are listening (on Conpot host)
+### 4.2 Quick HTTP check
 ```bash
-# on conpot host
-ss -tunlp | egrep ':(80|502|47808)'
+curl -I http://127.0.0.1:80 2>&1 | tee ~/conpot_artifacts/http_headers.txt
+curl http://127.0.0.1:80 | head -n 60 > ~/conpot_artifacts/http_body_head.txt 2>/dev/null || true
 ```
+If HTTP isn't published, these commands will show connection refused — that's fine. Note results.
 
-### From attacker VM
-Replace `TARGET` with the Conpot IP (e.g. 192.168.56.101)
+### 4.3 Safe Modbus read (read-only)
+Create a small Modbus read script *outside* the Conpot directory (students should run from their home):
 
-Basic reachability:
 ```bash
-ping -c 2 TARGET
-```
-
-Port scan with nmap:
-```bash
-nmap -sS -sV -p 1-2000 TARGET -oN conpot-nmap.txt
-# Expected: port 80 open (HTTP), 502 open (Modbus)
-```
-
-HTTP check:
-```bash
-curl -i http://TARGET/
-```
-
-Modbus probe (read one register) — using `pymodbus` client (example later) or `modpoll` if available.
-
----
-
-## 6) Interaction exercises (step-by-step)
-
-### 6.1 Exercise 1 — Fingerprinting with nmap
-Goal: identify services and versions.
-```bash
-nmap -sS -sV -p80,502 TARGET -oN task1-nmap.txt
-```
-Expected findings:
-- HTTP service with a basic web page (Conpot sim)
-- Modbus TCP port 502 open
-
-Discuss: How accurate is the fingerprint? Conpot typically advertises fake banners. Record results.
-
-### 6.2 Exercise 2 — HTTP exploration
-```bash
-curl -I http://TARGET/
-curl http://TARGET/ | head -n 40
-```
-Open in browser and look for any ICS-specific pages or default images.
-
-### 6.3 Exercise 3 — Modbus basic read (safe, read-only)
-Install `pymodbus` on attacker VM:
-```bash
-python3 -m pip install pymodbus
-```
-
-Create `modbus_read.py`:
-```python
+cat > ~/conpot_artifacts/modbus_read.py <<'PY'
 from pymodbus.client.sync import ModbusTcpClient as ModbusClient
-c = ModbusClient("TARGET", port=502, timeout=3)
+c = ModbusClient("127.0.0.1", port=502, timeout=3)
 if c.connect():
     rr = c.read_holding_registers(0, 6, unit=1)
-    print(rr)
-    c.close()
-else:
-    print("Connection failed")
-```
-Run:
-```bash
-python3 modbus_read.py
-```
-Expected: register values (fake/simulated). This is safe — read-only.
-
-### 6.4 Exercise 4 — Simulate attacker scanning heavily
-Run aggressive nmap scan and observe logs.
-```bash
-nmap -A -p- TARGET -oN task4-aggressive-nmap.txt
-```
-Observe Conpot logs (docker logs) and note any IDS triggers if present.
-
----
-
-## 7) Logging and evidence collection
-
-### Where Conpot logs
-If using our `conpot.cfg`, logs are at `~/conpot-lab/conpot-data/conpot.log`. Docker mapping ensures they persist.
-
-Tail logs:
-```bash
-tail -F ~/conpot-lab/conpot-data/conpot.log
-# or via docker logs: docker logs -f conpot
-```
-
-### Capture network traffic (pcap)
-On Conpot host:
-```bash
-sudo tcpdump -i any host TARGET -w ~/conpot-lab/conpot_capture.pcap
-# or on attacker side capture from attacker
-sudo tcpdump -i any port 502 or port 80 -w ~/conpot-lab/attacker_capture.pcap
-```
-Open captures in Wireshark for deeper analysis (look for Modbus function codes, suspicious payloads).
-
-### Structured logs (JSON) — optional advanced
-Conpot can be integrated with ELK; for this lab we'll keep file logs. If you want, redirect logs into a simple `filebeat` later.
-
----
-
-## 8) Detection & analysis exercises (learning outcomes)
-
-### 8.1 Correlate nmap scan to conpot logs
-- While running `nmap -A`, watch `conpot.log`. Note the timestamps and commands logged.
-- Task: find the nmap fingerprint in the log and quote the lines.
-
-### 8.2 Analyze Modbus traffic in Wireshark
-- Filter: `tcp.port==502` or `modbus`
-- Identify function codes: `Read Holding Registers` (function 03), `Read Coils` (01).
-- Task: Capture a read from `modbus_read.py` and identify the request/response pairs by transaction id.
-
-### 8.3 Create a simple signature: detect repeated failed writes
-- Use `grep` to find repeated write attempts in `conpot.log`:
-```bash
-grep -i "write" ~/conpot-lab/conpot-data/conpot.log | wc -l
-```
-- Task: write a one-liner that alerts when writes exceed N within M seconds (example using `watch`+`wc` or a small Python script). (Instructor can demo.)
-
-### 8.4 Forensics: timeline
-- Build a timeline from PCAP and logs:
-  - Extract Modbus transactions with tshark:
-```bash
-tshark -r conpot_capture.pcap -Y modbus -Tfields -e frame.time -e ip.src -e ip.dst -e modbus.func_code -e modbus.reference_num -e modbus.value
-```
-- Import into a spreadsheet and sort by time.
-
----
-
-## 9) Cleanup
-Stop and remove container & data (Docker):
-```bash
-cd ~/conpot-lab
-docker compose down
-# if you want to remove data:
-rm -rf ~/conpot-lab
-```
-
-If installed with pip and venv:
-```bash
-# in conpot repo
-deactivate
-rm -rf ~/conpot
-```
-
----
-
-## 10) Troubleshooting & FAQ
-
-- **Ports not visible on attacker:** Check network mode and firewall. Ensure both VMs are on same virtual network. Use `ss -tunlp` on conpot host to confirm listening.
-- **Docker image pull fails:** Check network, try `docker pull conpot/conpot:latest` manually.
-- **Conpot not starting (python):** Activate venv, check `pip install -r requirements.txt`, run `conpot -f` to see verbose errors.
-- **Modbus reads empty/no response:** Conpot unit id may differ. Try `unit=1` and different register offsets. Conpot simulates values but may not implement all registers.
-
----
-
-## 11) Appendix — Useful one‑liners & scripts
-
-### Quick log watch
-```bash
-# follow logs and show only modbus/read messages
-tail -F ~/conpot-lab/conpot-data/conpot.log | grep --line-buffered -i modbus
-```
-
-### Quick modbus read script (replace TARGET)
-```bash
-cat > modbus_read.py <<'PY'
-from pymodbus.client.sync import ModbusTcpClient as ModbusClient
-import sys
-host = sys.argv[1]
-c = ModbusClient(host, port=502, timeout=3)
-if c.connect():
-    print("Connected to", host)
-    rr = c.read_holding_registers(0, 10, unit=1)
-    print(rr.registers if hasattr(rr, 'registers') else rr)
+    print(getattr(rr, 'registers', rr))
     c.close()
 else:
     print("Connection failed")
 PY
-```
-Run:
-```bash
-python3 modbus_read.py TARGET
+
+# install dependency and run
+sudo python3 -m pip install --upgrade pip
+sudo python3 -m pip install pymodbus
+python3 ~/conpot_artifacts/modbus_read.py | tee ~/conpot_artifacts/modbus_read.txt
 ```
 
-### Simple write-detection alert (bash)
+If Conpot is not listening on 127.0.0.1:502, check `docker compose ps` and adapt the host/port accordingly (instructor to help).
+
+### 4.4 Aggressive scan (observe Conpot logs)
+Run this only if the instructor allowed it. It generates noisy logs:
 ```bash
-# prints whenever write attempts appear in log
-sudo apt install -y inotify-tools
-inotifywait -m ~/conpot-lab/conpot-data/conpot.log -e modify |
-while read path _ file; do
-  tail -n 20 "$path$file" | grep -i write && echo "Possible write attempt detected at $(date)"
-done
+nmap -A -p- 127.0.0.1 -oN ~/conpot_artifacts/aggressive_nmap.txt
+# while this runs, in another SSH window:
+sudo docker logs -f conpot | sed -n '1,200p'
+# then Ctrl+C to stop following
+```
+
+### 4.5 Capture network traffic (pcap)
+Students capture traffic **on the VM host** to record interactions:
+```bash
+# capture only relevant ports (tcp 502 modbus, tcp 80 http)
+sudo tcpdump -i any port 502 or port 80 -w ~/conpot_artifacts/conpot_capture.pcap &
+# run one of the above interactions (modbus_read, nmap, curl)
+sleep 5
+sudo pkill tcpdump
+# verify file exists
+ls -lh ~/conpot_artifacts/conpot_capture.pcap
+```
+If `tcpdump` requires sudo, we used it. The pcap is now on VM and can be `scp`'d to laptop for Wireshark.
+
+---
+## 5) Correlate logs & pcap (simple exercise)
+After collecting artifacts, students should:
+
+```bash
+# examine conpot logs we grabbed
+less ~/conpot_artifacts/conpot_docker_logs.txt
+
+# inspect pcap summary (tshark/tcpdump)
+sudo tcpdump -r ~/conpot_artifacts/conpot_capture.pcap -n -q | head -n 50
+
+# extract modbus frames with tshark if installed (optional)
+sudo apt install -y tshark || true
+tshark -r ~/conpot_artifacts/conpot_capture.pcap -Y modbus -T fields -e frame.time -e ip.src -e ip.dst -e modbus.func_code -e modbus.reference_num -e modbus.value | head -n 40
+```
+
+Students produce a short timeline file:
+```bash
+cat > ~/conpot_artifacts/timeline.txt <<'TXT'
+- nmap discovery: $(date -r ~/conpot_artifacts/nmap_localhost.txt 2>/dev/null || echo "n/a")
+- modbus read: $(date -r ~/conpot_artifacts/modbus_read.txt 2>/dev/null || echo "n/a")
+- pcap created: $(date -r ~/conpot_artifacts/conpot_capture.pcap 2>/dev/null || echo "n/a")
+TXT
 ```
 
 ---
-
-## Suggested Lab Tasks (grading rubric suggestions)
-1. Successfully install and run Conpot (Docker) — 20pt  
-2. Identify open ports and services via nmap — 15pt  
-3. Execute safe Modbus read and capture traffic — 20pt  
-4. Correlate a scan to Conpot logs and produce timeline — 25pt  
-5. Propose one detection rule based on observed logs/pcap — 20pt
+## 6) Cleanup (stop Conpot) — students must run this when done
+```bash
+cd ~/Desktop/conpot
+sudo docker compose down
+# copy artifacts off the VM (instructor or student)
+ls -l ~/conpot_artifacts
+```
 
 ---
+## 7) Troubleshooting quick-help (do not edit files!)
+- **"Connection refused" on localhost:502** -> run `sudo docker compose ps` to verify whether port 502 is mapped to the host. If not mapped, use `sudo docker inspect CONTAINER_ID` to find container IP and then target that IP (instructor can assist). Do not edit `~/Desktop/conpot` files.
+- **"docker compose up" fails due to image pull** -> `sudo docker compose pull` then `sudo docker compose up`. If image name mismatch, notify instructor with `~/conpot_artifacts/compose_error.txt`.
+- **Artifacts not created** -> ensure `~/conpot_artifacts` exists and commands used `tee` or redirected output into that folder.
 
-## Final notes / Safety
-- Do **not** expose this lab to the public Internet. Keep it isolated.
-- Keep interactions read-only whenever possible. If you demonstrate writes, label them and run in a controlled environment.
-- This lab focuses on learning detection, not exploitation.
+---
+## 8) Deliverables (what students hand in)
+Students must submit these files from the VM (use `scp` to transfer to their laptops):
+- `~/conpot_artifacts/nmap_localhost.txt` (or alternative nmap file)
+- `~/conpot_artifacts/modbus_read.txt`
+- `~/conpot_artifacts/conpot_capture.pcap`
+- `~/conpot_artifacts/conpot_docker_logs.txt`
+- `~/conpot_artifacts/timeline.txt`
+
+Instructor will grade based on ability to find services, capture traffic, and correlate events.
+
+---
+## 9) Safety reminder (must be read aloud)
+- **Do not** expose Conpot to the public Internet. If the `docker compose ps` output shows `0.0.0.0` bindings and this VM is on a public network, pause the lab and contact the instructor.  
+- All commands in this lab are read-only except `docker compose up/down` and creating artifacts. We do not modify `~/Desktop/conpot` files.
+
+---
+If you want, I will now write a single helper script `~/conpot_artifacts/run_lab_steps.sh` on the VM to automate the sequence (this will create one file on the VM). Say **"write script"** and I'll add it.  
 
 
 
