@@ -80,11 +80,15 @@ When ran, Portspoof listens on a single port. By default this is port 4444. In o
 
 First, let's become root:
 
-<pre>sudo su -</pre>
+```bash
+sudo su -
+```
 
 Now, let's install Portspoof:
 
-<pre>apt-get update</pre>
+```bash
+apt-get update
+```
 
 <pre>apt-get install portspoof</pre>
 
