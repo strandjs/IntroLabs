@@ -30,8 +30,9 @@ sudo docker logs -f conpot
 
 <img width="1820" height="903" alt="image" src="https://github.com/user-attachments/assets/f6faab44-7cf4-41ff-8df1-91d596953c3a" />
 
+- Press `Ctrl + C` to exit the **logs**
 
-If you want to run multiple templates later, we'll cover adding config files into `./conpot-data`.
+- If you want to run multiple templates later, we'll cover adding config files into `./conpot-data`.
 
 ---
 
