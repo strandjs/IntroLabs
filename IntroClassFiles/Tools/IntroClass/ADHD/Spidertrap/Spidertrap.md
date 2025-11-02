@@ -25,46 +25,56 @@ Usage
 ```bash
 python3 spidertrap.py --help
 ```
+```
+Usage: spidertrap.py [FILE]
 
-        Usage: spidertrap.py [FILE]
-
-        FILE is file containing a list of webpage names to serve, one per line.
-        If no file is provided, random links will be generated.
-
+FILE is file containing a list of webpage names to serve, one per line.
+If no file is provided, random links will be generated.
+```
 
 ## Example 1: Basic Usage
 
-Let's get started by opening a Kali terminal. 
-You can do this by right clicking the icon on the desktop by selecting open...
+- Let's get started by opening a Kali terminal. 
+
+- You can do this by right clicking the icon on the desktop by selecting open...
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/OpeningKaliInstance.png)
 
-Or... you can simply click on the Kali logo in the taskbar.
+- Or... you can simply click on the Kali logo in the taskbar.
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/TaskbarKaliIcon.png)
 
-First, let's get your Kali Linux systems IP address by running the following command:
+- First, let's get your Kali Linux systems IP address by running the following command:
 
-<pre>ifconfig</pre>
+```bash
+ifconfig
+```
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/ifconfig.png)
 
-Next, let's cd into the proper directory:
+- Next, let's cd into the proper directory:
 
-<pre>cd /opt/spidertrap</pre>
+```bash
+cd /opt/spidertrap
+```
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/cdoptspidertrap.png)
 
-Now, lets start Spidertrap by running the following command:
+- Now, lets start Spidertrap by running the following command:
 
-<pre>python3 spidertrap.py</pre>
+```bash
+python3 spidertrap.py
+```
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/startspidertrap.png)
 
-Then visit the following site in a web browser:
-<pre>http://[YOUR_LINUX_IP]:8000</pre> 
+- Then visit the following site in a web browser:
 
-You should see a page containing randomly generated links. If you click on a link it will take you to a page with more randomly generated links.
+```
+http://[YOUR_LINUX_IP]:8000
+``` 
+
+- You should see a page containing randomly generated links. If you click on a link it will take you to a page with more randomly generated links.
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/links.png)
 
@@ -72,11 +82,13 @@ You should see a page containing randomly generated links. If you click on a lin
 
 ## Example 2: Providing a List of Links
 
-For this example, we are going to start Spidertrap again, but this time, we are going to give it a file to generate its links.
+- For this example, we are going to start Spidertrap again, but this time, we are going to give it a file to generate its links.
 
-Let's start Spidertrap again but with the following options:
+- Let's start Spidertrap again but with the following options:
 
-<pre>python3 spidertrap.py directory-list-2.3-big.txt</pre>
+```bash
+python3 spidertrap.py directory-list-2.3-big.txt
+```
 
 >[!TIP]
 >
@@ -84,11 +96,13 @@ Let's start Spidertrap again but with the following options:
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/startwithoptions.png)
 
-Then visit the following site in a web browser:
+- Then visit the following site in a web browser:
 
-<pre>http://[YOUR_LINUX_IP]:8000</pre>
+```bash
+http://[YOUR_LINUX_IP]:8000
+```
  
-You should see a page containing links taken from the file. If you click on a link it will take you to a page with more links from the file.
+- You should see a page containing links taken from the file. If you click on a link it will take you to a page with more links from the file.
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/links2.png)
 
@@ -96,27 +110,28 @@ You should see a page containing links taken from the file. If you click on a li
 
 ## Example 3: Trapping a Wget Spider
 
-For this example, follow the instructions in [Example 1: Basic Usage](#example-1-basic-usage) or
-[Example 2: Providing a List of Links](#example-2-providing-a-list-of-links) to start Spidertrap. 
+- For this example, follow the instructions in [Example 1: Basic Usage](#example-1-basic-usage) or [Example 2: Providing a List of Links](#example-2-providing-a-list-of-links) to start Spidertrap. 
 
-Once Spidertrap starts, open a new Kali Linux terminal. Do this by clicking the icon in the taskbar:
+- Once Spidertrap starts, open a new Kali Linux terminal. Do this by clicking the icon in the taskbar:
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/TaskbarKaliIcon.png)
 
-We are going to use `wget` to mirror the website. 
+- We are going to use `wget` to mirror the website. 
 
 >[!IMPORTANT]
 >
 >`wget` will run until either it or Spidertrap is killed.
 >To stop the command output, type `ctrl + c`
 
-Let's run the following command:
+- Let's run the following command:
 
-<pre>sudo wget -m http://127.0.0.1:8000</pre>
+```bash
+sudo wget -m http://127.0.0.1:8000
+```
 
 ![](/IntroClassFiles/Tools/IntroClass/ADHD/Spidertrap/wgetcommand.png)
 
-When finished, type `ctrl + c` to kill wget.
+- When finished, type `ctrl + c` to kill wget.
 
 ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/Cowrie/Cowrie.md)</i></b>
