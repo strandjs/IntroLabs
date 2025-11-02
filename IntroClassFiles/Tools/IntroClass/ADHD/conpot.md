@@ -9,27 +9,7 @@
 **Goal:** Conpot (an ICS/SCADA honeypot), interact with it, collect evidence, and learn analysis/detection techniques
 
 
-# Conpot Lab — Student Guide (SSH into VM, Existing Install)
-
-You will connect to a shared Ubuntu VM over SSH.  
-Conpot is already installed on that VM in `~/Desktop/conpot`.  
-You will NOT edit any files in `~/Desktop/conpot`.  
-You will run the honeypot, interact with it, collect evidence, and stop it.
-
-All your work and evidence will be stored in `~/conpot_artifacts` in your home directory.
-
----
-
-## 0. Connect to the lab VM
-From your own machine (laptop):
-```bash
-ssh ubuntu@<VM_IP_ADDRESS>
-```
-After you log in, you are working on the VM.
-
----
-
-## 1. Create your workspace on the VM
+## Create your workspace on the VM
 This is where you will save results, pcaps, etc. Do NOT work inside `~/Desktop/conpot`.
 
 ```bash
@@ -40,26 +20,35 @@ You will see files appear in this folder as you go through the lab.
 
 ---
 
-## 2. Start the honeypot (Conpot)
-Conpot is already prepared in `~/Desktop/conpot`.
+## Start the honeypot (Conpot)
+- Conpot is already prepared in `~/Desktop/conpot`.
 
-Run these commands on the VM:
+- Run these commands on the VM:
 ```bash
 cd ~/Desktop/conpot
+```
 
-# (optional but safe) pull latest images
-sudo docker compose pull
-
+```bash
 # start Conpot in the background
 sudo docker compose up -d
+```
 
+```bash
 # confirm the container is running
 sudo docker ps --filter "name=conpot"
-
-# look at the live log output (press Ctrl+C to stop watching)
-sudo docker logs -f conpot
 ```
-At this point the fake ICS/SCADA device is running on this VM using Docker.
+<img width="1920" height="124" alt="image" src="https://github.com/user-attachments/assets/4ee077a0-e5f7-4297-befc-09df5ba147fb" />
+
+
+
+```bash
+# look at the live log output (press Ctrl+C to stop watching)
+sudo docker logs -f conpot-conpot-1
+```
+<img width="1920" height="719" alt="image" src="https://github.com/user-attachments/assets/e8a68400-2a67-4e59-806f-8b19fc7a3d02" />
+
+
+- At this point the fake **ICS/SCADA** device is running on this **VM** using **Docker**.
 
 ---
 
