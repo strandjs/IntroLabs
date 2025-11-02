@@ -22,7 +22,9 @@ Install Location
 Usage
 -----
 
-`/opt/spidertrap$` **`python3 spidertrap.py --help`**
+```bash
+python3 spidertrap.py --help
+```
 
         Usage: spidertrap.py [FILE]
 
