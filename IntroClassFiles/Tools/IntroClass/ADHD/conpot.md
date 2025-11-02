@@ -52,68 +52,28 @@ sudo docker logs -f conpot-conpot-1
 
 ---
 
-## 3. Find out what services are exposed
-You will now check which ports are listening so you know what to target (web, Modbus, etc).
+## Find out what services are exposed
+- You will now check which ports are listening so you know what to target (web, Modbus, etc).
 
 ```bash
-# see what ports Conpot is mapped to on the host
-sudo docker compose ps
-
 # double-check which ports are listening on the VM
 ss -tunlp | egrep ':(80|502|102|47808)|:161' || true
 ```
 
-Keep note of which ports are open (for example: `80/tcp`, `502/tcp`).  
-Most labs will use:
-- port 80 for HTTP (web interface / banners / fingerprints)
-- port 502 for Modbus/TCP (industrial control protocol)
+- Keep note of which ports are open (for example: `80/tcp`, `502/tcp`).  
+
+- port **80** for **HTTP** (web interface / banners / fingerprints)
+- port **502** for **Modbus/TCP** (industrial control protocol)
 
 ---
 
-## 4. Basic service discovery (nmap)
-You will now scan the VM itself from inside the VM and record the results.
+## Talk Modbus to the fake PLC (read-only)
 
-1. Run nmap against localhost:
-```bash
-nmap -sS -sV -p1-2000 127.0.0.1 -oN ~/conpot_artifacts/nmap_localhost.txt
-```
+- **Conpot** emulates **ICS protocols** like **Modbus**/TCP on **port 502**.  
 
-2. View the saved results:
-```bash
-less ~/conpot_artifacts/nmap_localhost.txt
-```
+- You’ll run a safe read-only **Modbus** query that requests holding **registers**.  
 
-Answer for yourself:
-- Which ports are open?
-- What service names / versions does nmap guess?
-
-You will submit `nmap_localhost.txt` later.
-
----
-
-## 5. Check the HTTP surface (port 80)
-Try to talk to the honeypot’s HTTP service using `curl`.  
-If port 80 is not open/listening, these commands will fail — that’s OK, still record the output.
-
-```bash
-curl -I http://127.0.0.1:80 2>&1 | tee ~/conpot_artifacts/http_headers.txt
-
-curl http://127.0.0.1:80 | head -n 60 > ~/conpot_artifacts/http_body_head.txt 2>/dev/null || true
-```
-
-Now look at the results:
-```bash
-less ~/conpot_artifacts/http_headers.txt
-```
-
-You will submit `http_headers.txt` and `http_body_head.txt` later.
-
----
-
-## 6. Talk Modbus to the fake PLC (read-only)
-Conpot emulates ICS protocols like Modbus/TCP on port 502.  
-You’ll run a safe read-only Modbus query that requests holding registers.  
-This simulates an attacker or operator reading process values from a PLC.
+- This simulates an **attacker** or **operator** reading process values from a **PLC**.
 
 1. Create a Python script (in your artifacts folder, NOT in `~/Desktop/conpot`):
 ```bash
@@ -131,10 +91,12 @@ PY
 
 2. Install the required Python package and run the script:
 ```bash
+
 sudo python3 -m pip install --upgrade pip
 sudo python3 -m pip install pymodbus
 python3 ~/conpot_artifacts/modbus_read.py | tee ~/conpot_artifacts/modbus_read.txt
 ```
+
 
 3. View the result:
 ```bash
