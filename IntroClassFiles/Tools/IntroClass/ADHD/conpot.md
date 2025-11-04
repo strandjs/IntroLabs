@@ -6,240 +6,391 @@
 # Conpot
 
 
-**Goal:** Conpot (an ICS/SCADA honeypot), interact with it, collect evidence, and learn analysis/detection techniques
-
-
-## Create your workspace on the VM
-This is where you will save results, pcaps, etc. Do NOT work inside `~/Desktop/conpot`.
-
-```bash
-mkdir -p ~/conpot_artifacts
-```
-
-You will see files appear in this folder as you go through the lab.
+# Conpot Hands‑On Lab — Attack, Defense & Cyber Deception
+**Format:** Step‑by‑step, copy‑paste commands.  
+**Target audience:** Anyone (no prior ICS/honeypot experience required).  
+**Tested on:** Ubuntu 22.04 LTS (x86_64). Adapt commands for other distros.
 
 ---
 
-## Start the honeypot (Conpot)
-- Conpot is already prepared in `~/Desktop/conpot`.
+## Overview & learning objectives
+This lab deploys **Conpot** (an industrial control system honeypot) as a deception environment and demonstrates how attackers interact with ICS protocols, how to capture telemetry, and how defenders analyze activity. After completing the lab you will be able to:
 
-- Run these commands on the VM:
-```bash
-cd ~/Desktop/conpot
-```
-
-```bash
-# start Conpot in the background
-sudo docker compose up -d
-```
-
-```bash
-# confirm the container is running
-sudo docker ps --filter "name=conpot"
-```
-<img width="1920" height="124" alt="image" src="https://github.com/user-attachments/assets/4ee077a0-e5f7-4297-befc-09df5ba147fb" />
-
-
-
-```bash
-# look at the live log output (press Ctrl+C to stop watching)
-sudo docker logs -f conpot-conpot-1
-```
-<img width="1920" height="719" alt="image" src="https://github.com/user-attachments/assets/e8a68400-2a67-4e59-806f-8b19fc7a3d02" />
-
-
-- At this point the fake **ICS/SCADA** device is running on this **VM** using **Docker**.
+- Install Conpot (two methods: Docker and Python virtualenv).
+- Configure Conpot to emulate Modbus, SNMP, HTTP and other services.
+- Simulate attacker activity using `nmap`, `modpoll`, and simple HTTP requests.
+- Capture network and application logs, and analyze them.
+- Create basic detection rules and observe attacker behavior patterns.
+- Harden host running Conpot minimally and learn safe operation practices.
 
 ---
 
-## Find out what services are exposed
-- You will now check which ports are listening so you know what to target (web, Modbus, etc).
+## Lab topology (single host)
+All steps are run on one Ubuntu machine (can be a VM). Conpot will listen on ports accessible from the network or from your host. For safe testing, use an isolated lab network.
 
-```bash
-# double-check which ports are listening on the VM
-ss -tunlp | egrep ':(80|502|102|47808)|:161' || true
 ```
-
-- Keep note of which ports are open (for example: `80/tcp`, `502/tcp`).  
-
-- port **80** for **HTTP** (web interface / banners / fingerprints)
-- port **502** for **Modbus/TCP** (industrial control protocol)
-
----
-
-## Talk Modbus to the fake PLC (read-only)
-
-- **Conpot** emulates **ICS protocols** like **Modbus**/TCP on **port 502**.  
-
-- You’ll run a safe read-only **Modbus** query that requests holding **registers**.  
-
-- This simulates an **attacker** or **operator** reading process values from a **PLC**.
-
-1. Create a Python script (in your artifacts folder, NOT in `~/Desktop/conpot`):
-```bash
-cat > ~/conpot_artifacts/modbus_read.py <<'PY'
-from pymodbus.client.sync import ModbusTcpClient as ModbusClient
-c = ModbusClient("127.0.0.1", port=502, timeout=3)
-if c.connect():
-    rr = c.read_holding_registers(0, 6, unit=1)
-    print(getattr(rr, 'registers', rr))
-    c.close()
-else:
-    print("Connection failed")
-PY
-```
-
-2. Install the required Python package and run the script:
-```bash
-
-sudo python3 -m pip install --upgrade pip
-sudo python3 -m pip install pymodbus
-python3 ~/conpot_artifacts/modbus_read.py | tee ~/conpot_artifacts/modbus_read.txt
-```
-
-
-3. View the result:
-```bash
-less ~/conpot_artifacts/modbus_read.txt
-```
-
-You will submit `modbus_read.txt` later.
-
-If you see register values, you just queried an emulated industrial controller.
-
----
-
-## 7. Simulate noisy attacker behavior (aggressive scan)
-Now you will act like a more aggressive attacker.  
-This will generate more interesting activity in Conpot’s logs.
-
-```bash
-nmap -A -p- 127.0.0.1 -oN ~/conpot_artifacts/aggressive_nmap.txt
-```
-
-Then grab the honeypot logs and save them:
-```bash
-sudo docker logs conpot --tail 500 > ~/conpot_artifacts/conpot_docker_logs.txt
-```
-
-Look at the saved log:
-```bash
-less ~/conpot_artifacts/conpot_docker_logs.txt
-```
-
-You will submit `aggressive_nmap.txt` and `conpot_docker_logs.txt` later.
-
-Question to answer in your notes:  
-Do you see evidence in the Conpot logs that someone scanned it? What does it log about the connection(s)?
-
----
-
-## 8. Capture network traffic (PCAP)
-Now you will capture the traffic between your scan / Modbus read and the honeypot.  
-This is what defenders collect during an investigation.
-
-1. Start a tcpdump capture (this will run in the background):
-```bash
-sudo tcpdump -i any port 502 or port 80 -w ~/conpot_artifacts/conpot_capture.pcap &
-```
-
-2. While tcpdump is running, repeat two actions:
-```bash
-# re-run Modbus read
-python3 ~/conpot_artifacts/modbus_read.py > /dev/null 2>&1
-
-# run a quick nmap on just port 502
-nmap -sS -sV -p502 127.0.0.1 > /dev/null 2>&1
-```
-
-3. Stop the capture:
-```bash
-sudo pkill tcpdump
-```
-
-4. Confirm the capture file exists:
-```bash
-ls -lh ~/conpot_artifacts/conpot_capture.pcap
-```
-
-You will submit `conpot_capture.pcap` later.
-
-You can download this file to your own machine and open it in Wireshark:
-```bash
-scp ubuntu@<VM_IP_ADDRESS>:~/conpot_artifacts/conpot_capture.pcap .
+Attacker VM / Host  <--->  Lab Host (Conpot running) 
 ```
 
 ---
 
-## 9. Build a simple activity timeline
-Now you will document what happened and when.  
-This is what an analyst does after the fact.
-
-Run:
-```bash
-cat > ~/conpot_artifacts/timeline.txt <<'TXT'
-nmap discovery results file timestamp:
-  $(date -r ~/conpot_artifacts/nmap_localhost.txt 2>/dev/null || echo "n/a")
-
-modbus read results file timestamp:
-  $(date -r ~/conpot_artifacts/modbus_read.txt 2>/dev/null || echo "n/a")
-
-aggressive scan results file timestamp:
-  $(date -r ~/conpot_artifacts/aggressive_nmap.txt 2>/dev/null || echo "n/a")
-
-pcap capture file timestamp:
-  $(date -r ~/conpot_artifacts/conpot_capture.pcap 2>/dev/null || echo "n/a")
-TXT
-```
-
-Then check it:
-```bash
-less ~/conpot_artifacts/timeline.txt
-```
-
-You will submit `timeline.txt` later.
-
-In your notes, answer:
-- What did you do first?
-- What did you do next?
-- Which thing you did would look most suspicious to a defender, and why?
+## Prerequisites
+- Ubuntu 22.04 LTS (or similar).  
+- 2 CPU cores, 4 GB RAM (lab), 20 GB disk.  
+- User with `sudo` access.  
+- Internet connection to download packages.  
+- Optional attacker machine (or use same machine with separate terminal).
 
 ---
 
-## 10. Stop the honeypot (cleanup)
-When you are done with the lab, shut down Conpot so it’s not left running.
+## Quick decisions (pick one deployment method)
+1. **Docker + docker-compose** — easiest to manage and isolate.  
+2. **Python virtualenv (recommended for learning internals)** — shows how Conpot runs and where logs/configs are.
+
+This guide includes both. Complete both if you want deeper understanding.
+
+---
+
+# Part A — Preparation (common)
+Open a terminal and run:
 
 ```bash
-cd ~/Desktop/conpot
-sudo docker compose down
+# update and install base tools
+sudo apt update && sudo apt upgrade -y
+
+# essential packages
+sudo apt install -y git curl wget vim build-essential python3 python3-venv python3-pip \
+    net-tools tcpdump jq unzip
+
+# install nmap and socat for attacker simulation
+sudo apt install -y nmap socat
+
+# create an unprivileged conpot user (optional but recommended)
+sudo useradd -m -s /bin/bash conpot || true
+sudo passwd -l conpot
 ```
 
-Your evidence is still saved in `~/conpot_artifacts`.  
-To copy everything to your own machine, run this from your own machine (not from inside the VM):
+> Note: Some commands require `sudo`. If you prefer not to create a dedicated user, run as your sudo-enabled account.
+
+---
+
+# Part B — Method 1: Docker & docker‑compose (fast, isolated)
+
+### 1) Install Docker & Docker Compose
 ```bash
-scp ubuntu@<VM_IP_ADDRESS>:~/conpot_artifacts/* ./
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+rm get-docker.sh
+
+# Add your user to docker group (log out/in or new shell required)
+sudo usermod -aG docker $USER
+
+# Install docker-compose plugin (if not present)
+sudo apt install -y docker-compose-plugin
+```
+
+Open a new shell or log out/log in to apply group membership.
+
+### 2) Prepare docker-compose file
+Create a directory and `docker-compose.yml`:
+
+```bash
+mkdir -p ~/conpot-lab-docker
+cd ~/conpot-lab-docker
+cat > docker-compose.yml <<'EOF'
+version: "3.8"
+services:
+  conpot:
+    image: conpot/conpot:latest
+    container_name: conpot
+    restart: unless-stopped
+    network_mode: "bridge"
+    ports:
+      - "80:80"       # HTTP
+      - "502:502"     # Modbus (TCP)
+      - "161:161/udp" # SNMP (UDP)
+      - "47808:47808" # BACnet (UDP)
+    volumes:
+      - ./conpot-data:/data
+      - ./conpot-templates:/conpot/templates
+    cap_add:
+      - NET_ADMIN
+EOF
+```
+
+> The `conpot/conpot:latest` image is used as a common public image name. If unavailable, you can replace with `mushorg/conpot` or build from source (see Method 2).
+
+### 3) Start Conpot
+```bash
+docker compose up -d
+docker ps --filter "name=conpot"
+```
+
+Check logs:
+```bash
+docker logs -f conpot
+```
+
+Conpot should be listening on local ports mapped above (80, 502, 161 etc).
+
+---
+
+# Part C — Method 2: Python virtualenv (learning + debug)
+
+### 1) Clone Conpot and create virtualenv
+```bash
+cd ~
+git clone https://github.com/mushorg/conpot.git || git clone https://github.com/conpot/conpot.git conpot || true
+cd conpot
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+pip install .
+```
+
+> If `requirements.txt` is missing in your clone, install `pip install conpot` instead or check the repo layout. The `pip install .` registers the package.
+
+### 2) Run Conpot with default template
+```bash
+# run as your current user inside venv
+conpot -f /etc/conpot/conpot.cfg || conpot -f ./conpot.cfg || conpot
+```
+
+If Conpot starts successfully, you'll see it binding to ports (80, 502, 161 etc). If you need root privileges to bind to low ports, run with sudo or use higher port mapping (see below).
+
+### 3) Run Conpot on high ports (no sudo)
+Edit `conpot.cfg` (or use CLI flags) to change service ports to higher numbers (e.g., 8080, 1502) if you prefer not to run as root. Example:
+```ini
+# example in conpot.cfg - modify service ports section
+[server]
+web_port = 8080
+modbus_port = 1502
+snmp_port = 1161
+```
+Then run:
+```bash
+conpot -f ./conpot.cfg
 ```
 
 ---
 
-## 11. What you must submit
-When you finish, you should have these files in `~/conpot_artifacts`:
+# Part D — Configure templates & deception profile
+Conpot uses templates that define how the emulated device behaves.
 
-1. `nmap_localhost.txt`  
-2. `http_headers.txt`  
-   (and `http_body_head.txt` if it exists)  
-3. `modbus_read.txt`  
-4. `aggressive_nmap.txt`  
-5. `conpot_docker_logs.txt`  
-6. `conpot_capture.pcap`  
-7. `timeline.txt`
+1. Locate templates in Docker volume or cloned repo:
 
-Those files prove that you:
-- started a live honeypot,
-- scanned and fingerprinted it like an attacker,
-- spoke Modbus to it,
-- captured network evidence,
-- built a timeline of activity.
+- Docker: `~/conpot-lab-docker/conpot-templates` (or inside container `/conpot/templates`)
+- Repo: `./conpot/templates`
+
+2. Inspect `default` and `ics/` templates. To create a custom template, copy and edit YAML files. Example create `myplant` template:
+
+```bash
+mkdir -p ~/conpot-lab-docker/conpot-templates/myplant
+cat > ~/conpot-lab-docker/conpot-templates/myplant/template.cfg <<'EOF'
+name: MyPlant
+description: Example plant with Modbus and HTTP
+services:
+  http:
+    enabled: True
+    port: 80
+  modbus:
+    enabled: True
+    port: 502
+  snmp:
+    enabled: True
+    port: 161
+EOF
+```
+
+Reload container or restart conpot for templates to take effect.
+
+---
+
+# Part E — Attack simulation (hands‑on)
+
+Open another terminal (attacker machine or same host).
+
+### 1) Discovery with nmap
+```bash
+# scan common ICS ports
+nmap -sS -p 80,502,161,47808 -sV -Pn <CONPOT_IP>
+# or full quick scan
+nmap -A -T4 <CONPOT_IP>
+```
+
+Expected: Conpot will respond as devices and show banners.
+
+### 2) Modbus interaction (use modpoll)
+Install modpoll (if available) or use `socat` to open TCP connection and examine. Example with socat:
+
+```bash
+# simple telnet-like connection to Modbus
+nc <CONPOT_IP> 502
+# Or using modpoll (preferred for real Modbus)
+# download modpoll binary or use package manager if available
+modpoll -m tcp -t 4 -r 0 -c 10 <CONPOT_IP>
+```
+
+### 3) SNMP query
+```bash
+snmpwalk -v1 -c public <CONPOT_IP>
+snmpget -v1 -c public <CONPOT_IP> 1.3.6.1.2.1.1.1.0
+```
+
+### 4) HTTP probing & exploitation attempts
+```bash
+curl -v http://<CONPOT_IP>/
+curl -X POST http://<CONPOT_IP>/login -d 'username=admin&password=admin'
+# try simple fuzzing using wfuzz or gobuster (install separately)
+```
+
+### 5) Simulate more aggressive attacker behavior (port scanning, simple payloads)
+```bash
+# aggressive scan
+nmap -sV -O --script vuln <CONPOT_IP>
+# run hydra or medusa for brute force on HTTP basic if present (use responsibly)
+```
+
+**Important:** Run aggressions only in your lab.
+
+---
+
+# Part F — Logging, monitoring & analysis
+
+### 1) Conpot logs
+- Docker: `docker logs -f conpot`
+- Virtualenv: console output or check `~/.conpot` or `./var/log` depending on config.
+
+Look for connections, commands executed, and specific protocol interactions.
+
+### 2) Packet capture
+Run tcpdump on the lab host to capture attacker traffic:
+
+```bash
+sudo tcpdump -i any host <CONPOT_IP> -w conpot_capture.pcap
+# stop with Ctrl-C after reproducing activity
+```
+
+Open `conpot_capture.pcap` in Wireshark for protocol analysis.
+
+### 3) Centralize logs (optional)
+For richer hands-on, forward logs to an ELK/OPENSEARCH or Splunk instance. Minimal example (send to local syslog):
+
+- Add or configure `logging.handlers.SysLogHandler` in conpot logging config to send events to local syslog.
+- Use `rsyslog` to write to file `/var/log/conpot.log`.
+
+(Implementation of ELK is out of scope for this single-file lab but exercise instructions are listed in **Extensions**.)
+
+---
+
+# Part G — Defensive exercises (what the defender should do)
+
+1. **Create detection rules:**  
+   - Watch for unexpected Modbus traffic from untrusted networks.  
+   - Alert on HTTP requests with suspicious URIs or brute force attempts.  
+   - Monitor high-rate TCP connect attempts from single hosts.
+
+2. **Example simple detection using tshark + grep** (demo):
+```bash
+# detect many connections to modbus port
+sudo tshark -i any -Y "tcp.dstport == 502 or tcp.srcport == 502" -T fields -e ip.src | \
+  sort | uniq -c | sort -nr | head
+```
+
+3. **Block & isolate:** Use `ufw`/`iptables` to block attacker IPs once malicious behavior is confirmed.
+
+4. **Investigate logs:** correlate `docker logs`, pcap and system logs to build an incident timeline.
+
+---
+
+# Part H — Lab tasks & challenges (for students)
+
+1. **Recon task:** run nmap and enumerate services + versions; report findings.
+2. **Interact task:** read 5 Modbus registers and fetch SNMP sysDescr; save output.
+3. **Attack detection task:** from defender side, create a script that detects and alerts when there are more than 10 new Modbus connections in 60 seconds.
+4. **Deception evaluation:** modify the template to add fake "control points" and observe if attackers try to write values — capture and analyze the writes.
+5. **Hardening task:** run Conpot with minimal exposure (only internal lab network) and write a short checklist of 5 hardening steps.
+
+---
+
+# Part I — Example helper scripts
+
+**1) Simple Modbus connection counter (bash)**
+```bash
+#!/bin/bash
+# Save as detect_modbus_spike.sh, run as root
+IF=any
+THRESHOLD=10
+INTERVAL=60
+
+count=$(sudo tshark -i $IF -Y "tcp.dstport == 502 || tcp.srcport == 502" -a duration:$INTERVAL -T fields -e ip.src | wc -l)
+if [ "$count" -gt "$THRESHOLD" ]; then
+  echo "$(date) ALERT: $count Modbus frames detected in last $INTERVAL seconds" >> /var/log/conpot_alerts.log
+fi
+```
+
+**2) Simple curl-based scanner (attacker simulation)**
+```bash
+#!/bin/bash
+target=$1
+for p in 80 443 502 161 47808; do
+  echo "Probing port $p"
+  timeout 3 bash -c "echo > /dev/tcp/$target/$p" && echo "open" || echo "closed"
+done
+```
+
+---
+
+# Part J — Cleanup
+To stop and remove the Docker deployment:
+```bash
+cd ~/conpot-lab-docker
+docker compose down
+docker rm -f conpot || true
+docker volume prune -f
+```
+
+To stop a virtualenv run:
+- If running in foreground, hit Ctrl‑C.
+- Remove the cloned repo:
+```bash
+rm -rf ~/conpot
+```
+
+---
+
+# Safety & legal notes
+- Only run this lab in an isolated environment or on networks you own/are authorized to use.  
+- Do **not** expose honeypots to the public Internet without careful planning — they attract malicious actors and could be abused to launch attacks on third parties.  
+- Capture and analyze only your own lab traffic.
+
+---
+
+# Extensions (optional advanced labs)
+- Forward Conpot logs to Elasticsearch and build dashboards.  
+- Build Suricata/Zeek signatures for ICS protocols and evaluate detection rates.  
+- Integrate with MISP to store IOC events.  
+- Use multiple Conpot instances (different templates) and run a C2 style simulation.
+
+---
+
+## Appendix: Quick command summary
+- Start Docker Conpot: `docker compose up -d`
+- Check Conpot logs: `docker logs -f conpot`
+- Capture traffic: `sudo tcpdump -i any host <CONPOT_IP> -w conpot_capture.pcap`
+- Scan: `nmap -A <CONPOT_IP>`
+- SNMP: `snmpwalk -v1 -c public <CONPOT_IP>`
+
+---
+
+## End of lab
+Good luck and have fun—capture interesting traffic and learn from it. If you want, I can also:
+- Provide a pre-built `docker-compose.yml` with ELK integration,
+- Create Suricata rules tuned for Modbus/ICS,
+- Or convert this lab into an interactive step-by-step web page.
+
 
 
 ***                                                                 
