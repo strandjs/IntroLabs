@@ -7,170 +7,59 @@
 
 This lab deploys **Conpot** (an industrial control system honeypot) as a deception environment and demonstrates how attackers interact with ICS protocols, how to capture telemetry, and how defenders analyze activity
 
----
 
-## Quick decisions (pick one deployment method)
-1. **Docker + docker-compose** — easiest to manage and isolate.  
-2. **Python virtualenv (recommended for learning internals)** — shows how Conpot runs and where logs/configs are.
+# Start
 
-This guide includes both. Complete both if you want deeper understanding.
-
----
-
-# Part A — Preparation (common)
-Open a terminal and run:
+### Go to the Conpot directory and activate virtualenv
 
 ```bash
-# update and install base tools
-sudo apt update && sudo apt upgrade -y
-
-# essential packages
-sudo apt install -y git curl wget vim build-essential python3 python3-venv python3-pip \
-    net-tools tcpdump jq unzip
-
-# install nmap and socat for attacker simulation
-sudo apt install -y nmap socat
-
-# create an unprivileged conpot user (optional but recommended)
-sudo useradd -m -s /bin/bash conpot || true
-sudo passwd -l conpot
+cd ~/Desktop/conpot
 ```
 
-> Note: Some commands require `sudo`. If you prefer not to create a dedicated user, run as your sudo-enabled account.
-
----
-
-# Part B — Method 1: Docker & docker‑compose (fast, isolated)
-
-### 1) Install Docker & Docker Compose
 ```bash
-# Install Docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-rm get-docker.sh
-
-# Add your user to docker group (log out/in or new shell required)
-sudo usermod -aG docker $USER
-
-# Install docker-compose plugin (if not present)
-sudo apt install -y docker-compose-plugin
+source .venv311/bin/activate
 ```
 
-Open a new shell or log out/log in to apply group membership.
-
-### 2) Prepare docker-compose file
-Create a directory and `docker-compose.yml`:
+### Run Conpot on high ports 
+- Create `conpot.cfg` to change service ports to higher numbers (**8080**, **1502**):
 
 ```bash
-mkdir -p ~/conpot-lab-docker
-cd ~/conpot-lab-docker
-cat > docker-compose.yml <<'EOF'
-version: "3.8"
-services:
-  conpot:
-    image: conpot/conpot:latest
-    container_name: conpot
-    restart: unless-stopped
-    network_mode: "bridge"
-    ports:
-      - "80:80"       # HTTP
-      - "502:502"     # Modbus (TCP)
-      - "161:161/udp" # SNMP (UDP)
-      - "47808:47808" # BACnet (UDP)
-    volumes:
-      - ./conpot-data:/data
-      - ./conpot-templates:/conpot/templates
-    cap_add:
-      - NET_ADMIN
+cat > conpot.cfg <<'EOF'
+[modbus]
+host = 0.0.0.0
+port = 1502          ; high port so no sudo needed
+
+[snmp]
+host = 0.0.0.0
+port = 1161          ; high port
+
+[http]
+host = 0.0.0.0
+port = 8080          ; high port
+
+[sqlite]
+enabled = False
+
+[hpfriends]
+enabled = False      ; keep telemetry local for the lab
+host = hpfriends.honeycloud.net
+port = 20000
+ident = disabled
+secret = disabled
+channels = ["conpot.events", ]
+
+[fetch_public_ip]
+enabled = False
+url = http://api-sth01.exip.org/?call=ip
 EOF
 ```
 
-> The `conpot/conpot:latest` image is used as a common public image name. If unavailable, you can replace with `mushorg/conpot` or build from source (see Method 2).
-
-### 3) Start Conpot
+- Then run it!
 ```bash
-docker compose up -d
-docker ps --filter "name=conpot"
+conpot -f --template /home/ubuntu/Desktop/conpot/conpot/templates/default -c ./conpot.cfg
 ```
 
-Check logs:
-```bash
-docker logs -f conpot
-```
-
-Conpot should be listening on local ports mapped above (80, 502, 161 etc).
-
----
-
-# Part C — Method 2: Python virtualenv (learning + debug)
-
-### 1) Clone Conpot and create virtualenv
-```bash
-cd ~
-git clone https://github.com/mushorg/conpot.git || git clone https://github.com/conpot/conpot.git conpot || true
-cd conpot
-python3 -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip setuptools wheel
-pip install -r requirements.txt
-pip install .
-```
-
-> If `requirements.txt` is missing in your clone, install `pip install conpot` instead or check the repo layout. The `pip install .` registers the package.
-
-### 2) Run Conpot with default template
-```bash
-# run as your current user inside venv
-conpot -f /etc/conpot/conpot.cfg || conpot -f ./conpot.cfg || conpot
-```
-
-If Conpot starts successfully, you'll see it binding to ports (80, 502, 161 etc). If you need root privileges to bind to low ports, run with sudo or use higher port mapping (see below).
-
-### 3) Run Conpot on high ports (no sudo)
-Edit `conpot.cfg` (or use CLI flags) to change service ports to higher numbers (e.g., 8080, 1502) if you prefer not to run as root. Example:
-```ini
-# example in conpot.cfg - modify service ports section
-[server]
-web_port = 8080
-modbus_port = 1502
-snmp_port = 1161
-```
-Then run:
-```bash
-conpot -f ./conpot.cfg
-```
-
----
-
-# Part D — Configure templates & deception profile
-Conpot uses templates that define how the emulated device behaves.
-
-1. Locate templates in Docker volume or cloned repo:
-
-- Docker: `~/conpot-lab-docker/conpot-templates` (or inside container `/conpot/templates`)
-- Repo: `./conpot/templates`
-
-2. Inspect `default` and `ics/` templates. To create a custom template, copy and edit YAML files. Example create `myplant` template:
-
-```bash
-mkdir -p ~/conpot-lab-docker/conpot-templates/myplant
-cat > ~/conpot-lab-docker/conpot-templates/myplant/template.cfg <<'EOF'
-name: MyPlant
-description: Example plant with Modbus and HTTP
-services:
-  http:
-    enabled: True
-    port: 80
-  modbus:
-    enabled: True
-    port: 502
-  snmp:
-    enabled: True
-    port: 161
-EOF
-```
-
-Reload container or restart conpot for templates to take effect.
+<img width="1920" height="719" alt="image" src="https://github.com/user-attachments/assets/096fb635-ab3f-4319-af64-a9d883178ab0" />
 
 ---
 
