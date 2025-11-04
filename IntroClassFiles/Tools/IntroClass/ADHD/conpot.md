@@ -5,41 +5,7 @@
 
 # Conpot
 
-
-# Conpot Hands‑On Lab — Attack, Defense & Cyber Deception
-**Format:** Step‑by‑step, copy‑paste commands.  
-**Target audience:** Anyone (no prior ICS/honeypot experience required).  
-**Tested on:** Ubuntu 22.04 LTS (x86_64). Adapt commands for other distros.
-
----
-
-## Overview & learning objectives
-This lab deploys **Conpot** (an industrial control system honeypot) as a deception environment and demonstrates how attackers interact with ICS protocols, how to capture telemetry, and how defenders analyze activity. After completing the lab you will be able to:
-
-- Install Conpot (two methods: Docker and Python virtualenv).
-- Configure Conpot to emulate Modbus, SNMP, HTTP and other services.
-- Simulate attacker activity using `nmap`, `modpoll`, and simple HTTP requests.
-- Capture network and application logs, and analyze them.
-- Create basic detection rules and observe attacker behavior patterns.
-- Harden host running Conpot minimally and learn safe operation practices.
-
----
-
-## Lab topology (single host)
-All steps are run on one Ubuntu machine (can be a VM). Conpot will listen on ports accessible from the network or from your host. For safe testing, use an isolated lab network.
-
-```
-Attacker VM / Host  <--->  Lab Host (Conpot running) 
-```
-
----
-
-## Prerequisites
-- Ubuntu 22.04 LTS (or similar).  
-- 2 CPU cores, 4 GB RAM (lab), 20 GB disk.  
-- User with `sudo` access.  
-- Internet connection to download packages.  
-- Optional attacker machine (or use same machine with separate terminal).
+This lab deploys **Conpot** (an industrial control system honeypot) as a deception environment and demonstrates how attackers interact with ICS protocols, how to capture telemetry, and how defenders analyze activity
 
 ---
 
