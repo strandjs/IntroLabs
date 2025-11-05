@@ -75,8 +75,13 @@ Open another terminal (attacker machine or same host).
 
 ### 1) Discovery with nmap
 ```bash
-# scan common ICS ports
-sudo nmap -sS -p 5020,10201,8800,16100,47808,6230 -sV -Pn localhost
+# scan the TCP ports
+nmap -sS -sV -Pn -p 5020,10201,8800 localhost
+```
+
+```bash
+# scan the UDP ports
+sudo nmap -sU -Pn -p 16100,47808,6230 localhost
 ```
 
 Expected: Conpot will respond as devices and show banners.
