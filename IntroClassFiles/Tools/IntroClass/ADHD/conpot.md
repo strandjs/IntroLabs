@@ -56,7 +56,13 @@ EOF
 
 - Then run it!
 ```bash
-conpot -f --template /home/ubuntu/Desktop/conpot/conpot/templates/default -c ./conpot.cfg
+TPL="/home/ubuntu/Desktop/conpot/conpot/templates/default"
+```
+```bash
+CFG="/home/ubuntu/Desktop/conpot/conpot.cfg"
+```
+```bash
+conpot --template "$TPL" --config "$CFG"
 ```
 
 <img width="1920" height="719" alt="image" src="https://github.com/user-attachments/assets/096fb635-ab3f-4319-af64-a9d883178ab0" />
@@ -70,9 +76,7 @@ Open another terminal (attacker machine or same host).
 ### 1) Discovery with nmap
 ```bash
 # scan common ICS ports
-nmap -sS -p 80,502,161,47808 -sV -Pn <CONPOT_IP>
-# or full quick scan
-nmap -A -T4 <CONPOT_IP>
+sudo nmap -sS -p 5020,10201,8800,16100,47808,6230 -sV -Pn localhost
 ```
 
 Expected: Conpot will respond as devices and show banners.
