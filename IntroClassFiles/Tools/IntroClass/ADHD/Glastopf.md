@@ -198,60 +198,11 @@ Try a small script that sends many SQL injection strings and watch the logs grow
 for s in "' OR '1'='1" "UNION SELECT" "../etc/passwd" "${@}" "|ls"; do
   curl -s "http://localhost/index.php?q=$s" > /dev/null
 done
+```
 
+```bash
 sudo tail -n 50 ~/glastopf-lab/logs/glastopf.log
 ```
-
----
-
-## 7 — Clean up
-
-Stop the Docker container or native process when done:
-
-```bash
-# Docker
-sudo docker stop glastopf
-# Native (if running in foreground Ctrl+C) or find pid
-ps aux | grep glastopf
-sudo pkill -f glastopf
-```
-
-Remove data if you want a fresh start:
-
-```bash
-rm -rf ~/glastopf-lab ~/glastopf-run ~/glastopf-src
-```
-
----
-
-## Final thoughts (what to learn here)
-
-* Glastopf emulates vulnerable web apps and records attack attempts (LFI, RFI, SQLi, RCE-like, scanners).
-* The honeypot records attacker behavior you can analyze: URIs, user-agents, POST data, payloads.
-* For production research: integrate hpfeeds or a centralized collector, and run behind a reverse proxy to separate analysis.
-
----
-
-## Short checklist for the instructor
-
-* Run in an isolated VM.
-* Use Docker for repeatability.
-* Demonstrate a simple curl + nikto + sqlmap session and show logs.
-* Ask students to find the captured payload in `data` and report what pattern triggered it.
-
----
-
-If you want, I can also produce a single-file bash script that automates the Docker setup + attack simulation and a set of `curl` attacks (for classroom demos).
-
-
-
-
-
-
-
-
-
-
 
 
 
