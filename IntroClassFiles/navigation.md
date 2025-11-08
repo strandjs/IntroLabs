@@ -45,7 +45,6 @@
   - [Portspoof](Tools/IntroClass/ADHD/Portspoof/Portspoof.md)
   - [HoneyPorts](Tools/IntroClass/ADHD/HoneyPorts/HoneyPorts.md)
   - [OpenCanary](Tools/IntroClass/ADHD/openCanary.md)
-  - [Conpot](Tools/IntroClass/ADHD/conpot.md)
   - [IoTPOT](Tools/IntroClass/ADHD/IoTPOT.md)
 
 ### Endpoint / Identity / AD deception  
@@ -87,6 +86,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
