@@ -117,7 +117,7 @@ conpot --template "$TPL" --config "$CFG"
 ### Discovery with nmap
 ```bash
 # scan the TCP ports
-sudo nmap -sS -sV -Pn -p 5020,10201,8800 localhost
+sudo nmap -sS -sV -Pn -p 5020,8800 localhost
 ```
 
 ```bash
@@ -132,7 +132,7 @@ Install modpoll (if available) or use `socat` to open TCP connection and examine
 
 ```bash
 # simple telnet-like connection to Modbus
-nc <CONPOT_IP> 502
+nc localhost 502
 # Or using modpoll (preferred for real Modbus)
 # download modpoll binary or use package manager if available
 modpoll -m tcp -t 4 -r 0 -c 10 <CONPOT_IP>
@@ -144,11 +144,9 @@ snmpwalk -v1 -c public <CONPOT_IP>
 snmpget -v1 -c public <CONPOT_IP> 1.3.6.1.2.1.1.1.0
 ```
 
-### 4) HTTP probing & exploitation attempts
+### 4) HTTP probing
 ```bash
-curl -v http://<CONPOT_IP>/
-curl -X POST http://<CONPOT_IP>/login -d 'username=admin&password=admin'
-# try simple fuzzing using wfuzz or gobuster (install separately)
+curl -v  http://127.0.0.1:8800/
 ```
 
 ### 5) Simulate more aggressive attacker behavior (port scanning, simple payloads)
