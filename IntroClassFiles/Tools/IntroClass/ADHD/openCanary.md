@@ -1,76 +1,12 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
 
+# For the Ubuntu VM
 
 
+# OpenCanary 
 
-# OpenCanary Hands‑On Lab — Attack, Defense & Cyber Deception (Beginner-friendly)
-
-**Goal:** Deploy a simple OpenCanary honeypot on Ubuntu (or Debian-based VM), trigger a few attacks (port scan, SSH/SMB probe, simple HTTP request), and observe alerts. This lab is entirely hands-on and uses only easy commands.
-
-**Tested on:** Ubuntu 22.04 / 24.04 (instructions use Python3, `virtualenv`, and systemd).  
-**Estimated time:** ~30–60 minutes (depending on downloads).
-
-> Sources: OpenCanary project, official docs and community guides. See notes in the lab for references.
-
----
-
-## Lab overview (what you'll do)
-1. Prepare an Ubuntu VM (or container) and update packages.  
-2. Create a Python virtual environment and install OpenCanary and small extras.  
-3. Generate a default config and enable a few canary services (SSH, HTTP, SMB, port-scan).  
-4. Run OpenCanary as a service.  
-5. Launch simple attacks from a second machine (or your host) — nmap, curl, smbclient, ssh attempt — and watch alerts and logs.  
-6. Clean up.
-
-Key files you will touch:
-- `/etc/opencanaryd/opencanary.conf` (the main config created by `opencanaryd --copyconfig`)  
-- A systemd service unit that points to the virtualenv's `opencanaryd` executable.
-
----
-
-## Quick notes & citations
-- OpenCanary is a modular honeypot maintained by Thinkst and documented on ReadTheDocs and GitHub. citeturn0search0turn0search8  
-- The `opencanaryd --copyconfig` command creates the default config file (typically `/etc/opencanaryd/opencanary.conf`). citeturn0search1turn0search4
-
----
-
-## A. Environment setup (host VM)
-Run these commands on a fresh Ubuntu VM (you can use VirtualBox, cloud VM, or a Raspberry Pi running Ubuntu). Open a terminal and follow **line-by-line**.
-
-```bash
-# 1. Update system
-sudo apt update && sudo apt upgrade -y
-
-# 2. Install prerequisites
-sudo apt install -y python3 python3-venv python3-pip python3-dev build-essential libpcap-dev git
-
-# Optional helpful tools for testing
-sudo apt install -y nmap smbclient curl netcat
-```
-
----
-
-## B. Install OpenCanary inside a virtualenv
-Staying in the same terminal:
-
-```bash
-# 1. Create a working folder and virtualenv
-mkdir -p ~/opencanary-lab
-cd ~/opencanary-lab
-python3 -m venv env
-. env/bin/activate
-
-# 2. Upgrade pip and setuptools inside venv
-pip install --upgrade pip setuptools
-
-# 3. Install OpenCanary and useful extras
-pip install opencanary opencanary-correlator scapy pcapy
-
-# (If pip fails on pcapy, you may need additional headers — libpcap-dev is installed above.)
-```
-
-> Tip: Installing from the GitHub source is also possible (`git clone https://github.com/thinkst/opencanary` then `pip install .`) — many community guides use that approach. citeturn0search0turn0search3
+**Goal:** Deploy a simple **OpenCanary** honeypot, trigger a few attacks (port scan, **SSH/SMB probe**, simple **HTTP request**), and observe **alerts**
 
 ---
 
@@ -107,7 +43,7 @@ Inside the JSON config make these **minimal** changes to enable a few services a
 
 Save and exit.
 
-> The docs note the default config placement and the recommended practice of using a venv when installing. citeturn0search1turn0search4
+> The docs note the default config placement and the recommended practice of using a venv when installing.
 
 ---
 
@@ -205,72 +141,6 @@ sudo journalctl -u opencanary.service -f
 ```
 
 Expect lines indicating which module detected activity, e.g. `"module": "ssh", "event": "connect", ...`
-
----
-
-## G. Lab exercises (for students)
-1. Run nmap from attacker host and count how many portscan alerts appear in `/var/log/opencanary.log`.  
-2. Try to authenticate to the fake SSH (use random usernames). Observe logged username fields.  
-3. Use `curl` to fetch `/nonexistent` and inspect whether the HTTP canary logs the request path.  
-4. Adjust `opencanary.conf` to change the SMB `share_name` and restart the service — then list the share with `smbclient`.
-
----
-
-## H. Optional: Send alerts to email or webhook
-OpenCanary supports different sinks (syslog, file, elastic, webhook). Example: enable `webhook` in the `"logger"` section (or use opencanary-correlator). Advanced routing is documented in official docs. citeturn0search1turn0search2
-
----
-
-## I. Cleanup / Uninstall
-To stop and remove:
-
-```bash
-# Stop service
-sudo systemctl stop opencanary.service
-sudo systemctl disable opencanary.service
-sudo rm /etc/systemd/system/opencanary.service
-sudo systemctl daemon-reload
-
-# Remove venv and files
-rm -rf ~/opencanary-lab
-
-# Optionally uninstall package (if installed system-wide)
-# sudo pip3 uninstall opencanary opencanary-correlator scapy pcapy
-```
-
----
-
-## Troubleshooting tips
-- If `opencanaryd` is "not found": ensure you activated the venv or used the correct ExecStart path. Many installs put `opencanaryd` in the venv bin directory. citeturn0search4  
-- If `pcapy` fails to install, ensure `libpcap-dev` is installed.  
-- If SMB has permission errors, consult the OpenCanary Samba wiki and the Samba logs. citeturn0search10
-
----
-
-## Learning outcomes
-- Students will learn how to deploy a low-cost honeypot and observe attacker behaviour.  
-- Students will see how simple probes (port scans, ssh connection attempts, HTTP hits) produce correlatable alerts.  
-- Students will be introduced to faster detection and the concept of deception in defense.
-
----
-
-## References (helpful links)
-- OpenCanary GitHub repo (official): https://github.com/thinkst/opencanary. citeturn0search0  
-- OpenCanary docs (ReadTheDocs): https://opencanary.readthedocs.io. citeturn0search8  
-- Community installation notes & examples (blog/HowTo): various community guides were referenced above. citeturn0search6turn0search3
-
----
-
-**End of lab.**  
-Feel free to ask for: (A) a version tailored for Raspberry Pi; (B) a Docker-based exercise; (C) extra student challenge tasks with sample logs and detection playbooks.
-
-
-
-
-
-
-
-
 
 
 
