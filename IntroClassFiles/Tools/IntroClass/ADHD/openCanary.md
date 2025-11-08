@@ -10,7 +10,20 @@
 
 ---
 
-## C. Create and edit the config
+# Setup
+
+- Go to its directory
+
+```bash
+cd ~/Desktop/openCanary
+```
+
+- Activate the **Virtual Environment**
+```bash
+source env/bin/activate
+```
+
+### Create and edit the config
 Still inside your virtualenv:
 
 - Create the default config (this prints the location)
@@ -51,6 +64,7 @@ sudo nano /etc/opencanaryd/opencanary.conf
 ```json
 "ssh": {"enabled": true},
 "http": {"enabled": true},
+"http": {"port": 8080},
 "ftp": {"enabled": false},
 "smb": {"enabled": true},
 "portscan": {"enabled": true}
@@ -62,6 +76,8 @@ sudo nano /etc/opencanaryd/opencanary.conf
 
 <img width="214" height="28" alt="image" src="https://github.com/user-attachments/assets/cd3c2c07-cc83-4ef0-8d6d-0ef25ab80259" />
 
+<img width="231" height="28" alt="image" src="https://github.com/user-attachments/assets/35cfb47e-e3ee-49a8-9ac8-3f7889bfc955" />
+
 <img width="214" height="28" alt="image" src="https://github.com/user-attachments/assets/c535dde2-fd4e-4a70-91c9-6afe0c04b4b7" />
 
 <img width="231" height="28" alt="image" src="https://github.com/user-attachments/assets/bc2a9520-e551-44a8-9bdd-f0d5d64782f7" />
@@ -72,50 +88,19 @@ sudo nano /etc/opencanaryd/opencanary.conf
 
 ---
 
-## Create a systemd service (so OpenCanary runs in background)
-Create a systemd unit file so the canary starts automatically. **Important:** change `/home/youruser/opencanary-lab/env` to the full path of your virtualenv.
+## Start
+
+- Run it
+
+>[!NOTE]
+> Make sure you are in **~/Desktop/openCanary** with **venv** activated
 
 ```bash
-# Create service file (run as root or use sudo)
-sudo tee /etc/systemd/system/opencanary.service > /dev/null <<'EOF'
-[Unit]
-Description=OpenCanary Honeypot
-After=network.target
-
-[Service]
-Type=simple
-User=root
-# Replace this with the full path to your virtualenv's opencanaryd
-ExecStart=/home/$USER/opencanary-lab/env/bin/opencanaryd --start
-Restart=on-failure
-RestartSec=5
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-# Reload systemd, enable and start
-sudo systemctl daemon-reload
-sudo systemctl enable --now opencanary.service
-
-# Check status
-sudo systemctl status opencanary.service --no-pager
-```
-
-If you prefer to run manually (useful for debugging), from the venv run:
-
-```bash
-# From ~/opencanary-lab with venv activated:
 opencanaryd --start
 # To stop:
 opencanaryd --stop
 ```
 
-(Community guides often recommend placing the service unit and pointing ExecStart at a venv — this pattern is common.)
-
----
-
-## E. Verify logging is working
 If you configured file logging as above, check the log:
 
 ```bash
