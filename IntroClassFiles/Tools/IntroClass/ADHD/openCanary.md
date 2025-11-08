@@ -13,41 +13,66 @@
 ## C. Create and edit the config
 Still inside your virtualenv:
 
+- Create the default config (this prints the location)
 ```bash
-# Create the default config (this prints the location)
 opencanaryd --copyconfig
+```
 
-# Typical location: /etc/opencanaryd/opencanary.conf
+<img width="1920" height="105" alt="image" src="https://github.com/user-attachments/assets/63632a27-543b-44e9-92c9-7752d08d8cd5" />
+
+- Make sure it is there
+
+```bash
 sudo ls -l /etc/opencanaryd/opencanary.conf
 ```
 
-Now open the config and make small edits. Example uses `nano` (or `vi`):
+<img width="676" height="28" alt="image" src="https://github.com/user-attachments/assets/02663032-15a1-4636-8bf4-f47d013dd317" />
+
+
+- Now open the config and make small edits. Example uses `nano` (or `vi`):
 
 ```bash
 sudo nano /etc/opencanaryd/opencanary.conf
 ```
 
-Inside the JSON config make these **minimal** changes to enable a few services and a log file:
+- Inside the JSON config make these **minimal** changes to enable a few services and a log file:
 
-1. Locate the `"device.node_id"` and set a friendly name (optional).  
-2. In the `"logger"` section enable `"file.enabled": true` and set a path like `/var/log/opencanary.log`.  
+1. Locate the `"device.node_id"` and set a friendly name  
+
+<img width="330" height="30" alt="image" src="https://github.com/user-attachments/assets/a6c1293c-c846-40dd-a163-622f4b9d39b7" />
+
+
+2. In the `"logger"` section make sure there is a `file` part under `handlers` and set a path like `/var/log/opencanary.log`
+
+<img width="426" height="193" alt="image" src="https://github.com/user-attachments/assets/cddf72a1-c116-498a-85a2-0641a672052b" />
+
 3. In the `"modules"` (or top-level service entries) enable the following:
 
 ```json
 "ssh": {"enabled": true},
 "http": {"enabled": true},
 "ftp": {"enabled": false},
-"smb": {"enabled": true, "share_name": "SHARE"},
-"portscan": {"enabled": true, "ignore_localhost": true}
+"smb": {"enabled": true},
+"portscan": {"enabled": true}
 ```
 
-Save and exit.
+<img width="214" height="28" alt="image" src="https://github.com/user-attachments/assets/f117736a-64b7-4015-a3d7-d31cff4cc54e" />
 
-> The docs note the default config placement and the recommended practice of using a venv when installing.
+<img width="214" height="30" alt="image" src="https://github.com/user-attachments/assets/44f81b20-b793-4396-8d94-12ec76e7bf89" />
+
+<img width="214" height="28" alt="image" src="https://github.com/user-attachments/assets/cd3c2c07-cc83-4ef0-8d6d-0ef25ab80259" />
+
+<img width="214" height="28" alt="image" src="https://github.com/user-attachments/assets/c535dde2-fd4e-4a70-91c9-6afe0c04b4b7" />
+
+<img width="231" height="28" alt="image" src="https://github.com/user-attachments/assets/bc2a9520-e551-44a8-9bdd-f0d5d64782f7" />
+
+
+- Save and exit with `Ctrl + x` and `y` and `Enter`
+
 
 ---
 
-## D. Create a systemd service (so OpenCanary runs in background)
+## Create a systemd service (so OpenCanary runs in background)
 Create a systemd unit file so the canary starts automatically. **Important:** change `/home/youruser/opencanary-lab/env` to the full path of your virtualenv.
 
 ```bash
