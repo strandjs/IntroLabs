@@ -86,7 +86,7 @@ opencanaryd --start
 opencanaryd --stop
 ```
 
-(Community guides often recommend placing the service unit and pointing ExecStart at a venv — this pattern is common.) citeturn0search7turn0search11
+(Community guides often recommend placing the service unit and pointing ExecStart at a venv — this pattern is common.)
 
 ---
 
