@@ -4,23 +4,13 @@
 
 # IoTPOT
 
-> Goal: build a tiny, completely hands-on "IoTPOT" that emulates common IoT services (Telnet, HTTP, MQTT), logs attacker activity, and lets students play attacker and analyst roles. No complicated dependencies or external honeypot projects required — everything runs with Python, Docker (optional), and common tools.
+**Goal:** build a tiny, completely hands-on "IoTPOT" that emulates common IoT services (Telnet, HTTP, MQTT), logs attacker activity, and lets students play attacker and analyst roles. No complicated dependencies or external honeypot projects required — everything runs with Python, Docker (optional), and common tools.
 
 ---
-## Lab learning objectives
+## Overview
 - Run a simple IoT honeypot and view live logs.
 - Simulate attacks: telnet brute-force, HTTP command injection, MQTT publish abuse, simple port scans.
 - Capture and inspect artifacts (commands, credentials, payloads).
-- Understand limitations and next steps for real deployments.
-
-## Requirements (tested on Ubuntu 20.04/22.04 or WSL2)
-- 2GB+ free RAM, 10GB disk
-- Python 3.8+ (python3, pip)
-- git (optional)
-- `netcat` (nc), `curl`, `nmap`, `hydra`, `mosquitto-clients` (install steps below)
-- (Optional) Docker if you prefer containerized run
-
-> If you don't have `hydra` or `mosquitto-clients`, installation commands are included below.
 
 ---
 ## Quick summary of what we'll build
