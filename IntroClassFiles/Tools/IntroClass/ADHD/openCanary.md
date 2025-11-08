@@ -64,7 +64,7 @@ sudo nano /etc/opencanaryd/opencanary.conf
 ```json
 "ssh": {"enabled": true},
 "http": {"enabled": true},
-"http": {"port": 8080},
+"http": {"port": 8082},
 "ftp": {"enabled": false},
 "smb": {"enabled": true},
 "portscan": {"enabled": true}
@@ -74,7 +74,7 @@ sudo nano /etc/opencanaryd/opencanary.conf
 
 <img width="214" height="30" alt="image" src="https://github.com/user-attachments/assets/44f81b20-b793-4396-8d94-12ec76e7bf89" />
 
-<img width="214" height="28" alt="image" src="https://github.com/user-attachments/assets/cd3c2c07-cc83-4ef0-8d6d-0ef25ab80259" />
+<img width="231" height="28" alt="image" src="https://github.com/user-attachments/assets/7249cdca-f315-474b-af08-b21c3e54f568" />
 
 <img width="231" height="28" alt="image" src="https://github.com/user-attachments/assets/35cfb47e-e3ee-49a8-9ac8-3f7889bfc955" />
 
