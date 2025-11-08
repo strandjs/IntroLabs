@@ -25,32 +25,72 @@ source .venv311/bin/activate
 
 ```bash
 cat > conpot.cfg <<'EOF'
-[modbus]
-host = 0.0.0.0
-port = 1502          ; high port so no sudo needed
+[virtual_file_system]
+fs_url = tar:///home/ubuntu/Desktop/conpot/conpot/data.tar
+data_fs_url = tar:///home/ubuntu/Desktop/conpot/conpot/data.tar
+temp_dir = /tmp/ConpotTempFS
 
-[snmp]
-host = 0.0.0.0
-port = 1161          ; high port
+# disable MAC randomization feature (we don't need it for the lab)
+[change_mac_addr]
+enabled = False
 
 [http]
 host = 0.0.0.0
-port = 8080          ; high port
+port = 8080
 
+[modbus]
+host = 0.0.0.0
+port = 1502
+
+[snmp]
+host = 0.0.0.0
+port = 1161
+
+# local-only persistence off for this lab run
 [sqlite]
 enabled = False
 
+# cloud sharing disabled for the lab
 [hpfriends]
-enabled = False      ; keep telemetry local for the lab
+enabled = False
 host = hpfriends.honeycloud.net
 port = 20000
 ident = disabled
 secret = disabled
-channels = ["conpot.events", ]
+channels = ["conpot.events"]
 
+# skip public IP lookup to avoid outbound calls
 [fetch_public_ip]
 enabled = False
 url = http://api-sth01.exip.org/?call=ip
+
+[json]
+enabled = False
+path = /var/log/conpot.json
+
+[file]
+enabled = False
+path = /var/log/conpot.log
+
+[syslog]
+enabled = False
+address = /dev/log
+facility = local0
+
+[hpfeeds]
+enabled = False
+host = 127.0.0.1
+port = 20000
+ident = disabled
+secret = disabled
+channel = conpot.events
+
+[taxii]
+enabled = False
+host = 127.0.0.1
+port = 9000
+collection = conpot
+
 EOF
 ```
 
@@ -69,14 +109,15 @@ conpot --template "$TPL" --config "$CFG"
 
 ---
 
-# Part E — Attack simulation (hands‑on)
+# Attack simulation
 
-Open another terminal (attacker machine or same host).
+>[!IMPORTANT]
+> You need to open another terminal
 
-### 1) Discovery with nmap
+### Discovery with nmap
 ```bash
 # scan the TCP ports
-nmap -sS -sV -Pn -p 5020,10201,8800 localhost
+sudo nmap -sS -sV -Pn -p 5020,10201,8800 localhost
 ```
 
 ```bash
@@ -84,9 +125,9 @@ nmap -sS -sV -Pn -p 5020,10201,8800 localhost
 sudo nmap -sU -Pn -p 16100,47808,6230 localhost
 ```
 
-Expected: Conpot will respond as devices and show banners.
+**Expected:** Conpot will respond as devices and show banners.
 
-### 2) Modbus interaction (use modpoll)
+### Modbus interaction (use modpoll)
 Install modpoll (if available) or use `socat` to open TCP connection and examine. Example with socat:
 
 ```bash
