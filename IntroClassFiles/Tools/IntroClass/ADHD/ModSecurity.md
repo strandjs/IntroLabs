@@ -6,6 +6,10 @@
 
 **Goal:** Install **ModSecurity** (with Apache) and perform simple hands‑on detections and blocks (XSS, SQLi, command injection), view logs, and write a simple custom rule
 
+
+>[!NOTES]
+>Apache is running on port 8083 on the machine
+
 ---
 
 ## Lab overview
@@ -20,7 +24,7 @@
 ---
 
 ## Step 0 — Open a terminal
-If you're remote, use SSH. This lab uses `localhost` (the VM itself).
+If you're remote, use SSH. This lab uses `localhost`
 
 ---
 
