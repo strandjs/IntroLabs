@@ -23,37 +23,25 @@
 
 ---
 
-## Step 0 — Open a terminal
-If you're remote, use SSH. This lab uses `localhost`
+# Start
 
----
-
-## Step 1 — Update and install Apache + tools
-```bash
-sudo apt update
-sudo apt install -y apache2 curl git nano
-```
-
-Start and enable Apache:
+- Start and enable Apache:
 ```bash
 sudo systemctl enable --now apache2
 sudo systemctl status apache2 --no-pager
 ```
 
-Check Apache is serving:
+- Check Apache is serving:
 ```bash
-curl -I http://localhost
-# Expected: HTTP/1.1 200 OK (or 302), and a Server header with Apache
+curl -I http://localhost:8083
 ```
 
----
+<img width="410" height="186" alt="image" src="https://github.com/user-attachments/assets/6959fa36-fbfe-47e0-873e-fa373aa89ef4" />
 
-## Install ModSecurity (libapache2-mod-security2)
-```bash
-sudo apt install -y libapache2-mod-security2
-```
+>[!IMPORTANT]
+>ModSecurity is already installed for this lab
 
-Confirm module installed:
+- Confirm module installed:
 ```bash
 apachectl -M | grep security
 # you should see: security2_module (shared)
@@ -134,7 +122,7 @@ With `SecRuleEngine DetectionOnly` ModSecurity will log but not block.
 
 ### 5.1 XSS test (reflected)
 ```bash
-curl -v "http://localhost/?q=<script>alert(1)</script>" -s -o /dev/null
+curl -v "http://localhost:8083/?q=<script>alert(1)</script>" -s -o /dev/null
 ```
 Now tail the audit log (open another terminal or background `tail -f`):
 ```bash
@@ -144,13 +132,13 @@ Look for entries mentioning `XSS` or `Cross-Site Scripting` or rule ids from CRS
 
 ### 5.2 SQL Injection test
 ```bash
-curl -v "http://localhost/?id=1%20OR%201=1" -s -o /dev/null
+curl -v "http://localhost:8083/?id=1%20OR%201=1" -s -o /dev/null
 sudo tail -n 120 /var/log/apache2/modsec_audit.log
 ```
 
 ### 5.3 Command injection-like input
 ```bash
-curl -v "http://localhost/?cmd=|ls" -s -o /dev/null
+curl -v "http://localhost:8083/?cmd=|ls" -s -o /dev/null
 sudo tail -n 120 /var/log/apache2/modsec_audit.log
 ```
 
@@ -172,12 +160,12 @@ sudo systemctl restart apache2
 Test the same payloads:
 
 ```bash
-curl -v "http://localhost/?q=<script>alert(1)</script>" -s -o /dev/null -w "%{http_code}\n"
+curl -v "http://localhost:8083/?q=<script>alert(1)</script>" -s -o /dev/null -w "%{http_code}\n"
 # Expected: 403 (or another non-200)
 ```
 
 ```bash
-curl -v "http://localhost/?id=1%20OR%201=1" -s -o /dev/null -w "%{http_code}\n"
+curl -v "http://localhost:8083/?id=1%20OR%201=1" -s -o /dev/null -w "%{http_code}\n"
 ```
 
 Review the audit log and Apache error log for blocked events:
@@ -208,7 +196,7 @@ sudo systemctl restart apache2
 
 Test it:
 ```bash
-curl -v "http://localhost/?test=ATTACK-LAB" -s -o /dev/null -w "%{http_code}\n"
+curl -v "http://localhost:8083/?test=ATTACK-LAB" -s -o /dev/null -w "%{http_code}\n"
 # Expected: 403 and an audit log entry with id 900900
 sudo tail -n 80 /var/log/apache2/modsec_audit.log
 ```
@@ -222,7 +210,7 @@ Example: edit file and change `deny` to `log`:
 ```bash
 sudo sed -i "s/deny/log/" /etc/modsecurity/custom-rules/900900-block-attacklab.conf
 sudo systemctl restart apache2
-curl -v "http://localhost/?test=ATTACK-LAB" -s -o /dev/null -w "%{http_code}\n"
+curl -v "http://localhost:8083/?test=ATTACK-LAB" -s -o /dev/null -w "%{http_code}\n"
 sudo tail -n 80 /var/log/apache2/modsec_audit.log
 ```
 
@@ -242,7 +230,7 @@ sudo systemctl restart apache2
 
 Test:
 ```bash
-curl -v "http://localhost/health?q=<script>alert(1)</script>" -s -o /dev/null -w "%{http_code}\n"
+curl -v "http://localhost:8083/health?q=<script>alert(1)</script>" -s -o /dev/null -w "%{http_code}\n"
 # Should not be blocked if whitelist works (200)
 ```
 
