@@ -44,27 +44,35 @@ curl -I http://localhost:8083
 - Confirm module installed:
 ```bash
 apachectl -M | grep security
-# you should see: security2_module (shared)
 ```
 
-The default configuration file lives at: `/etc/modsecurity/modsecurity.conf-recommended`
-Copy and enable a basic config:
+<img width="256" height="27" alt="image" src="https://github.com/user-attachments/assets/02f79861-bb5b-49dd-9a04-f1d8f3609177" />
+
+
+- The default configuration file lives at: `/etc/modsecurity/modsecurity.conf-recommended`
+
+- Copy and enable a basic config:
 ```bash
 sudo cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
 ```
 
-Edit the config to enable the engine and set log locations (we'll use defaults). Ensure `SecRuleEngine` is set to `DetectionOnly` initially:
+- Edit the config to **enable** the **engine** and set **log** locations (we'll use defaults). Ensure `SecRuleEngine` is set to `DetectionOnly` initially:
 ```bash
 sudo sed -i "s/SecRuleEngine DetectionOnly/SecRuleEngine DetectionOnly/" /etc/modsecurity/modsecurity.conf
 # (if it was set to 'On' change as needed). Open to inspect:
 sudo nano /etc/modsecurity/modsecurity.conf
 ```
 
-Important lines to check:
-- `SecRuleEngine DetectionOnly` — detects but does not block.
-- `SecAuditLog` — path to the audit log (usually `/var/log/apache2/modsec_audit.log`).
+- Important lines to check:
+- `SecRuleEngine DetectionOnly` — detects but does not block
+- `SecAuditLog` — path to the audit log (usually `/var/log/apache2/modsec_audit.log`)
 
-Restart Apache:
+<img width="260" height="32" alt="image" src="https://github.com/user-attachments/assets/cfe24f08-0857-4790-9b10-1e0d96431e18" />
+
+<img width="426" height="27" alt="image" src="https://github.com/user-attachments/assets/719fcdbc-69d9-4a60-9490-7903687253ad" />
+
+
+- Restart Apache:
 ```bash
 sudo systemctl restart apache2
 ```
@@ -72,7 +80,7 @@ sudo systemctl restart apache2
 ---
 
 ## Install OWASP ModSecurity Core Rule Set (CRS)
-CRS provides many working detection rules (XSS, SQLi, RCE patterns).
+- **CRS** provides many working **detection rules** (**XSS**, **SQLi**, **RCE patterns**).
 
 ```bash
 cd /tmp
@@ -81,12 +89,12 @@ sudo mkdir -p /usr/share/modsecurity-crs
 sudo cp -r coreruleset/* /usr/share/modsecurity-crs/
 ```
 
-Copy the recommended setup:
+- Copy the recommended setup:
 ```bash
 sudo cp /usr/share/modsecurity-crs/crs-setup.conf.example /usr/share/modsecurity-crs/crs-setup.conf
 ```
 
-Enable CRS in Apache ModSecurity configuration by creating a small include file:
+- Enable **CRS** in **Apache ModSecurity** configuration by creating a small include file:
 
 ```bash
 sudo bash -c 'cat > /etc/apache2/mods-enabled/security2.conf <<EOF
@@ -97,7 +105,7 @@ sudo bash -c 'cat > /etc/apache2/mods-enabled/security2.conf <<EOF
 EOF'
 ```
 
-Reload Apache:
+- Reload Apache:
 ```bash
 sudo systemctl restart apache2
 ```
