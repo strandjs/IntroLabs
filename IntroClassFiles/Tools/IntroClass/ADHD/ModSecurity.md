@@ -135,52 +135,74 @@ ls -l /var/log/apache2/modsec_audit.log || ls -l /var/log/modsec_audit.log
 
 ---
 
-## Step 5 — Simple detection tests (DetectionOnly mode)
-With `SecRuleEngine DetectionOnly` ModSecurity will log but not block.
+## Simple detection tests (DetectionOnly mode)
+- With `SecRuleEngine DetectionOnly` ModSecurity will log but not block.
 
-### 5.1 XSS test (reflected)
+### XSS test (reflected)
 ```bash
 curl -v "http://localhost:8083/?q=<script>alert(1)</script>" -s -o /dev/null
 ```
-Now tail the audit log (open another terminal or background `tail -f`):
+
+<img width="520" height="382" alt="image" src="https://github.com/user-attachments/assets/5abea418-3dbf-4b08-9a38-0e1e09732f79" />
+
+- Now tail the **audit log** (open another terminal or background `tail -f`):
 ```bash
 sudo tail -n 120 /var/log/apache2/modsec_audit.log
 ```
-Look for entries mentioning `XSS` or `Cross-Site Scripting` or rule ids from CRS (e.g., 942100-ish). The entry contains the matched request and relevant rule id.
 
-### 5.2 SQL Injection test
+<img width="1920" height="787" alt="image" src="https://github.com/user-attachments/assets/a32dc4a8-30d1-4ac4-8c68-2e95ee522b9a" />
+
+- **BOOM!** What is cool about **ModSecurity** is that not only does it detect attacks really well, but it also logs them extensively, as you can see, giving details about everything
+
+
+### SQL Injection test
 ```bash
 curl -v "http://localhost:8083/?id=1%20OR%201=1" -s -o /dev/null
+```
+
+```bash
 sudo tail -n 120 /var/log/apache2/modsec_audit.log
 ```
 
-### 5.3 Command injection-like input
+<img width="1920" height="467" alt="image" src="https://github.com/user-attachments/assets/68fd8beb-4557-4d85-bf12-2f365c0334e0" />
+
+### Command injection-like input
 ```bash
 curl -v "http://localhost:8083/?cmd=|ls" -s -o /dev/null
+```
+```bash
 sudo tail -n 120 /var/log/apache2/modsec_audit.log
 ```
 
-Each curl should create ModSecurity audit events. Study the audit log format: it is split into sections (`--A--`, `--B--`, etc.) with request, response, and matched rule details.
+<img width="1920" height="524" alt="image" src="https://github.com/user-attachments/assets/513e8ad9-4f3b-4c8a-836c-b6f7b5de84ee" />
+
+
+- Each **curl** should create **ModSecurity** audit events. Study the audit log format: it is split into sections (`--A--`, `--B--`) with **request**, **response**, and **matched rule details**
 
 ---
 
 ## Switch to prevention mode (blocking)
-Now turn ModSecurity into blocking mode.
+- Now turn ModSecurity into blocking mode.
 
 **Important:** On some rules and setups enabling blocking will return `403` for many requests. This is expected — we want to see blocking.
 
 Edit the config:
 ```bash
 sudo sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /etc/modsecurity/modsecurity.conf
+```
+```bash
 sudo systemctl restart apache2
 ```
 
-Test the same payloads:
+- Test the same payloads:
 
 ```bash
 curl -v "http://localhost:8083/?q=<script>alert(1)</script>" -s -o /dev/null -w "%{http_code}\n"
 # Expected: 403 (or another non-200)
 ```
+
+<img width="435" height="387" alt="image" src="https://github.com/user-attachments/assets/176ceeb5-26dd-4911-956b-4e833dfa0b8d" />
+
 
 ```bash
 curl -v "http://localhost:8083/?id=1%20OR%201=1" -s -o /dev/null -w "%{http_code}\n"
@@ -189,68 +211,13 @@ curl -v "http://localhost:8083/?id=1%20OR%201=1" -s -o /dev/null -w "%{http_code
 Review the audit log and Apache error log for blocked events:
 ```bash
 sudo tail -n 120 /var/log/apache2/modsec_audit.log
+```
+
+```bash
 sudo tail -n 200 /var/log/apache2/error.log
 ```
 
----
-
-## Create a simple custom rule
-Create a local rules file to block a simple string like `ATTACK-LAB` for demonstration.
-
-```bash
-sudo mkdir -p /etc/modsecurity/custom-rules
-sudo bash -c 'cat > /etc/modsecurity/custom-rules/900900-block-attacklab.conf <<EOF
-# Custom demonstration rule: block requests containing ATTACK-LAB
-SecRule REQUEST_URI|ARGS "@contains ATTACK-LAB" \
-    "id:900900,phase:2,deny,log,msg:'Blocked ATTACK-LAB test string',severity:2"
-EOF'
-```
-
-Include this custom rules folder by adding to `security2.conf` or `modsecurity.conf`:
-```bash
-sudo sed -i '/IncludeOptional \/usr\/share\/modsecurity-crs\/rules\/*/a \    IncludeOptional /etc/modsecurity/custom-rules/*.conf' /etc/apache2/mods-enabled/security2.conf
-sudo systemctl restart apache2
-```
-
-Test it:
-```bash
-curl -v "http://localhost:8083/?test=ATTACK-LAB" -s -o /dev/null -w "%{http_code}\n"
-# Expected: 403 and an audit log entry with id 900900
-sudo tail -n 80 /var/log/apache2/modsec_audit.log
-```
-
----
-
-## Toggle rule to DetectionOnly (ignore/block)
-If you want to test without blocking, you can change the action from `deny` to `log` or set SecRuleEngine back to `DetectionOnly`.
-
-Example: edit file and change `deny` to `log`:
-```bash
-sudo sed -i "s/deny/log/" /etc/modsecurity/custom-rules/900900-block-attacklab.conf
-sudo systemctl restart apache2
-curl -v "http://localhost:8083/?test=ATTACK-LAB" -s -o /dev/null -w "%{http_code}\n"
-sudo tail -n 80 /var/log/apache2/modsec_audit.log
-```
-
----
-
-## Whitelisting a safe path (disabling CRS for a specific location)
-You might want to exclude a path from CRS rules (e.g., `/health` endpoint). Add a rule to disable checking for that path.
-
-Create an exclusion file:
-```bash
-sudo bash -c 'cat > /etc/modsecurity/custom-rules/900910-whitelist-health.conf <<EOF
-# Disable CRS for /health
-SecRule REQUEST_URI "@beginsWith /health" "id:900910,phase:1,pass,nolog,ctl:ruleEngine=DetectionOnly"
-EOF'
-sudo systemctl restart apache2
-```
-
-Test:
-```bash
-curl -v "http://localhost:8083/health?q=<script>alert(1)</script>" -s -o /dev/null -w "%{http_code}\n"
-# Should not be blocked if whitelist works (200)
-```
+<img width="1920" height="66" alt="image" src="https://github.com/user-attachments/assets/47d2e0ff-d324-4ec7-9964-bc611d258e01" />
 
 ---
 
@@ -261,8 +228,6 @@ curl -v "http://localhost:8083/health?q=<script>alert(1)</script>" -s -o /dev/nu
 - CRS setup: `/usr/share/modsecurity-crs/crs-setup.conf`
 - Audit log: `/var/log/apache2/modsec_audit.log` (or `/var/log/modsec_audit.log`)
 - Apache error log: `/var/log/apache2/error.log`
-- Custom rules: `/etc/modsecurity/custom-rules/`
-
 
 ---
 
