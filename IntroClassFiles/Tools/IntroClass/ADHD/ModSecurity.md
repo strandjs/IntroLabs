@@ -7,7 +7,7 @@
 **Goal:** Install **ModSecurity** (with Apache) and perform simple hands‑on detections and blocks (XSS, SQLi, command injection), view logs, and write a simple custom rule
 
 
->![NOTES]
+>[!NOTE]
 >Apache is running on port 8083 on the machine
 
 ---
