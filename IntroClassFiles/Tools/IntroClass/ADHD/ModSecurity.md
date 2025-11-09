@@ -229,19 +229,6 @@ sudo tail -n 200 /var/log/apache2/error.log
 - Audit log: `/var/log/apache2/modsec_audit.log` (or `/var/log/modsec_audit.log`)
 - Apache error log: `/var/log/apache2/error.log`
 
----
-
-## Clean up (optional)
-To return the machine to pre‑lab state:
-```bash
-sudo systemctl stop apache2
-sudo apt remove --purge -y libapache2-mod-security2
-sudo apt autoremove -y
-sudo rm -rf /usr/share/modsecurity-crs /etc/modsecurity/custom-rules
-```
-
-
-
 
 ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/Haraka.md)</i></b>
