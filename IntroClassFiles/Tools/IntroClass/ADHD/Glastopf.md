@@ -4,11 +4,17 @@
 
 # Glastopf
 
-**Goal:** Run a working Glastopf web-application honeypot, generate simple attacks against it, and inspect captured requests and payloads. This lab uses simple commands so anyone can follow along.
+**Goal:** Run a working Glastopf web-application honeypot, generate simple attacks against it, and inspect captured requests and payloads
 
 ---
 
 ### Start Glastopf container
+
+- Go the its directory
+
+```bash
+cd ~/Desktop/glastopf/
+```
 
 ```bash
 sudo docker run -d --rm \
@@ -30,7 +36,8 @@ Open a new terminal on the same machine and run:
 ps aux | grep glastopf
 ```
 
-<img width="1091" height="52" alt="image" src="https://github.com/user-attachments/assets/0fe7e604-bf1a-47d4-8d3e-87d9b57893bb" />
+<img width="1100" height="42" alt="image" src="https://github.com/user-attachments/assets/ca94b522-4f94-420d-b6f0-f481d89b32c5" />
+
 
 - Tail the main **log**
 
@@ -44,27 +51,41 @@ sudo docker logs -f glastopf
 
 ## Generate attacks 
 
-- Open another terminal (attacker) and try the following. These simulate common web malicious requests.
+- Open another **terminal** (attacker) and try the following. These simulate common web malicious requests.
 
 ### Simple directory traversal / LFI attempts
 
 ```bash
-curl -v "http://localhost/index.php?page=../../etc/passwd"
-curl -v "http://localhost/?file=../boot.ini"
+curl -v "http://localhost:8080/index.php?page=../../etc/passwd"
 ```
+```bash
+curl -v "http://localhost:8080/?file=../boot.ini"
+```
+
+- This is how it looks from a **hacker**'s perspective(**fake information**)
+
+<img width="1100" height="1051" alt="image" src="https://github.com/user-attachments/assets/f19f992e-2178-4c52-889c-c6e11d3fd629" />
+
+
+<img width="1100" height="943" alt="image" src="https://github.com/user-attachments/assets/e87529c9-9bc6-4edd-b6ca-82ceb4db22be" />
+
+- When in reality, all that is **fake** and it is being logged on the **defender**'s side:
+
+<img width="1165" height="46" alt="image" src="https://github.com/user-attachments/assets/e2975e19-3c0e-4f63-9582-69a712fab5c1" />
 
 ### SQL injection-like payloads
 
 ```bash
-curl -v "http://localhost/products.php?id=1' OR '1'='1"
-curl -v "http://localhost/search.php?q=1%27%20UNION%20SELECT%20NULL--"
+curl -v "http://localhost:8080/search.php?q=1%27%20UNION%20SELECT%20NULL--"
 ```
+
+- Look at the **fake information** and then back to see how it has been **logged** on the **defender**'s terminal
 
 ### Remote command injection attempts
 
 ```bash
-curl -v "http://localhost/?cmd=whoami"
-curl -v "http://localhost/?cmd=;id"
+curl -v "http://localhost:8080/?cmd=whoami"
+curl -v "http://localhost:8080/?cmd=;id"
 ```
 
 ### Use automated scanners
@@ -72,33 +93,11 @@ curl -v "http://localhost/?cmd=;id"
 Install basic testing tools and run quick scans against `localhost`.
 
 ```bash
-sudo apt install -y nikto sqlmap dirb
-nikto -h http://localhost
-sqlmap -u "http://localhost/index.php?id=1" --batch --level=1
-# dirb will brute-force paths (run carefully)
-dirb http://localhost /usr/share/wordlists/dirb/common.txt
+nikto -h http://localhost:8080
+sqlmap -u "http://localhost:8080/index.php?id=1" --batch --level=1
 ```
 
-> Each of the above requests are recorded by Glastopf and should show up in logs and the event store.
-
----
-
-## 6 — Play: Observe attacker vs analyst perspectives
-
-* Attacker perspective: the curl/nikto/sqlmap output in the attacker terminal (shows how tools see the target).
-* Analyst perspective: glastopf logs and DB entries (shows captured URIs, user-agents, POST data).
-
-Try a small script that sends many SQL injection strings and watch the logs grow:
-
-```bash
-for s in "' OR '1'='1" "UNION SELECT" "../etc/passwd" "${@}" "|ls"; do
-  curl -s "http://localhost/index.php?q=$s" > /dev/null
-done
-```
-
-```bash
-sudo tail -n 50 ~/glastopf-lab/logs/glastopf.log
-```
+> Each of the above requests are recorded by **Glastopf** and should show up in **logs** and the event store.
 
 
 
