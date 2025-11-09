@@ -79,35 +79,37 @@ sudo systemctl restart apache2
 
 ---
 
-## Install OWASP ModSecurity Core Rule Set (CRS)
-- **CRS** provides many working **detection rules** (**XSS**, **SQLi**, **RCE patterns**).
-
+## Install OWASP Core Rule Set (v3.3.5)
 ```bash
 cd /tmp
-sudo git clone https://github.com/coreruleset/coreruleset.git
+sudo rm -rf /usr/share/modsecurity-crs
+sudo git clone --branch v3.3.5 --depth 1 https://github.com/coreruleset/coreruleset.git
 sudo mkdir -p /usr/share/modsecurity-crs
 sudo cp -r coreruleset/* /usr/share/modsecurity-crs/
-```
-
-- Copy the recommended setup:
-```bash
 sudo cp /usr/share/modsecurity-crs/crs-setup.conf.example /usr/share/modsecurity-crs/crs-setup.conf
 ```
 
-- Enable **CRS** in **Apache ModSecurity** configuration by creating a small include file:
+---
 
+## Enable CRS (Single Include Only)
 ```bash
-sudo bash -c 'cat > /etc/apache2/mods-enabled/security2.conf <<EOF
+sudo tee /etc/apache2/mods-available/security2.conf >/dev/null <<'EOF'
 <IfModule security2_module>
+    IncludeOptional /etc/modsecurity/modsecurity.conf
     IncludeOptional /usr/share/modsecurity-crs/crs-setup.conf
     IncludeOptional /usr/share/modsecurity-crs/rules/*.conf
+    IncludeOptional /etc/modsecurity/custom-rules/*.conf
 </IfModule>
-EOF'
+EOF
+
+sudo ln -sf /etc/apache2/mods-available/security2.conf /etc/apache2/mods-enabled/security2.conf
+sudo apachectl configtest
+sudo systemctl restart apache2
 ```
 
-- Reload Apache:
+Test:
 ```bash
-sudo systemctl restart apache2
+curl -I http://localhost:8083
 ```
 
 ---
