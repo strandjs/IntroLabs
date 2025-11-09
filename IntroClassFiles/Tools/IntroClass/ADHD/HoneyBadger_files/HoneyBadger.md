@@ -414,7 +414,7 @@ The CMD agent is a type of HTML agent, as the beacon is created via web requests
  ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/honeyshare/HoneyShare.md)</i></b>
 
-<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/ADHD/openCanary.md)</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/ADHD/beelzebub.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
