@@ -67,54 +67,54 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 
 - To navigate to other pages of HoneyBadger, use the navigation bar in the top right corner:
 
-![](HoneyBadger_files/hb_navbar.png)
+![](../HoneyBadger_files/hb_navbar.png)
 
 ### 1. Map
 - The map is the default landing page after logging in.
 
-![](HoneyBadger_files/hb_map.png)
+![](../HoneyBadger_files/hb_map.png)
 
 - The map is the main event of HoneyBadger in terms of presentation, and will pin a location when a beacon is triggered.
 
 ### 2. Targets
 - Navigate to the targets page.
 
-![](HoneyBadger_files/hb_targets.png)
+![](../HoneyBadger_files/hb_targets.png)
 
 - The targets page is where targets can be observed, added, or removed, The page also serves as a way to generate several agents that are not quickly generated manually.
 
 ### 3. Beacons
 - Navigate to the beacons page.
 
-![](HoneyBadger_files/hb_beacons.png)
+![](../HoneyBadger_files/hb_beacons.png)
 
 - The beacons page maintains a list of beacons that connect to HoneyBadger and successfully geolocate. Beacons can be removed from this page as well.
 
 ### 4. Log
 - Navigate to the log page.
 
-![](HoneyBadger_files/hb_log_empty.png)
+![](../HoneyBadger_files/hb_log_empty.png)
 
 - The log page is populated with information as beacons attempt to connect to the HoneyBadger server, and may be empty if accessed before any beacons connect to the server.
 
 ### 5. Profile
 - Navigate to the profile page.
 
-![](HoneyBadger_files/hb_profile.png)
+![](../HoneyBadger_files/hb_profile.png)
 
 - The profile page allows for changing the password of the currently logged in account.
 
 ### 6. Admin
 - Navigate to the admin page.
 
-![](HoneyBadger_files/hb_admin.png)
+![](../HoneyBadger_files/hb_admin.png)
 
 - The admin page is where administrative actions can be performed on accounts, and where new accounts can be added.
 
 ### 7. Logout
 - Clicking logout on the navbar will log you out, bringing you back to the login page.
 
-![](HoneyBadger_files/hb_logout.png)
+![](../HoneyBadger_files/hb_logout.png)
 
 >[!NOTE]
 > All pages containing a table of records can be sorted by clicking on the table headings.
@@ -123,30 +123,30 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 
 - Navigate to the map page.
 
-![](HoneyBadger_files/hb_map.png)
+![](../HoneyBadger_files/hb_map.png)
 
 - At its core, the map page uses the Google Maps API, and functions identically to the standard Google Maps.
 
 - Several options are available for filtering map points by targets and by agents, using the map legend:
 
-![](HoneyBadger_files/hb_map_legend.png)
+![](../HoneyBadger_files/hb_map_legend.png)
 
 - As targets are added or unique agents are used to beacon into a target, they will show up in this legend. Toggling checkboxes in the legend enables filtering of beacons that are displayed in the map.
 
 - Points on the map can be clicked to display information about the machine that beaconed in:
 
-![](HoneyBadger_files/hb_map_beacondetails.png)
+![](../HoneyBadger_files/hb_map_beacondetails.png)
 
 
 # Example 3: Working with Targets
 
 - Navigate to the targets page.
 
-![](HoneyBadger_files/hb_targets.png)
+![](../HoneyBadger_files/hb_targets.png)
 
 - Take a closer look at the information associated with the demo target:
 
-![](HoneyBadger_files/hb_targets_targetinfo.png)
+![](../HoneyBadger_files/hb_targets_targetinfo.png)
 
 - Moving left to right:
 
@@ -166,17 +166,17 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 
 - The new target will appear in the list:
 
-![](HoneyBadger_files/hb_targets_targetadd.png)
+![](../HoneyBadger_files/hb_targets_targetadd.png)
 
 - Two agents can be generated from this page, one for VBA Office macros and one for VB.NET.
 
 - Clicking on the macro button will show the macro in a popup:
 
-![](HoneyBadger_files/hb_targets_targetVBA.png)
+![](../HoneyBadger_files/hb_targets_targetVBA.png)
 
 - Clicking on on the VB.NET button will show the VB.NET code in a popup:
 
-![](HoneyBadger_files/hb_targets_targetVBNET.png)
+![](../HoneyBadger_files/hb_targets_targetVBNET.png)
 
 >[!NOTE]
 >
@@ -184,7 +184,7 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 
 - To delete a target, click the target's delete button. A prompt will appear:
 
-![](HoneyBadger_files/hb_targets_targetdelete.png)
+![](../HoneyBadger_files/hb_targets_targetdelete.png)
 
 - Click OK, and the target will be removed from the list.
 
@@ -193,11 +193,11 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 
 - Navigate to the beacons page.
 
-![](HoneyBadger_files/hb_beacons.png)
+![](../HoneyBadger_files/hb_beacons.png)
 
 - Take a closer look at the information associated with the first demo beacon:
 
-![](HoneyBadger_files/hb_beacons_beaconinfo.png)
+![](../HoneyBadger_files/hb_beacons_beaconinfo.png)
 
 - Moving left to right:
 
@@ -214,11 +214,11 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 
 - Using an agent, beacon into HoneyBadger, and refresh the beacons page to see a new beacon added to the list:
 
-![](HoneyBadger_files/hb_beacons_beaconadded.png)
+![](../HoneyBadger_files/hb_beacons_beaconadded.png)
 
 - To delete a beacon, click the beacon's delete button. A prompt will appear:
 
-![](HoneyBadger_files/hb_beacons_beacondelete.png)
+![](../HoneyBadger_files/hb_beacons_beacondelete.png)
 
 - Click OK, and the beacon will be removed from the list
 
@@ -227,7 +227,7 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 
 - Navigate to the log page.
 
-![](HoneyBadger_files/hb_log.png)
+![](../HoneyBadger_files/hb_log.png)
 
 - The log page has been populated with information after the beacon was added in Example 4. The log contains information pertaining to the beacon, and will contain information if a beacon is unable to geolocate.
 
@@ -235,41 +235,41 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 
 - Navigate to the profile page.
 
-![](HoneyBadger_files/hb_profile.png)
+![](../HoneyBadger_files/hb_profile.png)
 
 - To change a password, fill in the fields accordingly. Note that passwords set with the profile page must meet minimum complexity requirements of a minimum of 10 characters, of which all four character classes (uppercase letters, lowercase letters, special characters, and numbers) must be used.
 
 - If the password does not meet minimum complexity requirements, the password is rejected and the user is notified:
 
-![](HoneyBadger_files/hb_profile_badcomplexity.png)
+![](../HoneyBadger_files/hb_profile_badcomplexity.png)
 
 - Upon successful password change, the user is notified:
 
-![](HoneyBadger_files/hb_profile_profileupdated.png)
+![](../HoneyBadger_files/hb_profile_profileupdated.png)
 
 # Example 7: Administration
 
 - Navigate to the admin page.
 
-![](HoneyBadger_files/hb_admin.png)
+![](../HoneyBadger_files/hb_admin.png)
 
 - Note that modification of the current user is not allowed. If this is attempted, the user is notified of this:
 
-![](HoneyBadger_files/hb_admin_selfmodify.png)
+![](../HoneyBadger_files/hb_admin_selfmodify.png)
 
 - To add a new user, enter an email address in the box above, and click initialize. The new user will appear in the list:
 
-![](HoneyBadger_files/hb_admin_useradded.png)
+![](../HoneyBadger_files/hb_admin_useradded.png)
 
 - To get an activation link to the user, click the get link button. The link will be copied to the clipboard.
 
 - To delete a user, click the user's delete button. The following prompt will appear:
 
-![](HoneyBadger_files/hb_admin_userdelete.png)
+![](../HoneyBadger_files/hb_admin_userdelete.png)
 
 - Click OK, and the user will be removed from the list:
 
-![](HoneyBadger_files/hb_admin_userdeleted.png)
+![](../HoneyBadger_files/hb_admin_userdeleted.png)
 
 - Example 8: Agents
 
@@ -277,44 +277,44 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 
 - Navigate to the targets page.
 
-![](HoneyBadger_files/hb_targets.png)
+![](../HoneyBadger_files/hb_targets.png)
 
 - Click on the demo button to be taken to the demo page:
 
-![](HoneyBadger_files/hb_demo.png)
+![](../HoneyBadger_files/hb_demo.png)
 
 - Enter some XSS code into the first field, and the current user's password into the second field, and click submit.
 
 - If the inputted XSS code worked, the following string of popups will appear.
 
-![](HoneyBadger_files/hb_demo_locationrequest.png)
+![](../HoneyBadger_files/hb_demo_locationrequest.png)
 
 - Click on Share Location.
 
-![](HoneyBadger_files/hb_demo_consentprompt.png)
+![](../HoneyBadger_files/hb_demo_consentprompt.png)
 
 - Click OK.
 
-![](HoneyBadger_files/hb_demo_appletprompt.png)
+![](../HoneyBadger_files/hb_demo_appletprompt.png)
 
 - Click Allow Now.
 
-![](HoneyBadger_files/hb_demo_appletprompt_again.png)
+![](../HoneyBadger_files/hb_demo_appletprompt_again.png)
 
 - Click Run.
 
-![](HoneyBadger_files/hb_demo_appletsecurity.png)
+![](../HoneyBadger_files/hb_demo_appletsecurity.png)
 
 - Click Yes.
 
-![](HoneyBadger_files/hb_demo_applethoney.png)
+![](../HoneyBadger_files/hb_demo_applethoney.png)
 
 - Click Yes.
 
-![](HoneyBadger_files/hb_demo_applethoney_again.png)
+![](../HoneyBadger_files/hb_demo_applethoney_again.png)
 
 - After clicking through all of the prompts, the page will load. Reload the HoneyBadger beacons page to see that a new beacon is added:
-![](HoneyBadger_files/hb_demo_jsbeacon.png)
+![](../HoneyBadger_files/hb_demo_jsbeacon.png)
 
 
 ### 2. VBA Macro
