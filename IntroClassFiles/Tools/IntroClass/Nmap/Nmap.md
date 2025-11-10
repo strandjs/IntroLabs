@@ -190,19 +190,19 @@ Then re-run the attack!!
 
 
 
-***
-***Continuing on to the next Lab?***
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/PasswordCracking/PasswordCracking.md)</i></b>
 
-[Click here to get back to the Navigation Menu](/IntroClassFiles/navigation.md)
+<b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/nessusIntroClass/Nessus.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/IntroClassFiles/navigation.md)</i></b>
 
 ***Finished with the Labs?***
-
 
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
-[Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
-
 ---
+
 

@@ -134,7 +134,7 @@ Here is a great resource to try some more options in **TCPDump**:
 
 ***                                                                 
 
-<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/WindowsCLI/WindowsCLI.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/WebLogReview/WebLogReview.md)</i></b>
 
 <b><i>Want to go back? </br>[Previous Lab](/IntroClassFiles/Tools/IntroClass/Memory/MemoryAnalysis(Volatility).md)</i></b>
 
@@ -147,6 +147,7 @@ Please be sure to destroy the lab environment!
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
 
 ---
+
 
 
 
