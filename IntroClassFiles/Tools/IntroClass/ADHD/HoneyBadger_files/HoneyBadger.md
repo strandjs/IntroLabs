@@ -72,7 +72,7 @@ python3 honeybadger.py -ik [IPSTACK_KEY] -gk [GOOGLE_KEY]
 ### 1. Map
 - The map is the default landing page after logging in.
 
-![](HoneyBadger_files/hb_map.png)
+![](./HoneyBadger_files/hb_map.png)
 
 - The map is the main event of HoneyBadger in terms of presentation, and will pin a location when a beacon is triggered.
 
