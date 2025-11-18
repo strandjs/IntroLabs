@@ -78,17 +78,15 @@ nano config/plugins
 tarpit
 access
 helo.checks
-recipient
 rcpt_to.in_host_list
+data.headers
 queue/smtp_forward
 save_msg
-watch
 ```
 
 - To exit and save the file do `Ctrl + x` and `y` and `Enter`
 
 * `tarpit` will slow connections (deception).
-* `watch` gives a basic web UI at `http://localhost:8080/watch/`.
 * `save_msg` (we will add next) stores message files for analysis.
 
 ---
@@ -105,21 +103,44 @@ nano plugins/save_msg.js
 
 ```javascript
 // plugins/save_msg.js
-exports.hook_data = function (next, connection) {
-    const txn = connection.transaction;
-    txn.parse_body_stream(function (err, body) {
-        if (err) return next(DENYSOFT, 'failed to parse body');
-        const fs = require('fs');
-        const path = require('path');
-        const outdir = path.join(__dirname, '..', 'logs', 'msgs');
-        fs.mkdirSync(outdir, { recursive: true });
-        const fname = path.join(outdir, Date.now() + '-' + Math.floor(Math.random()*10000) + '.eml');
-        const content = 'From: ' + txn.mail_from.original + '
-' + 'To: ' + txn.rcpt_to.map(r=>r.original).join(',') + '
+const fs = require('fs');
+const path = require('path');
 
-' + body;
-        fs.writeFileSync(fname, content);
+exports.hook_data_post = function (next, connection) {
+    const txn = connection.transaction;
+    if (!txn) return next();
+
+    const outdir = path.join(__dirname, '..', 'logs', 'msgs');
+    fs.mkdirSync(outdir, { recursive: true });
+
+    const fname = path.join(
+        outdir,
+        Date.now() + '-' + Math.floor(Math.random() * 10000) + '.eml'
+    );
+
+    const from = (txn.mail_from && txn.mail_from.original) ?
+        txn.mail_from.original : '<unknown>';
+
+    const rcpts = (txn.rcpt_to || [])
+        .map(r => r.original)
+        .join(', ');
+
+    const header =
+        'From: ' + from + '\n' +
+        'To: ' + rcpts + '\n\n';
+
+    const ws = fs.createWriteStream(fname);
+    ws.write(header);
+
+    txn.message_stream.pipe(ws);
+
+    ws.on('finish', () => {
         connection.loginfo(this, 'saved message to ' + fname);
+        next();
+    });
+
+    ws.on('error', (err) => {
+        connection.logerror(this, 'failed to save message: ' + err.message);
         next();
     });
 };
@@ -165,67 +186,70 @@ enabled=1
 ## Start Haraka and confirm it is listening
 
 ```bash
-# start in foreground to see logs
-cd ~/haraka-lab
+cd ~/Desktop/haraka
+```
+
+```bash
 haraka -c .
+```
 
-# or background it
-nohup haraka -c . > haraka.out 2>&1 &
+<img width="1128" height="907" alt="image" src="https://github.com/user-attachments/assets/7f498c8f-cffb-40c3-a4a5-a18d81d71a28" />
 
+
+```bash
 # check listen port
 ss -ltnp | grep 2525
 ```
 
-If using background mode, check `tail -f haraka.out` for live logs.
+<img width="895" height="31" alt="image" src="https://github.com/user-attachments/assets/43ec1c86-02ca-4a10-83e6-72f79ed14726" />
+
 
 ---
 
-## 7) Observe the Watch UI
+## Simulate attacker behavior and observe tarpit
 
-Open a browser to:
-
-```
-http://localhost:8080/watch/
-```
-
-It displays active SMTP connections and commands so you can watch how `tarpit` affects interaction.
-
-If you don't have a browser, `curl http://localhost:8080/watch/` will show a response.
-
----
-
-## 8) Simulate attacker behavior and observe tarpit
-
-### 8a) Manual SMTP session (telnet / netcat)
+### a) Manual SMTP session (telnet / netcat)
 
 ```bash
 nc localhost 2525
-# then type:
-HELO attacker.example.com
-MAIL FROM:<evil@attacker.test>
-RCPT TO:<victim@localhost>
-DATA
-Subject: test tarpit
+```
 
-This is a tarpit test.
-.
+- Then type:
+
+```bash
+HELO attacker.example.com
+```
+
+```bash
+MAIL FROM:<evil@attacker.test>
+```
+
+<img width="977" height="44" alt="image" src="https://github.com/user-attachments/assets/2560f4c0-1865-4dfc-b5c2-85446c36ccea" />
+
+```bash
+RCPT TO:<victim@localhost>
+```
+
+<img width="1146" height="32" alt="image" src="https://github.com/user-attachments/assets/1b1e4336-9c6b-4dd0-a2b4-74aee49c0e0b" />
+
+```bash
 QUIT
 ```
 
-Watch the logs or the Watch UI. Connections will be slower depending on `tarpit.ini` settings.
+- Watch the **logs** on the first **terminal**. Connections will be slower depending on `tarpit.ini` settings.
 
-### 8b) Scripted load with `swaks`
-
-Install `swaks` and run a burst of messages to demonstrate delayed responses:
+### b) Scripted load with `swaks`
 
 ```bash
-sudo apt install -y swaks
-
 # single message
 swaks --server localhost:2525 --from attacker@evil.test --to victim@localhost --data "Subject: swaks test
 
 hello"
+```
 
+<img width="718" height="326" alt="image" src="https://github.com/user-attachments/assets/22685b83-0e6e-42ff-bc21-bc3011a4dfc6" />
+
+```bash
 # rapid loop to show tarpit effect
 for i in {1..8}; do
   swaks --server localhost:2525 --from t$i@x.test --to victim@localhost --data "Subject: loop $i
