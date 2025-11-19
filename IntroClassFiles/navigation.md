@@ -60,7 +60,6 @@
 
 ### Malware capture & analysis
   - [Dioanea](Tools/IntroClass/ADHD/dionaea.md)
-[comment]: <> (  - [Cuckoo Sandbox](Tools/IntroClass/ADHD/CuckooSandbox.md) )
   
 ### DNS / Network tooling
   - [RITA](Tools/IntroClass/ADHD/RITA_ADHD/RITA.md)
