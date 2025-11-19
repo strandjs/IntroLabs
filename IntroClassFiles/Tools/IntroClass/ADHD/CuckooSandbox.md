@@ -21,23 +21,6 @@
 
 ---
 
-## 0. Lab Setup & Assumptions
-
-This lab is written for a **Kali / Ubuntu-based VM** with internet access.
-
-To keep things simple we assume:
-
-- You are **inside a Linux VM** (Kali or Ubuntu 20.04+ is fine)
-- **VirtualBox** is installed
-- There is already **one Windows analysis VM** prepared for you (by the instructor), for example:
-  - VM name: `win7-cuckoo`
-  - Cuckoo is already configured to use it (machinery + networking)
-- You are working from a **normal user account**, not root
-
-> If you’re doing this on your own, use the official Cuckoo docs to prepare a Windows guest beforehand. For the lab, just trust that the VM is ready.
-
----
-
 ## 1. Create a dedicated `cuckoo` user (host hygiene)
 
 We don’t want to run malware analysis as root or as your daily user.
