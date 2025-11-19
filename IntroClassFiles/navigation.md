@@ -60,7 +60,7 @@
 
 ### Malware capture & analysis
   - [Dioanea](Tools/IntroClass/ADHD/dionaea.md)
-  - [Cuckoo Sandbox](Tools/IntroClass/ADHD/CuckooSandbox.md)
+[//]: <>  - [Cuckoo Sandbox](Tools/IntroClass/ADHD/CuckooSandbox.md)
   
 ### DNS / Network tooling
   - [RITA](Tools/IntroClass/ADHD/RITA_ADHD/RITA.md)
@@ -85,6 +85,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
