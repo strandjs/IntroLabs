@@ -76,12 +76,33 @@ nano config/plugins
 
 ```
 tarpit
+tarpit_demo
 access
 helo.checks
 rcpt_to.in_host_list
 data.headers
 queue/smtp_forward
 save_msg
+```
+
+- To exit and save the file do `Ctrl + x` and `y` and `Enter`
+
+4.
+
+```bash
+nano plugins/tarpit_demo.js
+```
+
+- Paste:
+
+```js
+// plugins/tarpit_demo.js
+exports.hook_connect = function (next, connection) {
+    const seconds = 3; // delay per hook
+    connection.notes.tarpit = seconds;
+    connection.loginfo(this, 'tarpit_demo: setting tarpit to ' + seconds + ' seconds');
+    next();
+};
 ```
 
 - To exit and save the file do `Ctrl + x` and `y` and `Enter`
@@ -258,13 +279,28 @@ hello $i" &
 done
 ```
 
-Because `tarpit` intentionally delays responses, the loop will take noticeably longer than without tarpit. Observe connection times in `haraka.out` or the Watch UI.
+Because `tarpit` intentionally delays responses, the loop will take noticeably longer than without tarpit. Observe connection times in `haraka.out`
 
 ---
 
-## 9) Demonstrate attacker frustration (timing comparison)
+## Demonstrate attacker frustration (timing comparison)
 
-1. Stop Haraka and set `base_delay=0` and `rand_delay=0` in `config/tarpit.ini` (or temporarily remove `tarpit` from `config/plugins`) and restart Haraka.
+- Stop **haraka**, from the **haraka** terminal do `Ctrl + c`
+
+1. Let's comment out `tarpit_demo` in plugin
+
+```bash
+nano config/plugins
+```
+
+- Put a `#` in before `tarpit_demo`
+
+<img width="178" height="164" alt="image" src="https://github.com/user-attachments/assets/84d62a1d-6c07-4fad-aae3-05b06e6d557c" />
+
+- To exit and save the file do `Ctrl + x` and `y` and `Enter`
+
+- Start it again
+
 2. Run the same `swaks` loop and measure how long it takes:
 
 ```bash
@@ -273,40 +309,11 @@ time bash -c 'for i in {1..8}; do swaks --server localhost:2525 --from t$i@x.tes
 ok" & done; wait'
 ```
 
+<img width="163" height="68" alt="image" src="https://github.com/user-attachments/assets/723ac43f-b3b5-4e36-91ff-694414f9c65b" />
+
 3. Re-enable tarpit (set delays back) and run the same `time` command again. The second run should take longer - this demonstrates the deceptive slowdown.
 
----
-
-## 10) Inspect captured messages and logs
-
-```bash
-ls -la logs/msgs
-cat logs/msgs/*.eml | sed -n '1,200p'
-
-# if backgrounded
-tail -n 200 haraka.out
-```
-
-`save_msg` files contain basic headers and the message body for analysis.
-
----
-
-## 11) Clean up
-
-```bash
-# stop background Haraka
-pkill -f "haraka -c"
-# remove lab folder carefully
-rm -rf ~/haraka-lab
-```
-
-
-
-
-
-
-
-
+<img width="163" height="68" alt="image" src="https://github.com/user-attachments/assets/c01dd74e-05f0-4053-a9ce-bd377ea660be" />
 
 
 
