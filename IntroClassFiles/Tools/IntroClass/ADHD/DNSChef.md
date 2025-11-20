@@ -143,7 +143,7 @@ Stop DNSChef with `Ctrl + C` in **Terminal 1** when you’re done
 
 ---
 
-## 5. Targeted spoofing of a single domain (with upstream passthrough)
+## Targeted spoofing of a single domain (with upstream passthrough)
 
 - Global spoofing is noisy and easy to detect
 
@@ -202,83 +202,16 @@ This demonstrates:
 - A precise **phishing/MitM** scenario (attacker view).
 - A **controlled redirection** to a decoy/sinkhole (defender/deception view).
 
-Keep DNSChef running for the next step.
 
 ---
 
-## 6. Deception: Point a domain to a fake web page
 
-To make the deception visible, we’ll serve a fake webpage on `127.0.0.1` and see how the spoofed domain points to it.
-
-### 6.1 Create a fake “bank” page
-
-Still in `~/labs/dnschef`:
-
-```bash
-cat > index.html << 'EOF'
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Fake Bank Portal</title>
-</head>
-<body>
-    <h1>Welcome to BadBank</h1>
-    <p><b>Warning:</b> You are on a deceptive DNS training page.</p>
-    <p>All activity here is part of a cybersecurity lab.</p>
-</body>
-</html>
-EOF
-```
-
-### 6.2 Start a simple HTTP server
-
-In **Terminal 3** (new terminal):
-
-```bash
-cd ~/Desktop/dnschef
-python3 -m http.server 8080
-```
-
-- This serves `index.html` on `http://127.0.0.1:8080/`.
-
-You can confirm locally:
-
-```bash
-curl http://127.0.0.1:8080/
-```
-
-You should see the HTML content.
-
-### 6.3 “Visit” the fake bank via the spoofed DNS name
-
-We already force `login.badbank.test` to `127.0.0.1`.  
-Now let’s request a page **using that hostname**.
-
-In **Terminal 2**:
-
-```bash
-curl http://login.badbank.test:8080/
-```
-
-- Even though `login.badbank.test` is a fake domain, DNSChef resolves it to `127.0.0.1`.
-- The browser/`curl` connects to your local web server and shows the **fake bank** page.
-
-You’ve just:
-
-- Used **DNS spoofing** to redirect a domain to your machine.
-- Simulated a **phishing / credential-harvesting** scenario (if this were a real phishing site).
-- Demonstrated a **deception environment** (fake service behind a controlled DNS mapping).
-
-Check **Terminal 1** (DNSChef) and **Terminal 3** (HTTP server) to see logs for this request.
-
----
-
-## 7. Clean up
+## Clean up
 
 Stop all components:
 
 - In **Terminal 1**: press `Ctrl + C` to stop DNSChef.
-- In **Terminal 3**: press `Ctrl + C` to stop the Python web server.
+- In **Terminal 2**: press `Ctrl + C` to stop the Python web server.
 
 
 
