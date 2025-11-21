@@ -1,74 +1,32 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
 
+# For the Ubuntu VM
 
-
-
-
-
-# FakeNet-NG Hands-On Lab
+# FakeNet-NG
 
 ### In this lab we will
-- Install and run **FakeNet-NG** on Linux
+- Run **FakeNet-NG** on Linux
 - See how it intercepts and emulates network services
 - Simulate “malware-like” traffic from the same host
 - Inspect logs / captures to understand what happened
 
 ---
 
-## 0. Prerequisites
+## Start FakeNet-NG (the fake Internet)
 
-- A Linux VM (Kali or Ubuntu/Debian works best)
-- Internet access (only needed for installing tools)
-- A user with `sudo` privileges
-
-> 📝 We’ll keep everything **local**. FakeNet-NG will pretend to be the Internet
-> and answer our traffic with fake services.
-
-Open a terminal to start.
-
----
-
-## 1. Install FakeNet-NG
-
-> If you’re on **Kali**, some dependencies may already be installed.  
-> Just run the commands anyway; `apt` will skip what’s already there.
-
-### 1.1 Update packages and install dependencies
+- Open up a **terminal** and run
 
 ```bash
-sudo apt update
-sudo apt install -y       python3 python3-pip python3-dev       libnetfilter-queue-dev libffi-dev libssl-dev       build-essential net-tools git
+cd ~/Desktop/fakenet-ng
 ```
 
-### 1.2 Install FakeNet-NG via `pip`
-
 ```bash
-python3 -m pip install --upgrade pip
-python3 -m pip install https://github.com/mandiant/flare-fakenet-ng/zipball/master
+source venv/bin/activate
 ```
 
-### 1.3 Verify the installation
-
 ```bash
-fakenet-ng --help 2>/dev/null || fakenet --help
-```
-
-- If you see usage text for **FakeNet-NG**, you’re good.
-- On some systems the command is `fakenet-ng`, on others just `fakenet`.
-  In the rest of the lab, use **whichever works on your machine**.
-
-For the commands below, if `fakenet-ng` fails, just replace it with `fakenet`.
-
----
-
-## 2. Start FakeNet-NG (the fake Internet)
-
-Make sure you don’t have other tools already bound to common ports (53, 80, 443…).  
-Then, in your terminal:
-
-```bash
-sudo fakenet-ng
+sudo fakenet -c lab.ini
 ```
 
 You should see something like:
@@ -77,12 +35,15 @@ You should see something like:
 - The path to the configuration file (e.g. `default.ini`)
 - Log messages about listeners starting (DNS, HTTP, SSL, etc.)
 
+<img width="835" height="422" alt="image" src="https://github.com/user-attachments/assets/e35ab7f9-4fbf-4d0a-adae-9da28fcc8b7b" />
+
+
 FakeNet-NG will **keep running in the foreground**.  
 Leave this terminal window open. This is your **“Deception / Analyst” view**.
 
 ---
 
-## 3. See what FakeNet-NG is listening on
+## See what FakeNet-NG is listening on
 
 Open a **second terminal**.
 
