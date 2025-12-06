@@ -124,19 +124,3 @@ In a few moments you should get an email alert: 
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
-
----
-
-  
-
-  
-
-  
-
- 
-
- 
-
-
-
-
