@@ -138,9 +138,8 @@ nmap -Pn -p 211,25,53,8086,1337,443,110 127.0.0.1
   and responding on `127.0.0.1`.
 
 >[!Note]
-> When FakeNet is active on Linux, SYN scans (-sS) often show ports as filtered.
-> This happens because FakeNet intercepts packets using iptables/NFQUEUE.
-> To correctly observe open ports, use a TCP connect scan:
+> When FakeNet is active on Linux, **SYN** scans often show ports as **filtered**
+> This happens because **FakeNet** intercepts packets using **iptables**/**NFQUEUE**
 
 - In **terminal 1** (FakeNet-NG), you’ll see many connection attempts logged
   against the emulated services.
