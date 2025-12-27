@@ -231,7 +231,7 @@ Storing message nYyPFT2-foO9BZ2z...
 <p><a href=3D"?rid=3DzKNkt2x">Click here to reset it</a></p>'
 ```
 
-...
+...and more very in depth details
 
 ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/Mailoney.md)</i></b>
