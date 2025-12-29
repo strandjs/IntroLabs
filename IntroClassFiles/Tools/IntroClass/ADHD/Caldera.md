@@ -28,6 +28,9 @@ On the first boot, use `--build` to build the web UI and plugin assets
 
 ```bash
 cd ~/Desktop/caldera
+```
+
+```bash
 python3 server.py --insecure --build
 ```
 
@@ -46,18 +49,27 @@ Log in as:
 
 ---
 
-# Part 2 — Deploy a Sandcat agent (local)
+# Part 2 - Deploy a Sandcat agent
 
 The **Sandcat plugin** is CALDERA’s default agent. It can be deployed using the server’s built-in delivery commands or by downloading it from CALDERA
 
-## 1) Download and run the agent (Linux)
+## 1) Download and run the agent
 
 In a new terminal:
 
 ```bash
 server="http://localhost:8888"
+```
+
+```bash
 curl -s -X POST -H "file:sandcat.go" -H "platform:linux" "$server/file/download" > sandcat
+```
+
+```bash
 chmod +x sandcat
+```
+
+```bash
 ./sandcat -server "$server" -group red -v
 ```
 
@@ -65,8 +77,6 @@ You should see the agent running and “beaconing” (calling back to CALDERA)
 
 <img width="805" height="322" alt="image" src="https://github.com/user-attachments/assets/4bdab989-edff-4735-b240-5afeb9c81112" />
 
-
-> This uses CALDERA’s `/file/download` endpoint (documented in the official CALDERA API docs) to get payloads from the server
 
 ## 2) Confirm the agent shows up in the UI
 
@@ -83,7 +93,7 @@ If it doesn’t show:
 
 ---
 
-# Part 3 — Run a simple ATT&CK operation (Red / Attack)
+# Part 3 - Run a simple ATT&CK operation (Red / Attack)
 
 CALDERA’s **Stockpile** plugin contains lots of built-in abilities and adversary profiles
 
@@ -143,7 +153,7 @@ Click the operation and watch the **links** appear:
 
 ---
 
-# Part 4 — Run a simple Defense operation (Blue / Response)
+# Part 4 - Run a simple Defense operation
 
 CALDERA can also run **defensive actions**
 
@@ -165,208 +175,58 @@ The idea: you can push response actions to endpoints the same way you push adver
 
 Now in the UI:
 
-- Click on the **"Mountain"** on the top left to get back to the **Start Page**
+- Now look at the left tab of actions, scroll down until you see the **Log out** button, click it
 
-<img width="224" height="168" alt="image" src="https://github.com/user-attachments/assets/9f1d2533-c4d1-4557-a8ed-c71db8d32494" />
+<img width="214" height="47" alt="image" src="https://github.com/user-attachments/assets/c2048e0c-95ff-4d36-badd-d4f0a77c5c64" />
+
+Log in as:
+- Username: `blue`
+- Password: `admin`
 
 - Go to **Agents**
 
-<img width="424" height="325" alt="image" src="https://github.com/user-attachments/assets/312e5749-bd25-4e75-9682-7b936df71ddd" />
+<img width="424" height="325" alt="image" src="https://github.com/user-attachments/assets/f91b983a-e600-4dcc-833c-852536a3ea1e" />
 
 - You should see an agent in group **blue**
 
 ## 2) Run a basic defender profile
 
 In the UI:
-- Go to **Defenders**
-- Pick an easy “incident response” / “collection” defender (names vary by version)
-- Go to **Operations**
+- Go to **Adversaries** and click `Manage Adversaries`
+
+<img width="435" height="342" alt="image" src="https://github.com/user-attachments/assets/49d24f7f-9410-4f44-b604-5ac3d94220e4" />
+
+- Pick `Incident responder`
+
+- Click on the **"Mountain"** on the top left to get back to the **Start Page**
+
+<img width="224" height="168" alt="image" src="https://github.com/user-attachments/assets/9f1d2533-c4d1-4557-a8ed-c71db8d32494" />
+
+- Go to **Operations** and click `Manage Operations`
+
+<img width="428" height="336" alt="image" src="https://github.com/user-attachments/assets/b18033bc-0454-4a4b-80e4-56f1087d0bf5" />
+
+- Click **New operation**
+
+<img width="151" height="60" alt="image" src="https://github.com/user-attachments/assets/16e007c3-9b21-4d4d-b2e1-be6d11333fbc" />
+
 - Create a new operation:
+  - **Operation Name:** 
   - **Group:** `blue`
-  - **Adversary:** (for blue ops CALDERA still uses the same “operation” screen; pick the defender profile you selected)
-  - **Manual mode** is nice here so students see each action before it runs
+  - **Adversary:** `Incident responder`
+  - **Autonomous** `Require manual approval` - we use this to have more control and see in real time everything that happens
 
-Start and observe results.
+<img width="799" height="651" alt="image" src="https://github.com/user-attachments/assets/027fce1f-b055-42f0-a040-4c095e7e2a4e" />
 
-> Note: Some CALDERA setups separate “defender profiles” vs “adversary profiles” depending on plugins and version. If you don’t see **Defenders** in your UI, skip this section and treat “blue” as “response operations” using any safe built-in abilities (like listing processes, listing connections, etc.).
+- Start it!
 
----
+- Now, for every command, we need to approve it
 
-# Part 5 — Cyber Deception mini-demo (Honeyfile + alert)
+<img width="172" height="92" alt="image" src="https://github.com/user-attachments/assets/6bc315a6-975d-4143-b0b9-477fc836c1e3" />
 
-This is intentionally simple: we will plant a fake “secret” file and create an alert that fires when anything reads it.
+<img width="345" height="204" alt="image" src="https://github.com/user-attachments/assets/b64b6357-d8e2-46c6-87ae-e858b284f99c" />
 
-## 1) Create a honeyfile
-
-In a terminal:
-
-```bash
-mkdir -p ~/deception
-cat > ~/deception/DO_NOT_OPEN_secrets.txt << 'EOF'
-# INTERNAL SECRETS (TRAINING DECOY)
-AWS_ACCESS_KEY_ID=AKIAFAKEFAKEFAKEFAKE
-AWS_SECRET_ACCESS_KEY=FAKE/FAKE/FAKE/FAKE/FAKEFAKEFAKEFAKE
-VPN_PASSWORD=Winter2026!
-EOF
-```
-
-## 2) Start a “file access” monitor (alert)
-
-Install `inotify-tools`:
-
-```bash
-sudo apt -y install inotify-tools
-```
-
-Now start a watcher (leave it running):
-
-```bash
-inotifywait -m -e open,access,modify ~/deception/DO_NOT_OPEN_secrets.txt
-```
-
-This will print a line whenever the file is opened/accessed/modified.
-
-## 3) Create a CALDERA ability to “touch” the honeyfile
-
-We’ll add a tiny custom ability that reads the file (simulating an attacker discovering and opening it).
-
-### Option A (easy): Create ability in the UI
-
-In CALDERA UI:
-- Go to **Abilities**
-- Click **Add ability**
-- Fill:
-  - **Name:** Read honeyfile
-  - **Tactic:** collection
-  - **Technique:** (pick any “Data from Local System” / similar)
-  - **Platform:** linux
-  - **Executor:** sh
-  - **Command:**
-    ```bash
-    cat ~/deception/DO_NOT_OPEN_secrets.txt
-    ```
-
-Save it.
-
-### Option B (no-UI editing): Quick YAML ability file
-
-Create this file on the CALDERA server:
-
-```bash
-mkdir -p ~/caldera/data/abilities
-cat > ~/caldera/data/abilities/read-honeyfile.yml << 'EOF'
-- id: 11111111-2222-3333-4444-555555555555
-  name: Read honeyfile
-  description: Reads a decoy secrets file (training deception demo)
-  tactic: collection
-  technique:
-    attack_id: T1005
-    name: Data from Local System
-  platforms:
-    linux:
-      sh:
-        command: |
-          cat ~/deception/DO_NOT_OPEN_secrets.txt
-EOF
-```
-
-Then restart CALDERA so it loads the new ability:
-- Go to the server terminal and press `CTRL+C`
-- Start again:
-
-```bash
-cd ~/caldera
-python3 server.py --insecure --build
-```
-
-## 4) Run the deception test operation
-
-In the UI:
-- Go to **Operations**
-- Create a new operation:
-  - **Group:** `red` (or `blue`, either is fine)
-  - **Adversary:** create a small adversary that contains only your “Read honeyfile” ability  
-    (or add the ability to an existing adversary)
-- Start the operation
-
-## 5) Observe the alert
-
-Look at the terminal running `inotifywait`.
-
-You should see an event like `OPEN` / `ACCESS` when CALDERA runs `cat`.
-
-### What this demonstrates
-
-- **Deception idea:** A decoy asset (honeyfile) that should never be opened
-- **Detection hook:** Any access is suspicious and triggers an alert
-- **Automation:** CALDERA can simulate “attacker behavior” repeatedly to test your alerting/response
-
----
-
-# Cleanup (optional)
-
-## Stop the agent
-
-In the agent terminal:
-- `CTRL+C`
-
-## Stop CALDERA
-
-In the server terminal:
-- `CTRL+C`
-
-## Remove the deception files
-
-```bash
-rm -rf ~/deception
-```
-
----
-
-# Troubleshooting quick fixes
-
-### UI loads, but agent never shows up
-- Confirm server is reachable:
-  ```bash
-  curl -I http://localhost:8888
-  ```
-- Confirm you used the same URL in the agent:
-  ```bash
-  ./sandcat -server "http://localhost:8888" -group red -v
-  ```
-
-### “Permission denied” running sandcat
-```bash
-chmod +x sandcat
-```
-
-### Port 8888 already in use
-Find the process:
-```bash
-sudo ss -tulnp | grep 8888
-```
-Stop it, or change CALDERA port in config (advanced; not needed for this lab).
-
----
-
-## References (for instructors)
-
-- Official CALDERA install docs (quick install + password location). citeturn1view1  
-- CALDERA basic usage (abilities/adversaries/operations concepts). citeturn1view2  
-- Sandcat plugin docs (default agent + deployment). citeturn2search1turn2search5  
-- CALDERA API docs: `/file/download` example. citeturn2search3  
-
-
-
-
-
-
-
-
-
-
-
-
+- From here on, you can play with it however you like, EXPERIMENT!!!
 
 ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/ADHD/FileAudit/FileAudit.md)</i></b>
