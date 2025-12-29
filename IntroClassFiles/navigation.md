@@ -75,7 +75,6 @@
   
 ### Red/Purple team detection testing
   - [Bluespawn](Tools/IntroClass/ADHD/bluespawn/Bluespawn.md)
-  - [Metta](Tools/IntroClass/ADHD/Metta.md)
   - [Caldera](Tools/IntroClass/ADHD/Caldera.md)
 
 
@@ -84,6 +83,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
