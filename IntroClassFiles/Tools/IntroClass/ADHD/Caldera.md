@@ -31,6 +31,10 @@ cd ~/Desktop/caldera
 ```
 
 ```bash
+source venv/bin/activate
+```
+
+```bash
 python3 server.py --insecure --build
 ```
 
