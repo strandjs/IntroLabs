@@ -1,4 +1,4 @@
-<img width="1920" height="261" alt="image" src="https://github.com/user-attachments/assets/ba371280-3d79-4224-8e21-2f96397878e5" />![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
 
 # Mailoney
