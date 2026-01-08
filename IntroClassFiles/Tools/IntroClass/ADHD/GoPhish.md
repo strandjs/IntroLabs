@@ -12,7 +12,6 @@ You will **install GoPhish**, **launch a phishing campaign**, and **observe capt
 ## Lab Objectives
 
 In this lab you will:
-- Install GoPhish
 - Launch the GoPhish web interface
 - Create a basic phishing campaign
 - Capture submitted credentials
