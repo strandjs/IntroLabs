@@ -5,7 +5,7 @@
 
 # Haraka 
 
-**Goal:** Build a simple, completely hands‑on Haraka (Node.js SMTP) lab that demonstrates SMTP interaction and emphasizes *cyber deception* by using the `tarpit` plugin to slow and frustrate attackers. Steps are step‑by‑step commands so anyone can follow.
+**Goal:** Build a simple Haraka SMTP that demonstrates SMTP interaction, using the `tarpit` plugin to slow and frustrate attackers
 
 ---
 
