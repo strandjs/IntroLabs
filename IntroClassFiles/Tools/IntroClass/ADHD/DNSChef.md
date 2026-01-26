@@ -55,6 +55,10 @@ dig example.com +short
 - Open **Terminal 1** and run:
 
 ```bash
+cd ~/ADCD/dnschef/
+```
+
+```bash
 sudo python3 dnschef.py --interface 0.0.0.0 --port 53530 --nameserver 8.8.8.8
 ```
 
