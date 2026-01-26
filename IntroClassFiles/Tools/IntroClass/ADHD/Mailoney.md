@@ -12,7 +12,7 @@ You’ll deploy **Mailoney** (a low-interaction SMTP honeypot) and then **simula
 - Open a terminal
 
 ```bash
-cd ~/Desktop/mailoney
+cd ~/ADCD/mailoney
 ```
 
 ```bash
@@ -52,7 +52,7 @@ Leave this terminal open (it will show logs)
 Open a **second terminal**, go back to the same folder, and activate the venv again:
 
 ```bash
-cd ~/Desktop/mailoney
+cd ~/ADCD/mailoney
 ```
 
 ```bash
