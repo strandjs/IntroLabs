@@ -18,11 +18,7 @@
 - Open up a **terminal** and run
 
 ```bash
-cd ~/Desktop/fakenet-ng
-```
-
-```bash
-source venv/bin/activate
+cd ~/ADCD/fakenet-ng
 ```
 
 ```bash
