@@ -27,7 +27,7 @@ You will install **MITRE CALDERA**, deploy a **Sandcat agent**, run a small **at
 On the first boot, use `--build` to build the web UI and plugin assets
 
 ```bash
-cd ~/Desktop/caldera
+cd ~/ADCD/caldera/
 ```
 
 ```bash
