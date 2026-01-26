@@ -100,9 +100,9 @@ sqlmap -u "http://localhost:8080/index.php?id=1" --batch --level=1
 > Each of the above requests are recorded by **Glastopf** and should show up in **logs** and the event store.
 
 >[!IMPORTANT]
->To stop **Glastopf** get the **Container ID** from `ps aux | grep glastopf` and do:
+>To stop **Glastopf** do:
 >
->`sudo docker stop <container_id>`
+>`sudo docker stop glastopf`
 
 
 
