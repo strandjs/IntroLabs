@@ -16,7 +16,7 @@
 - Go to the lab directory and make sure **Haraka** is set up
 
 ```bash
-cd ~/Desktop/haraka
+cd ~/ADCD/haraka
 ```
 
 ```bash
