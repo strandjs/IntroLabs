@@ -13,7 +13,6 @@
 ---
 
 ## Lab overview
-- Install Apache and ModSecurity (libapache2-mod-security2)
 - Install OWASP CRS (Core Rule Set)
 - Enable ModSecurity (Detection/Prevention mode)
 - Test attacks with `curl` (XSS, SQLi, command injection)
