@@ -45,6 +45,7 @@
   - [Portspoof](Tools/IntroClass/ADHD/Portspoof/Portspoof.md)
   - [HoneyPorts](Tools/IntroClass/ADHD/HoneyPorts/HoneyPorts.md)
   - [OpenCanary](Tools/IntroClass/ADHD/openCanary.md)
+  - [Beelzebub](Tools/IntroClass/ADHD/Beelzebub.md)
 
 ### Endpoint / Identity / AD deception  
   - [HoneyBadger](Tools/IntroClass/ADHD/HoneyBadger_files/HoneyBadger.md)
@@ -60,7 +61,6 @@
 
 ### Malware capture & analysis
   - [Dioanea](Tools/IntroClass/ADHD/dionaea.md)
-  - [Cuckoo Sandbox](Tools/IntroClass/ADHD/CuckooSandbox.md)
   
 ### DNS / Network tooling
   - [RITA](Tools/IntroClass/ADHD/RITA_ADHD/RITA.md)
@@ -76,7 +76,6 @@
   
 ### Red/Purple team detection testing
   - [Bluespawn](Tools/IntroClass/ADHD/bluespawn/Bluespawn.md)
-  - [Metta](Tools/IntroClass/ADHD/Metta.md)
   - [Caldera](Tools/IntroClass/ADHD/Caldera.md)
 
 
@@ -85,6 +84,11 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+
+
+
+
 
 
 

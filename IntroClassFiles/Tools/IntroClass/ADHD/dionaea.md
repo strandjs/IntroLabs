@@ -14,7 +14,7 @@
 - Go the Dionaea's directory
 
 ```bash
-cd ~/Desktop/dionaea
+cd ~/SOC_Analyst_Labs/dionaea/
 ```
 
  - Start it up:

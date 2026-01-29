@@ -13,7 +13,6 @@
 ---
 
 ## Lab overview
-- Install Apache and ModSecurity (libapache2-mod-security2)
 - Install OWASP CRS (Core Rule Set)
 - Enable ModSecurity (Detection/Prevention mode)
 - Test attacks with `curl` (XSS, SQLi, command injection)
@@ -51,10 +50,7 @@ apachectl -M | grep security
 
 - The default configuration file lives at: `/etc/modsecurity/modsecurity.conf-recommended`
 
-- Copy and enable a basic config:
-```bash
-sudo cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
-```
+- We are using the basic config: `/etc/modsecurity/modsecurity.conf`
 
 - Edit the config to **enable** the **engine** and set **log** locations (we'll use defaults). Ensure `SecRuleEngine` is set to `DetectionOnly` initially:
 ```bash

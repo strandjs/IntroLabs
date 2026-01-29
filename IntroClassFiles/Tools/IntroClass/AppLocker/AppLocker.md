@@ -14,7 +14,9 @@ Before we begin, we need to disable **Defender**. Start by opening an instance o
 
 Next, run the following command in the **Powershell** terminal:
 
-<pre>Set-MpPreference -DisableRealtimeMonitoring $true</pre>
+```bash
+Set-MpPreference -DisableRealtimeMonitoring $true
+```
 
 ![](attachments/applocker_disabledefender.png)
 
@@ -24,7 +26,9 @@ If you get angry red errors, that is **Ok**, it means **Defender** is not runnin
 
 Next, lets ensure the firewall is disabled. In a Windows Command Prompt.
 
-<pre> netsh advfirewall set allprofiles state off</pre>
+```bash
+netsh advfirewall set allprofiles state off
+```
 
 
 Next, set a password for the Administrator account that you can remember
@@ -33,23 +37,34 @@ Next, set a password for the Administrator account that you can remember
 
 Please note, that is a very bad password.  Come up with something better. But, please remember it.
 
-Before we move on from our Powershell window, lets get our IP by running the following command:
 
-<pre>ipconfig</pre>
 
-![](attachments/powershellipconfig.png)
+- Open **Command Prompt**
 
-**REMEMBER - YOUR IP WILL BE DIFFERENT**
+<img width="85" height="103" alt="image" src="https://github.com/user-attachments/assets/b2c7dbad-d57b-40d0-9318-ca8d40176c22" />
 
-Write this IP down so we can use it again later.
+- Get the IP of the other VM
+```bash
+tailscale status
+```
 
-Let’s continue by opening a **Kali** instance.
+<img width="740" height="75" alt="image" src="https://github.com/user-attachments/assets/8ec3aa43-15fc-4a2c-a1e4-5e0caa219ef5" />
 
-![](attachments/OpeningKaliInstance.png)
+>[!IMPORTANT]
+>We are looking for the **linux** VM, so grab the IP from the **linux** line
+>
+>For us it is `100.116.161.87`, **YOUR IP MAY BE DIFFERENT, USE YOURS**
 
-Alternatively, you can click on the **Kali** icon in the taskbar.
+- **SSH** into that machine
+```bash
+ssh ubuntu@100.116.161.87
+```
 
-![](attachments/TaskbarKaliIcon.png)
+Password is `metarange`
+
+<img width="247" height="25" alt="image" src="https://github.com/user-attachments/assets/69706053-abe6-4de7-aa48-d9fd739ec4a7" />
+
+
 
 Let's start by getting root access in our terminal.
 
@@ -209,6 +224,8 @@ As you can see, an error was generated, meaning that we were successful!
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
+
 
 
 

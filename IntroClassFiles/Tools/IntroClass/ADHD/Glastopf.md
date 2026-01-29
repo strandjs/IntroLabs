@@ -13,7 +13,7 @@
 - Go the its directory
 
 ```bash
-cd ~/Desktop/glastopf/
+cd ~/ADCD/glastopf
 ```
 
 ```bash
@@ -98,6 +98,11 @@ sqlmap -u "http://localhost:8080/index.php?id=1" --batch --level=1
 ```
 
 > Each of the above requests are recorded by **Glastopf** and should show up in **logs** and the event store.
+
+>[!IMPORTANT]
+>To stop **Glastopf** do:
+>
+>`sudo docker stop glastopf`
 
 
 
