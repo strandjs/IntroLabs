@@ -3,21 +3,20 @@ Now, let's play with AC Hunter!
 
 Please go to 
 
-<pre>https://training.aihhosted.com/</pre>
+<pre>https://138.68.61.95/</pre>
 
 You might be prompted by a warning stating that your connection isn't private. This is **Okay**. 
 
-Simply click **Advanced** and then click **Continue to trainin.aihhosted.com**
+Simply click **Advanced** and then click **Continue**
 
 ![](attachments/advanced.png)
 
 The creds are:
 
-email = **training@blackhillsinfosec.com**
+demo@acm.re
+ThreatHuntAtMileHigh!
 
-PW = **gotbeacons?**
 
-![](attachments/rita_achunterlogin.png)
 
 When logged in, you will be prompted to select a dataset. 
 
