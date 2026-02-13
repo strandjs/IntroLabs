@@ -22,6 +22,8 @@
   - [RITA2](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/rita_Part2.md)
   - [Email Analysis](https://github.com/doergestim/SOC_Analyst_Labs/blob/main/courseFiles/Section_10-emailFundamentals/phishing_email_lab.md)
 
+  - [ACHunter2](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/RITA/ACHunter2.md)
+
 [Intro To Security]()
 
  - [Applocker](Tools/IntroClass/AppLocker/AppLocker.md)
@@ -60,6 +62,7 @@
 
 *** 
 [How to Destroy the Cloud Lab Environment](/IntroClassFiles/Tools/IntroClass/LabDestruction/labdestruction.md)
+
 
 
 
