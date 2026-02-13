@@ -14,36 +14,48 @@ Simply click **Advanced** and then click **Continue**
 The creds are:
 
 demo@acm.re
+
 ThreatHuntAtMileHigh!
 
 <img width="632" height="459" alt="image" src="https://github.com/user-attachments/assets/9579c8cf-3f72-41b4-b548-e4b101e1deb8" />
 
 
-When logged in, you will be prompted to select a dataset. 
+To load a dataset select one from the upper left corner 
 
-Select **vsagent** and hit confirm.
+Select **DNSCat2**.
 
-![](attachments/rita_datasetselection.png)
+<img width="257" height="299" alt="image" src="https://github.com/user-attachments/assets/7fb854c2-e0d2-44b0-8265-8afeb45f7186" />
 
->[!NOTE]
->
->If this is not what you see, select the house icon in the bottom left of your screen, followed by the gear in the upper right.
 
-![](attachments/rita_wrongplace.png)
 
 This will open the overall scoring screen, as seen below. This screen allows you to see the systems that have the top scores across all areas from beacons to cyber deception.
 
-Please select **10.55.100.111**, then click on Beacon Score on the right.
+Please select **r-1x.com**.
 
-![](attachments/rita_selectingbeacon.png)
+<img width="884" height="155" alt="image" src="https://github.com/user-attachments/assets/b4b2f2d3-e175-46c5-b9d4-79d4f7494917" />
 
-This will open the beacon score for this system.
 
-![](attachments/rita_beaconscore.png)
+This will open the score for this system.
 
-Notice the **histogram** on the bottom and the scoring criteria in the middle. 
+<img width="1498" height="820" alt="image" src="https://github.com/user-attachments/assets/d4341e17-78fb-4eeb-bef6-5d0416cc2a56" />
 
-Notice how on the bottom you can see multiple aspects of this systems connections.  For example, you can see if there are any connections that had a threat intel hit, or if there are any connections that have beacons to a fully qualified domain.
+Now, click the back arrow in the upper left corner:
+
+<img width="189" height="64" alt="image" src="https://github.com/user-attachments/assets/778fc86d-1470-40b2-ae84-2cde7c5ebbd7" />
+
+THen select the asyncrat dataset:
+
+<img width="273" height="287" alt="image" src="https://github.com/user-attachments/assets/bf9e1460-96e1-4ee6-aab7-dcd7a194d9fd" />
+
+Now select the top row:
+
+<img width="1051" height="142" alt="image" src="https://github.com/user-attachments/assets/e6044cf6-b6f6-4bc5-811c-9579f2b17941" />
+
+
+Notice the **histogram** on the right and the scoring criteria in the middle. 
+
+<img width="564" height="390" alt="image" src="https://github.com/user-attachments/assets/fcdc9a73-614f-48d8-8767-01864ed52d1b" />
+
 
 Now, using **AC Hunter**, answer the following questions:
 
