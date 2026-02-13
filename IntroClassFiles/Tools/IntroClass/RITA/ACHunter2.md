@@ -65,6 +65,8 @@ Now, using **AC Hunter**, answer the following questions:
 
 3. For the dnscat2 dataset, what domain has the highest lookup count? Who is doing the lookups? What does the DNS Lookups look like? Why is there "random" strings in the lookups?
 
+4. In the whattime dataset what is the FQDN for the C2 server?  What does the interval look like? Why would an attacker use a domain like this?
+
 ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/nessus/Nessus.md)</i></b>
 
