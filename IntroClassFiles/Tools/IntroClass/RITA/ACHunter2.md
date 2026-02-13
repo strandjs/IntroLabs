@@ -59,12 +59,11 @@ Notice the **histogram** on the right and the scoring criteria in the middle.
 
 Now, using **AC Hunter**, answer the following questions:
 
-1. In the winlab-agent dataset, what is the connection interval for 10.10.98.30?
+1. In the asyncrat dataset, what is the connection interval for 192.168.100.136? What is the dispersion?  What can the dispersion tell us?
 
-2. In the gcat dataset, what is the historic fqdn for the beacon on 10.55.100.111?
+2. In the XenoRAT dataset, what is the the connection interval for 172.208.51.75? How is that different from the asyncrat C2?
 
-3. For the dnscat2-ja3-strobe-agent dataset, what domain has the highest lookup count?
-4. Who is doing the lookups?
+3. For the dnscat2 dataset, what domain has the highest lookup count? Who is doing the lookups? What does the DNS Lookups look like? Why is there "random" strings in the lookups?
 
 ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/nessus/Nessus.md)</i></b>
