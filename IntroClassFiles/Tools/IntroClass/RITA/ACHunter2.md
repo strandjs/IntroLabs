@@ -67,7 +67,7 @@ Now, using **AC Hunter**, answer the following questions:
 
 4. In the whattime dataset what is the FQDN for the C2 server?  What does the interval look like? Why would an attacker use a domain like this?
 
-5. In the fiestac2 dataset what is the issues with the MIME data for 68.183.138.51?  Also, what is the issue with the user agent strings? *Hint* over over the i for more information.
+5. In the fiestac2 dataset what is the issues with the MIME data for 68.183.138.51?  Also, what is the issue with the user agent strings? *Hint* hover over the i for more information.
 
 ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/IntroClassFiles/Tools/IntroClass/nessus/Nessus.md)</i></b>
