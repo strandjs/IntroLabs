@@ -36,7 +36,7 @@ Next, let’s change directories to tools and start Bluespawn:
 
 C:\Users\adhd>`cd \IntroLabs`
 
-C:\IntroLabs>`BLUESPAWN-client-x64.exe --monitor --level Cursory`
+C:\IntroLabs>`./BLUESPAWN-client-x64.exe --monitor --level Cursory`
 
 
 ![](attachments/Clipboard_2020-06-16-09-46-00.png)
@@ -309,6 +309,7 @@ meterpreter >`getsystem`
 Go and check Bluespawn.  Did it detect it?
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
 
