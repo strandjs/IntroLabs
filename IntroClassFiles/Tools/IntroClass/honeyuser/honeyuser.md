@@ -179,7 +179,8 @@ Now we need to clean up and make sure the system is ready for the rest of the la
 
   
 
-![](attachment/Clipboard_2021-03-12-11-30-08.png) 
+<img width="319" height="119" alt="image" src="https://github.com/user-attachments/assets/6a44095a-af0a-4c21-baa0-41fb768ea6d7" />
+
 
   
 
