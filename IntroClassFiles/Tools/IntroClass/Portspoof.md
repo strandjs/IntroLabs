@@ -139,7 +139,8 @@ Let's kill the running version of portspoof with ctrl+c then restart it with sig
 
 `portspoof -s /etc/portspoof/portspoof_signatures.dpkg-new`
 
-![image](https://github.com/user-attachments/assets/e1a2857a-7628-46d0-8808-b0af2add49f1)
+<img width="899" height="180" alt="image" src="https://github.com/user-attachments/assets/415dc9df-5f76-4df7-8828-ecce6f389b49" />
+
 
 
 
