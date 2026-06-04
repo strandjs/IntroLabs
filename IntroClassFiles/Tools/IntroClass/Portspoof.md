@@ -137,7 +137,7 @@ Showing all ports as open is all well and good. But the same thing could be acco
 
 Let's kill the running version of portspoof with ctrl+c then restart it with signatures:
 
-`portspoof -s /etc/portspoof/portspoof_signatures`
+`portspoof -s /etc/portspoof/portspoof_signatures.dpkg-new`
 
 ![image](https://github.com/user-attachments/assets/e1a2857a-7628-46d0-8808-b0af2add49f1)
 
