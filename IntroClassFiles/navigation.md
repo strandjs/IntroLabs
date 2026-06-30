@@ -48,7 +48,7 @@
   - [Spidertrap](Tools/IntroClass/Spidertrap.md)
   - [Cowrie](Tools/IntroClass/Cowrie.md)
   - [Canarytokens](Tools/IntroClass/canarytokens/Canarytokens.md)
-  - [RITA](Tools/IntroClass/RITA/RITA.md)
+  - [ACHunter2](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/Tools/IntroClass/RITA/ACHunter2.md)
   - [Bluespawn](Tools/IntroClass/bluespawn/Bluespawn.md)
   - [Portspoof](Tools/IntroClass/Portspoof.md)
   - [HoneyBadger](Tools/IntroClass/HoneyBadger.md)
