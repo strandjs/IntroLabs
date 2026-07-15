@@ -142,9 +142,13 @@ Now we are going to create a file with ip addresses to review in it.
 <img width="318" height="115" alt="image" src="https://github.com/user-attachments/assets/d015a9ac-7697-4660-85cc-b1e502019efa" />
 
 `cd /home/node/`
+
 `mkdir .n8n-files`
+
 `cd .n8n-files/`
+
 `vi ips.txt`
+
 
 Press 'a' to add data to the file.
 
