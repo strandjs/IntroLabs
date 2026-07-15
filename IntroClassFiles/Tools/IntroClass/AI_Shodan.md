@@ -158,17 +158,11 @@ Press 'a' to add data to the file.
 Then paste the following:
 
 ip
-
 77.90.185.20
-
 195.178.110.137
-
 2.57.121.25
-
 94.154.43.230
-
 8.8.8.8
-
 8.8.9.9
 
 
