@@ -157,20 +157,25 @@ Press 'a' to add data to the file.
 
 Then paste the following:
 
-``ip
+ip
+
 77.90.185.20
+
 195.178.110.137
+
 2.57.121.25
+
 94.154.43.230
+
 8.8.8.8
-8.8.9.9``
+
+8.8.9.9
+
 
 It should look like this:
 
 <img width="175" height="178" alt="image" src="https://github.com/user-attachments/assets/cec61244-b769-4307-923b-e94885fb9c10" />
 
-
-<img width="163" height="30" alt="image" src="https://github.com/user-attachments/assets/b90910a7-fde2-4919-b16f-7084fdaac273" />
 
 Press esc
 
