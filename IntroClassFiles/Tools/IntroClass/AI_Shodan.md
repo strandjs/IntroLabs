@@ -156,7 +156,7 @@ Now we are going to create a file with ip addresses to review in it.
 Press 'a' to add data to the file.
 
 Then paste the following:
-
+~~~~~~
 ip
 77.90.185.20
 195.178.110.137
@@ -164,6 +164,7 @@ ip
 94.154.43.230
 8.8.8.8
 8.8.9.9
+~~~~~~
 
 
 It should look like this:
