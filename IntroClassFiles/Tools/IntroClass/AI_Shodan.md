@@ -1,8 +1,5 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
-# n8n - Part 1 - General Automation
-
-For **Part 2**, click [here](./n8n-part2.md)
 
 # Ubuntu VM
 
