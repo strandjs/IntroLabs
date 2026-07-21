@@ -1,6 +1,16 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
 
+Capturing and analyzing network traffic with tools like tcpdump and Wireshark is an essential skill, but sometimes simply observing packets isn’t enough. There are many situations where you need to generate your own network traffic to validate that a network is functioning correctly before new equipment is placed into production.
+
+Imagine you’re installing network hardware during a scheduled maintenance window in the middle of the night. You need to verify that a specific protocol can still traverse the network, but the production application that normally generates that traffic isn’t available or can’t be used during testing. Rather than building an entire application stack or recreating a complex user environment just to generate a few packets, you can create exactly the traffic you need.
+
+That’s where Scapy comes in.
+
+Scapy is a powerful packet generation and manipulation framework that allows you to create, modify, transmit, and inspect packets for a wide variety of protocols. It enables you to build targeted test cases that validate network connectivity, security controls, firewall rules, routing, and application behavior without relying on production systems. This makes it an invaluable tool for user acceptance testing, network validation, and troubleshooting during infrastructure deployments.
+
+In this lab, you’ll learn the fundamentals of Scapy by creating and transmitting basic packets, exploring its extensive protocol support, and building simple test cases. By the end of the lab, you’ll understand how to use Scapy to generate custom traffic that helps validate network installations, confirm configuration changes, and support user acceptance testing before equipment is placed into production.
+
 In this lab we’ll use Scapy to demystify how network packets are assembled. The point isn’t to turn you into a Scapy wizard — it’s to give you a concrete, visual way to understand how packets are built, layer by layer, so you stop thinking about them as a single string of ones and zeros and start seeing them as stacked components.
 
 What you’ll learn:
