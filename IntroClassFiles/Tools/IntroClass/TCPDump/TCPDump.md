@@ -2,8 +2,11 @@
 
 # TCPDump
 
-In this lab, we will be looking at some basic **tcpdump** filters that every SOC and security analyst should know.
+Tcpdump is one of the most important networking troubleshooting tools you’ll ever learn. Whether you’re investigating a security incident, deploying new networking equipment, or simply verifying that infrastructure changes are working as expected, packet captures provide the ground truth of what is actually happening on the wire.
 
+Successful network validation goes well beyond waiting to see if users report problems. You need to confirm that packets are flowing correctly through the network and that devices are behaving as expected. Performance issues can be caused by filtering rules, traffic shaping, misconfigurations, hardware faults, or countless other networking problems. The only reliable way to understand what is happening is to observe the traffic directly and analyze the packets themselves.
+
+In this lab, you’ll learn how to use tcpdump to capture and inspect network traffic using the fundamental filters that every SOC analyst, security analyst, and network engineer should know. These techniques form the foundation for troubleshooting, validating network deployments, and investigating security issues in virtually any environment.
 Let’s get started by opening a Terminal.
 
 ![](attachments/OpeningKaliInstance.png)
