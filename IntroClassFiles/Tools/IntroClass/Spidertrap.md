@@ -40,11 +40,11 @@ First, let's get your Kali Linux systems IP address
 
 `ifconfig`
 
-Next, let's cd to the propper directory:
+Next, let's cd to the proper directory:
 
 `cd /opt/spidertrap`
 
-Now, lets start it:
+Now, let's start it:
 
 `/opt/spidertrap$` **`python3 spidertrap.py`**
 
@@ -59,7 +59,7 @@ Now, lets start it:
 
 Then visit http://<YOUR_LINUX_IP>:8000 in a web
 browser. You should see a page containing randomly generated links. If
-you click on a link it will take you to a page with more randomly
+you click on a link, it will take you to a page with more randomly
 generated links.
 
 ![](Spidertrap_files/image001.png) ![](Spidertrap_files/image002.png)
@@ -68,7 +68,7 @@ Example 2: Providing a List of Links
 ------------------------------------
 
 
-Start Spidertrap. This time give it a file to use to generate its links.
+Start Spidertrap. This time, give it a file to use to generate its links.
 
 You may need to press ctrl+c to kill your existing spidertrap session.
 
@@ -115,5 +115,6 @@ until either it or Spidertrap is killed. Type Ctrl-c to kill wget.
 
 
 [Return To Lab List](https://github.com/strandjs/IntroLabs/blob/master/IntroClassFiles/navigation.md)
+
 
 
